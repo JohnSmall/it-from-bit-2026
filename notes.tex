@@ -1,0 +1,219 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb}
+\setlength{\parindent}{3ex}
+%Includes "References" in the table of contents
+\usepackage[nottoc]{tocbibind}
+\usepackage[utf8]{inputenc}
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{self-ref-2026.bib}
+
+\usepackage[italicdiff]{physics}
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata, positioning}
+\usepackage{float}
+\usepackage[english]{babel}
+\usepackage[strict]{csquotes}% Recommended
+\usepackage{braket} %Dirac notation
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\setlength{\parskip}{0.5em}
+\usepackage{multicol} % Used for the two-column layout of the document
+\usepackage{booktabs}
+%\usepackage{quotchap}
+\title{It from Bit via G\"odel - Notes}
+\author{ John Small
+}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{From self-reference to complex probability amplitudes}
+It's well known that quantum mechanics admits negative and complex probabilities,  it's also well known that quantum mechanics is in some ways tied up with notions of non-computability and self-reference. But surprisingly there's very little in the literature that links negative and complex probabilities to self-reference. It would be nice if I could just refer to a theorem that settles the matter once and for all and then move on. But in fact we have to take some time arranging the pieces of jig-saw, finding the gaps, and then finding the pieces that fill the gaps. We'll start with negative probability.
+\subsection{Negative Probability}
+Of course as we're dealing with a classical system attempting, and failing, to gain knowledge of its own state, we can't just invoke the existence of negative probability as seen in quantum systems, that would assume what we're attempting to derive. But it is useful to have some idea of what we're aiming at. The issue of negative probability would never have arisen if it were not for the fact that quantum systems seem to require that probability can go negative, a explanation of why that is the case has been somewhat elusive. Rather than plagiarise the work of others who have done splendid work collating and summarising the existing work on negative probability I'll refer the reader to \autocite{burgin_2009, burgin2010interpretations} and \autocite{muckenheim_1986}. Instead I'll select those articles which do most to inform and motivate our chain of reasoning, in this regard the work of \autocite{burgin2010interpretations} and \autocite{aaronson_lect9,Aaronson:dem} are particularly useful. 
+
+Burgin's work is valuable because he interprets negative probability as the probability of an \emph{anti-event}, where \emph{anti-events} cancel out or erase events. He gives the example of a proof reader finding a mispelling in the draft of a book, perhaps \textquote{texxxt} instead of \textquote{text}, then erases the error and replaces it with \textquote{text}, in which case \textquote{texxxt} would have a negative probability of appearing in the final published book. However, he formulates his ideas on negative probability in the context of the frequentist view of probability, which is the collation records of things that have happened, and things that have happened stay happened, they never miraculously unhappen, (not that we would ever know about it). In any case simply correcting spelling mistakes is ordinary proof reading and there seems to be no need to invoke negative probability aand as we know from experience the probability of finding spelling mistakes in published text is certainly not negative. But there is the germ of a good idea there. The key observation is that the correction has to happen before publication, I'll come back to that. 
+
+Aaronson \autocite{aaronson_lect9, Aaronson:dem} takes a different approach. Accept negative probability as a fact without engaging in  the \textquote{mental tortures}(\autocite{Cardano_1545} of interpretation, and just work through the consequences. He suggests;-
+\begin{quotation}
+    Quantum mechanics is what you would inevitably come up with if you started from probability theory, and then said, let's try to generalize it so that the numbers we used to call “probabilities” can be negative numbers. As such, the theory could have been invented by mathematicians in the nineteenth century without any input from experiment. It wasn't, but it could have been
+     \par
+  \hfill \autocite{Aaronson:dem}
+\end{quotation}
+However, although his work is one path we can use to get from negative probability to the complex probability amplitudes of quantum mechanics, it doesn't explain why we should introduce negative probability in the first place. 
+
+Another route is to chain together partial results, Spekkens \autocite{spekkens_contextuality_2007} has shown that negative probability and contextuality are equivalent concepts. Similarly Abramsky et al \autocite{Abramsky2014} also show that a contextual no-signalling model has a signed global section but no non-negative one, so any global hidden-variable account must carry negative weight. Negativity is forced precisely by contextuality. Then Abramskly et al \autocite{Abramsky2015} also show that contextuality is locally consistent, globally inconsistent data — local sections with no global section. Using Sheaf-theory they then use a Liar Cycle paradox to show the paradox and the strong-contextuality obstruction are the same object. So we get self-reference  $\iff$ contextuality $\iff$ negative probability.
+
+Worringly, this chain of reasoning is more complicated than it needs to be and worse it provides little guidance on how to understand negative probability. It doesn't stand out as being obvious. The closest we come to an understanding is ;-
+\begin{quotation}
+    If cancellation of positive events by negative ones can occur with unbounded delays, there may be some form
+of retrocausality hidden in the computation of the signed relative frequencies. Do quantum
+processes admit bounds on cancellation which ensure that causal anomalies do not arise? It may
+also be interesting to compare the entropies of the simulating (unsigned) and simulated (signed)
+processes.
+ \par
+\hfill \autocite{Abramsky2014}
+\end{quotation}
+Retrocausality is an interesting topic because, of course, information is only information if it changes something, so information coming from the future has to change something in the past. This together with the mention of entropy brings us back to Burgin with his proof-reader editing \textquote{texxt} to \textquote{text} before publication. A literalist view of his analogy would run into a problem with Landauer's Principle \autocite{Landauer_1961} that erasing information increases entropy, a record has been made on paper or in computer memory of \textquote{texxt} and the proof-reader then erases that record, thus increasing entropy, and replacing it with \textquote{text}. But if we don't take a literalist approach and understand what he's getting at, a change before publication, then negative probabilty, or an anti-event is more viable. 
+
+When we publish something, say a book,  we make copies of it and distribute them widely. Because there are many copies in wide circulation then the book exists outside of the publishing house. The publishing house could disappear and the books would remain in circulation. Before publication the books are just ideas in people's minds, they're epistemological, but after publication they exist outside the mind of the author and are therefore ontological. It's useful to take that analogy and make a critical distinction between information that has been copied and information that hasn't been copied. Information that has been copied has an existence outside the experience of any one agent and is therefore ontological and objective, information that has not been copied is epistemological and subjective. The computer science terminology is FANOUT, an operation that fans out information, if we make a copy of some information and distribute it then it's been FANOUTed. The FANOUT operation marks the distinction between objective and subjective. This has been proved by Zurek and collaborators with their project to show that classical information is extracted from quantum information by repeated copying see \autocite{zureck_2009, Zurek2002, Oliver_2004}. 
+
+Before FANOUT no classical records exist and therefore Landauer's Principle doesn't apply, information can be erased without thermodynamic cost. An \textquote{anti-event} is erasure without thermodynamic cost. By analogy with Burgin's proof reader, before a text has been copied and published widely, correcting a mistake has no cost. After publication, post FANOUT,  changing something is very costly. We can see the erasure of information clearly in \textquote{{\emph{$C$'s inferior knowledge is due to the logical impossibility of imparting it information about itself without by this very act, making this information obsolete}}} $C$ has a negative probability of acquiring information about itself and this negative probability prevents the formation of a record, hence it's private information that cannot be cloned. Our earlier observation that $C$'s inability to be able to accurately predict the outcome of an interaction with $E$ is not due to innate randomness of $E$'s behaviour but is due to a lack of knowledge on the part of $C$ about its own state because if it did know its own state that would erase that state. Hence self-reference $\iff$ negative probabilty. Now that we've justifed the use of negative probabilty and also revealed that such probabilities are due to a lack of information, then we must use Shannon Information Theory and therefore we have to plug a negative value into the log function. But that can only work if we use analytic continuation to extend the domain of the log function the complex plane and that is why quantum probabilities have complex amplitudes. But why not quaternionic or octionic values? Because quaternion multiplication is non-commutative and Shannon Information requires that the information is additive and addition is commutative, it can't depend on the ordering. Therefore probabilities which occur in such self-referential setups have to be complex numbers. 
+
+This neatly leads into a comment made by Spencer Brown, who also argued that the paradoxes of self-reference would be resolved if we extended boolean logic to include complex values. He presented his ideas to Bertrand Russell and reports;-
+\begin{quotation}
+    Recalling Russell's connexion with the Theory of Types it was with some trepidation that I approached him in 1967 with the proof that it was unnecessary. To my relief he was delighted. The Theory was, he said, the most arbitrary thing he and Whitehead had ever had to do, not really a theory at all but a stopgap, and he was glad to have lived long enough to see the matter resolved. 
+    \hfill \autocite[ix]{Spence-Brown-1969}
+\end{quotation}
+The Theory of Types is an inelegant addition that Russell and Whitehead had to make in their work on the foundations of mathematics, Principia Mathematica \autocite{russell_2010}. It prevented the inconsistencies that arise in "naive" set theory which allow such constructions as the set of all sets that do not contain themselves. Does it contain itself or not? The Theory of Types, in essence says "Thou shall not make such self-referential constructions". Because it is so arbitrary and inelegant it's quite understandable that Bertrand Russell would have described it as a stopgap. 
+
+This is important because Russell's Paradox is the archetype of self-referential statements in mathematics and these all have a similar structure see \autocite{Lawvere1969DiagonalCategories} and \autocite{Yanofsky2003} This echoes Deutsch's point in \autocite{deutsch_1999} 
+\begin{quotation}
+    Hence, reassured by the physical experiments that corroborate this theory, logicians are now entitled to propose a new logical operation $\sqrt{not}$. Why? Because a faithful physical model for it exists in nature!
+\end{quotation}
+However logicians have not used $\sqrt{not}$ in their discussions of self-referential logic. The entire corpus of work on self-reference in mathematics contains not one mention of using the 
+Before we move on there are a few more things we can learn from Popper's model. 
+\subsection{Non-computability}
+The work on self-reference, non-computability, undecidability and so on is also vast, see Svozil \autocite{svozil_k_2018b}, \autocite{sep-self-reference_2017}, \autocite{szangolies_2020, szangolies_j_2018} \autocite{Bartlett_S_1992, bartlett_S_J-1987}, \autocite{cook_2004, Cook_RT_2014}, \autocite{Yanofsky2003}, \autocite{Lawvere1969DiagonalCategories}. But none of these treaties make any mention of negative probability. 
+\subsection{Existing links between self-reference, negative probability}
+There are a few papers that do draw together self-reference and complex or negative probability, Spence-Brown makes a very useful point in \autocite{Spence-Brown-1969} that if we extend boolean logic to allow complex values then it becomes possible have a consistent representation of the logical states reached in such self-referential paradoxes as Russell's Paradox. Indeed he mentions that he showed his work to Bertrand Russell himself, he wrote;-
+
+Kaufman  
+
+\subsection{The missing insight}
+
+
+note to self: Peres, unperformed experiments have no results. Rovelli \autocite{Rovelli1996a} references Shannon, information is the number states a system can be in, which means imaginary information implies a system can have imaginary states. Hence a self-referential state is imaginary, spencer-brown, fixed point Russel etc. 
+Rovelli \autocite{Rovelli1996a}
+\begin{quotation}
+    Quantum mechanics is a theory about the
+physical description of physical systems rel-
+ative to other systems, and this is a complete
+description of the world
+\end{quotation}
+
+Roveli on QM and GR 
+\begin{quotation}
+   The scientists trying to resist quantum theory or background independence remind me of Tycho
+Brahe, who tried hard to conciliate Copernicus advances with the “irrefutable evidence” that the
+Earth is immovable at the center of the universe. To let the background spacetime go is perhaps as
+diﬃcult as letting go of the unmovable background Earth. The world may not be the way it appears
+in the tiny garden of our daily experience.
+
+Today, many scientists do not hesitate to take seriously speculations such as extra dimensions,
+new symmetries or multiple universes, for which there isn’t a wit of empirical evidence; but refuse to
+take seriously the conceptual implications of the physics of the XX century with the enormous body
+of empirical evidence supporting them. Extra dimensions, new symmetries, multiple universes and
+the like, still make perfectly sense in a pre-GR, pre-QM, Newtonian world, while to take GR and QM
+seriously together requires a genuine reshaping of our world view.
+
+After a century of empirical successes that have only equals in Newton’s and Maxwell’s theories, it
+is time to take seriously GR and QM, with their full conceptual implications; to ﬁnd a way of thinking
+the world in which what we have learned with QM and what we have learned with GR make sense
+together —ﬁnally bringing the XX century scientiﬁc revolution to its end. This is the problem of
+Quantum Gravity. 
+ \par
+  \hfill \autocite{Rovelli2006UnfinishedRevolution}
+\end{quotation}
+
+\section{Space, Time and Computation}
+\begin{quotation}
+    Conceptually, the key question is whether or not it is logically possible to understand the world in
+the absence of fundamental notions of time and time evolution, and whether or not this is consistent
+with our experience of the world
+\par
+\hfill \autocite{Rovelli2006UnfinishedRevolution}
+\end{quotation}
+\appendix
+
+\section{Locating self-reference in different interpretations}\label{appendix:interpretatons}
+All intepretations of quantum mechanics have the same form;-
+\begin{enumerate}
+\item Axiom that makes perfect sense according to classical physics
+\item Another axiom that makes perfect sense according to classical physics
+\item etc, etc .....
+\item And then magic happens
+\item And we get quantum mechanics
+\end{enumerate}
+The magic is always whatever is necessary to smuggle non-computability into the framework. Non-computability comes in a few basic forms, closed causal loops, or supertasks first described in the Thomson's Lamp toy model (\autocite{Svozil2009}), (orignial article). It has magically properties, such as being able to create information from nowhere, effects without prior causes, and being able to disappear information into nowhere causes without terminating effects ref(laurodogita) and ref(deutsch), For example the Many Worlds interpretation requires selecting from an infinite number of possibilities, which implies the Axiom of Choice. But the Axion of Choice implies being able to make an infinite number of selections in a finite amount of time. Which is a supertask. Once you know what to look for it's fairly easy to read any interpretation and find the point where the magic happens.
+\subsection{Many Worlds}
+ljlkjlkj
+\subsection{Two State Vector formalism}
+lkjlklkj
+\subsection{Transactional interpretation}
+ljllkj
+\subsection{Retrocausal intepretation}
+lkjlklk
+\subsection{Relational interpretation}
+llklkkj
+\subsection{Spontaneous Collapse}
+lkjlkjlj
+\subsection{Hardy's Five Reasonanble Axoims}
+jlkjlkjlkj
+\subsection{}
+
+\section{outline notes}
+List articles on negative probability in general
+List articles on negative probability and QM.
+List articles on self-reference in QM
+List articles that indirectly join together self-reference and negative probability via contextuality
+Point out that these are phenomenological, they described phenomena without grounding it in a principle.
+So we're circling close, but there seems to be an insight missing.
+Re-examine Burgin and identify that negative probabilty has to be private knowledge because it cannot form records. Entropy etc. Introduce the FANOUT as the distinction between public and private.
+Now we're getting close, $C$ inability to predict is due to an in principle lack of knowledge of its own state and because it cannot form a shareable record it has to be a negative probabilty. Private state of knowledge about its own state (find Qbist quote)
+Point out that despite objections we are forced to use Shannon Information theory because the probabilty is due to an in principle deficity of information. Therefore we have to analytically continue to the complex plane. So we get neg prob and prob > 1.
+Bring that back to Spencer-Brown, Kauffman and Russel Paradox and the resolution of Russel's Paradox and hence all Lawver/Yanofsky paradoxes.
+Note that it means all paradoxes require complex information. Which means that we can ask about distance between computable and non-computable states.
+Introduce paralellisable spheres. complex states Bloch sphere, S1 fibre is the unobservable global phase
+But first show derivation of postulates of quantum mechanics.
+
+Then move on to explore notions of computable distance. Set up computational model and define non-computable distance as requiring 'as if' CTCs. Point out that this means parallelisables spheres, but only up to 3d because of non-associativity of octonions.
+
+Point out that toy model, can help see features of GR.
+1) relationalist
+2) depends on the density of compution, more space where more computation
+3) Bell state before measurement is outside the network
+4) Measurement creates spacetime for the measurement to happen in
+5) Even though S7 can't be used for a metric space, it hasn't gone away and the information exchanged between events must be constrained by algebra of S7
+
+Switch to GR
+1) Electon in a bottle.
+2) measurement creates ST in which to happen. (hilbert hotel) Tips light cone, changes causal structure, acceleration, creates new spacetime.
+3) Dresssing a non-computable event as if it's the result of a computable process
+4) Light cone tipping and Unruh effect
+5) 7 lefts = 1 right from octonions. measurement closes one sr loop, but has a representation as 7 remaining octonionic units
+7) Particles as channels between events
+8) Therefore Hopf fibration and particle physics
+
+Switch to entanglement and Hopf fibration
+1) mention existing research including imperial and etc
+2) Point out that particle physics and entanglement share a common origin hence Hopf fibration
+3) GHX -> color force, W -> weak force with theorems, quark lepton split, explain in detail
+4) ZX calculus, sedenion termination, compositional completeness
+
+Cast problems in particle physics into entanglement via Hopf fibration
+1) First result colour force is blind to chirality
+2) Second result weak force must be chiral
+3) Electro magnetism a chiral
+4) contextuality and complex phase, environmental etc
+5) Weinberg angle
+6) 3 generations, linked by W
+7) Mass as non-computable debt, computation waiting to become FANOUTable
+8) Kiode formula for leptons
+9) Higgs mechanism and entanglement
+10) Quark masses
+11) particle zoo
+12) No SU(5), supersymmetry or string theory, but some features remain, imperial group. 
+
+Quantum Circuits for particle physics
+1) ZX calculus mapping to particle properties
+2) example circuits
+
+Open problems
+Conclusion
+\printbibliography
+
+\end{document}
+
