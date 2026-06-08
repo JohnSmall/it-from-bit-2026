@@ -1,11 +1,13 @@
 \documentclass{article}
 \usepackage{hyperref}
-\usepackage{amsmath, amssymb}
+\usepackage{amsmath, amssymb, amsthm}
+%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
+\newtheorem{proposition}{Proposition}
 \setlength{\parindent}{3ex}
 %Includes "References" in the table of contents
 \usepackage[nottoc]{tocbibind}
 \usepackage[utf8]{inputenc}
-\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\usepackage[style=phys,backend=biber]{biblatex}
 \addbibresource{self-ref-2026.bib}
 
 \usepackage[italicdiff]{physics}
@@ -306,23 +308,17 @@ Popper writes;-
 \end{quotation}
 This is Popper's critical insight \textquote{{\emph{$C$'s inferior knowledge is due to the logical impossibility of imparting it information about itself without by this very act, making this information obsolete}}}. This changes the nature of the probability that $C$ uses to estimate the outcome of a future interaction with $E$, the indeterminacy of the outcome of an interaction with $E$is not due to some innate feature of $E$ but is due to a deficit of knowledge on the part of $C$ and therefore has the same epistemological status as classical probability. Which means that when $C$ interacts with $E$ it gains some information about its own state which was previously inaccessible. Therefore we must use Shannon Information Theory to assign a value to the amount of information gained.
 
-Now, there's a very obvious next step we can take, but that step requires that we first justify the use of negative probability when dealing with self-referential setups. At this point it would be nice if someone had proved that self-reference implies negative probabilities, then I could just refer to that work and take the obvious next step. But although the literature on self-reference and non-computablity is quite voluminous and the literature on negative, extended or as it is quaintly called "quasi-probability" is also voluminous there's very little overlap between the fields and certainly no one text I can point to that has proved the connection. As this connection is crucial to the rest of this article we have to assemble the pieces of the jigsaw to see which pieces are missing and then fill in the gaps. 
+Now, there's a very obvious next step we can take, but that step requires that we first justify the use of negative probability when dealing with self-referential setups. At this point it would be nice if someone had proved that self-reference implies negative probabilities, then I could just refer to that work and take the obvious next step. But although the literature on self-reference and non-computablity is quite voluminous and the literature on negative, extended or as it is quaintly called "quasi-probability" is also voluminous there's very little overlap between the fields and certainly no one text I can point to that has proved the connection. As this connection is crucial to the rest of this article we have to assemble the pieces of the jigsaw to see which pieces are missing and then fill in the gaps.
+
 \section{From self-reference to complex probability amplitudes}
+
 Of course as we're dealing with a classical system attempting, and failing, to gain knowledge of its own state, we can't just invoke the existence of negative probability as seen in quantum systems, that would assume what we're attempting to derive. Rather than plagiarise the work of others who have done splendid work collating and summarising the existing work on negative probability I'll refer the reader to \autocite{burgin_2009, burgin2010interpretations} and \autocite{muckenheim_1986}. Instead I'll select those articles which do most to inform and motivate the next steps in our chain of reasoning, in this regard the work of \autocite{burgin2010interpretations} and \autocite{aaronson_lect9,Aaronson:dem} are particularly useful. 
 
 Burgin's work is valuable because he interprets negative probability as the probability of an \emph{anti-event}, where \emph{anti-events} cancel out or erase events. He gives the example of a proof reader finding a mispelling in the draft of a book, perhaps \textquote{texxt} instead of \textquote{text}, then erases the error and replaces it with \textquote{text}, in which case \textquote{texxt} would have a negative probability of appearing in the final published book.
 He writes;-
 \begin{quotation}
-    To better understand how negative elementary events appear and how negative
-probability emerges, consider the following example.
-Let us consider the situation when an attentive person A with the high knowledge
-of English writes some text T. We may ask what the probability is for the word
-“texxt” or “wrod” to appear in his text T. Conventional probability theory gives 0 as
-the answer. However, we all know that there are usually misprints. So, due to such a
-misprint this word may appear but then it would be corrected. In terms of extended
-probability, a negative value (say, -0.1) of the probability for the word “texxt” to
-appear in his text T means that this word may appear due to a misprint but then it’ll be
-corrected and will not be present in the text T. 
+    To better understand how negative elementary events appear and how negative probability emerges, consider the following example. Let us consider the situation when an attentive person A with the high knowledge of English writes some text T. We may ask what the probability is for the word “texxt” or “wrod” to appear in his text T. Conventional probability theory gives 0 as the answer. However, we all know that there are usually misprints. So, due to such a misprint this word may appear but then it would be corrected. In terms of extended probability, a negative value (say, -0.1) of the probability for the word “texxt” to appear in his text T means that this word may appear due to a misprint but then it’ll be corrected and will not be present in the text T. 
+    \hfill \autocite{burgin2010interpretations}
 \end{quotation}
 
 However, he formulates his ideas on negative probability in the context of the frequentist view of probability, which depends  on collating records of things that have happened, and things that have happened stay happened, they never miraculously unhappen, (not that we would ever know about it). In any case simply correcting spelling mistakes is ordinary proof reading and there seems to be no need to invoke negative probability aand as we know from experience the probability of finding spelling mistakes in published text is certainly not negative. But there is a germ of a good idea there. The key observation is that the correction has to happen before publication, I'll come back to that. 
@@ -345,11 +341,12 @@ Worringly, it doesn't stand out as being obvious and worse it provides little gu
 \hfill \autocite{Abramsky2014}
 \end{quotation}
 Retrocausality is an interesting topic because, of course, information is only information if it updates something, so information coming from the future has to change something in the past, it has to make things that have happened, un-happen. This together with the mention of entropy brings us back to Burgin with his proof-reader editing \textquote{texxt} to \textquote{text} before publication. A literalist view of his analogy would run into a problem with Landauer's Principle \autocite{Landauer_1961} that erasing information increases entropy, a record has been made on paper or in computer memory of \textquote{texxt} and the proof-reader then erases that record, thus increasing entropy, and replacing it with \textquote{text}. But if we don't take a literalist approach and understand what he's getting at, a change before publication, then negative probabilty, or an anti-event is more viable. 
-
-When we publish something, say a book,  we make copies of it and distribute them widely. Because there are many copies in wide circulation then the book exists outside of the publishing house. The publishing house could disappear and the books would remain in circulation. Before publication the books are just ideas in people's minds, they're epistemological, but after publication they exist outside the mind of the author and are therefore ontological. It's useful to take that analogy and make a critical distinction between information that has been copied and information that hasn't been copied. Information that has been copied has an existence outside the experience of any one agent and is therefore ontological and objective, information that has not been copied is epistemological and subjective. The computer science terminology is FANOUT, an operation that fans out information, if we make a copy of some information and distribute it then it's been FANOUTed. The FANOUT operation marks the distinction between objective and subjective. This has been proved by Zurek and collaborators with their project to show that classical information is extracted from quantum information by repeated copying see \autocite{zureck_2009, Zurek2002, Oliver_2004}. 
+\subsection{FANOUT - The act of publishing}
+\label{sec:fanout-boundary}
+When we publish something, say a book,  we make copies of it and distribute them widely. Because there are many copies in wide circulation then the book exists outside of the publishing house. The publishing house could disappear and the books would remain in circulation. Before publication the books are just ideas in people's minds, they're epistemological, but after publication they exist outside the mind of the author and are therefore ontological. It's useful to take that analogy and make a critical distinction between information that has been copied and information that hasn't been copied. Information that has been copied has an existence outside the experience of any one agent and is therefore ontological and objective, information that has not been copied is epistemological and subjective. The computer science terminology is FANOUT, an operation that fans out information, if we make a copy of some information and distribute it then it's been FANOUTed. The FANOUT operation marks the distinction between objective and subjective. This point has been argued by Zurek and collaborators with their project to show that classical information is extracted from quantum information by repeated copying see \autocite{zureck_2009, Zurek2002, Oliver_2004}. 
 
 Before FANOUT no classical records exist and therefore Landauer's Principle doesn't apply, information can be erased without thermodynamic cost. An \textquote{anti-event} erases information without thermodynamic cost. By analogy with Burgin's proof reader, before a text has been copied and published widely, correcting a mistake has no cost. After publication, post FANOUT, changing something is very costly. We can see the erasure of information clearly in \textquote{{\emph{$C$'s inferior knowledge is due to the logical impossibility of imparting it information about itself without by this very act, making this information obsolete}}} $C$ has a negative probability of acquiring information about itself and this negative probability prevents the formation of a record, hence it's private information that cannot be cloned. Our earlier observation that $C$'s inability to be able to accurately predict the outcome of an interaction with $E$ is not due to innate randomness of $E$'s behaviour but is due to a lack of knowledge on the part of $C$ about its own state because if it did know its own state that would erase that state. Hence self-reference $\iff$ negative probabilty. 
-
+\label{sec:complex-amplitudes}
 Now that we've justifed the use of negative probabilty and also revealed that such probabilities are due to a lack of information, then we must use Shannon Information Theory and take the obvious next step which we delayed before, we have to plug a negative value into the log function. But that can only work if we use analytic continuation to extend the domain of the log function the complex plane and that is why quantum probabilities have complex amplitudes. 
 
 But why not quaternionic or octionic values? Because quaternion multiplication is non-commutative and Shannon Information requires that the information is additive and addition is commutative, it can't depend on the ordering. Therefore probabilities which occur in such self-referential setups have to be complex numbers. 
@@ -365,12 +362,10 @@ This is important because Russell's Paradox is the archetype of self-referential
 \begin{quotation}
     Hence, reassured by the physical experiments that corroborate this theory, logicians are now entitled to propose a new logical operation $\sqrt{not}$. Why? Because a faithful physical model for it exists in nature!
 \end{quotation}
-However logicians have not used $\sqrt{not}$ in their discussions of self-referential logic. This is quite understandable since the postulates of quantum mechanics are an ad-hoc collection without explanation other than the fact that they work and we can calculate numbers which match experiment. Which isn't good enough for mathematicians who want a well founded explanation. Hence Deutsch's hope that logicians could use the logical states enabled by quantum mechanics has certainly not been adopted by people working in and around the fields of self-referential logic and inconsistent mathemataics.
+However logicians have not used $\sqrt{not}$ in their discussions of self-referential logic. This is quite understandable since the postulates of quantum mechanics are an ad-hoc collection without explanation other than the fact that they work and we can calculate numbers which match experiment. Which isn't good enough for mathematicians who want a well founded explanation. Hence Deutsch's hope that logicians could use the logical states enabled by quantum mechanics has certainly not been adopted by people working in and around the fields of self-referential logic and inconsistent mathemataics. Although we're in a strange land where people are using quantum computation, which involves imaginary truth values, yet logicians have not taken to using them in their exploration of self-referential paradoxes and hypodoxes. 
 
-
-There are a few more things we can learn from Popper's model. 
 \subsection{Scale and dimension of limits to information }
-The first thing to notice is the scale at which self-reference becomes relevant for $C$ to know the disposition of its own components. If we imagine that $C$ is a giant steam powered Babbage analytical engine then it only becomes important for $C$ to have self-knowledge of its own components when the thing that $C$ is interacting with acts at the same scale as the smallest cog or lever and experiences a significant back reaction. 
+There are a few more things we can learn from Popper's model.  The first thing to notice is the scale at which self-reference becomes relevant for $C$ to know the disposition of its own components. If we imagine that $C$ is a giant steam powered Babbage analytical engine then it only becomes important for $C$ to have self-knowledge of its own components when the thing that $C$ is interacting with acts at the same scale as the smallest cog or lever and experiences a significant back reaction. 
 
 When $C$ interacts with a large heavy cannonball the disposition of the tinnest cog is irrelevant and so $C$'s self-knowledge of its own components is not required. But for a very small ball bearing with just enough energy and momentum to flip the tiniest lever or disturb the tiniest cog and for the lever and tiniest cog to have a back reaction on the very small ball bearing then $C$'s self knoweldge of its own components is required. The time evolution of $C$ is in some state space, and the smallest quantity that would change its path through that state space must therefore have the dimension of action. Therefore there will be a scale at which it becomes impossible for $C$ to predict the outcome of its interaction with its closest environment and that scale will have the dimension of action. This is in accord with Rovelli's Relational Intepretation \autocite{Rovelli1996a} where he is also able to deduce that there will be a quantity with the dimension of action which acts to restrict the information available in any volume of phase space. The difference is that here we deduce the fact that there's a limit to the information one can have, whereas Rovelli has to introduce the idea as a postulate. 
 
@@ -403,8 +398,551 @@ Now this is all very hand wavy, heuristic and not at all rigorous, but we can di
 
 Even with this very low level of rigor we can make a crucial deduction, if we nail down non-computabilty to make it appear computable it must appear as a sequence of group operations on $U(1) \times SU(2) \times SU(3)$ and there is no $SU(5)$ Grand Unified Theory because there are no division algebras beyond the octonions \autocite{hurwitz_1898} and $SU{5}$ doesn't fall out of the octonions when we fix a preferred imaginary direction. As previously proposed in \autocite{small_2006} this also implies there is no Theory of Everything including gravity. This is not at all a negative result, it fits experimental evidence and suggests that if we delve more deeply into the division algebras we can make other deductions that also fit experimental evidence. Therefore I'll make a testable prediction, the running orders of the coupling constants do not meet at some high energy. 
 
-\subsection{Where does $C^+$ fit into this? Hopf fibrations and entanglement}
-Let's return to Poppers $C+$, $C$ and $E$, or in modern terms, Wigner, his friend and thing being measured. It's useful to analyse this in the framework of Hopf fibrations. We have a 2 state quantum system, which along with complex probability amplitudes gives us 4 directions with the restric
+I should note that I've happily switched between an epistemological view of probability, to derive complex probability amplitudes, and an ontological view to do some actual calculations. It's useful to take the epistemological view, which unites the classical and quantum probabilitites in Jaynes' quantum omelet, and then use Jaynes' \textquote{Mind Projection Fallacy} to project the complex element out onto external objects and take an ontological view so we can calculate. This should cause no more trouble than a switch between spherical and cylindrical coordinates. 
+
+% =====================================================================
+% Section: The L^2 metric on the state sphere and the global-phase fibre
+% Drop-in for Paper 1. Requires in the preamble:
+%   \usepackage{amsmath, amssymb, amsthm}
+%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
+%   \newtheorem{proposition}{Proposition}
+% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
+% British English throughout.
+% =====================================================================
+
+\section{The Euclidean metric on the state sphere, and the global phase as
+self-referential ignorance}
+\label{sec:l2-metric-fibre}
+Let's return to Poppers $C+$, $C$ and $E$, or in modern terms, Wigner, his friend and a qubit $S$ to be measured. It's useful to analyse this in the framework of Hopf fibrations. But even to get to the Hopf fibration and Bloch sphere picture we have to justify using the $L^2$ metric. Here our previous derivation self-reference $\iff$ reversible continuity comes in handy. 
+
+
+We have established that the amplitudes of a single qubit form a complex vector space $\mathbb{C}^{2}\cong\mathbb{R}^{4}$. We have not yet fixed which norm on this space singles out the physical state manifold. That choice is not free: the principle of \emph{reversible continuity} forces the Euclidean ($L^{2}$) norm, and hence the round three-sphere, before any appeal to the Born rule. The quadratic structure usually \emph{posited} as the Born rule is therefore already present in the metric, and the global phase emerges as a geometrically forced fibre rather than an added convention.
+
+\subsection{Reversible continuity selects the 2-norm}
+\label{sec:reversible-continuity-l2}
+
+The principle is the one isolated by Hardy as the single axiom distinguishing quantum from classical probability \autocite{Hardy2001a}: \emph{there exists a continuous reversible transformation between any two pure states.} Operationally a reversible transformation of states is a symmetry of the state manifold, hence norm-preserving; the demand is that such symmetries form a \emph{connected} group acting \emph{transitively} on the pure states. Linearity is inherited from the complex vector-space structure already in hand, so the admissible transformations are the complex-linear isometries of whatever norm we place on $\mathbb{C}^{2}$.
+
+Take the candidate norms to be the $\ell^{p}$ family, $\lVert x\rVert_{p}=\bigl(\sum_{k}\lvert x_{k}\rvert^{p}\bigr)^{1/p}$, with the state manifold the unit $\ell^{p}$ sphere. Their linear isometries are completely classified.
+
+
+\begin{proposition}[Lamperti; after Banach]
+\label{prop:lamperti}
+For $1\le p<\infty$, $p\neq 2$, every linear isometry of $L^{p}$ (and hence of $\ell^{p}$) is a generalised permutation: a weighted composition operator which, in the finite-dimensional case, acts as $(x_{k})\mapsto(\omega_{k}\,x_{\sigma(k)})$ with $\lvert\omega_{k}\rvert=1$ and $\sigma$ a permutation of the coordinates.
+\end{proposition}
+
+\noindent Banach gave this for $L^{p}[0,1]$; the general $\sigma$-finite
+statement is Lamperti's \autocite{Banach1932, Lamperti1958}. Its consequence for
+our four real dimensions is decisive. For every $p\neq 2$ the isometry group is,
+in the real case, the finite group of signed permutations (the hyperoctahedral
+group $B_{4}$), and in the complex case the group $\mathbb{T}^{n}\rtimes S_{n}$
+of diagonal phases composed with permutations. Even the complex group, though it
+contains the continuous torus $\mathbb{T}^{n}$, fails to act transitively on the
+sphere: the orbit of a basis state $e_{1}$ is only the phased basis vectors
+$\{\omega\,e_{k}\}$, a measure-zero union of circles. No continuous reversible
+transformation carries a basis state into a generic superposition such as
+$(e_{1}+e_{2})/\sqrt{2}$. Reversible continuity therefore \emph{fails} for every
+$p\neq 2$.
+
+At $p=2$ the isometry group is $O(4)$ in the real picture and $U(2)$ in the
+complex one; the identity component acts transitively on the unit sphere, and any
+two unit vectors are joined by a continuous one-parameter subgroup. Among the
+$\ell^{p}$ geometries, reversible continuity is satisfiable at $p=2$ alone.
+
+Aaronson states the same selection in the quantum-foundations setting and
+sharpens it into a physical, rather than merely aesthetic, necessity
+\autocite{Aaronson2004h}: the $2$-norm is the unique $p$-norm admitting a
+nontrivial continuous group of norm-preserving linear maps, every other $p$
+yielding only generalised permutations; and the alternative of keeping linearity
+and reversibility while \emph{dropping} norm preservation lands one in the full
+general linear group $\mathrm{GL}(n,\mathbb{C})$, which permits superluminal
+signalling and collapses the complexity class $\mathsf{PP}$ into polynomial time.
+Bare reversibility on the amplitude space buys only $\mathrm{GL}(n,\mathbb{C})$;
+what carves the unitary group $U(n)$ out of it is preservation of the quadratic
+($\ell^{2}$) form, and reversibility of the resulting maps is then a corollary
+rather than a premise.
+
+The conclusion is that the physical state manifold of a single qubit is the unit
+sphere of the Euclidean norm,
+\begin{equation}
+  S^{3}=\Bigl\{\,x\in\mathbb{R}^{4}\;:\;\textstyle\sum_{i=1}^{4}x_{i}^{2}=1\,\Bigr\}
+  =\bigl\{\,\psi\in\mathbb{C}^{2}\;:\;\lvert z_{1}\rvert^{2}+\lvert z_{2}\rvert^{2}=1\,\bigr\},
+\end{equation}
+with $z_{j}=x_{2j-1}+\mathrm{i}\,x_{2j}$, carrying the round metric induced from
+the ambient inner product,
+\begin{equation}
+  \mathrm{d}s^{2}=\sum_{i=1}^{4}\mathrm{d}x_{i}^{2}\,\Big|_{S^{3}}
+  =\operatorname{Re}\langle\mathrm{d}\psi,\mathrm{d}\psi\rangle,
+  \qquad
+  \langle\phi,\psi\rangle=\bar\phi_{1}\psi_{1}+\bar\phi_{2}\psi_{2}.
+\end{equation}
+One bound deserves explicit statement, in the interest of claiming no more than
+is proved: reversible continuity fixes the \emph{metric} as $L^{2}$, but not the
+underlying field. Real and quaternionic quantum theory equally satisfy reversible
+continuity and equally carry Euclidean state-space metrics; the restriction to
+$\mathbb{C}$ is pinned elsewhere in the framework (the analytic continuation of
+the information measure and the additivity of phase information), not here.
+
+\subsection{Hardy's independent route}
+\label{sec:hardy-route}
+
+The same conclusion is reached by Hardy along a route that never invokes
+Proposition~\ref{prop:lamperti} \autocite{Hardy2001a}. His reconstruction turns on
+the counting relation $K=N^{r}$, where $N$ is the number of states
+distinguishable in a single measurement and $K$ the number of fiducial
+probabilities needed to specify a state. The continuity axiom excludes the
+classical case $r=1$: there the pure states are the $N$ vertices of a simplex and
+the reversible maps merely permute them which is a discrete group, therefore there is no continuous path
+between distinct pure states, which is the simplex face of the same $\ell^{1}$
+isometry fact. A simplicity assumption then selects $r=2$, yielding complex
+quantum theory with its quadratic norm and trace rule. The quadratic structure is
+not extracted from continuity as a separate step; it is built into Hardy's first
+axiom (probabilities linear in the fiducial set) together with $K=N^{2}$.
+
+We thus have two genuinely independent demonstrations that reversible continuity
+forces the $L^{2}$ metric: Hardy's operational $K=N^{2}$ counting, and the
+Lamperti--Aaronson classification of the isometries. They converge on the same
+step by different mathematics, and should be cited as two roads rather than one
+road traversed twice.
+
+\subsection{The Hopf fibration and the Bloch sphere}
+\label{sec:hopf-bloch}
+
+The round metric is exactly what makes the global phase a clean symmetry. The
+phase action $\psi\mapsto\mathrm{e}^{\mathrm{i}\theta}\psi$ is a one-parameter
+subgroup of $U(2)\subset SO(4)$ and so acts on $S^{3}$ by \emph{isometries}, a
+statement that holds only because the metric is the $L^{2}$ one just derived. Its
+orbits are great circles $S^{1}$, all of circumference $2\pi$, and the quotient
+is the complex projective line,
+\begin{equation}
+  S^{3}\big/U(1)=\mathbb{CP}^{1}\cong S^{2},
+\end{equation}
+the Bloch sphere. This quotient is the complex Hopf fibration
+\autocite{Hopf1931, Urbantke2003, MosseriDandoloff2001}
+\begin{equation}
+  S^{1}\hookrightarrow S^{3}\xrightarrow{\;h\;}S^{2},
+\end{equation}
+whose projection sends an amplitude to its Bloch vector,
+\begin{equation}
+  h(\psi)=\bigl(\langle\psi\rvert\sigma_{x}\lvert\psi\rangle,\;
+                 \langle\psi\rvert\sigma_{y}\lvert\psi\rangle,\;
+                 \langle\psi\rvert\sigma_{z}\lvert\psi\rangle\bigr)
+        =\bigl(2\operatorname{Re}\bar z_{1}z_{2},\;
+               2\operatorname{Im}\bar z_{1}z_{2},\;
+               \lvert z_{1}\rvert^{2}-\lvert z_{2}\rvert^{2}\bigr).
+\end{equation}
+The Hopf map is quadratic in the amplitudes, and this is precisely the Born rule:
+the third component is $p_{0}-p_{1}$ with $p_{k}=\lvert z_{k}\rvert^{2}$, and the
+squaring is forced, not chosen, because the lowest-degree $U(1)$-invariant on the
+fibre is quadratic (Section~\ref{sec:born-rule}). Because the metric is round, the
+projection is a Riemannian submersion with totally geodesic fibres of constant
+length \autocite{GluckWarnerZiller1986}: the same amount of phase is hidden at
+every point of the base, so the phase is hidden \emph{uniformly}, not in a
+position-dependent way that the metric could partially betray.
+
+\subsection{The fibre as self-referential ignorance}
+\label{sec:fibre-self-ignorance}
+
+The interpretation the framework places on this geometry---and here we are
+reading physics into the mathematics, so the claim is interpretive rather than
+proved, is that the $S^{1}$ fibre is the observer's own un-narratable
+self-ignorance. The global phase is the imaginary part of the complex information
+measure $S=-\ln\lvert p\rvert-\mathrm{i}\theta$: information the observer lacks
+about their own state. Lacking it, they cannot communicate it; there is no
+\textsc{fanout} of information one does not possess. Uncommunicable, it cannot
+enter any measurement record, so every observable is $U(1)$-invariant; and a
+$U(1)$-invariant quantity is a function on the quotient. The physical state is
+therefore the orbit, not the representative point---the base $S^{2}$---and the
+$S^{1}$ fibre carries exactly the inaccessible self-referential phase. It is a
+null direction of statistical distinguishability: two global phases are
+indistinguishable by any measurement whatever \autocite{wooters_1981}, so the fibre is a gauge direction without physical content. This phase is irrecoverably
+discarded, and must remain so: it is the relative phase, living in the $S^{3}$
+fibre of the quaternionic Hopf fibration at two qubits, that is genuinely
+recoverable, whereas the single-qubit global phase of the complex fibration is
+gauge-private without remainder. The self-reference that opened the derivation
+thus reappears, at its end, as the circle the observer can never see around.
+
+% =====================================================================
+% Section: Wigner's friend in the Hopf picture (v2)
+% Supersedes wigners_friend_hopf_section_2026-06-07.tex.
+% Drop-in for Paper 1. Requires in the preamble:
+%   \usepackage{amsmath, amssymb}
+%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
+% Internal cross-references (\ref{...}) point to other sections of the paper;
+%   repoint the placeholder labels to your actual labels:
+%     sec:l2-metric-fibre   -- the L^2 / complex-Hopf section
+%     sec:fanout-boundary   -- the FANOUT-boundary section
+%     sec:monogamy          -- the Mosseri-Dandoloff / C^2+r^2=1 result
+% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
+% British English throughout.
+% =====================================================================
+
+\section{Wigner's friend in the Hopf picture: one state, two charts, and the
+redundancy ladder}
+\label{sec:wigners-friend}
+
+The framework dissolves the Wigner's-friend paradox \autocite{wigner_1961} not by
+adjudicating between the two accounts but by recognising that they are written in
+two charts on a single manifold, selected as the problem requires, much as one
+moves between cylindrical and spherical coordinates without either being the true
+one. The epistemological chart (private, non-clonable, phase-carrying) and the
+ontological chart (clonable, public, record-bearing) are related by the
+\textsc{fanout} boundary (Section~\ref{sec:fanout-boundary}), and that boundary
+is not a sharp wall but a graded one, parametrised by how redundantly a piece of
+relational content has been copied. Read this way, the fact that a \textsc{fanout}
+has occurred for the friend but not for Wigner is not a contradiction to be
+removed; it is the boundary behaving exactly as defined.
+
+Let the system be a qubit $\lvert\psi\rangle_{S}=\alpha\lvert 0\rangle
++\beta\lvert 1\rangle$ and let the friend $F$, idealised, with deliberate
+economy, as a single qubit, measure it in the computational basis. The
+interaction is the controlled coupling that copies $S$'s value into $F$'s
+register: the \textsc{copy} comultiplication of the diagrammatic calculus
+\autocite{CoeckeKissinger2017}, and in the circuit picture the very gate that, in
+the two-qubit Mosseri--Dandoloff geometry \autocite{MosseriDandoloff2001},
+activates the quaternionic Hopf fibration $S^{3}\to S^{7}\to S^{4}$ and carries
+the joint state from the surface of the entanglement ball to its interior. The
+friend and Wigner read the two ends of that plunge.
+
+\subsection{The friend's chart: a \textsc{fanout} of redundancy one}
+\label{sec:wf-friend}
+
+Relative to $F$, the coupling is a \textsc{fanout}: $F$ acquires a fact. What is
+copied is gauge-invariant, the relative phase, the correlation between $F$ and
+$S$, which is a genuine observable. The global phase is never the thing copied:
+there is nothing observable there to duplicate, so the $S^{1}$ fibre of the
+complex Hopf fibration $S^{1}\to S^{3}\to S^{2}$ of
+Section~\ref{sec:l2-metric-fibre} remains $F$'s gauge-private self-ignorance,
+untouched. In Hopf terms the division is clean: the base $S^{2}$ is the clonable
+part (the outcome) and the $S^{1}$ fibre the non-clonable part, so $F$ copies a
+base-point, never a fibre-point. Conditioned on the outcome it reads, $S$ is for
+$F$ a definite point on the Bloch sphere,
+\begin{equation}
+  \rho_{S}^{(F)}=\lvert 0\rangle\langle 0\rvert
+  \quad\text{(given outcome }0\text{)},
+\end{equation}
+a pure state of Bloch radius $r=1$ on the surface of the ball, concurrence $C=0$.
+
+This is a \textsc{fanout}, but the minimal one. The fact $F$ holds is a
+\emph{relative} fact in the sense of relational quantum mechanics
+\autocite{Rovelli1996a}: $S$ definite relative to $F$, not an observer-independent
+record. It is one copy, redundancy $R=1$, and as such it remains reversible by an
+agent who controls the joint system. The single-qubit friend is therefore not
+outside \textsc{fanout}, as a careless reading might suggest; it is the $R=1$
+endpoint of the \textsc{fanout} continuum---a \textsc{fanout} that has happened,
+and a fact that is real for $F$, while being maximally still reversible from
+outside.
+
+\subsection{Wigner's chart: no copy has reached him}
+\label{sec:wf-wigner}
+
+Wigner treats the laboratory as closed and no copy of the relational content has
+reached him. For him the coupling is the unitary
+\begin{equation}
+  \lvert\Psi\rangle
+  =\alpha\lvert 0\rangle\lvert F_{0}\rangle
+  +\beta\lvert 1\rangle\lvert F_{1}\rangle,
+\end{equation}
+the move up to the larger Hilbert space, $\mathbb{C}^{2}\to\mathbb{C}^{4}$,
+$S^{3}\to S^{7}$, complex Hopf to quaternionic Hopf, with the fibre grown from
+$S^{1}$ to $S^{3}$. What $F$ underwent as the acquisition of a fact, Wigner
+describes as correlation deposited into a joint pure state on $S^{7}$. When he
+asks specifically about $S$, he traces $F$ out, and the geometry does the
+bookkeeping:
+\begin{equation}
+  \rho_{S}^{(W)}=\operatorname{Tr}_{F}\lvert\Psi\rangle\langle\Psi\rvert
+  =\lvert\alpha\rvert^{2}\lvert 0\rangle\langle 0\rvert
+  +\lvert\beta\rvert^{2}\lvert 1\rangle\langle 1\rvert,
+  \qquad
+  r=\bigl\lvert\,\lvert\alpha\rvert^{2}-\lvert\beta\rvert^{2}\bigr\rvert,
+  \quad
+  C=2\lvert\alpha\beta\rvert .
+\end{equation}
+Tracing out discards the $S^{3}$ fibre and carries the pure point on $S^{7}$ to a
+mixed point in the interior of the Bloch ball at radius $r=\sqrt{1-C^{2}}$
+\autocite{MosseriDandoloff2001}. The inward displacement is governed by the
+concurrence: it is the relational content that has migrated into the $S$--$F$
+correlation, stored in the recoverable $S^{3}$ fibre. Nothing has been destroyed;
+it has been relocated into the fibre, which is why Wigner can in principle
+interfere the branches and reverse the interaction, the content sits at low
+redundancy and no further copy has fixed it.
+
+\subsection{One state, two charts: \texorpdfstring{$C^{2}+r^{2}=1$}{C2+r2=1}}
+\label{sec:wf-reconciliation}
+
+The system is pure for the friend ($r=1$, on the surface) and mixed for Wigner
+($r<1$, in the interior). These are not rival claims about a single fact; they are
+the friend at the surface and Wigner at the interior of the \emph{same} state on
+$S^{7}$, bound by the Mosseri--Dandoloff constraint
+\begin{equation}
+  C^{2}+r^{2}=1,
+\end{equation}
+in which the discrepancy in Bloch radius is exactly the concurrence Wigner
+retains and the friend has resolved away. This is the Inside/Outside Equivalence
+Principle made concrete, the same law written by the embedded participant and by
+the external observer, and the relativity of facts of relational quantum
+mechanics \autocite{Rovelli1996a} realised in geometry rather than asserted: the
+\textsc{fanout} boundary lies \emph{between} $F$ and $W$, so a fact exists
+relative to $F$ and not relative to $W$. Neither chart is privileged; one reads in
+the epistemological or the ontological chart as the question requires, and their
+mutual incompleteness is a theorem of the construction, not a defect of either.
+
+% =====================================================================
+% Aside: Tsirelson bound and the absence of PR boxes from the ball centre.
+% Slot into subsection \ref{sec:wf-reconciliation}, immediately after the
+% displayed equation C^2 + r^2 = 1.
+% New citation keys (see companion .bib): MosseriDandoloff2001 (already in your
+% bib), VerstraeteWolf2002, Tsirelson1980, PopescuRohrlich1994, Held2021.
+% British English.
+% =====================================================================
+
+\medskip
+\noindent\emph{Aside: the Tsirelson bound and the absence of PR boxes.}
+A ball has a unique centre and no point beyond it. Maximal entanglement sits at
+that centre \autocite{MosseriDandoloff2001}, $r=0$, $C=1$, and because the
+Bloch radius cannot be negative, the concurrence cannot exceed unity. For a
+two-qubit pure state the maximal CHSH correlator is
+\begin{equation}
+  \langle\mathrm{CHSH}\rangle_{\max}=2\sqrt{1+C^{2}}=2\sqrt{2-r^{2}}
+  \autocite{VerstraeteWolf2002},
+\end{equation}
+which the centre maximises to $2\sqrt{2}$, the Tsirelson bound
+\autocite{Cirelson1980QuantumInequality}. A Popescu--Rohrlich box \autocite{PopescuRohrlich1994},
+with CHSH value $4$, would require $C^{2}=3$ and hence $r^{2}=-2$: a point two
+units past the centre, which the ball does not contain. The super-quantum
+correlation is excluded by the very positivity that places maximal entanglement
+at the centre, one cannot trace out to a more-than-maximally-mixed reduced
+state. The Tsirelson bound is in this sense the image, under the CHSH map, of the
+boundedness of the $L^{2}$ state ball derived in
+Section~\ref{sec:l2-metric-fibre}, and the prohibition on PR boxes shares its
+origin with the roundness of the sphere: both trace to the reversible-continuity
+metric, not to a separate principle.
+
+\noindent This is the two-qubit, pure-state face of the bound, and its status is
+worth stating plainly. It exhibits PR correlations as having no representing state
+in the Hilbert geometry, and it recovers the value $2\sqrt{2}$ at the centre; but
+forcing \emph{exactly} $2\sqrt{2}$ as a theorem of the geometry, rather than
+reading it from the known concurrence--CHSH relation, and lifting the argument
+from two qubits to the general Tsirelson bound, remain to be made rigorous. The
+closest cognate in the literature is Held's derivation of the same bound from the
+geometric algebra $G^{3}\cong\mathbb{H}$ \autocite{Held2021}, the same
+quaternionic structure in a different language.
+
+\subsection{The redundancy ladder: from relative fact to objective fact}
+\label{sec:wf-redundancy}
+
+The friend's fact becomes a fact for Wigner only when Wigner copies it when he
+measures $F$. It becomes a fact for a third party only when that party copies it
+from Wigner, and so on up the von Neumann chain. The point at which the content
+stops being negotiable is therefore not a point but a limit: once it has been
+copied into enough mutually independent fragments that many parties can read it
+without disturbing it, no one can practically un-copy it, and it is operationally
+an objective fact. This is exactly quantum Darwinism \autocite{zureck_2009}:
+objectivity is redundancy. It is not an external graft, because the framework's
+account of decoherence already \emph{is} this picture---many fragments each take
+their own copy of the clonable content, while their private phases, each
+fragment's own self-ignorance, fail to add coherently and wash out.
+
+This supplies the grading parameter that \textquote{graded \textsc{fanout}} had left
+unnamed. \textsc{fanout} is graded not because the operation is fuzzy but because
+redundancy $R$ runs continuously: $R=1$ is the single relational copy---the
+friend's relative fact, reversible by Wigner---and $R\gg 1$ is the objective
+fact, effectively irreversible because un-copying it would mean recovering every
+fragment. The single-qubit friend is the $R=1$ endpoint; the macroscopic friend
+is the same operation at large $R$. One axis, two ends. The relation to
+Di~Biagio and Rovelli's distinction \autocite{DiBiagioRovelli2021} is then exact:
+their \emph{stable} facts are the high-$R$ limit and their \emph{relative} facts
+the low-$R$ regime, and the standard conditional-probability law they use to
+define stability is the operational signature of redundancy having grown large.
+Brukner's no-go theorem \autocite{Brukner2021}, that qubits are not observers,
+sits on the same axis without conflict: it bites only against calling an $R=1$
+relative fact an objective one, which the framework never does---the redundancy
+ladder is precisely the structure that separates the relational definiteness a
+single qubit does carry from the objectivity it does not.
+
+The thermodynamics tracks the same axis. The single relational copy is unitary and
+free; the $kT\ln 2$ cost \autocite{Landauer_1961} is incurred not by the friend's
+act but by the amplification and stabilisation that drive $R$ upward, when
+fragments are irreversibly committed. The relative fact is thermodynamically free;
+the objective fact is what costs $kT\ln 2$.
+
+\subsection{Phase promotion, and the bump in the carpet}
+\label{sec:wf-phase-promotion}
+
+One point keeps the load-bearing irrecoverability intact while explaining what
+Wigner can do that the friend cannot. What Wigner recovers is \emph{not} the
+$S^{1}$ self-ignorance; the global phase remains gauge for every observer and that
+circle is spent for good. The quantity the friend resolves away is the relative
+phase between the $\lvert 0\rangle$ and $\lvert 1\rangle$ components, and moving up
+to $\mathbb{C}^{4}$ \emph{promotes} it: the single-qubit relative phase becomes the
+relative phase between $\lvert 0\rangle\lvert F_{0}\rangle$ and
+$\lvert 1\rangle\lvert F_{1}\rangle$, which lives in the recoverable $S^{3}$ fibre
+(itself a circle bundle over $S^{2}$, so the promotion adds a two-sphere of
+relative-phase directions to the lone gauge circle). Gauge phase at one level
+becomes physical, interferable phase one level up---which is why Wigner can run
+the interference experiment the friend cannot. But Wigner now carries his own
+fresh global-phase $S^{1}$ at the top of the joint state: his own irreducible
+self-ignorance. Ascending the tower does not eliminate the self-reference, only
+displaces it one level higher, and the regress up the chain is precisely the
+redundancy ladder of the previous subsection. This is the framework's bump in the
+carpet: each observer sits atop a Hopf tower with a single gauge circle he can
+never see around, and a measurement relocates the next observer's blind circle
+into his own recoverable fibre without ever closing the regress.
+
+Two things I need to highlight here. First, the recoverability Wigner
+enjoys is the low-redundancy limit: for a macroscopic, high-$R$ friend the
+reversal is exponentially hard and the fact is objective for all practical
+purposes, so Wigner's \textquote{no record} is the $R\!\approx\!1$ idealisation of a
+graded boundary, not a free lunch. Second, naming redundancy as the grading
+parameter of \textsc{fanout}, and the phase-promotion reading itself, are
+syntheses of the framework's parts, each rests on established pieces (the
+clonability criterion, quantum Darwinism, the tensor-product promotion of phase)
+but is assembled here, and is offered as the cleanest statement of why the two
+observers never disagree about anything both can check.
+
+% =====================================================================
+% Section: Derivation of the quantum postulates
+% Drop-in for Paper 1. Requires in the preamble:
+%   \usepackage{amsmath, amssymb}
+%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
+% Internal cross-references (\ref{...}) are placeholders; repoint to your labels:
+%     sec:complex-amplitudes -- the self-reference -> negative probability ->
+%                               Shannon -> complex amplitudes derivation
+%     sec:l2-metric-fibre    -- the L^2 / complex-Hopf section
+%     sec:born-rule          -- the U(1)-invariance / minimum-degree section
+%     sec:wigners-friend     -- the Wigner's-friend / FANOUT / redundancy section
+%     sec:wf-reconciliation  -- the Tsirelson / PR-box aside
+% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
+% British English throughout.
+% =====================================================================
+
+\section{Derivation of the quantum postulates}
+\label{sec:postulates}
+We've now assembled enough pieces of the jigsaw to be able to derive the postulates of quantum mechanics
+
+The Dirac--von Neumann postulates are ordinarily laid down as independent
+assumptions. In this framework they are not assumptions but a single chain: each
+follows from the Inside/Outside Equivalence Principle by one move from the
+preceding step. We assemble the chain here and mark the status of each link as
+proved, structural, or still owed, so that no step claims more than it has earned.
+
+The chain begins below the postulates. An embedded observer, required by the
+equivalence principle to describe a totality that includes itself, must assign a
+probability to a proposition about its own future state. The Lawvere--Yanofsky
+diagonal \autocite{Yanofsky2003} and Popper's predictor argument
+\autocite{Popper1950a, Popper1950b} show that no consistent classical assignment
+exists: the self-referential proposition is undecidable to the observer before
+the fact. Representing the result of that undecidable self-prediction forces a
+signed, non-classical probability, which carries the observer's irreducible
+self-ignorance. From this single obstruction the postulates follow.
+
+\paragraph{Postulate 1 (complex Hilbert space).}
+Two independent steps fix the state space. The field is forced first: a signed
+probability, read through the Shannon information measure and analytically
+continued, yields a complex amplitude $S=-\ln\lvert p\rvert-\mathrm{i}\theta$,
+whose phase $\theta$ is the self-referential ignorance
+(Section~\ref{sec:complex-amplitudes}). The metric is forced second, and
+separately: the principle of reversible continuity---that a continuous reversible
+transformation connects any two pure states---selects the $L^{2}$ norm uniquely.
+For every $\ell^{p}$ with $p\neq 2$ the linear isometries are generalised
+permutations \autocite{Banach1932, Lamperti1958}, a group that cannot connect a
+basis state to a superposition; only at $p=2$ is the norm-preserving group
+connected and transitive on the sphere \autocite{Aaronson2004h}, and Hardy's
+operational $K=N^{2}$ counting reaches the same quadratic norm by an independent
+route \autocite{Hardy2001a}. The state manifold is therefore the unit sphere of the
+Hermitian $2$-norm in $\mathbb{C}^{n}$, taken modulo the global phase
+(Section~\ref{sec:l2-metric-fibre}). Placing the metric here, before the Born
+rule rather than after it, is deliberate: the Born derivation presupposes the
+round sphere, so the metric must be anchored independently to avoid circularity.
+Two bounds belong with this step. Reversible continuity fixes the metric, not the
+field---real and quaternionic quantum theory satisfy it equally---so the
+restriction to $\mathbb{C}$ rests on the Shannon step, not on continuity. And
+deriving reversible continuity itself from self-reference is the one arrow the
+chain still owes; until it is closed, continuity enters as a principle, and the
+weight of the $L^{2}$ conclusion is carried jointly with the independent
+isometry and counting arguments.
+
+\paragraph{Postulate 2 (Hermitian observables).}
+A measurement result must be communicable: it must be copyable from one observer
+to another, the \textsc{copy} operation of the diagrammatic calculus
+\autocite{CoeckeKissinger2017}. The imaginary part of the amplitude is the
+private self-referential phase and cannot be broadcast; only the real,
+gauge-invariant content can. Observables whose spectra are real and therefore
+communicable are exactly the self-adjoint operators. Hermiticity is thus the
+condition that a quantity be the kind of thing a measurement can report.
+
+\paragraph{Postulate 3 (Born rule).}
+Outcome probabilities must be invariant under the global phase, the $U(1)$
+self-ignorance, realised geometrically as the $S^{1}$ fibre of the complex Hopf
+fibration $S^{1}\to S^{3}\to S^{2}$ over the Bloch sphere
+\autocite{Hopf1931, Urbantke2003}. There is no $U(1)$-invariant of degree one; the
+lowest-degree invariant is quadratic, so the probability must be
+$p=\lvert\psi\rvert^{2}$ (Section~\ref{sec:born-rule}). The squaring is forced
+rather than merely permitted, and the argument holds for a single qubit, where
+Gleason's theorem is silent. The Born quadratic is not a new structure: it is the
+same $L^{2}$ form that fixed the metric in Postulate~1, now read as the
+normalisation of the round sphere, and the fibre over which the phase is averaged
+has constant length, so the phase is hidden uniformly
+\autocite{GluckWarnerZiller1986}. This step is a structural argument rather than a
+theorem in the strict sense, and is flagged as such.
+
+\paragraph{Postulate 4 (state reduction).}
+Measurement is a \textsc{fanout}: the gauge-invariant relational content is copied
+into a record, converting a private epistemological amplitude into a public
+fact. For the observer who performs it, acquiring that fact is Bayesian updating,
+and the projection postulate is its expression. The reduction is perspectival---a
+fact relative to the observer in the sense of relational quantum mechanics
+\autocite{Rovelli1996a}---and it is graded by redundancy. A single copy is a
+relative fact, still reversible by an agent controlling the joint system; redundant
+proliferation across many independent fragments makes the fact objective, which is
+quantum Darwinism \autocite{zurek_2009} and the stable/relative-fact distinction of
+Di~Biagio and Rovelli \autocite{DiBiagioRovelli2021}. \textquote{Collapse} and unitary
+evolution are then the two charts---inside and outside the \textsc{fanout}
+boundary---of one process, as the Wigner's-friend analysis shows
+(Section~\ref{sec:wigners-friend}); the irreversibility and its $kT\ln 2$ cost
+\autocite{Landauer_1961, wigner_1961} accrue with redundancy rather than at the
+single act. The reduction postulate is therefore recovered as a chart-dependent
+description, not a fundamental dynamical law; the identification of redundancy as
+the grading parameter is a synthesis of the framework's parts and is flagged as
+such.
+
+\paragraph{Postulate 5 (unitary evolution).}
+Conservation of probability is preservation of the $L^{2}$ inner product, and the
+inner-product-preserving linear maps are the unitaries $U(n)$---the same
+isometry fact that fixed the metric in Postulate~1. Continuity in time together
+with Stone's theorem gives $U(t)=\mathrm{e}^{-\mathrm{i}Ht}$, the Schr\"odinger
+equation. Reversibility is here a corollary, not a premise: bare reversibility on
+the amplitude space yields only the general linear group, and it is preservation
+of the quadratic form that carves $U(n)$ out of it.
+
+\paragraph{Postulate 6 (composite systems).}
+Systems combine by the tensor product because the division-algebra norm is
+multiplicative \autocite{hurwitz_1898}: composition preserves the $L^{2}$ structure
+only if states multiply. Cayley--Dickson doubling carries $\mathbb{C}$ to the next
+rung, and the ascent of the Hilbert space is the ascent of the Hopf tower, complex
+to quaternionic, used in the Wigner's-friend construction
+\autocite{MosseriDandoloff2001}.
+
+\paragraph{Consequence (the Tsirelson bound).}
+The postulates fix not only the form of the theory but the strength of its
+correlations. In the two-qubit ball the maximal entanglement sits at the centre,
+and a Popescu--Rohrlich box \autocite{PopescuRohrlich1994} would require a point
+beyond it; the CHSH correlator is capped at $2\sqrt{2}$
+\autocite{Cirelson1980QuantumInequality, VerstraeteWolf2002, Held2021}, with the value recovered
+at the centre and its general derivation still owed
+(Section~\ref{sec:wf-reconciliation}).
+
+\medskip
+\noindent The result is that the six postulates are one chain, not six premises.
+Of the links, the field and the Born quadratic rest on the framework's signed
+probability and $U(1)$-invariance arguments; the $L^{2}$ metric, the unitary group
+and the tensor product are over-determined by reversible continuity, the isometry
+classification and Hurwitz composition; state reduction is recovered as the
+chart-relative face of \textsc{fanout}. The two outstanding debts are the
+derivation of reversible continuity from self-reference and the forcing of the
+Tsirelson value as a theorem rather than a recovered number---named here so that a
+reader can see exactly where the chain is complete and where it is not.
+
 \section{outline notes}
 List articles on negative probability in general
 List articles on negative probability and QM.
