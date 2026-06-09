@@ -1,7 +1,14 @@
 \documentclass{article}
 \usepackage{hyperref}
 \usepackage{amsmath, amssymb, amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
 \setlength{\parindent}{3ex}
 %Includes "References" in the table of content
 \usepackage[nottoc]{tocbibind}
@@ -1378,6 +1385,272 @@ A second debt is shared with every programme of this character and is not closed
 
 The entanglement-sensitivity of the Hopf maps is not a side feature but the hinge of the physical reading that follows. Because separability is exactly the collapse of the base to a product of Bloch spheres, the structure of the entanglement --- and in particular the SLOCC class of a multi-qubit state --- is carried by precisely the degrees of freedom on which $G_{\mathrm{SM}}$ acts in Proposition~\ref{prop:gsm}. This is what makes it possible, in \S\ref{sec:entanglement-classes}, to read the inequivalent entanglement classes of three qubits directly onto the $\mathbb{C} \oplus \mathbb{C}^3$ split: the genuinely tripartite GHZ class onto the colour-triplet $\mathbb{C}^3$ sector, the distributed W class onto the $\mathbb{C}$ singlet, recovering the quark--lepton division not as an assignment but as a consequence of the entanglement structure. The Hopf fibrations are the bridge; the entanglement classes, treated next, are the traffic that crosses it.
 
+% =====================================================================
+%  Section: Entanglement Classes and Gauge Groups
+%  Paper 1, "It from Bit via Gödel"
+%  Drafted 2026-06-08. Follows \S sec:hopf-justification directly.
+%  Supersedes entanglement_classes_section_2026-06-08.tex.
+%
+%  \input fragment. Assumes biblatex/\autocite, amsthm `proposition',
+%  `lemma', `proof'. Bib (RIS-sourced) keys live in the project library;
+%  new keys this turn: borsten2009blackholes, duff2007string
+%  (delivered in duff_refs_2026-06-08.ris).
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:hopf-justification        -- previous section
+%    prop:gsm, prop:termination    -- results from the previous section
+%    app:ghz-proof, app:w-proof    -- Paper-1 appendices (written next turn)
+%    sec:register, sec:charges     -- forward (register / quantum numbers)
+%    sec:generations, sec:masses   -- forward
+%
+%  NOTE: no G_2 root-length content appears here; that was a project-document
+%  correction only and is not part of the paper's chain of reasoning.
+%  Paper split: Paper-1 carries full theorem derivations (appendices);
+%  Paper-2 takes up the residual spacetime-level problems.
+% =====================================================================
+
+\section{Entanglement Classes and Gauge Groups}
+\label{sec:entanglement-classes}
+
+The previous section established that the division-algebra ladder forces exactly three nontrivial
+Hopf fibrations, $S^3 \to S^2$, $S^7 \to S^4$ and $S^{15} \to S^8$, with fibres $S^1$, $S^3$ and
+$S^7$, and that fixing a complex direction inside the octonions leaves the Standard Model gauge
+group as the stabiliser in $\mathrm{Spin}(9)$ (Proposition~\ref{prop:gsm}). This section asks where,
+in the entanglement of a three-qubit state, the three gauge groups actually live. The answer is
+clean for the first two and forces a genuine question for the third, and it is that question --- and
+its resolution through the two classes of tripartite entanglement --- that the section is about.
+
+\subsection{From fibres to groups, and where the pattern breaks}
+
+For the first two rungs the identification needs no interpretation, because the fibre simply
+\emph{is} the gauge group. The fibre of the first Hopf fibration is $S^1$, the unit circle in the
+complex plane; as a group the unit complex numbers are exactly $U(1)$, the gauge group of
+electromagnetism. The fibre of the second is $S^3$, the unit sphere in the quaternions; the unit
+quaternions form the group $\mathrm{Sp}(1) \cong SU(2)$, the gauge group of the weak interaction.
+So the abelian phase $U(1)$ and the non-abelian $SU(2)$ are not analogues of the Hopf fibres --- they
+are those fibres, read as groups. A reader from quantum computation will recognise $S^1$ as the
+global phase of a single qubit and $S^3 \cong SU(2)$ as the group of single-qubit unitaries --- the
+Bloch-sphere rotations; a reader from gauge theory will recognise the two smallest gauge groups.
+
+The pattern then breaks, and it is important to be clear about why, because the break is what makes
+the rest of the section necessary. The fibre of the third, octonionic, Hopf fibration is $S^7$, the
+unit sphere in the octonions. But the unit octonions are \emph{not a group}: octonionic
+multiplication is non-associative, so $S^7$ does not close into a Lie group at all --- it is a
+Moufang loop, not a group. There is therefore no statement ``$S^7 \cong SU(3)$'' to be written down
+in parallel with $S^1 \cong U(1)$ and $S^3 \cong SU(2)$. The third gauge group cannot be the fibre.
+
+This is not a defect to be patched but a signpost. The previous section already located the only
+candidate: $SU(3)$ is the subgroup of $G_2 = \mathrm{Aut}(\mathbb{O})$ that stabilises a complex
+direction, equivalently the split $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$
+(Proposition~\ref{prop:gsm}). That tells us the group is available; it does not tell us where in the
+physics it acts. Because $S^7$ is not itself a group, $SU(3)$ must enter not as the fibre but as a
+symmetry of the \emph{structure carried on} the third rung --- and the structure carried there is the
+entanglement of the three-qubit state. Two questions follow, and they are the questions this section
+answers. First: can the colour $SU(3)$ be located in the entanglement of three qubits, and if so in
+which class --- the GHZ class or the W class? Second: does the split between those two classes, the
+only two kinds of genuinely tripartite entanglement, map onto the two matter sectors that colour
+distinguishes, namely the coloured quarks and the colourless leptons?
+
+These are not idle questions, and they are not new ones. Szangolies has already established part of
+the gauge-group link from the representation-theoretic side \autocite{szangolies_2025};
+Filatov and Auzinsh have shown that bipartite entanglement carries an intrinsic chirality of the
+kind the weak $SU(2)$ exhibits \autocite{Filatov2024EntanglementStructure}; and, for well over a decade, Duff and
+collaborators at Imperial College have pursued deep correspondences between multipartite
+entanglement and string and brane physics \autocite{duff2007string,borsten2009blackholes}. We take
+up the pedigree below and then turn the questions into theorems.
+
+\subsection{Chirality is already present in bipartite entanglement}
+
+Before the tripartite case, a structural observation about the bipartite one, because it bears on
+the weak sector that sits on the $S^3 \cong SU(2)$ rung. Filatov and Auzinsh showed that a pure
+maximally entangled two-qubit state cannot be drawn on two Bloch spheres of the same handedness:
+representing the entanglement faithfully requires the coordinate axes of one sphere to be
+right-handed and those of the other left-handed \autocite{Filatov2024EntanglementStructure}. Handedness is thus
+not an artefact of how one chooses to draw the state; it is forced by the entanglement, and it is a
+topological fact about the quaternionic Hopf fibration --- the same fibration whose fibre is the weak
+$SU(2)$.
+
+The weak interaction is, famously, the one sector of the Standard Model that is chiral: it couples
+to left-handed fermions and not to their right-handed counterparts, and that chirality is usually
+treated as an empirical input with no structural explanation. It is therefore at least suggestive
+that chirality should appear, unbidden and forced, in the simplest entangled state of the very rung
+that carries $SU(2)$. We draw no specific derivation from this here --- the mechanism that turns the
+Filatov handedness into the physical left-handedness of the weak force belongs to the later
+discussion of the register and of generations --- but we record it as a structural encouragement for
+a programme that proposes to read gauge content off entanglement, and we will return to it.
+
+\subsection{The two classes of tripartite entanglement}
+
+Three qubits admit exactly two inequivalent classes of genuinely tripartite entanglement under
+stochastic local operations and classical communication: the GHZ class and the W class
+\autocite{durvidalcirac2000three}. Every natural invariant separates them. The three-tangle is
+maximal on GHZ and identically zero on W \autocite{coffmankunduwootters2000distributed}; tracing
+out one qubit of a GHZ state leaves the other two separable, while the same operation on a W state
+leaves them entangled. Coecke and Kissinger gave the distinction an algebraic form: GHZ-class states
+carry a \emph{special} commutative Frobenius algebra and W-class states an \emph{anti-special} one,
+the two differing in a purely topological way \autocite{coeckekissinger2010compositional}. Those two
+Frobenius structures are the primitives of a calculus expressive enough to build arbitrary $N$-qubit
+states, so the entanglement alphabet, like the division-algebra ladder, closes at three: there is no
+third primitive to find, just as there is no fourth division algebra (Proposition~\ref{prop:termination}).
+
+That there are exactly two genuinely tripartite classes, and exactly two matter sectors that colour
+distinguishes, is the coincidence the rest of the section makes precise.
+
+\subsection{The map into the octonion algebra}
+
+We use the identification of a three-qubit state $\psi \in \mathbb{C}^8$ with a pair of octonions
+$(o_1, o_2) \in \mathbb{O}^2$, obtained by splitting on the first qubit under the Cayley--Dickson
+correspondence, together with the octonionic Hopf map $\mathbf{h} = o_1\bar{o}_2$. Fixing the
+preferred complex direction $e_1$ gives the split $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$,
+with $\mathbb{C} = \{e_0, e_1\}$ the singlet direction and $\mathbb{C}^3 = \{e_2,\dots,e_7\}$ the
+colour-triplet sector carrying the $\mathbf{3} \oplus \bar{\mathbf{3}}$ of the $SU(3)$ of
+Proposition~\ref{prop:gsm}. Everything below turns on one identity.
+
+\begin{lemma}[The $\mathbb{C}$-projection is a Hermitian inner product]\label{lem:cproj}
+The projection of $\mathbf{h}$ onto the $\mathbb{C} = \{e_0,e_1\}$ summand is
+$\pi_{\mathbb{C}}(\mathbf{h}) = \overline{\langle o_1, o_2\rangle_{\mathbb{C}^4}}$, the conjugate of
+the standard Hermitian inner product of the two first-qubit branches. Hence
+$\pi_{\mathbb{C}}(\mathbf{h}) = 0$ if and only if those branches are $\mathbb{C}^4$-orthogonal.
+\end{lemma}
+
+The lemma is checked on basis pairs using the Fano multiplication rules \autocite{baez_2002};
+the composition-algebra identity $|\mathbf{h}|^2 = |o_1|^2|o_2|^2$, which holds on $\mathbb{O}$ and no
+larger Cayley--Dickson algebra, makes the $\mathbb{C}$-fraction
+$C_{\mathrm{frac}} = |\pi_{\mathbb{C}}(\mathbf{h})|^2/|\mathbf{h}|^2$ a well-defined local invariant.
+The direction $e_1$ is the unique one along which the relevant subalgebra is commutative, which is
+exactly what the GHZ cancellation below requires.
+
+\subsection{GHZ states are confined to the colour sector}
+
+\begin{proposition}[GHZ confinement]\label{prop:ghz}
+For every state in the local-unitary orbit of $\lvert\mathrm{GHZ}\rangle$, the $\mathbb{C}$-projection
+of the Hopf image vanishes identically, so the image lies entirely in the colour-triplet sector
+$\mathbb{C}^3 = \mathbf{3}\oplus\bar{\mathbf{3}}$, symmetrically under each of the three qubit splits.
+Among genuinely tripartite states, vanishing $\mathbb{C}$-projection under every split characterises
+the GHZ class.
+\end{proposition}
+
+\emph{Proof outline.} By Lemma~\ref{lem:cproj} it is enough that the branches are orthogonal for
+every local-unitary image. The bare GHZ state has orthogonal branches of \emph{equal} norm
+($\rho_k = \tfrac12\mathbb{I}$ for each $k$); the internal unitaries preserve orthogonality and equal
+norms, and the first-qubit unitary mixes the branches with an inner product that evaluates to
+$-\bar a\bar b\cdot\tfrac12 + \bar b\bar a\cdot\tfrac12 = 0$, the cancellation holding because
+$\mathbb{C}$ is commutative. The full derivation --- the converse, and the symmetry across all three
+splits --- is given in Appendix~\ref{app:ghz-proof}. \hfill$\square$
+
+The cancellation is exact; over random local-unitary samples the $\mathbb{C}$-fraction sits at
+machine zero. Two consequences are proved rather than conjectured. Confinement is topological:
+the $\mathbb{C}$-projection is continuous and identically zero on the GHZ stratum but generically
+nonzero on the W stratum, so it is a discrete invariant of the class and no continuous parameter can
+carry a colour triplet into the lepton sector. And the QCD vacuum angle vanishes: the GHZ image has
+no oriented pairwise linking structure to orient a $\theta\,\mathrm{Tr}(G\wedge G)$ term, so
+$\theta_{\mathrm{QCD}} = 0$ is forced and no Peccei--Quinn axion is admitted. The reading is
+GHZ $\leftrightarrow$ colour triplet $\leftrightarrow$ quark.
+
+\subsection{W states reach the lepton sector and carry the weak doublet}
+
+\begin{proposition}[W accessibility]\label{prop:w-access}
+For states in the local-unitary orbit of $\lvert\mathrm{W}\rangle$, the $\mathbb{C}$-projection of the
+Hopf image is generically nonzero, vanishing only on a measure-zero subset, with
+$\sup C_{\mathrm{frac}} = \tfrac19$.
+\end{proposition}
+
+\begin{proposition}[W carries the $SU(2)$ doublet]\label{prop:w-doublet}
+Each single-qubit reduced state of a W-class state is supported on a two-dimensional subspace
+carrying the fundamental representation of $SU(2)$, with spectrum $(\tfrac23,\tfrac13)$: an
+$SU(2)$-invariant singlet background plus a traceless component transforming as a doublet,
+symmetrically across the three qubits.
+\end{proposition}
+
+\emph{Proof outline.} The W branches are orthogonal but of \emph{unequal} norm,
+$\lvert o_1\rvert^2 = \tfrac23$, $\lvert o_2\rvert^2 = \tfrac13$, so the same mixing computation
+leaves a residue $\langle o_1,o_2\rangle = -\tfrac13\bar a\bar b$, vanishing only when the
+first-qubit unitary is diagonal or anti-diagonal; the supremum follows by maximising the exact
+expression for $C_{\mathrm{frac}}$. The doublet statement is immediate from the spectrum, the only
+faithful two-dimensional representation of $SU(2)$ being the fundamental. Full derivations are in
+Appendix~\ref{app:w-proof}. \hfill$\square$
+
+The contrast with GHZ is entirely in the branch norms: equal norms force the cancellation, unequal
+norms leave a residue. The reading is W $\leftrightarrow$ colour singlet $\leftrightarrow$ lepton,
+organised into weak-isospin doublets. Which of the two quaternionic actions, $SU(2)_L$ or $SU(2)_R$,
+becomes physical weak isospin --- and how the Filatov handedness of \S\ref{sec:entanglement-classes}
+becomes physical left-handedness --- is fixed by the structure of the full register, and we defer it
+to \S\ref{sec:register}.
+
+\subsection{The dictionary}
+
+Collecting the strands gives the correspondence between entanglement structure and gauge content,
+the upper rows established in the previous section and the lower two the content of
+Propositions~\ref{prop:ghz}--\ref{prop:w-doublet}.
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Entanglement & Division algebra & Hopf fibre & Standard Model \\
+\hline
+separable & $\mathbb{C}$ & $S^1 \cong U(1)$ & electromagnetic phase \\
+Bell (two-qubit) & $\mathbb{H}$ & $S^3 \cong SU(2)$ & weak isospin \\
+GHZ (special) & $\mathbb{O}$, $\mathbb{C}^3$ sector & $S^7$ & $SU(3)$ colour / quarks (confined) \\
+W (anti-special) & $\mathbb{O}$, $\mathbb{C}$ sector & $S^7$ & colour singlets / leptons (free) \\
+\hline
+\end{tabular}
+\end{center}
+
+The first two rows are group identities; the lower two are not, precisely because $S^7$ is not a
+group, and that is why they required the theorems above rather than a one-line reading of the fibre.
+The two octonionic rows share the same fibre and are separated only by entanglement class: GHZ
+confined to $\mathbb{C}^3$, W reaching $\mathbb{C}$.
+
+\subsection{Prior work: Szangolies, and the Imperial programme}
+\label{sec:entanglement-szangolies}
+
+The overlap with existing work is worth stating precisely, because the convergence is itself
+evidence. Szangolies obtains the same lepton/quark split directly from the representation theory of
+the $\mathrm{Spin}(9)$ stabiliser: the octonionic spinor decomposes into a leptonic part from the
+$\mathbb{C}$ factor, an $SU(3)$ singlet of hypercharge $-1$, and a quark part from $\mathbb{C}^3$, an
+$SU(3)$ triplet of hypercharge $\tfrac13$, both $SU(2)$ doublets \autocite{szangolies_2025}.
+This is reached with no reference to entanglement classes; the state is treated as carrying a
+generation wholesale, and the split is a fact about the gauge group acting on
+$\mathbb{C}\oplus\mathbb{C}^3$. Our result is complementary: where Szangolies fixes the representation
+content of each summand, Propositions~\ref{prop:ghz} and~\ref{prop:w-access} fix \emph{which states
+populate which summand}, by their SLOCC class. The lepton/quark division he assigns by representation
+theory we obtain as a consequence of entanglement type, and his independent arrival from the gauge
+side is the strongest external check that the identification is not an artefact of our route.
+
+The longer pedigree matters too, because the idea that multipartite entanglement encodes the
+structures of fundamental physics is not new and has been pursued by senior researchers for well over
+a decade. Duff and collaborators at Imperial College developed an extended correspondence between
+multipartite entanglement and string and brane physics --- the ``black holes, qubits and octonions''
+programme --- in which the entropy of certain stringy black holes is governed by entanglement
+measures, the three-qubit GHZ, W and biseparable classification appears on the black-hole side, and
+the octonions enter through the Fano plane and the exceptional group $E_7$
+\autocite{duff2007string,borsten2009blackholes}. That programme sits in a gravitational and
+string-theoretic setting quite different from the present one, and it draws no Standard-Model
+gauge-group conclusion of the kind sought here; but it establishes that the appearance of qubit
+entanglement, division algebras and the same three-qubit classification at the foundations of physics
+is a direction taken seriously, independently, by others. What we add is the application of that
+classification directly to the gauge sectors of the Standard Model, as theorems rather than analogies.
+
+\subsection{What is settled, and what comes next}
+
+What is settled in this section, with the full derivations carried into the appendices of this paper:
+GHZ confinement to $\mathbb{C}^3$ (Proposition~\ref{prop:ghz}, Appendix~\ref{app:ghz-proof}); W
+accessibility of $\mathbb{C}$ and the $SU(2)$ doublet content of W
+(Propositions~\ref{prop:w-access}--\ref{prop:w-doublet}, Appendix~\ref{app:w-proof}); the topological
+character of confinement; and $\theta_{\mathrm{QCD}} = 0$. These rest only on the composition-algebra
+identity and the local-unitary invariance of single-qubit spectra, with no free parameters. The two
+questions posed at the outset are answered: the colour $SU(3)$ is found in the entanglement of the
+three-qubit state, in the GHZ class, exactly because $S^7$ is not a group and the gauge content must
+be carried structurally; and the GHZ/W split does map onto the quark/lepton division.
+
+What remains is to make the carrier explicit. The dictionary identifies which entanglement class is
+which kind of particle, but not yet how a single particle's three gauge charges sit together, how its
+electric charge, weak isospin, hypercharge and colour are read off, or how the Filatov handedness
+becomes physical chirality. Those are the business of the next sections: the three-qubit register and
+the quantum numbers read from it (\S\ref{sec:register}, \S\ref{sec:charges}), the three generations
+(\S\ref{sec:generations}), and the masses (\S\ref{sec:masses}). The residual questions that are
+properly spacetime-level --- among them the dynamical content of confinement --- are taken up in
+Paper~2, alongside the spacetime discussion to which they belong.
 \printbibliography
 
 \end{document}
