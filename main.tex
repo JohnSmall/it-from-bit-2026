@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{hyperref}
+\usepackage[toc,page,title]{appendix}
 \usepackage{amsmath, amssymb, amsthm}
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
@@ -1651,6 +1652,320 @@ the quantum numbers read from it (\S\ref{sec:register}, \S\ref{sec:charges}), th
 (\S\ref{sec:generations}), and the masses (\S\ref{sec:masses}). The residual questions that are
 properly spacetime-level --- among them the dynamical content of confinement --- are taken up in
 Paper~2, alongside the spacetime discussion to which they belong.
+
+% =====================================================================
+%  Appendices: full proofs for "Entanglement Classes and Gauge Groups"
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%
+%  USAGE. The main preamble loads:  \usepackage[toc,page,title]{appendix}
+%  This file is self-wrapping: \input it at the very end of the document
+%  (after the bibliography) and the three appendices render as A, B, C
+%  under an "Appendices" heading. Do NOT also use the bare \appendix
+%  switch -- the appendices environment below handles the counter.
+%
+%  >>> MULTIPLE APPENDIX FILES <<<
+%  If you later add further appendix files, DELETE the two marked wrapper
+%  lines below (\begin{appendices} / \end{appendices}) from every appendix
+%  file, and instead wrap all your appendix \input lines in a single
+%  \begin{appendices} ... \end{appendices} in the main document, so the
+%  A/B/C numbering and the "Appendices" title run once across all of them.
+%
+%  Assumes biblatex/\autocite and amsthm `lemma', `proposition',
+%  `corollary', `proof' (see preamble note: \newtheorem lines + amsthm).
+%  If hyperref is loaded, the \texorpdfstring wrappers keep the
+%  bookmarks clean; drop them if hyperref is absent.
+%
+%  Cross-references to the main text:
+%    lem:cproj      -- the C-projection lemma (stated there, proved here)
+%    prop:ghz       -- GHZ confinement
+%    prop:w-access  -- W accessibility
+%    prop:w-doublet -- W carries the SU(2) doublet
+%    prop:gsm       -- G_SM as the Spin(9) stabiliser (Hopf-justification section)
+% =====================================================================
+
+\begin{appendices}   % <<< WRAPPER LINE 1 of 2 -- delete if using multiple appendix files
+
+\section{Octonionic Setup and the \texorpdfstring{$\mathbb{C}$}{C}-Projection Lemma}
+\label{app:setup}
+
+This appendix fixes the octonionic machinery used by the proofs of
+Appendices~\ref{app:ghz-proof} and~\ref{app:w-proof} and gives the full proof of the
+$\mathbb{C}$-projection lemma stated as Lemma~\ref{lem:cproj} in the main text.
+
+\subsection{Octonions and the composition identity}
+
+Let $\mathbb{O} = \operatorname{span}_{\mathbb{R}}\{e_0,\dots,e_7\}$ with $e_0 = 1$, imaginary units
+$e_i^2 = -1$ multiplying by the Fano-plane rules \autocite{baez_2002}, conjugation
+$\bar o = x_0 - \sum_{i\ge1} x_i e_i$, and norm $|o|^2 = o\bar o = \bar o o$. The single structural
+fact we use repeatedly is that $\mathbb{O}$ is a composition algebra,
+\begin{equation}
+  |ab|^2 = |a|^2\,|b|^2 \qquad \text{for all } a,b \in \mathbb{O}.
+  \label{eq:composition}
+\end{equation}
+This holds for $\mathbb{R},\mathbb{C},\mathbb{H},\mathbb{O}$ and for no larger Cayley--Dickson
+algebra; it survives the non-associativity of $\mathbb{O}$ and is why the construction terminates
+there.
+
+\subsection{The computability split}
+
+Fix the imaginary unit $e_1$ as the preferred complex direction. It selects a subalgebra
+$\mathbb{C} = \operatorname{span}_{\mathbb{R}}\{e_0,e_1\}$ and an $\mathbb{R}$-linear decomposition
+$\mathbb{O} \cong \mathbb{C}\oplus\mathbb{C}^3$, where $\mathbb{C}^3 =
+\operatorname{span}_{\mathbb{R}}\{e_2,\dots,e_7\}$ is made a three-dimensional complex space by
+right-multiplication by $e_1$. The stabiliser of $e_1$ in $\operatorname{Aut}(\mathbb{O}) = G_2$
+is $SU(3)$ acting on $\mathbb{C}^3$ as the fundamental, giving
+$\mathbb{O} \cong \mathbf{1}\oplus\mathbf{1}\oplus\mathbf{3}\oplus\bar{\mathbf{3}}$, with the two
+singlets spanning $\mathbb{C}$ (Proposition~\ref{prop:gsm}).
+
+\subsection{The Cayley--Dickson map and the Hopf map}
+
+A three-qubit state $\psi\in\mathbb{C}^8$ has components $\psi_{ijk}$, $i,j,k\in\{0,1\}$. Splitting
+on the first qubit gives two vectors in $\mathbb{C}^4$,
+\begin{equation}
+  \psi_0 = (\psi_{000},\psi_{001},\psi_{010},\psi_{011}), \qquad
+  \psi_1 = (\psi_{100},\psi_{101},\psi_{110},\psi_{111}),
+\end{equation}
+each identified with an octonion by sending the real part of the $k$-th complex component to $e_{2k}$
+and the imaginary part to $e_{2k+1}$ ($k=0,1,2,3$). This $\mathbb{R}$-linear isomorphism
+$\mathcal{C}:\mathbb{C}^8\to\mathbb{O}^2$, $\psi\mapsto(o_1,o_2)$, is constructed precisely so that
+the standard Hermitian inner product on each $\mathbb{C}^4$ factor agrees with the one induced from
+$\mathbb{O}$ through $e_1$. The octonionic Hopf map is
+\begin{equation}
+  h(o_1,o_2) = \bigl(2\,o_1\bar o_2,\ |o_1|^2-|o_2|^2\bigr)\in\mathbb{O}\oplus\mathbb{R},
+\end{equation}
+and we study its $\mathbb{O}$-valued part $\mathbf{h} := o_1\bar o_2$ and the scalar
+$\pi_{\mathbb{C}}(\mathbf{h}) := h_0 + e_1 h_1 \in \mathbb{C}$, the projection of $\mathbf{h}$ onto
+the $\{e_0,e_1\}$ summand.
+
+\subsection{Proof of the \texorpdfstring{$\mathbb{C}$}{C}-projection lemma}
+
+\begin{proof}[Proof of Lemma~\ref{lem:cproj}]
+Write $o_1 = \sum_a u_a e_a$ and $o_2 = \sum_b v_b e_b$ with $u_a,v_b\in\mathbb{R}$. By
+$\mathbb{R}$-bilinearity of the octonion product,
+\begin{equation}
+  \mathbf{h} = o_1\bar o_2 = \sum_{a,b} u_a v_b\, e_a \bar e_b,
+\end{equation}
+so the $\{e_0,e_1\}$ component of $\mathbf{h}$ is the sum of those terms $u_a v_b\,e_a\bar e_b$ for
+which $e_a\bar e_b \in \operatorname{span}\{e_0,e_1\}$. With $\bar e_b = -e_b$ for $b\ge1$ and
+$\bar e_0 = e_0$, the Fano rules give $e_a\bar e_b\in\operatorname{span}\{e_0,e_1\}$ exactly when the
+index pair $\{a,b\}$ is one of
+\begin{equation}
+  \{0,1\},\quad \{2,3\},\quad \{4,5\},\quad \{6,7\},
+  \label{eq:pairs}
+\end{equation}
+that is, exactly when $a$ and $b$ index the real and imaginary parts of the same $\mathbb{C}^4$
+component under the identification of the previous subsection. (Any pair from two different
+$\mathbb{C}^4$ components multiplies into one of $e_2,\dots,e_7$, by the Fano structure of the lines
+through $e_1$; those terms land in $\mathbb{C}^3$ and do not contribute to $\pi_{\mathbb{C}}$.)
+
+For each pair in~\eqref{eq:pairs}, group the contributions. Writing the $k$-th complex components as
+$(o_1)_k = u_{2k} + e_1 u_{2k+1}$ and $(o_2)_k = v_{2k} + e_1 v_{2k+1}$, the four diagonal pairs
+assemble into
+\begin{equation}
+  \pi_{\mathbb{C}}(\mathbf{h}) = \sum_{k=0}^{3} \overline{(o_1)_k}\,(o_2)_k
+  = \overline{\sum_{k=0}^{3} (o_2)_k\,\overline{(o_1)_k}}\,
+  \quad\Longrightarrow\quad
+  \pi_{\mathbb{C}}(\mathbf{h}) = \overline{\langle o_1,o_2\rangle_{\mathbb{C}^4}},
+\end{equation}
+where $\langle o_1,o_2\rangle_{\mathbb{C}^4} = \sum_k \overline{(o_1)_k}\,(o_2)_k$ is the standard
+Hermitian inner product (the conjugation arising because $\mathbf{h} = o_1\bar o_2$ carries the
+conjugate on the second factor). The signs from the Fano table are precisely those that make the
+$e_0$ part the real part and the $e_1$ part the imaginary part of this inner product; the explicit
+sign bookkeeping for the line $(1,6,7)$ is given in the remark of Appendix~\ref{app:ghz-proof}.
+\end{proof}
+
+\begin{corollary}\label{app:cor:cproj}
+$\pi_{\mathbb{C}}(\mathbf{h}) = 0$ if and only if the branches $o_1,o_2$ are
+$\mathbb{C}^4$-orthogonal. By~\eqref{eq:composition}, $|\mathbf{h}|^2 = |o_1|^2|o_2|^2$, so the
+$\mathbb{C}$-fraction
+$C_{\mathrm{frac}}(\psi) = |\pi_{\mathbb{C}}(\mathbf{h})|^2/|\mathbf{h}|^2$ is a well-defined
+local invariant wherever $\mathbf{h}\neq0$.
+\end{corollary}
+
+\section{Proof of GHZ Confinement}
+\label{app:ghz-proof}
+
+We restate Proposition~\ref{prop:ghz}: for every state in the local-unitary orbit of
+$\lvert\mathrm{GHZ}\rangle = (\lvert000\rangle+\lvert111\rangle)/\sqrt2$, the
+$\mathbb{C}$-projection of the Hopf image vanishes, so the image lies entirely in
+$\mathbb{C}^3 = \mathbf{3}\oplus\bar{\mathbf{3}}$, symmetrically under each of the three qubit
+splits; and, among genuinely tripartite states, this characterises the GHZ class.
+
+\subsection{The forward direction}
+
+\begin{proof}[Proof of Proposition~\ref{prop:ghz}, forward direction]
+By Corollary~\ref{app:cor:cproj} it suffices to show $\langle o_1,o_2\rangle_{\mathbb{C}^4} = 0$ for
+every local-unitary image of $\lvert\mathrm{GHZ}\rangle$, under each split.
+
+\emph{Initial data.} Splitting the bare state on the first qubit gives
+$\psi_0 = \tfrac1{\sqrt2}(1,0,0,0)$ and $\psi_1 = \tfrac1{\sqrt2}(0,0,0,1)$, which are orthogonal in
+$\mathbb{C}^4$ with equal norms $|\psi_0|^2 = |\psi_1|^2 = \tfrac12$.
+
+\emph{Internal unitaries.} The factor $U_2\otimes U_3$ acts unitarily on the $\mathbb{C}^4$ encoding
+qubits two and three, so the rotated branches $\varphi_0 = (U_2\otimes U_3)\psi_0$ and
+$\varphi_1 = (U_2\otimes U_3)\psi_1$ retain $\langle\varphi_0,\varphi_1\rangle = 0$ and
+$|\varphi_0|^2 = |\varphi_1|^2 = \tfrac12$.
+
+\emph{First-qubit mixing.} Writing $U_1 = \begin{psmallmatrix} a & b \\ -\bar b & \bar a\end{psmallmatrix}$
+with $|a|^2+|b|^2=1$, the branches become $o_1 = a\varphi_0 + b\varphi_1$ and
+$o_2 = -\bar b\varphi_0 + \bar a\varphi_1$. Using conjugate-linearity in the first argument,
+\begin{align}
+  \langle o_1,o_2\rangle
+  &= -\bar a\bar b\,|\varphi_0|^2 + \bar a^2\langle\varphi_0,\varphi_1\rangle
+     - \bar b^2\langle\varphi_1,\varphi_0\rangle + \bar b\bar a\,|\varphi_1|^2 \notag\\
+  &= \bar a\bar b\bigl(|\varphi_1|^2 - |\varphi_0|^2\bigr)
+     + \bar a^2\langle\varphi_0,\varphi_1\rangle - \bar b^2\langle\varphi_1,\varphi_0\rangle.
+  \label{eq:general-ip}
+\end{align}
+With $\langle\varphi_0,\varphi_1\rangle = 0$ and $|\varphi_0|^2 = |\varphi_1|^2$, every term
+vanishes, so $\langle o_1,o_2\rangle = 0$ for all $U_1$. The single surviving term in the
+equal-norm case would be $\bar a\bar b(|\varphi_1|^2-|\varphi_0|^2)$, and it cancels precisely
+because the norms are equal --- equivalently, because $\bar a\bar b = \bar b\bar a$ in the
+commutative $\mathbb{C}$.
+
+\emph{Symmetry across splits.} The only facts used were orthogonality and equality of the
+first-qubit branch norms, i.e.\ that the first-qubit reduced state $\rho_1$ is maximally mixed. For
+$\lvert\mathrm{GHZ}\rangle$ all three single-qubit reduced states equal $\tfrac12\mathbb{1}$, and a
+local unitary on a qubit conjugates its reduced state while preserving the spectrum, leaving
+$\tfrac12\mathbb{1}$ invariant. Hence the argument runs identically for each of the three splits.
+\end{proof}
+
+\subsection{The converse}
+
+The converse is more delicate than the source statements sometimes suggest, and it is worth stating
+exactly, because the distinction between ``vanishing for a representative'' and ``vanishing across
+the orbit'' is the whole content.
+
+\begin{proposition}[Converse]\label{app:prop:converse}
+Fix a split. The $\mathbb{C}$-fraction vanishes for \emph{every} first-qubit unitary $U_1$ if and
+only if the first-qubit reduced state $\rho_1$ is maximally mixed (equivalently, the two branches
+are orthogonal and of equal norm). Consequently, $C_{\mathrm{frac}}$ vanishes across the
+local-unitary orbit under \emph{all three} splits if and only if all three single-qubit reduced
+states are maximally mixed, which among genuinely tripartite states selects exactly the GHZ class.
+\end{proposition}
+
+\begin{proof}
+Expression~\eqref{eq:general-ip} is a function of $(\bar a,\bar b)$ whose coefficients are
+$|\varphi_1|^2-|\varphi_0|^2$ (on $\bar a\bar b$), $\langle\varphi_0,\varphi_1\rangle$ (on
+$\bar a^2$) and $-\langle\varphi_1,\varphi_0\rangle$ (on $\bar b^2$). It vanishes identically in
+$(a,b)$ if and only if all three coefficients vanish, i.e.\ $|\varphi_0|^2 = |\varphi_1|^2$ and
+$\langle\varphi_0,\varphi_1\rangle = 0$. Those are exactly the conditions for $\rho_1 =
+\bigl(\begin{smallmatrix}|\varphi_0|^2 & \langle\varphi_1,\varphi_0\rangle\\
+\langle\varphi_0,\varphi_1\rangle & |\varphi_1|^2\end{smallmatrix}\bigr) = \tfrac12\mathbb{1}$.
+
+For a single representative ($U_1$ fixed) the weaker condition $\langle o_1,o_2\rangle = 0$ is one
+complex equation and does \emph{not} force maximal mixing; for instance a biseparable state with
+orthogonal but unequal branches has $C_{\mathrm{frac}} = 0$ at $U_1 = \mathbb{1}$ while $\rho_1$ is
+not maximally mixed. The orbit-wide statement is the local-unitary-invariant one, since the spectrum
+of $\rho_k$ is a local-unitary invariant. Requiring it under all three splits forces all three
+$\rho_k = \tfrac12\mathbb{1}$; this is a strict condition that excludes every biseparable state and
+forces the canonical three-tangle to its maximal value, leaving the GHZ class as the unique
+genuinely tripartite solution.
+\end{proof}
+
+\subsection{Remark: why \texorpdfstring{$e_1$}{e1}, and the Fano line \texorpdfstring{$(1,6,7)$}{(1,6,7)}}
+
+The cancellation in~\eqref{eq:general-ip} relies on $\bar a\bar b = \bar b\bar a$, which holds only
+because the preferred direction $e_1$ sits in a \emph{commutative} subalgebra. For the standard
+representative $\lvert000\rangle+\lvert111\rangle$ the Hopf image points along $e_6$, and direct
+computation shows the two imaginary directions giving zero projection are $e_1$ and $e_7$ --- the two
+Fano partners of $e_6$ within the line $(1,6,7)$. That line is the quaternionic subalgebra
+$\{1,e_1,e_6,e_7\}\cong\mathbb{H}$ containing the doubling direction $e_1$; for any other imaginary
+direction $e_k$ with $k\notin\{1,7\}$ the analogous ``inner product'' would invoke a non-commutative
+quaternionic or non-associative octonionic product and the cancellation would fail. The
+confinement result is thus tied specifically to the computability split, not to an arbitrary choice
+of complex structure.
+
+\section{Proof of W Accessibility and the \texorpdfstring{$SU(2)$}{SU(2)} Doublet}
+\label{app:w-proof}
+
+\subsection{Accessibility}
+
+We restate Proposition~\ref{prop:w-access}: for states in the local-unitary orbit of
+$\lvert\mathrm{W}\rangle = (\lvert001\rangle+\lvert010\rangle+\lvert100\rangle)/\sqrt3$, the
+$\mathbb{C}$-projection is generically nonzero, vanishing only on a measure-zero subset, with
+$\sup C_{\mathrm{frac}} = \tfrac19$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:w-access}]
+Splitting on the first qubit, $\psi_0 = \tfrac1{\sqrt3}(0,1,1,0)$ and
+$\psi_1 = \tfrac1{\sqrt3}(1,0,0,0)$ are orthogonal but of \emph{unequal} norm,
+$|\psi_0|^2 = \tfrac23$, $|\psi_1|^2 = \tfrac13$. Substituting
+$\langle\varphi_0,\varphi_1\rangle = 0$ into~\eqref{eq:general-ip} leaves the single term
+\begin{equation}
+  \langle o_1,o_2\rangle = \bar a\bar b\bigl(|\psi_1|^2 - |\psi_0|^2\bigr)
+  = \bar a\bar b\bigl(\tfrac13-\tfrac23\bigr) = -\tfrac{\bar a\bar b}{3},
+\end{equation}
+which vanishes only when $ab = 0$, i.e.\ when $U_1$ is diagonal or anti-diagonal --- a measure-zero
+subset of $SU(2)$. (The bare state $U_1 = \mathbb{1}$ sits on this subset, which is why the
+representative itself has zero projection while the orbit does not.) Writing $p = |a|^2$, the orthogonal
+branches give $|o_1|^2 = p\,|\psi_0|^2 + (1-p)\,|\psi_1|^2 = (1+p)/3$ and, symmetrically,
+$|o_2|^2 = (2-p)/3$, while $|\langle o_1,o_2\rangle|^2 = p(1-p)/9$. Hence, by~\eqref{eq:composition},
+\begin{equation}
+  C_{\mathrm{frac}} = \frac{|\langle o_1,o_2\rangle|^2}{|o_1|^2|o_2|^2}
+  = \frac{p(1-p)}{(1+p)(2-p)},
+  \label{eq:wcfrac}
+\end{equation}
+which is maximised at $p = \tfrac12$ (an equal first-qubit mix), giving
+$C_{\mathrm{frac}} = (1/4)/(9/4) = \tfrac19$. Since the single-qubit spectrum $(\tfrac23,\tfrac13)$
+is a local-unitary invariant, the generic-nonzero conclusion holds across the whole W orbit.
+\end{proof}
+
+\subsection{The doublet}
+
+We restate Proposition~\ref{prop:w-doublet}: each single-qubit reduced state of a W-class state is
+supported on a two-dimensional space carrying the fundamental $SU(2)$, with spectrum
+$(\tfrac23,\tfrac13)$.
+
+\begin{proof}[Proof of Proposition~\ref{prop:w-doublet}]
+Group $\lvert\mathrm{W}\rangle$ by the first qubit:
+$\lvert\mathrm{W}\rangle = \tfrac1{\sqrt3}\bigl[\lvert0\rangle(\lvert01\rangle+\lvert10\rangle)
++ \lvert1\rangle\lvert00\rangle\bigr]$. Tracing out qubits two and three,
+\begin{equation}
+  \rho_1 = \tfrac13\bigl[\,\lvert0\rangle\langle0\rvert\,\lVert\,\lvert01\rangle+\lvert10\rangle\rVert^2
+  + \lvert1\rangle\langle1\rvert\,\bigr]
+  = \tfrac13\bigl(2\lvert0\rangle\langle0\rvert + \lvert1\rangle\langle1\rvert\bigr)
+  = \begin{pmatrix} \tfrac23 & 0 \\ 0 & \tfrac13\end{pmatrix},
+\end{equation}
+the cross terms vanishing because $\langle00\,|\,01+10\rangle = 0$. By the permutation symmetry of
+$\lvert\mathrm{W}\rangle$ the same holds for $\rho_2,\rho_3$. The reduced state may be written
+\begin{equation}
+  \rho_k = \tfrac12\mathbb{1} + \tfrac16\,\hat n\!\cdot\!\boldsymbol{\sigma},
+\end{equation}
+a maximally mixed background of weight one plus a traceless component of Bloch radius $\tfrac13$.
+It is full rank with two-dimensional support, so the only faithful action of $SU(2)$ it can carry is
+the fundamental representation: the maximally mixed part is $SU(2)$-invariant (a scalar background)
+and the traceless part transforms as the doublet. The spectrum $(\tfrac23,\tfrac13)$ is local-unitary
+invariant, so the statement is class-wide.
+\end{proof}
+
+\begin{corollary}[Bipartite shadow]\label{app:cor:bell}
+Tracing a single qubit from $\lvert\mathrm{W}\rangle$ leaves
+\begin{equation}
+  \rho_{\mathrm{pair}} = \tfrac23\,\lvert\Psi^+\rangle\langle\Psi^+\rvert
+  + \tfrac13\,\lvert00\rangle\langle00\rvert,
+  \qquad \lvert\Psi^+\rangle = \tfrac1{\sqrt2}(\lvert01\rangle+\lvert10\rangle),
+\end{equation}
+a genuine Bell pair of weight $\tfrac23$ against a separable remainder. The doublet of
+Proposition~\ref{prop:w-doublet} thus casts a bipartite (Bell-class) shadow on the two-qubit
+marginal, in contrast to GHZ, whose two-qubit marginals are separable.
+\end{corollary}
+
+\begin{proof}
+Grouping by the traced qubit, $\lvert\mathrm{W}\rangle = \tfrac1{\sqrt3}\bigl[(\lvert01\rangle
++\lvert10\rangle)\lvert0\rangle + \lvert00\rangle\lvert1\rangle\bigr]$; tracing the last qubit and
+using $\lvert01\rangle+\lvert10\rangle = \sqrt2\,\lvert\Psi^+\rangle$ gives the stated mixture.
+\end{proof}
+
+\subsection{The eigenvalue invariant behind both results}
+
+The two theorems are driven by one local-unitary invariant: the single-qubit reduced spectrum.
+GHZ has $\operatorname{spec}(\rho_k) = (\tfrac12,\tfrac12)$ for every $k$, forcing the cancellation
+in~\eqref{eq:general-ip}; W has $(\tfrac23,\tfrac13)$, leaving the residue~\eqref{eq:wcfrac}.
+The equal-versus-unequal eigenvalue alternative is therefore the geometric origin of the
+confined-versus-free distinction, and because the $\rho_k$ spectra are local-unitary invariants the
+distinction is frame-independent.
+
+\end{appendices}   % <<< WRAPPER LINE 2 of 2 -- delete if using multiple appendix files
 \printbibliography
 
 \end{document}
