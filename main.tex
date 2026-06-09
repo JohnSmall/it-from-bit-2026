@@ -4,10 +4,10 @@
 %   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
 \newtheorem{proposition}{Proposition}
 \setlength{\parindent}{3ex}
-%Includes "References" in the table of contents
+%Includes "References" in the table of content
 \usepackage[nottoc]{tocbibind}
 \usepackage[utf8]{inputenc}
-\usepackage[style=phys,backend=biber]{biblatex}
+\usepackage[style=numeric,backend=biber]{biblatex}
 \addbibresource{self-ref-2026.bib}
 
 \usepackage[italicdiff]{physics}
@@ -22,6 +22,8 @@
 \usepackage{multicol} % Used for the two-column layout of the document
 \usepackage{booktabs}
 %\usepackage{quotchap}
+
+
 \title{It from Bit via G\"odel - Part 1}
 \author{ John Small
 }
@@ -35,7 +37,7 @@
 
 \noindent\rule{\textwidth}{0.4pt}
 \begin{abstract}
-  Quantum states have the curious property that are exactly what's required to represent the classically impossible states which occur in proofs of non-computability and undecidability, which in turn rely on in self-reference. This is a pretty big clue to understand what quantum states actually are. We follow that clue in an attempt to uncover an insight into John Wheeler's question "How come the quantum?". If a new insight is to be worth anything then it must enable us to answer hard questions and calculate numbers we can compare with experiment. And it does. We find a rationale for the 3 dimensions of space, for the symmetry groups of the Standard Model, a valuable duality between multiparticle entanglement and the Standard Model via Hopf fibration which enables us to  understand why the strong force ignores parity and do a preliminary calculation of free parameters. The duality also enables us to create some simple quantum circuits for particle interactions. There are many gaps in the project and we list a number of open problems.
+  Quantum states have the curious property that are exactly what's required to represent the classically impossible states which occur in proofs of non-computability and undecidability, which in turn rely on in self-reference. This is a pretty big clue to understand what quantum states actually are. We follow that clue in an attempt to uncover an insight into John Wheeler's question "How come the quantum?". If a new insight is to be worth anything then it must enable us to answer hard questions and calculate numbers we can compare with experiment. And it does. We find a rationale for the 3 dimensions of space, for the symmetry groups of the Standard Model, a valuable connection between multiparticle entanglement and the Standard Model via Hopf fibration which enables us to  understand why the strong force ignores parity and do a preliminary calculation of free parameters. The connection also enables us to create some simple quantum circuits for particle interactions. There are many gaps in the project and we list a number of open problems.
 \end{abstract}
 \noindent\rule{\textwidth}{0.4pt}
 
@@ -50,7 +52,12 @@ When he got back to Princeton he immediately went to G\"odel's office to explain
 
 In addition we note that the $U(1) \times SU(2) \times SU(3)$ symmetry group of the standard model is in some peculiar way linked to the division algebras and hence to parallelisable spheres, yet self-reference requires information flowing round in circles, which requires the parallelisable property. Could there be a connection? The idea is clearly crazy, and yet so tantalising as to be worthy of deeper investigation.
 
-Following Wheeler, we take self-reference, an hence non-Turing computability, to be fundamental, but we only ever experience causal, computable sequences. Acausality forced to appear as strict causality. We use a simple principle, underlying self-reference, or acausality forced to appear as a non-self-referent, strictly causal framework. Surprisingly, this simple principle enables us to spot connections which others have guessed at yet not followed up. We find that some of the free parameters of the Standard Model can actually be derived. Our hypothesis is that the laws of physics are completely constrained by requiring a fundamental acausal Nature to appear as a strictly causal sequence. 
+Following Wheeler, we take self-reference, an hence non-Turing computability, to be fundamental, but we only ever experience causal, computable sequences. Acausality forced to appear as strict causality. We use a simple principle, underlying self-reference, or acausality forced to appear as a non-self-referent, strictly causal framework. Self-reference together with the negation of self-reference. Surprisingly, this simple principle enables us to spot connections which others have guessed at yet not followed up. We find that some of the free parameters of the Standard Model can actually be derived. Our hypothesis is that the laws of physics are completely constrained by requiring a fundamental acausal Nature to appear as a strictly causal sequence. 
+
+Most of the steps taken in this chain of reasoning have already been made by others, in many cases a very long time ago. The novelty is putting the pieces of jigsaw together to find a coherent picture. In many areas there are missing pieces, also known as open problems. Because the picture emerging around the gaps fits present experimental evidence I've chosen to take scary leaps of faith and assume the gaps can be filled in at some point. 
+
+\subsection{Use of AI}
+This paper is very much a collaborative effort between me and Claude AI. I provide the ideas and send Claude off to find the pieces of jigsaw needed to compose the picture. Although the derivation of the Born rule using Hopf fibration is entirely something Claude came up with.
 
 \subsection{Principal Results}
 The following structural features of the Standard Model are derived, not assumed:
@@ -275,7 +282,7 @@ We will take the magistrate's view. Is it useful? Throughout this paper I will f
 \subsection{Karl Popper nails it}
 Returning to the task set by Jaynes, to unscramble the quantum omelet, and here we have a foundational thought experiment from 1950 by Karl Popper to guide us, \autocite{Popper1950a, Popper1950IndeterminismII}. It is worth looking closely at what he proposed because it contains all the essential elements required to understand why we use complex probability amplitudes in quantum mechanics, and why they have an epistemological origin. In a terrible irony, having laid the foundations to develop a rationale for an epistemological origin of quantum probability amplitudes, Popper then spent the rest of his life arguing against any epistemological view of the matter and developing a propensity view of probability (refs). I should make it clear that in his 1950 papers he didn't set out to derive quantum mechanics, the purpose was to show that non-determinism exists even in classical mechanics if we introduce self reference. It just so happens that his exposition is so clear that he has inadvertently described nearly everything we need to deduce not just quantum mechanics, but also the Standard Model.
 
-Because the paper was written before electronic computers were a commonplace fact of life and he has to describe a mechanical computer which is endowed with the ability to perform all kinds of calculations, a Universal Turing Machine. Popper speaks about the machine's inability to predict the outcome of its interaction with its \textquote{closest environment}. I'll change that to say some entity \boldsymbol{E}. We feed into it all the information it needs to calculate the future trajectory of \boldsymbol{E}, and then get the machine to calculate the result of an interaction between itself and   \boldsymbol{E}. It can't do it. He writes;-
+Because the paper was written before electronic computers were a commonplace fact of life and he has to describe a mechanical computer which is endowed with the ability to perform all kinds of calculations, a Universal Turing Machine. Popper speaks about the machine's inability to predict the outcome of its interaction with its \textquote{closest environment}. I'll change that to say some entity $E$. We feed into it all the information it needs to calculate the future trajectory of $E$, and then get the machine to calculate the result of an interaction between itself and $E$. It can't do it. He writes;-
 \begin{quotation}
   It is usual asserted (I think correctly) that the physical processes involved in observation lead to difficulties only in quantum physics and that they disappear if it is assumed that Plank's quantum of action equals zero - in other words, classical physics. Nevertheless, I contend that if, in a similar way, we analyze besides the physical processes involved in observation certain other physical processes which are involved in every prediction, then we find a somewhat similar result which, however, is valid for classical physics also. The processes which our analysis must take into account besides observation are the physical processes involved in the calculation and formulation of the predictions. If this is done then we find that all scientific predictions are in an important sense deficient, including the most complete set of predictions possible to formulate even from classical physics; and we find that this deficiency becomes significant whenever we wish to predict the behaviour of physical systems (classical or otherwise) of a certain kind, viz, predicting machines.
 
@@ -379,7 +386,8 @@ As an aside because the outcome of an interaction between $C$ and $E$ is co-dete
 In the pre-FANOUT regime erasing information has no thermodynamic cost, everything is reversible and because there are no copyable records there is no well defined ordering of events. Cantor's diagonalisation argument is used to show that there are more real numbers than countable numbers, by construction we can use self-referential diagonalisation to generate numbers that are not in any list. Which means self-reference can generate the numbers to fill in the gaps in $\mathbb{Q}$ to get $\mathbb{R}$ and hence continuity. Hardy's "Quantum Theory From Five Reasonable Axioms" \autocite{Hardy2001a} identifies the axiom of reversible continuity as the key differentiator between classical and quantum theory. Reversible continuity means we can reversibly and continuously move between say $\ket{TRUE}$ and $\ket{FALSE}$, prior to FANOUT there is no preferred basis. The fact that a superposition $\ket{TRUE}$ and $\ket{FALSE}$ enables a quantum state to represent the classically inadmissable states that arise in paradoxes of self-reference is a consequence of the axiom of reversible continuity. Working from Popper's model we find that reversible continuity is a consequence of self-reference. 
 
 \subsection{Measuring degrees of non-computability}
-Gregory Chaitin has framed ideas about non-computability in terms of information theory \autocite{Chaitin1987AlgorithmicTheory}, he points out that propositions may be unprovable from a given set of axioms if those axioms contain too little information and we can expand the space of provable propositions of any axiom system by adding extra information, i.e. new axioms. This implies that there exists a quantity of information that must be added to an axiom system for a given unprovable proposition to become provable. Hence there must be a distance measured in information units between a given set of axioms and an unprovable proposition. We've suggested that a proposition which is unprovable from a given set of axioms has a complex truth value, neither true nor false, but superposition of true and false, using complex numbers. Exactly as Spencer-Brown suggested and Bertrand Russell agreed with his suggestion. I'll make a leap of faith here and say that the information distance between a given set of axioms and an unprovable proposition is measured by counting a complex number of bits. This leap of faith gains some support from Hawking's observation that closed timelike paths have a complex temperature \autocite{Hawking1995QuantumCurves} and hence the number of states enclosed in the CTC is counted in imaginary numbers. In (ref) I'll make use of that to suggest a space of computations. 
+\label{sec:measuring-non-computability}
+Gregory Chaitin has framed ideas about non-computability in terms of information theory \autocite{Chaitin1987AlgorithmicTheory}, he points out that propositions may be unprovable from a given set of axioms if those axioms contain too little information and we can expand the space of provable propositions of any axiom system by adding extra information, i.e. new axioms. This implies that there exists a quantity of information that must be added to an axiom system for a given unprovable proposition to become provable. Hence there must be a distance measured in information units between a given set of axioms and an unprovable proposition. We've suggested that a proposition which is unprovable from a given set of axioms has a complex truth value, neither true nor false, but superposition of true and false, using complex numbers. Exactly as Spencer-Brown suggested and Bertrand Russell agreed with his suggestion. I'll make a leap of faith here and say that the information distance between a given set of axioms and an unprovable proposition is measured by counting a complex number of bits. This leap of faith gains some support from Hawking's observation that closed timelike paths have a complex temperature \autocite{Hawking1995QuantumCurves} and hence the number of states enclosed in the CTC is counted in imaginary numbers. In \ref{sec:measuring-non-computability} I'll make use of that to suggest a space of computations. 
 
 \subsection{Closing the loop, uncaused events}
 Returning to Popper's predictor $C$ interacting with $E$. $C$ cannot predict the outcome of the future interaction because of in principle lack of self-knowledge. But because the outcome is determined by both $C$ and $E$ together, it's contextual, the interaction does not reveal the true state of $E$ only its relationshp with $C$, then $C$ gains some information about its state which was previously inaccessible. Maybe $E$ is a tennis ball and $C$ a giant steam powered Babbage analytical engine. The tennis ball is thow such that it will hit some levers in the engine and $C$ is programmed with enough information to accurately predict the outcome of the interaction iff it could know its own state. Given that $C$ cannot know its own state then it can only predict that the tennis ball will hit levers 1, 2, 3 or 4. After the interaction $C$ finds that lever 3 has been flipped so it now knows what its own state must have been for that to happen. But because it cannot have complete knowledge of its own state, there's a floor set in terms of units of action, then in gaining information about the position of $E$ relative to itself, it must have lost information about momentum. This is Bruer's point about the impossibility of accurate self measurements in both quantum and classical systems.  \autocite{Breuer1995}. 
@@ -886,6 +894,8 @@ has constant length, so the phase is hidden uniformly
 \autocite{GluckWarnerZiller1986}. This step is a structural argument rather than a
 theorem in the strict sense, and is flagged as such.
 
+Note: Using Hopf fibrations to get the Born rule is something Claude AI came up with on its own without my prompting. 
+
 \paragraph{Postulate 4 (state reduction).}
 Measurement is a \textsc{fanout}: the gauge-invariant relational content is copied
 into a record, converting a private epistemological amplitude into a public
@@ -943,65 +953,434 @@ derivation of reversible continuity from self-reference and the forcing of the
 Tsirelson value as a theorem rather than a recovered number---named here so that a
 reader can see exactly where the chain is complete and where it is not.
 
-\section{outline notes}
-List articles on negative probability in general
-List articles on negative probability and QM.
-List articles on self-reference in QM
-List articles that indirectly join together self-reference and negative probability via contextuality
-Point out that these are phenomenological, they described phenomena without grounding it in a principle.
-So we're circling close, but there seems to be an insight missing.
-Re-examine Burgin and identify that negative probabilty has to be private knowledge because it cannot form records. Entropy etc. Introduce the FANOUT as the distinction between public and private.
-Now we're getting close, $C$ inability to predict is due to an in principle lack of knowledge of its own state and because it cannot form a shareable record it has to be a negative probabilty. Private state of knowledge about its own state (find Qbist quote)
-Point out that despite objections we are forced to use Shannon Information theory because the probabilty is due to an in principle deficity of information. Therefore we have to analytically continue to the complex plane. So we get neg prob and prob > 1.
-Bring that back to Spencer-Brown, Kauffman and Russel Paradox and the resolution of Russel's Paradox and hence all Lawver/Yanofsky paradoxes.
-Note that it means all paradoxes require complex information. Which means that we can ask about distance between computable and non-computable states.
-Introduce paralellisable spheres. complex states Bloch sphere, S1 fibre is the unobservable global phase
-But first show derivation of postulates of quantum mechanics.
+% =====================================================================
+% Section: The space of computations -- spacetime from non-computability
+% Drop-in for Paper 1 (or Paper 2; this is the GR/spacetime arc). Requires:
+%   \usepackage{amsmath, amssymb}
+%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
+% Internal cross-references (\ref{...}) are placeholders; repoint to your labels:
+%     sec:complex-amplitudes -- self-reference -> negative probability ->
+%                               complex (imaginary) information
+%     sec:postulates         -- the quantum-postulate derivation
+%     sec:fanout-boundary    -- the FANOUT boundary
+%     sec:gauge-group        -- the division-algebra -> G_SM derivation
+% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
+% British English throughout.
+% =====================================================================
 
-Then move on to explore notions of computable distance. Set up computational model and define non-computable distance as requiring 'as if' CTCs. Point out that this means parallelisables spheres, but only up to 3d because of non-associativity of octonions.
+\section{The space of computations: spacetime from non-computability}
+\label{sec:space-of-computations}
 
-Point out that toy model, can help see features of GR.
-1) relationalist
-2) depends on the density of compution, more space where more computation
-3) Bell state before measurement is outside the network
-4) Measurement creates spacetime for the measurement to happen in
-5) Even though S7 can't be used for a metric space, it hasn't gone away and the information exchanged between events must be constrained by algebra of S7
+We'll now make a brief diversion to take up this idea that non-computable steps can be measured by imaginary information \ref{sec:measuring-non-computability}.  Since Spencer-Brown assures us that Bertrand Russell himself though well of the idea,\autocite{Spence-Brown-1969} it's not completely crazy.
 
-Switch to GR
-1) Electon in a bottle.
-2) measurement creates ST in which to happen. (hilbert hotel) Tips light cone, changes causal structure, acceleration, creates new spacetime.
-3) Dresssing a non-computable event as if it's the result of a computable process
-4) Light cone tipping and Unruh effect
-5) 7 lefts = 1 right from octonions. measurement closes one sr loop, but has a representation as 7 remaining octonionic units
-7) Particles as channels between events
-8) Therefore Hopf fibration and particle physics
+The programmes that derive spacetime from quantum mechanics---Van~Raamsdonk's
+\textquote{building spacetime with entanglement} \autocite{VanRaamsdonk2010}, the
+ER\,$=$\,EPR conjecture \autocite{MaldacenaSusskind2013}, and M\"uller's
+information-theoretic recovery of three-dimensional space from the qubit
+\autocite{MuellerMasanes2013}---take entanglement or information as primitive and
+grow geometry from it. The route taken here is the same in spirit but inverted in
+order: rather than positing spatial dimensions and forbidding superluminal
+signalling, we \emph{define} spatial separation as a measure of non-computability
+and read the dimension, the signature, and the Lorentz group off the result. The
+proposal originates in the author's CASYS'05 paper \autocite{small_2006}, which
+first suggested treating spacetime as a space of computations and attempted to
+justify three dimensions on this basis; the present account tightens and extends
+it. This is the framework's most structural and least formally complete arc; the
+three-dimensionality result is a structural conclusion awaiting a formal proof,
+and several of the links below are conjectural readings. Each is flagged as such,
+so the reader sees exactly where the chain is load-bearing and where it is an
+invitation.
 
-Switch to entanglement and Hopf fibration
-1) mention existing research including imperial and etc
-2) Point out that particle physics and entanglement share a common origin hence Hopf fibration
-3) GHX -> color force, W -> weak force with theorems, quark lepton split, explain in detail
-4) ZX calculus, sedenion termination, compositional completeness
+\subsection{Timelike and spacelike distance as computation}
+\label{sec:comp-distance}
 
-Cast problems in particle physics into entanglement via Hopf fibration
-1) First result colour force is blind to chirality
-2) Second result weak force must be chiral
-3) Electro magnetism a chiral
-4) contextuality and complex phase, environmental etc
-5) Weinberg angle
-6) 3 generations, linked by W
-7) Mass as non-computable debt, computation waiting to become FANOUTable
-8) Kiode formula for leptons
-9) Higgs mechanism and entanglement
-10) Quark masses
-11) particle zoo
-12) No SU(5), supersymmetry or string theory, but some features remain, imperial group. 
+A computation carries a state from axioms to a theorem in a number of steps.
+Counting the computable steps between two states gives a real measure---time. A
+physical clock counts completed irreversible loops, so proper time literally
+counts loop completions and the metric $\mathrm{d}\tau^{2}=g_{\mu\nu}\,
+\mathrm{d}x^{\mu}\mathrm{d}x^{\nu}$ is a loop-density tensor, the conversion from
+coordinate intervals to loop counts; Toffoli's reading of the Lagrangian as a
+count of action quanta is the same statement \autocite{toffoli_2003}.
 
-Quantum Circuits for particle physics
-1) ZX calculus mapping to particle properties
-2) example circuits
+Spacelike separation is the complementary, non-computable measure. Define the
+non-computable distance between two propositions, relative to an axiom system, as
+the number of bits that must be added to the axioms to make the second derivable.
+A closed timelike curve is a computation whose output is its own input; by the
+fixed-point theorem it has a unique consistent solution or none, and the
+existence of that solution is one bit not derivable from any axiom system that
+does not already contain the loop---one bit per curve, in the manner of Chaitin's
+$\Omega$ \autocite{Chaitin1998}. The spacelike distance between two events is then
+the number of such curves that would have to be closed to make them causally
+connected. Because each added bit is a non-computable proposition, it is carried
+by the imaginary part of the complex information measure
+$S=-\ln\lvert p\rvert-\mathrm{i}\theta$ derived in
+Section~\ref{sec:complex-amplitudes}: computable distance is counted in real
+units, non-computable distance in imaginary ones. The Minkowski signature, with
+spacelike intervals imaginary relative to timelike ones, is the immediate reading.
+That the resulting structure is a genuine metric space, and that the signature
+follows rather than being fitted, are open problems---at present the
+identification is motivated by reproducing what nature does, not proved.
 
-Open problems
-Conclusion
+\subsection{Three dimensions of space}
+\label{sec:three-dimensions}
+
+The closed timelike curves that define spacelike distance require information to
+be parallel-transported consistently around a loop, and consistent parallel
+transport on a sphere requires it to be parallelisable. By Adams' theorem the
+only parallelisable spheres are $S^{1}$, $S^{3}$ and $S^{7}$
+\autocite{adams_1960}, the unit spheres of $\mathbb{C}$, $\mathbb{H}$ and
+$\mathbb{O}$. Impose now the requirement that information arriving from outside
+the causal zone must appear to possess its own causal history---that is, to be the
+result of a sequence of information-preserving operations, hence a sequence of
+group operations. Rotations of $S^{1}$ and $S^{3}$ form the groups $U(1)$ and
+$SU(2)$ and preserve information; rotations of $S^{7}$ are non-associative and do
+not form a group, so $S^{7}$ cannot serve as a ruler. The same non-associativity
+forbids a metric outright: path composition $d(A,C)$ through $B$ depends on the
+bracketing, so the triangle inequality is not merely violated but ill-defined, and
+no geodesic structure exists. Since the abelian $S^{1}$ alone cannot carry
+non-abelian structure, spacelike distance must be three-dimensional. Dimension
+three is an output, not an input \autocite{small_2006}.
+
+The division of labour is then exact. $S^{1}$ ($\mathbb{C}$) contributes the time
+dimension and the $U(1)$ of electromagnetism; $S^{3}$ ($\mathbb{H}$) contributes
+the three spatial dimensions and the $SU(2)$ of the weak interaction; $S^{7}$
+($\mathbb{O}$) contributes no geometry but, as a filter on what information may be
+exchanged, the $SU(3)$ of the strong interaction. A sphere that cannot be a ruler
+can still be a filter, which is why the strong force resists geometric
+interpretation while electromagnetism and the weak force do not. This is the same
+$\mathbb{C}\oplus\mathbb{C}^{3}$ split that yields $G_{\mathrm{SM}}$ in
+Section~\ref{sec:gauge-group}, now read as the reason spacetime is $(3+1)$-%
+dimensional. The conclusion converges with M\"uller and Masanes, who prove from
+information-theoretic postulates, assuming no quantum theory, that minimal
+direction-carrying systems with continuous reversible dynamics force $d=3$ and
+quantum theory on two qubits \autocite{MuellerMasanes2013}, and with the result
+that entanglement exists only for a three-dimensional Bloch ball
+\autocite{MasanesMuellerEtAl2014}; the framework supplies the reason such systems
+exist, Cayley--Dickson doubling from self-reference, while their work supplies
+the rigorous dimensional uniqueness. The status of the framework's own route is a
+structural result requiring formal proof: the one-bit-per-curve identification and
+the precise reduction of the $S^{7}$ filter to $SU(3)$ rather than its full
+automorphism group $G_{2}$ are named open problems.
+
+\subsection{Recovering the Lorentz group}
+\label{sec:lorentz}
+
+A measurement changes what the observer knows, hence, relationally, the causal
+structure: it tips the light cone. This is Penrose's association of cone-tipping
+with state reduction \autocite{Penrose1996} run in the opposite causal direction,
+reduction driving the tipping rather than the reverse, and the two are then one
+operation in two charts---both described by $SL(2,\mathbb{C})$. The algebraic
+backbone is the division-algebra correspondence
+$SL(2,\mathbb{A})\cong\mathrm{Spin}(1,d{+}1)$ \autocite{Baez2002}: $\mathbb{R}$
+gives $1{+}1$, $\mathbb{C}$ gives $3{+}1$, $\mathbb{H}$ gives $5{+}1$ and
+$\mathbb{O}$ gives $9{+}1$ dimensions. The computability split that singles out a
+preferred $\mathbb{C}$ fixes the fundamental state space as $\mathbb{C}^{2}$ and
+hence $SL(2,\mathbb{C})=\mathrm{Spin}(1,3)$: the Lorentz group of $3{+}1$
+spacetime. The qubit and Minkowski space are not merely both Euclidean-and-three%
+-dimensional by coincidence; the Hermitian $2\times2$ matrices are
+$\mathbb{R}^{1,3}$, $SL(2,\mathbb{C})$ acts on them as the Lorentz group, and the
+qubit density operators fill the future cone---the correspondence M\"uller's group
+develops operationally, recovering Lorentz transformations from quantum
+communication \autocite{HohnMueller2016} and the complex and quaternionic qubit
+from the relativity of simultaneity \autocite{GarnerMuellerDahlsten2017}. The
+$SL(2,\mathbb{A})$ correspondence is rigorous; its identification with
+measurement-as-tipping is the framework's structural reading.
+
+\subsection{The relationalist commitment}
+\label{sec:relationalism}
+
+General relativity is relational: by the hole argument, spacetime points carry no
+intrinsic identity, and the metric is fixed by the network of coincidences and
+interactions, not by a pre-existing stage \autocite{Rovelli1996a}. The
+computational picture is relational by construction and explains why it must be:
+a background metric would require spatial distances to be pre-computable, and
+non-computability forbids exactly that. General covariance is the statement that
+distances have no pre-assigned values and depend on what information is actually
+present. The metric is therefore dynamical not by stipulation but because it
+measures a quantity that cannot be fixed in advance.
+
+\subsection{Jacobson, holography, and imaginary information}
+\label{sec:jacobson}
+
+Jacobson derives the Einstein equation as an equation of state, from the Clausius
+relation $\delta Q=T\,\mathrm{d}S$ across every local Rindler horizon together
+with the Bekenstein proportionality of entropy to horizon area
+\autocite{Jacobson1995, Bekenstein1973}. In the computational reading this is the
+self-consistency condition on the loop-counting network: the Einstein equation is
+the requirement that the bookkeeping of computation be internally consistent
+across surfaces. The holographic principle, that the information in a region is
+bounded by its bounding area \autocite{tHooft1993, Susskind1995}, then acquires a
+natural reading here. A surface area is a squared distance; if spacelike distance
+is measured in imaginary units of information, an area is measured in the square of
+those units, that is in \emph{negative} information---entropy. The holographic
+link between area and entropy thus requires the square root of negative
+information, and that square root is precisely the imaginary unit of the complex
+amplitude, the observer's self-referential phase. Read this way, Jacobson's
+account of information crossing surfaces implicitly assigns an imaginary
+information value to spacelike distance, and the $\mathrm{i}$ of the Minkowski
+signature is the same $\mathrm{i}$ as the $\mathrm{i}$ of the quantum amplitude.
+This identification is the most speculative step in the section: it is
+structurally suggestive and it makes the holographic form unsurprising, but it is
+a conjectural reading rather than a derivation, and is offered as such.
+
+\subsection{Non-locality already present in general relativity}
+\label{sec:gr-nonlocality}
+
+The relationalist commitment has a consequence, set out in the author's 2025
+V\"axj\"o poster \autocite{Small2025} and developed here, that the wider
+literature has not drawn. If spacetime is the network of interactions, then a system that
+has not yet interacted with any participant in that network is not a node in it:
+it is, strictly, outside spacetime until it interacts. An entangled pair that has
+not been measured is one such system---a single relational object, not two
+spatially separated ones. The electron in a sealed bottle illustrates it: the
+electron's position lies in the observer's past light cone, but its spin does not
+enter the observer's causal past until it is measured, even though the electron is
+spatially close. Entanglement is therefore a relation that does not yet live in
+spacetime; the spatial separation later assigned to the partners is a derived
+fact, established only when the relation is \textsc{fanned out} into the network
+(Section~\ref{sec:fanout-boundary}). The upshot is that general relativity, taken
+relationally and seriously, already contains quantum non-locality: entanglement is
+the pre-spatial relational structure, and what looks like spooky action between
+distant points is the resolution of a relation that was never spatially separated
+to begin with. This is the same direction of travel as building spacetime from
+entanglement \autocite{VanRaamsdonk2010} and as ER\,$=$\,EPR
+\autocite{MaldacenaSusskind2013}, but reached from the relational and
+computational side rather than from holographic duality, so it stands as a
+parallel argument rather than a corollary of those results. The claim that the
+non-locality is \emph{already there}, unrecognised, in the relational reading of
+general relativity is the framework's interpretive thesis, advanced in
+\autocite{Small2005, Small2025} and flagged as a thesis rather than a theorem.
+
+\medskip
+\noindent The spacetime arc therefore yields, from one definition of spacelike
+distance as non-computability: the signature, three spatial dimensions, the
+Lorentz group, the dynamical relational metric, a reading of the holographic
+principle, and the presence of non-locality within general relativity. Of these,
+the $(3+1)$ count and the Lorentz recovery are structural results that converge
+with independent rigorous work and await their own formal proof; the metric-space
+status, the signature, the one-bit-per-curve measure, the imaginary-information
+reading of holography, and the general-relativistic non-locality are conjectural,
+and are named here precisely so that the boundary between what is shown and what
+is proposed is visible.
+
+% =====================================================================
+% Subsection: Open problems and prospects (closes the spacetime section)
+% Append at the end of space_of_computations_2026-06-07.tex, inside
+% \section{The space of computations...} (sec:space-of-computations).
+% Requires the same preamble. New citation keys are in the updated
+% space_of_computations_refs .bib. Internal \ref placeholders:
+%     sec:gr-nonlocality  -- the GR non-locality subsection
+%     sec:three-dimensions, sec:jacobson  -- as labelled in the main section
+%     sec:gauge-group, sec:k3-sterile  -- the SM gauge-group / K3 sections
+% British English throughout.
+% =====================================================================
+
+\subsection{Open problems and prospects}
+\label{sec:spacetime-open-problems}
+
+The spacetime arc is the framework's frontier, and honesty about its edges
+matters more here than anywhere else in the paper. We set out the genuine
+problems and the prospects together, deferring the deepest to a second paper
+rather than papering over them.
+
+\paragraph{The substrate and the generation of events (deferred).}
+A computation runs on something; a network of events presupposes that events
+occur. Both are the same objection in two forms---the network's hardware and its
+clock---and the original CASYS'05 statement of the programme raised the
+implementation regress and set it aside \autocite{small_2006}. The framework's
+response is that a self-referential structure is the only kind that need not
+presuppose a meta-substrate: it generates its own. The natural algebraic emblem
+is $E_{8}$, the unique simple Lie group whose adjoint representation is also its
+smallest faithful one, so that what it is and what it acts on coincide; the $240$
+unit integral octonions that generate it are exactly the $E_{8}$ root system, so
+the self-action is welded to the division-algebra spine of
+Section~\ref{sec:gauge-group}. This is Wheeler's self-excited circuit
+\autocite{Wheeler1990} given an algebraic body, and it converges with Furey's use
+of an algebra acting on itself to generate particle content
+\autocite{furey2018}. The decisive caveat, which we state rather than hide, is
+that the bootstrap is self-consistent but not self-specifying: it does not
+eliminate the non-computability identified throughout, it relocates it to a
+determined place. The substrate question is, on the framework's own terms,
+provably without a computable answer from inside---it is the irreducible residue,
+the bump in the carpet that the whole construction has been moving rather than
+removing. The leap from ``$E_{8}$ is self-dual'' to ``$E_{8}$ is the substrate''
+is at present an emblem awaiting operational content (an $E_{8}$-equivariant
+dynamics, or a state space built as a homogeneous space of $E_{8}$), and that
+content, together with how a tick is generated at all, is deferred to the second
+paper.
+
+\paragraph{Dark matter (deferred).}
+If gravity is the bookkeeping of the interaction network and dark matter
+interacts only gravitationally, how does it participate in a network it does not
+exchange information with? The prospect, to be developed in the second paper, is
+that this is a feature rather than a defect. In the division of labour of
+Section~\ref{sec:three-dimensions}, participation in the metric---counting loops
+in the $S^{1}$ and $S^{3}$ directions---is universal, carried by anything with a
+worldline and a tick-rate, whereas participation in the gauge filters, the
+$S^{3}$ of the weak interaction and the $S^{7}$ of colour, is selective, engaged
+only by charged matter. A node that counts loops but engages no filter
+\emph{is} matter that gravitates without otherwise interacting, and the
+framework's Class-4 a-chiral sterile neutrino (Section~\ref{sec:k3-sterile}) is
+the candidate that realises it. The condition for this to be coherent rather than
+circular is that metric participation be established as prior to, and independent
+of, gauge participation; making that priority precise is the work deferred.
+
+\paragraph{CP violation, the arrow of time, and baryogenesis.}
+CP violation appears to demand a time asymmetry owing nothing to the entropic
+arrow, which would seem to require a preferred direction built into spacetime
+itself. The framework dissolves the appearance rather than accommodating it. CP
+violation needs an irreducible complex phase, the CKM phase $\delta$; by Spekkens'
+result that negativity and contextuality are the same notion of nonclassicality
+\autocite{Spekkens2004a}, a complex phase is a signature of contextuality; so CP
+violation should be contextual, sensitive to the near environment of the decaying
+system---which is exactly what Andrianov, Taron and Tarrach established for
+neutral kaons in matter, where the environment breaks C, irreversibility breaks
+T, and the effective parameters follow a Lindblad equation
+\autocite{Andrianov2001}. The framework's reading is that the resulting
+informational asymmetry \emph{constitutes} the arrow rather than presupposing it:
+CP violation, entropy increase, and the direction of time are one informational
+asymmetry seen three ways, not an independent second arrow, so the worry about a
+direction built into spacetime does not arise. On this footing the contextual
+dependence sets up a positive feedback loop for baryogenesis---an initial
+fluctuation makes the environment slightly matter-dominated, contextual
+enhancement raises the effective CP violation, more matter is produced, and the
+loop runs---with $\delta$ a cosmological fixed point rather than a fundamental
+constant. The honest limit of this is that a feedback loop explains amplification
+and lock-in, not the sign selection or the baryon-number violation that
+Sakharov's conditions still require \autocite{Sakharov1967}; the stronger claim
+the framework is positioned to make, that the matter direction and the time
+direction are co-selected by the same self-referential asymmetry, needs a source
+of baryon-number violation and is left open.
+
+\paragraph{Spatial infinitude and the status of inflation.}
+There is no upper bound on non-computability, so the space of computations is
+unbounded: the universe is spatially infinite, and being a network without a
+boundary, naturally flat. Infinitude on its own, however, settles only flatness,
+which was never inflation's principal task. The horizon problem is, and an
+infinite space does nothing for it. The framework's actual lever against
+inflation is the relational thesis of Section~\ref{sec:gr-nonlocality}: if
+pre-spatial entanglement correlates regions before \textsc{fanout} spreads them
+into spatial separation, then the observed large-scale homogeneity is fixed
+relationally, before any question of causal contact, and the horizon problem
+dissolves without an inflaton. This is a real argument, but it carries a real
+bill: inflation also generates the nearly scale-invariant spectrum of primordial
+fluctuations seen in the microwave background \autocite{Planck2020}, and any
+account that dispenses with inflation owes an alternative origin for that
+spectrum. That, not the horizon problem, is the hard empirical debt, and it is
+named here rather than discharged.
+
+\paragraph{Expansion and acceleration.}
+If spacelike distance is the information separating worldlines, then as worldlines
+accumulate distinct interaction histories they accumulate information-distance,
+and the universe expands. The picture has the right exclusions built in: bound
+systems interact continuously, share information, and so keep low
+information-distance---they do not expand---while only worldlines that decouple
+diverge, recovering expansion on cosmological scales alone. The feedback in which
+greater separation means less light-cone overlap and so faster divergence,
+$\mathrm{d}d/\mathrm{d}t \propto d$, yields exponential divergence, a de~Sitter
+phase, and hence accelerating expansion without a separate dark-energy term
+\autocite{Riess1998}. The limit to be honest about is that pure exponential
+divergence is the late-time behaviour only; reproducing the full expansion history,
+with its radiation- and matter-dominated eras, and fixing the Hubble rate
+quantitatively, remains to be done.
+
+\paragraph{The $S^{7}$ sector as internal structure.}
+That $S^{7}$ cannot carry a metric does not make it disappear. Its closed
+timelike curves carry the same non-computable information structure as those of
+$S^{1}$ and $S^{3}$, but lacking associativity they support algebra---gauge
+charge---in place of geometry---distance. This is why gauge symmetry has so often
+looked like a set of compactified extra dimensions: the Kaluza--Klein and string
+intuition is tracking something real in the $S^{7}$ structure, but misdiagnoses
+it as spatial. In the framework these degrees of freedom have no size because
+they have no metric; they are internal in the exact sense that they enter the
+information-exchange that constitutes gauge charge while contributing nothing to
+the loop-counting that constitutes distance. The resemblance to rolled-up
+dimensions is therefore genuine and instructive, and the diagnosis that they are
+algebraic rather than geometric is what separates this account from theories that
+add real spatial dimensions to carry the same structure.
+
+\medskip
+\noindent These mark the boundary of the programme as it stands. The substrate,
+the generation of events, and the network status of dark matter are deferred to
+the second paper; the contextual account of CP violation and baryogenesis, the
+relational case against inflation, the information-divergence account of
+expansion, and the algebraic reading of the $S^{7}$ sector are offered as
+prospects, each with its outstanding debt named so that the line between argument
+and aspiration stays visible.
+
+% =====================================================================
+%  Section: Why Hopf Fibrations Belong in Particle Physics
+%  Paper 1, "It from Bit via Gödel"
+%  Drafted 2026-06-08.
+%
+%  This is a \input fragment for the main document. It assumes:
+%    - biblatex is loaded and \autocite is available;
+%    - the companion file hopf_particle_physics_refs_2026-06-08.bib
+%      has been added to the bibliography resources;
+%    - an amsthm-style `proposition' environment exists in the preamble.
+%
+%  Internal cross-references use placeholder labels:
+%    sec:self-reference   -- the self-reference -> complex amplitudes chain
+%    sec:division-algebras-- the Cayley--Dickson / Hurwitz step
+%    sec:fanout-direction -- the FANOUT / measurement direction-selection argument
+%    sec:entanglement-classes -- the FOLLOWING section (GHZ->quarks, W->leptons)
+%  Re-point these to the real labels before compiling.
+% =====================================================================
+
+\section{Why Hopf Fibrations Belong in Particle Physics}
+\label{sec:hopf-justification}
+
+Invoking Hopf fibrations in a discussion of the Standard Model invites an immediate and fair objection: that the move is decorative, an analogy between two pieces of attractive mathematics with no load-bearing connection between them. The purpose of this section is to dispose of that objection before the construction is put to work. The connection is not an analogy. It is carried by two independent and independently published theorems, and the structures it relies upon are not selected for convenience but compelled by a pair of classification results. We take as already established the correspondence between qubit entanglement and the Hopf fibrations themselves --- the subject of a mature literature \autocite{MosseriDandoloff2001,bernevigchen2003} --- and do not reproduce it here. What this section addresses is the prior question of why that correspondence is entitled to carry physical content at all.
+
+\subsection{Two theorems, joined end to end}
+
+The bridge from qubit entanglement to the Standard Model is built from two distinct results, neither of which is original to the present framework and neither of which depends on the other.
+
+The first is geometric. The unit sphere in the Hilbert space of $n$ qubits is the total space of a Hopf fibration: $S^3 \to S^2$ for one qubit, $S^7 \to S^4$ for two, and $S^{15} \to S^8$ for three. For two and three qubits the fibration is \emph{entanglement-sensitive} --- separability is precisely the condition under which the base degenerates to a product of single-qubit Bloch spheres and the additional dimensions associated with the higher imaginary directions collapse \autocite{MosseriDandoloff2001,bernevigchen2003}. This is a statement about the geometry of state spaces and requires no physical interpretation whatever.
+
+The second is algebraic. Singling out a preferred complex structure on the octonions --- equivalently, fixing the split $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$ --- leaves a residual symmetry, and that residual symmetry is exactly the gauge group of the Standard Model. This was established through the exceptional Jordan algebra by Dubois-Violette and Todorov \autocite{Dubois-Violette2016ExceptionalPhysics,duboisviolettetodorov2019exceptional,todorovduboisviolette2018deducing} and given its sharpest spinorial form by Krasnov \autocite{krasnov2021so9}, who showed that the relevant group is the stabiliser of a complex structure inside $\mathrm{Spin}(9)$. We record the result in the form in which it enters the present work.
+
+\begin{proposition}[Dubois-Violette--Todorov; Krasnov]\label{prop:gsm}
+Let $J_R$ be the complex structure on the space $\mathbb{O}^2$ of $\mathrm{Spin}(9)$ spinors determined by a choice of unit imaginary octonion, equivalently the split $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$. The subgroup of $\mathrm{Spin}(9)$ commuting with $J_R$ is
+\[
+  G_{\mathrm{SM}} \;=\; \frac{SU(3) \times SU(2) \times U(1)}{\mathbb{Z}_6},
+\]
+acting on the singled-out $\mathbb{C}$ summand as a colour singlet of hypercharge $-1$ and on the $\mathbb{C}^3$ summand as a colour triplet of hypercharge $\tfrac{1}{3}$, both as $SU(2)$ doublets --- the quantum numbers of one left-handed generation.
+\end{proposition}
+
+The two results are independent, and the join between them is the only place a physical theory must do work. Each result is a theorem; what neither supplies is a reason why nature should fix one complex direction within $\mathbb{O}$ rather than treating all directions symmetrically. We return to this --- the genuine load-bearing assumption --- in \S\ref{sec:hopf-honest-debt}, and resolve it, in candidate form, in \S\ref{sec:fanout-direction}.
+
+\subsection{The ladder is forced, not chosen}
+
+It might still be objected that selecting the octonions, or the Hopf fibrations, is itself a modelling choice carrying as much latitude as the choice of a grand-unified group. It is not, and the reason is a pair of classification theorems that close off the alternatives entirely.
+
+By Hurwitz's theorem the only normed division algebras are $\mathbb{R}$, $\mathbb{C}$, $\mathbb{H}$ and $\mathbb{O}$ \autocite{hurwitz_1898,baez_2002}. By Adams's resolution of the Hopf-invariant-one problem --- together with the parallelisability results of Bott--Milnor and Kervaire --- the only parallelisable spheres are $S^0$, $S^1$, $S^3$ and $S^7$, so that there exist exactly three nontrivial Hopf fibrations, in bijection with $\mathbb{C}$, $\mathbb{H}$ and $\mathbb{O}$ \autocite{adams_1960,bottmilnor1958parallelizability,kervaire1958nonparallelizability}. These are not heuristics; they are among the more durable theorems in topology and algebra. Their force here is that, once a framework is committed to amplitudes valued in a normed division algebra --- a commitment that in the present construction is made far upstream, by the self-referential argument of \S\ref{sec:self-reference} and \S\ref{sec:division-algebras}, and not by fiat at this stage --- the ladder of Hopf fibrations is not selected but compelled, and it terminates of its own accord.
+
+\begin{proposition}[Termination]\label{prop:termination}
+The Cayley--Dickson tower of normed division algebras and the tower of parallelisable spheres both terminate at real dimension eight. Consequently there are exactly three nontrivial Hopf fibrations, the largest being the octonionic $S^{15} \to S^8$, and the construction admits no extension to a fourth case.
+\end{proposition}
+
+The termination is worth dwelling on, because it is unusual for a model of this kind to predict its own boundary. The next rung of the Cayley--Dickson sequence, the sedenions, possesses zero divisors; the Hopf map can no longer be globally defined; there is no fourth fibration. This is not a limitation imposed from outside but a structural fact, and it carries a physical consequence that we develop later: there is no room in the construction for a fourth gauge force or a fifth interaction, so that the discovery of either would count as evidence against the framework rather than as an invitation to extend it. The endpoint is a theorem, not a stipulation.
+
+\subsection{Independent arrival as corroboration}
+
+The most persuasive evidence that the destination is not an artefact of the route is that it is reached by routes sharing none of the same machinery. Szangolies \autocite{szangolies_2025} reaches $G_{\mathrm{SM}}$ from the emergent-gravity and Kaluza--Klein programmes, reading the singled-out complex direction as a dimensional reduction of a $9+1$-dimensional spacetime; the present framework reaches it from self-reference (\S\ref{sec:self-reference}); and Furey and Gillard--Gresnigt reach the same gauge group, and the same three-generation structure, through the minimal left ideals of the Dixon and Clifford algebras, without invoking Hopf fibrations at all \autocite{furey2018,gillardgresnigt2019three}. The octonionic route to particle physics is in any case an old one, going back to the use of $\mathbb{O}$ to model the strong force \autocite{gunaydin_1973}.
+
+That programmes with disjoint starting points converge on $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ and on the same quark--lepton division is the coincidence Szangolies himself remarks upon: the characteristic structure of the Standard Model, routinely regarded as arbitrary, turns up independently in unrelated settings, and its appearing twice would then be doubly odd unless the two settings are in fact related. We read the convergence the same way --- as evidence that the division-algebraic description is singled out by the mathematics rather than imposed by the modeller, and therefore that Proposition~\ref{prop:gsm} is structural rather than contrived.
+
+\subsection{The honest debt}
+\label{sec:hopf-honest-debt}
+
+It would be misleading to leave the impression that this route is free of assumptions, so we state plainly the one assumption that all of these programmes share. Proposition~\ref{prop:gsm} requires that \emph{some} complex direction in $\mathbb{O}$ be singled out, and the uniqueness of that choice is not supplied by the theorem. Krasnov parametrises the complex structure $J_R$ by an arbitrary unit imaginary octonion, and the residual group is the same for every such choice because $G_2 = \mathrm{Aut}(\mathbb{O})$ acts transitively on the unit imaginary octonions. The theorem therefore guarantees the gauge group \emph{given} that a direction is fixed, while remaining silent on \emph{why} one is fixed. Szangolies treats this as a free choice and flags it, in his own conclusions, as an open element of the construction --- one to which several inequivalent answers are available.
+
+This, and not the appeal to Hopf fibrations, is the genuine load-bearing assumption of the whole approach. The Hopf fibrations are forced (Proposition~\ref{prop:termination}); the singling-out is not. The present framework offers a candidate resolution that the prior literature lacks: the act of measurement, modelled as \textsc{fanout}, selects the direction physically, and the transitivity of $G_2$ then guarantees that the gauge group is independent of which direction the measurement happens to select. This argument is given in \S\ref{sec:fanout-direction}; we flag here, at the appropriate epistemic status, that it is structural rather than fully proved, and that the residual question --- why a measurement selects \emph{exactly one} imaginary direction rather than merely \emph{permitting} a selection --- remains open.
+
+A second debt is shared with every programme of this character and is not closed by anything said here: why the abstract quantum state should admit a tensor-product decomposition into qubits in the first place. This is the quantum factorisation, or mereology, problem. The entanglement-sensitivity on which the construction turns is meaningful only once such a decomposition is fixed, and we treat the decomposition as a necessary input rather than a derived result. Naming it is preferable to letting it pass unremarked.
+
+\subsection{What this sets up}
+
+The entanglement-sensitivity of the Hopf maps is not a side feature but the hinge of the physical reading that follows. Because separability is exactly the collapse of the base to a product of Bloch spheres, the structure of the entanglement --- and in particular the SLOCC class of a multi-qubit state --- is carried by precisely the degrees of freedom on which $G_{\mathrm{SM}}$ acts in Proposition~\ref{prop:gsm}. This is what makes it possible, in \S\ref{sec:entanglement-classes}, to read the inequivalent entanglement classes of three qubits directly onto the $\mathbb{C} \oplus \mathbb{C}^3$ split: the genuinely tripartite GHZ class onto the colour-triplet $\mathbb{C}^3$ sector, the distributed W class onto the $\mathbb{C}$ singlet, recovering the quark--lepton division not as an assignment but as a consequence of the entanglement structure. The Hopf fibrations are the bridge; the entanglement classes, treated next, are the traffic that crosses it.
+
 \printbibliography
 
 \end{document}
