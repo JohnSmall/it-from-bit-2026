@@ -1837,6 +1837,393 @@ quantised at their measured values, a channel's full Standard Model quantum-numb
 now legible from its entanglement structure alone. The next step is to enumerate the channels ---
 the fermion content of one generation, and then why there are three --- which is the business of
 \S\ref{sec:generations}.
+
+% =====================================================================
+%  Section: The Particle Zoo   (Plan Stages 3-4)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Follows \S sec:charges; precedes \S sec:masses.
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  No new references (filatov2024towards, baez2002octonions,
+%  gillardgresnigt2019three, furey2018three already in the library).
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:charges               -- quantum numbers (previous section)
+%    sec:entanglement-classes  -- GHZ/W theorems; Filatov chirality
+%    sec:register              -- the three-qubit register; Filatov representation
+%    prop:ghz, prop:w-doublet  -- the theorems
+%    app:w-proof               -- the W proofs (Bell-shadow corollary)
+%    sec:masses                -- masses (forward; mass hierarchy mechanism)
+%    sec:interactions          -- circuits branch (forward; weak force as resolution-swap)
+%
+%  EPISTEMIC FLAGS carried through this section (per the source documents):
+%    - the three-sphere extension of the Filatov constraint is ASSUMED, not
+%      proved -- the key open problem of the section;
+%    - the mass ORDERING is structurally motivated, the mechanism deferred to
+%      \S sec:masses and partly open;
+%    - the SU(2)_L-over-SU(2)_R selection (chirality fixed-point) is owed;
+%    - the two-versus-three sterile count is the weakest link.
+% =====================================================================
+
+\section{The Particle Zoo}
+\label{sec:generations}
+
+With a channel's quantum numbers now readable from its entanglement structure (\S\ref{sec:charges}),
+we can enumerate the channels themselves: the fermion content of one generation, then why there are
+exactly three of them, and finally a fourth class that couples to nothing. The spine of the argument
+is a single topological fact --- the complete graph $K_3$ is not two-colourable --- applied to the
+handedness that the Filatov representation forces on entangled qubits. It should be said at the
+outset that one link in the chain is an assumption rather than a theorem, and a load-bearing one:
+the extension of the Filatov constraint from two qubits to three. We flag it where it enters and
+again at the close; the two-qubit result it generalises is proved \autocite{filatov2024towards}, and
+everything downstream is rigorous once the extension is granted.
+
+\subsection{One generation}
+
+A single generation is assembled from the two entanglement classes of \S\ref{sec:entanglement-classes}
+together with chirality. The leptons are the W-class channels: a left-handed weak-isospin doublet,
+the neutrino and the charged lepton, together with a right-handed charged-lepton singlet that the
+weak force does not touch. The quarks are the GHZ-class channels, which carry colour, but they also
+carry the pairwise entanglement that supplies weak isospin --- a quark channel is GHZ on its
+$C$-qubit and at the same time has the doublet structure of Proposition~\ref{prop:w-doublet} on its
+$B$-qubit --- so they appear as a left-handed doublet, the up- and down-type quark, in three colours,
+with right-handed singlets. Collecting one generation:
+
+\begin{center}
+\begin{tabular}{lllc}
+\hline
+channel & class & multiplet & chirality \\
+\hline
+$(\nu,\ e)$            & W   & $SU(2)$ doublet, colour singlet      & left \\
+$e$                    & W   & $SU(2)$ singlet, colour singlet      & right \\
+$(u,\ d)\times 3$      & GHZ & $SU(2)$ doublet, colour triplet      & left \\
+$u,\ d$ (each $\times3$) & GHZ & $SU(2)$ singlet, colour triplet    & right \\
+\hline
+\end{tabular}
+\end{center}
+
+The doublet is the two ways of resolving a single structure, made precise below; the singlet is the
+channel with no such structure for the weak force to act on. Nothing in the table is assigned by
+hand --- the class fixes colour, the doublet fixes isospin, and the chirality is the handedness the
+next subsection forces.
+
+\subsection{The Filatov constraint and the \texorpdfstring{$K_3$}{K3} obstruction}
+
+Chirality enters through the representation of \S\ref{sec:register}. Filatov and Auzinsh proved that
+an entangled two-qubit state cannot be drawn on two Bloch spheres of the same handedness: one must be
+right-handed and the other left-handed \autocite{Filatov2024EntanglementStructure}. This is the Filatov
+constraint, and it is a topological consequence of the quaternionic Hopf fibration rather than a
+drawing convention --- the handedness asymmetry is the geometric content of the entanglement itself.
+
+A W-class channel has all three of its qubit pairs entangled: tracing any one qubit leaves the
+genuine Bell pair of the bipartite shadow (Corollary in Appendix~\ref{app:w-proof}). Extending the
+Filatov constraint to each pair independently, the three qubits must be assigned handednesses
+$\chi_A,\chi_B,\chi_C \in \{L,R\}$ with every pair opposite,
+\begin{equation}
+  \chi_A \neq \chi_B, \qquad \chi_B \neq \chi_C, \qquad \chi_C \neq \chi_A.
+\end{equation}
+This is a request to two-colour the complete graph $K_3$ on three vertices. A graph is two-colourable
+exactly when it has no odd cycle; $K_3$ \emph{is} an odd cycle, so it is not two-colourable. There
+is no handedness assignment satisfying all three constraints at once. We call this the $K_3$
+obstruction.
+
+It must be stated plainly that the step just taken --- applying the constraint to each pair of a
+\emph{tripartite} state independently --- is an assumption. The two-sphere theorem does not formally
+imply it; one would have to show that each entangled pair of a multipartite state carries its own
+quaternionic Hopf structure, which is intuitively clear but not proved. This is the key open problem
+beneath the generation count, and we return to it at the close. The combinatorics that follow are
+rigorous once the extension is granted.
+
+\subsection{Three generations and the doublet}
+
+Since the three constraints cannot all hold, enumerate the $2^3 = 8$ handedness assignments and count
+how many each satisfies. Every assignment satisfies either none or exactly two of the three (never
+one, never three), giving four classes:
+
+\begin{center}
+\begin{tabular}{ccccll}
+\hline
+$\chi_A$ & $\chi_B$ & $\chi_C$ & satisfied pairs & odd qubit & reading \\
+\hline
+$\uparrow$ & $\downarrow$ & $\downarrow$ & $(AB),(AC)$ & $A$ ($\mathbb{C}$)  & generation 1 \\
+$\uparrow$ & $\uparrow$   & $\downarrow$ & $(AC),(BC)$ & $B$ ($\mathbb{H}$)  & generation 2 \\
+$\uparrow$ & $\downarrow$ & $\uparrow$   & $(AB),(BC)$ & $C$ ($\mathbb{O}$)  & generation 3 \\
+$\uparrow$ & $\uparrow$   & $\uparrow$   & none        & ---                 & sterile (\S below) \\
+\hline
+\end{tabular}
+\end{center}
+
+Each row also has its globally conjugated partner ($\uparrow\!\leftrightarrow\!\downarrow$
+throughout), which is the antiparticle. The first three classes each have exactly one qubit whose
+handedness is the odd one out, and that qubit's Cayley--Dickson level labels the generation:
+$\mathbb{C}$, $\mathbb{H}$, $\mathbb{O}$ for the first, second and third. The remaining
+same-handedness pair --- the frustrated pair the constraint cannot satisfy --- has two topologically
+distinct resolutions, and those two resolutions are the two members of the weak-isospin doublet,
+$T_3 = \pm\tfrac12$. The weak force, in this reading, is the operation that switches between the two
+resolutions of the frustrated pair, which is exactly the $W^\pm$ action on the $B$-qubit of
+\S\ref{sec:charges}.
+
+There is a deeper reason for the number three, beyond the combinatorial count, and it is worth
+giving because it shows the count is not an artefact of the $K_3$ device. The three-qubit state space
+$S^{15} \to S^8$ admits three decompositions related by the triality of $\mathrm{Spin}(8)$, which
+permutes the vector and the two spinor representations $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$
+\autocite{baez_2002}. Fixing the preferred complex direction breaks the triality and singles
+out the three Fano lines through that direction, each a quaternionic subalgebra; these are the three
+generations. Triality gives three; the $K_3$ obstruction refines this to three-plus-one by adding the
+unfrustrated class. The same count of three generations is reached independently from the complex
+sedenions and from chains of division-algebra ideals \autocite{gillardgresnigt2019three,furey2018},
+a convergence we read as corroboration rather than as part of the present derivation.
+
+The framework associates increasing mass with the increasing algebraic depth of the odd qubit ---
+commutative $\mathbb{C}$ lightest, non-associative $\mathbb{O}$ heaviest --- which reproduces the
+observed ordering $m_1 < m_2 < m_3$ in each charge sector. We flag honestly that what is settled here
+is the \emph{count} and the depth \emph{ordering}; the mass values, and the mechanism that produces
+the hierarchy, belong to \S\ref{sec:masses}, where it emerges that a naive associator count does not
+by itself separate the generations and the hierarchy comes from a subtler feature of the geometry.
+One prediction is immediate and sharp: there are four classes and only three are chiral, so there is
+no fourth generation at any scale --- a stronger statement than the $Z$-width bound, and falsifiable.
+
+\subsection{The fourth class: a sterile, a-chiral channel}
+
+The fourth class has all three qubits of the same handedness. It satisfies none of the Filatov
+constraints, so it has no opposite-handedness pair --- and with no such pair there is no $SU(2)$
+structure for the weak force to act on. By the symmetry of the all-same configuration its net
+hypercharge winding vanishes, so it is electrically neutral, and being a colour singlet it is inert
+to the strong force as well. It couples to nothing.
+
+A terminological care is needed here, and it carries physical weight. This channel is not a
+right-handed neutrino in the usual sense: that phrase presupposes chirality is a binary property
+every fermion must carry, whereas the all-same configuration has \emph{no} opposite-handedness pair
+and so is neither left- nor right-handed but \emph{a-chiral}. It is not the parity partner of the
+active neutrino, which is why the standard objection to such a state as dark matter --- that parity
+restoration at high energy should regenerate it --- does not apply: there is nothing for it to be the
+partner of. The framework reads it as a sterile neutrino and a dark-matter candidate, with a
+computability-scale Majorana mass driving a seesaw. On the count that two such a-chiral modes exist,
+the seesaw yields a massless lightest active neutrino, $m_1 = 0$, normal mass ordering, and two
+sterile states near a few TeV. We flag that the two-versus-three count of a-chiral modes is the
+weakest link in this part of the chain; were it three, the $m_1 = 0$ prediction would not follow.
+
+\subsection{What is settled, and what is owed}
+
+Settled, resting on results proved earlier in the paper: colour from the GHZ class
+(Proposition~\ref{prop:ghz}) and the weak doublet from the W class
+(Proposition~\ref{prop:w-doublet}) give the one-generation content; the non-two-colourability of
+$K_3$ is elementary; and, granted the Filatov extension, exactly four classes follow, three chiral
+and one sterile. The convergent three-generation counts from triality and from the sedenions support
+the same conclusion.
+
+Owed, and flagged as such. The extension of the Filatov constraint from two qubits to three is an
+assumption, and the foundational open problem of this section; until it is proved, the generation
+count is structurally motivated rather than derived. The selection of $SU(2)_L$ over $SU(2)_R$ ---
+why the doublet is left-handed rather than right --- is a chirality fixed-point argument that
+propagates the octonionic orientation down through the tower, sketched but not yet a theorem. The
+two-versus-three sterile count is unsettled. And the mass hierarchy, whose ordering the algebraic
+depth motivates, awaits its mechanism in \S\ref{sec:masses}.
+
+The spectrum is now enumerated: three generations of quarks and leptons in left-handed doublets and
+right-handed singlets, with a fourth, sterile, a-chiral class. What the depth ordering asserts
+qualitatively --- that mass grows with algebraic depth --- the next section makes quantitative,
+turning the register geometry into the charged-lepton and quark mass spectra.
+
+
+% =====================================================================
+%  Section: Masses   (Plan Stages 5-7)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Follows \S sec:generations; precedes the boson-mass / electroweak section.
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  New references: koide1983new, georgijarlskog1979new
+%  (delivered in masses_refs_2026-06-08.ris). J3(O) via baez2002octonions
+%  and duboisviolettetodorov2019exceptional, already in the library.
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:generations  -- the particle zoo / depth ordering (previous section)
+%    sec:charges      -- quantum numbers; the "debt-free" photon forward-ref lands here
+%    sec:register     -- the three-qubit register
+%    sec:interactions -- circuits branch (forward; CKM, FCNC)
+%    sec:boson-masses -- boson masses / electroweak parameters (forward)
+%    sec:predictions  -- neutrino masses, glueballs (forward)
+%
+%  HONESTY FLAGS carried (per the project calculations):
+%    - the Koide 2/3 relation is DERIVED from alpha=sqrt(2)+Z3; the value
+%      delta=2/9 is MATCHED to 5 figures, its first-principles derivation
+%      (octonionic Hopf holonomy) is the key open calculation;
+%    - the up quark is +29% off -- the one genuine failure -- flagged;
+%    - associator-debt vs geodesic-length proxy: reconciliation owed;
+%    - Casimir-vs-fitted account of the quark colour correction: open.
+% =====================================================================
+
+\section{Masses}
+\label{sec:masses}
+
+The previous section enumerated the spectrum and asserted, qualitatively, that mass grows with the
+algebraic depth of the frustrated qubit. This section makes that quantitative. It begins by saying
+what mass \emph{is} in this framework --- the promised definition of the ``debt'' whose absence made
+the photon massless in \S\ref{sec:charges} --- and then computes two spectra: the charged leptons,
+which are the clean showcase, reproduced from a single dimensional scale and no free dimensionless
+parameters; and the quarks, which require one structural modification and succeed for eight of the
+nine charged fermions, with the one failure flagged plainly.
+
+\subsection{What mass is: associator-debt}
+
+In an associative algebra the product $(ab)c$ equals $a(bc)$ and there is nothing to record. The
+octonions are not associative, and the failure is measured by the associator
+\begin{equation}
+  [a,b,c] = (ab)c - a(bc),
+\end{equation}
+which is generically non-zero. The framework identifies \emph{mass with this associator-debt}: the
+information cost of specifying a bracketing that the algebra itself leaves ambiguous. Dimensionally
+the associator carries an inverse length in natural units, as a mass must. A channel that carries no
+associator-debt is massless --- this is exactly the ``debt-free'' direction of \S\ref{sec:charges},
+and it is why the photon, the one electroweak direction with vanishing debt, has no mass.
+
+It is important to be exact about what the associator does and does not fix. Computed on the basis
+units, the associator has a uniform magnitude across all bracketings that are not forced to vanish;
+it therefore establishes that mass exists and is non-zero, and that the three generations'
+bracketings are inequivalent, but it does \emph{not} by itself set the mass hierarchy. The hierarchy
+comes from how the triality structure breaks --- the angle of the next subsection --- while the
+associator supplies the fact of mass. This division of labour, associator for existence and triality
+angle for ratios, is the honest reading of the calculation and we keep the two separate throughout.
+
+Two structural points complete the picture. First, because the non-associativity forbids a metric on
+the octonionic fibre $S^7$, mass cannot literally be a geodesic length on that fibre; it is the
+associator-debt. The operational calculations below, which are sometimes phrased as ``geodesic''
+quantities, are a computational proxy, and showing that the proxy computes the same number as the
+associator-debt is an owed reconciliation rather than a closed identity. Second, the construction has
+exactly one free dimensional parameter --- an overall mass scale --- and no free dimensionless ones.
+The single scale is not a gap but a structural necessity: the observer cannot fix the absolute scale
+of their own computational network from inside it (\S\ref{sec:register}). The Higgs vacuum value sets
+that scale, and the doubling norm $\sqrt2$ that appears below is the algebraic signature of the
+vacuum value ``doubling'' the structure.
+
+\subsection{Charged leptons: the Koide relation}
+
+The charged-lepton masses satisfy the empirical relation of Koide \autocite{koide1983new},
+\begin{equation}
+  \frac{m_e + m_\mu + m_\tau}{\bigl(\sqrt{m_e}+\sqrt{m_\mu}+\sqrt{m_\tau}\bigr)^2} = \frac{2}{3},
+  \label{eq:koide}
+\end{equation}
+which holds to about one part in $10^5$ and has resisted explanation for forty years. The framework
+produces it as follows. The three generations are the three off-diagonal octonionic entries of the
+exceptional Jordan algebra $J_3(\mathbb{O})$ \autocite{baez_2002,duboisviolettetodorov2019exceptional},
+cyclically permuted by a $\mathbb{Z}_3$ triality, so the square-root masses are the three triality
+images of one quantity,
+\begin{equation}
+  \sqrt{m_k} = M\bigl(1 + \alpha\cos(\delta + \tfrac{2\pi k}{3})\bigr), \qquad k = 0,1,2,
+  \label{eq:z3}
+\end{equation}
+with $M$ a scale, $\alpha$ the amplitude, and $\delta$ a phase. The amplitude is the Cayley--Dickson
+doubling norm $\alpha = \sqrt2$ ($|1+i| = \sqrt2$), and this single value forces the Koide ratio.
+
+\begin{proposition}[The Koide ratio from the doubling norm]\label{prop:koide}
+For square-root masses of the form~\eqref{eq:z3}, the ratio~\eqref{eq:koide} equals
+$(1 + \tfrac12\alpha^2)/3$, independently of $M$ and $\delta$. With $\alpha^2 = 2$ it equals $2/3$.
+\end{proposition}
+
+\begin{proof}
+The three phases are spaced by $2\pi/3$, so $\sum_k \cos(\delta + 2\pi k/3) = 0$ and
+$\sum_k \cos^2(\delta + 2\pi k/3) = \tfrac32$. Then $\sum_k\sqrt{m_k} = 3M$, so the denominator is
+$9M^2$, while $\sum_k m_k = M^2\sum_k(1+\alpha\cos)^2 = M^2(3 + \tfrac32\alpha^2) = 3M^2(1+\tfrac12\alpha^2)$.
+The ratio is $(1+\tfrac12\alpha^2)/3$, and $\alpha^2=2$ gives $2/3$.
+\end{proof}
+
+The Koide relation is thus derived, not fitted: it is the statement that the triality amplitude is
+the doubling norm. The phase is $\delta = 2/9$ in radians, the value that the measured masses
+require, matched to five significant figures and carrying a natural octonionic reading as
+$2/9 = \dim_{\mathbb{R}}\mathbb{C} / \dim_{\mathbb{R}}(\mathbb{OP}^1)$, the preferred complex
+direction against the octonionic projective line $S^8$ plus its point at infinity. With $\alpha$ and
+$\delta$ both fixed by the theory and the single scale $M$ set by the heaviest mass, the other two
+follow:
+
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+lepton & predicted (MeV) & observed (MeV) & error \\
+\hline
+$e$    & $0.5121$  & $0.5110$  & $+0.2\%$ \\
+$\mu$  & $105.63$  & $105.66$  & $-0.03\%$ \\
+$\tau$ & $1776.9$  & $1776.9$  & (scale) \\
+\hline
+\end{tabular}
+\end{center}
+
+This is the showcase: three masses from one dimensional input and no free dimensionless parameters,
+the dimensionless content being the two theoretically fixed numbers $\alpha=\sqrt2$ and $\delta=2/9$.
+
+We flag the one genuine gap squarely. Proposition~\ref{prop:koide} derives the $2/3$ relation from
+$\alpha=\sqrt2$ and the $\mathbb{Z}_3$ ansatz, both of which the framework supplies; but the specific
+phase $\delta = 2/9$ is at present a \emph{matched} value with a suggestive geometric interpretation,
+not a derived one. Deriving $\delta=2/9$ from the holonomy of the octonionic Hopf connection is the
+single most important open calculation in the mass sector, and we mark it as owed rather than done.
+
+\subsection{Quarks: the colour correction}
+
+Quarks do not satisfy the Koide relation --- the ratio~\eqref{eq:koide} is about $0.73$ for the
+down-type and $0.85$ for the up-type quarks rather than $2/3$. The framework reads this as the effect
+of the colour debt that leptons, being colour singlets, do not carry. Where the colourless leptons
+sit at the bare doubling norm $\alpha^2 = 2$, the coloured quarks acquire an additional confinement
+contribution that scales with electric charge,
+\begin{equation}
+  \alpha^2 = 2 + 2\,|Q|^{3/2},
+  \label{eq:quarkalpha}
+\end{equation}
+the coefficient being the doubling norm squared and the power $3/2$ fixed empirically to within one
+per cent. This gives $\alpha^2 = 2.385$ for the down-type quarks ($|Q|=\tfrac13$) and $3.089$ for the
+up-type ($|Q|=\tfrac23$), against observed values $2.389$ and $3.094$. Feeding~\eqref{eq:quarkalpha}
+into the triality form~\eqref{eq:z3}, with the scale set by the heaviest quark in each sector, the
+lighter masses come out as follows: $d$ to $-0.9\%$ and $s$ to $+1.0\%$ in the down sector; $c$ to
+$+0.1\%$ in the up sector. Eight of the nine charged fermions are reproduced to about one per cent or
+better.
+
+The ninth is not. The up quark comes out near $2.8$~MeV against an observed $2.2$~MeV, an error of
+some thirty per cent and far outside the experimental uncertainty. This is a genuine failure of the
+formula as it stands, not a rounding issue, and we record it as such; the lightest up-type mass is
+the place where the simple colour correction breaks down, and any claim that the framework reproduces
+the quark spectrum must carry this exception openly.
+
+There is a further structural thread that we flag rather than resolve. The quark--lepton mass
+relations carry a factor of three of the Georgi--Jarlskog type \autocite{georgijarlskog1979new},
+which the framework can read either group-theoretically, as a Casimir ratio of the colour structure,
+or through the fitted charge dependence of~\eqref{eq:quarkalpha}; reconciling these two accounts is
+open. What the framework does \emph{not} need is the $SU(5)$ scaffolding through which the
+Georgi--Jarlskog factor is conventionally obtained --- consistent with the exclusion of $SU(5)$ and
+the absence of proton decay noted in \S\ref{sec:charges}.
+
+\subsection{Mass eigenstates versus weak eigenstates}
+
+The basis that diagonalises the associator-debt --- the mass basis --- is not the basis in which the
+weak interaction acts, which is the doublet basis of the $B$-qubit (\S\ref{sec:charges}). Their
+mismatch is the Cabibbo--Kobayashi--Maskawa matrix. The framework ties the rotation to the same
+octonionic geometry that fixes the masses: the lepton Koide phase $\delta = 2/9$ radians is about
+$12.7^\circ$, strikingly close to the Cabibbo angle, which suggests that one geometry sets both the
+mass hierarchy and the generation mixing. We mark that identification as suggestive rather than
+derived. Its structural consequence, however, is exactly what the interaction picture needs: the mass
+eigenstates are distinct from the weak eigenstates, so a charged-current vertex changes flavour while
+the neutral currents, acting on the generation-blind structure, do not. That is the seed of the
+no-tree-level flavour-changing-neutral-current result, which is delivered with the circuit picture of
+interactions in \S\ref{sec:interactions}.
+
+\subsection{What is settled, and what is owed}
+
+Settled: mass is associator-debt, with the photon massless because it is debt-free; the Koide $2/3$
+relation follows from the doubling norm $\alpha=\sqrt2$ and the $\mathbb{Z}_3$ triality of $J_3(\mathbb{O})$
+(Proposition~\ref{prop:koide}); the charged-lepton spectrum is reproduced from one dimensional scale
+and the two fixed dimensionless numbers $\alpha=\sqrt2$, $\delta=2/9$, the electron to $0.2\%$ and the
+muon to $0.03\%$; and the quark colour correction~\eqref{eq:quarkalpha} reproduces eight of nine
+charged fermion masses to about a per cent.
+
+Owed, and flagged: the first-principles derivation of $\delta = 2/9$ from the octonionic Hopf
+holonomy --- the key open calculation; the reconciliation of the associator-debt with the
+geodesic-length proxy used in the computations; the thirty-per-cent up-quark discrepancy; the choice
+between the Casimir and the fitted accounts of the quark colour correction; and the derivation, as
+opposed to the observation, that the mass phase coincides with the Cabibbo angle.
+
+With the fermion masses in hand, two threads remain. The electroweak gauge bosons, whose masses use
+the weak mixing angle $\sin^2\theta_W = \tfrac14$ already derived in \S\ref{sec:charges}, are taken
+up in \S\ref{sec:boson-masses}; and the neutrino masses, which follow from the sterile seesaw of
+\S\ref{sec:generations} with a sum near $2.6$~meV, a massless lightest state and normal ordering, are
+collected with the other falsifiable predictions in \S\ref{sec:predictions}.
+
 % =====================================================================
 %  Appendices: full proofs for "Entanglement Classes and Gauge Groups"
 %  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
