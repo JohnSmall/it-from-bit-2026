@@ -28,16 +28,27 @@
 \setlength{\parskip}{0.5em}
 \usepackage{multicol} % Used for the two-column layout of the document
 \usepackage{booktabs}
+\usepackage{quantikz}
+\usepackage{listings}
 %\usepackage{quotchap}
+\usepackage{draftwatermark}
+\SetWatermarkText{DRAFT}
+\SetWatermarkScale{1.2}
+\SetWatermarkColor[gray]{0.9} 
 
-
-\title{It from Bit via G\"odel - Part 1}
-\author{ John Small}
+\title{It from Bit via Gödel - Part 1\\[0.4em]
+  \large\normalfont Version 0.2}
+\author{John D. Small\
+  \small\itshape Independent Researcher\\
+  \small\texttt{john.small06@alumni.imperial.ac.uk}}
 \date{\today}
 
 \begin{document}
 
 \maketitle
+\begin{center}
+  \itshape This is a work in progress and will be updated frequently.
+\end{center}
 
 \medskip
 
@@ -104,145 +115,7 @@ The Higgs is not an entanglement class. It is the Hopf bundle's nontriviality it
 
 This mapping enables an easy and obvious deduction. The strong CP angle $\theta_{\mathrm{QCD}} = 0$ is topologically forced: the GHZ entanglement class characterising quarks has maximal three-tangle ($\tau_3 = 1$) and zero pairwise concurrence, precluding the oriented linking structure that would generate a non-trivial vacuum angle.
 
-
-\subsection{Quantitative predictions: fermion masses}
-
-The mass of each charged fermion is given by the generalised Koide formula
-\begin{equation}
-  \label{eq:koide}
-  \sqrt{m_k} \;=\; M\!\left(1 + \alpha\cos\!\left(\delta + \frac{2\pi k}{3}\right)\right), \qquad k = 0, 1, 2\,,
-\end{equation}
-where $k$ labels the three generations within each charge sector. The two dimensionless parameters $\alpha$ and $\delta$ are determined by quantum numbers as follows.
-
-\paragraph{Koide angle.} The misalignment between the triality-symmetric direction on $\mathbb{O}P^1$ and the preferred complex direction gives
-\begin{equation}
-  \label{eq:delta}
-  \delta_{\mathrm{sector}} \;=\; \frac{\delta_0}{n}\,, \qquad \delta_0 = \frac{\dim_{\mathbb{R}}(\mathbb{C})}{\dim_{\mathbb{R}}(\mathbb{O}P^1)} = \frac{2}{9}\,,
-\end{equation}
-where $n$ counts the number of active internal fibre directions:
-\begin{equation}
-  n \;=\; 1 + \bigl(T_3 + \tfrac{1}{2}\bigr) + \mathbf{1}_{\mathrm{colour\,triplet}}\,.
-\end{equation}
-
-\paragraph{Amplitude parameter.} The ratio of rotation to identity components in the SU(2) holonomy of the self-referential loop gives
-\begin{equation}
-  \label{eq:alpha}
-  \alpha^2 \;=\; 2 + 2\,|Q|^{3/2}\,\mathbf{1}_{\mathrm{colour\,triplet}}\,,
-\end{equation}
-where $|Q|$ is the magnitude of the electric charge. For charged leptons, $\alpha = \sqrt{2}$ corresponds to a quarter-turn ($\pi/2$) holonomy.
-
-\paragraph{Dimensional parameter.} Each charge sector has one free dimensional parameter $M$, fitted to the heaviest observed mass ($m_\tau$, $m_b$, $m_t$). All mass \emph{ratios} within a sector are therefore predictions with zero free parameters.
-
-Table~\ref{tab:inputs} summarises the sector-specific inputs. Table~\ref{tab:masses} presents the resulting mass predictions, and Table~\ref{tab:ratios} presents inter-generation mass ratios.
-
-\begin{table}[t]
-  \centering
-  \caption{Sector-specific parameters. All dimensionless quantities ($\alpha$, $\delta$) are determined by quantum numbers; only the dimensional scale $M$ is fitted (to the heaviest mass in each sector).}
-  \label{tab:inputs}
-  \begin{tabular}{lccccccc}
-    \toprule
-    Sector & $|Q|$ & $T_3$ & Colour & $n$ & $\delta$ & $\alpha^2$ & $M$ fitted to \\
-    \midrule
-    Charged leptons & 1 & $-\tfrac{1}{2}$ & singlet & 1 & $2/9$ & 2 & $m_\tau$ \\
-    Down-type quarks & $\tfrac{1}{3}$ & $-\tfrac{1}{2}$ & triplet & 2 & $1/9$ & $2 + 2/3\sqrt{3}$ & $m_b$ \\
-    Up-type quarks & $\tfrac{2}{3}$ & $+\tfrac{1}{2}$ & triplet & 3 & $2/27$ & $2 + 2\sqrt{2/3\sqrt{3}}$ & $m_t$ \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{table}[t]
-  \centering
-  \caption{Charged fermion mass predictions. Eight of nine masses are reproduced to better than 1.1\% from the single dimensionless constant $\delta_0 = 2/9$ and the quantum numbers of each particle. The up quark discrepancy has an identified mechanism (see text). Measured values from the Particle Data Group~\autocite{PDG2024}; light quark masses are $\overline{\mathrm{MS}}$ at $\mu = 2\;\mathrm{GeV}$.}
-  \label{tab:masses}
-  \begin{tabular}{lrrr}
-    \toprule
-    Particle & Predicted (MeV) & Measured (MeV) & Deviation \\
-    \midrule
-    $e$ & 0.5110 & 0.5110 & $-0.01\%$ \\
-    $\mu$ & 105.652 & 105.658 & $-0.01\%$ \\
-    $\tau$ & 1776.86 & 1776.86 & fitted \\[4pt]
-    $d$ & 4.62 & 4.67 & $-1.0\%$ \\
-    $s$ & 94.4 & 93.4 & $+1.1\%$ \\
-    $b$ & 4180 & 4180 & fitted \\[4pt]
-    $u$ & 2.78 & 2.16 & $+28.5\%\;^{(*)}$ \\
-    $c$ & 1271.4 & 1270 & $+0.1\%$ \\
-    $t$ & 172\,500 & 172\,500 & fitted \\
-    \bottomrule
-    \multicolumn{4}{l}{\footnotesize $^{(*)}$ See Section~\ref{sec:upquark} for the identified W-class interference mechanism.}
-  \end{tabular}
-\end{table}
-
-\begin{table}[t]
-  \centering
-  \caption{Inter-generation mass ratios (zero free parameters). All ratios except $m_c/m_u$ are predicted to better than 2\%. The $m_c/m_u$ discrepancy shares the same origin as the up quark mass anomaly.}
-  \label{tab:ratios}
-  \begin{tabular}{lrrr}
-    \toprule
-    Ratio & Predicted & Measured & Deviation \\
-    \midrule
-    $m_\mu / m_e$ & 206.8 & 206.8 & $0.006\%$ \\
-    $m_\tau / m_e$ & 3477.5 & 3477.2 & $0.008\%$ \\[4pt]
-    $m_s / m_d$ & 20.4 & 20.0 & $2\%$ \\
-    $m_b / m_d$ & 903.9 & 895.1 & $1\%$ \\[4pt]
-    $m_t / m_c$ & 135.68 & 135.83 & $0.1\%$ \\
-    $m_c / m_u$ & 458 & 588 & $22\%\;^{(*)}$ \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\paragraph{The up quark anomaly.} The up quark is the only fermion where the $T_3 = +\tfrac{1}{2}$ member is lighter than the $T_3 = -\tfrac{1}{2}$ member ($m_u < m_d$). In generations~2 and~3, the pattern reverses: $m_c \gg m_s$ and $m_t \gg m_b$. This generation-1 flip emerges from the competition between two effects: the amplitude parameter~$\alpha$ (larger for up-type quarks due to $|Q| = 2/3$) stretches the mass scale upward, while the dilution of the Koide angle (smaller $\delta$ for up-type quarks, $n = 3$ vs $n = 2$) suppresses the lightest generation more strongly. At generation~1, the $\delta$~suppression dominates; at generations~2 and~3, the $\alpha$~enhancement dominates. However, the quantitative prediction for $m_u$ overshoots by 28.5\%, indicating that a correction from the interference between GHZ (tripartite) and W (pairwise) entanglement contributions --- which are comparable in magnitude only at generation~1 --- must be included. This calculation is identified as an open problem (Section~\ref{sec:open}).
-
-\subsection{Quantitative predictions: bosonic sector}
-
-The framework yields the following zero-parameter predictions for bosonic quantities:
-
-\begin{table}[h]
-  \centering
-  \caption{Bosonic sector predictions. All values are derived from the Hopf fibration geometry with no free parameters. The Weinberg angle and strong coupling are tree-level predictions; measured values include radiative corrections via standard renormalisation group evolution with Standard Model particle content.}
-  \label{tab:bosons}
-  \begin{tabular}{llll}
-    \toprule
-    Quantity & Predicted & Measured & Deviation \\
-    \midrule
-    $\sin^2\!\theta_W$ & $1/4$ (tree level) & 0.2312 (at $M_Z$) & consistent after RGE \\
-    $m_H$ & $v/2 = 123.1\;\mathrm{GeV}$ & $125.25\;\mathrm{GeV}$ & $\sim 2\%$ \\
-    $y_t$ (top Yukawa) & 1 & 0.991 & $\sim 1\%$ \\
-    $\alpha_s(M_Z)$ & $\approx 0.1185$ & 0.1179 & $\sim 0.5\%$ \\
-    $\theta_{\mathrm{QCD}}$ & 0 (topological) & $< 10^{-10}$ & consistent \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-The Weinberg angle prediction $\sin^2\!\theta_W = 1/4$ arises from the equal-weight projection on the $S^4$ base of the quaternionic Hopf fibration. This is a tree-level (UV) value; running to $M_Z$ via the standard one-loop renormalisation group equations with the known Standard Model particle content yields $\sin^2\!\theta_W(M_Z) \approx 0.231$, in agreement with the measured value.
-
-The strong CP angle $\theta_{\mathrm{QCD}} = 0$ is topologically forced: the GHZ entanglement class characterising quarks has maximal three-tangle ($\tau_3 = 1$) and zero pairwise concurrence, precluding the oriented linking structure that would generate a non-trivial vacuum angle.
-
-\subsection{Non-observation predictions}
-
-In addition to the quantitative predictions above, the framework makes several structural predictions that take the form of strict non-observations:
-
-\begin{enumerate}
-  \item \textbf{No supersymmetric partners.} The division algebra tower terminates at $\mathbb{O}$; no algebraic structure exists to support a boson$\leftrightarrow$fermion symmetry. Confirmed by LHC Run~1 and Run~2 null results.
-
-  \item \textbf{No proton decay.} The gauge group $G_{\mathrm{SM}}$ arises from parallelisable spheres, which do not produce $SU(5)$ or any other simple group containing $G_{\mathrm{SM}}$. Baryon number violation via leptoquark exchange is therefore structurally absent. Consistent with Super-Kamiokande bounds ($\tau_p > 10^{34}$~years).
-
-  \item \textbf{All FCNC top quark decays via neutral bosons are exactly zero at all orders.} Generation labels correspond to triality sectors (associator bracketings); neutral bosons ($Z$, $\gamma$, gluon, Higgs) have no mechanism to change braceting. This is a structural prohibition, stronger than the SM's GIM cancellation. All ATLAS Run~2 searches are consistent with null results. The HL-LHC programme will probe BSM-enhanced rates of $10^{-5}$--$10^{-4}$; the framework predicts these searches will remain null.
-
-  \item \textbf{Neutrino mass sum $\Sigma m_\nu = 2.6\;\mathrm{meV}$, normal ordering.} Testable by DESI, Euclid, and CMB-S4 within the next decade. An inverted mass ordering would falsify the framework.
-\end{enumerate}
-
-\subsection{Parameter counting}
-
-The Standard Model has 19 free parameters (or 26 including neutrino masses and mixing). The present framework replaces all dimensionless parameters with derived quantities:
-
-\begin{itemize}
-  \item The gauge group is derived (eliminating three coupling constant choices).
-  \item The Weinberg angle, Higgs mass, and strong CP angle are predicted.
-  \item All charged fermion mass \emph{ratios} follow from $\delta_0 = 2/9$ and quantum numbers.
-  \item The CKM and PMNS mixing matrices are structurally constrained (CKM small because GHZ contextual extraction is basis-dependent; PMNS large because W transfer is democratic).
-\end{itemize}
-
-The framework retains \textbf{exactly one free dimensional parameter}: the overall mass scale, identified with the Higgs vacuum expectation value $v$. This single free parameter is a structural necessity --- the observer cannot determine the absolute scale of their own computational network by the same self-referential logic that generates quantum mechanics. The theory therefore has one free dimensional parameter and zero free dimensionless parameters.
+Results for fermions are in \S\ref{sec:generations}, bosons are in \S\ref{sec:boson-masses} and quantum circuits are in \S\ref{sec:quantum-circuite}
 
 \section{What is a quantum state?}
 We begin at the beginning and work step by step towards deducing some free parameters of the Standard Model.
@@ -2223,6 +2096,327 @@ the weak mixing angle $\sin^2\theta_W = \tfrac14$ already derived in \S\ref{sec:
 up in \S\ref{sec:boson-masses}; and the neutrino masses, which follow from the sterile seesaw of
 \S\ref{sec:generations} with a sum near $2.6$~meV, a massless lightest state and normal ordering, are
 collected with the other falsifiable predictions in \S\ref{sec:predictions}.
+% =====================================================================
+%  Section: Boson Masses and Electroweak Parameters   (Plan Stage 8)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Follows \S sec:masses; sets up Branch A (\S sec:interactions).
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  New references: weinberg1967model, glashow1961partial, salam1968weak
+%  (delivered in electroweak_refs_2026-06-08.ris). szangolies2025standardmodel,
+%  coeckekissinger2010compositional already in the library.
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:masses        -- fermion masses (previous section)
+%    sec:charges       -- quantum numbers; sin^2 theta_W = 1/4 derived there
+%    sec:entanglement-classes -- the dictionary; boson = edge of a sector
+%    sec:interactions  -- circuits branch (forward; builds on boson = edge)
+%    sec:predictions   -- neutrinos, glueball (forward)
+%
+%  HONESTY FLAGS carried (per boson_mass_fibre_geometry.md and the
+%  verification of its W-mass line):
+%    - m_Z is an INPUT; m_W is NOT an independent prediction beyond the
+%      ratio; the absolute electroweak scale v is not derived -> open;
+%    - the earlier "m_W = 79 GeV" number rested on a broken formula and is
+%      DROPPED; only the ratio m_W/m_Z = cos theta_W is stated -> open;
+%    - lambda = 1/8 is a simple value close to observation, not derived
+%      from first principles -> open;
+%    - boson = bipartite-edge is a STRUCTURAL identification; the
+%      state<->gate correspondence is asserted via map-state duality.
+% =====================================================================
+
+\section{Boson Masses and Electroweak Parameters}
+\label{sec:boson-masses}
+
+With the fermion masses settled, we turn to the gauge bosons and the electroweak parameters. The
+weak mixing angle is not re-derived here: $\sin^2\theta_W = \tfrac14$ was fixed in
+\S\ref{sec:charges} by the fibre dimensions, and this section uses it. The section has two jobs. The
+first is to say what a gauge boson \emph{is} in register terms --- the bipartite-edge identification
+that the interaction circuits of \S\ref{sec:interactions} will consume --- and the second is to
+collect the electroweak masses, which are tree-level postdictions accurate to about two per cent and
+which come with a sharply defined set of open problems. We state those openly as we go; they mark
+exactly where the electroweak sector of the framework needs more work.
+
+\subsection{Gauge bosons as bipartite edges}
+
+A fermion is a node of the channel network --- a three-qubit register (\S\ref{sec:register}). A gauge
+boson is an \emph{edge}: a bipartite, Bell-class link between two nodes, carrying the gauge sector of
+the qubit it connects. This is the reading the dictionary of \S\ref{sec:entanglement-classes}
+anticipated, now made explicit for the gauge bosons themselves. The number of independent edges in a
+sector is the dimension of that sector's gauge group, so the boson content follows from the group
+content already established.
+
+The electroweak bosons live in the $\mathbb{C}\otimes\mathbb{H}$ sector: one edge from the
+$U(1)_Y$ that sits on the $\mathbb{C}$ ($S^1$) fibre and three from the $SU(2)_L$ that sits on the
+$\mathbb{H}$ ($S^3$) fibre, four in all, which after electroweak mixing are the photon, $W^+$, $W^-$
+and $Z$ \autocite{glashow1961partial,weinberg1967model,salam1968weak}. The photon is the combination
+left unbroken --- the $Q = T_3 + \tfrac12 Y$ direction of \S\ref{sec:charges} --- and so it is a
+mixed $A$--$B$ edge rather than a pure hypercharge edge; the pure-$U(1)$ description is only the
+broken-phase limit. The strong sector lives at the octonionic level: the eight gluons are the adjoint
+of $SU(3)$ carried on the $C$-qubit's GHZ structure, eight edges among the colour-triplet channels.
+
+That a boson can be read both as a state (a Bell edge) and as a gate (an operation applied to the
+qubit of its sector --- the photon on the $A$--$B$ combination, the $W^\pm$ on the $B$-qubit, the
+gluons on the $C$-qubit) is the map--state duality of the categorical framework
+\autocite{coeckekissinger2010compositional}: the edge and the gate are the same morphism viewed two
+ways. This is the bridge the circuit picture rests on, and it is worth being exact about its status.
+The multiplet counting --- four electroweak edges, eight colour edges --- is fixed by the gauge
+groups and is not in question. The state-to-gate correspondence itself, however, is asserted through
+map--state duality rather than derived from the register dynamics, and we flag it as a structural
+identification awaiting a dynamical justification. It is, at this level, exactly what
+\S\ref{sec:interactions} needs to build vertices, and no more.
+
+\subsection{The weak mixing angle and the \texorpdfstring{$W$/$Z$}{W/Z} mass ratio}
+
+Carried from \S\ref{sec:charges}, the bare weak mixing angle is $\sin^2\theta_W = \tfrac14$, from the
+fibre-dimension ratio $\dim S^1/(\dim S^1 + \dim S^3) = 1/(1+3)$. Run down with the Standard Model
+renormalisation group from a matching scale of order $3.6\ \mathrm{TeV}$ --- roughly fifteen times the
+Higgs vacuum value --- it reaches the measured $\sin^2\theta_W \approx 0.231$ at $M_Z$. The tree-level
+relation between the gauge-boson masses is then
+\begin{equation}
+  \frac{m_W}{m_Z} = \cos\theta_W = \sqrt{\tfrac34} = \frac{\sqrt3}{2} \approx 0.866,
+\end{equation}
+against the observed ratio $\approx 0.881$.
+
+Here we must be careful not to claim more than the framework delivers, and this is one of the places
+where it delivers less than a complete account. The $Z$ mass is an \emph{input}, not a prediction:
+nothing in the construction fixes the absolute electroweak scale, which is to say the Higgs vacuum
+value $v$ is not derived. Given $m_Z$ and the mixing angle, $m_W$ is then \emph{not} an independent
+prediction --- it is the ratio above. We therefore quote only that ratio, and we flag two genuine
+open problems rather than paper over them. First, the absolute electroweak masses await a derivation
+of $v$; until that exists, the framework predicts electroweak mass \emph{ratios} and the running of
+the angle, not the masses themselves. Second, the tree ratio $0.866$ and the observed $0.881$ differ
+by about two per cent, and a clean statement requires showing that this gap is accounted for by the
+same running that carries $\sin^2\theta_W$ from $\tfrac14$ to its measured value, with the
+on-shell and $\overline{\mathrm{MS}}$ definitions of the angle handled consistently. We record both
+as unfinished: the $W$/$Z$ sector yields a tree ratio fixed by the mixing angle, and the absolute
+scale and the scheme-consistent running are owed.
+
+\subsection{The Higgs mass}
+
+The Higgs boson is the product-state scale-setter of the construction --- the separable channel of
+the dictionary, the dynamical promotion of the preferred complex direction
+\autocite{szangolies2025standardmodel} --- and its mass measures the stiffness of the computability
+barrier, the cost of pushing the broken vacuum back towards the symmetric point. With the quartic
+self-coupling $\lambda$, the Standard Model gives $m_H = \sqrt{2\lambda}\,v$. The framework's value is
+\begin{equation}
+  \lambda = \tfrac18 \quad\Longrightarrow\quad m_H = \tfrac{v}{2} \approx 123.1\ \mathrm{GeV},
+\end{equation}
+against the observed $125.25\ \mathrm{GeV}$, low by $1.7\%$.
+
+The honesty flag here is essential. The measured quartic is $\lambda = 0.129$, and $\tfrac18 = 0.125$
+is the simplest algebraic value close to it; it is not derived. Several readings suggest themselves
+--- $\lambda = \tfrac12\sin^2\theta_W$, or a squared half-Chern-class, or a fourth power of the
+Cayley--Dickson coupling, all of which return $\tfrac18$ --- but each is at present a post-hoc
+identification rather than a calculation. Deriving $\lambda = \tfrac18$ from the curvature of the
+Hopf bundle is the most important open problem in the boson sector, and we mark it as owed. The
+residual $1.7\%$ is the right size to be the running of $\lambda$ from the matching scale to the
+Higgs mass under the top-quark loop, which would be a consistency check rather than a new prediction;
+that too remains to be shown. And, as with the $W$/$Z$ masses, the vacuum value $v$ that sets the
+overall scale is itself not derived.
+
+\subsection{The top Yukawa}
+
+One fermion mass belongs here rather than in \S\ref{sec:masses}, because it is fixed by the boson
+sector rather than by the Koide geometry. The framework places the top quark exactly at the
+computability boundary, where its internal traversal rate equals the Higgs vacuum value, which is the
+statement that its Yukawa coupling is unity,
+\begin{equation}
+  y_t = 1 \quad\Longrightarrow\quad m_t = \frac{v}{\sqrt2} \approx 174.1\ \mathrm{GeV}.
+\end{equation}
+Compared with the top pole mass of $172.5\ \mathrm{GeV}$ this is high by $0.9\%$. The comparison is
+to the pole mass specifically, and we flag that the figure is scheme-dependent --- the
+$\overline{\mathrm{MS}}$ top mass is some ten GeV lower --- so $y_t = 1$ should be read as a clean
+structural statement (the top is the one fermion whose coupling saturates the boundary) whose precise
+numerical test depends on the mass definition. That $y_t \approx 1$ and $\lambda \approx \tfrac18$
+issue from the same fibre geometry is, in this reading, why the Standard Model vacuum sits so close to
+the stability boundary: the near-criticality is structural rather than accidental.
+
+\subsection{What is settled, and what is owed}
+
+Settled, at the tree level and within about two per cent: the boson content as bipartite edges ---
+four electroweak, eight colour --- with the photon the unbroken $A$--$B$ combination; the weak mixing
+angle $\sin^2\theta_W = \tfrac14$ (from \S\ref{sec:charges}) running to the observed value at $M_Z$;
+the tree ratio $m_W/m_Z = \cos\theta_W = \sqrt3/2$; the Higgs mass $m_H = v/2$ to $-1.7\%$; and the
+top Yukawa $y_t = 1$ to $+0.9\%$ against the pole mass.
+
+Owed, and stated plainly so that the gaps are visible as problems to be worked on rather than hidden:
+the absolute electroweak masses, which require a derivation of the vacuum value $v$ that the framework
+does not yet provide, so that $m_W$ and $m_Z$ are at present a ratio and an input rather than two
+predictions; the scheme-consistent account of the two-per-cent $W$/$Z$ ratio gap under running; the
+first-principles derivation of $\lambda = \tfrac18$ from the Hopf-bundle curvature, the key open
+calculation of this sector; the status of the $3.6\ \mathrm{TeV}$ matching scale, which the framework's
+exclusion of supersymmetry and extra dimensions suggests is a genuine prediction of no new physics
+below it rather than an artefact of one-loop running; and the dynamical justification of the
+state-to-gate correspondence underlying the boson-as-edge identification, which is so far asserted
+through map--state duality.
+
+The boson-as-edge picture and the electroweak inputs are now in place. The interaction circuits of
+\S\ref{sec:interactions} build on them, representing vertices as gates on identified qubits and
+deriving the absence of tree-level flavour-changing neutral currents; the neutrino masses and the
+scalar glueball are collected with the other forward-testable predictions in \S\ref{sec:predictions}.
+
+% =====================================================================
+%  Section: Interactions as Quantum Circuits   (Branch A)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Forks after \S sec:charges (registers) and \S sec:boson-masses
+%  (bosons as edges). Precedes \S sec:predictions.
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  REQUIRES \usepackage{quantikz} in the preamble (loads TikZ).
+%  New reference: glashowiliopoulosmaiani1970weak
+%  (delivered in fcnc_refs_2026-06-08.ris). coeckekissinger2010compositional
+%  already in the library.
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:charges       -- operational charges (gate reads/changes)
+%    sec:masses        -- mass != weak eigenstates; CKM
+%    sec:boson-masses  -- bosons as edges; map-state duality
+%    sec:generations   -- generation = triality index
+%    app:qiskit        -- the Qiskit appendix (this delivery)
+%    sec:predictions   -- forward
+%
+%  HONESTY FLAGS:
+%    - the tree-level result V^dag 1 V = 1 is rigorous; the ALL-ORDERS
+%      structural prohibition is a stronger STRUCTURAL claim, flagged;
+%    - the state<->gate correspondence is carried from sec:boson-masses
+%      as asserted (map-state duality), not derived;
+%    - the Qiskit example is ILLUSTRATIVE and not yet validated.
+% =====================================================================
+
+\section{Interactions as Quantum Circuits}
+\label{sec:interactions}
+
+The previous sections gave the particles and their masses; this one gives their interactions, and it
+does so in a form that is, in principle, executable. Three results already in place make this
+possible: the gauge charges were cast operationally in \S\ref{sec:charges} as what a gate reads or
+changes; the mass eigenstates were shown in \S\ref{sec:masses} to differ from the weak eigenstates by
+the CKM rotation; and the gauge bosons were identified in \S\ref{sec:boson-masses} as bipartite
+edges, with the map--state duality that lets an edge be read as a gate. Putting these together turns
+a Feynman diagram into a quantum circuit on the internal qubit registers. We keep the section tight,
+using a single worked example and then deriving the result that gives the framework its sharpest
+falsifiable prediction: the absence of flavour-changing neutral currents.
+
+\subsection{The vertex dictionary}
+
+A vertex is an edge attached to two nodes, so applying a boson is applying a gate to a definite qubit
+of the fermion register \autocite{coeckekissinger2010compositional}. The map of
+\S\ref{sec:charges}, read as gates:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+boson & acts on & operation \\
+\hline
+photon $\gamma$ & $A$ (and $B$, via $Q=T_3+\tfrac12Y$) & $U(1)$ phase, if $Q\neq0$ \\
+$W^\pm$         & $B$                                   & $SU(2)$ raise/lower of $T_3$ \\
+$Z$             & $A$--$B$ jointly                      & neutral-current entangling gate \\
+gluon $g$       & $C$                                   & $SU(3)$ rotation, if colour triplet \\
+Higgs $H$       & doublet $\leftrightarrow$ singlet     & $L\leftrightarrow R$ chirality flip \\
+\hline
+\end{tabular}
+\end{center}
+
+The charged current is the only entry that moves a qubit between the two members of a doublet; the
+neutral currents act within the gauge structure without doing so. That asymmetry is the whole of the
+flavour story below.
+
+\subsection{Beta decay, simplified to the active quark}
+
+Neutron beta decay $n\to p + e^- + \bar\nu_e$ changes exactly one quark: a down quark becomes an up
+quark, $udd\to uud$, while the other two quarks are spectators. We therefore draw only the active
+quark. Its charged-current vertex is a single gate --- the $W^-$ emission raising the weak isospin on
+the $B$-qubit, $T_3:-\tfrac12\to+\tfrac12$ --- with the charge phase $A$ and the colour $C$ left
+untouched, so the colour-singlet structure that binds the nucleon is preserved. The $W^-$ then decays
+to a lepton pair, which the anti-special (W-class) structure forces to be colourless: a fresh
+electron and antineutrino, born entangled.
+
+\begin{center}
+\begin{quantikz}
+\lstick{$A_q$}            & \qw      & \qw      & \qw      & \rstick{$A_q$} \\
+\lstick{$B_q\ (d)$}       & \gate{X} & \qw      & \qw      & \rstick{$u$} \\
+\lstick{$C_q$}            & \qw      & \qw      & \qw      & \rstick{$C_q$} \\
+\lstick{$B_e\ (\mathrm{vac})$}  & \qw & \gate{H} & \ctrl{1} & \rstick{$e^-$} \\
+\lstick{$B_\nu\ (\mathrm{vac})$} & \qw & \qw     & \targ{}  & \rstick{$\bar\nu_e$}
+\end{quantikz}
+\end{center}
+
+The top three wires are the active quark; the $X$ on $B_q$ is the $W^-$ emission. The lower two wires
+are the vacuum qubits into which the $W^-$ deposits its entanglement, the $H$ and \textsc{cnot}
+preparing the W-class lepton pair. The two spectator quarks, and the $A$ and $C$ qubits of the active
+quark, carry through unchanged --- conserving charge, colour and baryon number by construction. A
+runnable form of this circuit is given in Appendix~\ref{app:qiskit}.
+
+\subsection{No flavour-changing neutral currents}
+
+The generation index of a fermion is the triality sector of \S\ref{sec:generations} --- which of the
+three associator bracketings it occupies --- and this index is carried by the entanglement
+\emph{class}, not by any single gauge qubit. The charged current can change a fermion's weak isospin;
+the question is whether a neutral current can change its generation. It cannot, and the reason is
+structural.
+
+\begin{proposition}[No tree-level FCNC]\label{prop:fcnc}
+A neutral-current coupling is proportional to the identity in the generation index. In the mass
+basis, related to the weak basis by the CKM rotation $V$, it transforms as $V^\dagger D V$ with
+$D = c\,\mathbb{1}$, so $V^\dagger D V = c\,\mathbb{1} = D$. The off-diagonal, flavour-changing
+entries vanish identically: there is no tree-level flavour-changing neutral current.
+\end{proposition}
+
+\begin{proof}
+The neutral bosons act on the gauge qubits: the photon a $U(1)$ phase on $A$, the $Z$ an $A$--$B$
+entangling gate, the gluon an $SU(3)$ rotation on $C$. None of these acts on the triality index that
+labels the generation, because that index lives in the entanglement class and is orthogonal to the
+single-qubit gauge action. The neutral-current coupling is therefore the same in every generation,
+$D = c\,\mathbb{1}$. A rotation of basis acts by conjugation, and $\mathbb{1}$ is invariant under
+conjugation: $V^\dagger (c\,\mathbb{1}) V = c\,V^\dagger V = c\,\mathbb{1}$. Hence the neutral current
+is flavour-diagonal in the mass basis as well as the weak basis.
+\end{proof}
+
+This is the Glashow--Iliopoulos--Maiani mechanism \autocite{glashowiliopoulosmaiani1970weak}, but with
+a difference worth stating. In the Standard Model the cancellation $V^\dagger\mathbb{1}V=\mathbb{1}$ is
+arranged by the structure of the theory; here it is forced, because the neutral gates have no qubit to
+act on that would carry the generation. The framework therefore makes a stronger claim than tree-level
+cancellation, and we flag it as the stronger, structural claim it is: since no neutral boson has any
+mechanism to change the triality bracketing \emph{at any order}, flavour-changing neutral currents are
+predicted to be not merely suppressed but absent. The Standard Model, with its loop-level GIM
+suppression, predicts a small but non-zero rate --- for instance a top-quark branching
+$\mathrm{BR}(t\to Zq)\sim10^{-14}$ --- which many extensions enhance toward current experimental reach.
+The framework predicts exactly zero, with no enhancement possible from any new physics.
+
+The distinction is sharply falsifiable. A single observation of a tree-level flavour-changing neutral
+current --- a $t\to Zq$, $t\to\gamma q$ or $t\to gq$ decay at any collider --- would refute the
+framework outright, whereas in the Standard Model such a signal would be read as evidence for new
+physics. Current LHC searches report no such signal, consistent with the prediction; the framework's
+content is that they will remain null at every future collider. We flag the epistemic status plainly:
+Proposition~\ref{prop:fcnc} establishes the tree-level result rigorously, while the all-orders
+prohibition is a structural prediction resting on the generation index being inaccessible to the gauge
+gates, which is strongly motivated but not a theorem at the level of the tree-level statement.
+
+\subsection{The Higgs vertex}
+
+The one remaining vertex is the Higgs, which mediates the chirality flip $L\leftrightarrow R$ that
+gives mass (\S\ref{sec:masses}): it couples a doublet member to its singlet partner within a single
+generation. Like the neutral currents, it does not change the triality bracketing, so it too is
+flavour-diagonal --- the statement that the Higgs couples each fermion to itself, the coupling being
+the Yukawa of \S\ref{sec:masses}. The chirality flip is the circuit-level form of the
+\emph{Zitterbewegung} turnaround: in circuit terms a gate connecting the doublet and singlet
+registers of a single generation.
+
+\subsection{What is settled, and what is owed}
+
+Settled: the vertex dictionary, with each boson a gate on a definite qubit; beta decay as an
+executable circuit on the active quark; and, rigorously at tree level, the absence of
+flavour-changing neutral currents (Proposition~\ref{prop:fcnc}), which the framework strengthens to an
+all-orders structural prohibition and offers as a sharp, falsifiable prediction distinguishing it from
+the Standard Model.
+
+Owed: the state-to-gate correspondence underlying the whole circuit translation is carried from
+\S\ref{sec:boson-masses} as an assertion via map--state duality, not yet derived from the register
+dynamics; the all-orders FCNC prohibition is structural rather than proved to the standard of the
+tree-level result; and the coupling normalisations --- the actual vertex factors, as opposed to which
+qubit each gate acts on --- are not yet fixed by the geometry. The neutrino masses and the scalar
+glueball, the remaining forward-testable predictions, are collected in \S\ref{sec:predictions}.
+
 
 % =====================================================================
 %  Appendices: full proofs for "Entanglement Classes and Gauge Groups"
@@ -2253,6 +2447,7 @@ collected with the other falsifiable predictions in \S\ref{sec:predictions}.
 %    prop:w-doublet -- W carries the SU(2) doublet
 %    prop:gsm       -- G_SM as the Spin(9) stabiliser (Hopf-justification section)
 % =====================================================================
+
 
 \begin{appendices}   % <<< WRAPPER LINE 1 of 2 -- delete if using multiple appendix files
 
