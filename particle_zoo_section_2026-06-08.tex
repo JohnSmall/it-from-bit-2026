@@ -1,0 +1,264 @@
+% =====================================================================
+%  Section: The Particle Zoo   (Plan Stages 3-4)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Follows \S sec:charges; precedes \S sec:masses.
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  No new references (filatov2024towards, baez2002octonions,
+%  gillardgresnigt2019three, furey2018three already in the library).
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:charges               -- quantum numbers (previous section)
+%    sec:entanglement-classes  -- GHZ/W theorems; Filatov chirality
+%    sec:register              -- the three-qubit register; Filatov representation
+%    prop:ghz, prop:w-doublet  -- the theorems
+%    app:w-proof               -- the W proofs (Bell-shadow corollary)
+%    sec:masses                -- masses (forward; mass hierarchy mechanism)
+%    sec:interactions          -- circuits branch (forward; weak force as resolution-swap)
+%
+%  EPISTEMIC FLAGS carried through this section (per the source documents),
+%  now recorded as named open problems (paper-wide convention, see the
+%  quantum-numbers header for the preamble):
+%    - op:filatov-extension  -- the three-qubit extension of the Filatov
+%      constraint is ASSUMED, not proved: the foundational problem;
+%    - op:chirality          -- the SU(2)_L-over-SU(2)_R fixed point;
+%    - op:sterile-count      -- two-versus-three a-chiral modes;
+%    - the mass ORDERING is structurally motivated, the mechanism deferred
+%      to \S sec:masses (its open problems are converted when that section
+%      is next worked).
+%
+%  REVISED 2026-06-11: open-problem convention implemented; four-class
+%  table corrected (rows 2-3 had odd-qubit labels misaligned with the
+%  handedness patterns); quark-doublet attribution corrected (frustrated-
+%  pair resolutions, not the W-marginal spectrum, per the rescoped
+%  prop:w-doublet); canonical-orbit scope; triality paragraph tied to the
+%  explicit Fano lines of app:setup; NEW subsection "Why the colour force
+%  is not chiral" (the Maudslay/Whitworth three-plates analogy --
+%  historical attribution verified: Maudslay ~1800, Whitworth's 1840
+%  British Association paper).
+% =====================================================================
+
+\section{The Particle Zoo}
+\label{sec:generations}
+% NOTE: revision of 2026-06-11 implements the open-problem convention and
+% the review fixes; if a fuller rewrite follows, preserve: the label
+% sec:zoo-singlets (anchor for the right-handed-singlet enumeration) and
+% its two-way pairing with sec:rh-singlets in the quantum-numbers section;
+% and the op: labels op:filatov-extension, op:chirality, op:sterile-count.
+
+With a channel's quantum numbers now readable from its entanglement structure (\S\ref{sec:charges}),
+we can enumerate the channels themselves: the fermion content of one generation, then why there are
+exactly three of them, and finally a fourth class that couples to nothing. The spine of the argument
+is a single topological fact --- the complete graph $K_3$ is not two-colourable --- applied to the
+handedness that the Filatov representation forces on entangled qubits. It should be said at the
+outset that one link in the chain is an assumption rather than a theorem, and a load-bearing one:
+the extension of the Filatov constraint from two qubits to three. We flag it where it enters and
+again at the close; the two-qubit result it generalises is proved \autocite{filatov2024towards}, and
+everything downstream is rigorous once the extension is granted.
+
+\subsection{One generation}
+
+A single generation is assembled from the two canonical entanglement orbits of
+\S\ref{sec:entanglement-classes} --- the particle identification of \S\ref{sec:canonical-orbits} ---
+together with chirality. The leptons are the W-class channels: a left-handed weak-isospin doublet,
+the neutrino and the charged lepton, together with a right-handed charged-lepton singlet that the
+weak force does not touch. The quarks are the GHZ-class channels, which carry colour; their
+weak-isospin doublet does not come from the W-marginal spectrum --- a canonical GHZ orbit has
+maximally mixed marginals and no distinguished axis --- but from the frustrated-pair resolutions
+made precise below, the same $T_3 = \pm\tfrac12$ structure that Proposition~\ref{prop:w-doublet}
+exhibits for the leptons. They appear as a left-handed doublet, the up- and down-type quark, in
+three colours, with right-handed singlets. Collecting one generation:
+
+\begin{center}
+\begin{tabular}{lllc}
+\hline
+channel & class & multiplet & chirality \\
+\hline
+$(\nu,\ e)$            & W   & $SU(2)$ doublet, colour singlet      & left \\
+$e$                    & W   & $SU(2)$ singlet, colour singlet      & right \\
+$(u,\ d)\times 3$      & GHZ & $SU(2)$ doublet, colour triplet      & left \\
+$u,\ d$ (each $\times3$) & GHZ & $SU(2)$ singlet, colour triplet    & right \\
+\hline
+\end{tabular}
+\end{center}
+
+The doublet is the two ways of resolving a single structure, made precise below; the singlet is the
+channel with no such structure for the weak force to act on.\label{sec:zoo-singlets} The
+right-handed singlets' hypercharges --- $Y = 2Q$ via the chirality flip --- are fixed in
+\S\ref{sec:rh-singlets}, completing their quantum numbers. Nothing in the table is assigned by
+hand --- the class fixes colour, the doublet fixes isospin, the chirality is the handedness the
+next subsection forces, and the hypercharges are those of \S\ref{sec:charges}.
+
+\subsection{The Filatov constraint and the \texorpdfstring{$K_3$}{K3} obstruction}
+
+Chirality enters through the representation of \S\ref{sec:register}. Filatov and Auzinsh proved that
+an entangled two-qubit state cannot be drawn on two Bloch spheres of the same handedness: one must be
+right-handed and the other left-handed \autocite{filatov2024towards}. This is the Filatov
+constraint, and it is a topological consequence of the quaternionic Hopf fibration rather than a
+drawing convention --- the handedness asymmetry is the geometric content of the entanglement itself.
+
+A W-class channel has all three of its qubit pairs entangled: tracing any one qubit leaves the
+genuine Bell pair of the bipartite shadow (Corollary in Appendix~\ref{app:w-proof}). Extending the
+Filatov constraint to each pair independently, the three qubits must be assigned handednesses
+$\chi_A,\chi_B,\chi_C \in \{L,R\}$ with every pair opposite,
+\begin{equation}
+  \chi_A \neq \chi_B, \qquad \chi_B \neq \chi_C, \qquad \chi_C \neq \chi_A.
+\end{equation}
+This is a request to two-colour the complete graph $K_3$ on three vertices. A graph is two-colourable
+exactly when it has no odd cycle; $K_3$ \emph{is} an odd cycle, so it is not two-colourable. There
+is no handedness assignment satisfying all three constraints at once. We call this the $K_3$
+obstruction.
+
+It must be stated plainly that the step just taken --- applying the constraint to each pair of a
+\emph{tripartite} state independently --- is an assumption. The two-sphere theorem does not
+formally imply it, and we record it as the foundational open problem of this section.
+
+\begin{openproblem}[The Filatov extension]\label{op:filatov-extension}
+Prove that each entangled pair of a tripartite state carries its own quaternionic Hopf structure,
+so that the Filatov--Auzinsh opposite-handedness theorem \autocite{filatov2024towards} applies to
+every pair independently. The generation count of this section rests on this extension; the
+combinatorics that follow are rigorous once it is granted.
+\end{openproblem}
+
+\subsection{Three generations and the doublet}
+
+Since the three constraints cannot all hold, enumerate the $2^3 = 8$ handedness assignments and count
+how many each satisfies. Every assignment satisfies either none or exactly two of the three (never
+one, never three), giving four classes:
+
+\begin{center}
+\begin{tabular}{ccccll}
+\hline
+$\chi_A$ & $\chi_B$ & $\chi_C$ & satisfied pairs & odd qubit & reading \\
+\hline
+$\uparrow$ & $\downarrow$ & $\downarrow$ & $(AB),(AC)$ & $A$ ($\mathbb{C}$)  & generation 1 \\
+$\uparrow$ & $\downarrow$ & $\uparrow$   & $(AB),(BC)$ & $B$ ($\mathbb{H}$)  & generation 2 \\
+$\uparrow$ & $\uparrow$   & $\downarrow$ & $(AC),(BC)$ & $C$ ($\mathbb{O}$)  & generation 3 \\
+$\uparrow$ & $\uparrow$   & $\uparrow$   & none        & ---                 & sterile (\S below) \\
+\hline
+\end{tabular}
+\end{center}
+
+Each row also has its globally conjugated partner ($\uparrow\!\leftrightarrow\!\downarrow$
+throughout), which is the antiparticle. The first three classes each have exactly one qubit whose
+handedness is the odd one out, and that qubit's Cayley--Dickson level labels the generation:
+$\mathbb{C}$, $\mathbb{H}$, $\mathbb{O}$ for the first, second and third. The remaining
+same-handedness pair --- the frustrated pair the constraint cannot satisfy --- has two topologically
+distinct resolutions, and those two resolutions are the two members of the weak-isospin doublet,
+$T_3 = \pm\tfrac12$. The weak force, in this reading, is the operation that switches between the two
+resolutions of the frustrated pair, which is exactly the $W^\pm$ action on the $B$-qubit of
+\S\ref{sec:charges}.
+
+There is a deeper reason for the number three, beyond the combinatorial count, and it is worth
+giving because it shows the count is not an artefact of the $K_3$ device. The three-qubit state
+space carries the triality of $\mathrm{Spin}(8)$, which permutes the vector and the two spinor
+representations $\mathbf{8}_v, \mathbf{8}_s, \mathbf{8}_c$ \autocite{baez2002octonions}. Fixing the
+preferred complex direction breaks the triality and singles out the three Fano lines through that
+direction --- the lines $(1,2,3)$, $(1,4,5)$ and $(1,7,6)$ of the multiplication table fixed in
+Appendix~\ref{app:setup} --- each a quaternionic subalgebra; these are the three generations.
+Triality gives three; the $K_3$ obstruction refines this to three-plus-one by adding the
+unfrustrated class. The same count of three generations is reached independently from the complex
+sedenions and from chains of division-algebra ideals \autocite{gillardgresnigt2019three,furey2018three},
+a convergence we read as corroboration rather than as part of the present derivation.
+
+The framework associates increasing mass with the increasing algebraic depth of the odd qubit ---
+commutative $\mathbb{C}$ lightest, non-associative $\mathbb{O}$ heaviest --- which reproduces the
+observed ordering $m_1 < m_2 < m_3$ in each charge sector. We flag honestly that what is settled here
+is the \emph{count} and the depth \emph{ordering}; the mass values, and the mechanism that produces
+the hierarchy, belong to \S\ref{sec:masses}, where it emerges that a naive associator count does not
+by itself separate the generations and the hierarchy comes from a subtler feature of the geometry.
+One prediction is immediate and sharp: there are four classes and only three are chiral, so there is
+no fourth generation at any scale --- a stronger statement than the $Z$-width bound, and falsifiable.
+
+\subsection{Why the colour force is not chiral}
+
+A mechanical story from the dawn of precision engineering makes the structural point vivid. To
+manufacture a truly flat surface, nineteenth-century engineers --- the practice originates with
+Maudslay around 1800 and was formalised by Whitworth in 1840 --- would coat metal plates with
+engineer's blue and rub them together: the blue reveals the high spots, which are scraped away, and
+the cycle repeats. Done with \emph{two} plates the process converges, but not to flatness: it
+produces a perfectly mating pair, one gently convex and the other gently concave --- a
+complementary, handed pair whose error no two-plate comparison can ever detect, because convex fits
+concave exactly. The cure was to work \emph{three} plates against one another pairwise, in
+rotation. Writing each plate's deviation from flat as $\kappa$, the pairwise mating conditions
+$\kappa_A = -\kappa_B$, $\kappa_B = -\kappa_C$, $\kappa_C = -\kappa_A$ force
+$\kappa_A = \kappa_B = \kappa_C = 0$: the only surface that can mate with both of two others, which
+also mate each other, is a plane. Two-way matching tolerates --- indeed manufactures --- a handed
+pair; three-way cyclic matching destroys handedness.
+
+This is the $K_3$ structure in continuous clothing, with one instructive difference. Handedness, in
+the Filatov representation, is a property of \emph{pairs}: the two-sphere theorem assigns opposite
+chirality to the members of an entangled pair, just as two-plate lapping assigns complementary
+curvature. The weak force couples to exactly such a pair --- the frustrated pair, whose two
+resolutions are the doublet --- so it is chirality-sensitive by construction; which chirality it
+selects is Open Problem~\ref{op:chirality}, but \emph{that} it reads handedness follows from its
+pairwise nature. The colour force couples instead to the three-way collective structure, the
+cyclically matched triple, and a cyclically matched triple can carry no consistent handedness. There
+is no handedness for a gate on the $C$-qubit to read, so colour couples to left and right alike ---
+the one-generation table already exhibits this, with the right-handed singlets carrying colour
+exactly as the left-handed doublets do --- and the same three-way symmetry leaves the QCD vacuum
+angle with no pairwise orientation to inhabit (\S\ref{sec:entanglement-classes}). The instructive
+difference is the resolution. Curvature is continuous, so the plates can satisfy all three
+constraints at once by relaxing to the achiral fixed point $\kappa = 0$; binary handedness has no
+such neutral value, so the qubit triple is \emph{frustrated} where the plates are \emph{flattened}
+--- which is precisely why three chiral generations exist at all, each retaining one unsatisfiable
+pair. The configuration that abandons pairwise opposition altogether, all three the same, is the
+binary system's only achiral option, and it is the subject of the next subsection: the channel so
+symmetric that no force has anything to grip.
+
+\subsection{The fourth class: a sterile, a-chiral channel}
+
+The fourth class has all three qubits of the same handedness. It satisfies none of the Filatov
+constraints, so it has no opposite-handedness pair --- and with no such pair there is no $SU(2)$
+structure for the weak force to act on. By the symmetry of the all-same configuration its net
+hypercharge winding vanishes, so it is electrically neutral, and being a colour singlet it is inert
+to the strong force as well. It couples to nothing.
+
+A terminological care is needed here, and it carries physical weight. This channel is not a
+right-handed neutrino in the usual sense: that phrase presupposes chirality is a binary property
+every fermion must carry, whereas the all-same configuration has \emph{no} opposite-handedness pair
+and so is neither left- nor right-handed but \emph{a-chiral}. It is not the parity partner of the
+active neutrino, which is why the standard objection to such a state as dark matter --- that parity
+restoration at high energy should regenerate it --- does not apply: there is nothing for it to be the
+partner of. The framework reads it as a sterile neutrino and a dark-matter candidate, with a
+computability-scale Majorana mass driving a seesaw. On the count that two such a-chiral modes exist,
+the seesaw yields a massless lightest active neutrino, $m_1 = 0$, normal mass ordering, and two
+sterile states near a few TeV. The count of a-chiral modes is the weakest link in this part of the
+chain, and we record it.
+
+\begin{openproblem}[The sterile count]\label{op:sterile-count}
+Determine, from the $K_3$ class structure, whether the a-chiral class supplies two or three
+independent sterile modes to the seesaw. On the two-mode count the lightest active neutrino is
+exactly massless, $m_1 = 0$, with normal ordering; on a three-mode count $m_1 = 0$ would not follow.
+\end{openproblem}
+
+\subsection{What is settled, and what is owed}
+
+Settled, resting on results proved earlier in the paper: colour from the canonical GHZ orbit
+(Proposition~\ref{prop:ghz}); the lepton doublet from the canonical W orbit
+(Proposition~\ref{prop:w-doublet}); the non-two-colourability of $K_3$, which is elementary; and,
+granted the Filatov extension, exactly four classes, three chiral and one sterile, with the quark
+doublet supplied by the frustrated-pair resolutions. The convergent three-generation counts from
+triality and from the sedenions support the same conclusion.
+
+Owed. One item has not yet been formalised: the selection of $SU(2)_L$ over $SU(2)_R$ --- why the
+doublet is left-handed rather than right --- is a chirality fixed-point argument that propagates the
+octonionic orientation down through the tower, sketched but not yet a theorem.
+
+\begin{openproblem}[The chirality fixed point]\label{op:chirality}
+Prove that the orientation of the octonionic level propagates down the Cayley--Dickson tower to
+select $SU(2)_L$ over $SU(2)_R$ --- that the weak doublet is left-handed --- from the handedness
+structure alone.
+\end{openproblem}
+
+The remaining debts are the problems already recorded: the Filatov extension
+(Open Problem~\ref{op:filatov-extension}) is the foundation, and until it is proved the generation
+count --- and with it the quark doublet --- is structurally motivated rather than derived; the
+sterile count is Open Problem~\ref{op:sterile-count}. And the mass hierarchy, whose ordering the
+algebraic depth motivates, awaits its mechanism in \S\ref{sec:masses}, where its open problems are
+recorded in turn.
+
+The spectrum is now enumerated: three generations of quarks and leptons in left-handed doublets and
+right-handed singlets, with a fourth, sterile, a-chiral class. What the depth ordering asserts
+qualitatively --- that mass grows with algebraic depth --- the next section makes quantitative,
+turning the register geometry into the charged-lepton and quark mass spectra.

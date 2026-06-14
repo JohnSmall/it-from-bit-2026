@@ -1,0 +1,256 @@
+% =====================================================================
+%  Section: Quantum Numbers   (Plan Stage 2)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Follows \S sec:register; precedes \S sec:generations (the particle zoo).
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  No new references (krasnov2021so9, szangolies2025standardmodel already
+%  in the library; GHZ/W are framework-internal, Appendices B--C).
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:register              -- the three-qubit register (Stage 1)
+%    sec:entanglement-classes  -- GHZ/W theorems
+%    sec:canonical-orbits      -- canonical orbit = particle (postulate)
+%    prop:ghz, prop:w-doublet  -- those theorems (rescoped 2026-06-11)
+%    prop:gsm                  -- G_SM as the Spin(9) stabiliser
+%    app:ghz-proof, app:w-proof-- the proofs
+%    sec:generations           -- the particle zoo / three generations (forward)
+%    sec:masses                -- masses, where sin^2 theta_W is applied (forward)
+%    sec:interactions          -- the quantum-circuit branch (forward)
+%
+%  REVISED 2026-06-11 after review: canonical-orbit scope; corrected
+%  doublet language; tracelessness flagged as the load-bearing assumption
+%  (per hypercharge_derivation.md 7.2); anomaly claim made precise
+%  (doublet-sector condition automatic, higher anomalies flagged);
+%  right-handed singlet hypercharges added (Y = 2Q via the zigzag);
+%  garbled SU(5) sentence fixed; matching scale standardised to 3.6 TeV.
+%
+%  OPEN-PROBLEM CONVENTION (paper-wide, introduced 2026-06-11): open
+%  problems are surfaced where encountered as numbered environments with
+%  op: labels, and collected in a closing "Open Problems" list that
+%  references them. Preamble (option A, recommended -- automatic list):
+%      \usepackage{thmtools}                     % after amsthm
+%      \declaretheorem[style=definition,name=Open Problem]{openproblem}
+%  and at the end of the paper:
+%      \renewcommand{\listtheoremname}{Open Problems}
+%      \listoftheorems[ignoreall,show={openproblem}]
+%  (option B, manual: \theoremstyle{definition}
+%  \newtheorem{openproblem}{Open Problem} and a hand-written closing
+%  section using \ref{op:...}.)
+%  Labels in this section: op:traceless, op:anomalies.
+%
+%  Hypercharge convention: Q = T_3 + Y/2, with Y(lepton C-singlet) = -1 and
+%  Y(quark C^3-triplet) = +1/3, matching \S sec:entanglement-classes.
+% =====================================================================
+
+\section{Quantum Numbers}
+\label{sec:charges}
+
+The register of \S\ref{sec:register} carries three qubits, one per gauge sector, and the theorems
+of \S\ref{sec:entanglement-classes} have already told us which canonical entanglement orbit is a
+quark and which a lepton --- the identification of \S\ref{sec:canonical-orbits}. What remains is to
+read the actual quantum numbers --- colour, weak isospin,
+hypercharge, electric charge --- off a state, and to see that they come out quantised at the
+Standard Model values rather than assigned to fit them. This section does that, recovers the
+Gell-Mann--Nishijima relation as an identity of the register, and derives the weak mixing angle.
+Throughout, a charge is to be understood operationally: it is what a gate acting on the relevant
+qubit reads or changes, a framing we use lightly here and lean on when interactions are built as
+circuits in \S\ref{sec:interactions}.
+
+\subsection{Colour and weak isospin from the entanglement classes}
+
+The two non-abelian charges are already in hand. By Proposition~\ref{prop:ghz} a quark channel ---
+a canonical GHZ orbit, under the identification of \S\ref{sec:canonical-orbits} --- has its Hopf
+image on the unit sphere of the colour-triplet sector $\mathbb{C}^3$, so its $C$-qubit carries the
+$\mathbf{3}$ of $SU(3)$: this is colour, and a quark is a channel whose $C$-qubit is GHZ-entangled
+with its partners in a hadron. A lepton channel --- a canonical W orbit --- is a colour singlet:
+its $C$-qubit carries the trivial representation. Operationally, colour is what a gate on the
+$C$-qubit reads, and the confinement of Proposition~\ref{prop:ghz} is, at register level, the
+statement that no local gate moves a quark channel off the colour locus: no gate can isolate a
+single colour. (The dynamical content of confinement belongs to Paper~2; only this structural form
+is used here.)
+
+Weak isospin is the content of Proposition~\ref{prop:w-doublet}: the single-qubit reduced state of
+a W-class channel has the non-degenerate spectrum $(\tfrac23,\tfrac13)$, which singles out a
+distinguished $T_3$ axis and an ordered pair of eigenstates --- the two doublet members --- so its
+$B$-qubit carries $T_3 = \pm\tfrac12$ along that axis: for the leptons, the neutrino and the
+charged lepton. The quark doublet carries the same $T_3 = \pm\tfrac12$ structure, supplied not by
+the W-marginal spectrum but by the resolution classes of \S\ref{sec:generations}. A weak-isospin
+singlet has $T_3 = 0$. The raising and lowering operators
+about the distinguished axis are exactly what a $W^\pm$ gate on the $B$-qubit applies, taking one
+doublet member to the other; that the doublet is left-handed --- that only one chirality sits in it
+--- is the handedness foreshadowed in \S\ref{sec:entanglement-classes} and made precise with the
+generation structure in \S\ref{sec:generations}.
+
+\subsection{Hypercharge from the trace condition}
+
+Hypercharge is the one abelian charge. The $U(1)_Y$ generator must commute with the colour $SU(3)$,
+and since $SU(3)$ acts irreducibly on $\mathbb{C}^3$ and trivially on $\mathbb{C}$, Schur's lemma
+forces it to be diagonal on the split: a phase rotation acting on
+$\mathbb{O} = \mathbb{C}\oplus\mathbb{C}^3$ with constant eigenvalues $y_{\mathbb{C}}$ on the
+singlet (the lepton direction) and $y_{\mathbb{C}^3}$ on the colour triplet (the quark directions).
+One further condition fixes the eigenvalues up to scale: the generator must be \emph{traceless}
+over $\mathbb{O}$. Since $\mathbb{C}$ is one complex dimension and $\mathbb{C}^3$ is three,
+\begin{equation}
+  1\cdot y_{\mathbb{C}} + 3\cdot y_{\mathbb{C}^3} = 0
+  \quad\Longrightarrow\quad
+  y_{\mathbb{C}} = -3\,y_{\mathbb{C}^3}.
+  \label{eq:trace}
+\end{equation}
+
+\begin{proposition}[Hypercharge spectrum]\label{prop:hypercharge}
+Tracelessness over $\mathbb{O} = \mathbb{C}\oplus\mathbb{C}^3$ fixes the hypercharge eigenvalues on
+the lepton and quark sectors to the ratio $y_{\mathbb{C}} : y_{\mathbb{C}^3} = -3 : 1$. Fixing the
+sign and overall normalisation by the electron's charge gives $(y_{\mathbb{C}}, y_{\mathbb{C}^3}) =
+(-1, +\tfrac13)$.
+\end{proposition}
+
+The status of the trace condition should be stated plainly, because it is the load-bearing
+assumption of this section. A trace part would be a phase rotation proportional to the identity on
+$\mathbb{O}$ --- an overall phase of the whole register --- and in this framework the overall phase
+is the observer-private, self-referential phase that the Born-rule construction renders
+unobservable (\S\ref{sec:register}); the gauge-observable $U(1)$ must therefore be the traceless
+part. We regard this as a well-motivated structural assumption rather than a theorem, and record it
+as a named open problem.
+
+\begin{openproblem}[Tracelessness of $U(1)_Y$]\label{op:traceless}
+Show that the gauge kinetic term derived from the Hopf holonomy forces the gauge-observable $U(1)$
+to be the traceless part of the phase rotation on $\mathbb{O}$, promoting the global-phase argument
+above from motivation to theorem.
+\end{openproblem}
+
+Granted it, there is no further freedom: the relative hypercharge of leptons and quarks is not an
+input chosen to make the theory consistent but a consequence of one phase rotation being traceless
+on the computability split.
+
+The trace condition also does anomaly work, and here precision matters. With the real
+multiplicities of the split, $2\,y_{\mathbb{C}} + 6\,y_{\mathbb{C}^3} = 0$ is exactly the vanishing
+of the summed hypercharge of the left-handed doublet sector --- the mixed $SU(2)^2$--$U(1)_Y$
+anomaly condition --- so that cancellation is automatic rather than imposed: the same condition
+that fixes the eigenvalues is the condition that cancels it. The remaining conditions --- the cubic
+$U(1)_Y^3$, the mixed $SU(3)^2$--$U(1)_Y$, and the gravitational anomaly --- involve the
+right-handed singlet hypercharges below; they are satisfied by the resulting assignments, as in the
+Standard Model, but their structural status is open.
+
+\begin{openproblem}[Higher anomalies from traces]\label{op:anomalies}
+Derive the cubic $U(1)_Y^3$, the mixed $SU(3)^2$--$U(1)_Y$ and the gravitational anomaly
+cancellations structurally, each as a trace condition on the appropriate sector of the register,
+rather than as a check on the resulting assignments.
+\end{openproblem}
+
+The right-handed singlets complete the table.\label{sec:rh-singlets} They have $T_3 = 0$, and the
+chirality flip that produces them preserves electric charge (the \emph{Zitterbewegung} zigzag,
+adopted here and made circuit-level at the Higgs vertex of \S\ref{sec:interactions}), so their
+hypercharges are fixed by $Y = 2Q$: $-2$ for the charged leptons, $+\tfrac43$ and $-\tfrac23$ for
+the up- and down-type quarks, and $0$ for the sterile class of \S\ref{sec:generations}. This is the
+full Standard Model assignment, with the zigzag mechanism flagged as adopted rather than
+re-derived. As spectrum content --- channels with no frustrated pair for the weak force to act on
+--- the singlets are enumerated with the rest of the one-generation table in
+\S\ref{sec:zoo-singlets}.
+
+\subsection{The Gell-Mann--Nishijima relation as a register identity}
+
+Combining the $B$-qubit eigenvalue $T_3$ with the $A$-qubit eigenvalue $Y$ through
+\begin{equation}
+  Q = T_3 + \tfrac12 Y
+\end{equation}
+reproduces the electric charges of an entire generation, with the hypercharges of
+Proposition~\ref{prop:hypercharge}:
+
+\begin{center}
+\begin{tabular}{lcccc}
+\hline
+state & sector & $T_3$ & $Y$ & $Q = T_3 + Y/2$ \\
+\hline
+neutrino $\nu$        & $\mathbb{C}$   & $+\tfrac12$ & $-1$          & $0$ \\
+charged lepton $e$    & $\mathbb{C}$   & $-\tfrac12$ & $-1$          & $-1$ \\
+up-type quark $u$     & $\mathbb{C}^3$ & $+\tfrac12$ & $+\tfrac13$   & $+\tfrac23$ \\
+down-type quark $d$   & $\mathbb{C}^3$ & $-\tfrac12$ & $+\tfrac13$   & $-\tfrac13$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The relation $Q = T_3 + \tfrac12 Y$ is not imposed: $T_3$ is the $SU(2)$ label of
+Proposition~\ref{prop:w-doublet}, $Y$ the phase eigenvalue of Proposition~\ref{prop:hypercharge},
+and $Q$ is the combination of the $A$- and $B$-qubit charges that the electromagnetic gate reads
+(the factor $\tfrac12$ is a normalisation convention, absorbable into the scale of $Y$).
+The Gell-Mann--Nishijima formula is thus an identity of the register.
+
+\subsection{Charge quantisation and the \texorpdfstring{$\mathbb{Z}_6$}{Z6} quotient}
+
+The fractional values --- third-integer charges for quarks, integer for leptons --- are quantised,
+and the framework says why. The gauge group is not the bare product but the quotient
+$G_{\mathrm{SM}} = \bigl(SU(3)\times SU(2)\times U(1)\bigr)/\mathbb{Z}_6$ established in
+\S\ref{sec:entanglement-classes} as the $\mathrm{Spin}(9)$ stabiliser
+(Proposition~\ref{prop:gsm}) \autocite{krasnov2021so9}. The $\mathbb{Z}_6$ identifies a combination
+of the $\mathbb{Z}_3$ centre of colour, the $\mathbb{Z}_2$ centre of weak isospin, and a $U(1)_Y$
+phase that acts trivially on every physical channel. For that element to act trivially, the
+hypercharge of a channel must be locked to its colour triality and its weak isospin: a colour
+triplet must carry hypercharge in units of $\tfrac13$, modulo integers, relative to a colour
+singlet, which is exactly the offset between $y_{\mathbb{C}^3} = +\tfrac13$ and
+$y_{\mathbb{C}} = -1$. The trace
+condition~\eqref{eq:trace} fixes the ratio; the $\mathbb{Z}_6$ quotient forces it to be realised in
+commensurate, quantised units. Electric charge is then quantised in thirds, with leptons landing on
+integers because they are colour singlets --- the same structural fact, read through $Q = T_3 +
+\tfrac12 Y$.
+
+\subsection{The weak mixing angle}
+
+The mixing of $U(1)_Y$ with the diagonal $SU(2)_L$ generator is set by the ratio of the two gauge
+couplings,
+\begin{equation}
+  \sin^2\theta_W = \frac{g'^2}{g^2 + g'^2}.
+\end{equation}
+At tree level the framework fixes this ratio geometrically. The weak $SU(2)$ lives on the
+three-dimensional fibre $S^3$ and the hypercharge $U(1)$ on the one-dimensional fibre $S^1$
+(\S\ref{sec:register}); with no feature distinguishing one Lie-algebra direction from another, the
+natural metric on the combined electroweak fibre weights every direction equally, so the
+coupling-squared of each factor scales with its fibre dimension, $g^2 \propto \dim S^3 = 3$ and
+$g'^2 \propto \dim S^1 = 1$. Hence
+\begin{equation}
+  \sin^2\theta_W = \frac{1}{1+3} = \tfrac14
+  \qquad\text{(bare, tree level).}
+\end{equation}
+Equivalently: of the four electroweak generators, three engage the weak fibre and one survives
+unbroken --- massless --- as the photon, so the photon occupies a fraction $\tfrac14$ of the
+electroweak algebra. (This massless direction is the one \S\ref{sec:masses} calls \emph{debt-free},
+once mass has been identified there with octonionic associator-debt; at this point we use only its
+masslessness.)
+
+This is a bare value, to be run to the electroweak scale by the ordinary Standard Model
+renormalisation group, and its origin should not be confused with grand unification: $SU(5)$
+predicts a bare $\tfrac38$ at its unification scale, whereas here there is no $SU(5)$ --- the
+unified group does not arise from the division-algebra ladder, consistent with the non-observation
+of proton decay --- and the bare value is $\tfrac14$ from the fibre dimensions. Running $\tfrac14$
+down with the measured couplings reaches the observed $\sin^2\theta_W \approx 0.231$ at $M_Z$, the
+bare value being attained at a matching scale of roughly $3.6\ \mathrm{TeV}$ --- about fifteen
+times the Higgs vacuum value, and just above the scale at which the quaternionic structure becomes
+physically operative.
+
+Two honesty notes. The derivation rests on the structural assumption that the tree-level couplings
+scale with the fibre dimension; we flag it as such, while noting that the same value $\tfrac14$ is
+reached independently by counting the single massless direction, which is reassuring. And the
+identification of \emph{which} combination is the photon --- the direction blind to the generation
+structure as well as VEV-invariant --- is sharpened only once that structure is in place, in
+\S\ref{sec:generations}; here we have used only that one of the four directions survives unbroken.
+We derive $\sin^2\theta_W = \tfrac14$ at this point because it is fixed by the hypercharge embedding,
+and apply it to the boson masses in \S\ref{sec:masses}.
+
+\subsection{Charges as operations}
+
+For the circuit picture of \S\ref{sec:interactions} it is worth restating the quantum numbers
+operationally, since that is the form interactions consume. Colour is what a gate on the $C$-qubit
+reads; weak isospin is what a $W^\pm$ gate raises or lowers on the $B$-qubit; hypercharge is the
+phase a gate applies to the $A$-qubit; and electric charge $Q = T_3 + \tfrac12 Y$ is what the
+electromagnetic gate reads, a combination that mixes the $A$ (hypercharge) and $B$ (isospin)
+channels --- which is why the photon is the surviving $A$--$B$ combination rather than a pure
+$A$-qubit phase. Each gauge boson thus acts through a definite part of the register --- the
+$W^\pm$ on the $B$-qubit, the gluons on $C$, the photon and the $Z$ on the $A$--$B$ pair jointly
+--- and a channel's interactions are fixed by which of its three qubits carry non-trivial state.
+This is the hook the interaction circuits build on; we develop it there.
+
+With colour, weak isospin, hypercharge and electric charge all read off the register, and all
+quantised at their measured values, a channel's full Standard Model quantum-number assignment is
+now legible from its entanglement structure alone. The next step is to enumerate the channels ---
+the fermion content of one generation, and then why there are three --- which is the business of
+\S\ref{sec:generations}.

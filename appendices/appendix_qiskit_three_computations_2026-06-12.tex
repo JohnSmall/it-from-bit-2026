@@ -1,0 +1,160 @@
+% =====================================================================
+%  Appendix: Three Executable Computations (Qiskit)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-12.
+%  Companion to \S sec:interactions ("What the circuits compute...").
+%
+%  \input fragment, plain \section --- wrap in the single appendices
+%  environment of the main document (see appendix_ghz_w_proofs header).
+%  REQUIRES \usepackage{listings} in the preamble.
+%
+%  VALIDATION STATUS: unlike the beta-decay appendix (illustrative), the
+%  three computations here were EXECUTED (Qiskit 2.4.1, statevector
+%  simulation, 2026-06-12) and the outputs quoted are the verified
+%  results; the analytic cross-checks in B agree to machine precision.
+%  What execution validates is the ENCODING of the framework's claims,
+%  not the claims themselves --- that is the paper's burden. Full
+%  scripts: qiskit_A_ckm_charged_current.py,
+%  qiskit_B_ghz_w_interference.py, qiskit_C_composition_laws.py
+%  (delivered alongside; commit to repo as regression tests).
+%
+%  Labels: app:qiskit-handles (umbrella), app:qiskit-ckm,
+%  app:qiskit-interference, app:qiskit-composition.
+%  Cross-refs used: sec:interactions, sec:generations, sec:masses,
+%  sec:predictions, op:cabibbo, op:up-quark, op:vertex-factors,
+%  op:associator-geodesic, app:w-proof, app:setup.
+% =====================================================================
+
+\section{Three Executable Computations}
+\label{app:qiskit-handles}
+
+This appendix delivers, as runnable Qiskit circuits, the three computations that
+\S\ref{sec:interactions} stated as invitations. Each was executed on a statevector simulator and the
+outputs below are the verified results of those runs. We are precise about epistemic status
+throughout: execution validates that the framework's structural claims have been \emph{faithfully
+encoded} and that the encoded structures behave as asserted; whether the structures are the right
+physics is the question the body of the paper argues. All three run in seconds on a laptop.
+
+\subsection{The CKM-extended charged current}
+\label{app:qiskit-ckm}
+
+The beta-decay circuit of \S\ref{sec:interactions} is extended with one generation qubit $g$
+($\lvert0\rangle$ = first generation, $\lvert1\rangle$ = second), and the $W^-$ emission is promoted
+to the full charged-current gate: the $T_3$ raise on $B_q$ tensored with the CKM rotation on $g$,
+taken to be $R_y(2\delta)$ with $\delta = 2/9$ --- the Koide phase, so that the suggestive
+identification of Open Problem~\ref{op:cabibbo} becomes an executable hypothesis.
+
+\begin{lstlisting}[language=Python,basicstyle=\small\ttfamily]
+DELTA = 2/9
+qc = QuantumCircuit(6)        # q0=B_nu q1=B_e q2=g q3=C_q q4=B_q q5=A_q
+qc.ry(2*DELTA, 2)             # CKM rotation on the generation register
+qc.x(4)                       # T3 raise: d -> up-type
+qc.h(1); qc.cx(1, 0)          # W- decays to the lepton Bell pair
+psi = Statevector(qc)
+\end{lstlisting}
+
+The executed output has amplitude support on exactly four basis states
+($\lvert q_5 q_4 q_3 q_2 q_1 q_0\rangle$, little-endian): $\lvert010000\rangle$ and
+$\lvert010011\rangle$ at $+0.689719$, and $\lvert010100\rangle$ and $\lvert010111\rangle$ at
+$+0.155845$. The structure is readable by eye: two generation branches, each spread over the two
+components of the lepton Bell pair. Multiplying back the $\sqrt2$ of the Bell spread, the circuit's
+amplitudes \emph{are} the CKM factors:
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+ & circuit & PDG & deviation \\
+\hline
+$\lvert V_{ud}\rvert = \cos(2/9)$ & $0.97541$ & $0.97435$ & $+0.11\%$ \\
+$\lvert V_{us}\rvert = \sin(2/9)$ & $0.22040$ & $0.22430$ & $-1.74\%$ \\
+\hline
+\end{tabular}
+\end{center}
+with the $2\times2$ block exactly unitary by construction. Two readings of the run. First, the
+$g = \lvert1\rangle$ branch --- the Cabibbo-suppressed transition into the second generation --- is
+present in the output with the correct relative amplitude even though real beta decay cannot reach
+charm: the circuit computes the internal-structure factor, and the kinematic exclusion belongs to
+the spacetime sector. The division of labour of \S\ref{sec:interactions} is thus visible in a single
+statevector. Second, the comparison row is the test the framework must pass or fail: a reader who
+believes the Cabibbo angle is not $2/9$ can replace one rotation angle and watch the first column
+move. Extending $g$ to a qutrit (two qubits) and $R_y$ to a $3\times3$ unitary built from the
+framework's phases is the full-CKM version of the same handle.
+
+\subsection{The GHZ--W interference}
+\label{app:qiskit-interference}
+
+The candidate mechanism for the up-quark discrepancy (Open Problem~\ref{op:up-quark}) is
+interference between the tripartite (GHZ) and pairwise (W) contributions at the first generation.
+This computation makes the interference itself executable: prepare
+$\lvert\psi\rangle = \alpha\lvert\mathrm{GHZ}\rangle + \beta e^{\mathrm{i}\varphi}\lvert\mathrm{W}\rangle$,
+trace to one qubit, and read the Bloch radius $r$ of the cut --- the base coordinate from which the
+geodesic mass proxy is built (Appendix~\ref{app:setup}).
+
+\begin{lstlisting}[language=Python,basicstyle=\small\ttfamily]
+vec = a*GHZ + b*np.exp(1j*phi)*W
+qc = QuantumCircuit(3); qc.initialize(vec, [0, 1, 2])
+rho = partial_trace(Statevector(qc), [1, 2])     # keep the cut qubit
+# r from the Bloch components of rho
+\end{lstlisting}
+
+The executed run, cross-checked against the closed form
+$r^2 = \tfrac23\alpha^2\beta^2 + \beta^4/9$ to machine precision:
+\begin{center}
+\begin{tabular}{cccc}
+\hline
+$\beta^2$ & $r$ (circuit) & $r$ (incoherent) & enhancement \\
+\hline
+$0.02$ & $0.1145$ & $0.0067$ & $17.2\times$ \\
+$0.05$ & $0.1787$ & $0.0167$ & $10.7\times$ \\
+$0.10$ & $0.2472$ & $0.0333$ & $7.4\times$ \\
+$0.50$ & $0.4410$ & $0.1667$ & $2.6\times$ \\
+$1.00$ & $0.3333$ & $0.3333$ & $1.0\times$ \\
+\hline
+\end{tabular}
+\end{center}
+Two findings, both verified in the run. \emph{First-order response}: the cross term makes
+$r \approx \sqrt{2/3}\,\alpha\beta$ at small admixture --- linear in the admixture
+\emph{amplitude}, where incoherent mixing would be quadratic --- so a few-per-cent W component
+moves the mass-relevant invariant by an order of magnitude more than probability-weighting
+suggests. That is the right shape for a thirty-per-cent effect from a modest admixture, which is
+what the mechanism requires. \emph{Phase rigidity}: $r$ is independent of the relative phase
+$\varphi$ to $10^{-17}$ (the cross term has fixed modulus $\alpha\beta/\sqrt6$; $\varphi$ rotates
+its direction only), and identical across all three cuts by symmetry. The mechanism, if it is the
+right one, therefore lives in the admixture \emph{magnitude}, not its phase --- a sharp constraint
+on the formal treatment that Open Problem~\ref{op:up-quark} requests. What this computation does
+not supply is the map from $r$ to mass, which is precisely the associator--geodesic reconciliation
+of Open Problem~\ref{op:associator-geodesic}; the playground is built, the mechanism awaits its
+theorem.
+
+\subsection{Composition laws: fusion, anti-speciality, and the baryon}
+\label{app:qiskit-composition}
+
+The dictionary of \S\ref{sec:entanglement-classes} rests on the Coecke--Kissinger classification:
+GHZ is a special Frobenius structure (its nodes fuse under composition) and W is anti-special (they
+do not). Both laws, and the two composite objects the strong sector builds from them, are
+executable. Composition means joining two legs by the Bell cap
+$\langle\Phi^+\rvert = (\langle00\rvert + \langle11\rvert)/\sqrt2$, a postselected projection whose
+weight we report with each result. The executed results:
+
+\begin{lstlisting}[language=Python,basicstyle=\small\ttfamily]
+GHZ3 o GHZ3:  fidelity with GHZ4 = 1.000000   (weight 0.2500)
+W3   o W3  :  fidelity with W4   = 0.000000   (weight 0.2778)
+   W o W produces: |0000> + |0101> + |0110> + |1001> + |1010>
+GHZ triangle: fidelity with GHZ3 = 1.000000   (weight 0.0312)
+W triangle  : fidelity with W3   = 0.750000   (weight 0.0185)
+Closed loop scalar <GHZ3|triangle> = 1.000000
+\end{lstlisting}
+
+Read upward from the wiring. Two GHZ nodes sharing a leg fuse into one GHZ node, exactly --- the
+spider-fusion law, here as a fidelity of one. Two W nodes do not: the contraction has \emph{zero}
+overlap with $\mathrm{W}_4$, producing instead the vacuum-plus-double-excitation set printed above
+--- anti-speciality as an output state one can inspect. The triangle is the construction the paper
+has been pointing at since \S\ref{sec:charges}: three nodes pairwise joined by colour edges. For GHZ
+nodes the triangle's three free legs carry \emph{exactly} the state $\lvert\mathrm{GHZ}_3\rangle$,
+fidelity $1.000000$: the statement that a quark's $C$-qubit is GHZ-entangled with its partners in a
+hadron is not an assumption about baryons but an output of the composition law --- the baryon is
+the wiring. The W triangle does not close onto $\mathrm{W}_3$ (fidelity $0.75$), the executable
+face of the law that, in the dictionary, separates the binding sector from the non-binding one.
+Capping the baryon's free legs closes the loop entirely, and the resulting scalar --- the singlet
+weight of the closed colour cycle, the skeleton on which the glueball discussion of
+\S\ref{sec:predictions} is built --- is exactly $1$. Organising the spectrum of such closed loops
+is the ZX-calculus computation stated as the third invitation in \S\ref{sec:interactions}; the
+primitive moves it needs are the ones just executed.

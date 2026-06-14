@@ -1,0 +1,311 @@
+% =====================================================================
+%  Section: Interactions as Quantum Circuits   (Branch A)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Forks after \S sec:charges (registers) and \S sec:boson-masses
+%  (bosons as edges). Precedes \S sec:predictions.
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  REQUIRES \usepackage{quantikz} in the preamble (loads TikZ).
+%  New reference: glashowiliopoulosmaiani1970weak
+%  (delivered in fcnc_refs_2026-06-08.ris). coeckekissinger2010compositional
+%  already in the library.
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:charges       -- operational charges (gate reads/changes)
+%    sec:masses        -- mass != weak eigenstates; CKM
+%    sec:boson-masses  -- bosons as edges; map-state duality
+%    sec:generations   -- generation = triality index
+%    app:qiskit        -- the Qiskit appendix (this delivery)
+%    sec:predictions   -- forward
+%
+%  HONESTY FLAGS, now recorded as named open problems (paper-wide
+%  convention; preamble in the quantum-numbers header):
+%    op:vertex-factors   -- coupling normalisations / amplitude weights:
+%                           the dictionary fixes WHICH qubits, not yet the
+%                           vertex factors, so circuits compute structure
+%                           (selection rules, entanglement bookkeeping),
+%                           not yet rates;
+%    op:fcnc-all-orders  -- prove the all-orders VERTEX-level statement
+%                           (triality index inaccessible to neutral gates
+%                           under arbitrary composition);
+%    op:state-gate       -- carried from sec:boson-masses (referenced,
+%                           not re-minted).
+%
+%  FRAMEWORK-LEVEL CORRECTION (2026-06-12), flagged prominently: the
+%  source claim "FCNC absent / exactly zero at all orders" (session
+%  summary 2026-04-09 1; framework_summary_for_llm_review 7) is
+%  contradicted by EXISTING data as a statement about processes:
+%  b->s gamma (BR ~3e-4), B_s -> mu mu (LHCb), and neutral-meson mixing
+%  are observed loop-level effective FCNCs built from CHARGED-current
+%  vertices -- the same penguin topology that gives t->Zq ~1e-14 in the
+%  SM, which the framework's own vertex dictionary reproduces under
+%  composition. REPAIRED STATEMENT in this section: (i) elementary
+%  neutral vertices are generation-blind at all orders (structural);
+%  (ii) charged-current loops generate the observed effective FCNCs at
+%  their SM values (consistency support); (iii) the framework admits no
+%  flavour-changing mediator at any scale, so flavour observables are
+%  pinned at the charged-loop floor -- t->Zq stays at ~1e-14, far below
+%  any collider, and ANY observed signal refutes the framework. The
+%  "null forever" prediction survives; "exactly zero" does not.
+%  BACKPORT the repair to both source documents.
+%
+%  REVISED 2026-06-12 (per JS: this section is the framework's real
+%  test -- explain in detail, give handles): translation rules made
+%  explicit (wires/gates/amplitudes, what is and is not computed);
+%  explicit Z phases (3/4)T_3 - (1/8)Y at tree level; beta-decay
+%  walk-through expanded with charge accounting and what a reader can
+%  run and check; "charge phase A" wording fixed (Y is the doublet
+%  invariant; Delta-Q = +1 is the T_3 raise, carried by the W); the
+%  lepton pair correctly described as the Bell-pair bipartite shadow
+%  (a two-qubit pair has no W class); NEW subsection on capabilities
+%  and the three concrete next computations (CKM-extended W gate;
+%  GHZ-W interference for op:up-quark; ZX/glueball circuits).
+% =====================================================================
+
+\section{Interactions as Quantum Circuits}
+\label{sec:interactions}
+
+The previous sections gave the particles and their masses; this one gives their interactions, and it
+does so in a form that is, in principle, executable. Three results already in place make this
+possible: the gauge charges were cast operationally in \S\ref{sec:charges} as what a gate reads or
+changes; the mass eigenstates were shown in \S\ref{sec:masses} to differ from the weak eigenstates by
+the CKM rotation; and the gauge bosons were identified in \S\ref{sec:boson-masses} as bipartite
+edges, with the map--state duality that lets an edge be read as a gate. Putting these together turns
+a Feynman diagram into a quantum circuit on the internal qubit registers.
+
+This section is where the framework offers the most handles to a reader, and we are explicit about
+what each handle does and does not yet hold. What the circuits compute today is \emph{structure}:
+which processes are allowed and which forbidden, with every conservation law holding by construction
+rather than by imposed symmetry; how the entanglement classes of the participants transform through
+an interaction; and where interference between contributions arises. What they do not yet compute is
+\emph{rates}: the dictionary fixes which qubits each boson acts on, but not the vertex factors ---
+the coupling normalisations --- and it does not include the kinematic sector (propagators, phase
+space), which lives in the spacetime description that Paper~2 takes up. The boundary between the two
+is stated precisely below, together with the calculations that would move it. A reader with a
+quantum-computing background can run, modify and extend everything in this section on a laptop
+simulator today; a reader from gauge theory can read each circuit as the internal-symmetry skeleton
+of a Feynman diagram, with the spacetime flesh deliberately separated. We work one example in full
+and then derive the result that gives the framework its sharpest falsifiable prediction in the
+flavour sector.
+
+\subsection{The vertex dictionary}
+
+The translation rules are these. Each fermion in a process contributes three wires --- its $A$, $B$
+and $C$ qubits, the register of \S\ref{sec:register} --- and particles created during the process
+contribute wires initialised in a reference (vacuum) state. Time runs left to right. A vertex is an
+edge attached to two nodes, so applying a boson is applying a gate to the definite qubits of the
+fermion register that the boson's sector identifies
+\autocite{coeckekissinger2010compositional}; external legs are state preparations and readouts. The
+amplitude of the circuit --- the overlap of its output with a specified final register state --- is
+the \emph{internal-structure factor} of the process amplitude: the part carried by gauge and
+generation quantum numbers, cleanly separated from the propagator and phase-space factors that live
+in the spacetime sector. The map of \S\ref{sec:charges}, read as gates:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+boson & acts on & operation \\
+\hline
+photon $\gamma$ & $A$ (and $B$, via $Q=T_3+\tfrac12Y$) & $U(1)$ phase, if $Q\neq0$ \\
+$W^\pm$         & $B$                                   & $SU(2)$ raise/lower of $T_3$ \\
+$Z$             & $A$--$B$ jointly                      & neutral-current phase gate (below) \\
+gluon $g$       & $C$                                   & $SU(3)$ rotation, if colour triplet \\
+Higgs $H$       & doublet $\leftrightarrow$ singlet     & $L\leftrightarrow R$ chirality flip \\
+\hline
+\end{tabular}
+\end{center}
+
+Two of these can be made completely concrete at once, because their action is fixed by quantum
+numbers the register already carries. The photon gate is the phase $e^{\mathrm{i}\varphi Q}$ with
+$Q = T_3 + \tfrac12 Y$ read off the $B$ and $A$ qubits. The $Z$ gate is the two-qubit phase gate
+whose phase on each fermion is proportional to $T_3 - Q\sin^2\theta_W$; with the tree value
+$\sin^2\theta_W = \tfrac14$ of \S\ref{sec:charges} this is
+\begin{equation}
+  T_3 - Q\sin^2\theta_W \;=\; \tfrac34\,T_3 - \tfrac18\,Y,
+  \label{eq:zphase}
+\end{equation}
+the coefficients $\tfrac34$ and $\tfrac18$ being pure consequences of the fibre-dimension value of
+the mixing angle and the channel's $(T_3, Y)$. Both gates are therefore executable today, up to the
+overall coupling normalisations, which are the open problem stated at the close. The charged current
+is the only entry that moves a qubit between the two members of a doublet; the neutral currents act
+within the gauge structure without doing so. That asymmetry is the whole of the flavour story below.
+
+\subsection{Beta decay, simplified to the active quark}
+
+Neutron beta decay $n\to p + e^- + \bar\nu_e$ changes exactly one quark: a down quark becomes an up
+quark, $udd\to uud$, while the other two quarks are spectators. We therefore draw only the active
+quark. Its charged-current vertex is a single gate --- the $W^-$ emission raising the weak isospin on
+the $B$-qubit, $T_3:-\tfrac12\to+\tfrac12$ --- with the hypercharge qubit $A$ and the colour $C$ left
+untouched. The hypercharge is untouched because $Y = +\tfrac13$ is the doublet label, common to both
+members; the electric charge \emph{does} change, $\Delta Q = +1$, but that change \emph{is} the
+$T_3$ raise, read through $Q = T_3 + \tfrac12 Y$, and it is carried off by the $W^-$. The colour is
+untouched because the $W$ has no $C$-qubit action, so the colour-singlet structure that binds the
+nucleon is preserved without any added constraint. The $W^-$ then decays to a lepton pair, which the
+lepton sector's structure forces to be colourless: a fresh electron and antineutrino, born as a Bell
+pair --- the bipartite shadow that Appendix~\ref{app:w-proof} proved is what a W-class channel shows
+on any single cut, drawn here on the $B$-qubits alone.
+
+\begin{center}
+\begin{quantikz}
+\lstick{$A_q$}            & \qw      & \qw      & \qw      & \rstick{$A_q$} \\
+\lstick{$B_q\ (d)$}       & \gate{X} & \qw      & \qw      & \rstick{$u$} \\
+\lstick{$C_q$}            & \qw      & \qw      & \qw      & \rstick{$C_q$} \\
+\lstick{$B_e\ (\mathrm{vac})$}  & \qw & \gate{H} & \ctrl{1} & \rstick{$e^-$} \\
+\lstick{$B_\nu\ (\mathrm{vac})$} & \qw & \qw     & \targ{}  & \rstick{$\bar\nu_e$}
+\end{quantikz}
+\end{center}
+
+The top three wires are the active quark; the $X$ on $B_q$ is the $W^-$ emission. The lower two wires
+are the vacuum qubits into which the $W^-$ deposits its entanglement, the $H$ and \textsc{cnot}
+preparing the Bell pair. Every conservation law of the process is visible in the wiring rather than
+imposed. Charge: $u\,(+\tfrac23) + e^-\,(-1) + \bar\nu\,(0) = -\tfrac13 = d$, with the books
+balanced by the single $X$ gate through~$Q = T_3 + \tfrac12 Y$. Colour: the $C$ wire is untouched,
+so the final state is exactly as much a singlet as the initial one. Baryon and lepton number: no
+gate creates or destroys a quark register, and the lepton registers are created in a correlated
+pair. A reader who wants to hold this handle directly can do four things with the runnable form in
+Appendix~\ref{app:qiskit}: execute it and confirm the output state has amplitude support on exactly
+two basis states --- the signature of the surviving Bell pair, in the appendix's qubit-ordering
+convention; apply a partial trace over either lepton wire and confirm the other is maximally mixed,
+which \emph{is} the entanglement the $W^-$ deposited; attach the two spectator-quark registers and
+confirm they decouple; and attempt to violate any of the conservation laws above without leaving the
+vertex dictionary, and fail. This worked example is single-generation: it sets the CKM factor
+$V_{ud}\approx0.974$ to one. The full charged-current gate is the $T_3$ raise tensored with the CKM
+rotation on the generation index, and making that executable is the first of the concrete
+extensions below.
+
+\subsection{What the circuits compute, and what they do not}
+
+The capability boundary deserves its own statement, because the framework's usefulness to others
+depends on it being drawn honestly. On the computing side of the line: selection rules (which
+processes the dictionary admits), conservation laws (which hold by wiring, as just seen),
+entanglement bookkeeping (the class of every participant before and after, which is the physical
+content of \S\ref{sec:entanglement-classes}), and interference structure (where two gate sequences
+contribute to the same final register state, their amplitudes add). On the other side: numerical
+rates and cross-sections. Two ingredients are missing, and they are different in kind. The vertex
+factors --- the numbers multiplying each gate --- are an open problem \emph{within} the present
+framework, stated below. The propagators and phase space belong to the spacetime sector, which this
+paper deliberately excludes and Paper~2 takes up; their absence here is a division of labour, not a
+gap.
+
+\begin{openproblem}[Vertex factors]\label{op:vertex-factors}
+Fix the coupling normalisations of the vertex dictionary --- the amplitude carried by each gate ---
+from the fibre geometry, so that circuit amplitudes become numerical predictions for the
+internal-structure factors of processes rather than structural skeletons. The fibre-dimension
+scaling that fixed $\sin^2\theta_W$ in \S\ref{sec:charges} is the natural starting point.
+\end{openproblem}
+
+Three computations are within reach of the present dictionary and would each extend the framework's
+tested surface; we state them as invitations, and deliver each as an executed Qiskit circuit in
+Appendix~\ref{app:qiskit-handles}. First, the CKM-extended charged current
+(Appendix~\ref{app:qiskit-ckm}): append a
+generation register --- a qutrit, or two qubits encoding the triality sector of
+\S\ref{sec:generations} --- and promote the $W$ gate to the $T_3$ raise tensored with the CKM
+rotation $V$. Executing it turns the observation of \S\ref{sec:masses}, that the Koide phase
+$\delta = 2/9$ sits at the Cabibbo angle (Open Problem~\ref{op:cabibbo}), into something that can be
+tested inside the circuit picture: the executed two-generation form returns
+$\lvert V_{ud}\rvert = \cos(2/9)$ to $+0.11\%$ and $\lvert V_{us}\rvert = \sin(2/9)$ to $-1.74\%$
+against the measured values. Second, the generation-one interference
+behind the up-quark discrepancy (Open Problem~\ref{op:up-quark}) is, in circuit terms, an overlap
+computation between a GHZ-borne and a W-borne contribution
+(Appendix~\ref{app:qiskit-interference}); the executed run establishes that the cut's Bloch radius
+--- the invariant the mass proxy is built from --- responds at \emph{first order} in the admixture
+amplitude and is rigid in its phase, so the candidate mechanism can be modelled, and is already
+sharply constrained, before it is formalised. Third, the gluonic sector: bound colour states are
+GHZ-class circuits closed on themselves, and the composition laws they obey --- spider fusion for
+GHZ, anti-speciality for W, and the closed colour triangle whose free legs carry exactly
+$\mathrm{GHZ}_3$, the baryon emerging from the wiring --- are executed in
+Appendix~\ref{app:qiskit-composition}, the primitive moves of the ZX-calculus organisation of the
+glueball spectrum (\S\ref{sec:predictions}). None of these required resources beyond a laptop
+simulator; all three produced numbers the framework must now live with.
+
+\subsection{No flavour-changing neutral currents}
+
+The generation index of a fermion is the triality sector of \S\ref{sec:generations} --- which of the
+three associator bracketings it occupies --- and this index is carried by the entanglement
+\emph{class}, not by any single gauge qubit. The charged current can change a fermion's weak isospin;
+the question is whether a neutral current can change its generation. It cannot, and the reason is
+structural.
+
+\begin{proposition}[No tree-level FCNC]\label{prop:fcnc}
+A neutral-current coupling is proportional to the identity in the generation index. In the mass
+basis, related to the weak basis by the CKM rotation $V$, it transforms as $V^\dagger D V$ with
+$D = c\,\mathbb{1}$, so $V^\dagger D V = c\,\mathbb{1} = D$. The off-diagonal, flavour-changing
+entries vanish identically: there is no tree-level flavour-changing neutral current.
+\end{proposition}
+
+\begin{proof}
+The neutral bosons act on the gauge qubits: the photon a $U(1)$ phase on $A$, the $Z$ an $A$--$B$
+entangling gate, the gluon an $SU(3)$ rotation on $C$. None of these acts on the triality index that
+labels the generation, because that index lives in the entanglement class and is orthogonal to the
+single-qubit gauge action. The neutral-current coupling is therefore the same in every generation,
+$D = c\,\mathbb{1}$. A rotation of basis acts by conjugation, and $\mathbb{1}$ is invariant under
+conjugation: $V^\dagger (c\,\mathbb{1}) V = c\,V^\dagger V = c\,\mathbb{1}$. Hence the neutral current
+is flavour-diagonal in the mass basis as well as the weak basis.
+\end{proof}
+
+This is the Glashow--Iliopoulos--Maiani mechanism \autocite{glashowiliopoulosmaiani1970weak}, but with
+a difference worth stating, and stating carefully, because an earlier form of this claim was too
+strong. In the Standard Model the cancellation $V^\dagger\mathbb{1}V=\mathbb{1}$ is arranged by the
+structure of the theory; here it is forced, because the neutral gates have no qubit to act on that
+would carry the generation. The structural claim the framework makes is about the \emph{elementary
+vertices}: no neutral gate changes the triality bracketing, at tree level or under any composition
+--- there is simply nothing for it to grab. What this does \emph{not} say is that flavour-changing
+processes with neutral external bosons are absent. They are not: composing charged-current gates in
+loops generates them, exactly as in the Standard Model --- two $W$ vertices change the flavour, the
+neutral boson attaches diagonally --- and such processes are \emph{observed}: the radiative decay
+$b\to s\gamma$, the dimuon decay $B_s\to\mu^+\mu^-$, and neutral-meson mixing all proceed this way,
+at rates matching the charged-loop calculation. Their observation is consistency support for the
+dictionary, not tension with it: the framework's vertex content composes into the same loops.
+
+The distinguishing, falsifiable content is then this. Because the register has no qubit a
+flavour-changing neutral mediator could act on, the framework admits no such mediator \emph{at any
+scale} --- no $Z'$, no extra scalars with flavour-changing couplings, no vector-like quarks ---
+so every flavour observable is pinned at its charged-current-loop floor. For top decays that floor
+is the Standard Model's $\mathrm{BR}(t\to Zq)\sim10^{-14}$, far below the sensitivity of any
+existing or planned collider (current limits sit near $10^{-4}$--$10^{-5}$, with the high-luminosity
+LHC reaching $10^{-5}$--$10^{-6}$). The framework therefore predicts that every FCNC search at
+every future collider remains null --- not because the rate is exactly zero, but because nothing can
+lift it from an unobservable floor. A single observed signal --- a $t\to Zq$, $t\to\gamma q$ or
+$t\to gq$ decay at any collider --- would refute the framework outright, whereas in the Standard
+Model the same signal would be welcomed as new physics. Equally, flavour observables already
+measured at their charged-loop values must stay there: any future excess in $B_s\to\mu^+\mu^-$ or in
+meson-mixing observables beyond the charged-loop prediction refutes the framework just as surely.
+All current null results and all current measurements are consistent with this. The epistemic status,
+plainly: Proposition~\ref{prop:fcnc} establishes the tree-level result rigorously; the vertex-level
+prohibition at all orders is structural and strongly motivated, and we record its promotion to a
+theorem as the open problem of this subsection.
+
+\begin{openproblem}[The all-orders vertex prohibition]\label{op:fcnc-all-orders}
+Prove that the triality index is inaccessible to the neutral gates under arbitrary composition ---
+that no sequence of dictionary operations equivalent to a neutral-boson insertion changes the
+generation bracketing --- promoting the structural no-mediator claim, and with it the
+pinned-at-the-floor prediction for all flavour observables, to a theorem.
+\end{openproblem}
+
+\subsection{The Higgs vertex}
+
+The one remaining vertex is the Higgs, which mediates the chirality flip $L\leftrightarrow R$ that
+gives mass (\S\ref{sec:masses}): it couples a doublet member to its singlet partner within a single
+generation. Like the neutral currents, it does not change the triality bracketing, so it too is
+flavour-diagonal --- the statement that the Higgs couples each fermion to itself, the coupling being
+the Yukawa of \S\ref{sec:masses}. The chirality flip is the circuit-level form of the
+\emph{Zitterbewegung} turnaround: in circuit terms a gate connecting the doublet and singlet
+registers of a single generation.
+
+\subsection{What is settled, and what is owed}
+
+Settled: the vertex dictionary, with each boson a gate on definite qubits, two of the gates
+(photon and $Z$) fully explicit up to normalisation through~\eqref{eq:zphase}; beta decay as an
+executable circuit on the active quark, with every conservation law holding by wiring; the
+capability boundary drawn honestly --- structure computed today, rates awaiting the vertex factors
+--- with three concrete extensions stated as invitations; and, rigorously at tree level, the absence
+of flavour-changing neutral currents (Proposition~\ref{prop:fcnc}), strengthened to the structural
+no-mediator claim that pins all flavour observables at their charged-loop floor and is falsifiable
+at every collider.
+
+Owed, and recorded as the named problems: the vertex factors (Open Problem~\ref{op:vertex-factors}),
+which are what stands between circuit amplitudes and numerical predictions; the all-orders vertex
+prohibition (Open Problem~\ref{op:fcnc-all-orders}); and, carried from \S\ref{sec:boson-masses}, the
+state-to-gate correspondence underlying the whole translation
+(Open Problem~\ref{op:state-gate}). The neutrino masses and the scalar glueball, the remaining
+forward-testable predictions, are collected in \S\ref{sec:predictions}.

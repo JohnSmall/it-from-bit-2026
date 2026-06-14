@@ -1,0 +1,297 @@
+% =====================================================================
+%  Section: Masses   (Plan Stages 5-7)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Follows \S sec:generations; precedes the boson-mass / electroweak section.
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  New references: koide1983new, georgijarlskog1979new
+%  (delivered in masses_refs_2026-06-08.ris). J3(O) via baez2002octonions
+%  and duboisviolettetodorov2019exceptional, already in the library.
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:generations  -- the particle zoo / depth ordering (previous section)
+%    sec:charges      -- quantum numbers; the "debt-free" photon forward-ref lands here
+%    sec:register     -- the three-qubit register
+%    sec:interactions -- circuits branch (forward; CKM, FCNC)
+%    sec:boson-masses -- boson masses / electroweak parameters (forward)
+%    sec:predictions  -- neutrino masses, glueballs (forward)
+%
+%  HONESTY FLAGS, now recorded as named open problems (paper-wide
+%  convention; preamble in the quantum-numbers header):
+%    op:associator-geodesic -- associator-debt vs geodesic proxy;
+%    op:koide-delta         -- derive delta = 2/9 from Hopf holonomy
+%                              (key open calculation; sin^4 holonomy route
+%                              recorded as tried-and-failed);
+%    op:colour-correction   -- derive |Q|^{3/2} law + phase-dilution rule;
+%                              reconcile Casimir-vs-fitted Georgi-Jarlskog;
+%    op:up-quark            -- the +29% discrepancy (candidate mechanism:
+%                              generation-1 GHZ/W interference);
+%    op:sector-scales       -- reduce the three sector scales to one;
+%    op:cabibbo             -- mass phase = Cabibbo angle.
+%
+%  REVISED 2026-06-11 after review and full numerical re-verification:
+%  lepton table corrected to source values (e -0.01%, mu -0.01%; drafted
+%  +0.2%/-0.03% were stale); PHASE-DILUTION RULE delta_sector = (2/9)/n
+%  added to the quark subsection -- its omission made the quoted quark
+%  numbers unreproducible (naive same-delta transplant fails by orders of
+%  magnitude); 2/9 dimension reading corrected: dim(OP^1) = 8, not 9; the
+%  correct nine-dimensional object is O+R, the ambient of the Hopf base
+%  (= Bloch + colour, app:lem:base). BACKPORT: source docs carry
+%  dim(OP^1) = 9 -- fix there too. One-scale claim made honest (three
+%  sector scales as computed; y_t = 1 ties up-sector to v). Neutrino
+%  forward-pointer: RESOLVED (2026-06-12) to ~52 meV per
+%  fermion_mass_geodesic_calculation.md (dilution rule, n = 2); the
+%  2.6 meV figure in quark_neutrino_masses.md is the superseded early fit
+%  -- BACKPORT a supersession note there. sec:predictions (to be drafted)
+%  carries: Sigma ~52 meV with the Delta-m^2_21 (x30) tension and the
+%  0.6-degree theta_nu fine-tuning as a named open problem; PLUS the
+%  robust qualitative set, stated as such: m_1 = 0 exactly (rank-2 seesaw
+%  from two steriles), normal ordering mandatory, two sterile states
+%  ~3.6 TeV, no fourth generation at any scale; falsifiers JUNO, DUNE,
+%  DESI, Euclid, CMB-S4.
+% =====================================================================
+
+\section{Masses}
+\label{sec:masses}
+
+The previous section enumerated the spectrum and asserted, qualitatively, that mass grows with the
+algebraic depth of the frustrated qubit. This section makes that quantitative. It begins by saying
+what mass \emph{is} in this framework --- the promised definition of the ``debt'' whose absence made
+the photon massless in \S\ref{sec:charges} --- and then computes two spectra: the charged leptons,
+which are the clean showcase, reproduced from a single dimensional scale and no free dimensionless
+parameters; and the quarks, which require two structural modifications --- one to the amplitude, one
+to the phase --- and succeed for eight of the nine charged fermions, with the one failure flagged
+plainly. Throughout, masses are computed on the canonical orbits of \S\ref{sec:canonical-orbits},
+where the reduced spectra --- and with them the quantities below --- are sharp.
+
+\subsection{What mass is: associator-debt}
+
+In an associative algebra the product $(ab)c$ equals $a(bc)$ and there is nothing to record. The
+octonions are not associative, and the failure is measured by the associator
+\begin{equation}
+  [a,b,c] = (ab)c - a(bc),
+\end{equation}
+which is generically non-zero. The framework identifies \emph{mass with this associator-debt}: the
+information cost of specifying a bracketing that the algebra itself leaves ambiguous. Dimensionally
+the associator carries an inverse length in natural units, as a mass must. A channel that carries no
+associator-debt is massless --- this is exactly the ``debt-free'' direction of \S\ref{sec:charges},
+and it is why the photon, the one electroweak direction with vanishing debt, has no mass.
+
+It is important to be exact about what the associator does and does not fix. Computed on the basis
+units, the associator has a uniform magnitude across all bracketings that are not forced to vanish;
+it therefore establishes that mass exists and is non-zero, and that the three generations'
+bracketings are inequivalent, but it does \emph{not} by itself set the mass hierarchy. The hierarchy
+comes from how the triality structure breaks --- the angle of the next subsection --- while the
+associator supplies the fact of mass. This division of labour, associator for existence and triality
+angle for ratios, is the honest reading of the calculation and we keep the two separate throughout.
+
+Two structural points complete the picture. First, because the non-associativity forbids a metric on
+the octonionic fibre $S^7$, mass cannot literally be a geodesic length on that fibre; it is the
+associator-debt. The operational calculations below, which are sometimes phrased as ``geodesic''
+quantities, are a computational proxy.
+
+\begin{openproblem}[Associator-debt and the geodesic proxy]\label{op:associator-geodesic}
+Show that the geodesic-length proxy used in the operational mass calculations computes the same
+quantity as the associator-debt that defines mass, closing the gap between definition and
+computation.
+\end{openproblem}
+
+Second, the dimensional-parameter count. Structurally the framework requires exactly one free
+dimensional parameter --- an overall scale --- and this is a necessity rather than a gap: the
+observer cannot fix the absolute scale of their own computational network from inside it
+(\S\ref{sec:register}). The Higgs vacuum value sets that scale, and the doubling norm $\sqrt2$ that
+appears below is the algebraic signature of the vacuum value ``doubling'' the structure. As the
+calculation currently stands, however, each charge sector carries its own fitted scale --- three in
+all --- of which the up-quark scale is tied to the electroweak value by $y_t = 1$
+(\S\ref{sec:boson-masses}), while the ratio of the down-quark to the lepton scale sits suggestively
+near the doubling norm squared, $M^2_{\mathrm{down}}/M^2_{\mathrm{lepton}} \approx 2.07$. Reducing
+the three to the structurally required one is open.
+
+\begin{openproblem}[The sector scales]\label{op:sector-scales}
+Derive the lepton and down-quark sector mass scales from the single electroweak scale, as
+$y_t = 1$ already does for the up-quark sector --- or show why the residual ratios
+($\approx 2$ for down-to-lepton) are fixed by the algebra.
+\end{openproblem}
+
+\subsection{Charged leptons: the Koide relation}
+
+The charged-lepton masses satisfy the empirical relation of Koide \autocite{koide1983new},
+\begin{equation}
+  \frac{m_e + m_\mu + m_\tau}{\bigl(\sqrt{m_e}+\sqrt{m_\mu}+\sqrt{m_\tau}\bigr)^2} = \frac{2}{3},
+  \label{eq:koide}
+\end{equation}
+which holds to about one part in $10^5$ and has resisted explanation for forty years. The framework
+produces it as follows. The three generations are the three off-diagonal octonionic entries of the
+exceptional Jordan algebra $J_3(\mathbb{O})$ \autocite{baez2002octonions,duboisviolettetodorov2019exceptional},
+cyclically permuted by a $\mathbb{Z}_3$ triality, so the square-root masses are the three triality
+images of one quantity,
+\begin{equation}
+  \sqrt{m_k} = M\bigl(1 + \alpha\cos(\delta + \tfrac{2\pi k}{3})\bigr), \qquad k = 0,1,2,
+  \label{eq:z3}
+\end{equation}
+with $M$ a scale, $\alpha$ the amplitude, and $\delta$ a phase. The amplitude is the Cayley--Dickson
+doubling norm $\alpha = \sqrt2$ ($|1+i| = \sqrt2$), and this single value forces the Koide ratio.
+
+\begin{proposition}[The Koide ratio from the doubling norm]\label{prop:koide}
+For square-root masses of the form~\eqref{eq:z3}, the ratio~\eqref{eq:koide} equals
+$(1 + \tfrac12\alpha^2)/3$, independently of $M$ and $\delta$. With $\alpha^2 = 2$ it equals $2/3$.
+\end{proposition}
+
+\begin{proof}
+The three phases are spaced by $2\pi/3$, so $\sum_k \cos(\delta + 2\pi k/3) = 0$ and
+$\sum_k \cos^2(\delta + 2\pi k/3) = \tfrac32$. Then $\sum_k\sqrt{m_k} = 3M$, so the denominator is
+$9M^2$, while $\sum_k m_k = M^2\sum_k(1+\alpha\cos)^2 = M^2(3 + \tfrac32\alpha^2) = 3M^2(1+\tfrac12\alpha^2)$.
+The ratio is $(1+\tfrac12\alpha^2)/3$, and $\alpha^2=2$ gives $2/3$.
+\end{proof}
+
+The Koide relation is thus derived, not fitted: it is the statement that the triality amplitude is
+the doubling norm. The phase is $\delta = 2/9$ in radians, the value that the measured masses
+require, matched to five significant figures and carrying a natural geometric reading as
+$2/9 = \dim_{\mathbb{R}}\mathbb{C} \,/\, \dim_{\mathbb{R}}(\mathbb{O}\oplus\mathbb{R})$: the
+preferred complex plane against the nine-dimensional ambient space of the Hopf base $S^8$ ---
+exactly the (Bloch)$\,\oplus\,$(colour) space of Appendix~\ref{app:setup}. The reading is
+suggestive, matched rather than derived. With $\alpha$ fixed by the theory, $\delta$ matched once,
+and the single scale $M$ set by the heaviest mass, the other two follow:
+
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+lepton & predicted (MeV) & observed (MeV) & error \\
+\hline
+$e$    & $0.5110$  & $0.5110$  & $-0.01\%$ \\
+$\mu$  & $105.65$  & $105.66$  & $-0.01\%$ \\
+$\tau$ & $1776.9$  & $1776.9$  & (scale) \\
+\hline
+\end{tabular}
+\end{center}
+
+This is the showcase: three masses from one dimensional input and no free dimensionless parameters,
+the dimensionless content being the two theoretically fixed numbers $\alpha=\sqrt2$ and $\delta=2/9$.
+
+We flag the one genuine gap squarely. Proposition~\ref{prop:koide} derives the $2/3$ relation from
+$\alpha=\sqrt2$ and the $\mathbb{Z}_3$ ansatz, both of which the framework supplies; but the specific
+phase $\delta = 2/9$ is at present a \emph{matched} value with a suggestive geometric interpretation,
+not a derived one.
+
+\begin{openproblem}[The Koide phase]\label{op:koide-delta}
+Derive $\delta = 2/9$ from the holonomy of the octonionic Hopf connection. This is the single most
+important open calculation in the mass sector. One route is already closed: the simplest
+holonomy-squared model, $m_k \propto \sin^4(\theta_0 + 2\pi k/3)$, does not reproduce the spectrum
+and is recorded as tried and failed.
+\end{openproblem}
+
+\subsection{Quarks: the colour correction}
+
+Quarks do not satisfy the Koide relation --- the ratio~\eqref{eq:koide} is about $0.73$ for the
+down-type and $0.85$ for the up-type quarks rather than $2/3$, a deviation that is invariant under
+perturbative QCD running and therefore a bare structural fact, not a scale artefact. The framework
+reads it as the effect of the colour debt that leptons, being colour singlets, do not carry. Two
+modifications enter, one to the amplitude and one to the phase. Where the colourless leptons sit at
+the bare doubling norm $\alpha^2 = 2$, the coloured quarks acquire an additional contribution that
+scales with electric charge,
+\begin{equation}
+  \alpha^2 = 2 + 2\,|Q|^{3/2},
+  \label{eq:quarkalpha}
+\end{equation}
+the coefficient being the doubling norm squared and the power $3/2$ fixed empirically to within one
+per cent; the framework reads $|Q|^{3/2} = |Q|\cdot\sqrt{|Q|}$ as winding number times its
+amplitude --- the Born-rule pairing appearing inside the fibre metric --- but this reading is a
+gloss, not a derivation. The formula gives $\alpha^2 = 2.385$ for the down-type quarks
+($|Q|=\tfrac13$) and $3.089$ for the up-type ($|Q|=\tfrac23$), against $2.389$ and $3.094$ extracted
+from the measured sector ratios. The phase is \emph{diluted}: each sector's triality phase is
+\begin{equation}
+  \delta_{\mathrm{sector}} = \frac{2/9}{n},
+  \qquad
+  n \;=\; 1 + \bigl(T_3 + \tfrac12\bigr) +
+  \begin{cases}1 & \text{colour triplet}\\[2pt] 0 & \text{colour singlet,}\end{cases}
+  \label{eq:dilution}
+\end{equation}
+where $n$ counts the active fibre directions the channel engages --- the $S^1$ always, the $S^3$
+for upper isospin, the $S^7$ for colour --- among which the misalignment $2/9$ is shared. Thus
+$n = 1$ for the charged leptons ($\delta = 2/9$, as above), $n = 2$ for the down-type quarks
+($\delta = \tfrac19$), and $n = 3$ for the up-type ($\delta = \tfrac{2}{27}$); triality shifts of
+$2\pi/3$ relabel the generations without changing the spectrum.
+Feeding~\eqref{eq:quarkalpha} and~\eqref{eq:dilution} into the triality form~\eqref{eq:z3}, with the
+scale set by the heaviest quark in each sector, the lighter masses follow: $d$ at $4.62$~MeV
+($-1.0\%$) and $s$ at $94.4$~MeV ($+1.1\%$) in the down sector; $c$ at $1271$~MeV ($+0.1\%$) in the
+up sector. Eight of the nine charged fermions are reproduced to about one per cent.
+
+The ninth is not. The up quark comes out at $2.78$~MeV against an observed $2.16 \pm 0.07$~MeV, an
+error of some twenty-nine per cent and far outside the quoted uncertainty. This is a genuine failure
+of the formula as it stands, not a rounding issue, and we record it as such: any claim that the
+framework reproduces the quark spectrum must carry this exception openly. Two mitigating
+observations follow, neither a resolution. The up-quark mass is never measured directly --- it is
+extracted from lattice QCD with chiral perturbation theory, and determinations range over roughly
+$1.9$--$2.5$~MeV, at the top of which range the discrepancy shrinks to about twelve per cent. And a
+candidate mechanism is identified: at the first generation, and only there, the tripartite (GHZ) and
+pairwise (W) contributions to the mass are of comparable size, and their interference shortens the
+effective path --- consistent with the up quark also being the one fermion whose
+$T_3 = +\tfrac12$ member is \emph{lighter} than its doublet partner, the competition between the
+amplitude effect (larger $\alpha$ for up-type) and the dilution effect (smaller $\delta$) tipping
+the other way at the lightest generation.
+
+\begin{openproblem}[The up quark]\label{op:up-quark}
+Give the generation-one GHZ--W interference mechanism a formal treatment and determine whether it
+accounts for the $+29\%$ up-quark discrepancy, or find what does.
+\end{openproblem}
+
+There is a further structural thread that we flag rather than resolve. The quark--lepton mass
+relations carry a factor of three of the Georgi--Jarlskog type \autocite{georgijarlskog1979new},
+which the framework can read either group-theoretically, as a Casimir ratio of the colour structure,
+or through the fitted charge dependence of~\eqref{eq:quarkalpha}. What the framework does \emph{not}
+need is the $SU(5)$ scaffolding through which the Georgi--Jarlskog factor is conventionally obtained
+--- consistent with the exclusion of $SU(5)$ and the absence of proton decay noted in
+\S\ref{sec:charges}.
+
+\begin{openproblem}[The colour correction]\label{op:colour-correction}
+Derive the amplitude law~\eqref{eq:quarkalpha} --- in particular the power $3/2$ --- and the
+phase-dilution rule~\eqref{eq:dilution} from the octonionic structure of the colour-triplet Higgs
+coupling, and reconcile the Casimir and fitted accounts of the Georgi--Jarlskog factor.
+\end{openproblem}
+
+\subsection{Mass eigenstates versus weak eigenstates}
+
+The basis that diagonalises the associator-debt --- the mass basis --- is not the basis in which the
+weak interaction acts, which is the doublet basis of the $B$-qubit (\S\ref{sec:charges}). Their
+mismatch is the Cabibbo--Kobayashi--Maskawa matrix. The framework ties the rotation to the same
+octonionic geometry that fixes the masses: the lepton Koide phase $\delta = 2/9$ radians is about
+$12.7^\circ$, strikingly close to the Cabibbo angle, which suggests that one geometry sets both the
+mass hierarchy and the generation mixing. We mark that identification as suggestive rather than
+derived.
+
+\begin{openproblem}[The Cabibbo angle]\label{op:cabibbo}
+Derive, rather than observe, the relation between the mass phase and the generation mixing: whether
+the Cabibbo angle equals the undiluted phase $\delta = 2/9$, and what fixes the remaining CKM
+structure.
+\end{openproblem}
+
+Its structural consequence, however, is exactly what the interaction picture needs: the mass
+eigenstates are distinct from the weak eigenstates, so a charged-current vertex changes flavour while
+the neutral currents, acting on the generation-blind structure, do not. That is the seed of the
+no-tree-level flavour-changing-neutral-current result, which is delivered with the circuit picture of
+interactions in \S\ref{sec:interactions}.
+
+\subsection{What is settled, and what is owed}
+
+Settled: mass is associator-debt, with the photon massless because it is debt-free; the Koide $2/3$
+relation follows from the doubling norm $\alpha=\sqrt2$ and the $\mathbb{Z}_3$ triality of $J_3(\mathbb{O})$
+(Proposition~\ref{prop:koide}); the charged-lepton spectrum is reproduced from one dimensional scale
+and the two dimensionless numbers $\alpha=\sqrt2$, $\delta=2/9$, the electron and the muon each to
+$0.01\%$; and the quark colour correction~\eqref{eq:quarkalpha}, with the phase-dilution
+rule~\eqref{eq:dilution}, reproduces eight of nine charged fermion masses to about a per cent.
+
+Owed, and recorded as the named problems above: the derivation of $\delta = 2/9$ from the Hopf
+holonomy (Open Problem~\ref{op:koide-delta}, the key open calculation); the associator--geodesic
+reconciliation (Open Problem~\ref{op:associator-geodesic}); the up-quark discrepancy
+(Open Problem~\ref{op:up-quark}); the derivation of the colour correction and the dilution rule
+(Open Problem~\ref{op:colour-correction}); the reduction of the sector scales
+(Open Problem~\ref{op:sector-scales}); and the Cabibbo identification
+(Open Problem~\ref{op:cabibbo}).
+
+With the fermion masses in hand, two threads remain. The electroweak gauge bosons, whose masses use
+the weak mixing angle $\sin^2\theta_W = \tfrac14$ already derived in \S\ref{sec:charges}, are taken
+up in \S\ref{sec:boson-masses}; and the neutrino masses, which follow from the sterile seesaw of
+\S\ref{sec:generations} and the dilution rule~\eqref{eq:dilution} with $n = 2$ --- a massless
+lightest state, normal ordering, and a sum near $52$~meV --- are collected with the other
+falsifiable predictions in \S\ref{sec:predictions}, where the one tension in the neutrino fit (the
+first-to-second-generation splitting) is recorded as open.

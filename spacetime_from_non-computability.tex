@@ -1,0 +1,354 @@
+% =====================================================================
+% Section: The space of computations -- spacetime from non-computability
+% Drop-in for Paper 1 (or Paper 2; this is the GR/spacetime arc). Requires:
+%   \usepackage{amsmath, amssymb}
+%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
+% Internal cross-references (\ref{...}) are placeholders; repoint to your labels:
+%     sec:complex-amplitudes -- self-reference -> negative probability ->
+%                               complex (imaginary) information
+%     sec:postulates         -- the quantum-postulate derivation
+%     sec:fanout-boundary    -- the FANOUT boundary
+%     sec:gauge-group        -- the division-algebra -> G_SM derivation
+% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
+% British English throughout.
+% =====================================================================
+
+\section{Spacetime from non-computability}
+\label{sec:space-of-computations}
+
+We'll now make a brief diversion to take up this idea that non-computable steps can be measured by imaginary information \ref{sec:measuring-non-computability}.  Since Spencer-Brown assures us that Bertrand Russell himself though well of the idea,\autocite{Spence-Brown-1969} it's not completely crazy.
+
+The programmes that derive spacetime from quantum mechanics---Van~Raamsdonk's
+\textquote{building spacetime with entanglement} \autocite{VanRaamsdonk2010}, the
+ER\,$=$\,EPR conjecture \autocite{MaldacenaSusskind2013}, and M\"uller's
+information-theoretic recovery of three-dimensional space from the qubit
+\autocite{MuellerMasanes2013}---take entanglement or information as primitive and
+grow geometry from it. The route taken here is the same in spirit but inverted in
+order: rather than positing spatial dimensions and forbidding superluminal
+signalling, we \emph{define} spatial separation as a measure of non-computability
+and read the dimension, the signature, and the Lorentz group off the result. The
+proposal originates in the author's CASYS'05 paper \autocite{small_2006}, which
+first suggested treating spacetime as a space of computations and attempted to
+justify three dimensions on this basis; the present account tightens and extends
+it. This is the framework's most structural and least formally complete arc; the
+three-dimensionality result is a structural conclusion awaiting a formal proof,
+and several of the links below are conjectural readings. Each is flagged as such,
+so the reader sees exactly where the chain is load-bearing and where it is an
+invitation.
+
+\subsection{Timelike and spacelike distance as computation}
+\label{sec:comp-distance}
+
+A computation carries a state from axioms to a theorem in a number of steps.
+Counting the computable steps between two states gives a real measure---time. A
+physical clock counts completed irreversible loops, so proper time literally
+counts loop completions and the metric $\mathrm{d}\tau^{2}=g_{\mu\nu}\,
+\mathrm{d}x^{\mu}\mathrm{d}x^{\nu}$ is a loop-density tensor, the conversion from
+coordinate intervals to loop counts; Toffoli's reading of the Lagrangian as a
+count of action quanta is the same statement \autocite{toffoli_2003}.
+
+Spacelike separation is the complementary, non-computable measure. Define the
+non-computable distance between two propositions, relative to an axiom system, as
+the number of bits that must be added to the axioms to make the second derivable.
+A closed timelike curve is a computation whose output is its own input; by the
+fixed-point theorem it has a unique consistent solution or none, and the
+existence of that solution is one bit not derivable from any axiom system that
+does not already contain the loop---one bit per curve, in the manner of Chaitin's
+$\Omega$ \autocite{Chaitin1998}. The spacelike distance between two events is then
+the number of such curves that would have to be closed to make them causally
+connected. Because each added bit is a non-computable proposition, it is carried
+by the imaginary part of the complex information measure
+$S=-\ln\lvert p\rvert-\mathrm{i}\theta$ derived in
+Section~\ref{sec:complex-amplitudes}: computable distance is counted in real
+units, non-computable distance in imaginary ones. The Minkowski signature, with
+spacelike intervals imaginary relative to timelike ones, is the immediate reading.
+That the resulting structure is a genuine metric space, and that the signature
+follows rather than being fitted, are open problems---at present the
+identification is motivated by reproducing what nature does, not proved.
+
+\subsection{Three dimensions of space}
+\label{sec:three-dimensions}
+
+The closed timelike curves that define spacelike distance require information to
+be parallel transported consistently around a loop, and consistent parallel
+transport on a sphere requires it to be parallelisable. By Adams' theorem the
+only parallelisable spheres are $S^{1}$, $S^{3}$ and $S^{7}$
+\autocite{adams_1960}, the unit spheres of $\mathbb{C}$, $\mathbb{H}$ and
+$\mathbb{O}$. Impose now the requirement that information arriving from outside
+the causal zone must appear to possess its own causal history---that is, to be the
+result of a sequence of information-preserving operations, hence a sequence of
+group operations. Rotations of $S^{1}$ and $S^{3}$ form the groups $U(1)$ and
+$SU(2)$ and preserve information; rotations of $S^{7}$ are non-associative and do
+not form a group, so $S^{7}$ cannot serve as a ruler. The same non-associativity
+forbids a metric outright: path composition $d(A,C)$ through $B$ depends on the
+bracketing, so the triangle inequality is not merely violated but ill-defined, and
+no geodesic structure exists. Since the abelian $S^{1}$ alone cannot carry
+non-abelian structure, spacelike distance must be three-dimensional. Dimension
+three is an output, not an input \autocite{small_2006}.
+
+The division of labour is then exact. $S^{1}$ ($\mathbb{C}$) contributes the time
+dimension and the $U(1)$ of electromagnetism; $S^{3}$ ($\mathbb{H}$) contributes
+the three spatial dimensions and the $SU(2)$ of the weak interaction; $S^{7}$
+($\mathbb{O}$) contributes no geometry but, as a filter on what information may be
+exchanged, the $SU(3)$ of the strong interaction. A sphere that cannot be a ruler
+can still be a filter, which is why the strong force resists geometric
+interpretation while electromagnetism and the weak force do not. This is the same
+$\mathbb{C}\oplus\mathbb{C}^{3}$ split that yields $G_{\mathrm{SM}}$ in
+Section~\ref{sec:gauge-group}, now read as the reason spacetime is $(3+1)$-%
+dimensional. The conclusion converges with M\"uller and Masanes, who prove from
+information-theoretic postulates, assuming no quantum theory, that minimal
+direction-carrying systems with continuous reversible dynamics force $d=3$ and
+quantum theory on two qubits \autocite{MuellerMasanes2013}, and with the result
+that entanglement exists only for a three-dimensional Bloch ball
+\autocite{MasanesMuellerEtAl2014}; the framework supplies the reason such systems
+exist, Cayley--Dickson doubling from self-reference, while their work supplies
+the rigorous dimensional uniqueness. The status of the framework's own route is a
+structural result requiring formal proof: the one-bit-per-curve identification and
+the precise reduction of the $S^{7}$ filter to $SU(3)$ rather than its full
+automorphism group $G_{2}$ are named open problems.
+
+\subsection{Recovering the Lorentz group}
+\label{sec:lorentz}
+
+A measurement changes what the observer knows, hence, relationally, the causal
+structure: it tips the light cone. This is Penrose's association of cone-tipping
+with state reduction \autocite{Penrose1996} run in the opposite causal direction,
+reduction driving the tipping rather than the reverse, and the two are then one
+operation in two charts---both described by $SL(2,\mathbb{C})$. The algebraic
+backbone is the division-algebra correspondence
+$SL(2,\mathbb{A})\cong\mathrm{Spin}(1,d{+}1)$ \autocite{baez_2002}: $\mathbb{R}$
+gives $1{+}1$, $\mathbb{C}$ gives $3{+}1$, $\mathbb{H}$ gives $5{+}1$ and
+$\mathbb{O}$ gives $9{+}1$ dimensions. The computability split that singles out a
+preferred $\mathbb{C}$ fixes the fundamental state space as $\mathbb{C}^{2}$ and
+hence $SL(2,\mathbb{C})=\mathrm{Spin}(1,3)$: the Lorentz group of $3{+}1$
+spacetime. The qubit and Minkowski space are not merely both Euclidean-and-three%
+-dimensional by coincidence; the Hermitian $2\times2$ matrices are
+$\mathbb{R}^{1,3}$, $SL(2,\mathbb{C})$ acts on them as the Lorentz group, and the
+qubit density operators fill the future cone---the correspondence M\"uller's group
+develops operationally, recovering Lorentz transformations from quantum
+communication \autocite{HohnMueller2016} and the complex and quaternionic qubit
+from the relativity of simultaneity \autocite{GarnerMuellerDahlsten2017}. The
+$SL(2,\mathbb{A})$ correspondence is rigorous; its identification with
+measurement-as-tipping is the framework's structural reading.
+
+\subsection{The relationalist commitment}
+\label{sec:relationalism}
+
+General relativity is relational: by the hole argument, spacetime points carry no
+intrinsic identity, and the metric is fixed by the network of coincidences and
+interactions, not by a pre-existing stage \autocite{Rovelli1996a}. The
+computational picture is relational by construction and explains why it must be:
+a background metric would require spatial distances to be pre-computable, and
+non-computability forbids exactly that. General covariance is the statement that
+distances have no pre-assigned values and depend on what information is actually
+present. The metric is therefore dynamical not by stipulation but because it
+measures a quantity that cannot be fixed in advance.
+
+\subsection{Jacobson, holography, and imaginary information}
+\label{sec:jacobson}
+
+Jacobson derives the Einstein equation as an equation of state, from the Clausius
+relation $\delta Q=T\,\mathrm{d}S$ across every local Rindler horizon together
+with the Bekenstein proportionality of entropy to horizon area
+\autocite{Jacobson1995, Bekenstein1973}. In the computational reading this is the
+self-consistency condition on the loop-counting network: the Einstein equation is
+the requirement that the bookkeeping of computation be internally consistent
+across surfaces. The holographic principle, that the information in a region is
+bounded by its bounding area \autocite{tHooft1993, Susskind1995}, then acquires a
+natural reading here. A surface area is a squared distance; if spacelike distance
+is measured in imaginary units of information, an area is measured in the square of
+those units, that is in \emph{negative} information---entropy. The holographic
+link between area and entropy thus requires the square root of negative
+information, and that square root is precisely the imaginary unit of the complex
+amplitude, the observer's self-referential phase. Read this way, Jacobson's
+account of information crossing surfaces implicitly assigns an imaginary
+information value to spacelike distance, and the $\mathrm{i}$ of the Minkowski
+signature is the same $\mathrm{i}$ as the $\mathrm{i}$ of the quantum amplitude.
+This identification is the most speculative step in the section: it is
+structurally suggestive and it makes the holographic form unsurprising, but it is
+a conjectural reading rather than a derivation, and is offered as such.
+
+\subsection{Non-locality already present in general relativity}
+\label{sec:gr-nonlocality}
+
+The relationalist commitment has a consequence, set out in the author's 2025
+V\"axj\"o poster \autocite{Small2025} and developed here, that the wider
+literature has not drawn. If spacetime is the network of interactions, then a system that
+has not yet interacted with any participant in that network is not a node in it:
+it is, strictly, outside spacetime until it interacts. An entangled pair that has
+not been measured is one such system---a single relational object, not two
+spatially separated ones. The electron in a sealed bottle illustrates it: the
+electron's position lies in the observer's past light cone, but its spin does not
+enter the observer's causal past until it is measured, even though the electron is
+spatially close. Entanglement is therefore a relation that does not yet live in
+spacetime; the spatial separation later assigned to the partners is a derived
+fact, established only when the relation is \textsc{fanned out} into the network
+(Section~\ref{sec:fanout-boundary}). The upshot is that general relativity, taken
+relationally and seriously, already contains quantum non-locality: entanglement is
+the pre-spatial relational structure, and what looks like spooky action between
+distant points is the resolution of a relation that was never spatially separated
+to begin with. This is the same direction of travel as building spacetime from
+entanglement \autocite{VanRaamsdonk2010} and as ER\,$=$\,EPR
+\autocite{MaldacenaSusskind2013}, but reached from the relational and
+computational side rather than from holographic duality, so it stands as a
+parallel argument rather than a corollary of those results. The claim that the
+non-locality is \emph{already there}, unrecognised, in the relational reading of
+general relativity is the framework's interpretive thesis, advanced in
+\autocite{small_2006, Small2025} and flagged as a thesis rather than a theorem.
+
+\medskip
+\noindent The spacetime arc therefore yields, from one definition of spacelike
+distance as non-computability: the signature, three spatial dimensions, the
+Lorentz group, the dynamical relational metric, a reading of the holographic
+principle, and the presence of non-locality within general relativity. Of these,
+the $(3+1)$ count and the Lorentz recovery are structural results that converge
+with independent rigorous work and await their own formal proof; the metric-space
+status, the signature, the one-bit-per-curve measure, the imaginary-information
+reading of holography, and the general-relativistic non-locality are conjectural,
+and are named here precisely so that the boundary between what is shown and what
+is proposed is visible.
+
+% =====================================================================
+% Subsection: Open problems and prospects (closes the spacetime section)
+% Append at the end of space_of_computations_2026-06-07.tex, inside
+% \section{The space of computations...} (sec:space-of-computations).
+% Requires the same preamble. New citation keys are in the updated
+% space_of_computations_refs .bib. Internal \ref placeholders:
+%     sec:gr-nonlocality  -- the GR non-locality subsection
+%     sec:three-dimensions, sec:jacobson  -- as labelled in the main section
+%     sec:gauge-group, sec:k3-sterile  -- the SM gauge-group / K3 sections
+% British English throughout.
+% =====================================================================
+
+\subsection{Open problems and prospects}
+\label{sec:spacetime-open-problems}
+
+The spacetime arc is the framework's frontier, and honesty about its edges
+matters more here than anywhere else in the paper. We set out the genuine
+problems and the prospects together, deferring the deepest to a second paper
+rather than papering over them.
+
+\paragraph{The substrate and the generation of events (deferred).}
+A computation runs on something; a network of events presupposes that events
+occur. Both are the same objection in two forms---the network's hardware and its
+clock---and the original CASYS'05 statement of the programme raised the
+implementation regress and set it aside \autocite{small_2006}. The framework's
+response is that a self-referential structure is the only kind that need not
+presuppose a meta-substrate: it generates its own. The natural algebraic emblem
+is $E_{8}$, the unique simple Lie group whose adjoint representation is also its
+smallest faithful one, so that what it is and what it acts on coincide; the $240$
+unit integral octonions that generate it are exactly the $E_{8}$ root system, so
+the self-action is welded to the division-algebra spine of
+Section~\ref{sec:gauge-group}. This is Wheeler's self-excited circuit
+\autocite{Wheeler1990} given an algebraic body, and it converges with Furey's use
+of an algebra acting on itself to generate particle content
+\autocite{furey2018}. The decisive caveat, which we state rather than hide, is
+that the bootstrap is self-consistent but not self-specifying: it does not
+eliminate the non-computability identified throughout, it relocates it to a
+determined place. The substrate question is, on the framework's own terms,
+provably without a computable answer from inside---it is the irreducible residue,
+the bump in the carpet that the whole construction has been moving rather than
+removing. The leap from ``$E_{8}$ is self-dual'' to ``$E_{8}$ is the substrate''
+is at present an emblem awaiting operational content (an $E_{8}$-equivariant
+dynamics, or a state space built as a homogeneous space of $E_{8}$), and that
+content, together with how a tick is generated at all, is deferred to the second
+paper.
+
+\paragraph{Dark matter (deferred).}
+If gravity is the bookkeeping of the interaction network and dark matter
+interacts only gravitationally, how does it participate in a network it does not
+exchange information with? The prospect, to be developed in the second paper, is
+that this is a feature rather than a defect. In the division of labour of
+Section~\ref{sec:three-dimensions}, participation in the metric---counting loops
+in the $S^{1}$ and $S^{3}$ directions---is universal, carried by anything with a
+worldline and a tick-rate, whereas participation in the gauge filters, the
+$S^{3}$ of the weak interaction and the $S^{7}$ of colour, is selective, engaged
+only by charged matter. A node that counts loops but engages no filter
+\emph{is} matter that gravitates without otherwise interacting, and the
+framework's Class-4 a-chiral sterile neutrino (Section~\ref{sec:k3-sterile}) is
+the candidate that realises it. The condition for this to be coherent rather than
+circular is that metric participation be established as prior to, and independent
+of, gauge participation; making that priority precise is the work deferred.
+
+\paragraph{CP violation, the arrow of time, and baryogenesis.}
+CP violation appears to demand a time asymmetry owing nothing to the entropic
+arrow, which would seem to require a preferred direction built into spacetime
+itself. The framework dissolves the appearance rather than accommodating it. CP
+violation needs an irreducible complex phase, the CKM phase $\delta$; by Spekkens'
+result that negativity and contextuality are the same notion of nonclassicality
+\autocite{Spekkens2004a}, a complex phase is a signature of contextuality; so CP
+violation should be contextual, sensitive to the near environment of the decaying
+system---which is exactly what Andrianov, Taron and Tarrach established for
+neutral kaons in matter, where the environment breaks C, irreversibility breaks
+T, and the effective parameters follow a Lindblad equation
+\autocite{Andrianov2001}. The framework's reading is that the resulting
+informational asymmetry \emph{constitutes} the arrow rather than presupposing it:
+CP violation, entropy increase, and the direction of time are one informational
+asymmetry seen three ways, not an independent second arrow, so the worry about a
+direction built into spacetime does not arise. On this footing the contextual
+dependence sets up a positive feedback loop for baryogenesis---an initial
+fluctuation makes the environment slightly matter-dominated, contextual
+enhancement raises the effective CP violation, more matter is produced, and the
+loop runs---with $\delta$ a cosmological fixed point rather than a fundamental
+constant. The honest limit of this is that a feedback loop explains amplification
+and lock-in, not the sign selection or the baryon-number violation that
+Sakharov's conditions still require \autocite{Sakharov1967}; the stronger claim
+the framework is positioned to make, that the matter direction and the time
+direction are co-selected by the same self-referential asymmetry, needs a source
+of baryon-number violation and is left open.
+
+\paragraph{Spatial infinitude and the status of inflation.}
+There is no upper bound on non-computability, so the space of computations is
+unbounded: the universe is spatially infinite, and being a network without a
+boundary, naturally flat. Infinitude on its own, however, settles only flatness,
+which was never inflation's principal task. The horizon problem is, and an
+infinite space does nothing for it. The framework's actual lever against
+inflation is the relational thesis of Section~\ref{sec:gr-nonlocality}: if
+pre-spatial entanglement correlates regions before \textsc{fanout} spreads them
+into spatial separation, then the observed large-scale homogeneity is fixed
+relationally, before any question of causal contact, and the horizon problem
+dissolves without an inflaton. This is a real argument, but it carries a real
+bill: inflation also generates the nearly scale-invariant spectrum of primordial
+fluctuations seen in the microwave background \autocite{Planck2020}, and any
+account that dispenses with inflation owes an alternative origin for that
+spectrum. That, not the horizon problem, is the hard empirical debt, and it is
+named here rather than discharged.
+
+\paragraph{Expansion and acceleration.}
+If spacelike distance is the information separating worldlines, then as worldlines
+accumulate distinct interaction histories they accumulate information-distance,
+and the universe expands. The picture has the right exclusions built in: bound
+systems interact continuously, share information, and so keep low
+information-distance---they do not expand---while only worldlines that decouple
+diverge, recovering expansion on cosmological scales alone. The feedback in which
+greater separation means less light-cone overlap and so faster divergence,
+$\mathrm{d}d/\mathrm{d}t \propto d$, yields exponential divergence, a de~Sitter
+phase, and hence accelerating expansion without a separate dark-energy term
+\autocite{Riess1998}. The limit to be honest about is that pure exponential
+divergence is the late-time behaviour only; reproducing the full expansion history,
+with its radiation- and matter-dominated eras, and fixing the Hubble rate
+quantitatively, remains to be done.
+
+\paragraph{The $S^{7}$ sector as internal structure.}
+That $S^{7}$ cannot carry a metric does not make it disappear. Its closed
+timelike curves carry the same non-computable information structure as those of
+$S^{1}$ and $S^{3}$, but lacking associativity they support algebra---gauge
+charge---in place of geometry---distance. This is why gauge symmetry has so often
+looked like a set of compactified extra dimensions: the Kaluza--Klein and string
+intuition is tracking something real in the $S^{7}$ structure, but misdiagnoses
+it as spatial. In the framework these degrees of freedom have no size because
+they have no metric; they are internal in the exact sense that they enter the
+information-exchange that constitutes gauge charge while contributing nothing to
+the loop-counting that constitutes distance. The resemblance to rolled-up
+dimensions is therefore genuine and instructive, and the diagnosis that they are
+algebraic rather than geometric is what separates this account from theories that
+add real spatial dimensions to carry the same structure.
+
+\medskip
+\noindent These mark the boundary of the programme as it stands. The substrate,
+the generation of events, and the network status of dark matter are deferred to
+the second paper; the contextual account of CP violation and baryogenesis, the
+relational case against inflation, the information-divergence account of
+expansion, and the algebraic reading of the $S^{7}$ sector are offered as
+prospects, each with its outstanding debt named so that the line between argument
+and aspiration stays visible.

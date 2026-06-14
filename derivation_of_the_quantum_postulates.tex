@@ -1,0 +1,144 @@
+% =====================================================================
+% Section: Derivation of the quantum postulates
+% Drop-in for Paper 1. Requires in the preamble:
+%   \usepackage{amsmath, amssymb}
+%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
+% Internal cross-references (\ref{...}) are placeholders; repoint to your labels:
+%     sec:complex-amplitudes -- the self-reference -> negative probability ->
+%                               Shannon -> complex amplitudes derivation
+%     sec:l2-metric-fibre    -- the L^2 / complex-Hopf section
+%     sec:born-rule          -- the U(1)-invariance / minimum-degree section
+%     sec:wigners-friend     -- the Wigner's-friend / FANOUT / redundancy section
+%     sec:wf-reconciliation  -- the Tsirelson / PR-box aside
+% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
+% British English throughout.
+% =====================================================================
+
+\section{Derivation of the quantum postulates}
+\label{sec:postulates}
+We've now assembled enough pieces of the jigsaw to be able to derive the postulates of quantum mechanics
+
+The Dirac--von Neumann postulates are ordinarily laid down as independent
+assumptions. In this framework they are not assumptions but a single chain: each
+follows from the Inside/Outside Equivalence Principle by one move from the
+preceding step. We assemble the chain here and mark the status of each link as
+proved, structural, or still owed, so that no step claims more than it has earned.
+
+The chain begins below the postulates. An embedded observer, required by the
+equivalence principle to describe a totality that includes itself, must assign a
+probability to a proposition about its own future state. The Lawvere--Yanofsky
+diagonal \autocite{Yanofsky2003} and Popper's predictor argument
+\autocite{Popper1950a, Popper1950b} show that no consistent classical assignment
+exists: the self-referential proposition is undecidable to the observer before
+the fact. Representing the result of that undecidable self-prediction forces a
+signed, non-classical probability, which carries the observer's irreducible
+self-ignorance. From this single obstruction the postulates follow.
+
+\paragraph{Postulate 1 (complex Hilbert space).}
+Two independent steps fix the state space. The field is forced first: a signed
+probability, read through the Shannon information measure and analytically
+continued, yields a complex amplitude $S=-\ln\lvert p\rvert-\mathrm{i}\theta$,
+whose phase $\theta$ is the self-referential ignorance
+(Section~\ref{sec:complex-amplitudes}). The metric is forced second, and
+separately: the principle of reversible continuity---that a continuous reversible
+transformation connects any two pure states---selects the $L^{2}$ norm uniquely.
+For every $\ell^{p}$ with $p\neq 2$ the linear isometries are generalised
+permutations \autocite{Banach1932, Lamperti1958}, a group that cannot connect a
+basis state to a superposition; only at $p=2$ is the norm-preserving group
+connected and transitive on the sphere \autocite{Aaronson2004h}, and Hardy's
+operational $K=N^{2}$ counting reaches the same quadratic norm by an independent
+route \autocite{Hardy2001a}. The state manifold is therefore the unit sphere of the
+Hermitian $2$-norm in $\mathbb{C}^{n}$, taken modulo the global phase
+(Section~\ref{sec:l2-metric-fibre}). Placing the metric here, before the Born
+rule rather than after it, is deliberate: the Born derivation presupposes the
+round sphere, so the metric must be anchored independently to avoid circularity.
+Two bounds belong with this step. Reversible continuity fixes the metric, not the
+field---real and quaternionic quantum theory satisfy it equally---so the
+restriction to $\mathbb{C}$ rests on the Shannon step, not on continuity. And
+deriving reversible continuity itself from self-reference is the one arrow the
+chain still owes; until it is closed, continuity enters as a principle, and the
+weight of the $L^{2}$ conclusion is carried jointly with the independent
+isometry and counting arguments.
+
+\paragraph{Postulate 2 (Hermitian observables).}
+A measurement result must be communicable: it must be copyable from one observer
+to another, the \textsc{copy} operation of the diagrammatic calculus
+\autocite{CoeckeKissinger2017}. The imaginary part of the amplitude is the
+private self-referential phase and cannot be broadcast; only the real,
+gauge-invariant content can. Observables whose spectra are real and therefore
+communicable are exactly the self-adjoint operators. Hermiticity is thus the
+condition that a quantity be the kind of thing a measurement can report.
+
+\paragraph{Postulate 3 (Born rule).}
+Outcome probabilities must be invariant under the global phase, the $U(1)$
+self-ignorance, realised geometrically as the $S^{1}$ fibre of the complex Hopf
+fibration $S^{1}\to S^{3}\to S^{2}$ over the Bloch sphere
+\autocite{Hopf1931, Urbantke2003}. There is no $U(1)$-invariant of degree one; the
+lowest-degree invariant is quadratic, so the probability must be
+$p=\lvert\psi\rvert^{2}$ (Section~\ref{sec:born-rule}). The squaring is forced
+rather than merely permitted, and the argument holds for a single qubit, where
+Gleason's theorem is silent. The Born quadratic is not a new structure: it is the
+same $L^{2}$ form that fixed the metric in Postulate~1, now read as the
+normalisation of the round sphere, and the fibre over which the phase is averaged
+has constant length, so the phase is hidden uniformly
+\autocite{GluckWarnerZiller1986}. This step is a structural argument rather than a
+theorem in the strict sense, and is flagged as such.
+
+Note: Using Hopf fibrations to get the Born rule is something Claude AI came up with on its own without my prompting. 
+
+\paragraph{Postulate 4 (state reduction).}
+Measurement is a \textsc{fanout}: the gauge-invariant relational content is copied
+into a record, converting a private epistemological amplitude into a public
+fact. For the observer who performs it, acquiring that fact is Bayesian updating,
+and the projection postulate is its expression. The reduction is perspectival---a
+fact relative to the observer in the sense of relational quantum mechanics
+\autocite{Rovelli1996a}---and it is graded by redundancy. A single copy is a
+relative fact, still reversible by an agent controlling the joint system; redundant
+proliferation across many independent fragments makes the fact objective, which is
+quantum Darwinism \autocite{zurek_2009} and the stable/relative-fact distinction of
+Di~Biagio and Rovelli \autocite{DiBiagioRovelli2021}. \textquote{Collapse} and unitary
+evolution are then the two charts---inside and outside the \textsc{fanout}
+boundary---of one process, as the Wigner's-friend analysis shows
+(Section~\ref{sec:wigners-friend}); the irreversibility and its $kT\ln 2$ cost
+\autocite{Landauer_1961, wigner_1961} accrue with redundancy rather than at the
+single act. The reduction postulate is therefore recovered as a chart-dependent
+description, not a fundamental dynamical law; the identification of redundancy as
+the grading parameter is a synthesis of the framework's parts and is flagged as
+such.
+
+\paragraph{Postulate 5 (unitary evolution).}
+Conservation of probability is preservation of the $L^{2}$ inner product, and the
+inner-product-preserving linear maps are the unitaries $U(n)$---the same
+isometry fact that fixed the metric in Postulate~1. Continuity in time together
+with Stone's theorem gives $U(t)=\mathrm{e}^{-\mathrm{i}Ht}$, the Schr\"odinger
+equation. Reversibility is here a corollary, not a premise: bare reversibility on
+the amplitude space yields only the general linear group, and it is preservation
+of the quadratic form that carves $U(n)$ out of it.
+
+\paragraph{Postulate 6 (composite systems).}
+Systems combine by the tensor product because the division algebra norm is
+multiplicative \autocite{hurwitz_1898}: composition preserves the $L^{2}$ structure
+only if states multiply. Cayley--Dickson doubling carries $\mathbb{C}$ to the next
+rung, and the ascent of the Hilbert space is the ascent of the Hopf tower, complex
+to quaternionic, used in the Wigner's-friend construction
+\autocite{MosseriDandoloff2001}.
+
+\paragraph{Consequence (the Tsirelson bound).}
+The postulates fix not only the form of the theory but the strength of its
+correlations. In the two-qubit ball the maximal entanglement sits at the centre,
+and a Popescu--Rohrlich box \autocite{PopescuRohrlich1994} would require a point
+beyond it; the CHSH correlator is capped at $2\sqrt{2}$
+\autocite{Cirelson1980QuantumInequality, VerstraeteWolf2002, Held2021}, with the value recovered
+at the centre and its general derivation still owed
+(Section~\ref{sec:wf-reconciliation}).
+
+\medskip
+\noindent The result is that the six postulates are one chain, not six premises.
+Of the links, the field and the Born quadratic rest on the framework's signed
+probability and $U(1)$-invariance arguments; the $L^{2}$ metric, the unitary group
+and the tensor product are over-determined by reversible continuity, the isometry
+classification and Hurwitz composition; state reduction is recovered as the
+chart-relative face of \textsc{fanout}. The two outstanding debts are the
+derivation of reversible continuity from self-reference and the forcing of the
+Tsirelson value as a theorem rather than a recovered number---named here so that a
+reader can see exactly where the chain is complete and where it is not.

@@ -1,0 +1,214 @@
+% =====================================================================
+%  Section: Boson Masses and Electroweak Parameters   (Plan Stage 8)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Follows \S sec:masses; sets up Branch A (\S sec:interactions).
+%
+%  \input fragment. biblatex/\autocite, amsthm `proposition'.
+%  New references: weinberg1967model, glashow1961partial, salam1968weak
+%  (delivered in electroweak_refs_2026-06-08.ris). szangolies2025standardmodel,
+%  coeckekissinger2010compositional already in the library.
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:masses        -- fermion masses (previous section)
+%    sec:charges       -- quantum numbers; sin^2 theta_W = 1/4 derived there
+%    sec:entanglement-classes -- the dictionary; boson = edge of a sector
+%    sec:interactions  -- circuits branch (forward; builds on boson = edge)
+%    sec:predictions   -- neutrinos, glueball (forward)
+%
+%  HONESTY FLAGS, now recorded as named open problems (paper-wide
+%  convention; preamble in the quantum-numbers header):
+%    op:vev            -- derive the absolute electroweak scale v
+%                         (until then: m_Z input, m_W = ratio only);
+%    op:wz-running     -- scheme-consistent account of the ~2% gap between
+%                         tree ratio 0.866 and observed 0.881;
+%    op:higgs-lambda   -- derive lambda = 1/8 from Hopf-bundle curvature
+%                         (key problem of the sector; 1.7% residual as
+%                         top-loop running consistency check folded in);
+%    op:matching-scale -- 3.6 TeV: one-loop artefact or physical scale
+%                         (= the sterile mass scale; desert prediction);
+%    op:state-gate     -- dynamical justification of the boson-as-edge
+%                         state<->gate correspondence (map-state duality).
+%
+%  REVISED 2026-06-11 after review: lambda-readings sentence corrected
+%  (the Chern and Cayley-Dickson routes each need the final /2 from the
+%  doubling -- as drafted, "squared half-Chern-class" and "fourth power
+%  of the CD coupling" gave 1/4, not 1/8; now stated per
+%  boson_mass_fibre_geometry.md 4.2 / fermion_topology_open_problems 11.8);
+%  ADDED the 2x2 K3-engagement / VEV-invariance classification from
+%  electroweak_unification_theorem.md -- the structural account of three
+%  massive + one massless, completing the photon identification deferred
+%  in sec:charges; canonical-orbit anchor on the Bell-edge reading.
+%  Earlier flags retained: the broken "m_W = 79 GeV" line stays DROPPED;
+%  only the ratio m_W/m_Z = cos theta_W is stated.
+% =====================================================================
+
+\section{Boson Masses and Electroweak Parameters}
+\label{sec:boson-masses}
+
+With the fermion masses settled, we turn to the gauge bosons and the electroweak parameters. The
+weak mixing angle is not re-derived here: $\sin^2\theta_W = \tfrac14$ was fixed in
+\S\ref{sec:charges} by the fibre dimensions, and this section uses it. The section has two jobs. The
+first is to say what a gauge boson \emph{is} in register terms --- the bipartite-edge identification
+that the interaction circuits of \S\ref{sec:interactions} will consume --- and the second is to
+collect the electroweak masses, which are tree-level postdictions accurate to about two per cent and
+which come with a sharply defined set of open problems. We state those openly as we go; they mark
+exactly where the electroweak sector of the framework needs more work.
+
+\subsection{Gauge bosons as bipartite edges}
+
+A fermion is a node of the channel network --- a three-qubit register (\S\ref{sec:register}). A gauge
+boson is an \emph{edge}: a bipartite, Bell-class link between two nodes --- the canonical maximally
+entangled orbit, under the identification of \S\ref{sec:canonical-orbits} --- carrying the gauge
+sector of the qubit it connects. This is the reading the dictionary of \S\ref{sec:entanglement-classes}
+anticipated, now made explicit for the gauge bosons themselves. The number of independent edges in a
+sector is the dimension of that sector's gauge group, so the boson content follows from the group
+content already established.
+
+The electroweak bosons live in the $\mathbb{C}\otimes\mathbb{H}$ sector: one edge from the
+$U(1)_Y$ that sits on the $\mathbb{C}$ ($S^1$) fibre and three from the $SU(2)_L$ that sits on the
+$\mathbb{H}$ ($S^3$) fibre, four in all, which after electroweak mixing are the photon, $W^+$, $W^-$
+and $Z$ \autocite{glashow1961partial,weinberg1967model,salam1968weak}. The photon is the combination
+left unbroken --- the $Q = T_3 + \tfrac12 Y$ direction of \S\ref{sec:charges} --- and so it is a
+mixed $A$--$B$ edge rather than a pure hypercharge edge; the pure-$U(1)$ description is only the
+broken-phase limit. The strong sector lives at the octonionic level: the eight gluons are the adjoint
+of $SU(3)$ carried on the $C$-qubit's GHZ structure, eight edges among the colour-triplet channels.
+
+That a boson can be read both as a state (a Bell edge) and as a gate (an operation applied to the
+qubit of its sector --- the photon on the $A$--$B$ combination, the $W^\pm$ on the $B$-qubit, the
+gluons on the $C$-qubit) is the map--state duality of the categorical framework
+\autocite{coeckekissinger2010compositional}: the edge and the gate are the same morphism viewed two
+ways. This is the bridge the circuit picture rests on, and it is worth being exact about its status.
+The multiplet counting --- four electroweak edges, eight colour edges --- is fixed by the gauge
+groups and is not in question. The state-to-gate correspondence itself, however, is asserted through
+map--state duality rather than derived from the register dynamics.
+
+\begin{openproblem}[The state-to-gate correspondence]\label{op:state-gate}
+Derive, from the register dynamics, the correspondence between a gauge boson as a Bell edge and a
+gauge boson as a gate on the qubit of its sector, which the present construction asserts through
+map--state duality.
+\end{openproblem}
+
+The identification is, at this level, exactly what \S\ref{sec:interactions} needs to build vertices,
+and no more.
+
+\subsection{The weak mixing angle and the \texorpdfstring{$W$/$Z$}{W/Z} mass ratio}
+
+Carried from \S\ref{sec:charges}, the bare weak mixing angle is $\sin^2\theta_W = \tfrac14$, from the
+fibre-dimension ratio $\dim S^1/(\dim S^1 + \dim S^3) = 1/(1+3)$. Run down with the Standard Model
+renormalisation group from a matching scale of order $3.6\ \mathrm{TeV}$ --- roughly fifteen times the
+Higgs vacuum value --- it reaches the measured $\sin^2\theta_W \approx 0.231$ at $M_Z$. The tree-level
+relation between the gauge-boson masses is then
+\begin{equation}
+  \frac{m_W}{m_Z} = \cos\theta_W = \sqrt{\tfrac34} = \frac{\sqrt3}{2} \approx 0.866,
+\end{equation}
+against the observed ratio $\approx 0.881$.
+
+Before the numbers are weighed, the structural account of why three of the four electroweak bosons
+are massive and one is not. Each generator either rotates the $K_3$ resolution structure of
+\S\ref{sec:generations} or is blind to it, and either preserves the Higgs vacuum direction or does
+not. The $W^\pm$ rotate the resolutions ($T_3 \to T_3 \pm 1$) and move the vacuum; the $Z$ is
+resolution-blind but moves the vacuum; the photon is blind to both --- the unique combination
+simultaneously $K_3$-blind and vacuum-invariant, which completes the identification of the photon
+deferred in \S\ref{sec:charges}. The fourth cell of this two-by-two --- resolution-rotating yet
+vacuum-invariant --- does not exist in the electroweak algebra, which is why the count is exactly
+three massive and one massless: structural, not arranged. The ordering $m_W \le m_Z$ is structural
+for the same reason, the $Z$ being less broken than the $W^\pm$.
+
+Here we must be careful not to claim more than the framework delivers, and this is one of the places
+where it delivers less than a complete account. The $Z$ mass is an \emph{input}, not a prediction:
+nothing in the construction fixes the absolute electroweak scale, which is to say the Higgs vacuum
+value $v$ is not derived. Given $m_Z$ and the mixing angle, $m_W$ is then \emph{not} an independent
+prediction --- it is the ratio above. We therefore quote only that ratio, and record two named
+problems rather than paper over them.
+
+\begin{openproblem}[The electroweak scale]\label{op:vev}
+Derive the absolute electroweak scale --- the Higgs vacuum value $v$ --- from the framework. Until
+this exists, $m_Z$ is an input, and the electroweak sector predicts mass \emph{ratios} and the
+running of the angle, not the masses themselves.
+\end{openproblem}
+
+\begin{openproblem}[The $W$/$Z$ ratio under running]\label{op:wz-running}
+Show that the two-per-cent gap between the tree ratio $m_W/m_Z = \sqrt3/2 \approx 0.866$ and the
+observed $0.881$ is accounted for by the same running that carries $\sin^2\theta_W$ from $\tfrac14$
+to its measured value, with the on-shell and $\overline{\mathrm{MS}}$ definitions of the angle
+handled consistently.
+\end{openproblem}
+
+\subsection{The Higgs mass}
+
+The Higgs boson is the product-state scale-setter of the construction --- the separable channel of
+the dictionary, the dynamical promotion of the preferred complex direction
+\autocite{szangolies2025standardmodel} --- and its mass measures the stiffness of the computability
+barrier, the cost of pushing the broken vacuum back towards the symmetric point. With the quartic
+self-coupling $\lambda$, the Standard Model gives $m_H = \sqrt{2\lambda}\,v$. The framework's value is
+\begin{equation}
+  \lambda = \tfrac18 \quad\Longrightarrow\quad m_H = \tfrac{v}{2} \approx 123.1\ \mathrm{GeV},
+\end{equation}
+against the observed $125.25\ \mathrm{GeV}$, low by $1.7\%$.
+
+The honesty flag here is essential. The measured quartic is $\lambda = 0.129$, and $\tfrac18 = 0.125$
+is the simplest algebraic value close to it; it is not derived. Several readings suggest themselves
+--- $\lambda = \tfrac12\sin^2\theta_W$; the Chern-class route
+$\lambda = c_1^2/\bigl(2\dim(S^1\oplus S^3)\bigr) = \tfrac18$ for the complex Hopf bundle's
+$c_1 = 1$; or the Cayley--Dickson route $\lambda = \varepsilon^4/2 = \tfrac18$ with
+$\varepsilon = 1/\sqrt2$ the inter-generational coupling --- but each is at present a post-hoc
+identification rather than a calculation.
+
+\begin{openproblem}[The Higgs quartic]\label{op:higgs-lambda}
+Derive $\lambda = \tfrac18$ from the curvature of the Hopf bundle --- the most important open
+problem in the boson sector --- distinguishing among the candidate readings above or unifying them;
+and show, as a consistency check, that the residual $1.7\%$ is the running of $\lambda$ from the
+matching scale to the Higgs mass under the top-quark loop.
+\end{openproblem}
+
+As with the $W$/$Z$ masses, the vacuum value $v$ that sets the overall scale is itself not derived
+(Open Problem~\ref{op:vev}).
+
+\subsection{The top Yukawa}
+
+One fermion mass belongs here rather than in \S\ref{sec:masses}, because it is fixed by the boson
+sector rather than by the Koide geometry. The framework places the top quark exactly at the
+computability boundary, where its internal traversal rate equals the Higgs vacuum value, which is the
+statement that its Yukawa coupling is unity,
+\begin{equation}
+  y_t = 1 \quad\Longrightarrow\quad m_t = \frac{v}{\sqrt2} \approx 174.1\ \mathrm{GeV}.
+\end{equation}
+Compared with the top pole mass of $172.5\ \mathrm{GeV}$ this is high by $0.9\%$. The comparison is
+to the pole mass specifically, and we flag that the figure is scheme-dependent --- the
+$\overline{\mathrm{MS}}$ top mass is some ten GeV lower --- so $y_t = 1$ should be read as a clean
+structural statement (the top is the one fermion whose coupling saturates the boundary) whose precise
+numerical test depends on the mass definition. That $y_t \approx 1$ and $\lambda \approx \tfrac18$
+issue from the same fibre geometry is, in this reading, why the Standard Model vacuum sits so close to
+the stability boundary: the near-criticality is structural rather than accidental.
+
+\subsection{What is settled, and what is owed}
+
+Settled, at the tree level and within about two per cent: the boson content as bipartite edges ---
+four electroweak, eight colour --- with the photon the unbroken $A$--$B$ combination; the
+three-massive-one-massless counting structural, as the empty cell of the engagement square; the weak
+mixing angle $\sin^2\theta_W = \tfrac14$ (from \S\ref{sec:charges}) running to the observed value at
+$M_Z$; the tree ratio $m_W/m_Z = \cos\theta_W = \sqrt3/2$; the Higgs mass $m_H = v/2$ to $-1.7\%$;
+and the top Yukawa $y_t = 1$ to $+0.9\%$ against the pole mass.
+
+Owed. One problem has its substantive description here: the status of the matching scale.
+
+\begin{openproblem}[The matching scale]\label{op:matching-scale}
+Determine whether the $3.6\ \mathrm{TeV}$ matching scale at which the bare
+$\sin^2\theta_W = \tfrac14$ is attained is an artefact of the one-loop approximation or a genuine
+physical scale. The framework's exclusion of supersymmetry and extra dimensions suggests the latter,
+in which case it is a prediction of no new physics between the electroweak scale and the matching
+scale; it is also the scale at which the sterile masses of \S\ref{sec:generations} sit, so the two
+readings are testable together.
+\end{openproblem}
+
+The remaining debts are the problems already recorded: the absolute electroweak masses await the
+vacuum value (Open Problem~\ref{op:vev}), so that $m_W$ and $m_Z$ are at present a ratio and an
+input rather than two predictions; the scheme-consistent account of the ratio gap is
+Open Problem~\ref{op:wz-running}; the quartic is Open Problem~\ref{op:higgs-lambda}, the key
+calculation of this sector; and the state-to-gate correspondence underlying the boson-as-edge
+identification is Open Problem~\ref{op:state-gate}.
+
+The boson-as-edge picture and the electroweak inputs are now in place. The interaction circuits of
+\S\ref{sec:interactions} build on them, representing vertices as gates on identified qubits and
+deriving the absence of tree-level flavour-changing neutral currents; the neutrino masses and the
+scalar glueball are collected with the other forward-testable predictions in \S\ref{sec:predictions}.
