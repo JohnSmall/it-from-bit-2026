@@ -1,0 +1,222 @@
+% =====================================================================
+%  Section: A Fermion is Three Qubits   (Plan Stage 1)
+%  Paper 1, "It from Bit via Gödel"
+%  Drafted 2026-06-08. Follows \S sec:entanglement-classes.
+%
+%  \input fragment. Assumes biblatex/\autocite, amsthm `proposition'.
+%  Bib resources: hopf_particle_physics_refs_2026-06-08.bib,
+%                 entanglement_classes_refs_2026-06-08.bib,
+%                 register_refs_2026-06-08.bib (new).
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:hopf-justification     -- Hopf fibrations / Adams termination / prop:gsm
+%    sec:entanglement-classes   -- GHZ/W theorems, "split on the first qubit"
+%    prop:gsm, prop:termination -- from the Hopf-justification section
+%    sec:fanout-boundary       -- the computability split / measurement
+%    sec:charges                -- Stage 2 (reading the quantum numbers), forward
+%    sec:generations            -- Stage 4 (three generations), forward
+%    sec:masses                 -- Stage 5+ (mass), forward
+%
+%  Terminology follows terminology_reconciliation_entanglement_dictionary_2026-06-08:
+%  "Bell" is the entanglement class, never a synonym for SU(2); the ELL-H rung is
+%  named as such. Dual-audience convention (QC view / GT view / Bridge) per the plan.
+% =====================================================================
+
+\section{A Fermion is Three Qubits}
+\label{sec:register}
+
+\subsection{Particles are channels, not objects}
+\label{sec:register-preface}
+
+A caveat first, because it governs this section and every one that follows. The language we are
+about to adopt --- the ``internal structure'' of a fermion, a ``three-qubit register'', a qubit
+that ``carries'' colour --- is convenient and we will use it throughout, but it must not be read
+literally. There is no little ball, existing in its own right, with hypercharge and colour painted
+on its surface. That image is a classical inheritance: in everyday physics we deal with objects
+that persist independently of their interactions and bear properties as attributes, and we carry
+the habit into quantum physics, where it quietly misleads.
+
+In this framework a particle is not an object but a \emph{channel of communication between events}.
+The fundamental layer is the self-referential network of events of \S\ref{sec:self-reference}; a
+particle is a connection across that network, and what we call its properties are features of what
+the channel can carry and of how it composes with other channels, not marks on a thing. The
+``particle'' is the interpretation our classically-trained intuition places on the information the
+channel conveys --- a useful repackaging, not the discovery of a blob.
+
+This is not a philosophical ornament bolted onto the mathematics; it is what makes the mathematics
+of the previous section the \emph{right} mathematics. The compositional structure of Coecke and
+Kissinger \autocite{coeckekissinger2010compositional} is a calculus of processes: systems are
+wires, interactions are boxes, and the content of the theory is how they compose. A particle, in
+that calculus, is a wire carrying information between the events it connects, and the GHZ and W
+Frobenius structures are statements about how such a wire may branch, copy and merge --- properties
+of a channel, not labels on an object. When \S\ref{sec:entanglement-classes} let the entanglement
+\emph{class} decide whether something is a quark or a lepton, it was already committed to this
+reading: a quark is not a coloured ball but a channel whose composition behaviour is of the GHZ
+type.
+
+Both of our audiences are, in fact, already thinking this way, whatever the popular picture
+suggests. The quantum-computational reader works with states and gates --- preparations and
+processes; the gauge-theoretic reader works with fields and vertices --- again processes, and the
+events they connect. It is only the pop-physics image of a particle as a tiny labelled sphere that
+is the outlier, and it is exactly that image we are setting aside.
+
+So the phrases that follow are bookkeeping. ``The three-qubit register'' is a way of organising the
+information a channel can carry, written in a language --- qubits, Bloch spheres, gates --- that
+maps cleanly onto both audiences' habits and onto our shared classical experience. The three qubits
+are not three sub-things lodged inside a fourth thing. With that understood the convention is
+genuinely useful and we adopt it without further apology, but the reader should mentally supply
+``the channel we conventionally describe as'' in front of every ``the fermion'' below.
+
+\subsection{What this section does}
+
+The previous section read the entanglement \emph{class} of a three-qubit state as the
+quark--lepton division. To go further --- to the quantum numbers of \S\ref{sec:charges} and the
+masses of \S\ref{sec:masses} --- we need to make explicit the structure of the channel we
+conventionally describe as a single fermion, written, by the caveat just stated, as a three-qubit
+register with each qubit tied to one gauge sector. This section assembles that
+register. It is worth saying plainly that the result is \emph{structural}: every ingredient (the
+division-algebra tower, the Hopf fibrations, the two-sphere representation, the termination at
+$\mathbb{O}$) is established, but the identification of the assembled register with a Standard
+Model fermion is an argument from structure rather than a theorem, and we flag the assumptions as
+they arise.
+
+The section also fixes the dual reading the rest of the development relies on. The same object is,
+for a reader coming from quantum computation, a specific three-qubit entangled state; and for a
+reader coming from gauge theory, a particle carrying hypercharge, weak isospin and colour. Holding
+both readings at once is the whole point, so each step below states a \textbf{QC view}, a
+\textbf{GT view}, and the \textbf{Bridge} that is the single object both are describing.
+
+\subsection{The three qubits and the Cayley--Dickson tower}
+
+The channel we describe as a single fermion is organised, by the convention of
+\S\ref{sec:register-preface}, into three qubits $A \otimes B \otimes C$, whose
+internal algebras are the three non-trivial rungs of the Cayley--Dickson tower above the reals:
+$\mathbb{C}$, $\mathbb{H}$, $\mathbb{O}$. Each rung is the previous one doubled, and each doubling
+sacrifices a piece of algebraic structure: $\mathbb{C}$ is commutative and associative;
+$\mathbb{H}$ is non-commutative but associative; $\mathbb{O}$ is neither.
+
+\emph{QC view.} Three qubits, each an ordinary two-state system you already know how to write down
+and rotate. \emph{GT view.} Three internal labels --- one abelian charge and two non-abelian ones.
+\emph{Bridge.} The algebra a qubit is valued in fixes the gauge content it can carry; the tower is
+the list of what structure survives at each level.
+
+That there are exactly three such qubits is not a modelling choice. The same classification that
+closed the gauge group in \S\ref{sec:hopf-justification} closes the register: there are exactly
+three non-trivial normed division algebras above $\mathbb{R}$, exactly three nontrivial Hopf
+fibrations, and the tower terminates at $\mathbb{O}$ (Proposition~\ref{prop:termination}). The
+register inherits its length from the same theorem that forbids a fourth force.
+
+\subsection{The qubits are nested, not side by side}
+
+It is tempting to picture $A$, $B$, $C$ as three independent boxes. They are not. They are the
+three levels of the \emph{iterated} octonionic Hopf fibration of the single three-qubit state, the
+same nesting drawn by Szangolies \autocite{szangolies2025standardmodel} and exploited in the
+``split on the first qubit'' of \S\ref{sec:entanglement-classes}.
+
+\begin{proposition}[The register as an iterated fibration]\label{prop:iterated-hopf}
+The unit sphere $S^{15}$ of the three-qubit state space is the total space of the octonionic Hopf
+fibration $S^{15} \xrightarrow{S^7} S^8$; the $S^7$ fibre is itself the total space of
+$S^7 \xrightarrow{S^3} S^4$; and the $S^3$ fibre is in turn $S^3 \xrightarrow{S^1} S^2$. The three
+Hopf fibres are therefore nested, $S^1 \subset S^3 \subset S^7$, and they carry, respectively, the
+groups $U(1)$, $SU(2)$, and --- through the $G_2$ stabiliser of a complex direction
+(Proposition~\ref{prop:gsm}) --- $SU(3)$.
+\end{proposition}
+
+This is why peeling one qubit off the register drops one rung of the tower, exactly as in the
+entanglement-classes construction. The three gauge groups are not bolted on; they are the three
+fibres of one geometric object.
+
+\subsection{One Bloch sphere per gauge sector}
+
+Collecting the assignment gives the table that the rest of the development reads off. This table is
+the deliverable of the stage: a reader of either background should be able to point at a row and
+name both the qubit and the force.
+
+\begin{center}
+\begin{tabular}{lllll}
+\hline
+Qubit & CD rung & Hopf fibre & Gauge group & Internal charge \\
+\hline
+$A$ & $\mathbb{C}$ (commutative) & $S^1$ & $U(1)$ & hypercharge / electric \\
+$B$ & $\mathbb{H}$ (non-commutative) & $S^3$ & $SU(2)$ & weak isospin \\
+$C$ & $\mathbb{O}$ (non-associative) & $S^7$ & $SU(3)$ & colour \\
+\hline
+\end{tabular}
+\end{center}
+
+The ordering is fixed, not chosen: it is the order in which the Cayley--Dickson construction
+sheds structure, matched to the order in which the gauge groups gain it. An abelian group sits on
+the commutative rung ($U(1)$ on $\mathbb{C}$); a non-abelian group with an associative Lie algebra
+sits on the non-commutative-but-associative rung ($SU(2)$ on $\mathbb{H}$), where left and right
+quaternionic multiplication supply the two candidate actions and bipartite (Bell-class)
+entanglement is naturally accommodated; and the group whose octonionic realisation is constrained
+by non-associativity sits on the non-associative rung ($SU(3)$ on $\mathbb{O}$, as the $G_2$
+stabiliser). We flag this as a \emph{structural matching} rather than a uniqueness theorem: it is
+the natural assignment, and we know of no competitor, but ``natural'' is doing real work in that
+sentence.
+
+Two of the lost symmetries are worth naming now, because they are cashed out later. Losing
+commutativity at the $\mathbb{H}$ rung is what supplies the $SU(2)$ re-bracketing dynamics (the
+$W^\pm$); losing associativity at the $\mathbb{O}$ rung is what supplies mass (the octonionic
+associator, \S\ref{sec:masses}) and chirality (triality breaking, \S\ref{sec:generations}). The
+register is thus not a set of labels attached to an object: each algebraic deficit is a physical
+capacity of the channel.
+
+\subsection{Drawing the register: the two-sphere representation}
+The visualisation tool is the two-Bloch-sphere representation of Filatov and Auzinsh
+\autocite{Filatov2024EntanglementStructure}. They showed that a pure two-qubit entangled state can be drawn as a
+pair of Bloch spheres, with the constraint that the coordinate axes of one sphere are
+right-handed and those of the other left-handed. This opposite-handedness --- the \emph{Filatov
+constraint} --- is a topological fact about the quaternionic Hopf fibration, not a drawing
+convention.
+
+\emph{QC view.} A multi-sphere picture of entanglement: each qubit gets a sphere, and entangled
+pairs are tied together by opposite handedness. \emph{GT view.} The handedness is a physical
+chirality carried by the internal state. \emph{Bridge.} The handedness relation between two spheres
+is the entanglement between two gauge sectors.
+
+For a fermion we draw three such spheres, one per row of the table. When two of the qubits are
+entangled, their spheres carry opposite handedness. The case where all three pairs are
+mutually entangled --- the W class --- demands opposite handedness on every edge of the triangle,
+which the complete graph $K_3$ cannot consistently support: $K_3$ is not two-colourable. That
+frustration is the seed of chirality and of the generation count, but it belongs to
+\S\ref{sec:generations}; here we only need the representation itself and the fact that the
+constraint is forced rather than imposed.
+
+\subsection{Why three spheres make a fermion}
+
+The two-sphere representation also gives a clean structural reading of spin, worth recording even
+though its formal version is owed. A single sphere has no edges to frustrate and represents a
+spin-$0$ object (the Higgs); two spheres are two-colourable and represent a spin-$1$ object (a
+gauge boson); three spheres are frustrated and represent a spin-$\tfrac12$ object (a fermion), with
+the Filatov constraint on three spheres playing the role of the spinorial double cover and its
+$4\pi$ rotation period. \emph{QC view:} count the spheres. \emph{GT view:} read off the spin. We
+mark this as \emph{structural and suggestive}; the rigorous statement travels with the
+generation proof in \S\ref{sec:generations}.
+
+\subsection{Status, and the standard objections}
+
+The stage is an assembly, and two standard objections should be met head-on.
+
+First, is this genuinely three qubits, or one composite state over a higher-dimensional algebra
+dressed up as three? The position is that the tensor structure is a genuine tripartite product:
+each of $A$, $B$, $C$ is independently a two-state system, and Proposition~\ref{prop:iterated-hopf}
+is the precise sense in which the three are nested yet distinct rather than collapsed into a single
+large space.
+
+Second, does using $\mathbb{H}$ and $\mathbb{O}$ as internal algebras inherit the well-known
+difficulties of quaternionic and octonionic quantum mechanics --- the tensor-product and
+composite-system problems catalogued by Adler and others \autocite{adler1995quaternionic}? The
+position is that it does not, because $\mathbb{C}$ remains the base field of the physical Hilbert
+space; $\mathbb{H}$ and $\mathbb{O}$ appear only as the internal algebras of individual qubits, not
+as alternative foundations for quantum theory. This is the same move that lets the division-algebra
+programme use $\mathbb{O}$ in Standard-Model constructions without asserting an octonionic quantum
+mechanics. (The $\mathbb{O}$-qubit is in any case best read geometrically: because $\mathbb{O}$ is
+non-associative, $\mathbb{O}^2$ is a normed module rather than a Hilbert space in the
+Dirac--von Neumann sense, and the $C$-qubit is handled as the geometric object $S^{15}$ with its
+Hopf structure.)
+
+With the register in place and each qubit tied to its gauge sector, the next stage reads the
+electric charge, weak isospin, hypercharge and colour directly off the state, recovering
+$Q = T_3 + Y$ as a statement about the register rather than a tabulated assignment
+(\S\ref{sec:charges}).

@@ -1,0 +1,115 @@
+% =====================================================================
+%  SUBSECTION: The Yang--Mills mass gap
+%  Drafted 2026-07-03 per JS: having committed to all mass as
+%  associator-geodesic length (including the proton's), the paper must
+%  say why it does not extend the claim to the Clay Millennium problem
+%  -- "it would seem strange to get so far and not make the extra
+%  effort" -- with an explanation and a forward-looking suggestion.
+%
+%  PLACEMENT: into confinement_section_2026-06-13.tex, immediately
+%  AFTER the "All mass is geodesic length" subsection (i.e. after its
+%  closing gravity/E=mc^2 forward sentence, the paragraph beginning
+%  "One forward-looking consequence deserves a single sentence...")
+%  and BEFORE \subsection{Confinement and pre-spatial co-location}.
+%
+%  REGISTER (deliberate): this is the highest-crankery-risk topic in
+%  physics; the subsection names the problem precisely so that no claim
+%  on it can be read into the section by implication, declines it with
+%  specific reasons (same kinematic/dynamical boundary as the QED
+%  scope statement), then records the framework-native structural seed
+%  (conditional, flagged) and two forward directions. NO new open
+%  problem is minted: the framework's pieces of the gap are already
+%  op:associator-geodesic, op:glueball-spectrum, op:qcd-scale,
+%  op:confinement-potential, and the four translation interfaces are
+%  given as a prose programme.
+%
+%  DEPENDENCY: references op:qcd-scale, which is DEFINED in
+%  associator_debt_higgs_mechanism_2026-07-03.tex -- paste that
+%  subsection into the boson-masses section first, or this reference
+%  dangles. (Fallback if you prefer: drop the op:qcd-scale clause.)
+%
+%  CROSS-REFS (all existing): sec:interactions, sec:space-of-computations,
+%  sec:masses, op:associator-geodesic, op:glueball-spectrum,
+%  op:confinement-potential, op:qcd-scale [see dependency].
+%  NEW citation keys (RIS in mass_gap_refs_2026-07-03.ris):
+%  jaffewitten2006, cubitt2015spectralgap.
+%
+%  OPTIONAL one-line addition to "What is settled and what is owed",
+%  end of the owed paragraph:
+%    "The Yang--Mills mass gap is named in \S\ref{sec:mass-gap}
+%     precisely so that no claim on it is read into this section by
+%     implication."
+% =====================================================================
+
+\subsection{The Yang--Mills mass gap}
+\label{sec:mass-gap}
+
+A reader who has followed this section to here will have noticed that its commitments walk up to
+the edge of a famous problem, and it would be evasive not to name it. The Clay Millennium
+formulation asks for two things \autocite{jaffewitten2006}: a mathematically rigorous construction
+of quantum Yang--Mills theory on $\mathbb{R}^{4}$, for any compact simple gauge group, meeting the
+Wightman axioms or standards of comparable stringency; and a proof that the constructed theory has
+a mass gap $\Delta > 0$ --- that its lightest excitation is strictly massive. As physics the gap is
+not in doubt: lattice computation exhibits it, and its lightest carrier is the scalar glueball near
+$1.7$ GeV whose derivation this section has already recorded as
+Open Problem~\ref{op:glueball-spectrum}. The Millennium problem is a problem of proof, not of
+phenomenology. This section has asserted that confinement is exact and structural, that glueballs
+are closed colour networks, and that all mass --- theirs included --- is associator-geodesic length.
+Having gone that far, we owe the reader a plain statement of why we go no further, and of what
+going further would require.
+
+The reasons are the boundary already drawn for quantum electrodynamics in \S\ref{sec:interactions},
+here made specific. The mass gap is a statement about the spectrum of a quantum dynamics, and this
+framework has not constructed that dynamics: there is no Hamiltonian here whose spectrum could be
+bounded, no Hilbert space of the field theory, and no continuum $\mathbb{R}^{4}$ to put one on ---
+spacetime itself being emergent in this framework, its construction deferred
+(\S\ref{sec:space-of-computations}). One cannot prove a spectral gap of an operator one has not
+built. Beneath that lies the framework's own open centre: the map from network geometry to physical
+mass is Open Problem~\ref{op:associator-geodesic}, and the statement ``every closed colour network
+has strictly positive geodesic length'' cannot be a theorem before the functional it concerns
+exists. Even were both supplied, the translation into the Millennium problem's terms crosses four
+interfaces, each a research programme in its own right: the continuum construction of the emergent
+spacetime; the translation of the categorical and entanglement-theoretic statements of this paper
+into an axiomatic form; the passage from the algebraic obstruction of this section to the standard
+criteria of confinement, the Wilson-loop area law above all; and the spectral proof itself. We claim
+none of these. One further limit of scope deserves its own sentence: the Millennium problem is posed
+for every compact simple gauge group, while the structural story of this section is specific to the
+colour sector as it arises here, on the octonionic register --- our route, even if completed, would
+speak to $SU(3)$, not to the problem in its full generality.
+
+What the framework does supply, and what we record because it gives the gap a concrete identity, is
+a structural reason to expect one. The photon is massless because the electroweak sector contains a
+debt-free direction: the associator-blind $\mathbb{C}$, along which nothing is owed
+(\S\ref{sec:masses}). The colour sector contains no such direction --- colour lives on the register
+exactly where the associator is non-trivial --- so no closed colour network can be debt-free. And
+closed networks are topologically discrete: the minimal closure is a finite structure, and there is
+no continuum of ever-smaller closed networks by which geodesic lengths could accumulate towards
+zero. If, as the framework's mass formulas everywhere suggest, the geodesic length of a closed
+network is fixed by its discrete topology rather than by any continuously variable modulus, then the
+spectrum of pure-colour states is bounded below by the length of the minimal closed network. On this
+reading the gap exists because the colour sector has no massless direction and no arbitrarily small
+closed structure; and $\Delta$ is then not an abstract bound but a particular number --- the mass of
+the lightest glueball, precisely the object of Open Problem~\ref{op:glueball-spectrum}, with its
+scale in physical units the object of Open Problem~\ref{op:qcd-scale}. Everything in this paragraph
+is conditional on the open map: it is a heuristic the framework makes natural, not a theorem the
+framework possesses, and we flag it as such.
+
+Two forward directions are worth leaving on the table. The first reframes the problem's notorious
+difficulty. Cubitt, P\'{e}rez-Garc\'{i}a and Wolf proved that the spectral-gap question is, in
+general, undecidable: for translationally invariant lattice Hamiltonians it encodes the halting
+problem, and their own statement of the result names the Yang--Mills gap conjecture as a particular
+case of the general problem so shown undecidable \autocite{cubitt2015spectralgap}. For a framework
+whose spine is self-referential non-computability this is orientation rather than discouragement.
+It says that any proof must exploit special structure --- no general algorithmic route exists ---
+and it locates the difficulty exactly where the bump-in-the-carpet principle of this framework
+expects to find it. The suggestion we record, in the same register as the other prospects of this
+paper --- a direction with a possible path, not a claim --- is that the special structure is the
+division-algebra rigidity itself, the Hurwitz--Adams rigidity that terminated the Hopf tower, and
+that a proof along this route would show the geodesic functional on closed colour networks to be
+bounded below by the minimal-network length, the discreteness of network topology doing the work
+that lattice regularisation does elsewhere. The second direction is nearer, and does not wait on the
+emergent-distance machinery: in a fixed lattice geometry, the question of whether the
+budget-saturation constraint of this section reproduces area-law Wilson loops is one that
+tensor-network methods can address now, and it is the interface at which this framework's account of
+confinement first becomes commensurable with the standard one. We leave the problem, and the route,
+in the record of open problems rather than in the claims of this paper.

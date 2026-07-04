@@ -1,0 +1,44 @@
+% =====================================================================
+% Addition to the Tsirelson / PR-box aside: entanglement monogamy.
+% Slot immediately after the Tsirelson/PR-box paragraphs of
+% tsirelson_pr_box_aside_2026-06-07.tex (i.e. still inside the aside in
+% subsection \ref{sec:wf-reconciliation}).
+% New citation keys (companion .bib): CKW2000, OsborneVerstraete2006.
+% MosseriDandoloff2001 and VerstraeteWolf2002 are already cited in the aside.
+% British English.
+% =====================================================================
+
+\noindent 
+\label{sec:monogamy}
+The same boundedness carries entanglement monogamy, and by the same
+move. A qubit $A$ has a single reduced state $\rho_{A}$, hence a single Bloch
+radius $r_{A}$ and a single position in its ball, fixed once and for all by the
+global state. The inward depth from the surface,
+\begin{equation}
+  \tau_{A} \;=\; 1 - r_{A}^{2} \;=\; 4\det\rho_{A},
+\end{equation}
+is $A$'s entire entanglement budget---one number, the one-tangle, equal in the
+bipartite pure case to $C^{2}(A,B)$ through the Mosseri--Dandoloff relation
+\autocite{mosseri2001hopf}. Every partner $A$ entangles with must be paid
+for out of this same $r_{A}$: because $C^{2}(A,B)$ and $C^{2}(A,C)$ are both read
+off the one reduced state, the squared concurrences sum within the budget,
+\begin{equation}
+  C^{2}(A,B) + C^{2}(A,C) \;\le\; \tau_{A} \;=\; 1 - r_{A}^{2},
+\end{equation}
+which is the Coffman--Kundu--Wootters monogamy inequality
+\autocite{CKW2000}, proved for arbitrarily many qubits by Osborne and Verstraete
+\autocite{OsborneVerstraete2006}. Driving $A$ to maximal entanglement with $B$
+sends it to the centre, $r_{A}=0$, which spends the whole budget and leaves
+nothing for $C$: entanglement is necessarily monogamous. Geometrically, monogamy
+and the Tsirelson bound are one fact seen twice. A ball has a single centre and
+one cannot pass it; the single radial depth toward that centre is a fixed budget
+shared among all of $A$'s partners. The Tsirelson bound is that depth read
+through the CHSH correlator---no point past the centre, so no violation past
+$2\sqrt{2}$; monogamy is that depth partitioned among partners---one budget, so
+maximal sharing with one excludes the rest. The inequality itself is standard;
+what the Hopf picture adds is the reading that grounds it in the compactness and
+unique centre of the base space, and that makes the same bounded radius do both
+jobs at once. Pushed to its extreme the budget picture also yields confinement:
+three GHZ-correlated quarks saturate the tripartite budget and retain none for
+partners outside the triple, which is developed separately
+(Section~\ref{sec:entanglement-classes}).

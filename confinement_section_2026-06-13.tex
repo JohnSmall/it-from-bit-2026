@@ -1,0 +1,285 @@
+% =====================================================================
+%  Section: Confinement
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-13 from the plan
+%  confinement_section_plan_2026-06-13.md, with the unification decided
+%  in discussion 2026-06-13: ALL mass is associator-geodesic length.
+%
+%  DEFINES sec:confinement. Sited after the GHZ->colour / W->lepton
+%  proofs and the generations material, which it uses.
+%
+%  CONVENTIONS: British English; \autocite (biblatex); amsthm with the
+%  paper-wide openproblem environment (thmtools, declared in preamble);
+%  status-flagged prose; NO bullet lists in prose. The K3 four-class
+%  enumeration is a TABLE (notebook I retired -- it was pure combinatorics,
+%  no quantum circuit; the enumeration lives here as a table, with a tiny
+%  scripts/ .py for reproducibility in the repo).
+%
+%  THREE STANDALONE NUMBERED OPEN PROBLEMS (per JS 2026-06-13):
+%    op:confinement-potential   -- V(r) as "the associator-geodesic length
+%                                  resolved by emergent distance" (links to
+%                                  op:associator-geodesic structurally;
+%                                  emergent-distance part = Paper 2, NOT a
+%                                  blocker for Paper 1)
+%    op:confinement-energy-locus -- quark triple vs gluon Bell pairs;
+%                                  "no medium" committed, gluon-Bell-pair
+%                                  location not excluded; static, attackable
+%                                  with existing entanglement tools
+%    op:glueball-spectrum       -- the four-class ggg spectrum + 0++ mass;
+%                                  mass origin = associator-geodesic (all
+%                                  mass is), on C-only closed networks
+%
+%  UNIFICATION (committed 2026-06-13): all mass -- fermion, glueball,
+%  baryon binding -- is associator-geodesic length. Baryon mass is mostly
+%  binding (interaction) energy, so interaction energy IS associator-
+%  geodesic length, which is why the confinement potential and the mass
+%  map are the SAME object resolved two ways. op:associator-geodesic is
+%  hereby the mass map for ALL mass, not just fermions.
+%
+%  Single forward sentence on gravity + E=mc^2 (#4,#5 from discussion),
+%  full discussion deferred to Paper 2.
+%
+%  CROSS-REFS OUT (verify all before compile):
+%    sec:entanglement-classes, sec:generations, sec:register,
+%    op:associator-geodesic, sec:predictions, app:qiskit-composition,
+%    app:qiskit-meson, app:qiskit-handles.
+%    sec:space-of-computations + sec:gr-nonlocality (RESOLVED 2026-06-13:
+%    the spacetime section's label is sec:space-of-computations; the
+%    pre-spatial subsection is sec:gr-nonlocality).
+%  NEW CITATIONS (RIS to prepare): coffmankunduwootters2000 (three-tangle),
+%    osborneverstraete2006 (general monogamy). Check if already in .bib.
+%  NOTEBOOKS quoted: G (notebook_G_confinement_budget),
+%    H (notebook_H_glueball_fanout). Notebook I retired.
+% =====================================================================
+
+\section{Confinement}
+\label{sec:confinement}
+
+Confinement is the statement that colour-charged particles are never found in isolation: no free
+quark, no free gluon, only colour-singlet combinations. In the standard account this is attributed
+to the dynamics of the non-Abelian colour field --- the flux tube, the linear potential, the running
+coupling --- and remains, in its quantitative form, among the hardest open problems in field theory.
+The framework offers a different account of \emph{why} confinement holds, one that is structural and
+exact rather than dynamical and asymptotic, and it is careful about the boundary between what that
+account settles and what it leaves open. We place the section here, beside the GHZ$\to$colour and
+W$\to$lepton results (\S\ref{sec:entanglement-classes}, \S\ref{sec:generations}) it depends on,
+because confinement in this framework is the same kind of fact as those: a consequence of the
+entanglement class, read off the structure rather than computed from a force.
+
+\subsection{Confinement as an exhausted entanglement budget}
+
+A baryon's three quarks are bound through their colour ($C$) qubits, and the binding state is the
+maximal GHZ state --- the colour singlet. The decisive property of that state is supplied by the
+monogamy of entanglement. Entanglement cannot be freely shared: a system that is maximally entangled
+with some partners has none left to spend on others. Quantitatively, for three qubits the
+Coffman--Kundu--Wootters monogamy inequality
+\autocite{coffmankunduwootters2000distributed,OsborneVerstraete2006} bounds the total,
+\begin{equation}
+  \tau_{A(BC)} \;\ge\; \tau_{AB} + \tau_{AC},
+\end{equation}
+and the genuinely tripartite part --- the three-tangle $\tau_3$ --- measures what is held
+irreducibly among all three. For the maximal GHZ state $\tau_3 = 1$: the budget is fully spent on
+the tripartite binding, and \emph{every} bipartite tangle, internal or external, is forced to zero.
+
+The consequence is confinement. A colour singlet has $\tau_3 = 1$, so it has no entanglement
+whatever left over to share with anything outside the triple. A quark cannot be entangled with an
+external colour charge because the singlet it belongs to has spent its entire colour-entanglement
+budget on its two partners. There is no free quark because there is no budget for the external
+colour correlation a free quark would require. This is verified directly in
+Appendix~\ref{app:qiskit-composition} and its companion computation: the colour singlet returns
+$\tau_3 = 1$ with both bipartite tangles identically zero, and an attempt to entangle one quark with
+an external qubit succeeds only in lockstep with the destruction of the singlet --- the external
+correlation rises exactly as the GHZ fidelity falls, so a quark can acquire an outside partner only
+by ceasing to be part of a colour singlet.
+
+The reading deserves emphasis because it differs from the standard one in kind, not merely in
+technique. This is not a force that grows with separation; it is a property of the \emph{state},
+with no distance in it. The three-tangle $\tau_3$ is a function of the amplitudes, and a GHZ state
+has $\tau_3 = 1$ whether its qubits are adjacent or galaxies apart --- entanglement is not
+distance-dependent, and nothing in the argument above mentions a separation. Confinement, in this
+account, is the flat structural fact that a colour singlet has no entanglement available for an
+external colour partner. It is also, in consequence, \emph{exact}: a budget is either saturated or
+it is not, and the maximal GHZ state saturates it completely. Where lattice QCD extracts confinement
+as an asymptotic, numerically-determined property of the colour field, the framework states it as an
+exact property of the singlet state.
+
+\subsection{One structure, two consequences: confinement and the vector-like colour force}
+
+The same feature of the GHZ state that gives confinement also explains, at one stroke, why the
+colour force is not chiral. The GHZ state has no oriented pairwise substructure: its entanglement is
+irreducibly tripartite, carried among all three qubits at once, with --- as the budget shows --- no
+bipartite content to host a relative orientation. In \S\ref{sec:generations} this was what forced
+the colour sector to be vector-like and the QCD vacuum angle to vanish structurally, there being no
+oriented pairwise links to carry a CP-violating phase. It is the same fact, seen from the other side,
+that gives confinement: \emph{all} of the colour entanglement is tripartite and internal, which is
+at once why none is available externally (confinement) and why none is pairwise and orientable
+(chirality-freedom). Confinement and the vector-like character of the strong force are not two
+properties of the colour sector that happen to coexist; they are one property of the GHZ class read
+twice. The contrast with the W (lepton) sector, whose entanglement \emph{is} pairwise and which is
+correspondingly chiral and unconfined, is the same contrast in reverse.
+
+\subsection{The confinement potential is distance-free in origin}
+
+The structural account establishes \emph{that} quarks cannot be isolated; it does not yet yield the
+\emph{measured, distance-dependent} phenomenology --- the static quark--antiquark potential, its
+linear rise, the slope that lattice QCD and Regge trajectories call the string tension. We state the
+gap precisely, because it is more interesting than a missing number. Distance, in this framework, is
+not fundamental: it is emergent and relational, built from the network of interactions
+(\S\ref{sec:space-of-computations}). So the task is not to compute the energy of a flux tube stretched across a
+pre-existing space; it is to show how a potential that \emph{depends on separation} arises at all
+from a constraint that contains no separation.
+
+The unification of the mass sector (below) fixes the form this answer must take. If, as the framework
+holds, all mass is associator-geodesic length, then the interaction energy binding quarks --- which
+is most of a hadron's mass --- is associator-geodesic length, and the confinement potential is that
+length resolved by separation. The confinement potential and the mass map are therefore not
+independent problems: the potential is what the geodesic length looks like when one asks how it
+varies with the emergent distance between the charges.
+
+\begin{openproblem}[The confinement potential]\label{op:confinement-potential}
+Derive the static quark--antiquark potential --- equivalently the quantity lattice QCD and Regge
+trajectories call the string tension --- as the associator-geodesic length of
+Open Problem~\ref{op:associator-geodesic}, resolved by the emergent distance of
+\S\ref{sec:space-of-computations}, and show that it reproduces asymptotic freedom at short range as the limit in
+which little tripartite budget is yet committed. No flux tube or confining medium is posited; the
+content is that the confining \emph{energy} is the same geodesic length that fixes mass, expressed as
+a function of relational separation. The emergent-distance half of this engages the spacetime
+programme of Paper~2 and is not required for the structural confinement result above.
+\end{openproblem}
+
+There is a further question the structural account raises but does not settle: \emph{where} the
+confining energy resides. The monogamy obstruction shows that a colour singlet can host no external
+correlation, but it does not, by itself, say whether the energy of binding is to be read as a
+property of the quark triple's own tripartite entanglement or of the gluon Bell-pair network that
+mediates the colour field between them. We commit to the position that there is no confining
+\emph{medium} --- no background condensate doing the work, the entanglement being intrinsic and
+relational rather than a property of the vacuum --- but that commitment does not decide between the
+two intrinsic locations, and we do not exclude that the binding energy is carried by the gluon Bell
+pairs rather than the quark triple.
+
+\begin{openproblem}[Where the confining energy resides]\label{op:confinement-energy-locus}
+Determine whether the energy of colour binding is carried by the tripartite entanglement of the
+quark $C$-qubits or by the gluon Bell-pair network that mediates the colour field, given that it is
+in either case intrinsic and relational and not the property of any vacuum medium. Unlike
+Open Problem~\ref{op:confinement-potential}, this concerns the static structure of the singlet and
+is attackable with the entanglement measures already in hand, without the emergent-distance
+machinery.
+\end{openproblem}
+
+\subsection{Glueballs}
+
+Glueballs are bound states of the colour field with no valence quarks: in the framework's language,
+networks of gluon Bell pairs on $C$-qubits, closed on themselves so that the outer endpoints
+contract to a colour singlet with no external fermion register to terminate on. They carry a subtlety
+the quark sector does not, and it is the deepest point of the section.
+
+A quark trio produces a \emph{classical} colour record for free, because the GHZ structure is special
+Frobenius --- it possesses the copy operation that broadcasts a record (the FANOUT of
+\S\ref{sec:entanglement-classes}). A single gluon cannot: its Bell pair is not a copy structure and
+has nothing to broadcast. For a glueball to be a real, classically detectable bound state, the gluon
+network must therefore \emph{manufacture} the copy structure through its closure topology, asking the
+geometry of the network to do what a quark trio does intrinsically. Appendix~\ref{app:qiskit-meson}
+and its companion computation make this concrete, and the result is sharper than the question. The
+two-gluon network does not, on its open legs, reconstruct the copy structure: it returns a Bell pair.
+The closed three-gluon triangle returns exactly $\mathrm{GHZ}_3$, the copy structure itself. The
+closure manufactures the record-broadcasting capacity that the constituents lack --- but it takes the
+three-gluon triangle to do it, not the two-gluon scalar. The framework's reading is, in consequence,
+that classically detectable glueball structure is tied to the three-gluon topology.
+
+The three-gluon glueball carries a structural prediction that goes beyond standard QCD. Three gluons
+joined as a triangle form a $K_3$ network --- the same complete graph on three vertices that is not
+two-colourable, the obstruction that in \S\ref{sec:generations} generates the three fermion
+generations. The four resolution classes of $K_3$ --- three frustrated classes and one symmetric ---
+should therefore appear as four channel classes for three-gluon glueballs:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+class & orientation assignments & character \\
+\hline
+frustrated on edge $AB$ & $\{001,\,110\}$ & one edge forced like-oriented \\
+frustrated on edge $BC$ & $\{011,\,100\}$ & one edge forced like-oriented \\
+frustrated on edge $CA$ & $\{010,\,101\}$ & one edge forced like-oriented \\
+symmetric               & $\{000,\,111\}$ & all edges like-oriented \\
+\hline
+\end{tabular}
+\end{center}
+
+Standard QCD organises three-gluon singlets by two couplings, the symmetric $d^{abc}$ and the
+antisymmetric $f^{abc}$. The framework predicts four channel classes where QCD sees two --- a
+differential, lattice-checkable statement, and the same $K_3$ obstruction that gives the generations,
+now in the colour field. That the obstruction reproduces a four-class structure independently in the
+gluon sector is itself evidence that it is a genuine organising principle and not a coincidence of
+the fermion counting.
+
+\begin{openproblem}[The glueball spectrum]\label{op:glueball-spectrum}
+Derive the three-gluon four-class spectrum above and the mass of the lightest ($J^{PC} = 0^{++}$)
+glueball as the associator-geodesic length (Open Problem~\ref{op:associator-geodesic}) of the closed
+$C$-only Bell network, the lattice value being $\approx 1.7\ \mathrm{GeV}$. The glueball mass shares
+its origin with all other mass in the framework --- it is geodesic length --- but on a network living
+entirely in the colour sector, with none of the hypercharge or weak-isospin activity that the fermion
+masses carry, so the relevant geometry is that of the pure-colour closed network rather than the
+mixed-fibre case of the charged fermions.
+\end{openproblem}
+
+\subsection{All mass is geodesic length}
+
+The glueball mass is not a special case but an instance of a single principle the framework now
+commits to: \emph{all} mass is associator-geodesic length. The masses of the individual quarks and
+leptons (\S\ref{sec:generations}), the masses of glueballs, and --- the demanding case --- the masses
+of hadrons are all the same geometric quantity, the length of the relevant closed network read
+through the octonionic associator. The demanding case is demanding because most of a hadron's mass is
+not the mass of its constituents: the proton weighs about $938\ \mathrm{MeV}$, of which the
+current-quark masses contribute some nine, the remainder being the energy of the colour binding. Under
+the committed principle this binding energy must itself be associator-geodesic length --- the geodesic
+length of the closed three-quark colour network --- of which the valence-quark contribution is a per
+cent and the rest is the geometry of the binding. This is a sharp and falsifiable burden: the
+framework claims the proton mass is the associator-geodesic length of the closed $uud$ network, a
+claim that meets the one number lattice QCD has determined most precisely. It also explains why the
+framework, which reproduces the charged-lepton masses to better than a per cent, does not yet produce
+baryon masses: the obstacle is not the constituent masses but the binding geometry, and the binding is
+where almost all of the mass lives. That single geometric quantity --- the associator-geodesic length
+of Open Problem~\ref{op:associator-geodesic} --- now carries the entire mass sector, which is a real
+localisation of the problem (mass is one thing, not many) with one large computation owed behind it.
+
+One forward-looking consequence deserves a single sentence here and its proper treatment in Paper~2:
+because mass is the gravitational charge, the claim that all mass --- including the binding energy that
+is most of it --- is associator-geodesic length means that what gravitates is associator-geodesic
+length, so that the equivalence of energy and mass and the coupling of mass to spacetime must both, in
+the end, be statements about this one geometric quantity.
+
+\input{mass_gap_subsection_2026-07-03}
+
+\subsection{Confinement and pre-spatial co-location}
+
+A final reading ties confinement to the framework's account of space, and anticipates the fuller
+treatment of \S\ref{sec:gr-nonlocality}. In that account entanglement is the pre-spatial relational
+structure: entangled systems are not at distinct locations that some influence must bridge, but share
+a relation that was never spatially separated to begin with, acquiring distinct locations only by
+interacting with other systems that already hold locations in the network. Confinement is exactly
+this seen in the colour sector. The three quarks of a singlet are maximally entangled, so in the
+pre-spatial structure they are not separated; and the colour-singlet constraint, which forbids them
+the external entanglement that location-acquisition requires, is precisely what prevents any one of
+them from acquiring a distinct location of its own. A quark cannot be pulled to a place apart because,
+in the only structure that is fundamental, it has no place apart to be pulled to, and the singlet will
+not let it acquire one. The distance-free monogamy obstruction of this section and the pre-spatial
+co-location of \S\ref{sec:gr-nonlocality} are one fact: confinement is the impossibility of giving a
+colour charge a separate location while its colour entanglement is wholly spent on its partners.
+
+\subsection{What is settled and what is owed}
+
+Settled, and structural: confinement holds, as the saturation of the tripartite entanglement budget
+by the colour singlet; it is exact rather than asymptotic; it is the same fact as the vector-like,
+CP-conserving character of the colour force; glueballs are closed gluon networks that must manufacture
+their own copy structure through closure, which ties classically detectable glueball states to the
+three-gluon topology; and the three-gluon sector carries a four-class structure where standard QCD has
+two couplings.
+
+Owed, and recorded as the open problems above: the distance-dependent confinement potential, as the
+associator-geodesic length resolved by emergent distance (Open Problem~\ref{op:confinement-potential});
+the location of the confining energy, quark triple or gluon network (Open
+Problem~\ref{op:confinement-energy-locus}); and the glueball spectrum and lightest mass (Open
+Problem~\ref{op:glueball-spectrum}). All three sit downstream of the single mass map, Open
+Problem~\ref{op:associator-geodesic}, which the unification of this section makes responsible for the
+whole of mass --- the fermion spectrum, the glueball spectrum, and the hadronic binding energy
+alike. The Yang--Mills mass gap is named in \S\ref{sec:mass-gap} precisely so that no claim on it is
+read into this section by implication.

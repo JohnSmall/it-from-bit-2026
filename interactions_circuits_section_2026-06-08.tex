@@ -73,6 +73,25 @@ the CKM rotation; and the gauge bosons were identified in \S\ref{sec:boson-masse
 edges, with the map--state duality that lets an edge be read as a gate. Putting these together turns
 a Feynman diagram into a quantum circuit on the internal qubit registers.
 
+A word of caution before any circuit is drawn, because the diagrams that follow invite a picture
+that must be refused. To speak of a fermion's ``internal qubit register'' is an accounting device,
+not a description of a thing. There is no little blob called a particle with three qubits arranged
+inside it; the register is not furniture in an interior. As \S\ref{sec:register} set out, the
+fundamental objects of this framework are \emph{events}, and a particle is the channel of
+communication inferred between them --- we observe events, in detectors and interactions, and
+``particle'' is the name our classically-trained intuition gives to the connection across the
+network of events that those measurements reveal. The qubit register is, correspondingly, the
+\emph{information carried along that channel} between the events it links: the three qubits
+$A$, $B$, $C$ are what the channel can convey about hypercharge, weak isospin and colour, not
+compartments inside a sphere. When a circuit below shows a gate acting on the $B$-qubit, it depicts
+an operation on the information the channel carries from one event to the next; it does not depict a
+manipulation performed on the interior of an object in flight. The wires of the circuit are the
+channels, the boxes are the events, and the whole diagram is a statement about how information
+passes between events --- which is exactly what a Feynman diagram is, once the inherited image of
+little balls tracing trajectories is set aside. We keep the register language throughout because it
+is convenient and the bookkeeping is exact, but it should be read in this deflationary way at every
+turn: registers track what is communicated between events, not what is contained within particles.
+
 This section is where the framework offers the most handles to a reader, and we are explicit about
 what each handle does and does not yet hold. What the circuits compute today is \emph{structure}:
 which processes are allowed and which forbidden, with every conservation law holding by construction
@@ -214,9 +233,63 @@ sharply constrained, before it is formalised. Third, the gluonic sector: bound c
 GHZ-class circuits closed on themselves, and the composition laws they obey --- spider fusion for
 GHZ, anti-speciality for W, and the closed colour triangle whose free legs carry exactly
 $\mathrm{GHZ}_3$, the baryon emerging from the wiring --- are executed in
-Appendix~\ref{app:qiskit-composition}, the primitive moves of the ZX-calculus organisation of the
+Appendix~\ref{app:qiskit-composition}, with the meson's two-edge loop closing onto exactly the
+canonical Bell pair in Appendix~\ref{app:qiskit-meson}; together these are the
+primitive moves of the ZX-calculus organisation of the
 glueball spectrum (\S\ref{sec:predictions}). None of these required resources beyond a laptop
-simulator; all three produced numbers the framework must now live with.
+simulator; all three produced numbers the framework must now live with. All have since also
+been run on IBM Quantum hardware --- 156-qubit Heron-class processors, across four devices, together
+with the entry-point beta-decay circuit --- with the run records and their analysis closing the
+appendix subsections; the encoded structures survive contact with a physical device at fidelities
+limited by known noise channels, with both canonical hadron skeletons --- the baryon triangle and
+the meson loop --- assembling from closed colour wiring at a two-setting fidelity near $0.89$.
+
+\subsection{The circuits as a discipline on the framework}
+
+There is a reason to build these circuits beyond demonstrating to a reader that the structure is
+real, and it is worth stating plainly because it shaped the framework as much as it displays it.
+Writing a physical claim as a circuit is a discipline: a claim either compiles into the right
+numbers or it does not, and ``it does not'' is information that no amount of careful prose can talk
+its way past. For a framework of this kind --- one that reaches the Standard Model through a long
+chain of structural identifications --- that discipline is precisely the guard most needed, because
+the besetting risk of such work is the plausible-sounding sentence that has the right shape and no
+content. An executable encoding cannot be persuaded by its author's eloquence.
+
+One instance is worth recounting, because the encoding did not merely confirm a claim we already
+held; it corrected one. In developing the glueball material of Appendix~\ref{app:qiskit-composition},
+we had described the distinction between the colour records a quark trio produces and those a single
+gluon cannot in terms of the reduced state of one constituent: a quark's colour qubit, we reasoned,
+should carry a classical pointer where a gluon's should not. Written as prose, this passes --- it
+has the right vocabulary and gestures correctly at decoherence. Written as code, it failed at once:
+computing the one-qubit reduced state of a constituent of a GHZ triple and of a Bell pair returns,
+in both cases, the maximally mixed state. The reduced density matrix simply does not distinguish the
+two, and the sentence we had written was wrong.
+
+What the failure forced was the correct mechanism. The distinction between the two is not visible in
+any single reduced state; it is the \emph{copy} structure --- the special-versus-anti-special
+Frobenius property of \S\ref{sec:entanglement-classes} --- which lives in how the objects compose,
+not in how they reduce. The GHZ tensor \emph{is} the copy operation that broadcasts a classical
+record; the Bell pair is not, and cannot be made to be. Pursuing this in code then yielded a sharper
+statement than the one we had set out to make: a two-gluon network does not, on its open legs,
+reconstruct the copy structure --- it returns a Bell pair --- whereas the closed three-gluon
+triangle returns exactly $\mathrm{GHZ}_3$, the copy tensor itself. The closure manufactures the
+record-broadcasting structure that the constituents lack, and the framework's reading became, in
+consequence, that classically detectable glueball structure is tied to the three-gluon topology
+rather than the two-gluon scalar. That prediction is now a definite one, and it exists in that form
+only because an initial encoding failed and had to be repaired.
+
+We record this not as an anecdote but as a methodological commitment. The encodings in the
+appendices serve the framework adversarially as well as expositorily: a structural claim that cannot
+be compiled into the correct numbers is thereby exposed, and several of the framework's sharper
+statements reached their final form precisely because a first encoding would not run as written. The
+discipline has a clear boundary, and we are equally plain about it. Executable verification catches
+the claims that are sharp enough to encode; it does nothing for those still too vague to compile ---
+the map from a network's geometry to a mass in physical units, the confinement potential, and the
+other matters left open in this paper are exactly the claims for which no runnable check yet exists,
+and so exactly the claims where plausible prose remains dangerous. The circuits raise the floor;
+they do not remove the burden of honesty everywhere the floor has not yet reached. If anything, the
+episode is an argument for encoding more of the framework over time: every claim that can be pushed
+from prose into a check is a claim moved from sounding right to being shown right, or shown wrong.
 
 \subsection{No flavour-changing neutral currents}
 

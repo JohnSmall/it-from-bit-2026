@@ -2,14 +2,16 @@
 \usepackage{hyperref}
 \usepackage[toc,page,title]{appendix}
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{thmtools}  % after amsthm
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}{Lemma}
 \newtheorem{corollary}{Corollary}
-
 \theoremstyle{definition}
+\theoremstyle{remark}\newtheorem*{remark}{Remark}
 \newtheorem{definition}{Definition}
+\declaretheorem[style=definition,name=Open Problem]{openproblem}
 \setlength{\parindent}{3ex}
 %Includes "References" in the table of content
 \usepackage[nottoc]{tocbibind}
@@ -25,6 +27,7 @@
 \usepackage[strict]{csquotes}% Recommended
 \usepackage{braket} %Dirac notation
 \usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage{lmodern}
 \setlength{\parskip}{0.5em}
 \usepackage{multicol} % Used for the two-column layout of the document
 \usepackage{booktabs}
@@ -37,9 +40,9 @@
 \SetWatermarkColor[gray]{0.9} 
 
 \title{It from Bit via Gödel - Part 1\\[0.4em]
-  \large\normalfont Version 0.3}
+  \large\normalfont Version 0.4}
 \author{John D. Small\
-  \small\itshape Independent Researcher\\
+  \\
   \small\texttt{john.small06@alumni.imperial.ac.uk}}
 \date{\today}
 
@@ -65,24 +68,30 @@ The fact that a quantum state, by virtue of superposition, can represent the cla
   \par
   \hfill \autocite{wheeler_j_1974}
 \end{quotation}
-When he got back to Princeton he immediately went to G\"odel's office to explain the idea, but G\"odel was so annoyed he threw him out (ref). Nevertheless, Wheeler developed his idea into the phrase "It from bit,and bit from it". Over the years many people have approached the notion of self-reference being in some ways fundamental. This is not the place for a full literature review, Karl Svovil's book \textquote{Physical Acausality} does a very complete job. More recent, and highly relevant is Szangolies \autocite{szangolies_2020}. Then there's my own earlier attempt at grappling with these issues in \autocite{small_2006}.
+When he got back to Princeton he immediately went to G\"odel's office to explain the idea, but G\"odel was so annoyed he threw him out (ref). Nevertheless, Wheeler developed his idea into the phrase "It from bit,and bit from it". Over the years many people have approached the notion of self-reference being in some ways fundamental. This is not the place for a full literature review, Karl Svovil's book \textquote{Physical Acausality} does a very complete job \autocite{svozil_k_2018}. More recently, and highly relevant are Szangolies papers \autocite{szangolies_2020, szangolies_j_2018, szangolies2025standardmodel, szangolies_j_2021}. Then there's my own earlier attempt at grappling with these issues in \autocite{small_2006}.
 
 In addition we note that the $U(1) \times SU(2) \times SU(3)$ symmetry group of the standard model is in some peculiar way linked to the division algebras and hence to parallelisable spheres, yet self-reference requires information flowing round in circles, which requires the parallelisable property. Could there be a connection? The idea is clearly crazy, and yet so tantalising as to be worthy of deeper investigation.
 
-Following Wheeler, we take self-reference, an hence non-Turing computability, to be fundamental, but we only ever experience causal, computable sequences. Acausality forced to appear as strict causality. We use a simple principle, underlying self-reference, or acausality forced to appear as a non-self-referent, strictly causal framework. Self-reference together with the negation of self-reference. Surprisingly, this simple principle enables us to spot connections which others have guessed at yet not followed up. We find that some of the free parameters of the Standard Model can actually be derived. Our hypothesis is that the laws of physics are completely constrained by requiring a fundamental acausal Nature to appear as a strictly causal sequence. 
+Following Wheeler, we take self-reference, an hence non-Turing computability, to be fundamental, but we only ever experience causal, computable sequences. Acausality forced to appear as strict causality. We use a simple principle, underlying self-reference, or acausality forced to appear as a non-self-referent, strictly causal framework. Self-reference together with the negation of self-reference. Surprisingly, this simple principle enables us to spot connections which others have guessed at yet not followed up. We find that some of the free parameters of the Standard Model can actually be derived. Our hypothesis is that the laws of physics are completely constrained by requiring a fundamentally acausal and self-referential Nature to appear as a strictly non-self-referential causal sequence. 
 
-Most of the steps taken in this chain of reasoning have already been made by others, in many cases a very long time ago. The novelty is putting the pieces of jigsaw together to find a coherent picture. In many areas there are missing pieces, also known as open problems. Because the picture emerging around the gaps fits present experimental evidence I've chosen to take scary leaps of faith and assume the gaps can be filled in at some point. 
+Most of the steps taken in this chain of reasoning have already been made by others, in many cases a very long time ago. The novelty is putting the pieces of jigsaw together to find a coherent picture. In many areas there are missing pieces, also known as open problems, which I've listed. Because the picture emerging around the gaps fits present experimental evidence I've chosen to take scary leaps of faith and assume the gaps can be filled in at some point. 
 
 \subsection{Use of AI}
-This paper is very much a collaborative effort between me and Claude AI. I provide the ideas and send Claude off to find the pieces of jigsaw needed to compose the picture. Although the derivation of the Born rule using Hopf fibration is entirely something Claude came up with.
+This paper is very much a collaborative effort between me and Claude AI. I provide the ideas and send Claude off to find the pieces of jigsaw needed to compose the picture. AI is exceptionally useful doing this because it has reasonable expertise in many different areas and finding connections between apparently unconnected realms is made a lot easier. So an inspired guess "That GHZ/W split in 3 particle entanglement looks suspiciously like the quark/lepton split, tell me more about it" can be turned into useful theorems. If the key fits, the lock opens. Although the derivation of the Born rule using Hopf fibrations is entirely something Claude came up with unprompted. 
 
 \subsection{Principal Results}
-The following structural features of the Standard Model are derived, not assumed:
+I'll list some of the results obtained by tracing through the consequences of the principle. The following structural features of the Standard Model are derived, not assumed:
 
 \begin{enumerate}
-  \item \textbf{Gauge group.} The Standard Model gauge group $G_{\mathrm{SM}} = SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ is the equivariance group of the octonionic Hopf fibration $S^7 \to S^{15} \to S^8$ after selection of the preferred complex direction $\mathbb{C} \subset \mathbb{O}$ forced by the Moufang loop closure (Section~\ref{sec:gauge}).
+  \item \textbf{Gauge group.} The Standard Model gauge group
+$G_{\mathrm{SM}} = SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ is the residual symmetry
+that remains when a preferred complex direction $\mathbb{C} \subset \mathbb{O}$ is singled
+out --- equivalently, the subgroup of $\mathrm{Spin}(9)$ commuting with the complex structure
+fixing the split $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$ (Section~\ref{sec:hopf-justification}).
+Why one direction is fixed rather than all treated symmetrically is the framework's central
+assumption, resolved in candidate form in Section~\ref{sec:fanout-boundary}.
 
-  \item \textbf{Particle content.} The complete Standard Model particle spectrum is in bijection with the entanglement primitives of three Cayley--Dickson qubits, with exhaustiveness guaranteed by three independent termination theorems: Hurwitz (no division algebras beyond~$\mathbb{O}$) \autocite{hurwitz_1898}, Adams (no Hopf fibrations beyond the octonionic case) \autocite{adams_1960}, and Coecke-Kissinger (compositional completeness of GHZ and W classes) \autocite{Coecke2010TheEntanglement}. (Note that it's an open problem to show that Coecke-Kissinger $\iff$ Adams)
+  \item \textbf{Particle content.} The complete Standard Model particle spectrum is in bijection with the entanglement primitives of three Cayley--Dickson qubits, with exhaustiveness guaranteed by three independent termination theorems: Hurwitz (no division algebras beyond~$\mathbb{O}$) \autocite{hurwitz1898composition}, Adams (no Hopf fibrations beyond the octonionic case) \autocite{adams1960hopf}, and Coecke-Kissinger (compositional completeness of GHZ and W classes) \autocite{Coecke2010TheEntanglement}. (Note that it's an open problem to show that Coecke-Kissinger $\iff$ Adams)
 
   \item \textbf{Spacetime dimensionality.} The requirement that state reduction on the Bloch sphere be consistent with Lorentz boosts demands $\mathrm{Spin}(1,d) \cong SL(2,\mathbb{A})$ for a normed division algebra~$\mathbb{A}$. The computability split selects $\mathbb{A} = \mathbb{C}$, giving $SL(2,\mathbb{C}) = \mathrm{Spin}(1,3)$ and thus $d = 3$ spatial dimensions. The six internal dimensions of $SU(3) \times SU(2) \times U(1)$ account for the reduction from $d = 9$ (the octonionic case) to $d = 3$, reproducing the Kaluza--Klein dimensional decomposition $9+1 = (3+1) + 2 + 4$ with a structural explanation.
 
@@ -90,12 +99,14 @@ The following structural features of the Standard Model are derived, not assumed
 
   \item \textbf{Chirality.} The non-associativity of $\mathbb{O}$ distinguishes left and right multiplication, breaking parity at the algebraic level.
 
-  \item \textbf{Born rule.} The observer's self-referential ignorance of their own computational state generates a global $U(1)$ phase freedom. The minimum-degree polynomial invariant under this symmetry is $|\psi|^2$, yielding the Born rule without additional postulates (Section~\ref{sec:born}).
+  \item \textbf{Born rule.} The observer's self-referential ignorance of their own computational state generates a global $U(1)$ phase freedom. The minimum-degree polynomial invariant under this symmetry is $|\psi|^2$, yielding the Born rule without additional postulates (Section~\ref{sec:born-rule}).
 
-  \item \textbf{Entanglement monogamy.} The Coffman--Kundu--Wootters inequality follows geometrically from the compactness of the $S^4$ base of the quaternionic Hopf fibration: a ball has a unique centre, and one cannot overshoot it (Section~\ref{sec:monogamy}).
+  \item \textbf{Entanglement monogamy and Tsirelson Bound} 
+  This observation is not strictly a part of the framework, but while putting together pieces of the jigsaw I noticed that the Hopf fibration representation of multiparticle entanglement provides an elegant explanation for entanglement monogamy and the Tsirelson bound. 
+  Both the Coffman--Kundu--Wootters inequality (Section~\ref{sec:monogamy}) and the Tsirelson bound (Section~\ref{sec:tsirelson}  follow geometrically from the compactness of the $S^4$ base of the quaternionic Hopf fibration: a ball has a unique centre, and one cannot overshoot it .
 \end{enumerate}
 
-The idea that entanglement and particle physics share the same algebraic structure is not new. This ideas has been worked on for decades see \autocite{borsten_2009}, but in the context of string/brane theory and therefore impossible to get some actual numbers to compare with experiment. Taking inspiration from Szangolies \autocite{szangolies_2025}, we can map classes of multi-particle entanglement to Standard Model particles and hence transform problems in particle physics into problems in entanglement where easy solutions are possible. The key is that Hopf fibrations (maps) show up both as qubit entanglement classes and in particle physics. 
+The idea that entanglement and particle physics share the same algebraic structure is not new. This ideas has been worked on for decades see \autocite{borsten_2009}, but in the context of string/brane theory and therefore impossible to get some actual numbers to compare with experiment. Taking inspiration from Szangolies \autocite{szangolies2025standardmodel}, we can map classes of multi-particle entanglement to Standard Model particles and hence transform problems in particle physics into problems in entanglement where easy solutions are possible. The key is that Hopf fibrations (maps) show up both as qubit entanglement classes and in particle physics. 
   \begin{table}[h]
   \centering
   \begin{tabular}{@{}lll@{}}
@@ -111,30 +122,34 @@ The idea that entanglement and particle physics share the same algebraic structu
   \caption{Entanglement classes, Hopf fibrations, and the corresponding Standard Model sectors. The three-qubit rows share the octonionic Hopf bundle and split under the computability decomposition $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^{3}$.}
   \label{tab:entanglement-hopf-particles} 
 \end{table}
-The Higgs is not an entanglement class. It is the Hopf bundle's nontriviality itself, promoted to a dynamical field following \autocite{szangolies_2025, finkelstein_1962, finkelstein_1963}.
+The Higgs is not an entanglement class. It is the Hopf bundle's nontriviality itself, promoted to a dynamical field following \autocite{szangolies2025standardmodel, finkelstein_1962, finkelstein_1963}.
 
 This mapping enables an easy and obvious deduction. The strong CP angle $\theta_{\mathrm{QCD}} = 0$ is topologically forced: the GHZ entanglement class characterising quarks has maximal three-tangle ($\tau_3 = 1$) and zero pairwise concurrence, precluding the oriented linking structure that would generate a non-trivial vacuum angle.
 
-Results for fermions are in \S\ref{sec:generations}, bosons are in \S\ref{sec:boson-masses} and quantum circuits are in \S\ref{sec:quantum-circuite}
+Results for fermions are in \S\ref{sec:generations}, bosons are in \S\ref{sec:boson-masses} and quantum circuits are in \S\ref{sec:interactions}
 
-
-\section{dummy}
 \input{what_is_a_quantum_state}
+\input{division_algebras_section_2026-07-03}
 \input{L2_metric_global_phase_section_2026_06_07}
-\input{wigners_friend_in_the_hopf_picture}
+\input{wigners_friend_in_the_hopf_picture_2026-06-13}
 \input{derivation_of_the_quantum_postulates}
 \input{spacetime_from_non-computability}
 \input{hopf_justification_section_2026-06-08}
-%\input{entanglement_classes_and_gauge_groups_2026-06-08}
-%\input{quantum_numbers_section_2026-06-08}
-%\input{particle_zoo_section_2026-06-08}
-%\input{masses_section_2026-06-08}
-%\input{boson_masses_section_2026-06-08}
-%\input{interactions_circuits_section_2026-06-08}
+\input{entanglement_classes_and_gauge_groups_2026-06-08}
+\input{register_section_2026-06-08}
+\input{quantum_numbers_section_2026-06-08}
+\input{particle_zoo_section_2026-06-08}
+\input{confinement_section_2026-06-13}
+\input{masses_section_2026-06-08}
+\input{boson_masses_section_2026-06-08}
+\input{interactions_circuits_section_2026-06-08}
+\input{predictions_section_2026-06-13}
+\renewcommand{\listtheoremname}{Open Problems}
+\listoftheorems[ignoreall,show={openproblem}]
 \begin{appendices}
-  %\input{appendix_ghz_w_proofs_2026-06-11}
-  %\input{appendix_qiskit_beta_decay_2026-06-08}
-  %\input{appendix_qiskit_three_computations_2026-06-12}
+  \input{appendices/appendix_ghz_w_proofs_2026-06-11}
+  \input{appendices/appendix_qiskit_beta_decay_2026-06-08}
+  \input{appendices/appendix_qiskit_three_computations_2026-06-12}
 \end{appendices}
 
 \printbibliography

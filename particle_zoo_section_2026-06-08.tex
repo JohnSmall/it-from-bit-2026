@@ -53,7 +53,7 @@ is a single topological fact --- the complete graph $K_3$ is not two-colourable 
 handedness that the Filatov representation forces on entangled qubits. It should be said at the
 outset that one link in the chain is an assumption rather than a theorem, and a load-bearing one:
 the extension of the Filatov constraint from two qubits to three. We flag it where it enters and
-again at the close; the two-qubit result it generalises is proved \autocite{filatov2024towards}, and
+again at the close; the two-qubit result it generalises is proved \autocite{Filatov2024EntanglementStructure}, and
 everything downstream is rigorous once the extension is granted.
 
 \subsection{One generation}
@@ -93,7 +93,7 @@ next subsection forces, and the hypercharges are those of \S\ref{sec:charges}.
 
 Chirality enters through the representation of \S\ref{sec:register}. Filatov and Auzinsh proved that
 an entangled two-qubit state cannot be drawn on two Bloch spheres of the same handedness: one must be
-right-handed and the other left-handed \autocite{filatov2024towards}. This is the Filatov
+right-handed and the other left-handed \autocite{Filatov2024EntanglementStructure}. This is the Filatov
 constraint, and it is a topological consequence of the quaternionic Hopf fibration rather than a
 drawing convention --- the handedness asymmetry is the geometric content of the entanglement itself.
 
@@ -115,7 +115,7 @@ formally imply it, and we record it as the foundational open problem of this sec
 
 \begin{openproblem}[The Filatov extension]\label{op:filatov-extension}
 Prove that each entangled pair of a tripartite state carries its own quaternionic Hopf structure,
-so that the Filatov--Auzinsh opposite-handedness theorem \autocite{filatov2024towards} applies to
+so that the Filatov--Auzinsh opposite-handedness theorem \autocite{Filatov2024EntanglementStructure} applies to
 every pair independently. The generation count of this section rests on this extension; the
 combinatorics that follow are rigorous once it is granted.
 \end{openproblem}
@@ -212,7 +212,8 @@ The fourth class has all three qubits of the same handedness. It satisfies none 
 constraints, so it has no opposite-handedness pair --- and with no such pair there is no $SU(2)$
 structure for the weak force to act on. By the symmetry of the all-same configuration its net
 hypercharge winding vanishes, so it is electrically neutral, and being a colour singlet it is inert
-to the strong force as well. It couples to nothing.
+to the strong force as well. It couples to none of the gauge forces --- though whether it can truly
+couple to \emph{nothing}, given that it gravitates, is a tension we return to below.
 
 A terminological care is needed here, and it carries physical weight. This channel is not a
 right-handed neutrino in the usual sense: that phrase presupposes chirality is a binary property
@@ -220,7 +221,26 @@ every fermion must carry, whereas the all-same configuration has \emph{no} oppos
 and so is neither left- nor right-handed but \emph{a-chiral}. It is not the parity partner of the
 active neutrino, which is why the standard objection to such a state as dark matter --- that parity
 restoration at high energy should regenerate it --- does not apply: there is nothing for it to be the
-partner of. The framework reads it as a sterile neutrino and a dark-matter candidate, with a
+partner of.
+
+Two distinct notions of handedness must be kept apart at this point, because conflating them would
+make ``a-chiral fermion'' sound like a contradiction. There is the \emph{external} chirality of the
+Lorentz group --- whether a field sits in the $(\tfrac12,0)$ or $(0,\tfrac12)$ representation --- which
+is bound up with spin, and there is the \emph{internal} handedness of the entanglement structure ---
+the Filatov opposite-handedness on the $A,B,C$ register whose $K_3$ frustration generates the
+generations. When we call this channel a-chiral we mean the \emph{internal} property: its handedness
+assignment is the all-same $K_3$ class, the one carrying no opposite-handedness frustration for a
+gauge force to engage. This says nothing against its spin. The channel is a three-qubit fermionic
+register like every other fermion in the framework, and its spin-$\tfrac12$ character follows from
+that, exactly as it does for the charged fermions; a-chirality is an additional internal property the
+charged fermions possess and this one lacks, not the absence of the fermionic character that makes it
+spin-$\tfrac12$ in the first place. Internal a-chirality is, moreover, precisely what makes it a
+gauge singlet: with no opposite-handedness frustration there is nothing for $SU(2)$ to read, which is
+the framework's derivation of the defining property of a sterile state --- that it does not feel the
+weak force --- from the internal structure rather than as a label. Whether its Majorana mass is best
+read as such, or admits a Dirac reading, we leave open.
+
+The framework reads it as a sterile neutrino and a dark-matter candidate, with a
 computability-scale Majorana mass driving a seesaw. On the count that two such a-chiral modes exist,
 the seesaw yields a massless lightest active neutrino, $m_1 = 0$, normal mass ordering, and two
 sterile states near a few TeV. The count of a-chiral modes is the weakest link in this part of the
@@ -230,6 +250,37 @@ chain, and we record it.
 Determine, from the $K_3$ class structure, whether the a-chiral class supplies two or three
 independent sterile modes to the seesaw. On the two-mode count the lightest active neutrino is
 exactly massless, $m_1 = 0$, with normal ordering; on a three-mode count $m_1 = 0$ would not follow.
+\end{openproblem}
+
+A deeper tension attends this channel, and we state it at full strength rather than resolve it,
+because the framework's own commitments make it sharp and its resolution would require a genuine new
+insight. We said above that the channel couples to nothing; yet it carries a Majorana mass, and mass,
+in this framework, is what gravitates (\S\ref{sec:confinement}). This is not the mild puzzle it would
+be in non-relational physics, where a particle may simply interact through gravity alone. Here
+gravity is not a force upon a pre-existing spacetime but the structure that measurement builds: the
+framework identifies the act of measurement, the creation of a relation, the creation of spacetime,
+and the gravitation we perceive as one process (\S\ref{sec:space-of-computations},
+\S\ref{sec:fanout-boundary}). On that identification, whatever affects the causal structure must be
+measurable --- must participate in relation-creating interactions --- and a channel that genuinely
+couples to nothing cannot acquire a location or a causal role at all. A gauge-sterile massive state
+is therefore in tension with the framework's own account: gravitational participation demands
+measurable interaction, and gauge-sterility appears to deny it, while the usual escape, ``it
+interacts only gravitationally,'' is unavailable precisely because gravity here is not a separate
+interaction but the relational structure itself.
+
+\begin{openproblem}[The sterile channel and relational gravity]\label{op:sterile-gravity}
+Reconcile the gravitational participation of a gauge-sterile massive channel with the framework's
+identification of gravity with measurement. Since whatever affects the causal structure must, on that
+identification, be measurable, a channel that couples to no gauge force must nonetheless enter the
+relational network by some route if it is to gravitate. Candidate directions, none here endorsed: that
+the channel possesses a measurable but non-gauge interaction, which the framework would then have to
+exhibit; that its mass --- its associator-geodesic length (Open Problem~\ref{op:associator-geodesic})
+--- itself constitutes its relational participation, perhaps as a self-relation, which would connect
+to the open Majorana reading and to the self-referential character of the framework as a whole; or
+that the channel is a pre-spatial object that never acquires a distinct spacetime location, in which
+case its cosmological gravitational effects must be accounted for without one. The resolution bears
+directly on the nature of mass, of the sterile sector, and of dark matter, and we flag it as a
+tension the framework's identification of gravity with measurement makes unavoidable.
 \end{openproblem}
 
 \subsection{What is settled, and what is owed}
