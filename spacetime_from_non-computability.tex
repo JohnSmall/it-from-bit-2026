@@ -66,6 +66,23 @@ That the resulting structure is a genuine metric space, and that the signature
 follows rather than being fitted, are open problems---at present the
 identification is motivated by reproducing what nature does, not proved.
 
+The split just defined explains the most familiar asymmetry in physics: that one can move back and
+forth in space but not in time. \S\ref{sec:continuity} identifies the pre-measurement regime with
+continuous reversibility --- its transformation group is connected, and every motion in it is
+undoable. Spacelike separation, being the non-computable sector, is exactly the part of the
+relational structure on which no record has been written; motion across it is motion within the
+reversible regime, and it inherits that regime's continuity and its two-sidedness: a place can be
+revisited because going and returning writes no record that forbids the return. Timelike separation
+is the record chain itself --- proper time counts completed irreversible loops, as above --- and a
+moment cannot be revisited because a moment \emph{is} a stratum of records, and returning would
+require unwriting them, which is what \textsc{fanout} forbids (\S\ref{sec:fanout-boundary}). The
+asymmetry between space and time is therefore not an extra postulate about the manifold: it is the
+pre-/post-\textsc{fanout} asymmetry read as geometry --- space is what the reversible group feels
+like from inside, time is what the record chain feels like --- and the arrow-of-time discussion
+later in this section is the same asymmetry read thermodynamically. The identification is the
+framework's structural reading of the split, offered in the same register as the rest of this
+subsection.
+
 \subsection{Three dimensions of space}
 \label{sec:three-dimensions}
 
@@ -107,6 +124,33 @@ structural result requiring formal proof: the one-bit-per-curve identification a
 the precise reduction of the $S^{7}$ filter to $SU(3)$ rather than its full
 automorphism group $G_{2}$ are named open problems.
 
+A scoping remark, and then a second route to the same count. The computational model of spacetime
+proposed here has many detailed parallels with the real thing, but a parallel is not an identity,
+and the identity is not claimed in this paper: establishing it is work deferred to the second paper.
+What can be claimed now is that the parallel is productive in a specific direction --- it suggests a
+derivation of the dimension count carried out entirely within general relativity, with no
+computational premise. Acceleration and gravitation tip the light cone, and the tipping can be
+carried to the extreme: Penrose's discussion runs the cone through a full circle
+\autocite[382]{Penrose1994}, at which point the tipped direction closes on itself --- which is to
+say, the extreme of tipping is a closed timelike curve, the very object whose closure the
+computational definition of \S\ref{sec:comp-distance} counts in bits. The two routes are one route
+entered from opposite ends. Now demand of general relativity only this: that observers accelerating
+with respect to one another, and with respect to unaccelerated observers, retain a consistent
+conception of the distance between them. Each observer's tipping traces a path on a sphere of
+directions, and mutual consistency requires the associated rotations to compose without regard to
+bracketing --- to form a group. Rotations of $S^{1}$ and $S^{3}$ do, forming $U(1)$ and $SU(2)$ as
+above; rotations of $S^{7}$ do not, being non-associative, so observers tipped across an
+$S^{7}$-worth of directions could not agree on distance even pairwise: the same failure that forbade
+$S^{7}$ a metric above forbids it here a shared ruler. The largest sphere admitting a consistent
+conception of distance under mutual acceleration is therefore $S^{3}$, and space has at most three
+dimensions; with the floor argued above --- the abelian $S^{1}$ alone cannot carry the required
+structure --- the count is exactly three. The status matches the subsection's. The tipping and its
+extreme are general relativity's own \autocite{Penrose1994}; the consistency demand is
+elementary; the associativity filter is the algebraic fact used throughout; the reading of composed
+tippings as motion on the parallelisable spheres is the structural step, shared with the
+computational route. The convergence of the two routes on the same endpoint is offered as evidence
+for the parallel, while the identity it gestures at remains the second paper's burden.
+
 \subsection{Recovering the Lorentz group}
 \label{sec:lorentz}
 
@@ -129,7 +173,58 @@ develops operationally, recovering Lorentz transformations from quantum
 communication \autocite{HohnMueller2016} and the complex and quaternionic qubit
 from the relativity of simultaneity \autocite{GarnerMuellerDahlsten2017}. The
 $SL(2,\mathbb{A})$ correspondence is rigorous; its identification with
-measurement-as-tipping is the framework's structural reading.
+measurement-as-tipping is the framework's structural reading.\\
+
+One consequence of the identification has been implied throughout this section and deserves its own
+paragraph, because the next paragraph turns on it. If measurement creates a relation between
+observer and observed, and if --- relationally --- a new relation alters the causal structure, then
+the tipping of the cone is not merely \emph{associated} with the creation of the relation: it is
+what the creation of the relation is, seen geometrically. And a tipping of one's cone against the
+congruence of one's neighbours already has a name in physics: acceleration. The framework's
+statement, made explicit here, is that \emph{creating a new relation between observer and observed
+is experienced as acceleration}. The resonance with the equivalence principle is exactly what it
+should be: the principle makes acceleration and gravitation locally indistinguishable, Penrose's
+association --- run in this section's direction, reduction driving the tipping --- makes state
+reduction and cone-tipping one operation, and the framework's identification closes the triangle,
+measurement and acceleration meeting where the principle says they must. The claim is structural:
+the framework's reading of the cone-tipping established above, not an independent derivation.\\
+
+Taken literally, the identification has a measurable face, and it is a familiar one: the Unruh
+effect, read in this section's own ledger. Recall the definitions of \S\ref{sec:comp-distance}:
+timelike distance counts computable steps, spacelike distance counts non-computable bits. What an
+observer can compute --- what their \textsc{fanout}s can convert into classical records --- is fixed
+by their causal structure, and the previous paragraph has just made that structure
+relation-dependent. An accelerated observer's cones are tipped, and with them the boundary of the
+recordable: relations that for the inertial observer lie wholly in the reversible, pre-record sector
+--- the entanglement structure of the vacuum, non-computable for them, spacelike in the
+computational sense --- fall, for the accelerated observer, partly on the recordable side. The mechanism is the one
+Chaitin identified for formal systems \autocite{Chaitin1998}: a proposition undecidable relative to
+an axiom system becomes decidable when information is added to the axioms --- and
+\S\ref{sec:comp-distance} defined spacelike distance as exactly the bits whose addition closes the
+gap. Creating a relation is adding information to the observer's axiom base, so timelike and
+spacelike distance are converted into one another by the addition and subtraction of information,
+and acceleration is the continuous version of that addition. A
+relation newly recordable is a detection. Particles appear from nowhere: an accelerated detector in
+the inertial vacuum registers a thermal bath at $T = \hbar a / 2\pi c k_{\mathrm{B}}$
+\autocite{unruh1976notes}. Two guards keep the reading honest. Nothing here reclassifies the
+invariant interval --- timelike and spacelike separation in the emergent metric are Lorentz
+invariants, and no event crosses that classification; what is observer-relative is the computational
+partition, which relations a given observer's horizon renders recordable. In the ledger of
+\S\ref{sec:comp-distance} that partition \emph{is} the timelike/spacelike distinction, so in the
+framework's own units timelike distance is \emph{rotated} into spacelike, and spacelike into
+timelike, by a change of observer --- the tipping of the cone is literally that rotation --- and the
+detector's clicks are the rotation made audible. And the effect is established physics
+while the reading is the framework's, flagged structural. What gives the reading its content is a
+parallel: the inertial and the accelerated observer stand to the vacuum exactly as Wigner and his
+friend stand to the laboratory (\S\ref{sec:wigners-friend}) --- one holds a coherent relation and no
+event, the other holds a record, and the facts are relative on both sides in precisely Rovelli's
+sense \autocite{DiBiagioRovelli2021}. Since the previous paragraph identifies acceleration with
+relation-creation, the parallel is not an analogy but the same structure in gravitational dress, the
+horizon standing where the laboratory wall stood: \emph{the Unruh effect is Wigner's friend for
+accelerated observers}. And two subsections of this section that seemed independent here meet: the
+temperature Jacobson's construction requires across every local Rindler horizon
+(\S\ref{sec:jacobson}) is exactly this temperature --- the $T$ of the Clausius relation is the $T$
+of the tipped cone, supplied by the very relation-creation with which this subsection began.
 
 \subsection{The relationalist commitment}
 \label{sec:relationalism}
@@ -173,15 +268,18 @@ a conjectural reading rather than a derivation, and is offered as such.
 \label{sec:gr-nonlocality}
 \input{gr_nonlocality_revision_2026-06-13}
 \medskip
-\noindent The spacetime arc therefore yields, from one definition of spacelike
-distance as non-computability: the signature, three spatial dimensions, the
-Lorentz group, the dynamical relational metric, a reading of the holographic
-principle, and the presence of non-locality within general relativity. Of these,
+\noindent  The spacetime arc therefore yields, from one definition of spacelike
+distance as non-computability: the signature, three spatial dimensions,
+the Lorentz group, the dynamical relational metric, a reading of the
+holographic principle, the presence of non-locality within general
+relativity, the identification of relation-creation with acceleration
+and of the Unruh effect with Wigner's friend, and the space--time
+mobility asymmetry as the \textsc{fanout} asymmetry read as geometry. Of these,
 the $(3+1)$ count and the Lorentz recovery are structural results that converge
 with independent rigorous work and await their own formal proof; the metric-space
 status, the signature, the one-bit-per-curve measure, the imaginary-information
-reading of holography, and the general-relativistic non-locality are conjectural,
-and are named here precisely so that the boundary between what is shown and what
+reading of holography, and the general-relativistic non-locality, the acceleration and
+Unruh readings, and the mobility asymmetry are conjectural, and are named here precisely so that the boundary between what is shown and what
 is proposed is visible.
 
 % =====================================================================
