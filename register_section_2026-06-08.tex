@@ -12,7 +12,7 @@
 %    sec:hopf-justification     -- Hopf fibrations / Adams termination / prop:gsm
 %    sec:entanglement-classes   -- GHZ/W theorems, "split on the first qubit"
 %    prop:gsm, prop:termination -- from the Hopf-justification section
-%    sec:fanout-boundary       -- the computability split / measurement
+%    sec:fanout-direction       -- the computability split / measurement
 %    sec:charges                -- Stage 2 (reading the quantum numbers), forward
 %    sec:generations            -- Stage 4 (three generations), forward
 %    sec:masses                 -- Stage 5+ (mass), forward
@@ -155,16 +155,37 @@ stabiliser). We flag this as a \emph{structural matching} rather than a uniquene
 the natural assignment, and we know of no competitor, but ``natural'' is doing real work in that
 sentence.
 
-Two of the lost symmetries are worth naming now, because they are cashed out later. Losing
-commutativity at the $\mathbb{H}$ rung is what supplies the $SU(2)$ re-bracketing dynamics (the
-$W^\pm$); losing associativity at the $\mathbb{O}$ rung is what supplies mass (the octonionic
-associator, \S\ref{sec:masses}) and chirality (triality breaking, \S\ref{sec:generations}). The
-register is thus not a set of labels attached to an object: each algebraic deficit is a physical
-capacity of the channel.
+Two of the lost symmetries are worth naming now, because they are cashed out later, and the
+division of labour between them is exact. Losing commutativity at the $\mathbb{H}$ rung supplies
+the \emph{commutator}: once the order of two actions matters, the difference between the two
+orderings is itself an action, and a closed algebra of such differences is precisely a non-abelian
+gauge sector. The $W^{\pm}$ are that structure made physical --- isospin raising and lowering whose
+compositions in opposite orders disagree, their commutator generating the third direction of
+$SU(2)$. Losing associativity at the $\mathbb{O}$ rung supplies the \emph{associator} --- the
+re-bracketing of composite processes, a capacity the quaternions do not possess --- and with it
+chirality (triality breaking, \S\ref{sec:generations}) and the currency of mass
+(\S\ref{sec:masses}). Re-ordering is the $\mathbb{H}$ deficit; re-bracketing is the $\mathbb{O}$
+deficit; the two are distinct capacities, and this paper reserves the words accordingly.
+
+One apparent paradox is worth defusing here, before the mass sections make the resolution precise.
+If mass is the associator's currency, why are the $SU(2)$ bosons massive while the gluons ---
+natives of the non-associative rung --- are massless? Because mass is not a deficit of a boson's
+home rung: it is associator \emph{debt}, incurred relative to the selected complex direction
+$\mathbb{C} \subset \mathbb{O}$ by whatever action fails to preserve that direction
+(\S\ref{sec:masses}, \S\ref{sec:associator-higgs}). The $W^{\pm}$ are quaternionic in their
+group law, but their action rotates the selection, and the obstruction to that rotation ---
+measured in the octonionic ambient where the selection lives --- is their mass. The photon's action
+preserves the selection and owes nothing. The gluons act within the colour sector, orthogonal to a
+selection that is a colour singlet, and owe nothing either, for all their non-associative
+citizenship. (The full classification of which bosons move the selection, photon and $Z^{0}$
+included, is the business of \S\ref{sec:boson-masses}.) The register is thus not a set of labels
+attached to an object: each algebraic deficit is a physical capacity of the channel --- and mass is
+a debt against the selection, not a property of a rung.
 
 \subsection{Drawing the register: the two-sphere representation}
+
 The visualisation tool is the two-Bloch-sphere representation of Filatov and Auzinsh
-\autocite{Filatov2024EntanglementStructure}. They showed that a pure two-qubit entangled state can be drawn as a
+\autocite{filatov2024towards}. They showed that a pure two-qubit entangled state can be drawn as a
 pair of Bloch spheres, with the constraint that the coordinate axes of one sphere are
 right-handed and those of the other left-handed. This opposite-handedness --- the \emph{Filatov
 constraint} --- is a topological fact about the quaternionic Hopf fibration, not a drawing
@@ -185,14 +206,52 @@ constraint is forced rather than imposed.
 
 \subsection{Why three spheres make a fermion}
 
-The two-sphere representation also gives a clean structural reading of spin, worth recording even
-though its formal version is owed. A single sphere has no edges to frustrate and represents a
-spin-$0$ object (the Higgs); two spheres are two-colourable and represent a spin-$1$ object (a
-gauge boson); three spheres are frustrated and represent a spin-$\tfrac12$ object (a fermion), with
-the Filatov constraint on three spheres playing the role of the spinorial double cover and its
-$4\pi$ rotation period. \emph{QC view:} count the spheres. \emph{GT view:} read off the spin. We
-mark this as \emph{structural and suggestive}; the rigorous statement travels with the
-generation proof in \S\ref{sec:generations}.
+The two-sphere representation also gives a structural reading of spin, and it must be earned
+rather than asserted, because the obvious objection is strong: the Bloch sphere's most familiar
+role is as the state space of a spin-$\tfrac12$ system, so a dictionary that assigns one sphere to
+spin $0$ and needs three spheres to reach spin $\tfrac12$ looks inverted. The objection dissolves
+once one remembers what kind of framework this is. A Bloch sphere is a spin-$\tfrac12$ state space
+\emph{relative to an external reference frame} --- the laboratory magnet that gives ``up'' its
+meaning. The register grants no such frame: its spheres carry internal charges, the framework is
+relational throughout (\S\ref{sec:relationalism}), and the orientation of a lone sphere is
+therefore unobservable --- pure gauge. Spin, here, is the transformation behaviour of what a
+channel actually possesses: its \emph{relational} content, the orientations of its spheres
+relative to one another. The dictionary counts exactly that, and nothing else.
+
+Read the three classes by their constraint edges. The product register has no edge: no relative
+orientation exists, nothing transforms under a reorientation, and the channel is a scalar ---
+spin $0$ --- in exact consonance with the Higgs ontology of \S\ref{sec:boson-masses}, the
+product-state scale-setter, pure magnitude with nothing to orient. The Bell register has one edge,
+and the edge is satisfiable --- two-colourable --- so no sign lurks in it; its entire observable
+content is a single relative orientation between two spheres, and a relative orientation is
+vector-valued: infinitesimally an axis and an angle, the adjoint. Equivalently, by the map--state
+duality of \S\ref{sec:canonical-orbits}, a Bell register \emph{is} a transport map between its
+two spheres, and the physical excitations of a transporter are adjoint-valued fluctuations about
+the identity --- a connection's quanta. One relation, one vector index: spin $1$.
+
+The three-sphere register is the first configuration with a \emph{cycle}, and the cycle is odd:
+the pairwise anti-alignment constraints of the $K_3$ structure cannot all be satisfied --- that is
+the frustration --- so transporting an alignment choice once around the triangle returns it
+flipped, and only the second circuit restores it. A closed cycle does not add another vector; it
+adds a \emph{sign}. Holonomy $-1$ under one circuit and $+1$ under two is precisely the signature
+of a projective, double-valued representation --- the $4\pi$ period that defines a spinor --- and
+the canonical-orbit minimality of \S\ref{sec:canonical-orbits} selects the least representation
+consistent with that holonomy: spin $\tfrac12$. (Minimality chooses among representations carrying
+the same holonomy; it cannot empty a channel of the relation it is, which is why the Bell class is
+not spin $0$ by the same principle.) The Filatov constraint on jointly constrained spheres realises
+the double cover concretely \autocite{filatov2024towards}, and the same odd-cycle structure is
+what the entanglement budget renders monogamous --- the unshareability that shadows exclusion ---
+so the fermion/boson split and the frustrated/unfrustrated split are, structurally, one split seen
+twice.
+
+\emph{QC view:} count the constraint edges and cycles of the register. \emph{GT view:} read off
+the spin --- no relation, scalar; one relation, vector; one odd cycle, spinor. The ledger is owed
+exactly one identification, and we name it rather than gesture at it: that a $2\pi$ rotation of
+the channel in the emergent space of \S\ref{sec:space-of-computations} acts on the register as
+one circuit of its constraint cycle --- the bridge from internal holonomy to spatial spin. Given
+the relational premise, the ladder above is derived; that single bridge is structural here, and its
+formal version travels with the generation proof and the Filatov constraint in
+\S\ref{sec:generations}.
 
 \subsection{Status, and the standard objections}
 

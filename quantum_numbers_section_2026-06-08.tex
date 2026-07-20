@@ -105,18 +105,47 @@ sign and overall normalisation by the electron's charge gives $(y_{\mathbb{C}}, 
 (-1, +\tfrac13)$.
 \end{proposition}
 
-The status of the trace condition should be stated plainly, because it is the load-bearing
-assumption of this section. A trace part would be a phase rotation proportional to the identity on
-$\mathbb{O}$ --- an overall phase of the whole register --- and in this framework the overall phase
-is the observer-private, self-referential phase that the Born-rule construction renders
-unobservable (\S\ref{sec:register}); the gauge-observable $U(1)$ must therefore be the traceless
-part. We regard this as a well-motivated structural assumption rather than a theorem, and record it
-as a named open problem.
+The status of the trace condition can now be stated more strongly than when this section was first
+assembled, because half of the promotion has since become a theorem. A trace part would be a phase
+rotation proportional to the identity on $\mathbb{O}$ --- an overall phase of the whole register.
+That direction is provably invisible to records: the computation of
+Proposition~\ref{prop:f1-dictionary} is dimension-independent and extends verbatim from
+$\mathbb{C}^{2}$ to the register (the Born-rule construction of \S\ref{sec:self-reference} rests
+on the same fact).
+
+\begin{proposition}[The trace direction is record-blind]\label{prop:trace-blind}
+Let the phase torus act on the register $\mathbb{O} = \mathbb{C}\oplus\mathbb{C}^{3}$, and let
+the trace direction be its diagonal $U(1)$. Then every classical structure on the register
+transports under the trace direction by a global scalar; every classical record any structure
+induces is independent of it; and consequently every record-level holonomy --- every Wilson-loop
+action on records --- assigned to the trace direction is the identity. An executable verification
+of the finite checks, including the contrast that a traceless generator does act on records,
+accompanies the code release.
+\end{proposition}
+
+\begin{proof}
+The computation of Proposition~\ref{prop:f1-dictionary} in $n$ dimensions: for a classical
+structure $\delta$ with copyables $\{v_{i}\}$, transport by $e^{i\alpha}\,\mathrm{id}$ gives
+$\delta \mapsto e^{i\alpha}\delta$ with copyables $e^{i\alpha}v_{i}$ --- a global scalar ---
+and the induced record channel
+$\delta^{\dagger}(\rho\otimes I)\delta = \sum_{i}\langle v_{i}|\rho|v_{i}\rangle\,
+v_{i}v_{i}^{\dagger}$ depends only on the projectors, hence not on $\alpha$. A holonomy whose
+action on every record is trivial is the identity at record level.
+\end{proof}
+
+The second half of the promotion is then a one-paragraph conditional. Any gauge kinetic term that
+is a functional of record-observable holonomy is, by Proposition~\ref{prop:trace-blind},
+independent of the trace component of the connection: the trace mode has no field strength such a
+functional can register, acquires no kinetic term, and does not propagate. For every kinetic term
+of that kind, the gauge-observable $U(1)$ is the traceless part of the phase rotation on
+$\mathbb{O}$. What remains open is exactly one construction, and the problem shrinks to it.
 
 \begin{openproblem}[Tracelessness of $U(1)_Y$]\label{op:traceless}
-Show that the gauge kinetic term derived from the Hopf holonomy forces the gauge-observable $U(1)$
-to be the traceless part of the phase rotation on $\mathbb{O}$, promoting the global-phase argument
-above from motivation to theorem.
+Construct the gauge kinetic term from the Hopf holonomy explicitly, and establish that it is a
+functional of record-observable holonomy, so that --- with Proposition~\ref{prop:trace-blind} and
+the conditional argument above --- the gauge-observable $U(1)$ is the traceless part of the phase
+rotation on $\mathbb{O}$ unconditionally. The record-blindness half is discharged; what is open is
+the construction itself, which ties this problem to the loop-derived action of the dynamical layer.
 \end{openproblem}
 
 Granted it, there is no further freedom: the relative hypercharge of leptons and quarks is not an
@@ -128,14 +157,26 @@ multiplicities of the split, $2\,y_{\mathbb{C}} + 6\,y_{\mathbb{C}^3} = 0$ is ex
 of the summed hypercharge of the left-handed doublet sector --- the mixed $SU(2)^2$--$U(1)_Y$
 anomaly condition --- so that cancellation is automatic rather than imposed: the same condition
 that fixes the eigenvalues is the condition that cancels it. The remaining conditions --- the cubic
-$U(1)_Y^3$, the mixed $SU(3)^2$--$U(1)_Y$, and the gravitational anomaly --- involve the
-right-handed singlet hypercharges below; they are satisfied by the resulting assignments, as in the
-Standard Model, but their structural status is open.
+$U(1)_Y^3$, the mixed $SU(3)^2$--$U(1)_Y$, and the mixed gauge--gravitational condition --- involve
+the right-handed singlet hypercharges below; they are satisfied by the resulting assignments, as in
+the Standard Model, but their structural status is open. One clarification is owed on the third,
+whose name can mislead: despite the word, it is the least gravitational of the three. Its content
+is the bare trace $\sum Y = 0$ over a complete generation; gravity enters only as the historical
+origin of the requirement --- that the hypercharge current survive coupling to an arbitrary
+background --- and since the background is, in this framework, itself emergent
+(\S\ref{sec:space-of-computations}), the requirement is not optional here. It is also the nearest
+of the three to discharged: given Proposition~\ref{prop:trace-blind} --- the gauged generator is
+traceless --- and the completeness of the generation multiplet (\S\ref{sec:generations},
+\S\ref{sec:zoo-singlets}), the spectrum sum is the trace of a traceless generator over a complete
+multiplet, and the assignments above do sum to zero sector by sector: the doublets by the
+$SU(2)^{2}$ condition already shown automatic, and the singlets on their own account.
 
 \begin{openproblem}[Higher anomalies from traces]\label{op:anomalies}
-Derive the cubic $U(1)_Y^3$, the mixed $SU(3)^2$--$U(1)_Y$ and the gravitational anomaly
+Derive the cubic $U(1)_Y^3$, the mixed $SU(3)^2$--$U(1)_Y$ and the mixed gauge--gravitational
 cancellations structurally, each as a trace condition on the appropriate sector of the register,
-rather than as a check on the resulting assignments.
+rather than as a check on the resulting assignments. By the paragraph above, the third reduces to
+establishing that a generation is a complete multiplet of the traceless generator --- the linear
+trace; the cubic and colour-weighted traces are the genuinely open pair.
 \end{openproblem}
 
 The right-handed singlets complete the table.\label{sec:rh-singlets} They have $T_3 = 0$, and the

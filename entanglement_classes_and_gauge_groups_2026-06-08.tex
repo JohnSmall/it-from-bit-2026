@@ -1,25 +1,40 @@
 % =====================================================================
-%  Section: Entanglement Classes and Gauge Groups
-%  Paper 1, "It from Bit via Gödel"
-%  Drafted 2026-06-08. Follows \S sec:hopf-justification directly.
-%  Supersedes entanglement_classes_section_2026-06-08.tex.
+%  SECTION: Entanglement Classes and Gauge Groups
+%  (sec:entanglement-classes). Drafted 2026-06-08; supersedes the
+%  earlier same-day draft. AUDITED 2026-07-06 (final pass, ninth stop).
 %
-%  \input fragment. Assumes biblatex/\autocite, amsthm `proposition',
-%  `lemma', `proof'. Bib (RIS-sourced) keys live in the project library;
-%  new keys this turn: borsten2009blackholes, duff2007string
-%  (delivered in duff_refs_2026-06-08.ris).
+%  PLACEMENT (reordered chain, JS 2026-07-06): position 9 --
+%      \input{hopf_justification_section_2026-06-08}
+%      \input{entanglement_classes_and_gauge_groups_2026-06-08}
+%      \input{register_section_2026-06-08}
+%  The "previous section" phrases in the prose refer to
+%  hopf-justification and are TRUE at this position (the hopf->classes
+%  adjacency survived the reorder); the file is position-fragile in
+%  that specific pairing, by design.
 %
-%  Cross-reference labels (placeholders -- re-point before compiling):
-%    sec:hopf-justification        -- previous section
-%    prop:gsm, prop:termination    -- results from the previous section
-%    app:ghz-proof, app:w-proof    -- Paper-1 appendices (written next turn)
-%    sec:register, sec:charges     -- forward (register / quantum numbers)
-%    sec:generations, sec:masses   -- forward
+%  APPENDIX LABELS ACQUITTED: app:ghz-proof (line 246 of the appendix)
+%  and app:w-proof (line 364) both exist -- the June "written next
+%  turn" promise was kept; app:setup and the ceiling lemma live.
+%  sec:generations is defined in the particle-zoo section; all forward
+%  refs land.
 %
-%  NOTE: no G_2 root-length content appears here; that was a project-document
-%  correction only and is not part of the paper's chain of reasoning.
-%  Paper split: Paper-1 carries full theorem derivations (appendices);
-%  Paper-2 takes up the residual spacetime-level problems.
+%  AUDIT RECORD: lem:cproj, prop:ghz, prop:w-access, prop:w-doublet and
+%  the canonical-orbits postulate all verified against every quoting
+%  consumer (the frame's (2/3,1/3) quote exact; the register delivers
+%  the deferred SU(2)_L/handedness fixing); the e1-alignment point
+%  (Fano pairing, not commutativity) sound; loci numbers verified.
+%  Fixes: CKW key variant normalised to corpus canon
+%  (coffmankunduwootters2000); chirality return-promise given its
+%  addresses (sec:frame, sec:generations); absent-gate forward stitch
+%  at the DVC sentence; and the TWO-NINTHS IDENTITY drawn out --
+%  sup C_frac = r^2 (ceiling lemma) and slack = 1 - 4 det rho = r^2,
+%  so access ceiling and budget capacity are one invariant (W: 1/9;
+%  GHZ: 0 -- confinement and vanishing C-access are one fact), a
+%  partial discharge of op:w-slack's physical-reading clause recorded
+%  in the confinement section; script check added. op:ideal-orbit
+%  inventoried and stands as posed (well-formed, counterexample-valued).
+%  The header's stray Gödel umlaut dies with this rewrite: file now
+%  pure ASCII. British English; \autocite; no bullets in prose.
 % =====================================================================
 
 \section{Entanglement Classes and Gauge Groups}
@@ -67,7 +82,7 @@ distinguishes, namely the coloured quarks and the colourless leptons?
 These are not idle questions, and they are not new ones. Szangolies has already established part of
 the gauge-group link from the representation-theoretic side \autocite{szangolies2025standardmodel};
 Filatov and Auzinsh have shown that bipartite entanglement carries an intrinsic chirality of the
-kind the weak $SU(2)$ exhibits \autocite{Filatov2024EntanglementStructure}; and, for well over a decade, Duff and
+kind the weak $SU(2)$ exhibits \autocite{filatov2024towards}; and, for well over a decade, Duff and
 collaborators at Imperial College have pursued deep correspondences between multipartite
 entanglement and string and brane physics \autocite{duff2007string,borsten2009blackholes}. We take
 up the pedigree below and then turn the questions into theorems.
@@ -78,7 +93,7 @@ Before the tripartite case, a structural observation about the bipartite one, be
 the weak sector that sits on the $S^3 \cong SU(2)$ rung. Filatov and Auzinsh showed that a pure
 maximally entangled two-qubit state cannot be drawn on two Bloch spheres of the same handedness:
 representing the entanglement faithfully requires the coordinate axes of one sphere to be
-right-handed and those of the other left-handed \autocite{Filatov2024EntanglementStructure}. Handedness is thus
+right-handed and those of the other left-handed \autocite{filatov2024towards}. Handedness is thus
 not an artefact of how one chooses to draw the state; it is forced by the entanglement, and it is a
 topological fact about the quaternionic Hopf fibration --- the same fibration whose fibre is the weak
 $SU(2)$.
@@ -89,15 +104,17 @@ treated as an empirical input with no structural explanation. It is therefore at
 that chirality should appear, unbidden and forced, in the simplest entangled state of the very rung
 that carries $SU(2)$. We draw no specific derivation from this here --- the mechanism that turns the
 Filatov handedness into the physical left-handedness of the weak force belongs to the later
-discussion of the register and of generations --- but we record it as a structural encouragement for
-a programme that proposes to read gauge content off entanglement, and we will return to it.
+discussion of the register, the frame, and the generations (\S\ref{sec:register},
+\S\ref{sec:frame}, \S\ref{sec:generations}) --- but we record it as a structural encouragement
+for a programme that proposes to read gauge content off entanglement, and we return to it there.
 
 \subsection{The two classes of tripartite entanglement}
 
 Three qubits admit exactly two inequivalent classes of genuinely tripartite entanglement under
 stochastic local operations and classical communication: the GHZ class and the W class
-\autocite{durvidalcirac2000three}. Every natural invariant separates them. The three-tangle is
-maximal on GHZ and identically zero on W \autocite{coffmankunduwootters2000distributed}; tracing
+\autocite{durvidalcirac2000three}. (The operational face of the inequivalence --- the converter
+mathematics permits and the vertex dictionary does not stock --- is \S\ref{sec:absent-gate}.) Every natural invariant separates them. The three-tangle is
+maximal on GHZ and identically zero on W \autocite{coffmankunduwootters2000}; tracing
 out one qubit of a GHZ state leaves the other two separable, while the same operation on a W state
 leaves them entangled. Coecke and Kissinger gave the distinction an algebraic form: GHZ-class states
 carry a \emph{special} commutative Frobenius algebra and W-class states an \emph{anti-special} one,
@@ -216,7 +233,10 @@ class is the particle type}. The quantum numbers of \S\ref{sec:charges} and the 
 \S\ref{sec:masses} are computed on canonical orbits, so the postulate is load-bearing, and we state
 it rather than leave it implicit.
 
-The identification is not arbitrary, and the reason lives in machinery the paper already uses. Under
+The identification is not arbitrary, and the reason lives in machinery the paper already uses ---
+and, since \S\ref{sec:superconductor-witness}, in an independent physical witness: the
+superconductor, where the Bell and product rows are the two strata of the Anderson--Higgs
+mechanism. Under
 map--state duality, a maximally entangled state is the state-form of the identity map --- the algebra
 acting on itself, written as a state --- and its local-unitary orbit corresponds to the unitaries,
 while the SLOCC deformations correspond to invertible but non-unitary maps, excluded as physical
@@ -228,14 +248,22 @@ Frobenius algebras correspond exactly to orthonormal bases
 canonical form, the tilted states its non-special deformations.
 
 This converges with the identification at the heart of Furey's programme, in which particles are
-minimal ideals of an algebra acting on itself \autocite{Furey2014,furey2018three}. The
+minimal ideals of an algebra acting on itself \autocite{furey2012unified,furey2018three}. The
 physical idea is the same --- the particle is the canonical, parameter-free substructure singled out
 by the algebra's self-action --- expressed there in module coordinates and here in entanglement
 coordinates. The selection principles differ in form (minimality of the ideal; maximal symmetry of
-the orbit), and we record it as a named open problem that they coincide: to prove that the
-dagger-special condition on the Frobenius side corresponds to the minimal-ideal condition on the
-division-algebra side, so that the two identifications become one fact described in two coordinate
-systems. The status of the tilted, off-canonical states --- whether they admit a reading as
+the orbit), and we record their reconciliation as a named open problem.
+
+\begin{openproblem}[Ideals and canonical orbits]\label{op:ideal-orbit}
+Prove that the dagger-special condition on the Frobenius side corresponds to the minimal-ideal
+condition on the division-algebra side, so that the present identification and Furey's become one
+fact described in two coordinate systems. A counterexample separating the two selections on some
+sector, or a correspondence holding only on a proper subclass, would each also resolve the problem,
+and either outcome would be informative: it would delimit exactly the sectors on which module
+coordinates and entanglement coordinates may be used interchangeably.
+\end{openproblem}
+
+The status of the tilted, off-canonical states --- whether they admit a reading as
 off-shell or perturbed configurations --- is likewise open; no result downstream depends on them.
 
 \subsection{The dictionary}
@@ -267,6 +295,16 @@ occupies a disjoint locus of constant colour radius $\sqrt{8/9}$ and Bloch radiu
 $\mathbb{C}$-access ceiling $(\tfrac13)^2 = \tfrac19$ (Appendix~\ref{app:setup}). The two octonionic
 rows share the same fibre and are separated as disjoint loci on the base: on the colour equator, or
 tilted off it into the single-qubit Bloch directions.
+
+One identity deserves to be drawn out, because it joins this section's geometry to the entanglement
+budget of \S\ref{sec:budget-converse}. The ceiling lemma of Appendix~\ref{app:setup} gives
+$\sup C_{\mathrm{frac}} = r^{2}$, the squared marginal Bloch radius; and the budget slack of a
+register qubit is $1 - \tau = 1 - 4\det\rho = r^{2}$ identically. So the $\mathbb{C}$-access
+ceiling and the external-correlation capacity are \emph{the same invariant}, $r^{2}$, seen in base
+and in budget coordinates: for the W orbit both are exactly $\tfrac19$ --- the leptonic ninth of
+Open Problem~\ref{op:w-slack} \emph{is} the lepton's singlet-direction access --- and for the GHZ
+orbit both are exactly zero, so confinement and vanishing $\mathbb{C}$-access are one fact, not
+two. An executable verification accompanies the code release.
 
 \subsection{Prior work: Szangolies, and the Imperial programme}
 \label{sec:entanglement-szangolies}

@@ -1,0 +1,205 @@
+% =====================================================================
+%  SECTION: Continuity Is Not an Axiom
+%  Drafted 2026-07-04 from continuity_limit_realisability_2026-07-04.md
+%  (now in project documents) and the May record
+%  (dynamics_companion_fanout_unitarity_2026-05-20T1430.md).
+%
+%  PLACEMENT in main.tex: a standalone section between the
+%  self-reference slot and the division-algebras section --
+%      \input{self_reference_section_...}            % undrafted
+%      \input{continuity_section_2026-07-04}
+%      \input{division_algebras_section_2026-07-03}
+%  (JS's architecture call is open: this can be demoted to subsections
+%  of sec:self-reference by deleting the \section line and promoting;
+%  drafted standalone per the 2026-07-04 recommendation.)
+%
+%  CITATIONS -- existing keys (as supplied by JS 2026-07-04):
+%    Hardy2001a, Aaronson2004h, Thomson_1954, Lawvere_1969,
+%    Turing_1937, muller_p_2011, Brukner2009.
+%  NEW keys (RIS in continuity_refs_2026-07-04.ris):
+%    cantor1891diagonal, benacerraf1962tasks, broeckertomdieck1985compact.
+%  Deliberately excluded per JS: Chiribella--D'Ariano--Perinotti;
+%  Bargmann/Wigner's theorem. Yanofsky omitted pending a key (the
+%  Lawvere-shaped clause cites Lawvere_1969 alone); supply a key if
+%  wanted and one clause absorbs it.
+%
+%  CROSS-REFS: backward-dangling until their sections are drafted --
+%  sec:self-reference, sec:fanout-boundary (same status as the
+%  division-algebras section's). Deliberate FORWARD references --
+%  prop:f1-dictionary and sec:hopf-justification (defined later in the
+%  paper; fine under two-pass LaTeX and flagged in prose),
+%  sec:division-algebras, sec:space-of-computations.
+%
+%  DECISIONS ENCODED: op:limit-realisability minted (the owed arrow,
+%  priced: exactly two derivations, divisibility and closedness);
+%  Lagrange used twice (finite exclusion; component-group triviality);
+%  the (1+i)/2 lamp value NOT stated here -- "a superposed fixed point"
+%  with the complex-probability treatment deferred to
+%  sec:self-reference; the two-branch over-determination stated to
+%  pre-empt a circularity reading; Thomson spelling throughout.
+% =====================================================================
+
+\section{Continuity Is Not an Axiom}
+\label{sec:continuity}
+
+Hardy derives quantum theory from five axioms \autocite{Hardy2001a}. Four of them are satisfied by
+classical probability theory; the fifth --- that a \emph{continuous} reversible transformation
+connects any two pure states --- is the entire difference, the single postulate that turns the
+classical simplex into the complex Hilbert space. Every reconstruction programme pays an equivalent
+toll: continuous reversibility in Masanes and M\"{u}ller \autocite{muller_p_2011}, the corresponding
+postulate in Daki\'{c} and Brukner \autocite{Brukner2009}. The axiom is load-bearing, and in every
+programme it is unexplained: it is where the quantumness is put in by hand. The claim of this
+section is that in the present framework it is not an axiom. Continuity is the fifth face of the
+pre-measurement regime that self-reference forces, and what stands between the framework and a full
+derivation is not a postulate but two sharply posed lemma-premises, stated as an open problem at the
+end of the section with nothing hidden in them.
+
+One structural remark prevents a misreading. The framework reaches complex amplitudes natively in
+\S\ref{sec:self-reference}, by the negative-probability route; the present section reaches the same
+destination by an independent branch --- the regime's continuity, then Hardy's theorem. The two
+branches converging on one structure is over-determination, not circularity, and the convergence is
+itself evidence that the destination is forced.
+
+\subsection{Five faces of one regime}
+
+The regime before any measurement --- before any \textsc{fanout} --- can be characterised five
+equivalent ways: negative probability is available; anti-events exist, every event being undoable;
+no classical record exists; no preferred basis is selected; and a continuous reversible
+transformation connects any two pure states. These are not five premises to be combined. They are
+one regime under five descriptions, and \textsc{fanout} (\S\ref{sec:fanout-boundary}) is the single
+event that fails all five at once: it writes the record, selects the basis, kills the anti-events,
+discretises the transformation group, and switches off the negativity. The equivalence of the first
+two faces is the anti-event identity of \S\ref{sec:self-reference}; the third is the boundary's
+definition. The work of this section is the equivalence of the last two faces, and then the route
+from the regime's existence to its continuity. The fourth face has, since
+Proposition~\ref{prop:f1-dictionary} (\S\ref{sec:hopf-justification} --- a deliberate forward
+reference), an exact form: a basis-selection is the commitment of a classical structure, a lifted
+antipodal skeleton, so ``no preferred basis'' means precisely that no copy structure has fired.
+
+\subsection{Basis selection is the collapse of continuity}
+
+\begin{proposition}[Continuity forbids a selected basis]\label{prop:basis-discreteness}
+If a finite set of pure states is privileged --- a preferred basis --- then every reversible
+transformation respecting the privilege carries the set to itself and acts on it as a permutation;
+the respecting transformations therefore realise only a finite group of motions among the
+distinguished states, and no continuous family of them connects distinct pure states of the set.
+Contrapositively, continuous reversibility entails that no basis is selected.
+\end{proposition}
+
+\begin{proof}
+A privileged finite set is by definition carried to itself by every structure-preserving reversible
+map, whose induced action on the set is a permutation of finitely many points. A continuous path of
+such maps induces a continuous path in a finite discrete set, which is constant. Hence a continuous
+reversible family moving one distinguished pure state to another respects no such privilege, and if
+every pair of pure states is so connected, no finite set is privileged.
+\end{proof}
+
+The converse is where the historical difficulty lies: the absence of a privileged finite set does
+not by itself force continuity, for the transformation group could in principle be infinite and
+discrete. Two structural properties close every such escape at once.
+
+\begin{proposition}[Divisible and closed implies connected]\label{prop:divisible-closed}
+Let $G$ be the group of reversible transformations of the pre-measurement regime, acting on the
+state body. If $G$ is divisible --- every element has an $n$-th root for every $n$ --- and
+topologically closed, then $G$ is a compact connected Lie group; and if $G$ moreover acts
+transitively on the pure states, then a continuous reversible transformation connects any two of
+them: Hardy's fifth axiom.
+\end{proposition}
+
+\begin{proof}
+The state body is compact and convex with nonempty interior, so its symmetry group is compact, and
+a closed subgroup of a compact matrix group is a compact Lie group with finitely many connected
+components \autocite{broeckertomdieck1985compact}. The component group $G/G_{0}$ is a quotient of a
+divisible group and hence divisible; but a nontrivial finite group is never divisible --- with
+$\lvert H\rvert = m$ every element satisfies $h^{m} = e$, so no element other than the identity
+possesses an $m$-th root --- and $G/G_{0}$ is finite, so it is trivial and $G = G_{0}$ is connected.
+A connected Lie group is path-connected, and transitivity then supplies the continuous reversible
+path between any two pure states.
+\end{proof}
+
+The same one-line fact of Lagrange closes the remaining escapes. Finite groups are excluded
+directly, being nontrivial and never divisible. Countable groups are excluded because a countable
+closed subgroup of a compact group is compact, has an isolated point by the Baire category theorem,
+and is therefore discrete and finite. Uncountable disconnected groups are excluded by the
+component-group argument of the proposition. Every route to a discrete transformation group
+therefore passes through a failure of divisibility or a failure of closedness: the whole question
+compresses to those two premises, and to nothing else.
+
+\subsection{The two premises, and what they mean}
+
+Divisibility has a candidate derivation whose status we flag plainly as owed rather than proved:
+with no basis selected there is no distinguished step, so a reversible transformation of the regime
+should be realisable in $n$ equal describable stages for every $n$ --- an $n$-th root for every $n$.
+Closedness is the deeper premise, and it is where the section's title is earned. Closedness is
+limit-realisability: a Cauchy sequence of available transformations whose convergence the system can
+itself describe must have its limit available, for otherwise the system's own description refers to
+a transformation that does not exist, and self-referential closure fails --- a demand of exactly
+Lawvere's fixed-point shape \autocite{Lawvere_1969}. What limit-realisability adds to the line is
+worth stating exactly, because it is the corrected form of a natural intuition. Cantor's diagonal
+\autocite{cantor1891diagonal} does not build the continuum; its output is an infinite decimal --- a
+Cauchy sequence of rationals --- which exists \emph{as a point} only because the line is complete.
+The diagonal presupposes limit-realisability and then shows that the completed line outruns every
+internal listing. And the character of the completion is the framework's own: the computable reals
+are countable \autocite{Turing_1937}, hence of measure zero, so the completed continuum is
+non-computable almost everywhere. Hardy's fifth axiom, on this reading, is the demand that the
+transformation group contain its \emph{non-computable} limits. Continuity is the topological face of
+the founding non-computability.
+
+\subsection{Why the cut matters physically}
+
+The regime's continuity is not decorative. Reversibility alone, over complex amplitudes, licenses
+the full invertible group $GL(n, \mathbb{C})$, and Aaronson showed what that buys: superluminal
+signalling, and computational power at the level of \textsf{PP} \autocite{Aaronson2004h}. The cut
+from $GL(n, \mathbb{C})$ down to the unitary group is the conserved quadratic form, and continuity
+is what entitles the theory to make it: with the fifth axiom in hand, Hardy's theorem delivers the
+complex Hilbert space, the quadratic norm and the unitary group in one stroke \autocite{Hardy2001a}
+--- cited here, not re-proved. One honest caveat travels with the citation. Hardy's reconstruction
+uses his remaining axioms besides --- composition and subspace structure --- and these must be
+derived rather than imported: the composition ledger of \S\ref{sec:division-algebras} and the
+locality-of-tomography argument of \S\ref{sec:self-reference} carry that duty, and it is discharged
+there, not silently assumed here.
+
+\subsection{Super-tasks at the boundary}
+
+The premise just priced has a fifty-year-old stress test in the philosophy of mathematics, and the
+framework passes it in an unexpected way. A super-task --- infinitely many operations completed in
+finite time \autocite{Thomson_1954} --- presupposes its terminal moment as an actual point of the
+timeline: the accumulation point of a generic sequence of step-times exists only in the completed
+line, and the defining question, the state \emph{after all the steps}, is meaningful only under
+limit-realisability of time. Super-tasks are downstream consumers of exactly the completeness at
+issue in this section. Thomson's lamp then exhibits both sides of the \textsc{fanout} boundary at
+once. On the record side, the lamp's description fixes its state at every finite stage and thereby
+fixes no limit at all: any terminal value is consistent with the whole task
+\autocite{Thomson_1954,benacerraf1962tasks}. That is not a puzzle about lamps; it is the proof that
+the classical record algebra is not limit-closed, and cannot be. On the amplitude side the limit
+exists --- a superposed fixed point, whose complex-probability treatment belongs to
+\S\ref{sec:self-reference} --- because that side \emph{is} limit-closed, which is the fifth face
+itself. The boundary is thereby the edge of limit-realisability: complete on the reversible side,
+incomplete on the record side, with the lamp standing on both sides at once as the boundary's oldest
+exhibit. A final clause dissolves rather than answers the classic question. In this framework time
+is operation count (\S\ref{sec:space-of-computations}), and ``after infinitely many operations''
+indexes no operational moment: the lamp packs its endless \textsc{fanout}s into the emergent
+continuum, and asking for its record at the accumulation point asks the discrete contents for a
+value that only the completed container possesses. On or off is not undecided; it is unasked.
+
+\subsection{What remains, priced}
+
+\begin{openproblem}[Limit-realisability from self-reference]\label{op:limit-realisability}
+Derive, from the self-referential closure of \S\ref{sec:self-reference}, the two premises of
+Proposition~\ref{prop:divisible-closed}: that the reversible-transformation group of the
+pre-measurement regime is divisible --- the candidate route being that no selected basis leaves no
+distinguished step, so that every transformation is realisable in $n$ equal describable stages for
+every $n$ --- and that it is topologically closed --- the candidate route being that a Cauchy
+sequence of available transformations whose convergence the system can itself describe must have its
+limit available, on pain of the description referring to a transformation that does not exist. With
+both premises, continuity follows by the proposition and everything downstream is Hardy's theorem,
+cited; the finite, countable and disconnected escapes are closed unconditionally above. What is open
+is exactly the two derivations named, and nothing wider.
+\end{openproblem}
+
+The accounting, in one sentence: the axiom that every reconstruction programme pays is, in this
+framework, a debt with a stated invoice --- two derivations, both of Lawvere's shape, both posed. And
+the hand-on is already visible: the complex amplitudes that this section's continuity underwrites
+through Hardy's theorem, and the complex amplitudes that \S\ref{sec:self-reference} derives natively,
+are one and the same $\mathbb{C}$ --- the floor of the ladder that \S\ref{sec:division-algebras}
+climbs.

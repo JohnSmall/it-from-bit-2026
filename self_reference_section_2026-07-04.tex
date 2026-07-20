@@ -1,0 +1,355 @@
+% =====================================================================
+%  SECTION: Self-Reference: One Principle
+%  Drafted 2026-07-04. The paper's foundational section; resolves the
+%  largest dangling label in the manuscript (sec:self-reference).
+%
+%  PLACEMENT in main.tex: FIRST of the foundations chain --
+%      \input{self_reference_section_2026-07-04}
+%      \input{continuity_section_2026-07-04}
+%      \input{division_algebras_section_2026-07-03}
+%      \input{hopf_justification_section_2026-06-08}
+%
+%  SOURCES (re-read 2026-07-04): lawvere_inside_outside_fixed_point_
+%  theorem_2026-05-04T1806.md (the spine: the two-principles reduction,
+%  the theorem, the sigma candidate, the open items -> op minted per
+%  D9); research_summary_neg_prob.md (negativity route; lamp (1+i)/2);
+%  dynamics_companion_fanout_unitarity (legs 1a/1c; anti-events; the
+%  Brukner-Zeilinger rebuttal per D6); Pure_states_and_mixed_states
+%  (local tomography derived; QBism contrast per D7).
+%
+%  DECISIONS ENCODED (JS 2026-07-04): D1 title as below; D2 Wheeler1990
+%  cited here as the title anchor; D3 lineage Popper -> Breuer ->
+%  Svozil -> Szangolies (Dalla Chiara omitted); D4 Frauchiger_2018
+%  cited here, dissolved in sec:wigners-friend; D5 Kirkwood-Dirac
+%  heritage via the Arvidsson-Shukur 2024 review as one-stop; D6
+%  Brukner-Zeilinger + the framework rebuttal IN ("Shannon is
+%  post-FANOUT"); D7 QBism contrast IN; D8 Aaronson private
+%  communication OMITTED (published island paper only); D9 one op
+%  minted (op:sigma-functor), cross-linked to op:hopf-frobenius.
+%
+%  CITATIONS -- existing keys: Wheeler1990, small_2006, Godel1931,
+%  Lawvere_1969, Yanofsky2003, CoeckeKissinger2017, Rovelli1996a,
+%  Popper1950a, Popper1950b, Breuer1995, svozil_k_2018,
+%  szangolies_j_2018, Frauchiger_2018, dirac1942, Feynman_r_82,
+%  Feynman1987, Youssef1994 [SWAP-FLAG: intended paper is "Quantum
+%  mechanics as complex probability theory", Mod. Phys. Lett. A 9
+%  (1994) 2571 -- if that lives under youssef1994quantum, swap],
+%  caticha_a_2006, goyal_knuth_skilling_2010, Aaronson2004h, Hardy2001a,
+%  muller_p_2011, Thomson_1954, benacerraf1962tasks, cantor1891diagonal,
+%  Turing_1937.
+%  NEW keys (RIS in self_reference_refs_2026-07-04.ris, all verified
+%  this session): tikochinsky1988feynman, renou2021real, chen2022ruling,
+%  wu2022refutation, hoffreumonwoods2026real, arvidssonshukur2024kirkwood,
+%  bruknerzeilinger2001shannon, fuchsschack2013qbism,
+%  shannon1948mathematical.
+%
+%  CROSS-REFS: forward (fine under two-pass LaTeX): sec:continuity,
+%  sec:division-algebras, sec:hopf-justification, prop:f1-dictionary,
+%  sec:wigners-friend, op:limit-realisability, op:hopf-frobenius.
+%  Still dangling after this section: sec:fanout-boundary (and its
+%  sibling label sec:fanout-direction, same undrafted section).
+%
+%  AUDITED 2026-07-06 (section-by-section final pass, first stop):
+%  proof of prop:inside-outside re-verified by hand; attribution chain
+%  clean (Burgin/Khrennikov correctly absent); all header-declared
+%  citations confirmed used; lamp arithmetic and antecedents verified;
+%  FANOUT smallcaps consistent; no pre-definition use of "frame".
+%  Fixes: stray Unicode em-dash (QBism paragraph, the file's only
+%  non-ASCII character) -> house ---; trace-blind two-way stitch added
+%  to the Born subsection ("one privacy, two duties");
+%  op:sigma-functor gains its first standing constraint (F1
+%  inheritance via the op:hopf-frobenius discharge) and its previously
+%  one-directional local-tomography cargo made explicit.
+% =====================================================================
+
+\section{Self-Reference: One Principle}
+\label{sec:self-reference}
+
+Wheeler asked for it from bit: for physics derived from information, ``every it --- every particle,
+every field of force'' obtained from binary answers to yes-or-no questions \autocite{Wheeler1990}.
+This paper's route to that programme runs through G\"{o}del: the single principle from which
+everything else here is derived, deferred, or priced is \emph{self-reference} --- the fact that any
+complete physical description, made from inside the world it describes, must describe the describer.
+This section states the principle, proves that the framework's second historical commitment follows
+from it as a theorem rather than standing beside it as an axiom, and then extracts the price of the
+principle in four instalments: probabilities whose parts can cancel, amplitudes valued in
+$\mathbb{C}$, the Born rule, and the local tomography of composite systems. What the section cannot
+yet derive is stated as precisely as what it can, in one numbered problem and in the ledger at the
+end.
+
+\subsection{Events, not objects}
+
+The framework's ontology is relational: the fundamental entities are events and the relations
+between them, and objects are the bookkeeping of relational invariants --- what remains stable
+across many relations. The kinship with relational quantum mechanics \autocite{Rovelli1996a} is
+genuine and acknowledged: facts are facts relative to the systems that register them. The
+difference, developed over the rest of this paper, is that the present framework grounds the
+relational structure in a single logical principle and then carries it, through the division
+algebras and the Hopf fibrations, all the way to the gauge group and the particle spectrum ---
+relations are not only the ontology but the derivation engine. On this reading a measurement is not
+the revelation of a pre-existing property; it is the creation of a relation, and the later sections
+of this paper read that creation geometrically (\S\ref{sec:hopf-justification}) and even
+gravitationally. Here we need only the logical core: whatever describes the world is an event in
+the world it describes.
+
+\subsection{One principle, and a theorem}
+
+The framework historically carried two foundational commitments: self-reference, and the
+\emph{Inside/Outside Equivalence Principle} --- that the laws of physics must be identical whether
+formulated by an embedded participant or by an external observer. Two principles are one too many,
+and this subsection reduces them.
+
+The reduction corrects the framework's own origin, and we make the correction in print. The 2005
+form of the argument \autocite{small_2006} ran a G\"{o}delian chain: a self-referential process,
+being complete, must by the incompleteness theorem \autocite{Godel1931} be inconsistent; an
+inconsistent system can negate itself; and the negation of self-reference is the production of
+causal sequence. The chain captures the right intuition and is retained here as motivation, but it
+is not sound as a proof: classical inconsistency yields \emph{ex falso quodlibet} --- every
+proposition provable, every causal sequence an output, no constraint at all. The load-bearing
+argument is different, and better: a fixed-point theorem.
+
+Let $\mathcal{C}$ be the category of physical descriptions and admissible processes --- concretely,
+the dagger-compact-closed setting with classical structures in which categorical quantum mechanics,
+and the whole of this paper, works \autocite{CoeckeKissinger2017}. Lawvere showed that in a
+sufficiently rich such setting, any weakly point-surjective self-representation forces every
+endomap to have a fixed point, and Yanofsky showed that one diagonal argument of this shape
+underlies Cantor's, G\"{o}del's, Turing's and Tarski's theorems alike
+\autocite{Lawvere_1969,Yanofsky2003,cantor1891diagonal}. The framework's single commitment is that
+$\mathcal{C}$ contains a \emph{self-representing object} --- an object capable of encoding the
+processes on itself. That is what ``self-reference is foundational'' means, stated categorically,
+and it is the surjectivity hypothesis of the diagonal lemma. Now let
+$\sigma \colon \mathcal{C} \to \mathcal{C}$ be the \emph{inside/outside involution}: the operation
+exchanging the two complementary presentations of any description --- the inside presentation, as
+participant-indexed total space in which the observer is part of the system, and the outside
+presentation, as a base-times-fibre decomposition over a classical parameter space. That
+$\sigma^{2} = \mathrm{id}$ is not an axiom but a coherence requirement: the outside view of the
+inside view of a thing is the thing. The candidate concrete realisation of $\sigma$ is the
+Hopf-duality swap --- total space against base-times-fibre for the three fibrations --- which gives
+the involution computable content and ties this subsection to \S\ref{sec:hopf-justification}.
+
+\begin{proposition}[Inside/outside fixed point]\label{prop:inside-outside}
+Let $\mathcal{C}$ satisfy the richness condition above and contain a self-representing object, and
+let $\sigma$ be an involution on $\mathcal{C}$. Then the fixed-point locus
+$\mathrm{Fix}(\sigma)$ is non-empty: there exist descriptions invariant under the exchange of
+inside and outside perspective.
+\end{proposition}
+
+\begin{proof}
+Lawvere's construction, applied to $\sigma$ in place of negation: given a weakly point-surjective
+$\varphi \colon A \to Y^{A}$, form $g(a) = \sigma\!\left(\varphi(a)(a)\right)$; point-surjectivity
+supplies $a^{*}$ with $\varphi(a^{*}) = g$, and then $\varphi(a^{*})(a^{*})$ is a fixed point of
+$\sigma$ \autocite{Lawvere_1969,Yanofsky2003}. Where the same construction applied to Boolean
+negation yields paradox --- negation has no fixed point on a two-element type, so the conclusion
+explodes the premises --- the inside/outside involution is an honest involution on a rich type, and
+the conclusion is a constructive fixed point rather than a contradiction.
+\end{proof}
+
+\textbf{Definition.} \emph{Physical law is the structure carried by} $\mathrm{Fix}(\sigma)$.
+
+The Inside/Outside Equivalence Principle is thereby demoted from axiom to theorem: physical law is
+invariant under the exchange of perspectives \emph{because it is the fixed-point set of that
+exchange}, and the fixed-point set is forced to be non-empty by self-reference alone. One
+commitment remains foundational; everything the second commitment asserted is now derived. The
+reader who accepts categorical quantum mechanics as an existing programme has already accepted the
+machinery; the framework adds one premise and collects the rest. And the fixed-point locus is not
+empty of structure: it inherits the Frobenius-algebra apparatus of $\mathcal{C}$, so that the
+Bell, GHZ and W primitives --- and with them the particle classification of the later sections ---
+live inside $\mathrm{Fix}(\sigma)$ from the start. What is proved above is non-emptiness given the
+setting; what is assumed is the setting itself and the existence of $\sigma$ as a genuine
+involution; what is open is the rigour of both, and it is priced now rather than hidden:
+
+\begin{openproblem}[The involution made functorial]\label{op:sigma-functor}
+Fix the category $\mathcal{C}$ rigorously --- the dagger-compact-closed setting with classical
+structures is the candidate --- and define $\sigma$ on morphisms, not only on objects, the natural
+route being the induced fibre--base exchange on spider diagrams; establish that $\sigma$ is an (at
+worst pseudo-)involutive endofunctor; and prove or refute the identification of
+$\mathrm{Fix}(\sigma)$ with the three Hopf cross-sections, under which Adams's theorem would become
+a corollary of the fixed-point classification. This problem is cross-linked with Open
+Problem~\ref{op:hopf-frobenius}: under an affirmative resolution of both, the parallelisable
+terminus, the fixed-point classification, and compositional completeness are three statements of
+one fact, and progress on either problem constrains the other. One constraint is already in place:
+at the complex rung, Proposition~\ref{prop:f1-dictionary} supplies the dictionary between
+classical structures and the fibration's lifted skeletons --- the clause of
+Open Problem~\ref{op:hopf-frobenius} it discharges --- and any resolution here must reproduce it.
+The problem also carries a piece of cargo recorded later in this section: the formalisation, within
+the fixed category, of the perspective-accounting that derives local tomography.
+\end{openproblem}
+
+\subsection{The lineage}
+
+The obstruction this section builds on is old, and the framework claims its completion, not its
+discovery. Popper argued in 1950 that a predictor embedded in the world has irreducibly inferior
+knowledge of itself, because it cannot impart information about itself without, by that very act,
+rendering the information out of date \autocite{Popper1950a,Popper1950b} --- the passage is quoted
+where the framework makes the obstruction structural (\S\ref{sec:wigners-friend}). Breuer proved
+the impossibility of accurate state self-measurement within quantum theory \autocite{Breuer1995};
+Svozil's monograph surveys the whole territory where physics meets self-reference, undecidability
+and Chaitin-style algorithmic limits \autocite{svozil_k_2018}; Szangolies sharpened the modern form
+as epistemic horizons \autocite{szangolies_j_2018}; and the Frauchiger--Renner theorem is the
+contemporary crisis-form --- nested observers deriving contradictory records when each treats the
+others' quantum descriptions as universally valid \autocite{Frauchiger_2018} --- which
+\S\ref{sec:wigners-friend} dissolves relationally rather than paradoxically. This framework's
+addition to the lineage is twofold. Structurally, Proposition~\ref{prop:f1-dictionary} converts
+Popper's temporal obsolescence into algebraic cancellation: the datum a copier cannot put into its
+own record is exactly its fibre commitment, which does not arrive stale --- it cancels. And
+foundationally, the present section runs the lineage in reverse: where the tradition treats
+self-reference as a limit on knowledge \emph{within} physics, the framework takes it as the
+generator of physics, and derives the quantum formalism from it.
+
+\subsection{The price is negative probability}
+
+What does it cost a probabilistic description to contain its own describer? The first instalment is
+the sign. In the regime before any record exists, every event has an anti-event --- the description
+must be able to undo what it has provisionally done, or the self-description could never be
+revised into consistency --- and a probability calculus closed under undoing cannot be confined to
+$[0,1]$: it is a signed calculus, in which the parts of a probability can oppose and cancel. The
+framework did not discover negativity as bookkeeping; Dirac admitted negative probabilities as
+formal intermediaries \autocite{dirac1942}, Feynman defended them as consistent whenever the final,
+recorded probabilities stay positive \autocite{Feynman_r_82,Feynman1987}, and the Kirkwood--Dirac
+distribution has carried complex quasiprobability from 1933 to the present, as a recent
+comprehensive review documents \autocite{arvidssonshukur2024kirkwood}. What the framework adds is
+the forcing: negativity is not a permissible convenience but the first price of self-referential
+closure, and it is charged exactly and only in the pre-record regime --- which is why every
+negativity in the tradition lives in intermediate, unrecorded quantities and never in a final
+record.
+
+The second instalment is complexity. A signed information measure must extend Shannon's
+$S = -\ln p$ off the positive axis, and the analytic continuation of the logarithm carries $p$ into
+the complex plane: amplitudes, with the phase as the continued information. Here too the extension
+has a prior tradition, and the attributions are owed precisely. Tikochinsky derived Feynman's rules
+for complex amplitudes from consistency of composition \autocite{tikochinsky1988feynman}; Youssef
+reformulated quantum mechanics as complex probability theory outright \autocite{Youssef1994};
+Caticha carried objective amplitudes to Bayesian probabilities \autocite{caticha_a_2006}; and
+Goyal, Knuth and Skilling derived Feynman's rules from a pair-postulate without assuming
+analyticity \autocite{goyal_knuth_skilling_2010}. The extension is prior art. The framework's
+claim is the compulsion: the complex extension is not a modelling choice among exotic probability
+theories but the unique continuation forced by self-referential closure --- the same forcing that
+Aaronson glimpsed when he argued quantum mechanics is what negative probability inevitably becomes
+\autocite{Aaronson2004h}.
+
+Why does the continuation stop at $\mathbb{C}$? Downward, the real field is not available: real
+quantum theory is experimentally distinguishable from complex quantum theory in network scenarios
+and has been disfavoured by experiment
+\autocite{renou2021real,chen2022ruling,wu2022refutation}; the recent objection that the exclusion
+rests on locally tomographic composition \autocite{hoffreumonwoods2026real} is, for this framework,
+not an escape but a confirmation of where the weight sits --- local tomography is \emph{derived}
+below, not assumed, so the framework closes from its own resources exactly the door the objection
+holds open. Upward, the quaternions and octonions fail as a \emph{base} for the information
+continuation: the continued measure is a logarithm, and beyond $\mathbb{C}$ the logarithm of a
+product is no longer the sum of logarithms --- non-commutativity severs
+$\log(ab) = \log a + \log b$ --- so the additivity that makes it an information measure is lost.
+Aaronson's parameter-counting and signalling arguments against a quaternionic base point the same
+way \autocite{Aaronson2004h}. The higher algebras are not banished; they return as the
+\emph{internal} algebras of the register, which is the business of \S\ref{sec:division-algebras}.
+The base is $\mathbb{C}$, for informational reasons, and stays $\mathbb{C}$.
+
+\subsection{The Born rule from fibre privacy}
+
+The third instalment is the quadratic rule. An amplitude carries one datum more than any record of
+it can: its overall phase. This was asserted throughout the framework's development as the
+observer's private, self-referential ignorance; it is now a proved statement, in exactly the form
+needed. By Proposition~\ref{prop:f1-dictionary}, a classical structure --- the copy operation any
+record requires --- is committed to a specific lift of its skeleton, and that commitment is absent
+from every classical record the structure induces: the copier is fibre-committed, the record is
+fibre-blind, and the fibre freedom is gauge for every observer. (The computation extends verbatim
+from one qubit to the full register, where Proposition~\ref{prop:trace-blind} makes it the ground
+of hypercharge's tracelessness --- one privacy, two duties.) Popper's obsolescence, made
+cancellation. It follows that anything recordable is invariant under the fibre --- observables and
+their statistics must be $U(1)$-invariant functions of the amplitude. The lowest-degree invariant
+of a complex amplitude is the quadratic $|\psi|^{2}$, and normalisation fixes the coefficient:
+probability is the minimal record-compatible function of the amplitude,
+\[
+p \;=\; |\psi|^{2},
+\]
+the Born rule as the cheapest invariant the fibre permits. The derivation is the framework's own;
+its premise --- that the fibre datum is structurally excluded from records --- is
+Proposition~\ref{prop:f1-dictionary}, and its geometric reading --- probability as base-point data
+under the Hopf projection --- is developed in \S\ref{sec:hopf-justification}.
+
+One standing objection to information-theoretic foundations is answered here, because this
+framework needs the answer. Brukner and Zeilinger argued that Shannon information is conceptually
+inadequate for quantum measurements: it is basis-dependent, and its operational meaning presupposes
+ignorance of a definite but unknown fact, which the quantum case does not supply
+\autocite{bruknerzeilinger2001shannon}. The framework's reply is structural, and it is a
+demarcation rather than a rebuttal. Shannon's precondition fails exactly where they say it fails
+--- in the pre-record regime, where there is no definite unknown to be ignorant of --- and there
+the operative measure is the quadratic invariant just derived. Shannon's axioms hold exactly where
+the precondition holds --- on records, after \textsc{fanout}, where outcomes are definite and
+ignorance is classical --- and there the uniqueness theorem forces $-\log p$
+\autocite{shannon1948mathematical}. The basis-dependence dissolves with the same stroke: a basis
+\emph{is} selected precisely at \textsc{fanout}, so the basis-dependent measure applies only where
+a basis exists. Shannon is not inadequate; Shannon is post-\textsc{fanout}. The framework thereby
+keeps both measures, each on its own side of the boundary, and uses the additivity of the
+post-record measure --- the very property the previous subsection used to pin the base field ---
+with a clear conscience.
+
+\subsection{Thomson's lamp, resolved}
+
+The section owes \S\ref{sec:continuity} a debt incurred there: the lamp's amplitude-side limit.
+Thomson's lamp --- toggled at times $1 - 2^{-n}$, its state at $t = 1$ demanded --- has no
+classical answer: the task description fixes every finite stage and thereby fixes no limit at all
+\autocite{Thomson_1954,benacerraf1962tasks}, which \S\ref{sec:continuity} read as the proof that
+the record algebra is not limit-closed. On the amplitude side the limit exists, and the calculus of
+this section computes it. The toggle exchanges the two amplitudes; the self-consistent state of the
+completed task is the fixed point of the exchange in the complex calculus, and solving it under the
+signed continuation gives
+\[
+P(\mathrm{on}) = \tfrac{1 + i}{2}, \qquad P(\mathrm{off}) = \tfrac{1 - i}{2},
+\]
+a superposed fixed point whose imaginary part carries the unrecordable datum --- the phase of the
+endless alternation, when the lamp \emph{would have} stopped. Two checks certify that the
+assignment is calculus rather than decoration. The pair is normalised,
+$P(\mathrm{on}) + P(\mathrm{off}) = 1$; and the Born rule of the previous subsection, applied to
+the fixed point, returns $|P(\mathrm{on})|^{2} = \tfrac{1}{2}$ --- exactly the symmetric classical
+ignorance that is the only sane record-level answer, recovered rather than imposed. The lamp,
+which entered the framework at its very beginning as the place where classical computation meets
+its boundary, thus exits it as a worked example: undetermined as a record, determinate as an
+amplitude, the two sides split precisely along \textsc{fanout} --- and the diagonal construction it
+physically instantiates \autocite{cantor1891diagonal,Turing_1937} is the same one that powers
+Proposition~\ref{prop:inside-outside}. The status flag is owed here as everywhere: the
+undetermination is theorem-level; the specific fixed-point value is the framework's complex
+calculus, structural, offered with its two consistency checks shown.
+
+\subsection{Local tomography, derived}
+
+The fourth instalment concerns composites, and it discharges two promises at once. The
+Inside/Outside Equivalence Principle --- now a theorem --- requires that an external observer's
+characterisation of a composite system be recoverable by the embedded participants, and the
+embedded participants have access only to local measurements and their correlations. Equivalence
+of the two perspectives therefore entails that the state of a composite is determined by the
+statistics of local measurements: \emph{local tomography}, obtained as a consequence rather than
+imposed as an axiom. This converts a postulate of the reconstruction programmes
+\autocite{Hardy2001a,muller_p_2011} into a theorem-shaped consequence of the one principle ---
+discharging the caveat recorded in \S\ref{sec:continuity} --- and it closes, from the framework's
+own resources, the escape route in the real-number debate noted above: the assumption the
+objection of \autocite{hoffreumonwoods2026real} contests is here not an assumption. The status is
+flagged plainly: the derivation is structural, one paragraph of perspective-accounting, and its
+formalisation within the categorical setting belongs to Open Problem~\ref{op:sigma-functor}.
+
+\subsection{Contrast: QBism, and the ledger}
+
+The nearest neighbour in spirit deserves a paragraph of honest contrast. QBism
+\autocite{fuchsschack2013qbism} holds, as this framework does, that quantum probabilities are an
+agent's --- that the theory is a calculus of expectation, not a catalogue of properties. What QBism
+does not say is why the agent's expectations must be complex-valued and quadratically squared; the
+Born rule enters as a normative addition to Bayesian coherence, and the complex amplitude as an
+unexplained representation. This section is, in effect, the missing why: the agent's ignorance is
+self-referential --- the agent is inside the description --- and self-referential ignorance is
+complex, with the quadratic rule as the cheapest record-compatible invariant of it. Where QBism
+stops at the agent, the framework derives the agent's calculus.
+
+The ledger, then. Delivered in this section: the reduction of two principles to one
+(Proposition~\ref{prop:inside-outside}); the pre-record regime with its anti-events, handed to
+\S\ref{sec:continuity} as the five-face regime whose continuity is priced there
+(Open Problem~\ref{op:limit-realisability}); the complex base, forced downward by experiment and
+upward by the additivity of information; the Born rule from fibre privacy; the lamp's fixed point;
+and local tomography. Owed, and stated where they are owed: the functorial rigour of the involution
+and the fixed-point classification (Open Problem~\ref{op:sigma-functor}); the two premises of
+continuity (Open Problem~\ref{op:limit-realisability}, in \S\ref{sec:continuity}); and the
+rung-by-rung compulsion of the algebra ladder, posed as Open
+Problem~\ref{op:ladder-compulsion} in \S\ref{sec:division-algebras}. The
+hand-on is the paper's spine: the $\mathbb{C}$ this section derives natively and the $\mathbb{C}$
+that \S\ref{sec:continuity} underwrites through Hardy's theorem are the same field, the floor of
+the ladder that \S\ref{sec:division-algebras} climbs and \S\ref{sec:hopf-justification}
+geometrises. One principle; everything else is theorem, derivation, or a debt with a stated
+invoice.
