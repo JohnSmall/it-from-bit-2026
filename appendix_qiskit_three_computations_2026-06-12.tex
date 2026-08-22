@@ -1,0 +1,334 @@
+% =====================================================================
+%  Appendix: Executable Computations (Qiskit)
+%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-12.
+%  Companion to \S sec:interactions ("What the circuits compute...").
+%
+%  \input fragment, plain \section --- wrap in the single appendices
+%  environment of the main document (see appendix_ghz_w_proofs header).
+%  REQUIRES \usepackage{listings} in the preamble.
+%
+%  VALIDATION STATUS: unlike the beta-decay appendix (illustrative), the
+%  three computations here were EXECUTED (Qiskit 2.4.1, statevector
+%  simulation, 2026-06-12) and the outputs quoted are the verified
+%  results; the analytic cross-checks in B agree to machine precision.
+%  What execution validates is the ENCODING of the framework's claims,
+%  not the claims themselves --- that is the paper's burden. Full
+%  scripts: qiskit_A_ckm_charged_current.py,
+%  qiskit_B_ghz_w_interference.py, qiskit_C_composition_laws.py,
+%  meson_exploration.py (delivered alongside; commit as regression
+%  tests). Companion notebooks notebook_A/B/C/D_*.ipynb plus
+%  notebook_E_beta_decay (for the entry-point appendix app:qiskit).
+%
+%  HARDWARE RECORD (2026-06-12, IBM Quantum, 156-qubit Heron-class
+%  processors; runs by JS, analysis in each subsection's closing
+%  paragraph):
+%    A: ibm_marrakesh, 14:15 UTC, 8192 shots (SamplerV2)
+%    B: ibm_fez,       13:10 UTC, EstimatorV2 resilience 0, 4096 shots
+%       ibm_marrakesh, 14:04 UTC, EstimatorV2 resilience 1 (defaults)
+%    C: ibm_marrakesh, 13:48 UTC, 8192 shots (SamplerV2, postselected)
+%  The companion Jupyter notebooks (notebook_A/B/C_*.ipynb) carry the
+%  USE_HARDWARE switch and the runtime budget notes (plan max execution
+%  time is QUANTUM time; Sampler with explicit shots has a deterministic
+%  footprint, Estimator defaults target a precision and spend more).
+%
+%  Labels: app:qiskit-handles (umbrella), app:qiskit-ckm,
+%  app:qiskit-interference, app:qiskit-composition, app:qiskit-meson.
+%  EDITED 2026-07-11 (second pass): app:qiskit-interference opening
+%  reframed after the class-discreteness retirement (2026-07-06,
+%  fourth_qubit doc, section 10): the alpha GHZ + beta W family is a
+%  PROBE PATH within the GHZ class (SLOCC classes are orbits, not
+%  superposing sectors); species never superpose; the surviving
+%  admixture carrier is the sedenion cross-algebra sector. The two
+%  verified findings (first-order response, phase rigidity) are
+%  unchanged, now stated as binding any effective admixture.
+%  EDITED 2026-07-11: closing sentence of app:qiskit-ckm now
+%  cross-references app:hw-ckm (the full-CKM execution on hardware and
+%  its angle-amplified small elements).
+%  ADDED 2026-06-12 (evening): fourth computation, the meson colour
+%  skeleton (two-edge closed loop -> exact Bell pair; W contrast ->
+%  tilted pair, fidelity 0.9), executed and verified.
+%  Cross-refs used: sec:interactions, sec:generations, sec:masses,
+%  sec:predictions, op:cabibbo, op:up-quark, op:vertex-factors,
+%  op:associator-geodesic, app:w-proof, app:setup.
+% =====================================================================
+
+\section{Executable Computations}
+\label{app:qiskit-handles}
+
+This appendix delivers, as runnable Qiskit circuits, the three computations that
+\S\ref{sec:interactions} stated as invitations, together with a fourth that arose from them: the
+meson's colour skeleton, the two-node companion of the baryon triangle. Each was executed on a statevector simulator and the
+outputs below are the verified results of those runs. All three were subsequently run on IBM Quantum
+hardware (156-qubit Heron-class processors, 12--13 June 2026, across four devices); each subsection
+closes with its hardware record, and the entry-point beta-decay circuit
+(Appendix~\ref{app:qiskit}) was validated and run alongside them. We are precise about epistemic status
+throughout: execution validates that the framework's structural claims have been \emph{faithfully
+encoded} and that the encoded structures behave as asserted; whether the structures are the right
+physics is the question the body of the paper argues. The hardware runs add one thing the simulator
+cannot: the encoded structures survive contact with a physical device, at fidelities limited by
+known, independently characterised noise channels --- and both canonical hadron skeletons, the
+baryon triangle and the meson loop, assembled themselves from closed colour wiring on physical
+processors. The fidelities track circuit depth as expected: the shallow beta-decay and CKM circuits
+return their quantities to a fraction of a percent, while the postselected multi-cap skeletons sit
+near a two-setting fidelity of $0.89$, the coherence witnesses softening with each additional
+contraction while postselection keeps the populations clean. All run in seconds on a laptop.
+
+\subsection{The CKM-extended charged current}
+\label{app:qiskit-ckm}
+
+The beta-decay circuit of \S\ref{sec:interactions} is extended with one generation qubit $g$
+($\lvert0\rangle$ = first generation, $\lvert1\rangle$ = second), and the $W^-$ emission is promoted
+to the full charged-current gate: the $T_3$ raise on $B_q$ tensored with the CKM rotation on $g$,
+taken to be $R_y(2\delta)$ with $\delta = 2/9$ --- the Koide phase, so that the suggestive
+identification of Open Problem~\ref{op:cabibbo} becomes an executable hypothesis.
+
+\begin{lstlisting}[language=Python,basicstyle=\small\ttfamily]
+DELTA = 2/9
+qc = QuantumCircuit(6)        # q0=B_nu q1=B_e q2=g q3=C_q q4=B_q q5=A_q
+qc.ry(2*DELTA, 2)             # CKM rotation on the generation register
+qc.x(4)                       # T3 raise: d -> up-type
+qc.h(1); qc.cx(1, 0)          # W- decays to the lepton Bell pair
+psi = Statevector(qc)
+\end{lstlisting}
+
+The executed output has amplitude support on exactly four basis states
+($\lvert q_5 q_4 q_3 q_2 q_1 q_0\rangle$, little-endian): $\lvert010000\rangle$ and
+$\lvert010011\rangle$ at $+0.689719$, and $\lvert010100\rangle$ and $\lvert010111\rangle$ at
+$+0.155845$. The structure is readable by eye: two generation branches, each spread over the two
+components of the lepton Bell pair. Multiplying back the $\sqrt2$ of the Bell spread, the circuit's
+amplitudes \emph{are} the CKM factors:
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+ & circuit & PDG & deviation \\
+\hline
+$\lvert V_{ud}\rvert = \cos(2/9)$ & $0.97541$ & $0.97435$ & $+0.11\%$ \\
+$\lvert V_{us}\rvert = \sin(2/9)$ & $0.22040$ & $0.22430$ & $-1.74\%$ \\
+\hline
+\end{tabular}
+\end{center}
+with the $2\times2$ block exactly unitary by construction. Two readings of the run. First, the
+$g = \lvert1\rangle$ branch --- the Cabibbo-suppressed transition into the second generation --- is
+present in the output with the correct relative amplitude even though real beta decay cannot reach
+charm: the circuit computes the internal-structure factor, and the kinematic exclusion belongs to
+the spacetime sector. The division of labour of \S\ref{sec:interactions} is thus visible in a single
+statevector. Second, the comparison row is the test the framework must pass or fail: a reader who
+believes the Cabibbo angle is not $2/9$ can replace one rotation angle and watch the first column
+move. Extending $g$ to the full three-dimensional generation space --- realised on a two-qubit tag
+pair rather than a qutrit, for reasons Appendix~\ref{app:hw-ckm} makes precise --- and $R_y$ to a
+$3\times3$ unitary built from the framework's phases is the full-CKM version of the same handle,
+built and run in Appendix~\ref{app:hw-ckm}, where the $\lambda^{2}$ and $\lambda^{3}$ elements,
+invisible to a single application at the device's error floor, are recovered by angle
+amplification to $6.2\%$ and $3.6\%$.
+
+\emph{Hardware record.} Run on \texttt{ibm\_marrakesh} (12 June 2026, 14:15 UTC, 8192 shots,
+SamplerV2), extracting the CKM factors from the generation-qubit marginal:
+$\lvert V_{ud}\rvert = 0.97534$ and $\lvert V_{us}\rvert = 0.22069$, each within a small fraction
+of one shot-noise standard deviation of the ideal encoding values ($0.97541$, $0.22040$); the
+Bell-pair witness $P(q_1{=}q_0) = 0.932$ and the appearance of $17$ outcome strings against the
+ideal four locate the device's noise floor. The reading requires care: the processor measures the
+\emph{circuit}, not the quark, so the per-mille agreement validates the extraction pipeline on
+physical hardware, while the physics comparison --- $\sin(2/9)$ against the measured
+$\lvert V_{us}\rvert = 0.22430$, low by $1.74\%$ --- is exactly as it stands in the table and is
+untouched by where the circuit runs.
+
+\subsection{The GHZ--W interference}
+\label{app:qiskit-interference}
+
+The candidate mechanism for the up-quark discrepancy (Open Problem~\ref{op:up-quark}) is
+interference between the tripartite (GHZ) and pairwise (W) \emph{contributions to the mass
+functional} at the first generation. One clarification carries this subsection's epistemic
+weight, because the framework assigns species by entanglement class and the classes are discrete:
+a quark is never a superposition of species. The probe family prepared below,
+$\lvert\psi\rangle = \alpha\lvert\mathrm{GHZ}\rangle + \beta e^{\mathrm{i}\varphi}\lvert\mathrm{W}\rangle$,
+is --- generically, up to isolated vanishing-tangle points --- a path \emph{within} the GHZ
+class, parametrised by proximity to the W boundary: the vector sum of class representatives is
+itself a GHZ-class state, since SLOCC classes are orbits, not sectors that superpose. The
+computation therefore measures how the mass-relevant invariant responds as a GHZ-class state
+approaches the W boundary; it never required, and the framework does not assert, a quark that is
+`partly lepton'. An earlier state-level superposition reading of the mechanism was considered and
+retired; the surviving carrier of the generation-one admixture is the sedenion cross-algebra
+sector (\S\ref{sec:sedenion-announcement}), as Open Problem~\ref{op:up-quark} now states, and
+the two findings below --- first-order response and phase rigidity --- bind \emph{any} such
+effective admixture, which is exactly why the computation outlives its first framing. With that
+placed: prepare the probe family, trace to one qubit, and read the Bloch radius $r$ of the cut
+--- the base coordinate from which the geodesic mass proxy is built (Appendix~\ref{app:setup}).
+
+\begin{lstlisting}[language=Python,basicstyle=\small\ttfamily]
+vec = a*GHZ + b*np.exp(1j*phi)*W
+qc = QuantumCircuit(3); qc.initialize(vec, [0, 1, 2])
+rho = partial_trace(Statevector(qc), [1, 2])     # keep the cut qubit
+# r from the Bloch components of rho
+\end{lstlisting}
+
+The executed run, cross-checked against the closed form
+$r^2 = \tfrac23\alpha^2\beta^2 + \beta^4/9$ to machine precision:
+\begin{center}
+\begin{tabular}{cccc}
+\hline
+$\beta^2$ & $r$ (circuit) & $r$ (incoherent) & enhancement \\
+\hline
+$0.02$ & $0.1145$ & $0.0067$ & $17.2\times$ \\
+$0.05$ & $0.1787$ & $0.0167$ & $10.7\times$ \\
+$0.10$ & $0.2472$ & $0.0333$ & $7.4\times$ \\
+$0.50$ & $0.4410$ & $0.1667$ & $2.6\times$ \\
+$1.00$ & $0.3333$ & $0.3333$ & $1.0\times$ \\
+\hline
+\end{tabular}
+\end{center}
+Two findings, both verified in the run. \emph{First-order response}: the cross term makes
+$r \approx \sqrt{2/3}\,\alpha\beta$ at small admixture --- linear in the admixture
+\emph{amplitude}, where incoherent mixing would be quadratic --- so a few-per-cent W component
+moves the mass-relevant invariant by an order of magnitude more than probability-weighting
+suggests. That is the right shape for a thirty-per-cent effect from a modest admixture, which is
+what the mechanism requires. \emph{Phase rigidity}: $r$ is independent of the relative phase
+$\varphi$ to $10^{-17}$ (the cross term has fixed modulus $\alpha\beta/\sqrt6$; $\varphi$ rotates
+its direction only), and identical across all three cuts by symmetry. The mechanism, if it is the
+right one, therefore lives in the admixture \emph{magnitude}, not its phase --- a sharp constraint
+on the formal treatment that Open Problem~\ref{op:up-quark} requests. What this computation does
+not supply is the map from $r$ to mass, which is precisely the associator--geodesic reconciliation
+of Open Problem~\ref{op:associator-geodesic}; the playground is built, the mechanism awaits its
+theorem.
+
+\emph{Hardware record.} Two runs on 12 June 2026, by single-qubit tomography of the cut
+($r$ from $\langle X\rangle, \langle Y\rangle, \langle Z\rangle$, EstimatorV2): unmitigated
+(resilience level $0$, $4096$ shots, \texttt{ibm\_fez}, 13:10 UTC) and with default readout
+mitigation (resilience level $1$, \texttt{ibm\_marrakesh}, 14:04 UTC). Note the two runs differ in
+both mitigation and device, so the comparison is indicative rather than controlled.
+\begin{center}
+\begin{tabular}{cccc}
+\hline
+$\beta^2$ & analytic & unmitigated & mitigated \\
+\hline
+$0.02$ & $0.1145$ & $0.1539$ & $0.1248$ \\
+$0.05$ & $0.1787$ & $0.2002$ & $0.1772$ \\
+$0.10$ & $0.2472$ & $0.2350$ & $0.2789$ \\
+$0.50$ & $0.4410$ & $0.4245$ & $0.4719$ \\
+$1.00$ & $0.3333$ & $0.3558$ & $0.3373$ \\
+\hline
+\end{tabular}
+\end{center}
+The discriminator point $\beta^2 = 0.02$ separates the coherent law ($r = 0.1145$) from incoherent
+mixing ($r = 0.0067$) by a factor of seventeen; the device returns $0.154$ and $0.125$ --- factors
+of $23$ and $19$ above the incoherent prediction --- so the first-order response is confirmed on
+hardware in both runs. The residuals behave as the error model predicts: $r$ is a quadrature sum
+of three noisy expectation values and hence positively biased where the true vector is short, and
+switching on readout mitigation roughly halved that floor (the $\beta^2 = 0.02$ excess falling
+from $+34\%$ to $+9\%$, and the pure-W point, whose transverse components vanish identically, from
+$+7\%$ to $+1.2\%$), at the few-per-cent cost of residual scatter mid-sweep, where the two runs
+straddle the analytic curve with opposite signs. The mean absolute residual of the mitigated run
+is about six per cent across the sweep, and neither run shows the $\beta^2$-linear shape that
+incoherent mixing would impose. The natural refinement is the self-calibrating point
+$\beta^2 = 0$, where $r = 0$ exactly and the measured value is the noise floor itself, to be
+removed in quadrature from the rest of the sweep.
+
+\subsection{Composition laws: fusion, anti-speciality, and the baryon}
+\label{app:qiskit-composition}
+
+The dictionary of \S\ref{sec:entanglement-classes} rests on the Coecke--Kissinger classification:
+GHZ is a special Frobenius structure (its nodes fuse under composition) and W is anti-special (they
+do not). Both laws, and the two composite objects the strong sector builds from them, are
+executable. Composition means joining two legs by the Bell cap
+$\langle\Phi^+\rvert = (\langle00\rvert + \langle11\rvert)/\sqrt2$, a postselected projection whose
+weight we report with each result. The executed results:
+
+\begin{lstlisting}[language=Python,basicstyle=\small\ttfamily]
+GHZ3 o GHZ3:  fidelity with GHZ4 = 1.000000   (weight 0.2500)
+W3   o W3  :  fidelity with W4   = 0.000000   (weight 0.2778)
+   W o W produces: |0000> + |0101> + |0110> + |1001> + |1010>
+GHZ triangle: fidelity with GHZ3 = 1.000000   (weight 0.0312)
+W triangle  : fidelity with W3   = 0.750000   (weight 0.0185)
+Closed loop scalar <GHZ3|triangle> = 1.000000
+\end{lstlisting}
+
+Read upward from the wiring. Two GHZ nodes sharing a leg fuse into one GHZ node, exactly --- the
+spider-fusion law, here as a fidelity of one. Two W nodes do not: the contraction has \emph{zero}
+overlap with $\mathrm{W}_4$, producing instead the vacuum-plus-double-excitation set printed above
+--- anti-speciality as an output state one can inspect. The triangle is the construction the paper
+has been pointing at since \S\ref{sec:charges}: three nodes pairwise joined by colour edges. For GHZ
+nodes the triangle's three free legs carry \emph{exactly} the state $\lvert\mathrm{GHZ}_3\rangle$,
+fidelity $1.000000$: the statement that a quark's $C$-qubit is GHZ-entangled with its partners in a
+hadron is not an assumption about baryons but an output of the composition law --- the baryon is
+the wiring. The W triangle does not close onto $\mathrm{W}_3$ (fidelity $0.75$), the executable
+face of the law that, in the dictionary, separates the binding sector from the non-binding one.
+Capping the baryon's free legs closes the loop entirely, and the resulting scalar --- the singlet
+weight of the closed colour cycle, the skeleton on which the glueball discussion of
+\S\ref{sec:predictions} is built --- is exactly $1$. Organising the spectrum of such closed loops
+is the ZX-calculus computation stated as the third invitation in \S\ref{sec:interactions}; the
+primitive moves it needs are the ones just executed.
+
+\emph{Hardware record.} Run on \texttt{ibm\_marrakesh} (12 June 2026, 13:48 UTC, 8192 shots,
+SamplerV2), with the Bell caps as postselected Bell-basis measurements; the heralding rates landed
+on their ideals ($0.259$ and $0.267$ against $\tfrac14$ for the GHZ fusion settings, $0.280$
+against $5/18$ for W, $0.033$ and $0.030$ against $1/32$ for the triangle). The fused GHZ$_4$
+showed population $P(0000)+P(1111) = 0.925$ and parity
+$\langle X^{\otimes4}\rangle = +0.837$, a two-setting fidelity estimate near $0.88$ --- for a
+state built not by direct preparation but by contracting two GHZ$_3$ blocks through a cap. The W
+contraction placed $91\%$ of its postselected weight on the predicted five-state set, each
+component within $0.02$ of its ideal $0.2$, and $7.6\%$ on $\mathrm{W}_4$'s single-excitation
+strings --- the level fully accounted for by the single bit-flip noise independently visible in
+the GHZ run, so the fusion hypothesis $\mathrm{W}\circ\mathrm{W} = \mathrm{W}_4$, which would put
+\emph{all} the weight there, is excluded by better than ten to one. The triangle's free legs
+returned $P(000)+P(111) = 0.970$ and $\langle X^{\otimes3}\rangle = +0.818$ on roughly $250$
+surviving events (statistical precision $\pm0.06$ on the parity), a two-setting fidelity estimate
+near $0.89$: the baryon assembled from the wiring on a physical processor. Two features of the
+error anatomy are worth recording. The dominant leakage in the fused GHZ$_4$ is the correlated
+pair $0011$/$1100$ at $4.5\%$ --- both halves internally intact but mutually anti-aligned, the
+signature of a flip on a cap qubit corrupting the herald rather than of damage to the GHZ blocks.
+And the triangle's population is \emph{cleaner} than the fusion's despite the deeper circuit,
+because postselection acts as partial error detection: shots corrupted on cap qubits are rejected
+rather than counted --- the cap discarding corrupted contractions is a pleasing physical echo of
+what the cap means in the calculus. The stated upgrade is the Pauli-frame correction: keeping all
+Bell outcomes per cap instead of postselecting on $00$ recovers a factor of $32$ in triangle
+statistics at no additional quantum time.
+
+\subsection{The meson skeleton}
+\label{app:qiskit-meson}
+
+The baryon was a closed triangle of colour edges; the meson is the two-node loop: a quark and an
+antiquark as GHZ nodes joined by \emph{two} Bell caps, one free leg each. (At skeleton level the
+antiquark's conjugation is trivial, the GHZ amplitudes being real; the charge and flavour structure
+of a physical meson lives on the $A$ and $B$ qubits, deliberately excluded here.) The executed
+contraction:
+
+\begin{lstlisting}[language=Python,basicstyle=\small\ttfamily]
+GHZ--GHZ two-edge loop: output on free legs = (|00> + |11>)/sqrt(2)
+   fidelity with Bell pair = 1.000000   (weight 0.1250)
+W--W   two-edge loop: output = (2|00> + |11>)/sqrt(5)
+   fidelity with Bell pair = 0.900000   (weight 0.1389)
+\end{lstlisting}
+
+The meson's wiring closes onto \emph{exactly} the Bell pair --- the minimal singlet, the canonical
+maximally entangled orbit of \S\ref{sec:canonical-orbits} --- just as the baryon's wiring closed
+onto $\mathrm{GHZ}_3$. The same double contraction on W nodes produces a tilted,
+non-maximally-entangled pair, off the canonical orbit: once again the binding sector composes onto
+canonical objects and the non-binding sector does not. What this computation is, and is not: it is
+the meson's \emph{internal-structure skeleton}, the network on which the framework's proposed
+composite-mass programme (the geodesic length of the closed network, with the glueball's
+$\mathrm{C}$-only loop as the simpler first target) would operate; it is not a meson mass, which is
+dominated by the colour-field dynamics of the deferred confinement sector and additionally awaits
+the invariant-to-mass map of Open Problem~\ref{op:associator-geodesic}. The skeleton being in hand
+means the network side of that future computation is already built.
+
+\emph{Hardware record.} Run on \texttt{ibm\_kingston} (13 June 2026, 06:08 UTC, 8192 shots,
+SamplerV2), with the two Bell caps as postselected Bell-basis measurements. The GHZ skeleton's free
+legs returned population $P(00)+P(11) = 0.949$ and parity $\langle XX\rangle = +0.835$, a
+two-setting fidelity estimate near $0.89$ with the Bell pair --- for a state built by contracting
+two GHZ$_3$ nodes through two caps in series. The W skeleton, on the same device, returned a
+diagonal population split of $0.80/0.20$ (renormalised onto the diagonal subspace), landing on the
+predicted tilt, against the GHZ skeleton's near-balanced split: the two node types produce visibly
+different free-leg populations in the direction the dictionary requires, the binding sector onto the
+canonical pair and the non-binding sector onto a tilted one. Two features of the error anatomy are
+diagnostic. The GHZ diagonal split was itself imbalanced ($0.546/0.403$ before renormalisation,
+where the ideal is symmetric) --- the signature of amplitude damping, $\lvert1\rangle$ relaxing
+toward $\lvert0\rangle$ during the circuit, which points the same way in both circuits and deepens
+the W tilt as expected. And, as in Appendix~\ref{app:qiskit-composition}, the populations are clean
+while the parities carry the loss, because postselection on the cap bits rejects shots corrupted on
+the cap qubits but not the slow relaxation on the surviving free legs.
+
+\emph{Hardware design.} Six qubits, two Bell-basis cap measurements (postselection weight $1/8$,
+roughly a thousand surviving events at $8192$ shots), and the standard pair of witnesses on the two
+free legs: the $Z$-distribution (ideal: $00$ and $11$ at $\tfrac12$ each for GHZ nodes; $0.8/0.2$
+for the W contrast, whose tilt is itself the observable) and the $\langle XX\rangle$ parity
+(ideal $+1$ for the Bell pair, $+0.8$ for the tilted pair). The companion notebook carries the
+hardware path.

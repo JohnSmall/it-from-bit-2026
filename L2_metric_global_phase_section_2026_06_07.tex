@@ -1,17 +1,50 @@
 % =====================================================================
-% Section: The L^2 metric on the state sphere and the global-phase fibre
-% Drop-in for Paper 1. Requires in the preamble:
-%   \usepackage{amsmath, amssymb, amsthm}
-%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
-%   \newtheorem{proposition}{Proposition}
-% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
-% British English throughout.
+%  SECTION: The Euclidean metric on the state sphere, and the global
+%  phase as self-referential ignorance
+%  Origin: drafted in an earlier conversation (2026-06-07), edited by
+%  JS; audited into the current architecture 2026-07-06.
+%
+%  PLACEMENT in main.tex (reordered chain, JS 2026-07-06): position 3 --
+%      \input{self_reference_section_2026-07-04}
+%      \input{continuity_section_2026-07-04}
+%      \input{L2_metric_global_phase_section_2026_06_07}   <-- here
+%      \input{wigners_friend_in_the_hopf_picture_2026-06-13}
+%  (WF backward-references sec:l2-metric-fibre: order-consistent.)
+%
+%  AUDITED 2026-07-06 (final pass): Lamperti/Banach classification,
+%  Hopf map components, submersion facts, Hardy K=N^r reading all
+%  verified; the recoverable-vs-gauge-private fibre distinction
+%  confirmed canonical and untouched; file pure ASCII. Fixes: opening
+%  rewritten (Popper C+/C/E forward-voiced to sec:wigners-friend;
+%  continuity claim made CONDITIONAL per JS -- "assuming those premises
+%  can be proved", op:limit-realisability cited); Aaronson paragraph
+%  de-duplicated against sec:continuity by stitch; sec:born-rule was
+%  dangling paper-wide -- label minted at its canonical home (the Born
+%  subsection of sec:self-reference) and the claim here recalibrated
+%  ("forced, not chosen" -> lowest-degree-invariant, geometric face);
+%  record-absence upgraded from interpretive to theorem via
+%  prop:f1-dictionary while the self-ignorance identification stays
+%  interpretive; grammar and dash punctuation repaired; field-not-fixed
+%  bound pointed at sec:self-reference.
+%
+%  CITATIONS: existing keys Hardy2001a, Aaronson2004h, mosseri2001hopf.
+%  NEW keys (RIS in L2_metric_refs_2026-07-06.ris): Banach1932,
+%  Lamperti1958, Hopf1931, Urbantke2003, GluckWarnerZiller1986,
+%  wooters_1981 (key spelling preserved as used; note the single-t).
+%  British English; \autocite; no bullets in prose.
 % =====================================================================
 
 \section{The Euclidean metric on the state sphere, and the global phase as
 self-referential ignorance}
 \label{sec:l2-metric-fibre}
-Let's return to Poppers $C+$, $C$ and $E$, or in modern terms, Wigner, his friend and a qubit $S$ to be measured. It's useful to analyse this in the framework of Hopf fibrations. But even to get to the Hopf fibration and Bloch sphere picture we have to justify using the $L^2$ metric. Here our previous derivation self-reference $\iff$ reversible continuity comes in handy. 
+Popper's systems $C^{+}$, $C$ and $E$ --- the predictor, its target and their shared environment,
+whose argument \S\ref{sec:wigners-friend} anchors and quotes --- are, in modern dress, Wigner, his
+friend and a qubit $S$ to be measured. The natural arena for analysing them is the Hopf fibration
+and the Bloch sphere; but even to draw the Bloch sphere one must first justify the $L^{2}$ metric,
+and this section earns that right. The principle doing the work is the reversible continuity of
+\S\ref{sec:continuity} --- derived there from self-reference conditionally, on the two premises
+priced as Open Problem~\ref{op:limit-realisability}. Assuming those premises can be proved,
+everything below inherits the derivation; we carry that status, and do not upgrade it.
 
 We have established that the amplitudes of a single qubit form a complex vector space $\mathbb{C}^{2}\cong\mathbb{R}^{4}$. We have not yet fixed which norm on this space singles out the physical state manifold. That choice is not free: the principle of \emph{reversible continuity} forces the Euclidean ($L^{2}$) norm, and hence the round three-sphere, before any appeal to the Born rule. The quadratic structure usually \emph{posited} as the Born rule is therefore already present in the metric, and the global phase emerges as a geometrically forced fibre rather than an added convention.
 
@@ -53,7 +86,8 @@ nontrivial continuous group of norm-preserving linear maps, every other $p$
 yielding only generalised permutations; and the alternative of keeping linearity
 and reversibility while \emph{dropping} norm preservation lands one in the full
 general linear group $\mathrm{GL}(n,\mathbb{C})$, which permits superluminal
-signalling and collapses the complexity class $\mathsf{PP}$ into polynomial time.
+signalling and collapses the complexity class $\mathsf{PP}$ into polynomial time ---
+the same fact \S\ref{sec:continuity} uses to price the classical--quantum cut.
 Bare reversibility on the amplitude space buys only $\mathrm{GL}(n,\mathbb{C})$;
 what carves the unitary group $U(n)$ out of it is preservation of the quadratic
 ($\ell^{2}$) form, and reversibility of the resulting maps is then a corollary
@@ -77,8 +111,9 @@ One bound deserves explicit statement, in the interest of claiming no more than
 is proved: reversible continuity fixes the \emph{metric} as $L^{2}$, but not the
 underlying field. Real and quaternionic quantum theory equally satisfy reversible
 continuity and equally carry Euclidean state-space metrics; the restriction to
-$\mathbb{C}$ is pinned elsewhere in the framework (the analytic continuation of
-the information measure and the additivity of phase information), not here.
+$\mathbb{C}$ is pinned elsewhere in the framework --- the analytic continuation of the
+information measure and the additivity of phase information, \S\ref{sec:self-reference} --- not
+here.
 
 \subsection{Hardy's independent route}
 \label{sec:hardy-route}
@@ -89,8 +124,8 @@ the counting relation $K=N^{r}$, where $N$ is the number of states
 distinguishable in a single measurement and $K$ the number of fiducial
 probabilities needed to specify a state. The continuity axiom excludes the
 classical case $r=1$: there the pure states are the $N$ vertices of a simplex and
-the reversible maps merely permute them which is a discrete group, therefore there is no continuous path
-between distinct pure states, which is the simplex face of the same $\ell^{1}$
+the reversible maps merely permute them --- a discrete group of motions --- so there is no
+continuous path between distinct pure states, which is the simplex face of the same $\ell^{1}$
 isometry fact. A simplicity assumption then selects $r=2$, yielding complex
 quantum theory with its quadratic norm and trace rule. The quadratic structure is
 not extracted from continuity as a separate step; it is built into Hardy's first
@@ -128,10 +163,10 @@ whose projection sends an amplitude to its Bloch vector,
                2\operatorname{Im}\bar z_{1}z_{2},\;
                \lvert z_{1}\rvert^{2}-\lvert z_{2}\rvert^{2}\bigr).
 \end{equation}
-The Hopf map is quadratic in the amplitudes, and this is precisely the Born rule:
-the third component is $p_{0}-p_{1}$ with $p_{k}=\lvert z_{k}\rvert^{2}$, and the
-squaring is forced, not chosen, because the lowest-degree $U(1)$-invariant on the
-fibre is quadratic (Section~\ref{sec:born-rule}). Because the metric is round, the
+The Hopf map is quadratic in the amplitudes, and this is the geometric face of the Born rule:
+the third component is $p_{0}-p_{1}$ with $p_{k}=\lvert z_{k}\rvert^{2}$, and the squaring is the
+lowest-degree $U(1)$-invariant available on the fibre --- the record-theoretic derivation of the
+same rule is \S\ref{sec:born-rule}'s. Because the metric is round, the
 projection is a Riemannian submersion with totally geodesic fibres of constant
 length \autocite{GluckWarnerZiller1986}: the same amount of phase is hidden at
 every point of the base, so the phase is hidden \emph{uniformly}, not in a
@@ -140,14 +175,16 @@ position-dependent way that the metric could partially betray.
 \subsection{The fibre as self-referential ignorance}
 \label{sec:fibre-self-ignorance}
 
-The interpretation the framework places on this geometry---and here we are
+The interpretation the framework places on this geometry --- and here we are
 reading physics into the mathematics, so the claim is interpretive rather than
-proved, is that the $S^{1}$ fibre is the observer's own un-narratable
+proved --- is that the $S^{1}$ fibre is the observer's own un-narratable
 self-ignorance. The global phase is the imaginary part of the complex information
 measure $S=-\ln\lvert p\rvert-\mathrm{i}\theta$: information the observer lacks
 about their own state. Lacking it, they cannot communicate it; there is no
-\textsc{fanout} of information one does not possess. Uncommunicable, it cannot
-enter any measurement record, so every observable is $U(1)$-invariant; and a
+\textsc{fanout} of information one does not possess. Uncommunicable, it cannot enter any
+measurement record --- and this last step is no longer interpretive: Proposition~\ref{prop:f1-dictionary}
+proves the global phase absent from every classical record a copying structure induces --- so every
+observable is $U(1)$-invariant; and a
 $U(1)$-invariant quantity is a function on the quotient. The physical state is
 therefore the orbit, not the representative point---the base $S^{2}$---and the
 $S^{1}$ fibre carries exactly the inaccessible self-referential phase. It is a

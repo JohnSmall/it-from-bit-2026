@@ -1,16 +1,48 @@
 % =====================================================================
-% Section: Wigner's friend in the Hopf picture (v2)
-% Supersedes wigners_friend_hopf_section_2026-06-07.tex.
-% Drop-in for Paper 1. Requires in the preamble:
-%   \usepackage{amsmath, amssymb}
-%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
-% Internal cross-references (\ref{...}) point to other sections of the paper;
-%   repoint the placeholder labels to your actual labels:
-%     sec:l2-metric-fibre   -- the L^2 / complex-Hopf section
-%     sec:fanout-boundary   -- the FANOUT-boundary section
-%     sec:monogamy          -- the Mosseri-Dandoloff / C^2+r^2=1 result
-% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
-% British English throughout.
+%  SECTION: Wigner's friend in the Hopf picture (v2; supersedes the
+%  2026-06-07 draft). AUDITED 2026-07-06 (final pass, fifth stop).
+%
+%  PLACEMENT (reordered chain, JS 2026-07-06): position 4 --
+%      \input{L2_metric_global_phase_section_2026_06_07}
+%      \input{wigners_friend_in_the_hopf_picture_2026-06-13}
+%      \input{derivation_of_the_quantum_postulates}
+%  sec:l2-metric-fibre is REAL (backward, order-consistent);
+%  sec:fanout-boundary DRAFTED 2026-07-06 (formerly the one undrafted section);
+%  the old sec:monogamy placeholder note was VOID -- no such \ref in
+%  the body -- and is removed. prop:f1-dictionary and
+%  sec:hopf-justification are FORWARD references (position 8): first
+%  F1 use now carries the deliberate-forward flag.
+%
+%  DEPENDENCY: \input{monogamy_aside_2026-06-07} -- received from JS
+%  and audited 2026-07-06; the \input sits inside
+%  sec:wf-reconciliation, immediately after op:tsirelson-geometry
+%  (relocated 2026-07-06 from end-of-file, where the aside's opening
+%  antecedent had been orphaned). A bare replace-all during the earlier
+%  patch briefly mangled this header block, leaving a live \input in
+%  it; repaired by index-splice, and the lesson recorded: anchors that
+%  also occur in comments must be uniqueness-asserted.
+%
+%  AUDIT RECORD: CHSH arithmetic (2sqrt(1+C^2), PR => r^2 = -2) and the
+%  C^2+r^2=1 chain verified; F1 wording canonical; the
+%  obsolescence-made-cancellation echo two-way with
+%  sec:self-reference; redundancy/Darwinism/DiBiagio-Rovelli/Brukner
+%  positioning sound; Landauer placed on amplification, correctly.
+%  Fixes: first-person voice removed; \textquote replaced with
+%  portable quotes; IOEP given its prop ref; stale Tsirelson
+%  mini-header (wrong key name Tsirelson1980) retired;
+%  op:tsirelson-geometry MINTED from the honesty paragraph's unpriced
+%  owed. Popper page-pin DISCHARGED 2026-07-07: the zip bundles carry
+%  OCR .txt sidecars (the earlier "no text layer" verdict was wrong --
+%  ZIP-of-JPEGs defeated the PDF tools, not the text); the quoted
+%  phrase sits at Part II, p. 187, now pinned in the cite. Bonus from
+%  the same dig: "C+" is Popper's own notation (Part II, scan pp.
+%  15-17), so the L2 opening's attribution stands as written; "E" not
+%  sighted in the sampled pages -- the inline gloss covers it either
+%  way. Keys unique to this file (presumed in the .bib,
+%  since the paper compiles): VerstraeteWolf2002,
+%  Cirelson1980QuantumInequality, PopescuRohrlich1994, Held2021,
+%  Brukner2021, zurek_2009, Landauer_1961, wigner_1961.
+%  British English; \autocite; no bullets in prose.
 % =====================================================================
 
 \section{Wigner's friend in the Hopf picture: one state, two charts, and the redundancy ladder}
@@ -65,9 +97,22 @@ $S$, which is a genuine observable. The global phase is never the thing copied:
 there is nothing observable there to duplicate, so the $S^{1}$ fibre of the
 complex Hopf fibration $S^{1}\to S^{3}\to S^{2}$ of
 Section~\ref{sec:l2-metric-fibre} remains $F$'s gauge-private self-ignorance,
-untouched. In Hopf terms the division is clean: the base $S^{2}$ is the clonable
-part (the outcome) and the $S^{1}$ fibre the non-clonable part, so $F$ copies a
-base-point, never a fibre-point. Conditioned on the outcome it reads, $S$ is for
+untouched. In Hopf terms the division is clean, but it lives at two levels, which
+Proposition~\ref{prop:f1-dictionary} (\S\ref{sec:hopf-justification} --- a deliberate forward
+reference) separates. The copy operation itself is fibre-committed:
+copying is faithful to phase, so what $F$'s \textsc{fanout} duplicates is a lift --- a chosen
+fibre-point over the outcome --- never a bare point of the base. Yet everything the operation can
+broadcast is base data alone: the record it induces is independent of the lift, so the $S^{1}$
+freedom, though pinned in the copier, is absent from every classical record it yields. $F$'s classical record is a
+base-point; the structure that produced it committed to a fibre-point; and the gap between the two
+is precisely the gauge character of the fibre. The observation has a fifty-year-old
+anchor: Popper argued that a predictor's inferior self-knowledge follows from the logical
+impossibility of a system's imparting information about itself without thereby rendering it out of
+date --- ``making this information obsolete'', in his words
+\autocites{Popper1950a}[Part~II, p.~187]{Popper1950b}. Proposition~\ref{prop:f1-dictionary}
+makes the impossibility structural rather than temporal, and localises it: the datum the copier
+cannot put into its own record is not its state wholesale but exactly its fibre commitment, which
+does not arrive stale --- it cancels. Conditioned on the outcome it reads, $S$ is for
 $F$ a definite point on the Bloch sphere,
 \begin{equation}
   \rho_{S}^{(F)}=\lvert 0\rangle\langle 0\rvert
@@ -131,22 +176,13 @@ $S^{7}$, bound by the Mosseri--Dandoloff constraint
 \end{equation}
 in which the discrepancy in Bloch radius is exactly the concurrence Wigner
 retains and the friend has resolved away. This is the Inside/Outside Equivalence
-Principle made concrete, the same law written by the embedded participant and by
+Principle (Proposition~\ref{prop:inside-outside}) made concrete, the same law written by the embedded participant and by
 the external observer, and the relativity of facts of relational quantum
 mechanics \autocite{Rovelli1996a} realised in geometry rather than asserted: the
 \textsc{fanout} boundary lies \emph{between} $F$ and $W$, so a fact exists
 relative to $F$ and not relative to $W$. Neither chart is privileged; one reads in
 the epistemological or the ontological chart as the question requires, and their
 mutual incompleteness is a theorem of the construction, not a defect of either.
-
-% =====================================================================
-% Aside: Tsirelson bound and the absence of PR boxes from the ball centre.
-% Slot into subsection \ref{sec:wf-reconciliation}, immediately after the
-% displayed equation C^2 + r^2 = 1.
-% New citation keys (see companion .bib): MosseriDandoloff2001 (already in your
-% bib), VerstraeteWolf2002, Tsirelson1980, PopescuRohrlich1994, Held2021.
-% British English.
-% =====================================================================
 
 \medskip
 \noindent\emph{Aside: the Tsirelson bound and the absence of PR boxes.}
@@ -181,6 +217,17 @@ closest cognate in the literature is Held's derivation of the same bound from th
 geometric algebra $G^{3}\cong\mathbb{H}$ \autocite{Held2021}, the same
 quaternionic structure in a different language.
 
+\begin{openproblem}[The Tsirelson bound as geometry]\label{op:tsirelson-geometry}
+Derive $2\sqrt{2}$ as a theorem of the round state geometry rather than reading it off the
+concurrence--CHSH relation, and lift the argument from the two-qubit pure case to the general
+Tsirelson bound --- so that the exclusion of super-quantum correlation becomes, like the exclusion
+exhibited above, a consequence of the $L^{2}$ ball's positivity (\S\ref{sec:l2-metric-fibre}) and
+of nothing else. Held's quaternionic derivation \autocite{Held2021} is the nearest cognate and the
+natural first tool.
+\end{openproblem}
+
+\input{monogamy_aside_2026-06-07}
+
 \subsection{The redundancy ladder: from relative fact to objective fact}
 \label{sec:wf-redundancy}
 
@@ -196,7 +243,7 @@ account of decoherence already \emph{is} this picture---many fragments each take
 their own copy of the clonable content, while their private phases, each
 fragment's own self-ignorance, fail to add coherently and wash out.
 
-This supplies the grading parameter that \textquote{graded \textsc{fanout}} had left
+This supplies the grading parameter that ``graded \textsc{fanout}'' had left
 unnamed. \textsc{fanout} is graded not because the operation is fuzzy but because
 redundancy $R$ runs continuously: $R=1$ is the single relational copy---the
 friend's relative fact, reversible by Wigner---and $R\gg 1$ is the objective
@@ -242,14 +289,13 @@ carpet: each observer sits atop a Hopf tower with a single gauge circle he can
 never see around, and a measurement relocates the next observer's blind circle
 into his own recoverable fibre without ever closing the regress.
 
-Two things I need to highlight here. First, the recoverability Wigner
+Two cautions close the section. First, the recoverability Wigner
 enjoys is the low-redundancy limit: for a macroscopic, high-$R$ friend the
 reversal is exponentially hard and the fact is objective for all practical
-purposes, so Wigner's \textquote{no record} is the $R\!\approx\!1$ idealisation of a
+purposes, so Wigner's ``no record'' is the $R\!\approx\!1$ idealisation of a
 graded boundary, not a free lunch. Second, naming redundancy as the grading
 parameter of \textsc{fanout}, and the phase-promotion reading itself, are
-syntheses of the framework's parts, each rests on established pieces (the
+syntheses of the framework's parts: each rests on established pieces (the
 clonability criterion, quantum Darwinism, the tensor-product promotion of phase)
 but is assembled here, and is offered as the cleanest statement of why the two
 observers never disagree about anything both can check.
-\input{monogamy_aside_2026-06-07}

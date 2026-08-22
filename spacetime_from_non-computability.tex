@@ -1,22 +1,55 @@
 % =====================================================================
-% Section: The space of computations -- spacetime from non-computability
-% Drop-in for Paper 1 (or Paper 2; this is the GR/spacetime arc). Requires:
-%   \usepackage{amsmath, amssymb}
-%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
-% Internal cross-references (\ref{...}) are placeholders; repoint to your labels:
-%     sec:complex-amplitudes -- self-reference -> negative probability ->
-%                               complex (imaginary) information
-%     sec:postulates         -- the quantum-postulate derivation
-%     sec:fanout-boundary    -- the FANOUT boundary
-%     sec:entanglement-classes       -- the division-algebra -> G_SM derivation
-% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
-% British English throughout.
+%  SECTION: Spacetime from non-computability (sec:space-of-computations).
+%  AUDITED 2026-07-06 (final pass, seventh stop).
+%
+%  PLACEMENT (reordered chain, JS 2026-07-06): position 7 --
+%      \input{division_algebras_section_2026-07-03}   <-- hands off here
+%      \input{spacetime_from_non-computability}
+%      \input{hopf_justification_section_2026-06-08}
+%  Division-algebras' closing now carries the S^7 hand-off sentence
+%  (written 2026-07-06 after this file was read).
+%
+%  INPUT DEPENDENCIES (both held in the audited outputs):
+%      entropic_gravity_family_paragraph_2026-07-03.tex  (sec:jacobson)
+%      gr_nonlocality_revision_2026-06-13.tex            (sec:gr-nonlocality)
+%  The 2026-07-04 additions (asymmetry paragraph; Penrose second route;
+%  acceleration/Unruh arc) are FULLY PASTED; the separately uploaded
+%  additions file is redundant and can be archived.
+%
+%  AUDIT RECORD: opener formalised (Russell typo; bare ref retargeted
+%  to the freshly minted sec:complex-amplitudes); the "rotations of
+%  S^7" wording made precise at BOTH occurrences (Moufang loop, not a
+%  group; SO(8) disclaimer added -- referee hazard removed); two \\
+%  paragraph-break bugs fixed; dark-matter paragraph retargeted to
+%  sec:generations and stitched to op:sterile-gravity (the zoo's
+%  demotion and this paragraph's priority condition are one question);
+%  CP paragraph stitched to the fourth-party reading of
+%  sec:interactions; stale mid-file mini-header retired
+%  (sec:k3-sterile placeholder dies with it); the section's narrated
+%  debts NUMBERED at last -- op:comp-metric and op:three-dimensions
+%  minted in the Open-problems subsection, cited from the in-text
+%  "named open problems" line and from the closing summary.
+%
+%  KEYS: adams1960hopf matches corpus. Unique to this section, presumed
+%  in the .bib since the paper compiles: Spence-Brown-1969 (suggest
+%  normalising the key spelling at leisure), VanRaamsdonk2010,
+%  MaldacenaSusskind2013, MuellerMasanes2013, MasanesMuellerEtAl2014,
+%  toffoli_2003, Chaitin1998, Penrose1996, HohnMueller2016,
+%  GarnerMuellerDahlsten2017, Jacobson1995, Bekenstein1973, tHooft1993,
+%  Susskind1995, spekkens2007toy, Andrianov2001, Sakharov1967,
+%  Planck2020, Riess1998. Shared keys verified: small_2006, Penrose1994,
+%  unruh1976notes (swap-flag stands), baez2002octonions, Wheeler1990,
+%  furey2018three, DiBiagioRovelli2021, Rovelli1996a, Spekkens toy.
+%  British English; \autocite; no bullets in prose.
 % =====================================================================
 
 \section{Spacetime from non-computability}
 \label{sec:space-of-computations}
 
-We'll now make a brief diversion to take up this idea that non-computable steps can be measured by imaginary information \ref{sec:measuring-non-computability}.  Since Spencer-Brown assures us that Bertrand Russell himself though well of the idea,\autocite{Spence-Brown-1969} it's not completely crazy.
+This section is a deliberate diversion: it takes the idea that non-computable steps are measured
+by imaginary information (\S\ref{sec:complex-amplitudes}) and asks what geometry it buys.
+Spencer-Brown records that Bertrand Russell thought well of the underlying move
+\autocite{Spence-Brown-1969}; the reader may judge whether the framework spends it responsibly.
 
 The programmes that derive spacetime from quantum mechanics---Van~Raamsdonk's
 \textquote{building spacetime with entanglement} \autocite{VanRaamsdonk2010}, the
@@ -61,7 +94,11 @@ by the imaginary part of the complex information measure
 $S=-\ln\lvert p\rvert-\mathrm{i}\theta$ derived in
 Section~\ref{sec:complex-amplitudes}: computable distance is counted in real
 units, non-computable distance in imaginary ones. The Minkowski signature, with
-spacelike intervals imaginary relative to timelike ones, is the immediate reading.
+spacelike intervals imaginary relative to timelike ones, is the immediate reading. The convention is not new to this paper: it was proposed in the author's CASYS paper two
+decades ago, where counting non-causal steps in imaginary numbers was introduced and its formal
+proof flagged, already then, as a key open problem \autocite{small_2006} ---
+Open Problem~\ref{op:comp-metric} is that flag's direct descendant, stated now with the machinery
+to be answerable.
 That the resulting structure is a genuine metric space, and that the signature
 follows rather than being fitted, are open problems---at present the
 identification is motivated by reproducing what nature does, not proved.
@@ -94,9 +131,11 @@ only parallelisable spheres are $S^{1}$, $S^{3}$ and $S^{7}$
 $\mathbb{O}$. Impose now the requirement that information arriving from outside
 the causal zone must appear to possess its own causal history---that is, to be the
 result of a sequence of information-preserving operations, hence a sequence of
-group operations. Rotations of $S^{1}$ and $S^{3}$ form the groups $U(1)$ and
-$SU(2)$ and preserve information; rotations of $S^{7}$ are non-associative and do
-not form a group, so $S^{7}$ cannot serve as a ruler. The same non-associativity
+group operations. The spheres $S^{1}$ and $S^{3}$ are groups under their own multiplication --- $U(1)$ and
+$SU(2)$ --- and their operations preserve information; $S^{7}$'s multiplication is non-associative,
+a Moufang loop rather than a group, so $S^{7}$ cannot serve as a ruler. (The rotation group
+$SO(8)$ of the seven-sphere is of course a group; what fails is the sphere's \emph{own}
+composition law, the one a ruler would use.) The same non-associativity
 forbids a metric outright: path composition $d(A,C)$ through $B$ depends on the
 bracketing, so the triangle inequality is not merely violated but ill-defined, and
 no geodesic structure exists. Since the abelian $S^{1}$ alone cannot carry
@@ -121,8 +160,8 @@ that entanglement exists only for a three-dimensional Bloch ball
 exist, Cayley--Dickson doubling from self-reference, while their work supplies
 the rigorous dimensional uniqueness. The status of the framework's own route is a
 structural result requiring formal proof: the one-bit-per-curve identification and
-the precise reduction of the $S^{7}$ filter to $SU(3)$ rather than its full
-automorphism group $G_{2}$ are named open problems.
+the precise reduction of the $S^{7}$ filter to $SU(3)$ rather than its full automorphism group
+$G_{2}$ are numbered below (Open Problems~\ref{op:comp-metric} and~\ref{op:three-dimensions}).
 
 A scoping remark, and then a second route to the same count. The computational model of spacetime
 proposed here has many detailed parallels with the real thing, but a parallel is not an identity,
@@ -138,8 +177,8 @@ entered from opposite ends. Now demand of general relativity only this: that obs
 with respect to one another, and with respect to unaccelerated observers, retain a consistent
 conception of the distance between them. Each observer's tipping traces a path on a sphere of
 directions, and mutual consistency requires the associated rotations to compose without regard to
-bracketing --- to form a group. Rotations of $S^{1}$ and $S^{3}$ do, forming $U(1)$ and $SU(2)$ as
-above; rotations of $S^{7}$ do not, being non-associative, so observers tipped across an
+bracketing --- to form a group. Compositions on $S^{1}$ and $S^{3}$ do, forming $U(1)$ and $SU(2)$ as above; compositions on
+$S^{7}$ do not, the multiplication being non-associative, so observers tipped across an
 $S^{7}$-worth of directions could not agree on distance even pairwise: the same failure that forbade
 $S^{7}$ a metric above forbids it here a shared ruler. The largest sphere admitting a consistent
 conception of distance under mutual acceleration is therefore $S^{3}$, and space has at most three
@@ -173,7 +212,7 @@ develops operationally, recovering Lorentz transformations from quantum
 communication \autocite{HohnMueller2016} and the complex and quaternionic qubit
 from the relativity of simultaneity \autocite{GarnerMuellerDahlsten2017}. The
 $SL(2,\mathbb{A})$ correspondence is rigorous; its identification with
-measurement-as-tipping is the framework's structural reading.\\
+measurement-as-tipping is the framework's structural reading.
 
 One consequence of the identification has been implied throughout this section and deserves its own
 paragraph, because the next paragraph turns on it. If measurement creates a relation between
@@ -187,7 +226,7 @@ should be: the principle makes acceleration and gravitation locally indistinguis
 association --- run in this section's direction, reduction driving the tipping --- makes state
 reduction and cone-tipping one operation, and the framework's identification closes the triangle,
 measurement and acceleration meeting where the principle says they must. The claim is structural:
-the framework's reading of the cone-tipping established above, not an independent derivation.\\
+the framework's reading of the cone-tipping established above, not an independent derivation.
 
 Taken literally, the identification has a measurable face, and it is a familiar one: the Unruh
 effect, read in this section's own ledger. Recall the definitions of \S\ref{sec:comp-distance}:
@@ -262,6 +301,27 @@ signature is the same $\mathrm{i}$ as the $\mathrm{i}$ of the quantum amplitude.
 This identification is the most speculative step in the section: it is
 structurally suggestive and it makes the holographic form unsurprising, but it is
 a conjectural reading rather than a derivation, and is offered as such.
+
+The conjecture has a two-way motivation that this paper's record should carry, because each
+direction was on the table before the other was noticed. Forward: if spacelike distance is counted
+in imaginary units of non-computable information, then any spacelike area is the product of two
+imaginary lengths and is therefore \emph{negative} information --- which is to say entropy, by
+Brillouin's identification \autocite{brillouin1956science} --- and a holographic principle arrives
+automatically, the sign supplied by $i^{2}$ rather than by interpretation. Converse, and more
+striking: in the holographic principle as ordinary physics already states it, surface area is
+proportional to entropy, and entropy is negative information; so by implication ordinary physics
+has been measuring spacelike separation in imaginary units of information all along, and the
+convention of \S\ref{sec:comp-distance} is read off from established results rather than
+invented. The same imaginary unit is already employed once in this section --- it is what makes
+the signature of the interval Minkowski --- so the sign of the area law is its second job, not a
+second assumption. What the two-way motivates it does not prove: the formal statement is exactly
+the metric-and-signature half of Open Problem~\ref{op:comp-metric}, together with the
+one-bit-per-bit-pair coefficient owed to the second paper. The stakes of the conjecture have
+recently risen: Dorau and Much prove, with modular-theoretic rigour, that the semiclassical
+Einstein equations follow from quantum relative entropy on a local horizon \emph{once the
+entropy--area proportionality is assumed} \autocite{doraumuch2026relative} --- so what this
+framework proposes to derive is precisely the remaining input of a derivation already carried
+through at that standard.
 \input{entropic_gravity_family_paragraph_2026-07-03}
 
 \subsection{Non-locality already present in general relativity}
@@ -275,24 +335,46 @@ holographic principle, the presence of non-locality within general
 relativity, the identification of relation-creation with acceleration
 and of the Unruh effect with Wigner's friend, and the space--time
 mobility asymmetry as the \textsc{fanout} asymmetry read as geometry. Of these,
-the $(3+1)$ count and the Lorentz recovery are structural results that converge
-with independent rigorous work and await their own formal proof; the metric-space
-status, the signature, the one-bit-per-curve measure, the imaginary-information
+the $(3+1)$ count and the Lorentz recovery are structural results that converge with independent
+rigorous work and await their formal proof --- the count now numbered as
+Open Problem~\ref{op:three-dimensions}; the metric-space status, the signature and the
+one-bit-per-curve measure (together Open Problem~\ref{op:comp-metric}), the imaginary-information
 reading of holography, and the general-relativistic non-locality, the acceleration and
 Unruh readings, and the mobility asymmetry are conjectural, and are named here precisely so that the boundary between what is shown and what
 is proposed is visible.
 
-% =====================================================================
-% Subsection: Open problems and prospects (closes the spacetime section)
-% Append at the end of space_of_computations_2026-06-07.tex, inside
-% \section{The space of computations...} (sec:space-of-computations).
-% Requires the same preamble. New citation keys are in the updated
-% space_of_computations_refs .bib. Internal \ref placeholders:
-%     sec:gr-nonlocality  -- the GR non-locality subsection
-%     sec:three-dimensions, sec:jacobson  -- as labelled in the main section
-%     sec:entanglement-classes, sec:k3-sterile  -- the SM gauge-group / K3 sections
-% British English throughout.
-% =====================================================================
+\subsection{Why the metric is not to be quantised}\label{sec:no-quantised-gravity}
+
+A consequence has been implicit in everything above and deserves its plain statement. Causal
+structure, on this framework's reading, is the bookkeeping of locked relations --- post-\textsc{fanout}
+by construction --- while superposition is the signature of the pre-\textsc{fanout} regime. A
+``superposition of causal structures'' is therefore not a difficult state but a category error: it
+applies the pre-record operation to a record-side object, exactly as ``a superposition of
+measurement outcomes'' does. Gravity lives in the post-\textsc{fanout} regime. The quantum layer
+beneath it exists and is not in dispute; but it is \emph{pre-geometric} --- it carries amplitudes
+over the formation of relations, not amplitudes over formed geometries --- so there is no
+fundamental metric to quantise, and the standard programme of superposing spacetimes pursues an
+object the ontology does not contain. One guard rail keeps the claim honest: collective
+excitations of the locking pattern may perfectly well exist as effective quanta --- gravitons as
+the phonons of the relational network --- and the thesis forbids fundamental metric superposition,
+not effective field theory; this is Jacobson's equation-of-state moral \autocite{Jacobson1995},
+made structural. The relation to gravitational-collapse programmes is an inversion: where
+superposed geometries are there read as unstable \autocite{Penrose1996}, here they are read as
+unformed --- what decays in those models is what locks in this one.
+
+Three experimental postures follow, each at the status the reading carries. Laboratory
+demonstrations of indefinite causal order \autocite{procopio2015experimental} are, on this
+account, demonstrations of the nascent layer: the indefiniteness lives below the locking threshold
+and definitises at it, so the framework adopts the programme and adds a boundary --- indefinite
+causal order can never be amplified into records while remaining indefinite. Gravitationally
+induced entanglement of the kind the Bose--Marletto--Vedral proposals seek
+\autocite{bose2017spin, marlettovedral2017gravitationally} is \emph{predicted}, because the
+pre-geometric layer is quantum --- while witnessing that layer, not a superposed metric: the
+framework splits the experiment's usual dichotomy. And gravitationally driven anomalous collapse
+is denied: locking is redundancy and thermodynamics, so decoherence experiments should find
+standard rates and nothing gravity-specific. That no consistent quantisation of gravity exists was
+the conclusion of the author's CASYS paper by a different route \autocite{small_2006}; the present
+framework supplies the mechanism the conclusion then lacked.
 
 \subsection{Open problems and prospects}
 \label{sec:spacetime-open-problems}
@@ -300,7 +382,26 @@ is proposed is visible.
 The spacetime arc is the framework's frontier, and honesty about its edges
 matters more here than anywhere else in the paper. We set out the genuine
 problems and the prospects together, deferring the deepest to a second paper
-rather than papering over them.
+rather than papering over them. Two of the arc's debts are well-posed now, and we number them.
+
+\begin{openproblem}[The computational metric]\label{op:comp-metric}
+Prove that the paired distance of \S\ref{sec:comp-distance} --- computable steps counted real,
+non-computable bits counted imaginary, one bit per closed curve --- defines a genuine
+pseudo-metric on the space of computations, with the Minkowski signature derived rather than read
+off; equivalently, establish the one-bit-per-curve measure as a measure, and the signature as its
+theorem. Until then the identification stands as motivated by reproducing what nature does, which
+is the status flagged at its introduction.
+\end{openproblem}
+
+\begin{openproblem}[Dimension three as a theorem]\label{op:three-dimensions}
+Turn the two convergent routes of \S\ref{sec:three-dimensions} into a proof: formalise the
+parallelisability-plus-associativity filter (the computational route) and the mutual-acceleration
+consistency demand (the general-relativistic route) so that $d = 3$ follows as a theorem, and
+include the reduction clause --- that the $S^{7}$ filter acts through $SU(3)$, the stabiliser of
+the selected complex direction, rather than through its full automorphism group $G_{2}$. The
+M\"uller--Masanes uniqueness results \autocite{MuellerMasanes2013, MasanesMuellerEtAl2014} are
+the rigorous convergents any proof must meet.
+\end{openproblem}
 
 \paragraph{The substrate and the generation of events (deferred).}
 A computation runs on something; a network of events presupposes that events
@@ -339,10 +440,13 @@ worldline and a tick-rate, whereas participation in the gauge filters, the
 $S^{3}$ of the weak interaction and the $S^{7}$ of colour, is selective, engaged
 only by charged matter. A node that counts loops but engages no filter
 \emph{is} matter that gravitates without otherwise interacting, and the
-framework's Class-4 a-chiral sterile neutrino (Section~\ref{sec:entanglement-classes}) is
-the candidate that realises it. The condition for this to be coherent rather than
-circular is that metric participation be established as prior to, and independent
-of, gauge participation; making that priority precise is the work deferred.
+framework's Class-4 a-chiral sterile neutrino (\S\ref{sec:generations}) is the candidate that
+realises it --- recorded in the particle sections as Open Problem~\ref{op:sterile-gravity}, whose
+tension (a gauge-sterile channel gravitating, when gravity is measurement bookkeeping) is exactly
+the question named here. The condition for the candidacy to be coherent rather than circular is
+that metric participation be established as prior to, and independent of, gauge participation;
+making that priority precise is the work deferred, and it is the same work the open problem
+requests.
 
 \paragraph{CP violation, the arrow of time, and baryogenesis.}
 CP violation appears to demand a time asymmetry owing nothing to the entropic
@@ -351,8 +455,9 @@ itself. The framework dissolves the appearance rather than accommodating it. CP
 violation needs an irreducible complex phase, the CKM phase $\delta$; by Spekkens'
 result that negativity and contextuality are the same notion of nonclassicality
 \autocite{spekkens2007toy}, a complex phase is a signature of contextuality; so CP
-violation should be contextual, sensitive to the near environment of the decaying
-system---which is exactly what Andrianov, Taron and Tarrach established for
+violation should be contextual, sensitive to the near environment of the decaying system --- the
+same phase the interaction sections read as anchored by a fourth party
+(\S\ref{sec:interactions}) --- which is exactly what Andrianov, Taron and Tarrach established for
 neutral kaons in matter, where the environment breaks C, irreversibility breaks
 T, and the effective parameters follow a Lindblad equation
 \autocite{Andrianov2001}. The framework's reading is that the resulting

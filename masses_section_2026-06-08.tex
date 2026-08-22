@@ -1,6 +1,36 @@
+%  EDITED 2026-07-12 (second pass): op:up-quark records the N -> R -> S
+%  outcome -- refutation (annihilation lemma), core-coherence
+%  obstruction (-3 universal), composite closure (-2 by which-path
+%  recording, FANOUT), assumption ledger, and the two-item residue
+%  (recording-from-FANOUT; the selection/comparability condition).
+%  Classification per JS: exact algebra, circuit faces demonstrations.
+%  EDITED 2026-07-12: op:up-quark brought current with the sedenion
+%  results -- digit fix (+28.7% measured / +28.6% exact 9/7), notebook
+%  M's route-closure recorded (bare geometry contains no 2/9; bare
+%  cross-algebra vertex maximal; the dressing carries the entire
+%  suppression), and the dressed-operator programme's pre-registered
+%  first hypothesis stated (-2 x 1/9 = -delta_0, priced at the
+%  hardware-measured leptonic ninth). Candidate status unchanged.
+%  EDITED 2026-07-11: class-discreteness clarification installed after
+%  the 2026-07-06 retirement of state-level GHZ/W superposition
+%  (fourth_qubit doc, section 10) -- the mechanism paragraph, the
+%  verified-properties paragraph (probe-family clause), and
+%  op:up-quark's first clause now state explicitly that the quark
+%  state remains GHZ-class and species do not superpose; the effective
+%  admixture's carrier is the sedenion cross-algebra sector, as the op
+%  already stated. Numbers unchanged.
+%  RE-AUDITED 2026-07-06 (final pass, fourteenth stop, light leg):
+%  the "previous section enumerated the spectrum" adjacency broke
+%  under the reorder (confinement intervenes between the zoo and
+%  here) -- retargeted to sec:generations; photon-masslessness passage
+%  gains the sec:mass-gap two-way ("no debt-free direction anywhere,
+%  hence a gap"); associator-higgs stitch grep EMPTY here = acquittal,
+%  those seams live in interactions and boson-masses; cabibbo/sedenion
+%  forward sentence confirmed present; header umlaut normalised, pure
+%  ASCII. The deep audit otherwise stands.
 % =====================================================================
 %  Section: Masses   (Plan Stages 5-7)
-%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Paper 1, "It from Bit via G\"odel". Drafted 2026-06-08.
 %  Follows \S sec:generations; precedes the boson-mass / electroweak section.
 %
 %  \input fragment. biblatex/\autocite, amsthm `proposition'.
@@ -25,10 +55,28 @@
 %    op:colour-correction   -- derive |Q|^{3/2} law + phase-dilution rule;
 %                              reconcile Casimir-vs-fitted Georgi-Jarlskog;
 %    op:up-quark            -- the +29% discrepancy (candidate mechanism:
-%                              generation-1 GHZ/W interference);
+%                              generation-1 GHZ/W interference; enabling
+%                              properties -- first-order response, phase
+%                              rigidity -- verified by executed quantum
+%                              computation, simulator + IBM hardware,
+%                              app:qiskit-interference; r->mass map and
+%                              admixture derivation still owed);
 %    op:sector-scales       -- reduce the three sector scales to one;
-%    op:cabibbo             -- mass phase = Cabibbo angle.
+%    op:cabibbo             -- mass phase = Cabibbo angle (two-generation
+%                              form executable, passes at per-cent level:
+%                              V_ud +0.11%, V_us -1.74%, simulator + IBM
+%                              hardware, app:qiskit-ckm; derivation and
+%                              full 3x3 CKM with CP phase still owed).
 %
+%  ADDED 2026-07-06: op:cabibbo gains a forward sentence naming the
+%  sedenion/fourth-qubit route (development deferred; see the
+%  interactions section's provenance paragraph and the session doc
+%  fourth_qubit_ckm_pmns_2026-07-06.md).
+%  AUDITED 2026-07-04 (joint with boson section): every claimed number
+%  re-verified to the digit (script masses_boson_verification_2026-07-04.py,
+%  repo scripts/); op:associator-geodesic widened to all mass per the
+%  confinement unification and given its first derived constraint
+%  (presentation-invariance, prop:energy-locus). No errors found.
 %  REVISED 2026-06-11 after review and full numerical re-verification:
 %  lepton table corrected to source values (e -0.01%, mu -0.01%; drafted
 %  +0.2%/-0.03% were stale); PHASE-DILUTION RULE delta_sector = (2/9)/n
@@ -54,7 +102,8 @@
 \section{Masses}
 \label{sec:masses}
 
-The previous section enumerated the spectrum and asserted, qualitatively, that mass grows with the
+\S\ref{sec:generations} enumerated the spectrum and asserted, qualitatively, that mass grows with
+the
 algebraic depth of the frustrated qubit. This section makes that quantitative. It begins by saying
 what mass \emph{is} in this framework --- the promised definition of the ``debt'' whose absence made
 the photon massless in \S\ref{sec:charges} --- and then computes two spectra: the charged leptons,
@@ -75,7 +124,9 @@ which is generically non-zero. The framework identifies \emph{mass with this ass
 information cost of specifying a bracketing that the algebra itself leaves ambiguous. Dimensionally
 the associator carries an inverse length in natural units, as a mass must. A channel that carries no
 associator-debt is massless --- this is exactly the ``debt-free'' direction of \S\ref{sec:charges},
-and it is why the photon, the one electroweak direction with vanishing debt, has no mass.
+and it is why the photon, the one electroweak direction with vanishing debt, has no mass. (The
+colour sector's contrasting claim --- no debt-free direction anywhere, hence a gap --- is drawn at
+\S\ref{sec:mass-gap}.)
 
 It is important to be exact about what the associator does and does not fix. Computed on the basis
 units, the associator has a uniform magnitude across all bracketings that are not forced to vanish;
@@ -93,7 +144,11 @@ quantities, are a computational proxy.
 \begin{openproblem}[Associator-debt and the geodesic proxy]\label{op:associator-geodesic}
 Show that the geodesic-length proxy used in the operational mass calculations computes the same
 quantity as the associator-debt that defines mass, closing the gap between definition and
-computation.
+computation. The reconciliation must hold for the whole mass sector: the fermion spectra of this
+section and, by the unification of \S\ref{sec:confinement}, the glueball and binding networks as
+well. And one constraint on any solution is already a theorem: on closed networks the map must be
+presentation-invariant, attaching to the network as such and to no particular cut
+(Proposition~\ref{prop:energy-locus}).
 \end{openproblem}
 
 Second, the dimensional-parameter count. Structurally the framework requires exactly one free
@@ -225,14 +280,82 @@ extracted from lattice QCD with chiral perturbation theory, and determinations r
 $1.9$--$2.5$~MeV, at the top of which range the discrepancy shrinks to about twelve per cent. And a
 candidate mechanism is identified: at the first generation, and only there, the tripartite (GHZ) and
 pairwise (W) contributions to the mass are of comparable size, and their interference shortens the
-effective path --- consistent with the up quark also being the one fermion whose
-$T_3 = +\tfrac12$ member is \emph{lighter} than its doublet partner, the competition between the
-amplitude effect (larger $\alpha$ for up-type) and the dilution effect (smaller $\delta$) tipping
-the other way at the lightest generation.
+effective path. The clause that keeps this consistent with the framework's species assignment: the
+quark state remains GHZ-class throughout --- the pairwise structure is forced \emph{within} that
+class by the Cayley--Dickson nesting $\mathbb{C} \subset \mathbb{H} \subset \mathbb{O}$, and
+the interference is between contributions to the mass functional, never a superposition of
+species, which are class-discrete. The mechanism is consistent with the up quark also being the
+one fermion whose $T_3 = +\tfrac12$ member is \emph{lighter} than its doublet partner, the
+competition between the amplitude effect (larger $\alpha$ for up-type) and the dilution effect
+(smaller $\delta$) tipping the other way at the lightest generation.
+
+The candidate mechanism's enabling properties have since been verified by an executed quantum
+computation (Appendix~\ref{app:qiskit-interference}) on a one-parameter probe family that
+traverses the GHZ class toward the W boundary --- the class-discreteness clarification is stated
+there --- run on a statevector simulator and subsequently on IBM Quantum hardware. Three facts are established. The interference exists in
+exactly the invariant the geodesic construction is built from: the Bloch radius of the cut responds
+to a GHZ--W admixture. The response is \emph{first order} in the admixture amplitude --- a
+two-per-cent W component moves the invariant seventeen times more than incoherent mixing would ---
+so a modest admixture is large enough to produce an effect of the required size. And the response
+is rigid in the relative phase, so the mechanism, if it is the right one, must live in the
+admixture magnitude. What the computation does not yet supply is the map from the invariant to the
+mass --- the reconciliation of Open Problem~\ref{op:associator-geodesic} --- nor the
+framework-derived admixture for the first generation, nor, therefore, the sign and size of the
+resulting shift, which must come out as a reduction of the predicted value by some twenty per
+cent. The hypothesis is thus verified as viable and sharply constrained, not as confirmed; the
+distinction is exactly the one this paper's conventions exist to keep. The required reduction has
+since acquired a candidate identity: it is $\delta_0 = \tfrac29$ itself ---
+$m_u = (1 - \tfrac29) \times 2.78 = 2.162$~MeV against the observed $2.16$ --- the Koide angle in
+its fourth role, linear in the interference parameter exactly as the verified first-order response
+requires. The identity was found by a disclosed candidate scan and is recorded, not derived; the
+experimental band on $m_u$ is far wider than the central-value agreement suggests, and the
+open problem below states what deriving it would take.
 
 \begin{openproblem}[The up quark]\label{op:up-quark}
-Give the generation-one GHZ--W interference mechanism a formal treatment and determine whether it
-accounts for the $+29\%$ up-quark discrepancy, or find what does.
+Give the generation-one interference mechanism a formal treatment: derive the effective
+admixture magnitude from the framework (the quark state remaining GHZ-class throughout; species
+do not superpose), supply the map from the cut's Bloch radius to the mass
+(Open Problem~\ref{op:associator-geodesic}), and determine whether the resulting shift accounts,
+in sign and size, for the up-quark discrepancy ($2.78/2.16 = +28.7\%$ as measured; exactly
+$\tfrac{9}{7} - 1 = +28.6\%$ if the candidate identity below holds) --- or find what does. The mechanism's
+enabling properties, the first-order response and the phase rigidity verified in
+Appendix~\ref{app:qiskit-interference}, are constraints any formal treatment must respect. The
+problem now has a sharp form: a recorded candidate takes the admixture magnitude to be the Koide
+angle itself, $m_u = (1 - \delta_0) \times$ the formula value, landing on the observed mass at
+central-value precision with no new constant --- derive why the generation-one leakage angle
+equals $\delta_0$, with the sedenion cross-algebra sector (\S\ref{sec:sedenion-announcement})
+the candidate home of the computation, or refute the identity. The bare geometry has since been
+scanned and does not supply the angle: an eighteen-comparison inventory of the sedenion triple's
+structural angles contains no occurrence of $\tfrac29$, and the bare cross-algebra vertex mixes
+\emph{maximally} --- so the identity, if it holds, is a property of the \emph{dressed} leakage
+operator, and the suppression from maximal to $\delta_0$ is the object the derivation must
+produce, not a constant it may look up. The programme's pre-registered first hypothesis, its pass
+criteria fixed before any computation: the first-order dressed shift is
+$-2 \times \tfrac19 = -\delta_0$ --- two elementary cross-algebra moves, each priced at the
+leptonic ninth of Appendix~\ref{app:hw-ninth} --- the two-ninths identity arriving at the mass
+spectrum.
+% CUTOVER: add \ref{app:nb-M} for the eighteen-comparison scan when the notebook record is input.
+The programme has since run, in three registered stages. The first family --- the dressing as
+the raw composition-failure operator --- was refuted by a two-line lemma: the defect operator
+annihilates the very generation line whose failure it encodes. The second established the
+core-coherence obstruction: every zero-divisor excursion decomposes half into the shared
+quaternionic core and half into a single third-sector unit, the core halves add coherently, the
+coefficient is $-3$ for every diagonal coupling, and the required $-2$ is unreachable on the
+algebra alone. The third closed the pricing on the register--algebra composite: each excursion
+carries its generation tag, the which-path record decoheres the core coherence ---
+\textsc{fanout} doing its defining job --- and the coefficient is exactly $-2$, so
+$\delta m / m = -2 \times \tfrac19 = -\delta_0$ with the assumption ledger reduced to named
+items: channel count two (derived, the Klein grading); the $S_3$ twist (derived); the price
+(the measured ninth); excursions register-recorded (the composite's defining property). Two
+derivation targets remain and are this problem's residue: derive the recording clause from the
+\textsc{fanout} boundary rather than assume it; and derive the \emph{selection} --- the
+dressed shift is generation-universal and the induced mixing vanishes identically (an exact
+cancellation arranged by the twist), so the identity's visibility at the first generation alone
+is carried by the comparability condition above, now cleanly separated from the pricing. The
+computations behind these statements are exact sedenion linear algebra, reproducible without
+quantum software; their circuit faces are demonstrations, of which the which-path pair --- the
+obstruction's $3$ against the record's $2$ --- is the one a physical device adds meaning to.
+% CUTOVER: add \ref{app:nb-N}, \ref{app:nb-R}, \ref{app:nb-S} when the notebook record is input.
 \end{openproblem}
 
 There is a further structural thread that we flag rather than resolve. The quark--lepton mass
@@ -257,12 +380,23 @@ mismatch is the Cabibbo--Kobayashi--Maskawa matrix. The framework ties the rotat
 octonionic geometry that fixes the masses: the lepton Koide phase $\delta = 2/9$ radians is about
 $12.7^\circ$, strikingly close to the Cabibbo angle, which suggests that one geometry sets both the
 mass hierarchy and the generation mixing. We mark that identification as suggestive rather than
-derived.
+derived --- but it is no longer merely an observation about two numbers. The identification has
+been made executable (Appendix~\ref{app:qiskit-ckm}): a charged-current circuit whose $W$ gate
+carries the rotation $R_y(2\delta)$ returns $\lvert V_{ud}\rvert = \cos(2/9) = 0.97541$ against
+the measured $0.97435$ ($+0.11\%$) and $\lvert V_{us}\rvert = \sin(2/9) = 0.22040$ against
+$0.22430$ ($-1.74\%$), run on a statevector simulator and reproduced on IBM Quantum hardware to
+within shot noise. The two-generation block thus passes its first quantitative test at the
+per-cent level; what is suggestive is now also \emph{checkable}, by anyone, in one rotation angle.
 
 \begin{openproblem}[The Cabibbo angle]\label{op:cabibbo}
 Derive, rather than observe, the relation between the mass phase and the generation mixing: whether
 the Cabibbo angle equals the undiluted phase $\delta = 2/9$, and what fixes the remaining CKM
-structure.
+structure. The two-generation form is executable and passes at the per-cent level
+(Appendix~\ref{app:qiskit-ckm}); the derivation, the residual $-1.74\%$ on
+$\lvert V_{us}\rvert$, and the extension to the full three-generation matrix with its
+CP-violating phase are what remain. A candidate route to the full matrix is recorded in
+\S\ref{sec:interactions}: the generation wire read as the sedenion doubling, with mixing forced
+by the four-qubit entanglement obstruction; its development is deferred to a dedicated paper.
 \end{openproblem}
 
 Its structural consequence, however, is exactly what the interaction picture needs: the mass

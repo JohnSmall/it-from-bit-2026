@@ -1,22 +1,58 @@
 % =====================================================================
-% Section: Derivation of the quantum postulates
-% Drop-in for Paper 1. Requires in the preamble:
-%   \usepackage{amsmath, amssymb}
-%   \usepackage[backend=biber, style=phys]{biblatex}   % or your chosen style
-% Internal cross-references (\ref{...}) are placeholders; repoint to your labels:
-%     sec:complex-amplitudes -- the self-reference -> negative probability ->
-%                               Shannon -> complex amplitudes derivation
-%     sec:l2-metric-fibre    -- the L^2 / complex-Hopf section
-%     sec:born-rule          -- the U(1)-invariance / minimum-degree section
-%     sec:wigners-friend     -- the Wigner's-friend / FANOUT / redundancy section
-%     sec:wf-reconciliation  -- the Tsirelson / PR-box aside
-% Citation keys refer to the companion .bib; reconcile with your Mendeley keys.
-% British English throughout.
+%  SECTION: Derivation of the quantum postulates (the assembly chapter).
+%  AUDITED 2026-07-06 (final pass, sixth stop).
+%
+%  PLACEMENT (reordered chain, JS 2026-07-06): position 5 --
+%      \input{wigners_friend_in_the_hopf_picture_2026-06-13}
+%      \input{derivation_of_the_quantum_postulates}
+%      \input{division_algebras_section_2026-07-03}
+%  Postulate 6 hands off to division-algebras, its immediate successor.
+%
+%  LABEL RESOLUTIONS (2026-07-06): the old placeholder
+%  sec:complex-amplitudes is now minted at its source (self-reference's
+%  negativity subsection), so the ref here resolves unchanged.
+%  sec:born-rule COLLIDED with the label minted 2026-07-06 on
+%  self-reference's Born-from-fibre-privacy subsection; resolution: two
+%  routes, two labels -- Postulate 3 here is renamed
+%  sec:born-invariance (the U(1)/lowest-degree geometric route) and
+%  cross-stitched to sec:born-rule (the record-theoretic route), their
+%  agreement flagged as over-determination. sec:local-tomography also
+%  minted at source for Postulate 6's operational clause.
+%
+%  AUDIT RECORD: the section's status discipline was PRESCIENT -- the
+%  continuity arrow was already "owed ... enters as a principle" (the
+%  exact voice JS mandated for L2), and both of its confessed debts
+%  have since been minted as numbered problems; the closing now cites
+%  them (op:limit-realisability, op:tsirelson-geometry): "named, and
+%  numbered". Postulate 6 now carries BOTH composition duty-holders
+%  (Hurwitz multiplicativity + local tomography), matching the
+%  continuity section's caveat exactly. Stone's theorem cited
+%  (stone1932one, RIS delivered); time-as-operation-count forward
+%  flag added; \textquote made portable; opener formalised.
+%
+%  PROVENANCE NOTE (relocated from the body, 2026-07-06, JS's words):
+%  "Using Hopf fibrations to get the Born rule is something Claude AI
+%  came up with on its own without my prompting." Preserved here as the
+%  historical record. DISCLOSURE STATUS (JS, 2026-07-06): AI use is
+%  already acknowledged in the second paragraph of the paper's
+%  introduction; the remaining recommendation is only that, at
+%  submission, the same fact be echoed in whatever formal
+%  Declarations / Acknowledgements slot the target journal's template
+%  mandates -- several publishers now require it there specifically,
+%  in addition to any in-text mention.
+%
+%  British English; \autocite; no bullets in prose.
 % =====================================================================
 
+% ADDED 2026-07-12: closing paragraph "The postulates in module
+% coordinates" -- the Clifford-module reading (skeleton + two
+% supplements), with the explanatory arrow guarded per JS: the field
+% comes from the Shannon/additivity/commutativity step (self-ignorance),
+% and the left-action composability result is recorded as that same
+% requirement in operator clothing, not an independent selection of C.
 \section{Derivation of the quantum postulates}
 \label{sec:postulates}
-We've now assembled enough pieces of the jigsaw to be able to derive the postulates of quantum mechanics
+Enough pieces of the jigsaw are now assembled to derive the postulates of quantum mechanics.
 
 The Dirac--von Neumann postulates are ordinarily laid down as independent
 assumptions. In this framework they are not assumptions but a single chain: each
@@ -40,8 +76,8 @@ probability, read through the Shannon information measure and analytically
 continued, yields a complex amplitude $S=-\ln\lvert p\rvert-\mathrm{i}\theta$,
 whose phase $\theta$ is the self-referential ignorance
 (Section~\ref{sec:complex-amplitudes}). The metric is forced second, and
-separately: the principle of reversible continuity---that a continuous reversible
-transformation connects any two pure states---selects the $L^{2}$ norm uniquely.
+separately: the principle of reversible continuity (\S\ref{sec:continuity}) --- that a continuous
+reversible transformation connects any two pure states --- selects the $L^{2}$ norm uniquely.
 For every $\ell^{p}$ with $p\neq 2$ the linear isometries are generalised
 permutations \autocite{Banach1932, Lamperti1958}, a group that cannot connect a
 basis state to a superposition; only at $p=2$ is the norm-preserving group
@@ -55,10 +91,11 @@ round sphere, so the metric must be anchored independently to avoid circularity.
 Two bounds belong with this step. Reversible continuity fixes the metric, not the
 field---real and quaternionic quantum theory satisfy it equally---so the
 restriction to $\mathbb{C}$ rests on the Shannon step, not on continuity. And
-deriving reversible continuity itself from self-reference is the one arrow the
-chain still owes; until it is closed, continuity enters as a principle, and the
-weight of the $L^{2}$ conclusion is carried jointly with the independent
-isometry and counting arguments.
+deriving reversible continuity itself from self-reference is the one arrow the chain still owes
+--- now priced exactly: two premises, divisibility and closedness,
+Open Problem~\ref{op:limit-realisability}, with everything downstream of them proved
+(\S\ref{sec:continuity}). Until they are closed, continuity enters as a principle, and the weight
+of the $L^{2}$ conclusion is carried jointly with the independent isometry and counting arguments.
 
 \paragraph{Postulate 2 (Hermitian observables).}
 A measurement result must be communicable: it must be copyable from one observer
@@ -70,7 +107,7 @@ communicable are exactly the self-adjoint operators. Hermiticity is thus the
 condition that a quantity be the kind of thing a measurement can report.
 
 \paragraph{Postulate 3 (Born rule).}
-\label{sec:born-rule}
+\label{sec:born-invariance}
 Outcome probabilities must be invariant under the global phase, the $U(1)$
 self-ignorance, realised geometrically as the $S^{1}$ fibre of the complex Hopf
 fibration $S^{1}\to S^{3}\to S^{2}$ over the Bloch sphere
@@ -83,9 +120,10 @@ same $L^{2}$ form that fixed the metric in Postulate~1, now read as the
 normalisation of the round sphere, and the fibre over which the phase is averaged
 has constant length, so the phase is hidden uniformly
 \autocite{GluckWarnerZiller1986}. This step is a structural argument rather than a
-theorem in the strict sense, and is flagged as such.
-
-Note: Using Hopf fibrations to get the Born rule is something Claude AI came up with on its own without my prompting. 
+theorem in the strict sense, and is flagged as such. The record-theoretic derivation of the same
+quadratic --- squared magnitudes from fibre privacy, Proposition~\ref{prop:f1-dictionary} --- is
+given at \S\ref{sec:born-rule}: two independent routes to one rule, the over-determination this
+framework treats as evidence.
 
 \paragraph{Postulate 4 (state reduction).}
 Measurement is a \textsc{fanout}: the gauge-invariant relational content is copied
@@ -97,9 +135,9 @@ fact relative to the observer in the sense of relational quantum mechanics
 relative fact, still reversible by an agent controlling the joint system; redundant
 proliferation across many independent fragments makes the fact objective, which is
 quantum Darwinism \autocite{zurek_2009} and the stable/relative-fact distinction of
-Di~Biagio and Rovelli \autocite{DiBiagioRovelli2021}. \textquote{Collapse} and unitary
+Di~Biagio and Rovelli \autocite{DiBiagioRovelli2021}. ``Collapse'' and unitary
 evolution are then the two charts---inside and outside the \textsc{fanout}
-boundary---of one process, as the Wigner's-friend analysis shows
+boundary---of one process, as the Wigner's-friend analysis shows and \S\ref{sec:fanout-boundary} formalises
 (Section~\ref{sec:wigners-friend}); the irreversibility and its $kT\ln 2$ cost
 \autocite{Landauer_1961, wigner_1961} accrue with redundancy rather than at the
 single act. The reduction postulate is therefore recovered as a chart-dependent
@@ -110,8 +148,9 @@ such.
 \paragraph{Postulate 5 (unitary evolution).}
 Conservation of probability is preservation of the $L^{2}$ inner product, and the
 inner-product-preserving linear maps are the unitaries $U(n)$---the same
-isometry fact that fixed the metric in Postulate~1. Continuity in time together
-with Stone's theorem gives $U(t)=\mathrm{e}^{-\mathrm{i}Ht}$, the Schr\"odinger
+isometry fact that fixed the metric in Postulate~1. Continuity in time --- operation count,
+\S\ref{sec:space-of-computations}, a forward reference --- together with Stone's theorem
+\autocite{stone1932one} gives $U(t)=\mathrm{e}^{-\mathrm{i}Ht}$, the Schr\"odinger
 equation. Reversibility is here a corollary, not a premise: bare reversibility on
 the amplitude space yields only the general linear group, and it is preservation
 of the quadratic form that carves $U(n)$ out of it.
@@ -119,10 +158,13 @@ of the quadratic form that carves $U(n)$ out of it.
 \paragraph{Postulate 6 (composite systems).}
 Systems combine by the tensor product because the division algebra norm is
 multiplicative \autocite{hurwitz1898composition}: composition preserves the $L^{2}$ structure
-only if states multiply. Cayley--Dickson doubling carries $\mathbb{C}$ to the next
+only if states multiply. The operational half closes from the other side: the locality of
+tomography derived at \S\ref{sec:local-tomography} says product states determine composites,
+which is the tensor product's signature. Cayley--Dickson doubling carries $\mathbb{C}$ to the next
 rung, and the ascent of the Hilbert space is the ascent of the Hopf tower, complex
 to quaternionic, used in the Wigner's-friend construction
-\autocite{mosseri2001hopf}.
+\autocite{mosseri2001hopf}; the ladder itself is the business of the section that follows
+(\S\ref{sec:division-algebras}).
 
 \paragraph{Consequence (the Tsirelson bound).}
 The postulates fix not only the form of the theory but the strength of its
@@ -140,6 +182,33 @@ probability and $U(1)$-invariance arguments; the $L^{2}$ metric, the unitary gro
 and the tensor product are over-determined by reversible continuity, the isometry
 classification and Hurwitz composition; state reduction is recovered as the
 chart-relative face of \textsc{fanout}. The two outstanding debts are the
-derivation of reversible continuity from self-reference and the forcing of the
-Tsirelson value as a theorem rather than a recovered number---named here so that a
-reader can see exactly where the chain is complete and where it is not.
+derivation of reversible continuity from self-reference and the forcing of the Tsirelson value as
+a theorem rather than a recovered number --- named, and numbered:
+Open Problems~\ref{op:limit-realisability} and~\ref{op:tsirelson-geometry} --- so that a reader
+can see exactly where the chain is complete and where it is not.
+
+\paragraph{The postulates in module coordinates.}
+One reading of the chain deserves a closing statement, because it positions the derivation
+against a mathematical skeleton the reader may know well, and because stating it carelessly would
+invert the chain's explanatory arrow. In the coordinates of the division-algebra programmes
+(\S\ref{sec:algebraic-dictionary}), complex Hilbert-space quantum mechanics is real Clifford
+module theory plus exactly two supplements. The skeleton is Clifford throughout: the operator
+algebra of $n$ qubits is the Clifford algebra of $2n$ generators with the state space its own
+spinor module, half-integer spin and fermionic statistics are the module's double cover and its
+graded tensor, and the classically simulable stabiliser core is the algebra's combinatorics. What
+the skeleton does not contain is, first, the choice of complex structure --- the polarisation $J$
+that turns a real module into a complex Hilbert space, which standard quantum theory and the
+algebraic programmes alike \emph{choose} --- and, second, the Born weights on the fibre. Those two
+supplements are precisely what this section has derived, and derived from self-ignorance rather
+than from algebra: the field from the Shannon step (information about one's own undecidable state
+must still be information --- it must add, addition commutes, and so the amplitude algebra is
+commutative, excluding the quaternionic bookkeeping an observer could never balance), and the
+quadratic from fibre privacy. The algebraic echo --- that the algebra's own left actions compose
+only along a commutative line, the composability result recorded with the dictionary --- is not
+an independent selection of $\mathbb{C}$: composition of left actions fails off that line exactly
+because the doubled slot carries the \emph{reversed} product, and order-dependence is the same
+disease in operator clothing that non-additivity is in information clothing. The mathematics is
+the epistemic argument's shadow, welcome as consistency and as a bridge to the module-side
+literature (Appendix~\ref{app:winding-number} walks the bridge for charge), but the origin of the
+complex amplitude is the observer's ignorance of their own state, and the arrow runs from there
+to the algebra, never the reverse.

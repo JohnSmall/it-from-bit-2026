@@ -1,6 +1,24 @@
+%  AUDITED 2026-07-06 (final pass, seventeenth stop, FULL -- the one
+%  body section never previously audited). Numbers verified against
+%  the authoritative canon (52 meV sum; m2+m3 arithmetic; the x30 and
+%  0.6-degree figures; 1.7 GeV; 10^-14): one status-column fix, +3% ->
+%  +2%, matching the table's own displayed figures (if the unrounded
+%  doc value differs, adjust both together). Fixes: the vague
+%  "gauge-group construction" made an explicit ref
+%  (sec:hopf-justification); the proton-decay paragraph now carries
+%  the absent-gate back-stitch, completing the hand-off the
+%  interactions section declared; the POSTDICTION SCORECARD added to
+%  "What has already been tested" (sin^2 theta_W, m_H = v/2, y_t = 1,
+%  Koide, theta_QCD = 0, eight-of-nine at ~1%, zero dimensionless
+%  parameters with v the single dimensional input -- claimed at
+%  exactly postdictive weight); FANOUT to house smallcaps; the
+%  exact-Higgs-couplings null (delivered at stop 15) verified in situ.
+%  CPT-paths stays prose per JS 2026-06-13, honoured. All five
+%  app:qiskit labels exist; sec:fanout-boundary ref is the one
+%  permitted dangle -- DRAFTED 2026-07-06; the ref now lands. Umlaut normalised, pure ASCII.
 % =====================================================================
 %  Section: Predictions
-%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-13 from the plan
+%  Paper 1, "It from Bit via G\"odel". Drafted 2026-06-13 from the plan
 %  predictions_section_plan_2026-06-13.md.
 %
 %  Resolves the five forward-references to sec:predictions (masses,
@@ -74,7 +92,7 @@ $m_1$            & $0$ (exact)                   & $< 0.04$~eV (bound)        & 
 $m_2$            & $\sim 1.6$~meV                & ---                        & derived \\
 $m_3$            & $\sim 50$~meV                 & ---                        & derived \\
 $\sum m_\nu$     & $\sim 52$~meV                 & $< 120$~meV (cosmological) & derived \\
-$\Delta m^2_{31}$& $2.5\times10^{-3}\ \mathrm{eV}^2$ & $2.45\times10^{-3}\ \mathrm{eV}^2$ & $+3\%$ \\
+$\Delta m^2_{31}$& $2.5\times10^{-3}\ \mathrm{eV}^2$ & $2.45\times10^{-3}\ \mathrm{eV}^2$ & $+2\%$ \\
 $\Delta m^2_{21}$& $2.6\times10^{-6}\ \mathrm{eV}^2$ & $7.5\times10^{-5}\ \mathrm{eV}^2$  & $\times 30$ low \\
 \hline
 \end{tabular}
@@ -116,7 +134,7 @@ CPT is the composition of charge conjugation, parity and time reversal, and each
 correlate in the present framework. Parity appears as the opposite-handedness of entangled pairs
 that, frustrated on $K_3$, generates the three generations in the first place
 (\S\ref{sec:generations}). Charge conjugation appears as the complementary handedness assignment
-that produces antiparticles. And time reversal appears as the FANOUT boundary of
+that produces antiparticles. And time reversal appears as the \textsc{fanout} boundary of
 \S\ref{sec:fanout-boundary}, where the irreversibility of an observation --- for the agent making it
 --- supplies the local arrow. Whether the global CPT symmetry of the cosmological route is, in some
 precise sense, the large-scale shadow of the same local handedness-and-FANOUT structure that here
@@ -177,6 +195,16 @@ physics. The same cuts the other way for the processes already measured: any exc
 $B_s\to\mu^+\mu^-$ or in neutral-meson mixing above the charged-loop prediction also refutes the
 framework. Every current measurement is consistent with this floor.
 
+And every Higgs coupling is exactly Standard-Model. Because the framework derives the Yukawa
+couplings rather than modifying the mechanism (\S\ref{sec:associator-higgs}), every Higgs
+coupling-modifier is exactly unity: $\kappa_f = \kappa_V = 1$, at every attainable precision,
+permanently. The high-luminosity programme's few-per-cent third-generation determinations and the
+coming second-generation measurements at the muon and charm \autocite{cepeda2019hllhc} must all
+land at the Standard-Model point; a single established deviation anywhere refutes the framework
+outright. Where most extensions of the Standard Model predict departures somewhere, this framework
+forbids them everywhere --- the desert below the matching scale and the exactness of the couplings
+are two faces of one claim.
+
 There is no fourth generation, at any scale. The $K_3$ obstruction yields exactly three chiral
 generations and one a-chiral sterile class (\S\ref{sec:generations}); a fourth chiral generation is
 structurally excluded, and its appearance at any collider would refute the framework.
@@ -188,23 +216,19 @@ state in that range not accounted for by the framework.
 
 And there is no proton decay of the kind grand unification predicts. $SU(5)$ and its relatives do not
 arise from the parallelisable-sphere and division-algebra route that fixes the gauge group
-(\S\ref{sec:generations} and the gauge-group construction), so the framework contains no mechanism
+(\S\ref{sec:generations} and \S\ref{sec:hopf-justification}), so the framework contains no mechanism
 for proton decay through unification. This is consistent with the continued non-observation of proton
 decay, which the framework gets for free rather than by tuning, and it is a standing null: an
-observed proton decay with the branching structure of grand unification would refute it.
+observed proton decay with the branching structure of grand unification would refute it. The
+operational face of the exclusion is drawn at \S\ref{sec:absent-gate}: the leptoquark vertices
+grand unification requires are precisely the gates the framework's dictionary does not stock, and
+their absence is the same fact as the conservation of baryon number.
 
- \paragraph{Exact Standard-Model Higgs couplings.}
- Because the framework derives the Yukawa couplings rather than modifying
- the mechanism (\S\ref{sec:associator-higgs}), every Higgs
- coupling-modifier is exactly unity: $\kappa_f = \kappa_V = 1$, at every
- attainable precision, permanently. The high-luminosity programme's
- few-per-cent third-generation determinations and the coming
- second-generation measurements at the muon and charm
- \autocite{cepeda2019hllhc} must all land at the Standard-Model point; a
- single established deviation anywhere refutes the framework outright.
- Where most extensions of the Standard Model predict departures somewhere,
- this framework forbids them everywhere --- the desert below the matching
- scale and the exactness of the couplings are two faces of one claim.
+And no experiment will ever hold a record of indefinite causal order. Causal structure is
+post-\textsc{fanout} bookkeeping (\S\ref{sec:no-quantised-gravity}), so laboratory
+indefiniteness lives below the locking threshold and definitises at it; gravitationally induced
+entanglement, if and when observed, is predicted --- as a witness of the pre-geometric layer, not
+of a superposed metric --- and gravitationally driven anomalous collapse rates are excluded.
 
 \subsection{What has already been tested}
 
@@ -221,7 +245,24 @@ skeletons --- the closed colour networks on which the strong-sector predictions 
 assembled from their wiring on quantum processors at a two-setting fidelity near $0.89$
 (Appendices~\ref{app:qiskit-composition} and \ref{app:qiskit-meson}). These are not bets about future
 experiments; they are checks that the framework's internal structure is faithfully realisable and
-behaves as claimed, already carried out. The forward predictions of this section are what remains to
+behaves as claimed, already carried out. The record now extends to a five-notebook batch on a
+Heron-class device --- the monogamy signature, the two-gluon Bell discriminator, the leptonic
+ninth, the mixing core's first rung, and the Meissner response of the superconductor witness,
+sign flip measured --- collected with their noise readings at Appendix~\ref{app:hardware-fez}.
+
+Beyond the circuits, the numerical record of the preceding sections stands as already tested by
+existing data, and it belongs in this ledger even though it is postdictive rather than predictive.
+The weak mixing angle is $\sin^2\theta_W = \tfrac14$ at tree level, running to $0.2312$ against
+the measured $0.23122$; the Higgs mass is $m_H = v/2$, within $1.7\%$; the top Yukawa is
+$y_t = 1$, within $0.9\%$; the Koide relation holds at $\delta_0 = 2/9$ to about a tenth of a per
+cent; the strong-CP angle is $\theta_{\mathrm{QCD}} = 0$ exactly, by the topology of the colour
+class (\S\ref{sec:entanglement-classes}); and eight of the nine charged-fermion masses land
+within about one per cent of observation, the ninth being the up quark's recorded exception
+(Open Problem~\ref{op:up-quark}). These are derived where they are stated (\S\ref{sec:masses},
+\S\ref{sec:boson-masses}) and are not re-derived here; their epistemic weight is that of
+postdiction --- the numbers were known before the framework was --- and we claim exactly that
+weight, no more. What makes them worth listing beside the forward bets is the count of adjustable
+constants behind them: zero dimensionless parameters, with $v$ the single dimensional input. The forward predictions of this section are what remains to
 be tested by nature; the structural claims have, in this limited but concrete sense, already been
 tested by construction.
 

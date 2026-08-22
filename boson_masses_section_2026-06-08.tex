@@ -1,6 +1,25 @@
+%  FIFTEENTH STOP 2026-07-06 (light audit + integration seams): join 1
+%  (top-Yukawa -> associator-Higgs) clean; join 2 exposed a COMPANION
+%  SNIPPET for sec:predictions riding in the drop-in's tail -- removed
+%  from here and DELIVERED to the predictions null-forever family
+%  (exact Higgs couplings, kappa = 1 permanently; key cepeda2019hllhc
+%  already in the paper via the integrated subsection, no new RIS);
+%  settled/owed ledger now names the new resident (op:qcd-scale);
+%  op:qcd-scale text verified against mass-gap's advertisement;
+%  adjacency gloss true at position 15; umlaut normalised, pure ASCII.
+%  Deep-audit standing (W/Z chain, op:vev rescope, op:wz-running
+%  discharge) untouched.
+%  INTEGRATED 2026-07-06 (thirteenth stop, dependency-driven): the
+%  associator-debt / Higgs-mechanism closing subsection
+%  (sec:associator-higgs, defining op:qcd-scale) folded in from its
+%  drop-in file, placed before the settled/owed closer per its
+%  placement note -- required because the mass-gap subsection now
+%  integrated into confinement references op:qcd-scale. The drop-in
+%  side-file is now redundant. Full audit of this section comes at its
+%  own stop.
 % =====================================================================
 %  Section: Boson Masses and Electroweak Parameters   (Plan Stage 8)
-%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Paper 1, "It from Bit via G\"odel". Drafted 2026-06-08.
 %  Follows \S sec:masses; sets up Branch A (\S sec:interactions).
 %
 %  \input fragment. biblatex/\autocite, amsthm `proposition'.
@@ -29,6 +48,15 @@
 %    op:state-gate     -- dynamical justification of the boson-as-edge
 %                         state<->gate correspondence (map-state duality).
 %
+%  AUDITED 2026-07-04 (joint with masses): op:vev rescoped to the
+%  one-parameter audit, resolving its contradiction with sec:masses'
+%  necessity statement; op:wz-running discharged in substance (the 2%
+%  gap = run + scheme dictionary, on-shell 0.88145 vs observed 0.88145,
+%  five figures, no residual; op shrunk to the explicit trajectory);
+%  lambda readings (a)==(b) proven identical (candidates 3 -> 2, op
+%  narrowed); Bell two-level bridge added, folded into op:state-gate.
+%  NOTE: the rescoped op:vev references op:qcd-scale, which lives in
+%  the associator-Higgs drop-in -- paste dependency, already on manifest.
 %  REVISED 2026-06-11 after review: lambda-readings sentence corrected
 %  (the Chern and Cayley-Dickson routes each need the final /2 from the
 %  doubling -- as drafted, "squared half-Chern-class" and "fourth power
@@ -60,7 +88,11 @@ A fermion is a node of the channel network --- a three-qubit register (\S\ref{se
 boson is an \emph{edge}: a bipartite, Bell-class link between two nodes --- the canonical maximally
 entangled orbit, under the identification of \S\ref{sec:canonical-orbits} --- carrying the gauge
 sector of the qubit it connects. This is the reading the dictionary of \S\ref{sec:entanglement-classes}
-anticipated, now made explicit for the gauge bosons themselves. The number of independent edges in a
+anticipated, now made explicit for the gauge bosons themselves. As with the quark's two GHZs
+(\S\ref{sec:charges}), two levels meet here and should be named: the dictionary's Bell class is
+the boson's own register structure (\S\ref{sec:register}), while the edge just described is its
+inter-node function; map--state duality, below, is precisely the claim that these are one morphism
+read twice, and its derivation carries this identification too. The number of independent edges in a
 sector is the dimension of that sector's gauge group, so the boson content follows from the group
 content already established.
 
@@ -85,7 +117,8 @@ map--state duality rather than derived from the register dynamics.
 \begin{openproblem}[The state-to-gate correspondence]\label{op:state-gate}
 Derive, from the register dynamics, the correspondence between a gauge boson as a Bell edge and a
 gauge boson as a gate on the qubit of its sector, which the present construction asserts through
-map--state duality.
+map--state duality --- including that the register-level Bell class of the dictionary and the
+inter-node edge are the same morphism.
 \end{openproblem}
 
 The identification is, at this level, exactly what \S\ref{sec:interactions} needs to build vertices,
@@ -95,8 +128,13 @@ and no more.
 
 Carried from \S\ref{sec:charges}, the bare weak mixing angle is $\sin^2\theta_W = \tfrac14$, from the
 fibre-dimension ratio $\dim S^1/(\dim S^1 + \dim S^3) = 1/(1+3)$. Run down with the Standard Model
-renormalisation group from a matching scale of order $3.6\ \mathrm{TeV}$ --- roughly fifteen times the
-Higgs vacuum value --- it reaches the measured $\sin^2\theta_W \approx 0.231$ at $M_Z$. The tree-level
+renormalisation group from a matching scale of order $3.6\ \mathrm{TeV}$ --- roughly fifteen times
+the Higgs vacuum value --- it reaches the measured $\sin^2\theta_W \approx 0.231$ at $M_Z$. The
+point deserves stating at full weight: the boundary \emph{value} and the boundary \emph{scale} are
+independent outputs of the framework --- the quarter from the fibre dimensions here, the
+$3.6\ \mathrm{TeV}$ from the sterile-sector matching audit --- and the Standard Model's own
+running is all that joins them; at one loop the join lands at $0.24989$ against $\tfrac14$, four
+parts in ten thousand, with neither number adjusted to meet the other. The tree-level
 relation between the gauge-boson masses is then
 \begin{equation}
   \frac{m_W}{m_Z} = \cos\theta_W = \sqrt{\tfrac34} = \frac{\sqrt3}{2} \approx 0.866,
@@ -121,17 +159,40 @@ value $v$ is not derived. Given $m_Z$ and the mixing angle, $m_W$ is then \emph{
 prediction --- it is the ratio above. We therefore quote only that ratio, and record two named
 problems rather than paper over them.
 
-\begin{openproblem}[The electroweak scale]\label{op:vev}
-Derive the absolute electroweak scale --- the Higgs vacuum value $v$ --- from the framework. Until
-this exists, $m_Z$ is an input, and the electroweak sector predicts mass \emph{ratios} and the
-running of the angle, not the masses themselves.
+\begin{openproblem}[The electroweak scale as the one free parameter]\label{op:vev}
+The framework requires exactly one free dimensional parameter, and \S\ref{sec:masses} states why
+this is a necessity rather than a gap: the observer cannot fix the absolute scale of their own
+computational network from inside it. The problem is therefore not to derive $v$ from nothing ---
+the framework's own argument forbids that --- but to establish that $v$ is the \emph{only}
+dimensional input: every other scale derived from it, as $y_t = 1$ already achieves for the up
+sector, with the lepton and down-sector normalisations (Open Problem~\ref{op:sector-scales}), the
+matching scale (Open Problem~\ref{op:matching-scale}) and the QCD scale
+(Open Problem~\ref{op:qcd-scale}) the outstanding items of the audit. Until it closes, $m_Z$ is an
+input, and the electroweak sector predicts mass ratios and the running of the angle, not the masses
+themselves.
 \end{openproblem}
 
+The gap, however, dissolves under audit into bookkeeping the framework already claims, and the
+decomposition is worth recording because the original comparison set angles in two different
+schemes against one another. The tree ratio $\sqrt3/2 = 0.8660$ is the angle at the matching
+scale; running it to $M_Z$ --- the same running already invoked for $\sin^2\theta_W$ itself ---
+gives the $\overline{\mathrm{MS}}$ ratio $\sqrt{1 - 0.2312} = 0.8768$; and the observed mass
+ratio is, by definition, the \emph{on-shell} angle,
+$\sin^2\theta_W^{\mathrm{os}} = 1 - m_W^2/m_Z^2 = 0.22305$, whose standard conversion returns
+$\sqrt{1 - 0.22305} = 0.88145$ against the observed $0.88145$: agreement to five figures, no
+residual. There is no two-per-cent anomaly; there is one running plus one scheme dictionary, both
+Standard-Model textbook items, resting on the single claim already made for the angle.
+
 \begin{openproblem}[The $W$/$Z$ ratio under running]\label{op:wz-running}
-Show that the two-per-cent gap between the tree ratio $m_W/m_Z = \sqrt3/2 \approx 0.866$ and the
-observed $0.881$ is accounted for by the same running that carries $\sin^2\theta_W$ from $\tfrac14$
-to its measured value, with the on-shell and $\overline{\mathrm{MS}}$ definitions of the angle
-handled consistently.
+The scheme decomposition above discharges the apparent gap; what remains is the underwriting
+computation, shared with the angle itself: exhibit the explicit renormalisation-group trajectory
+from $\sin^2\theta_W = \tfrac14$ at the $3.6\ \mathrm{TeV}$ matching scale to $0.2312$ at
+$M_Z$, thresholds and scheme conversions handled explicitly, so that the angle and the mass ratio
+rest on a displayed calculation rather than a cited one. The one-loop display now exists in the
+code release --- $\sin^2\theta_W(3.6\ \mathrm{TeV}) = 0.24989$ from the measured $M_Z$ inputs,
+four parts in ten thousand from the boundary value --- so what remains is the refinement: the top
+threshold inside the leg, the two-loop terms, and the scheme conversions at both ends handled
+explicitly, all at the $10^{-3}$ level the one-loop residual already suggests.
 \end{openproblem}
 
 \subsection{The Higgs mass}
@@ -152,11 +213,17 @@ is the simplest algebraic value close to it; it is not derived. Several readings
 $\lambda = c_1^2/\bigl(2\dim(S^1\oplus S^3)\bigr) = \tfrac18$ for the complex Hopf bundle's
 $c_1 = 1$; or the Cayley--Dickson route $\lambda = \varepsilon^4/2 = \tfrac18$ with
 $\varepsilon = 1/\sqrt2$ the inter-generational coupling --- but each is at present a post-hoc
-identification rather than a calculation.
+identification rather than a calculation. Two of the three, however, are one: with $c_1 = 1$ for
+the complex Hopf bundle and $\dim S^1 = 1$, the half-mixing-angle reading and the Chern reading
+are the same fraction, $\tfrac12\sin^2\theta_W = \dim S^1/\bigl(2\dim(S^1\oplus S^3)\bigr)
+= c_1^2/\bigl(2\dim(S^1\oplus S^3)\bigr)$, the numerator read once as a dimension and once as a
+Chern number --- no accident, the $S^1$ being precisely the $c_1 = 1$ fibre. The genuinely distinct
+candidates are therefore two: this unified fibre reading, and the Cayley--Dickson route.
 
 \begin{openproblem}[The Higgs quartic]\label{op:higgs-lambda}
 Derive $\lambda = \tfrac18$ from the curvature of the Hopf bundle --- the most important open
-problem in the boson sector --- distinguishing among the candidate readings above or unifying them;
+problem in the boson sector --- distinguishing between the two remaining readings --- the unified fibre reading and the
+Cayley--Dickson route --- or unifying them;
 and show, as a consistency check, that the residual $1.7\%$ is the running of $\lambda$ from the
 matching scale to the Higgs mass under the top-quark loop.
 \end{openproblem}
@@ -181,6 +248,136 @@ numerical test depends on the mass definition. That $y_t \approx 1$ and $\lambda
 issue from the same fibre geometry is, in this reading, why the Standard Model vacuum sits so close to
 the stability boundary: the near-criticality is structural rather than accidental.
 
+\subsection{The associator debt and the Higgs mechanism}
+\label{sec:associator-higgs}
+
+Two accounts of one quantity have now been given, and they must be shown to be one account. The
+Standard Model's account is that every elementary mass arises from coupling to the Higgs condensate:
+a fermion mass is $m_f = y_f v/\sqrt2$, gauge-invariantly generated, with the Yukawa coupling $y_f$
+a free parameter --- nine of them across the charged fermions, unexplained, constituting the flavour
+puzzle. This framework's account is that mass is associator debt (\S\ref{sec:masses}): existence from
+the associator, ratios from the triality angle and the dilution rule, and one free dimensional scale.
+A reader is entitled to ask which of these the electron's mass actually is, and the answer this
+subsection defends is: both, because they are the same statement. The Standard Model explains how
+mass generation can be gauge-invariant; it does not explain what the masses are. The framework
+derives what the masses are, and in doing so recovers --- rather than rivals --- the mechanism.
+
+The identification is forced by the form of the results already in hand. Every mass formula in this
+section and in \S\ref{sec:masses} has the shape $m = (\text{dimensionless geometric factor}) \times
+v$: the scale was identified there as the Higgs vacuum value, and the $\sqrt2$ doubling norm as its
+algebraic signature. The Standard Model writes the same relation as $m_f = y_f\,v/\sqrt2$ and calls
+the dimensionless factor a Yukawa coupling. The framework's geometric factors therefore \emph{are}
+the Yukawa couplings, $\sqrt2$-normalisation included, and the preceding subsection has already
+exhibited one: $y_t = 1$ is a derived Yukawa coupling, stated in the Standard Model's own notation.
+In the same language, the Koide relation and the dilution rule of \S\ref{sec:masses} are a
+zero-parameter derivation of the Yukawa \emph{ratios} within each charge sector, and the sector-scale
+problem (Open Problem~\ref{op:sector-scales}) acquires its proper name: it is exactly the
+Yukawa-normalisation problem --- derive the lepton and down-sector normalisations from $v$ as
+$y_t = 1$ already does for the up sector. The identification mints no new debt; it names an existing
+one correctly.
+
+The mechanism itself is recovered, not merely matched numerically. The associator debt is measured
+\emph{relative to the selected complex direction}: it is the obstruction met in connecting the two
+handedness resolutions of a frustrated pair (\S\ref{sec:generations}) through the preferred
+$\mathbb{C} \subset \mathbb{O}$, which is the framework's rendering of the fact that a bare fermion
+mass term is forbidden and the connection must be mediated --- the same shape as the Yukawa vertex
+joining the doublet to the singlet through the Higgs field. The Higgs boson has already been
+identified above as the dynamical promotion of that preferred direction
+\autocite{szangolies2025standardmodel}, with vacuum value $v$ the magnitude of the selection. It
+follows that in the symmetric phase there is no selected direction against which any debt can be
+measured, and every fermion is massless: this is precisely electroweak symmetry breaking, recovered
+as a statement about the selection rather than assumed. The question the framework defers --- why a
+measurement selects exactly one imaginary direction (\S\ref{sec:fanout-direction}) --- is thereby
+revealed to be the question the Standard Model also cannot answer, in its own words: why does the
+electroweak vacuum break the symmetry at all. One open question, two vocabularies.
+
+The identification has an immediate consequence that experiment has already tested. The geometric
+factors contain no reference to the scale --- they are built from fibre dimensions, the triality
+angle and the Cayley--Dickson depth --- so the debt is exactly linear in $v$, and the coupling of the
+physical Higgs to a fermion is $\partial m_f/\partial v = m_f/v$: coupling proportional to mass, the
+Standard Model's signature relation, obtained here as a one-line theorem of linearity. This is
+precisely the pattern the LHC has established --- the third-generation couplings observed by both
+experiments, evidence at the muon, and agreement with mass-proportionality across three orders of
+magnitude in mass \autocite{atlas2022higgs,cms2022higgs}. On any reading in which mass were intrinsic
+geometry unrelated to the condensate, that measured proportionality would be an unexplained
+coincidence; on the identification it could not have been otherwise. The gauge-boson couplings
+$2m_V^2/v$ follow identically, the $W$ and $Z$ masses being linear in $v$ through the
+vacuum-engagement of the classification above; and the light neutrinos are the one correct exception,
+their masses quadratic in $v$ through the seesaw because the a-chiral partner's Majorana scale is not
+Higgs-generated at all --- a gauge singlet needs no condensate, exactly as in the standard seesaw
+(\S\ref{sec:predictions}).
+
+Because the framework derives the Yukawa couplings rather than modifying the mechanism, its
+effective theory beneath the matching scale is the Standard Model with these coupling values and
+nothing else, and the prediction is correspondingly rigid: every Higgs coupling-modifier is unity,
+$\kappa_f = \kappa_V = 1$, at every attainable precision, forever. The high-luminosity programme is
+expected to sharpen the third-generation determinations to the few-per-cent level and to reach the
+second generation \autocite{cepeda2019hllhc}; each must land at the Standard-Model point, and a
+single established deviation anywhere refutes the framework outright. Where most extensions of the
+Standard Model predict departures somewhere, this framework forbids them everywhere; the desert below
+the matching scale and the exactness of the couplings are two faces of the same claim, and the
+prediction is collected with the other permanent nulls in \S\ref{sec:predictions}.
+
+Honesty requires an equally plain statement of what the identification does not supply. The Higgs
+mechanism delivers, beyond the masses, the Goldstone bosons as the longitudinal modes of the $W$ and
+$Z$, the tree-level relation $\rho = m_W^2/(m_Z^2\cos^2\theta_W) = 1$, and the unitarisation of
+$WW$ scattering by Higgs exchange; through the identification the framework inherits these
+phenomenologically, since its effective theory is the Standard Model, but exhibiting them within the
+framework's own structures is open and sits with the state-to-gate correspondence
+(Open Problem~\ref{op:state-gate}). The unification of \S\ref{sec:confinement} --- all mass is
+associator-geodesic length --- likewise obliges the $W$ and $Z$ masses, derived above by
+vacuum-engagement, to be exhibited as geodesic lengths like every other mass; the identification
+suggests how, engagement with the selection being the debt, but this is a structural claim, not a
+proof. And the radiative structure is only partly understood: the geometric values are tree-level,
+and the residuals carry the size and sign of loop dressing --- $y_t$ high by $0.9\%$ against the pole
+mass, $m_H$ low by $1.7\%$, the latter already posed as a running consistency check in
+Open Problem~\ref{op:higgs-lambda} --- but the survival of the Koide relation on \emph{pole} masses
+to one part in $10^5$, radiative dressing included, is a puzzle this framework inherits from Koide's
+own literature and does not resolve: either the geometry constrains the dressed quantities, a strong
+claim we do not make, or the robustness is unexplained. We flag it rather than paper over it.
+
+One further bill comes due here, and it is a direct consequence of commitments made elsewhere in
+this paper. Under the unification of \S\ref{sec:confinement}, the hadronic scale is not exempt from
+the accounting: if all mass is associator-geodesic length and the framework carries exactly one free
+dimensional parameter, then the ratio of the hadronic scale to the electroweak scale --- of order
+$10^{-3}$, the number that makes the proton weigh a GeV rather than a fraction of $v$ --- is a
+dimensionless quantity the framework is committed to deriving. The Standard Model treats the two
+scales as independent inputs; this framework, by its own accounting, may not.
+
+\begin{openproblem}[The hadronic scale]\label{op:qcd-scale}
+Derive the ratio of the hadronic scale to the electroweak scale, $\Lambda_{\mathrm{QCD}}/v$ of order
+$10^{-3}$ --- equivalently, the proton mass in units of $v$ --- as the associator-geodesic length of
+the closed colour network (Open Problems~\ref{op:associator-geodesic}
+and~\ref{op:confinement-potential}) in units of the vacuum value. Under the single-parameter claim of
+\S\ref{sec:masses} this ratio is not an independent input but an owed prediction, and it is stated
+here so that the claim's full price is visible.
+\end{openproblem}
+
+The accounting can now be drawn up. Of the eleven numbers of the Higgs sector proper --- the nine
+Yukawa couplings, the quartic, and the vacuum value --- the framework derives eight, leaves two open,
+and holds one structurally free. (The CKM sector is addressed only partially in this paper and is
+deliberately excluded from this accounting.)
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Higgs-sector quantity & Standard Model & this framework \\
+\hline
+quartic $\lambda$ & free & $\tfrac18$ ($-3.4\%$; Open Problem~\ref{op:higgs-lambda}) \\
+vacuum value $v$ & measured input & the single free scale (Open Problem~\ref{op:vev}) \\
+top Yukawa $y_t$ & free & $1$ ($+0.9\%$ against the pole mass) \\
+within-sector Yukawa ratios (six) & free & $\delta = \tfrac29$ and dilution: leptons to $10^{-5}$, \\
+ & & quarks $\lesssim 1\%$ ($u$ at $+29\%$, flagged) \\
+cross-sector normalisations (two) & free & open (Open Problem~\ref{op:sector-scales}) \\
+coupling modifiers $\kappa_f$, $\kappa_V$ & $\equiv 1$ by construction & $= 1$ by linearity: exact prediction \\
+\hline
+\end{tabular}
+\end{center}
+
+The subsection's claim, in one sentence: the Higgs mechanism is how nature makes mass generation
+gauge-invariant, the associator debt is what the masses are, and the two meet in the Yukawa
+couplings --- which the Standard Model measures, and this framework computes.
+
 \subsection{What is settled, and what is owed}
 
 Settled, at the tree level and within about two per cent: the boson content as bipartite edges ---
@@ -201,15 +398,18 @@ scale; it is also the scale at which the sterile masses of \S\ref{sec:generation
 readings are testable together.
 \end{openproblem}
 
-The remaining debts are the problems already recorded: the absolute electroweak masses await the
-vacuum value (Open Problem~\ref{op:vev}), so that $m_W$ and $m_Z$ are at present a ratio and an
+The remaining debts are the problems already recorded: the absolute electroweak masses await the one-parameter
+audit (Open Problem~\ref{op:vev}, rescoped: $v$ is the single permitted dimensional input), so that $m_W$ and $m_Z$ are at present a ratio and an
 input rather than two predictions; the scheme-consistent account of the ratio gap is
 Open Problem~\ref{op:wz-running}; the quartic is Open Problem~\ref{op:higgs-lambda}, the key
 calculation of this sector; and the state-to-gate correspondence underlying the boson-as-edge
-identification is Open Problem~\ref{op:state-gate}.
+identification is Open Problem~\ref{op:state-gate}. And the mechanism subsection's price is on the same ledger: the hadronic scale in
+units of $v$ is Open Problem~\ref{op:qcd-scale}, stated beside the derivation so that the
+single-parameter claim's full cost is visible. The mechanism's condensed-matter witness --- mass as
+the stiffness of a committed phase, the Meissner effect as the debt collected spatially --- is
+exhibited at \S\ref{sec:superconductor-witness}.
 
 The boson-as-edge picture and the electroweak inputs are now in place. The interaction circuits of
 \S\ref{sec:interactions} build on them, representing vertices as gates on identified qubits and
 deriving the absence of tree-level flavour-changing neutral currents; the neutrino masses and the
 scalar glueball are collected with the other forward-testable predictions in \S\ref{sec:predictions}.
-\input{associator_debt_higgs_mechanism_2026-07-03}

@@ -1,0 +1,467 @@
+%  AUDITED 2026-07-06 (final pass, appendices sweep): all body refs
+%  land; app:setup / app:ghz-proof / app:w-proof / the ceiling lemma
+%  all have live consumers; umbrella app:ghz-w-proofs minted at stop 8
+%  (texorpdfstring casualty repaired same stop); umlaut normalised.
+% =====================================================================
+%  Appendices: full proofs for "Entanglement Classes and Gauge Groups"
+%  Paper 1, "It from Bit via G\"odel".
+%  CORRECTED VERSION 2026-06-11 --- supersedes appendix_ghz_w_proofs_2026-06-08.tex.
+%
+%  Changes from the 06-08 version (review of 2026-06-11):
+%   1. The octonion multiplication table is now stated explicitly (the
+%      Cayley--Dickson convention), and the C^4 <-> O identification is
+%      defined adapted to the complex structure J = L_{e_1}, with the
+%      sign bookkeeping delivered in the lemma proof. The naive uniform
+%      prescription fails for the (e_6,e_7) block under this table.
+%   2. The converse is upgraded to a full characterisation theorem:
+%      orbit-wide vanishing under all splits <=> all marginals maximally
+%      mixed <=> local-unitarily equivalent to GHZ (via the Acin et al.
+%      canonical form). Scope is the LU orbit, NOT the SLOCC class.
+%   3. The remark on the preferred direction is rewritten; the former
+%      claim that "the two directions giving zero projection are e_1 and
+%      e_7" was false and has been removed.
+%   4. The W-doublet argument is corrected: the invariant content is the
+%      non-degenerate spectrum and the distinguished T_3 axis; the former
+%      "traceless part transforms as a doublet" misstated the
+%      transformation law (it is adjoint under conjugation).
+%   5. ADDED (same day): the base-decomposition lemma (S^8 = Bloch (+)
+%      colour, app:lem:base), the ceiling lemma sup C_frac = r^2
+%      (app:lem:ceiling) with instances, the colour-equator corollary
+%      (GHZ orbit on the equatorial S^5, app:cor:s5) and the W latitude
+%      band; the characterisation's (i)<=>(ii) simplified to use them.
+%
+%  USAGE. Plain \section's --- no appendices wrapper in this file. In the
+%  main document, wrap ALL appendix inputs once:
+%      \begin{appendices}
+%        \input{appendix_ghz_w_proofs_2026-06-11}
+%        \input{appendix_qiskit_beta_decay_2026-06-08}
+%      \end{appendices}
+%  Preamble: \usepackage[toc,page,title]{appendix}, amsthm environments
+%  (theorem, proposition, lemma, corollary), mathtools (psmallmatrix),
+%  biblatex/\autocite. New citation key used here: acin2000generalized.
+%  This file also uses an amsthm `remark' environment; add to the preamble:
+%      \theoremstyle{remark}\newtheorem*{remark}{Remark}
+%
+%  WHY THE CONVENTIONS ARE STATED IN FULL (meta note, not document text):
+%  the lemma's content depends on them --- with a different labelling of
+%  the octonion units, or a different embedding of the qubit amplitudes,
+%  the statement changes form, and an implementation that mixes
+%  conventions will appear to refute it. Hence the explicit table in
+%  eq:fano-lines and the J-adapted embedding in eq:embedding.
+%
+%  Cross-references to the main text:
+%    lem:cproj      -- the C-projection lemma (stated there, proved here)
+%    prop:ghz       -- GHZ confinement (statement rescoped 2026-06-11)
+%    prop:w-access  -- W accessibility
+%    prop:w-doublet -- W doublet (statement rescoped 2026-06-11)
+%    prop:gsm       -- G_SM as the Spin(9) stabiliser
+%    sec:canonical-orbits -- the canonical-orbit identification (main text)
+% =====================================================================
+
+\section{Octonionic Setup and the \texorpdfstring{$\mathbb{C}$}{C}-Projection Lemma}\label{app:ghz-w-proofs}
+\label{app:setup}
+
+This appendix fixes the octonionic conventions used throughout --- the multiplication table, the
+preferred complex structure, and the embedding of the qubit amplitudes --- and proves the
+$\mathbb{C}$-projection lemma stated as Lemma~\ref{lem:cproj} in the main text.
+
+\subsection{Octonions: the multiplication table}
+
+We construct $\mathbb{O}$ by Cayley--Dickson doubling: pairs of quaternions with
+$(a,b)(c,d) = (ac - \bar d b,\; da + b\bar c)$ and $\overline{(a,b)} = (\bar a, -b)$, the quaternions
+built from pairs of complex numbers, and so on down to $\mathbb{R}$ \autocite{baez2002octonions}.
+With the basis ordering $e_0 = 1, e_1, \dots, e_7$ this fixes the multiplication completely; the
+products of imaginary units are encoded by seven ordered triples, cyclic in the sense that
+$(i,j,k)$ means $e_ie_j = e_k$, $e_je_k = e_i$, $e_ke_i = e_j$:
+\begin{equation}
+  (1,2,3),\quad (1,4,5),\quad (1,7,6),\quad (2,4,6),\quad (2,5,7),\quad (3,4,7),\quad (3,6,5).
+  \label{eq:fano-lines}
+\end{equation}
+Note the orientations: in particular $e_1e_7 = e_6$ and hence $e_6e_7 = -e_1$, with the third line
+running $(1,7,6)$ rather than $(1,6,7)$. This detail matters below. Conjugation is
+$\bar o = x_0 - \sum_{i\ge1}x_ie_i$, the norm is $|o|^2 = o\bar o$, and the single structural fact
+used throughout is the composition identity
+\begin{equation}
+  |ab|^2 = |a|^2\,|b|^2 \qquad \text{for all } a,b\in\mathbb{O},
+  \label{eq:composition}
+\end{equation}
+which holds for $\mathbb{R},\mathbb{C},\mathbb{H},\mathbb{O}$ and no larger Cayley--Dickson algebra.
+
+\subsection{The computability split and the complex structure}
+
+Fix $e_1$ as the preferred complex direction, selecting
+$\mathbb{C} = \operatorname{span}_{\mathbb{R}}\{e_0,e_1\}$ and the decomposition
+$\mathbb{O}\cong\mathbb{C}\oplus\mathbb{C}^3$ with
+$\mathbb{C}^3 = \operatorname{span}_{\mathbb{R}}\{e_2,\dots,e_7\}$; the stabiliser of $e_1$ in
+$G_2 = \operatorname{Aut}(\mathbb{O})$ is the $SU(3)$ of Proposition~\ref{prop:gsm}. The complex
+structure on $\mathbb{O}$ is \emph{left multiplication by $e_1$},
+\begin{equation}
+  J := L_{e_1},\qquad J^2 = -\mathbb{1},
+\end{equation}
+which acts on the basis, by the table~\eqref{eq:fano-lines}, as
+\begin{equation}
+  J(e_0) = e_1,\qquad J(e_2) = e_3,\qquad J(e_4) = e_5,\qquad J(e_6) = -e_7.
+  \label{eq:Jaction}
+\end{equation}
+$J$ preserves the four real planes
+$\{e_0,e_1\},\{e_2,e_3\},\{e_4,e_5\},\{e_6,e_7\}$ --- the \emph{blocks} --- because these are
+exactly the pairs whose units multiply into $\pm e_1$: the pair $\{0,1\}$ trivially, and the pairs
+$\{2,3\},\{4,5\},\{6,7\}$ because $(1,2,3)$, $(1,4,5)$ and $(1,7,6)$ are the three Fano lines through
+$e_1$. Every imaginary direction spans a commutative plane with $e_0$; what is special about $e_1$ is
+this block structure and, below, its alignment with the qubit amplitudes.
+
+\subsection{The identification of \texorpdfstring{$\mathbb{C}^4$}{C4} with \texorpdfstring{$\mathbb{O}$}{O}}
+
+A three-qubit state $\psi\in\mathbb{C}^8$ with components $\psi_{ijk}$ splits on the first qubit into
+$\psi_0 = (\psi_{000},\psi_{001},\psi_{010},\psi_{011})$ and
+$\psi_1 = (\psi_{100},\psi_{101},\psi_{110},\psi_{111})$ in $\mathbb{C}^4$. Each is identified with
+an octonion by sending the $k$-th complex amplitude $c_k = x_k + \mathrm{i}y_k$ into the $k$-th
+block, with the imaginary part along $J(e_{2k})$:
+\begin{equation}
+  c_0,c_1,c_2,c_3 \;\longmapsto\;
+  x_0e_0 + y_0e_1 \;+\; x_1e_2 + y_1e_3 \;+\; x_2e_4 + y_2e_5 \;+\; x_3e_6 \,\boldsymbol{-}\, y_3e_7,
+  \label{eq:embedding}
+\end{equation}
+the sign on the last term forced by $J(e_6) = -e_7$ in~\eqref{eq:Jaction}. By construction the
+multiplication-by-$\mathrm{i}$ of the qubit amplitudes coincides with $J$, so the embedding is
+$\mathbb{C}$-linear. We emphasise that the sign is not optional: the uniform prescription
+``imaginary part $\to +e_{2k+1}$'' is $J$-adapted on the first three blocks but not the fourth, and
+with it the lemma below fails. (Both statements have been verified numerically to machine precision,
+alongside every identity in these appendices.)
+
+Writing $\mathcal{C}:\psi\mapsto(o_1,o_2)$ for the resulting map, the octonionic Hopf map is
+$h(o_1,o_2) = (2\,o_1\bar o_2,\,|o_1|^2-|o_2|^2)$; we study $\mathbf{h} := o_1\bar o_2$ and its
+$\mathbb{C}$-projection $\pi_{\mathbb{C}}(\mathbf{h}) := h_0 + \mathrm{i}\,h_1$, read as a complex
+number.
+
+\subsection{Proof of the \texorpdfstring{$\mathbb{C}$}{C}-projection lemma}
+
+\begin{proof}[Proof of Lemma~\ref{lem:cproj}]
+Write $o_1 = \sum_a u_ae_a$, $o_2 = \sum_b v_be_b$. By bilinearity,
+$\mathbf{h} = \sum_{a,b}u_av_b\,e_a\bar e_b$, and a term lands in
+$\operatorname{span}\{e_0,e_1\}$ exactly when $a$ and $b$ lie in the \emph{same block}: $a=b$ gives
+$e_a\bar e_a = 1$, and distinct same-block pairs give $\pm e_1$ by~\eqref{eq:fano-lines}; any
+cross-block pair multiplies into one of $e_2,\dots,e_7$ (the Fano lines not through $e_1$) and
+contributes only to $\mathbb{C}^3$.
+
+The bookkeeping, block by block, with $(o_1)_k = x_k+\mathrm{i}y_k$ and $(o_2)_k = x'_k+\mathrm{i}y'_k$
+the complex amplitudes recovered through~\eqref{eq:embedding}:
+
+\emph{Diagonal terms.} $e_a\bar e_a = 1$ for every $a$, so the $e_0$ component is
+$\sum_a u_av_a = \sum_k (x_kx'_k + y_ky'_k) = \sum_k\operatorname{Re}\bigl(\overline{(o_1)_k}(o_2)_k\bigr)$,
+the signs on the fourth block squaring away.
+
+\emph{Block $\{0,1\}$.} $e_0\bar e_1 = -e_1$ and $e_1\bar e_0 = e_1$, contributing
+$(u_1v_0 - u_0v_1)e_1 = (y_0x'_0 - x_0y'_0)e_1
+= -\operatorname{Im}\bigl(\overline{(o_1)_0}(o_2)_0\bigr)e_1$.
+
+\emph{Blocks $\{2,3\}$ and $\{4,5\}$.} From $(1,2,3)$: $e_2\bar e_3 = -e_2e_3 = -e_1$ and
+$e_3\bar e_2 = e_2e_3 = e_1$, contributing $(u_3v_2-u_2v_3)e_1 =
+-\operatorname{Im}\bigl(\overline{(o_1)_1}(o_2)_1\bigr)e_1$; identically for $\{4,5\}$ via $(1,4,5)$.
+
+\emph{Block $\{6,7\}$ --- the reversed line.} From $(1,7,6)$: $e_6e_7 = -e_1$, so
+$e_6\bar e_7 = +e_1$ and $e_7\bar e_6 = -e_1$, contributing $(u_6v_7 - u_7v_6)e_1$. With the adapted
+embedding~\eqref{eq:embedding}, $u_6 = x_3$, $u_7 = -y_3$ and likewise for $v$, so
+$u_6v_7 - u_7v_6 = -x_3y'_3 + y_3x'_3 = -\operatorname{Im}\bigl(\overline{(o_1)_3}(o_2)_3\bigr)$:
+the reversed Fano orientation and the adapted sign cancel, and the block contributes with the same
+form as the others. (With the unadapted sign this block would contribute
+$+\operatorname{Im}(\cdots)$, breaking the identity --- this is the failure noted above.)
+
+Summing,
+\begin{equation}
+  \pi_{\mathbb{C}}(\mathbf{h})
+  = \sum_{k=0}^{3}\operatorname{Re}\bigl(\overline{(o_1)_k}(o_2)_k\bigr)
+  - \mathrm{i}\sum_{k=0}^{3}\operatorname{Im}\bigl(\overline{(o_1)_k}(o_2)_k\bigr)
+  = \overline{\langle o_1,o_2\rangle_{\mathbb{C}^4}},
+\end{equation}
+the conjugate of the standard Hermitian inner product. In particular
+$\pi_{\mathbb{C}}(\mathbf{h}) = 0$ if and only if the branches are $\mathbb{C}^4$-orthogonal.
+\end{proof}
+
+\begin{corollary}\label{app:cor:cproj}
+By~\eqref{eq:composition}, $|\mathbf{h}|^2 = |o_1|^2|o_2|^2$, so the $\mathbb{C}$-fraction
+$C_{\mathrm{frac}}(\psi) = |\pi_{\mathbb{C}}(\mathbf{h})|^2/|\mathbf{h}|^2$ is a well-defined
+local invariant wherever $\mathbf{h}\neq0$.
+\end{corollary}
+
+\subsection{The base sphere in physical coordinates, and the ceiling lemma}
+
+Write the full normalised Hopf image as
+\begin{equation}
+  H(\psi) = \bigl(2\,\mathbf{h},\;x_9\bigr)\in\mathbb{O}\oplus\mathbb{R},
+  \qquad x_9 := |o_1|^2-|o_2|^2,
+\end{equation}
+so that $|H|^2 = 4|o_1|^2|o_2|^2 + (|o_1|^2-|o_2|^2)^2 = (|o_1|^2+|o_2|^2)^2 = 1$: the image lies on
+the base $S^8$. Its nine coordinates organise physically.
+
+\begin{lemma}[The base is Bloch $\oplus$ colour]\label{app:lem:base}
+Let $\rho = \tfrac12(\mathbb{1}+\vec r\cdot\boldsymbol{\sigma})$ be the split qubit's reduced state,
+with Bloch vector $\vec r$. Then $x_9 = r_z$ and $2\,\pi_{\mathbb{C}}(\mathbf{h}) = r_x -
+\mathrm{i}\,r_y$ exactly, hence
+\begin{equation}
+  r^2 = x_9^2 + |2\pi_{\mathbb{C}}(\mathbf{h})|^2,
+  \qquad
+  r^2 + |w|^2 = 1,
+  \label{eq:base-split}
+\end{equation}
+where $w\in\mathbb{C}^3$ is the colour component of $2\mathbf{h}$. The base $S^8$ is the unit sphere
+of $(\text{Bloch vector of the cut})\oplus(\text{colour sector})$: three real dimensions of
+single-qubit data and six of colour.
+\end{lemma}
+
+\begin{proof}
+In the branch basis, $\rho_{00} = |o_1|^2$, $\rho_{11} = |o_2|^2$ and
+$\rho_{01} = \langle\varphi_1,\varphi_0\rangle = \overline{\langle o_1,o_2\rangle} =
+\pi_{\mathbb{C}}(\mathbf{h})$ by Lemma~\ref{lem:cproj}. Comparing with
+$\rho_{00}-\rho_{11} = r_z$ and $\rho_{01} = \tfrac12(r_x-\mathrm{i}r_y)$ gives the identifications;
+the second identity in~\eqref{eq:base-split} is $|H|^2 = 1$ with $|2\mathbf{h}|^2 =
+|2\pi_{\mathbb{C}}|^2 + |w|^2$.
+\end{proof}
+
+\begin{lemma}[Ceiling lemma]\label{app:lem:ceiling}
+For any three-qubit state and any split,
+\begin{equation}
+  \sup_{U_1}\,C_{\mathrm{frac}} = r^2,
+\end{equation}
+the squared Bloch radius of that cut's marginal; the supremum is attained exactly when $U_1$ rotates
+the Bloch vector into the equatorial plane $x_9 = 0$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{app:lem:base} and $|2\mathbf{h}|^2 = 1-x_9^2$,
+\begin{equation}
+  C_{\mathrm{frac}} = \frac{|2\pi_{\mathbb{C}}|^2}{|2\mathbf{h}|^2}
+  = \frac{r^2 - x_9^2}{1 - x_9^2},
+\end{equation}
+which is decreasing in $x_9^2$ (its derivative in $x_9^2$ is $(r^2-1)/(1-x_9^2)^2 < 0$). A
+first-qubit unitary conjugates $\rho$, rotating $\vec r$ freely at fixed length, so $x_9$ ranges over
+$[-r,r]$, and the maximum $r^2$ is attained at $x_9 = 0$.
+\end{proof}
+
+\begin{corollary}[Instances]\label{app:cor:instances}
+(i) On the canonical GHZ orbit $r = 0$ for every cut, so the $\mathbb{C}$-fraction vanishes
+identically: confinement. (ii) On the canonical W orbit $r = \tfrac13$, so
+$\sup C_{\mathrm{frac}} = \tfrac19$. (iii) For the tilted states
+$\alpha\lvert000\rangle+\beta\lvert111\rangle$, $r = |\alpha|^2-|\beta|^2$ and the orbit ceiling is
+$(|\alpha|^2-|\beta|^2)^2$.
+\end{corollary}
+
+\section{GHZ Confinement and Its Characterisation}
+\label{app:ghz-proof}
+
+We prove Proposition~\ref{prop:ghz} in both directions: the $\mathbb{C}$-projection vanishes
+identically on the local-unitary orbit of
+$\lvert\mathrm{GHZ}\rangle = (\lvert000\rangle+\lvert111\rangle)/\sqrt2$ under every split, and this
+property characterises that orbit exactly. The scope deserves emphasis at the outset: the
+characterisation selects the \emph{local-unitary orbit} of the maximally entangled representative,
+not the GHZ SLOCC class, which is strictly larger; the distinction, and its physical reading, are
+the subject of \S\ref{sec:canonical-orbits} in the main text.
+
+\subsection{The forward direction}
+
+\begin{proof}[Proof, forward direction]
+By Lemma~\ref{lem:cproj} it suffices to show $\langle o_1,o_2\rangle_{\mathbb{C}^4} = 0$ for every
+local-unitary image, under each split.
+
+\emph{Initial data.} Splitting the bare state on the first qubit gives
+$\psi_0 = \tfrac1{\sqrt2}(1,0,0,0)$ and $\psi_1 = \tfrac1{\sqrt2}(0,0,0,1)$: orthogonal, with equal
+norms $\tfrac12$.
+
+\emph{Internal unitaries.} $U_2\otimes U_3$ acts unitarily on the $\mathbb{C}^4$ encoding qubits two
+and three, so $\varphi_0 = (U_2\otimes U_3)\psi_0$ and $\varphi_1 = (U_2\otimes U_3)\psi_1$ retain
+orthogonality and equal norms.
+
+\emph{First-qubit mixing.} With
+$U_1 = \begin{psmallmatrix} a & b\\ -\bar b & \bar a\end{psmallmatrix}$, $|a|^2+|b|^2 = 1$, the
+branches become $o_1 = a\varphi_0+b\varphi_1$, $o_2 = -\bar b\varphi_0+\bar a\varphi_1$, and,
+conjugate-linear in the first argument,
+\begin{align}
+  \langle o_1,o_2\rangle
+  &= \bar a\bar b\bigl(|\varphi_1|^2-|\varphi_0|^2\bigr)
+   + \bar a^2\langle\varphi_0,\varphi_1\rangle
+   - \bar b^2\langle\varphi_1,\varphi_0\rangle.
+  \label{eq:general-ip}
+\end{align}
+With orthogonal, equal-norm branches every term vanishes, for all $U_1$. (Commutativity of
+$\mathbb{C}$ is also load-bearing: the first term arises as
+$-\bar a\bar b\,|\varphi_0|^2 + \bar b\bar a\,|\varphi_1|^2$, and combining it requires
+$\bar a\bar b = \bar b\bar a$.)
+
+\emph{Symmetry across splits.} The only facts used are that the split qubit's reduced state is
+maximally mixed; for $\lvert\mathrm{GHZ}\rangle$ all three are $\tfrac12\mathbb{1}$, and local
+unitaries preserve reduced spectra, so the argument runs identically for each split, each with its
+own identification~\eqref{eq:embedding} of that split's $\mathbb{C}^4$.
+\end{proof}
+
+\begin{corollary}[The colour equator]\label{app:cor:s5}
+On the canonical GHZ orbit, $\vec r = 0$ for every cut, so by Lemma~\ref{app:lem:base} the
+normalised Hopf image has $x_9 = 0$, $\pi_{\mathbb{C}}(\mathbf{h}) = 0$ and $|w| = 1$: it lies on
+the equatorial $S^5\subset S^8$, the unit sphere of the colour sector $\mathbb{C}^3$. (Numerically
+the image ranges over the whole of this sphere; we record the coverage as observed rather than
+proved.)
+\end{corollary}
+
+\subsection{The characterisation}
+
+\begin{theorem}[Characterisation of the GHZ orbit]\label{app:thm:char}
+For a pure three-qubit state $\psi$, the following are equivalent:
+(i) the $\mathbb{C}$-fraction vanishes for every local unitary and every split;
+(ii) all three single-qubit reduced states are maximally mixed;
+(iii) $\psi$ is local-unitarily equivalent to $\lvert\mathrm{GHZ}\rangle$.
+\end{theorem}
+
+\begin{proof}
+\emph{(i)$\Leftrightarrow$(ii).} Immediate from Lemma~\ref{app:lem:ceiling}: for each split,
+$\sup_{U_1}C_{\mathrm{frac}} = r^2$, so the $\mathbb{C}$-fraction vanishes for every local unitary
+exactly when $r = 0$, i.e.\ when that cut's marginal is maximally mixed; the internal unitaries
+change neither $r$ nor the conclusion, and requiring this under all three splits gives (ii). The
+orbit-wide quantifier is essential: at a \emph{fixed} $U_1$ the single equation
+$\langle o_1,o_2\rangle = 0$ does not force maximal mixing --- the biseparable state
+$\alpha\lvert000\rangle+\beta\lvert101\rangle$ and the tilted state
+$\alpha\lvert000\rangle+\beta\lvert111\rangle$ both have $C_{\mathrm{frac}} = 0$ at $U_1=\mathbb{1}$
+with $\rho_1\neq\tfrac12\mathbb{1}$ when $|\alpha|\neq|\beta|$, their orbit ceilings being
+$(|\alpha|^2-|\beta|^2)^2 > 0$.
+
+\emph{(ii)$\Rightarrow$(iii).} Every pure three-qubit state is local-unitarily equivalent to the
+canonical form
+$\lambda_0\lvert000\rangle + \lambda_1e^{\mathrm{i}\phi}\lvert100\rangle + \lambda_2\lvert101\rangle
++ \lambda_3\lvert110\rangle + \lambda_4\lvert111\rangle$ with $\lambda_i\ge0$
+\autocite{acin2000generalized}. The first-qubit branches are $\varphi_0 = (\lambda_0,0,0,0)$ and
+$\varphi_1 = (\lambda_1e^{\mathrm{i}\phi},\lambda_2,\lambda_3,\lambda_4)$, so
+$\rho_1 = \tfrac12\mathbb{1}$ forces $\lambda_0^2 = \tfrac12$ and
+$\langle\varphi_0,\varphi_1\rangle = \lambda_0\lambda_1e^{\mathrm{i}\phi} = 0$, hence
+$\lambda_1 = 0$. The second-qubit branch with that qubit in $\lvert0\rangle$ has squared norm
+$\lambda_0^2+\lambda_2^2$, so $\rho_2 = \tfrac12\mathbb{1}$ forces $\lambda_2 = 0$; likewise
+$\rho_3 = \tfrac12\mathbb{1}$ forces $\lambda_3 = 0$. Then $\lambda_4^2 = \tfrac12$ and
+$\psi \simeq (\lvert000\rangle+\lvert111\rangle)/\sqrt2$.
+
+\emph{(iii)$\Rightarrow$(i)} is the forward direction. Note that no hypothesis of genuine
+tripartiteness is needed: condition (ii) alone excludes products and biseparable states.
+\end{proof}
+
+\begin{remark}[Orbit, not class]
+The GHZ SLOCC class additionally contains the tilted states
+$\alpha\lvert000\rangle+\beta\lvert111\rangle$, $\alpha\neq\beta$, which are genuinely tripartite
+(non-zero three-tangle) but whose orbits acquire a non-zero $\mathbb{C}$-projection --- numerically
+reaching values well above the W-orbit ceiling of $\tfrac19$. The confinement statement is therefore
+a property of the canonical maximally entangled orbit, and the identification of that orbit as the
+physical particle configuration is made, and discussed, in \S\ref{sec:canonical-orbits}.
+\end{remark}
+
+\subsection{Remark: what singles out the preferred direction}
+
+The proof used two features of $e_1$. First, commutativity --- the cancellation in
+\eqref{eq:general-ip} needs $\bar a\bar b = \bar b\bar a$ --- but this alone selects nothing, since
+every imaginary unit spans a commutative plane with $e_0$. What is unique to $e_1$ is
+\emph{alignment}: its three Fano lines~\eqref{eq:fano-lines} partition the remaining units into the
+blocks $\{2,3\},\{4,5\},\{6,7\}$, and these coincide (after the $J$-adaptation
+of~\eqref{eq:embedding}) with the real--imaginary pairing of the qubit amplitudes. For any other
+imaginary direction the corresponding blocks pair coordinates of \emph{different} qubit amplitudes,
+the resulting bilinear form is not the Hermitian inner product of the qubit $\mathbb{C}^4$, and the
+orbit-wide cancellation fails. Concretely: for the bare representative the Hopf image lies along
+$e_6$ (on the line $(1,7,6)$ through the preferred direction), and on the orbit the components along
+$e_0$ and $e_1$ vanish identically --- that is the theorem --- while the components along every one
+of $e_2,\dots,e_7$ are generically non-zero. The confinement result is thus tied specifically to the
+computability split, not to an arbitrary choice of complex direction.
+
+\section{W Accessibility and the Distinguished \texorpdfstring{$T_3$}{T3} Axis}
+\label{app:w-proof}
+
+\subsection{Accessibility}
+
+We prove Proposition~\ref{prop:w-access}: on the local-unitary orbit of
+$\lvert\mathrm{W}\rangle = (\lvert001\rangle+\lvert010\rangle+\lvert100\rangle)/\sqrt3$, the
+$\mathbb{C}$-projection is generically non-zero, vanishing only on a measure-zero subset, with
+$\sup C_{\mathrm{frac}} = \tfrac19$.
+
+\begin{proof}
+Splitting on the first qubit, $\psi_0 = \tfrac1{\sqrt3}(0,1,1,0)$ and
+$\psi_1 = \tfrac1{\sqrt3}(1,0,0,0)$ are orthogonal with \emph{unequal} norms
+$|\psi_0|^2 = \tfrac23$, $|\psi_1|^2 = \tfrac13$. Orthogonality kills the $\bar a^2,\bar b^2$ terms
+of~\eqref{eq:general-ip}, leaving
+\begin{equation}
+  \langle o_1,o_2\rangle = \bar a\bar b\bigl(\tfrac13-\tfrac23\bigr) = -\tfrac{\bar a\bar b}{3},
+\end{equation}
+which vanishes only when $ab = 0$ --- $U_1$ diagonal or anti-diagonal, a measure-zero subset of
+$SU(2)$, on which the bare representative itself sits. With $p = |a|^2$:
+$|o_1|^2 = (1+p)/3$, $|o_2|^2 = (2-p)/3$, $|\langle o_1,o_2\rangle|^2 = p(1-p)/9$, so
+by~\eqref{eq:composition}
+\begin{equation}
+  C_{\mathrm{frac}} = \frac{p(1-p)}{(1+p)(2-p)},
+  \label{eq:wcfrac}
+\end{equation}
+maximised at $p = \tfrac12$ with value $\tfrac19$. The reduced spectrum $(\tfrac23,\tfrac13)$ is a
+local-unitary invariant, so the conclusion holds orbit-wide, and by the permutation symmetry of
+$\lvert\mathrm{W}\rangle$, under every split.
+\end{proof}
+
+The value $\tfrac19$ is the instance $r = \tfrac13$ of Lemma~\ref{app:lem:ceiling} --- the square of
+the marginal's Bloch radius --- attained exactly when $U_1$ rotates that Bloch vector into the
+equatorial plane. The geometry is sharper than a latitude band. By~\eqref{eq:base-split} with
+$r = \tfrac13$ fixed on the orbit, the colour-component norm is \emph{constant},
+$|w| = \sqrt{8/9}$: the W orbit's Hopf image lies on the product of a colour five-sphere of radius
+$\sqrt{8/9}$ with a Bloch two-sphere of radius $\tfrac13$, and the latitude band
+$|x_9|\le\tfrac13$ is merely this locus's shadow on the $x_9$ axis. In particular the image is
+\emph{disjoint} from the colour equator $S^5$ of Corollary~\ref{app:cor:s5}, which has $|w| = 1$:
+even where the W orbit crosses the equatorial plane $x_9 = 0$, its colour radius remains
+$\sqrt{8/9} < 1$, the missing $\tfrac19$ of squared norm sitting entirely in the $\mathbb{C}$-plane
+--- which is exactly where the $\mathbb{C}$-fraction attains its ceiling. The two canonical orbits
+thus occupy disjoint compact loci on the base, the geometric form of the statement that no change of
+local frame connects them.
+
+\subsection{The doublet: a distinguished axis from a non-degenerate spectrum}
+
+We prove Proposition~\ref{prop:w-doublet} in its corrected form: each single-qubit reduced state on
+the W orbit has the non-degenerate spectrum $(\tfrac23,\tfrac13)$, whose eigenbasis singles out a
+$T_3$ axis --- the structure of a weak-isospin doublet --- which the degenerate GHZ marginal lacks.
+
+\begin{proof}
+Group $\lvert\mathrm{W}\rangle = \tfrac1{\sqrt3}\bigl[\lvert0\rangle(\lvert01\rangle+\lvert10\rangle)
++\lvert1\rangle\lvert00\rangle\bigr]$ and trace qubits two and three. The cross terms vanish since
+$\langle00\vert(\lvert01\rangle+\lvert10\rangle) = 0$, giving
+\begin{equation}
+  \rho_1 = \begin{pmatrix}\tfrac23 & 0\\ 0 & \tfrac13\end{pmatrix}
+         = \tfrac12\mathbb{1} + \tfrac16\,\hat n\!\cdot\!\boldsymbol{\sigma},
+\end{equation}
+a Bloch vector of length $\tfrac13$ along $\hat n = \hat z$; by the permutation symmetry of
+$\lvert\mathrm{W}\rangle$ the same holds for $\rho_2,\rho_3$.
+
+The invariant content is the non-degeneracy. A non-degenerate spectrum determines a unique
+eigenbasis, hence a distinguished axis $\hat n$ and an ordered pair of eigenstates --- the two
+doublet members, with $T_3 = \pm\tfrac12$ assigned along $\hat n$ --- and the marginal's symmetry is
+broken from $SU(2)$ to the $U(1)$ of rotations about $\hat n$. Under a local unitary the state is
+conjugated, the Bloch vector rotating covariantly (the traceless part transforms in the adjoint),
+so the \emph{existence} of the distinguished axis is orbit-wide even as its direction moves; the
+$SU(2)$ raising and lowering operators with respect to $\hat n$ map the two eigenstates into one
+another, which is the doublet action. The GHZ marginal $\tfrac12\mathbb{1}$, by contrast, is
+invariant under all of $SU(2)$: it determines no axis and no doublet pair. The eigenvalues
+$(\tfrac23,\tfrac13)$ are local-unitary invariants, so all statements hold across the orbit.
+\end{proof}
+
+\begin{corollary}[Bipartite shadow]\label{app:cor:bell}
+Tracing one qubit from $\lvert\mathrm{W}\rangle$ leaves
+\begin{equation}
+  \rho_{\mathrm{pair}} = \tfrac23\,\lvert\Psi^+\rangle\langle\Psi^+\rvert
+  + \tfrac13\,\lvert00\rangle\langle00\rvert,
+  \qquad \lvert\Psi^+\rangle = \tfrac1{\sqrt2}(\lvert01\rangle+\lvert10\rangle),
+\end{equation}
+a Bell pair of weight $\tfrac23$ against a separable remainder --- in contrast to GHZ, whose
+two-qubit marginals are separable.
+\end{corollary}
+
+\begin{proof}
+Group by the traced qubit and use $\lvert01\rangle+\lvert10\rangle = \sqrt2\,\lvert\Psi^+\rangle$.
+\end{proof}
+
+\subsection{One invariant: the Bloch radius of the cut}
+
+One local-unitary invariant drives everything, and it is a coordinate on the Hopf base: the Bloch
+radius $r$ of the split qubit's marginal --- equivalently its spectrum $\tfrac12(1\pm r)$. By
+Lemma~\ref{app:lem:base} the base $S^8$ is the unit sphere of (Bloch vector of the cut) $\oplus$
+(colour sector), and by Lemma~\ref{app:lem:ceiling} the $\mathbb{C}$-accessibility of an orbit is
+exactly $r^2$. At $r = 0$ the orbit sits on the colour equator $S^5$ --- confinement, and a marginal
+with no doublet axis; at $r = \tfrac13$ it occupies the band about that equator, with ceiling
+$\tfrac19$ --- access to the lepton sector, and a distinguished $T_3$ axis. The entanglement-class
+names label these loci; the content of the propositions is the loci themselves. Because reduced
+spectra are local-unitary invariants, the distinction is frame-independent on the canonical orbits
+to which, by the identification of \S\ref{sec:canonical-orbits}, the physical particles correspond.

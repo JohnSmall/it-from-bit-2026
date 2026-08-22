@@ -1,6 +1,32 @@
+%  UPDATED 2026-07-12: two currency additions to sec:sedenion-announcement
+%  -- (1) the Klein-four-group sentence: both the K3 classes and the
+%  sedenion sectors are (Z2 x Z2, S3 = Aut) canonically, so the shadow
+%  statement's abstract half is secured and the intertwiner is what
+%  remains; (2) notebook M's boundary condition on the near-conservation
+%  bonus: the bare cross-algebra vertex is maximal, the dressing carries
+%  the suppression. Staging unchanged (K3 record, sedenion candidate).
+%  UPDATED 2026-07-10 (the discovery narrative, per JS): new subsection
+%  sec:sedenion-announcement after the triality paragraph -- the K3
+%  rough edge diagnosed (smuggled rung-distinguishability vs the
+%  canonical orbits' permutation symmetry), the circuit forcing the
+%  extra wire, the triality promotion Aut(O) = G2 -> Aut(S) = G2 x S3
+%  (brown1967generalized, RIS delivered), generations as the S3-orbit,
+%  sterile as the invariant sector, the shadow-theorem relation stated
+%  at candidate status with the K3 derivation remaining the derivation
+%  of record; op:filatov-extension gains the route clause; the
+%  circuit-as-critic methodological coda per JS's framing.
+%  RE-AUDITED 2026-07-06 (final pass, twelfth stop, light leg): the
+%  "next section makes quantitative" adjacency broke under the reorder
+%  (confinement intervenes) -- retargeted to sec:masses; three
+%  consumer-pointers added, problem content untouched everywhere:
+%  op:filatov-extension gains the frame's certification-gap reading,
+%  op:chirality the frame's parity setting, op:sterile-gravity the
+%  spacetime dark-matter back-stitch ("the two statements are one
+%  problem"); header umlaut normalised, file pure ASCII; the deep
+%  audit otherwise stands.
 % =====================================================================
 %  Section: The Particle Zoo   (Plan Stages 3-4)
-%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Paper 1, "It from Bit via G\"odel". Drafted 2026-06-08.
 %  Follows \S sec:charges; precedes \S sec:masses.
 %
 %  \input fragment. biblatex/\autocite, amsthm `proposition'.
@@ -27,6 +53,13 @@
 %      to \S sec:masses (its open problems are converted when that section
 %      is next worked).
 %
+%  AUDITED 2026-07-04: DM candidacy demoted to open (op:sterile-gravity
+%  now carries it; seesaw role only asserted); sterile mass tied to the
+%  3.6 TeV matching scale; GHZ-side gap folded into op:filatov-extension
+%  (companion clause) and flagged at first use, honouring the register
+%  section's pointer; sterile spin-1/2 status routed through the
+%  register ladder with its owed bridges; Bell-shadow wording made
+%  precise; GHZ/sterile disambiguation + two-neutrals contrast added.
 %  REVISED 2026-06-11: open-problem convention implemented; four-class
 %  table corrected (rows 2-3 had odd-qubit labels misaligned with the
 %  handedness patterns); quark-doublet attribution corrected (frustrated-
@@ -48,12 +81,12 @@
 
 With a channel's quantum numbers now readable from its entanglement structure (\S\ref{sec:charges}),
 we can enumerate the channels themselves: the fermion content of one generation, then why there are
-exactly three of them, and finally a fourth class that couples to nothing. The spine of the argument
+exactly three of them, and finally a fourth class that couples to no gauge force. The spine of the argument
 is a single topological fact --- the complete graph $K_3$ is not two-colourable --- applied to the
 handedness that the Filatov representation forces on entangled qubits. It should be said at the
 outset that one link in the chain is an assumption rather than a theorem, and a load-bearing one:
 the extension of the Filatov constraint from two qubits to three. We flag it where it enters and
-again at the close; the two-qubit result it generalises is proved \autocite{Filatov2024EntanglementStructure}, and
+again at the close; the two-qubit result it generalises is proved \autocite{filatov2024towards}, and
 everything downstream is rigorous once the extension is granted.
 
 \subsection{One generation}
@@ -66,7 +99,9 @@ weak force does not touch. The quarks are the GHZ-class channels, which carry co
 weak-isospin doublet does not come from the W-marginal spectrum --- a canonical GHZ orbit has
 maximally mixed marginals and no distinguished axis --- but from the frustrated-pair resolutions
 made precise below, the same $T_3 = \pm\tfrac12$ structure that Proposition~\ref{prop:w-doublet}
-exhibits for the leptons. They appear as a left-handed doublet, the up- and down-type quark, in
+exhibits for the leptons. Carrying the resolution machinery from the W triangle, where it is
+derived, to the GHZ class, whose pairs are not pairwise entangled, is itself a structural step; it
+is folded into the foundational open problem below. They appear as a left-handed doublet, the up- and down-type quark, in
 three colours, with right-handed singlets. Collecting one generation:
 
 \begin{center}
@@ -93,12 +128,12 @@ next subsection forces, and the hypercharges are those of \S\ref{sec:charges}.
 
 Chirality enters through the representation of \S\ref{sec:register}. Filatov and Auzinsh proved that
 an entangled two-qubit state cannot be drawn on two Bloch spheres of the same handedness: one must be
-right-handed and the other left-handed \autocite{Filatov2024EntanglementStructure}. This is the Filatov
+right-handed and the other left-handed \autocite{filatov2024towards}. This is the Filatov
 constraint, and it is a topological consequence of the quaternionic Hopf fibration rather than a
 drawing convention --- the handedness asymmetry is the geometric content of the entanglement itself.
 
-A W-class channel has all three of its qubit pairs entangled: tracing any one qubit leaves the
-genuine Bell pair of the bipartite shadow (Corollary in Appendix~\ref{app:w-proof}). Extending the
+A W-class channel has all three of its qubit pairs entangled: tracing any one qubit leaves the bipartite \emph{Bell shadow}, a two-qubit state whose dominant
+component is a genuine Bell pair (Corollary in Appendix~\ref{app:w-proof}). Extending the
 Filatov constraint to each pair independently, the three qubits must be assigned handednesses
 $\chi_A,\chi_B,\chi_C \in \{L,R\}$ with every pair opposite,
 \begin{equation}
@@ -115,9 +150,16 @@ formally imply it, and we record it as the foundational open problem of this sec
 
 \begin{openproblem}[The Filatov extension]\label{op:filatov-extension}
 Prove that each entangled pair of a tripartite state carries its own quaternionic Hopf structure,
-so that the Filatov--Auzinsh opposite-handedness theorem \autocite{Filatov2024EntanglementStructure} applies to
-every pair independently. The generation count of this section rests on this extension; the
-combinatorics that follow are rigorous once it is granted.
+so that the Filatov--Auzinsh opposite-handedness theorem \autocite{filatov2024towards} applies to
+every pair independently. A companion clause travels with it: establish that the resolution-class
+structure so obtained governs the GHZ class as well --- whose pairs are not entangled, hence outside
+the two-sphere theorem's hypothesis --- as the quark doublet and generations of this section
+require. The generation count of this section rests on this extension; the combinatorics that
+follow are rigorous once it is granted. (The certification reading of the same gap ---
+state-certified leptons, specification-certified quarks --- is drawn at \S\ref{sec:frame}. A
+candidate dissolution of the companion clause's burden --- the generation label as sedenion-level
+data, discovered when the mixing circuit demanded its wire --- is recorded at
+\S\ref{sec:sedenion-announcement} and developed in the follow-up.)
 \end{openproblem}
 
 \subsection{Three generations and the doublet}
@@ -160,6 +202,65 @@ Triality gives three; the $K_3$ obstruction refines this to three-plus-one by ad
 unfrustrated class. The same count of three generations is reached independently from the complex
 sedenions and from chains of division-algebra ideals \autocite{gillardgresnigt2019three,furey2018three},
 a convergence we read as corroboration rather than as part of the present derivation.
+
+\subsection{The extra wire: how a deeper mechanism announced itself}
+\label{sec:sedenion-announcement}
+
+The record of how that corroboration sharpened belongs in the paper, because it is the paper's
+method demonstrating itself. The $K_3$ argument above was this programme's first account of the
+generation count, and it carried a rough edge its authors could feel: the reading requires knowing
+\emph{which} qubit is the odd one out and what rung it occupies, while the canonical orbits of
+\S\ref{sec:canonical-orbits} are permutation-symmetric --- the state treats the three qubits as
+interchangeable, and the label's rung-identity is imported from the tower architecture rather than
+derived. Nothing was inconsistent; something was not quite right.
+
+The diagnosis arrived from an unexpected direction. Extending the Cabibbo computation of
+Appendix~\ref{app:qiskit-ckm} to the full three-generation mixing circuit
+(Appendix~\ref{app:hw-ckm}) proved impossible on the register alone: the construction demanded an
+additional qubit to carry the generation index. Initially this was an embarrassment --- an
+unlicensed wire with no rung in the architecture. Thought about more deeply, it was the answer.
+The four-qubit space is exactly the complexified sedenions,
+$(\mathbb{C}^{2})^{\otimes 4} = \mathbb{C}^{16} = \mathbb{C} \otimes \mathbb{S}$, one
+Cayley--Dickson rung past the register --- and the doubling changes the symmetry inventory in
+precisely the needed way. The octonions' automorphism group $G_{2}$ contains no $S_{3}$:
+$\mathrm{Spin}(8)$ triality, the ``deeper reason'' of the preceding paragraph, is invisible to the
+octonions' own automorphisms. The sedenions' automorphism group is $G_{2} \times S_{3}$
+\autocite{brown1967generalized}: the doubling \emph{promotes} triality to a manifest symmetry,
+acting by permuting three octonion subalgebras whose triple intersection is a shared quaternionic
+core \autocite{gillardgresnigt2019three}. On that reading the three generations are the
+$S_{3}$-orbit of octonion subalgebras --- the count a theorem of the algebra rather than a
+frustration argument --- the sterile class is the $S_{3}$-invariant sector, with nothing to
+permute matching its lack of a frustrated pair; the shared core is why every generation carries
+identical electroweak quantum numbers, a fact the $K_{3}$ device never explained; and the extra
+qubit stops needing apology: it is the wire on which triality finally acts, and the mixing circuit
+could not have been built without it because the index never lived downstairs.
+
+The two accounts are not rivals; the candidate relation is that the first is the shadow of the
+second --- the $S_{3}$ action, projected through the selected complex direction, reproducing the
+frustration classes on the register, with the three Fano lines of the preceding paragraph as the
+correspondence's published half. One half of the statement is already secured at the abstract
+level: the four $K_{3}$ classes form a Klein four-group under class addition --- the symmetric
+class the identity, the product of two frustrated classes the third --- with
+$S_{3} = \mathrm{Aut}(\mathbb{Z}_{2} \times \mathbb{Z}_{2})$ permuting the three non-identity
+elements, and the sedenion sector structure carries the same
+$\mathbb{Z}_{2} \times \mathbb{Z}_{2}$ grading with the same automorphism action; what remains
+of the shadow statement is therefore the physical intertwiner, not the group isomorphism. Proving that shadow statement, verifying the algebraic inputs at
+citation grade, and formalising the bonus the sedenion reading offers and the $K_{3}$ device did
+not --- generation number as an approximately conserved charge, violated only in the zero-divisor
+sector, which would make the near-diagonality of the mixing matrices a mechanism rather than a
+mystery (a structural scan has since fixed that mechanism's boundary condition: the bare
+cross-algebra vertex mixes \emph{maximally}, so the near-diagonality must be carried entirely by
+the dressing --- the suppression, not the coupling, is the object to derive). The dressing
+programme's first exact results land on the same side: the tag-recorded excursion shift is
+generation-universal and the induced mixing vanishes identically --- an exact cancellation
+arranged by the $S_3$ twist --- so the near-diagonality is protected at second order by the
+same structure that carries the generations --- is the business of the follow-up paper, and until it is done the derivation of record
+in this paper remains the $K_{3}$ argument at the status Open Problem~\ref{op:filatov-extension}
+prices. But the methodological point stands on its own and we state it plainly: this is how a
+research programme works --- try an idea, find something better, replace the first --- and the
+finding was forced by the paper's own discipline. The rule that every structure must compile to a
+runnable circuit acted as a critic: the executable representation refused to let the rough edge
+stay hidden.
 
 The framework associates increasing mass with the increasing algebraic depth of the odd qubit ---
 commutative $\mathbb{C}$ lightest, non-associative $\mathbb{O}$ heaviest --- which reproduces the
@@ -215,13 +316,28 @@ hypercharge winding vanishes, so it is electrically neutral, and being a colour 
 to the strong force as well. It couples to none of the gauge forces --- though whether it can truly
 couple to \emph{nothing}, given that it gravitates, is a tension we return to below.
 
+A disambiguation is owed here, because the phrase ``all three the same'' invites a specific
+misreading. The sameness is of \emph{handedness} --- the chirality labels $\chi \in \{L, R\}$ on
+the three spheres' coordinate frames, the Filatov data --- not of basis kets. The two all-same
+assignments, all-$L$ and all-$R$, form one class because the global flip exchanges particle and
+antiparticle; they are classical alternatives, not branches of a superposition. In particular the
+sterile class is not the GHZ state wearing other clothes: $\lvert 000\rangle + \lvert 111\rangle$
+is one coherent state whose two \emph{basis components} are superposed, maximally
+tripartite-entangled, and --- by Proposition~\ref{prop:ghz} --- resident on the colour-triplet side
+of the split, which is to say a quark. The sterile is the opposite pole of the machinery: a frame
+labelling with no opposite-handedness pair, hence no entangled edge for the Filatov representation
+to draw, colour-singlet, and blind to every gauge gate. And the two neutral leptons are neutral for
+different reasons: the active neutrino's neutrality is a \emph{cancellation} --- $T_3$ against
+$\tfrac12 Y$ in exactly the combination the photon reads (\S\ref{sec:charges}) --- while the
+sterile's is an \emph{absence}: no winding, no pair, nothing to cancel.
+
 A terminological care is needed here, and it carries physical weight. This channel is not a
 right-handed neutrino in the usual sense: that phrase presupposes chirality is a binary property
 every fermion must carry, whereas the all-same configuration has \emph{no} opposite-handedness pair
 and so is neither left- nor right-handed but \emph{a-chiral}. It is not the parity partner of the
-active neutrino, which is why the standard objection to such a state as dark matter --- that parity
-restoration at high energy should regenerate it --- does not apply: there is nothing for it to be the
-partner of.
+active neutrino, which is why one standard objection to any dark-matter reading of such a state ---
+that parity restoration at high energy should regenerate it --- would not apply: there is nothing
+for it to be the partner of.
 
 Two distinct notions of handedness must be kept apart at this point, because conflating them would
 make ``a-chiral fermion'' sound like a contradiction. There is the \emph{external} chirality of the
@@ -232,7 +348,9 @@ generations. When we call this channel a-chiral we mean the \emph{internal} prop
 assignment is the all-same $K_3$ class, the one carrying no opposite-handedness frustration for a
 gauge force to engage. This says nothing against its spin. The channel is a three-qubit fermionic
 register like every other fermion in the framework, and its spin-$\tfrac12$ character follows from
-that, exactly as it does for the charged fermions; a-chirality is an additional internal property the
+that register structure as \S\ref{sec:register} derives it --- established there for the
+pairwise-entangled triangle and extended to the remaining classes with the owed bridges that
+section records; a-chirality is an additional internal property the
 charged fermions possess and this one lacks, not the absence of the fermionic character that makes it
 spin-$\tfrac12$ in the first place. Internal a-chirality is, moreover, precisely what makes it a
 gauge singlet: with no opposite-handedness frustration there is nothing for $SU(2)$ to read, which is
@@ -240,10 +358,12 @@ the framework's derivation of the defining property of a sterile state --- that 
 weak force --- from the internal structure rather than as a label. Whether its Majorana mass is best
 read as such, or admits a Dirac reading, we leave open.
 
-The framework reads it as a sterile neutrino and a dark-matter candidate, with a
-computability-scale Majorana mass driving a seesaw. On the count that two such a-chiral modes exist,
-the seesaw yields a massless lightest active neutrino, $m_1 = 0$, normal mass ordering, and two
-sterile states near a few TeV. The count of a-chiral modes is the weakest link in this part of the
+The framework reads it as a sterile neutrino, with a computability-scale Majorana mass driving a
+seesaw; whether it can also serve as a dark-matter candidate is exactly what the tension recorded
+below (Open Problem~\ref{op:sterile-gravity}) leaves open, and only the seesaw role is asserted
+here. On the count that two such a-chiral modes exist, the seesaw yields a massless lightest active
+neutrino, $m_1 = 0$, normal mass ordering, and two sterile states near the matching scale of
+\S\ref{sec:charges}, roughly $3.6\ \mathrm{TeV}$. The count of a-chiral modes is the weakest link in this part of the
 chain, and we record it.
 
 \begin{openproblem}[The sterile count]\label{op:sterile-count}
@@ -254,7 +374,7 @@ exactly massless, $m_1 = 0$, with normal ordering; on a three-mode count $m_1 = 
 
 A deeper tension attends this channel, and we state it at full strength rather than resolve it,
 because the framework's own commitments make it sharp and its resolution would require a genuine new
-insight. We said above that the channel couples to nothing; yet it carries a Majorana mass, and mass,
+insight. We said above that the channel couples to no gauge force; yet it carries a Majorana mass, and mass,
 in this framework, is what gravitates (\S\ref{sec:confinement}). This is not the mild puzzle it would
 be in non-relational physics, where a particle may simply interact through gravity alone. Here
 gravity is not a force upon a pre-existing spacetime but the structure that measurement builds: the
@@ -281,6 +401,9 @@ that the channel is a pre-spatial object that never acquires a distinct spacetim
 case its cosmological gravitational effects must be accounted for without one. The resolution bears
 directly on the nature of mass, of the sterile sector, and of dark matter, and we flag it as a
 tension the framework's identification of gravity with measurement makes unavoidable.
+ The spacetime section's dark-matter prospect names the same condition from the
+metric side --- participation in loop-counting prior to, and independent of, gauge participation
+(\S\ref{sec:space-of-computations}) --- and the two statements are one problem.
 \end{openproblem}
 
 \subsection{What is settled, and what is owed}
@@ -299,7 +422,8 @@ octonionic orientation down through the tower, sketched but not yet a theorem.
 \begin{openproblem}[The chirality fixed point]\label{op:chirality}
 Prove that the orientation of the octonionic level propagates down the Cayley--Dickson tower to
 select $SU(2)_L$ over $SU(2)_R$ --- that the weak doublet is left-handed --- from the handedness
-structure alone.
+structure alone. The structural setting --- parity sensitivity as the job description of a
+frame-acting force --- is drawn at \S\ref{sec:frame}.
 \end{openproblem}
 
 The remaining debts are the problems already recorded: the Filatov extension
@@ -311,5 +435,5 @@ recorded in turn.
 
 The spectrum is now enumerated: three generations of quarks and leptons in left-handed doublets and
 right-handed singlets, with a fourth, sterile, a-chiral class. What the depth ordering asserts
-qualitatively --- that mass grows with algebraic depth --- the next section makes quantitative,
+qualitatively --- that mass grows with algebraic depth --- \S\ref{sec:masses} makes quantitative,
 turning the register geometry into the charged-lepton and quark mass spectra.

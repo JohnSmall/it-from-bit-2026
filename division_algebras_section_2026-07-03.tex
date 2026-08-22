@@ -6,12 +6,24 @@
 %  Hopf-justification section, whose header names it "the
 %  Cayley--Dickson / Hurwitz step".
 %
-%  PLACEMENT in main.tex: between the self-reference section and the
-%  Hopf-justification section --
-%      \input{self_reference_section_...}        % undrafted
-%      \input{division_algebras_section_2026-07-03}
+%  PLACEMENT in main.tex (REORDERED per JS 2026-07-06): position 6,
+%  opening Act II ("why stop at C?") right before its first consumer --
+%      \input{self_reference_section_2026-07-04}
+%      \input{continuity_section_2026-07-04}
+%      \input{L2_metric_global_phase_section_2026_06_07}
+%      \input{wigners_friend_in_the_hopf_picture_2026-06-13}
+%      \input{derivation_of_the_quantum_postulates}
+%      \input{division_algebras_section_2026-07-03}   <-- moved here
+%      \input{spacetime_from_non-computability}       <-- first consumer
+%                                                          (S^7 exclusion)
 %      \input{hopf_justification_section_2026-06-08}
-%  (check main.tex actually has a slot; the input line may need adding.)
+%  The section is position-portable: all adjacency phrasing was
+%  retargeted to explicit \S\ref on 2026-07-06. The S^7 hand-off
+%  sentence to sec:space-of-computations WRITTEN 2026-07-06 (spacetime
+%  file read; the closing now hands first to its immediate consumer,
+%  then to hopf-justification). Upload verifications COMPLETE: L2 and
+%  quantum-postulates do not consume the ladder; WF's references are
+%  forward-voiced or self-carrying.
 %
 %  DIVISION OF LABOUR (deliberate, to avoid overlap):
 %   - sec:self-reference (undrafted): self-reference -> complex
@@ -39,12 +51,22 @@
 %   - Internal-not-base scoping: cayley_dickson_qubits_for_review Q2 and
 %     sec.3.2 caveat (Adler objection; C-qubit treated geometrically).
 %
-%  HONEST DEBT (deliberate shape): the ladder is proved closed at the
-%  top (Hurwitz) and derived at the floor (sec:self-reference); the
-%  rung-by-rung upward compulsion (closure at level A forces the double
-%  of A) is flagged as the framework's thesis, owed, NOT minted as a
-%  numbered open problem -- it cannot be well-posed until
-%  sec:self-reference's formal apparatus exists. Revisit then.
+%  HONEST DEBT: ladder proved closed at the top (Hurwitz), derived at
+%  the floor. The rung-compulsion revisit-trigger FIRED 2026-07-06:
+%  sec:self-reference and op:sigma-functor now exist, so the thesis is
+%  minted as op:ladder-compulsion (with the CD-conjugation-as-sigma
+%  candidate route), inheriting op:sigma-functor's status.
+%
+%  AUDITED 2026-07-06 (final pass, third stop): all four citations
+%  used; all cross-refs live; CD facts, dims, alternativity, Hurwitz
+%  statement verified; Adler subsection delivers everything the
+%  register's compressed pointer promises; file pure ASCII; no bare
+%  "frame". Fixes: opening rewritten for both predecessors (continuity
+%  was inserted between after drafting); "associator's non-vanishing is
+%  mass itself" recalibrated to the register's debt-against-selection
+%  defusal; the O->S ledger row and Hurwitz subsection reconciled with
+%  the fourth-qubit forward remark ("the terminus closes the ladder of
+%  forces; what survives past it is, at most, flavour").
 %
 %  CROSS-REFS: sec:self-reference [sibling dangle -- resolves when that
 %  section is drafted], sec:hopf-justification, sec:hopf-information-bound,
@@ -60,10 +82,13 @@
 \section{The Division-Algebra Ladder}
 \label{sec:division-algebras}
 
-The previous section ended with amplitudes: the self-referential argument forced the description of
-a system into the system's own state space, and the price of consistency was a number system in
-which the parts of a probability can cancel --- complex amplitudes, and the Born rule that squares
-them (\S\ref{sec:self-reference}). This section asks the question that result leaves open. Why
+The foundations behind us end at amplitudes twice over: natively, where the self-referential
+argument forced the description of a system into the system's own state space and priced
+consistency at a number system whose parts can cancel --- complex amplitudes, and the Born rule
+that squares them (\S\ref{sec:self-reference}) --- and independently, where the regime's
+continuity delivers the same field through Hardy's theorem (\S\ref{sec:continuity}), the
+convergence of the two branches being evidence rather than accident. This section asks the question
+both routes leave open. Why
 should the number system stop at $\mathbb{C}$? Ordinary quantum mechanics stops there by postulate;
 a framework that has forbidden itself postulates must answer, and the answer is that the climb
 neither stops at $\mathbb{C}$ nor continues forever. There are exactly two more rungs, each
@@ -72,7 +97,7 @@ closed at the top by a theorem of 1898. This section sets out the algebra of tha
 construction that climbs it, the ledger of what each rung costs and buys, and the theorem that ends
 it. The geometry of the same ladder --- that each rung acts on a sphere, that exactly those spheres
 are parallelisable, and that the algebraic and geometric classifications are one --- is the business
-of the next section (\S\ref{sec:hopf-justification}).
+of the geometry section (\S\ref{sec:hopf-justification}).
 
 \subsection{One construction climbs the whole ladder}
 
@@ -109,14 +134,14 @@ $\mathbb{C} \to \mathbb{H}$ & $2 \to 4$ & commutativity & non-commuting actions:
 $\mathbb{H} \to \mathbb{O}$ & $4 \to 8$ & associativity & the associator: colour, chirality, the \\
  & & & generations, and mass as debt \\
  & & & (\S\ref{sec:generations}, \S\ref{sec:masses}) \\
-$\mathbb{O} \to \mathbb{S}$ & $8 \to 16$ & division itself & nothing: zero divisors appear and the \\
- & & (zero divisors) & ladder ends (below) \\
+$\mathbb{O} \to \mathbb{S}$ & $8 \to 16$ & division itself & no further force: zero divisors appear \\
+ & & (zero divisors) & and the ladder of sectors ends (below) \\
 \hline
 \end{tabular}
 \end{center}
 
 Walking the rows: the order lost at the first doubling is the possibility of interference --- parts
-of a probability that can oppose one another --- which is where the previous section's derivation
+of a probability that can oppose one another --- which is where the derivation of \S\ref{sec:self-reference}
 lives. The commutativity lost at the second is the existence of actions whose order matters; the
 unit quaternions form the group $SU(2)$, and the framework houses weak isospin there, as the
 internal algebra of the $B$ register whose order-sensitive, non-commuting dynamics the interaction sections develop
@@ -126,7 +151,9 @@ the associator $[a,b,c] = (ab)c - a(bc)$, and the associator is where most of th
 is transacted: the stabiliser of a preferred complex direction inside the octonions' automorphisms
 is the colour group (\S\ref{sec:hopf-justification}); the triality structure and its $K_3$
 obstruction generate the three generations and the sterile channel (\S\ref{sec:generations}); and
-the associator's non-vanishing is mass itself, the debt of \S\ref{sec:masses}. The algebraic facts
+the associator is the currency of mass --- the debt against the selected direction that
+\S\ref{sec:masses} prices, owed by whatever action moves the selection and not by residence at
+the rung, which is the defusal \S\ref{sec:register} makes explicit. The algebraic facts
 in the third column are theorems; the identifications in the fourth are established in the sections
 cited, each carrying its own epistemic flag there, and are not re-litigated here. What this table
 asserts on its own account is only the correspondence's shape: one law surrendered per rung, one
@@ -148,7 +175,7 @@ constructions of Furey and the related programmes without any proposal to rebase
 itself \autocite{furey2018three}. For the octonionic register the point is sharper still:
 $\mathbb{O}^{2}$ is not a Hilbert space, and the framework accordingly treats the $C$ qubit not in
 the Dirac--von Neumann manner but geometrically, as the sphere $S^{15}$ with its Hopf structure ---
-which is precisely the form in which the next section needs it. Nothing in this paper therefore
+which is precisely the form in which \S\ref{sec:hopf-justification} needs it. Nothing in this paper therefore
 stands or falls with quaternionic or octonionic quantum mechanics as foundations; the ladder is
 climbed by the registers' internal algebras, not by the theory's base field.
 
@@ -160,9 +187,9 @@ register take their values one rung apart --- $A$ over $\mathbb{C}$, $B$ over $\
 $\mathbb{O}$ --- so that every particle carries the whole ladder as its internal structure
 (\S\ref{sec:register}). Dynamically, it is the shape of measurement: a single qubit's pure states
 fill $S^{3}$, an entangling measurement carries the joint state into $S^{7}$, and a third party into
-$S^{15}$ --- the correspondence between qubit entanglement and the Hopf fibrations that the next
-section takes from a mature literature --- so that each act of measurement ascends one rung, as
-\S\ref{sec:wigners-friend} narrates, and every completed relation is a terminated climb, which is
+$S^{15}$ --- the correspondence between qubit entanglement and the Hopf fibrations that
+\S\ref{sec:hopf-justification} takes from a mature literature --- so that each act of measurement ascends one rung --- the climb the reader has already made,
+narrated in \S\ref{sec:wigners-friend} --- and every completed relation is a terminated climb, which is
 the reading \S\ref{sec:hopf-information-bound} gives the tower's endpoint. One ladder, seen twice:
 as the anatomy of a relation and as the dynamics of relating. The framework regards this double
 appearance not as a coincidence but as the same structure viewed statically and in motion, and the
@@ -184,15 +211,20 @@ amplitudes the same failure reads: the composition law
 $\lvert ab\rvert = \lvert a\rvert\,\lvert b\rvert$, which carries probability multiplicatively
 through every rung of the ladder, fails beyond the octonions, so that two non-vanishing amplitudes
 could compose to nothing and probability would be destroyed by mere composition. The last algebra
-fit to carry amplitudes is $\mathbb{O}$. This is the algebraic half of the termination; the
+fit to carry amplitudes is $\mathbb{O}$. One rung past the terminus is not entirely silent,
+however: the sedenions' internal structure --- their automorphism group and their octonion
+subalgebras --- is the recorded candidate arena for tagging the generations
+(\S\ref{sec:interactions}), and it enters exactly as this section's scoping permits, internally
+and never as a base. The terminus closes the ladder of forces; what survives past it is, at most,
+flavour. This is the algebraic half of the termination; the
 geometric half --- that no sphere above $S^{7}$ is parallelisable --- and the theorem joining the
-two halves are the next section's opening business, and the epistemic reading of the same endpoint,
+two halves are the opening business of \S\ref{sec:hopf-justification}, and the epistemic reading of the same endpoint,
 as a bound on the information a single relation can carry, is given in
 \S\ref{sec:hopf-information-bound}.
 
 \subsection{The honest debt}
 
-As in the next section, we close by stating plainly what is proved, what is established, and what is
+As in the geometry section, we close by stating plainly what is proved, what is established, and what is
 owed. Proved: the construction, the losses, and the termination are theorems --- the Cayley--Dickson
 doubling and its ledger of surrendered laws are standard algebra, and Hurwitz's classification is
 among the durable results of the subject. Established: the physical cashing of each rung --- the
@@ -204,9 +236,26 @@ argument of \S\ref{sec:self-reference} forces the first doubling, from the order
 classical probability to amplitudes that interfere. That the same self-referential closure, applied
 to a system whose amplitudes already take values at one rung, compels the next --- that relational
 closure at one level forces precisely the Cayley--Dickson double of that level --- is the
-framework's reading of the climb, and it is a thesis, not a theorem. If that derivation lands, the
-whole ladder becomes a consequence of the same self-reference that opened it. Until then, the honest
-statement is that the ladder's necessity is established at its ceiling and at its floor, while the
-compulsion of the intermediate rungs is inherited from the physics they are shown to carry rather
-than derived in advance. What this section hands to the next is, accordingly, an algebraic ladder
-with a floor, a ceiling and a ledger; the next section supplies the geometry, and the join.
+framework's reading of the climb, and it is a thesis, not a theorem --- but the formal apparatus
+against which it can be posed now exists, and we pose it.
+
+\begin{openproblem}[The compulsion of the intermediate rungs]\label{op:ladder-compulsion}
+Derive, within the categorical apparatus of Open Problem~\ref{op:sigma-functor}, that
+self-referential closure at one rung compels the Cayley--Dickson double of that rung, so that the
+intermediate steps $\mathbb{C} \to \mathbb{H} \to \mathbb{O}$ follow from the same principle
+that forces the floor. The candidate route is the construction's own shape: the Cayley--Dickson
+pair with its conjugation, $(a, b)^{*} = (a^{*}, -b)$, is an involution-equipped doubling, and the
+route reads it as the algebraic shadow of adjoining the describer --- closure of level-$A$
+descriptions under the inside/outside exchange requiring exactly the twisted pair. The problem
+inherits the status of Open Problem~\ref{op:sigma-functor}, whose apparatus it presupposes.
+\end{openproblem}
+
+If the derivation lands, the whole ladder becomes a consequence of the same self-reference that
+opened it. Until then, the honest statement is that the ladder's necessity is established at its
+ceiling and at its floor, while the compulsion of the intermediate rungs is inherited from the
+physics they are shown to carry rather than derived in advance. What this section hands on is, accordingly, an algebraic ladder with a floor, a ceiling and a
+ledger. Its first consumer is immediate: \S\ref{sec:space-of-computations} spends the terminal
+fact --- the non-associativity of $S^{7}$'s own multiplication --- as geometry, excluding the
+seven-sphere as a ruler and fixing the dimension of space at three.
+\S\ref{sec:hopf-justification} then supplies the geometry of the fibrations themselves, and the
+join.

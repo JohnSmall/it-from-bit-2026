@@ -1,20 +1,30 @@
 % =====================================================================
-%  Section: Why Hopf Fibrations Belong in Particle Physics
-%  Paper 1, "It from Bit via Gödel"
-%  Drafted 2026-06-08.
+%  SECTION: Why Hopf Fibrations Belong in Particle Physics
+%  (sec:hopf-justification). Drafted 2026-06-08; F1 arc added
+%  prop:f1-dictionary and op:hopf-frobenius's discharge clause.
+%  AUDITED 2026-07-06 (final pass, eighth stop).
 %
-%  This is a \input fragment for the main document. It assumes:
-%    - biblatex is loaded and \autocite is available;
-%    - the companion file hopf_particle_physics_refs_2026-06-08.bib
-%      has been added to the bibliography resources;
-%    - an amsthm-style `proposition' environment exists in the preamble.
+%  PLACEMENT (reordered chain, JS 2026-07-06): position 8 --
+%      \input{spacetime_from_non-computability}
+%      \input{hopf_justification_section_2026-06-08}
+%      \input{entanglement_classes_and_gauge_groups_2026-06-08}
+%  No adjacency phrasing in the prose: position-portable. All
+%  cross-refs live -- sec:fanout-direction DRAFTED 2026-07-06 (formerly the one undrafted
+%  section, by design).
 %
-%  Internal cross-references use placeholder labels:
-%    sec:self-reference   -- the self-reference -> complex amplitudes chain
-%    sec:division-algebras-- the Cayley--Dickson / Hurwitz step
-%    sec:fanout-direction -- the FANOUT / measurement direction-selection argument
-%    sec:entanglement-classes -- the FOLLOWING section (GHZ->quarks, W->leptons)
-%  Re-point these to the real labels before compiling.
+%  AUDIT RECORD: prop:gsm, prop:termination and prop:f1-dictionary
+%  verified against every quoting consumer (statements canonical);
+%  honest-debt subsection names both the selection assumption and the
+%  mereology debt; the epistemic two-climbs disambiguation and the
+%  compositional rung-evidence verified; sec:canonical-orbits live;
+%  file pure ASCII. Fixes: op:hopf-frobenius's cross-link with
+%  op:sigma-functor made TWO-WAY (the "four ways" line now names the
+%  op); both remaining functor conditions ANCHORED --- the quaternionic
+%  to the established fibre physics of sec:wf-reconciliation (residue:
+%  clutching map vs strong complementarity), the octonionic to the
+%  proved canonical-orbit images (umbrella label app:ghz-w-proofs
+%  minted at the appendix for the purpose). Statuses unchanged.
+%  British English; \autocite; no bullets in prose.
 % =====================================================================
 
 \section{Why Hopf Fibrations Belong in Particle Physics}
@@ -63,7 +73,8 @@ That programmes with disjoint starting points converge on $SU(3) \times SU(2) \t
 
 It would be misleading to leave the impression that this route is free of assumptions, so we state plainly the one assumption that all of these programmes share. Proposition~\ref{prop:gsm} requires that \emph{some} complex direction in $\mathbb{O}$ be singled out, and the uniqueness of that choice is not supplied by the theorem. Krasnov parametrises the complex structure $J_R$ by an arbitrary unit imaginary octonion, and the residual group is the same for every such choice because $G_2 = \mathrm{Aut}(\mathbb{O})$ acts transitively on the unit imaginary octonions. The theorem therefore guarantees the gauge group \emph{given} that a direction is fixed, while remaining silent on \emph{why} one is fixed. Szangolies treats this as a free choice and flags it, in his own conclusions, as an open element of the construction --- one to which several inequivalent answers are available.
 
-This, and not the appeal to Hopf fibrations, is the genuine load-bearing assumption of the whole approach. The Hopf fibrations are forced (Proposition~\ref{prop:termination}); the singling-out is not. The present framework offers a candidate resolution that the prior literature lacks: the act of measurement, modelled as \textsc{fanout}, selects the direction physically, and the transitivity of $G_2$ then guarantees that the gauge group is independent of which direction the measurement happens to select. This argument is given in \S\ref{sec:fanout-direction}; we flag here, at the appropriate epistemic status, that it is structural rather than fully proved, and that the residual question --- why a measurement selects \emph{exactly one} imaginary direction rather than merely \emph{permitting} a selection --- remains open.
+This, and not the appeal to Hopf fibrations, is the genuine load-bearing assumption of the whole approach. The Hopf fibrations are forced (Proposition~\ref{prop:termination}); the singling-out is not. The present framework offers a candidate resolution that the prior literature lacks: the act of measurement, modelled as \textsc{fanout}, selects the direction physically, and the transitivity of $G_2$ then guarantees that the gauge group is independent of which direction the measurement happens to select. This argument is given in \S\ref{sec:fanout-direction}; we flag here, at the appropriate epistemic status, that it is structural rather than fully proved, and that the residual question --- why a measurement selects \emph{exactly one} imaginary direction rather than merely \emph{permitting} a selection --- remains open. It is now priced as
+Open Problem~\ref{op:fanout-selection}.
 
 A second debt is shared with every programme of this character and is not closed by anything said here: why the abstract quantum state should admit a tensor-product decomposition into qubits in the first place. This is the quantum factorisation, or mereology, problem. The entanglement-sensitivity on which the construction turns is meaningful only once such a decomposition is fixed, and we treat the decomposition as a necessary input rather than a derived result. Naming it is preferable to letting it pass unremarked.
 
@@ -207,7 +218,12 @@ there is no fourth fibration to supply a fourth primitive --- and if $F$ is fait
 implication also runs back, the termination of the tower and the completeness of the alphabet are
 equivalent expressions of a single classification. The first condition is discharged by
 Proposition~\ref{prop:f1-dictionary}; what remains open is the quaternionic and octonionic
-conditions and, above all, the correspondence of compositions. A proof that no such functor exists, or a
+conditions and, above all, the correspondence of compositions. Both open conditions are already
+constrained: the quaternionic fibre's physical content --- the recoverable relative phase and its
+purity ledger --- is established (\S\ref{sec:wf-reconciliation}), leaving the
+clutching-map-to-strong-complementarity comparison as the structural residue; and any candidate
+functor must reproduce the proved canonical-orbit images, GHZ to the colour triplet and W to the
+singlet (\S\ref{sec:canonical-orbits}, Appendix~\ref{app:ghz-w-proofs}). A proof that no such functor exists, or a
 correspondence at the level of the classifications without functoriality on compositions, would each
 also resolve the problem: the first would make the agreement of two independent classifications a
 fact demanding its own explanation; the second would establish the weaker reading.
@@ -226,7 +242,9 @@ noticing that both classifications already answer to the same name --- the fibra
 Hopf's, and so, through the bialgebra structure of the diagrammatic calculus, are the Hopf algebras
 --- a coincidence of eponymy that the conjecture proposes to promote to a theorem. With the
 epistemic reading above, an affirmative resolution would leave the tower's endpoint as one limit
-seen four ways: algebraic, geometric, compositional, epistemic.
+seen four ways: algebraic, geometric, compositional, epistemic --- the last being the fixed-point
+classification of Open Problem~\ref{op:sigma-functor}, with which this problem is cross-linked,
+each constraining the other.
 
 \subsection{What this sets up}
 

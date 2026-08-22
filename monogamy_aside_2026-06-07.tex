@@ -1,15 +1,26 @@
 % =====================================================================
-% Addition to the Tsirelson / PR-box aside: entanglement monogamy.
-% Slot immediately after the Tsirelson/PR-box paragraphs of
-% tsirelson_pr_box_aside_2026-06-07.tex (i.e. still inside the aside in
-% subsection \ref{sec:wf-reconciliation}).
-% New citation keys (companion .bib): CKW2000, OsborneVerstraete2006.
-% MosseriDandoloff2001 and VerstraeteWolf2002 are already cited in the aside.
-% British English.
+%  ASIDE: entanglement monogamy as the budget reading of the ball.
+%  Input by wigners_friend_in_the_hopf_picture_2026-06-13.tex inside
+%  sec:wf-reconciliation, immediately after op:tsirelson-geometry (the
+%  \input was relocated there 2026-07-06 from end-of-file, where the
+%  opening antecedent "the same boundedness" had been orphaned).
+%
+%  AUDITED 2026-07-06 (final pass, with the WF section): the identity
+%  tau = 1 - r^2 = 4 det rho verified by hand; the CKW derivation from
+%  the one-tangle budget is sound, with C^2 + r^2 = 1 correctly the
+%  bipartite-pure special case (no monogamy/complementarity
+%  conflation). Fixes: orphan label sec:monogamy deleted (referenced
+%  nowhere); keys retargeted to corpus canon (CKW2000 ->
+%  coffmankunduwootters2000; OsborneVerstraete2006 ->
+%  osborneverstraete2006 -- the June-7 "reconcile with Mendeley" debt
+%  coming due); the closing confinement pointer retargeted from
+%  sec:entanglement-classes to its true grown home, sec:confinement,
+%  with the converse-theorem stitch to sec:budget-converse added.
+%  This paragraph is the 2026-06-07 seed of the confinement budget
+%  arc; it now points at its tree.
 % =====================================================================
 
-\noindent 
-\label{sec:monogamy}
+\noindent
 The same boundedness carries entanglement monogamy, and by the same
 move. A qubit $A$ has a single reduced state $\rho_{A}$, hence a single Bloch
 radius $r_{A}$ and a single position in its ball, fixed once and for all by the
@@ -26,8 +37,8 @@ off the one reduced state, the squared concurrences sum within the budget,
   C^{2}(A,B) + C^{2}(A,C) \;\le\; \tau_{A} \;=\; 1 - r_{A}^{2},
 \end{equation}
 which is the Coffman--Kundu--Wootters monogamy inequality
-\autocite{CKW2000}, proved for arbitrarily many qubits by Osborne and Verstraete
-\autocite{OsborneVerstraete2006}. Driving $A$ to maximal entanglement with $B$
+\autocite{coffmankunduwootters2000}, proved for arbitrarily many qubits by Osborne and
+Verstraete \autocite{osborneverstraete2006}. Driving $A$ to maximal entanglement with $B$
 sends it to the centre, $r_{A}=0$, which spends the whole budget and leaves
 nothing for $C$: entanglement is necessarily monogamous. Geometrically, monogamy
 and the Tsirelson bound are one fact seen twice. A ball has a single centre and
@@ -39,6 +50,6 @@ maximal sharing with one excludes the rest. The inequality itself is standard;
 what the Hopf picture adds is the reading that grounds it in the compactness and
 unique centre of the base space, and that makes the same bounded radius do both
 jobs at once. Pushed to its extreme the budget picture also yields confinement:
-three GHZ-correlated quarks saturate the tripartite budget and retain none for
-partners outside the triple, which is developed separately
-(Section~\ref{sec:entanglement-classes}).
+three GHZ-correlated quarks saturate the tripartite budget and retain none for partners outside
+the triple --- developed in full at \S\ref{sec:confinement}, whose ledger
+\S\ref{sec:budget-converse} completes with the converse reading, the W class's unspent ninth.

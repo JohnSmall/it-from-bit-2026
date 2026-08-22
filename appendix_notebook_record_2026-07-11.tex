@@ -1,0 +1,794 @@
+% =====================================================================
+%  APPENDIX: The Notebook Record (Executable Computations, audited)
+%  Paper 1, "It from Bit via Godel". SCAFFOLD created 2026-07-11.
+%
+%  PURPOSE. Canonical per-notebook appendix, built during the July 2026
+%  notebook audit. One subsection per notebook, each written from a
+%  fresh locked re-run (outputs embedded in the .ipynb) combined with
+%  the original write-up. Supersedes, entry by entry:
+%      appendix_qiskit_three_computations_2026-06-12.tex  (A--D)
+%      appendix_qiskit_beta_decay_2026-06-08.tex          (E)
+%  The claim-organised hardware summary
+%      appendix_hardware_fez_2026-07-10.tex
+%  REMAINS a separate appendix (results by paper claim, not by
+%  notebook) and will cross-reference entries here; fold it in only on
+%  an explicit decision.
+%
+%  TRANSITION POLICY (decided 2026-07-11). While the audit runs,
+%  main.tex continues to \input ONLY the old appendix files; this file
+%  is built alongside and is NOT \input'd, so labels never clash and
+%  the paper compiles throughout. AT CUTOVER: swap the \input lines,
+%  and this file's entries carry BOTH their canonical labels
+%  (app:nb-<letter>) AND the inherited legacy labels
+%  (app:qiskit-handles, app:qiskit-ckm, app:qiskit-interference,
+%  app:qiskit-composition, app:qiskit-meson, app:qiskit) planted in
+%  the corresponding subsections -- every existing \ref in the body
+%  and the masses section then resolves unchanged. The old files are
+%  retired to the repo's attic, never deleted.
+%
+%  RE-RUN PROTOCOL (decided 2026-07-11). Each notebook re-executed on
+%  the house environment (qiskit 2.5.0, Docker) with
+%  RUN_ON_HARDWARE = False by default: the sweep locks LOCAL
+%  reproducibility; hardware numbers enter each entry from the
+%  recorded jobs (ids retained). Fresh hardware only by explicit
+%  decision, recorded alongside the old job. Uploaded artefact per
+%  notebook: the executed .ipynb with outputs embedded.
+%
+%  ENTRY TEMPLATE (fixed sections, every entry):
+%    \subsection{Notebook <X>: <name>}  \label{app:nb-<x>}
+%      [+ legacy \label(s) at cutover]
+%    PROVENANCE.  filename(s); created; re-run date; supersedes /
+%      superseded-by; thread of origin where known.
+%    CLAIM.       which paper claim(s) it tests; feeds (ops, sections).
+%    DESIGN.      circuit description; listing excerpt where earned.
+%    VERIFIED OUTPUTS.  from the locked re-run, quoted to the digit.
+%    HARDWARE RECORD.   device, date/UTC, shots, job id, mitigation;
+%      or "simulator only" / "illustrative".
+%    STATUS.      epistemic tags -- what execution validates (the
+%      encoding) vs what the paper argues (the physics); any
+%      retirements or reframings, dated.
+%    CONSISTENCY. cross-checks against other notebooks and appendix
+%      numbers (e.g. the interference table's beta^2 = 1 row against
+%      the mitigated ninth: r = 0.3373 (June, marrakesh) and
+%      <Z> = +0.3308 (July, fez, J-MIT) bracketing 1/3).
+%
+%  LEDGER. The living index is notebook_ledger_2026-07-11.md (repo +
+%  project knowledge); this header does not duplicate it.
+%
+%  British English; no bullets in prose; ASCII source; numbers quoted
+%  with their raw partners per the hardware appendix's convention.
+% =====================================================================
+
+\section{The Notebook Record}
+\label{app:notebook-record}
+% At cutover, add here: \label{app:qiskit-handles}
+
+This appendix is the canonical record of the framework's executable computations, one entry per
+notebook, each rebuilt during the July 2026 audit from a fresh locked re-run combined with its
+original write-up. The epistemic rule of the earlier appendices is inherited unchanged and stated
+once: execution validates that the framework's structural claims have been \emph{faithfully
+encoded} and that the encoded structures behave as asserted; whether the structures are the right
+physics is the question the body of the paper argues. Hardware adds one thing simulation cannot
+--- survival of the encoding on a physical device at fidelities limited by independently
+characterised noise --- and every hardware number below is quoted with its job identifier and its
+raw partner.
+
+% ---------------------------------------------------------------------
+% Entries are appended below in audit order as each locked re-run
+% arrives. First entry: notebook A.
+% ---------------------------------------------------------------------
+
+\subsection{Notebook A: the CKM-extended charged current}
+\label{app:nb-A}
+% CUTOVER: plant \label{app:qiskit-ckm} here when the old file retires.
+
+\emph{Provenance.} \texttt{qiskit\_A\_ckm\_charged\_current.py} and
+\texttt{notebook\_A\_ckm\_charged\_current\_2026-06-12.ipynb}; created 12 June 2026; audit
+re-execution 12 July 2026 with \texttt{USE\_HARDWARE = True}, yielding a fresh hardware run (a
+deliberate-in-effect deviation from the audit's simulator-only default, retained because a second
+independent device datapoint outranks a ceremonial local pass). The re-run was saved in two
+stages --- the analysis cell initially still displayed the June output, which briefly mimicked a
+five-digit cross-device coincidence; resolved, and recorded here so no future reader repeats the
+alarm. Notebook K's header (2026-07-07) cites this circuit as ``notebook F''; the audit first
+hypothesised F a phantom letter, then found the real notebook F --- 13 June, the three-generation
+extension, Appendix~\ref{app:nb-F} --- so the phantom hypothesis is retracted while K's citation
+remains a letter error for A all the same: one word to fix at K's stop.
+
+\emph{Claim.} The $W^{-}$ vertex extended by a generation qubit makes the first-rung CKM factors
+\emph{output amplitudes}: $\lvert V_{ud}\rvert = \cos\tfrac29$,
+$\lvert V_{us}\rvert = \sin\tfrac29$, with $\delta = \tfrac29$ supplied by the framework and no
+fit anywhere. Feeds Open Problem~\ref{op:cabibbo} and \S\ref{sec:interactions}; the two-generation
+predecessor of the tagged pair of Appendix~\ref{app:nb-K}.
+
+\emph{Design.} Six wires, little-endian $(B_{\nu}, B_{e}, g, C_{q}, B_{q}, A_{q})$, depth four:
+$R_{y}(2\cdot\tfrac29)$ on $g$; $X$ on $B_{q}$ (the $T_{3}$ raise); $H$ and CNOT forming the
+lepton Bell pair. The factors are read from the generation-qubit marginal,
+$\lvert V_{us}\rvert = \sqrt{P(g{=}1)}$, and the Bell witness $P(q_{1}{=}q_{0})$ from the same
+counts.
+
+\emph{Verified outputs.} Exact statevector: four basis states with amplitudes $\pm 0.689719$ and
+$\pm 0.155845$, giving $\lvert V_{ud}\rvert = 0.97541$ and $\lvert V_{us}\rvert = 0.22040$.
+Second witness: independently re-executed in the audit container (qiskit 2.5.0, 12 July 2026),
+five-digit agreement; a simulator sample at $8192$ shots returned $0.97553$, $0.21986$, Bell
+$1.0000$.
+
+\emph{Hardware record.} Two independent unmitigated runs, $8192$ shots each, backend chosen by
+\texttt{least\_busy}. June: \texttt{ibm\_marrakesh} per the June appendix (12 June, 14:15 UTC):
+$0.97534$, $0.22069$, Bell $0.932$, seventeen outcome strings; job identifier not captured by the
+cell (predates the house rule), device attribution to be confirmed against the provider's job
+history. July audit run: \texttt{ibm\_fez} (12 July 2026): $0.97584$, $0.21847$, Bell $0.9891$,
+seventeen strings; job identifier likewise uncaptured, recoverable as the account's most recent
+job.
+
+\emph{Status.} The notebook's own epistemic header is the appendix-wide rule and predates it:
+execution validates the encoding, not the claim. The cell layer predates several house
+conventions --- no job-identifier print, no PASS/FAIL gates, unpinned backend, the
+\texttt{USE\_HARDWARE} flag name and its stale comment --- all to be modernised at the next
+functional touch, none affecting the recorded numbers. One paper-wide action item surfaced here:
+this notebook tests $\lvert V_{us}\rvert$ against PDG $0.22430$ while
+Appendix~\ref{app:nb-K}'s table uses $0.22500$; the editions differ and the paper must pin one,
+state it once, and sweep every comparison row.
+
+\emph{Consistency.} The two hardware runs sit at $+0.13\%$ and $-0.88\%$ from the encoding value
+--- each under half a shot-noise standard deviation ($\sigma \approx 2.4\%$ relative on
+$\lvert V_{us}\rvert$ at $8192$ shots) --- so the CKM read is shot-noise-limited and
+device-insensitive at this depth, and neither run's closeness should be over-read: the quality
+witness is the Bell check ($0.932$ against $0.989$), which tracks qubit placement, not the claim.
+The exact values equal the rung-one entries programmed in Appendix~\ref{app:nb-K} (the same
+$\lambda$, by construction), whose angle-amplified metrology at $1.27\%$ is this circuit's
+precision successor.
+
+\subsection{Notebook B: GHZ--W interference on the cut's Bloch radius}
+\label{app:nb-B}
+% CUTOVER: plant \label{app:qiskit-interference} here when the old file retires.
+
+\emph{Provenance.} \texttt{qiskit\_B\_ghz\_w\_interference.py} and
+\texttt{notebook\_B\_ghz\_w\_interference\_2026-06-12.ipynb}; created 12 June 2026; audit
+re-execution 12 July 2026 from a restarted kernel (sequential execution counts --- the protocol's
+clean-artefact witness), with \texttt{USE\_HARDWARE = True} yielding a third device datapoint:
+\texttt{ibm\_kingston} by \texttt{least\_busy} draw, EstimatorV2 at runtime defaults (resilience
+level $1$), $8192$ shots, all five $\beta^{2}$ points as publishables in one job. Job identifiers
+were not captured by the cell in any of the three runs to date (pre-house-rules layer).
+
+\emph{Claim.} The mass-relevant invariant --- the Bloch radius $r$ of one cut, the base
+coordinate of the geodesic mass proxy --- responds at \emph{first order} in the admixture
+amplitude, $r^{2} = \tfrac23\alpha^{2}\beta^{2} + \beta^{4}/9$, a $17.2\times$ enhancement over
+incoherent mixing at $\beta^{2} = 0.02$, and is \emph{rigid} in the relative phase $\varphi$.
+Feeds Open Problem~\ref{op:up-quark}'s enabling properties, constrained by Open
+Problem~\ref{op:associator-geodesic}. Reframed 2026-07-11 after the class-discreteness
+retirement: the prepared family is, generically, a probe path \emph{within} the GHZ class
+parametrised by proximity to the W boundary --- SLOCC classes are orbits, not sectors that
+superpose --- so the computation measures the invariant's response along that path and never
+required a quark that is partly lepton; the surviving carrier of the generation-one admixture is
+the sedenion cross-algebra sector (\S\ref{sec:sedenion-announcement}).
+
+\emph{Design.} \texttt{prepare\_state} of
+$\alpha\lvert\mathrm{GHZ}\rangle + \beta e^{\mathrm{i}\varphi}\lvert\mathrm{W}\rangle$ on three
+qubits; single-qubit tomography of the cut ($\langle X\rangle, \langle Y\rangle,
+\langle Z\rangle$, $r$ the norm); sweep $\beta^{2} \in \{0.02, 0.05, 0.10, 0.50, 1.00\}$ at
+$\varphi = 0$, with the rigidity check a twenty-five-point $\varphi$ sweep at
+$\beta^{2} = 0.10$.
+
+\emph{Verified outputs.} Exact table $r = 0.114504$, $0.178730$, $0.247207$, $0.440959$,
+$0.333333$ across the sweep, equal to the closed form at machine precision; rigidity spread
+$1.2\times10^{-15}$ over the $\varphi$ sweep. Second witness (audit container, qiskit 2.5.0,
+12 July): table reproduced to six digits, closed form to $10^{-12}$, rigidity
+$1.3\times10^{-15}$.
+
+\emph{Hardware record.} Three runs. 12 June 2026: \texttt{ibm\_fez}, resilience $0$, $4096$
+shots, 13:10 UTC --- $r = 0.1539$, $0.2002$, $0.2350$, $0.4245$, $0.3558$; and
+\texttt{ibm\_marrakesh}, resilience $1$, 14:04 UTC --- $0.1248$, $0.1772$, $0.2789$, $0.4719$,
+$0.3373$ (the June comparison differs in both device and mitigation, indicative rather than
+controlled, as recorded at the time). 12 July 2026 audit run, \texttt{ibm\_kingston}, defaults:
+$0.1031$, $0.1757$, $0.2350$, $0.4134$, $0.3175$. The noise fingerprints differ instructively:
+the June runs inflate small $r$ (a norm of noisy expectations biases upward; $+34\%$ at the
+smallest point unmitigated), while kingston attenuates throughout ($-1.7\%$ to $-9.9\%$); the
+first-order discriminator survives every era --- the hardware enhancement over incoherent mixing
+at $\beta^{2} = 0.02$ is $15.5\times$ on kingston against the ideal $17.2\times$.
+
+\emph{Status.} The notebook's prose predates the 2026-07-06 retirement and still motivates the
+sweep in pre-retirement voice; the reframe above is canonical, and the notebook header takes a
+one-line pointer at its next functional touch, together with the standard modernisation
+(job-identifier print, pinned backend, PASS/FAIL gates). This is the June set's only
+Estimator-based notebook; its mitigation lever is the resilience level, not the Sampler stack
+used elsewhere.
+
+\emph{Consistency.} The $\beta^{2} = 1$ row is pure W, and $r$ there \emph{is} the leptonic
+ninth's radius --- the same invariant measured by the mitigated metrology of
+Appendix~\ref{app:hw-ninth}. The record now holds four hardware measurements of it: exact
+$\tfrac13 = 0.3333$; June fez (unmitigated) $0.3558$, $+6.7\%$; June marrakesh (mitigated)
+$0.3373$, $+1.2\%$; July kingston (defaults) $0.3175$, $-4.8\%$; July fez, probe-corrected
+(J-MIT) $0.3309 \pm 0.0077$, $-0.7\%$. Three devices, two methods, one month, bracketing the
+two-ninths identity's ceiling, with the pre-registered mitigated measurement the tightest ---
+independent reproduction of the framework's most-measured number. And the verified first-order
+response is precisely the form the up-quark candidate takes: $\delta m/m = -\delta_{0}$, linear
+in the parameter, as Open Problem~\ref{op:up-quark} now demands of any derivation.
+
+\subsection{Notebook C: composition laws --- fusion, anti-speciality, the baryon}
+\label{app:nb-C}
+% CUTOVER: plant \label{app:qiskit-composition} here when the old file retires.
+
+\emph{Provenance.} \texttt{qiskit\_C\_composition\_laws.py} and
+\texttt{notebook\_C\_composition\_laws\_2026-06-12.ipynb}; created 12 June 2026; audit
+re-execution 12 July 2026 from a restarted kernel (sequential counts), with
+\texttt{USE\_HARDWARE = True} yielding a second-device reproduction: \texttt{ibm\_kingston} by
+\texttt{least\_busy} draw (the same draw as notebook B's audit run this day), SamplerV2, $8192$
+shots, five circuits in one job. Job identifiers uncaptured in both eras (pre-house-rules layer).
+
+\emph{Claim.} Three composition-law statements, the executable face of the Coecke--Kissinger
+classification: $\mathrm{GHZ}_{3} \circ \mathrm{GHZ}_{3} = \mathrm{GHZ}_{4}$ exactly (speciality
+as spider fusion); $\mathrm{W}_{3} \circ \mathrm{W}_{3}$ has \emph{zero} overlap with
+$\mathrm{W}_{4}$ (anti-speciality); and a closed triangle of GHZ colour edges carries exactly
+$\mathrm{GHZ}_{3}$ on its free legs with closed-loop singlet weight $1$ --- the baryon is the
+wiring, an output of the composition law rather than an assumption about hadrons. Feeds
+\S\ref{sec:confinement} and the closed-loop (glueball) organisation of \S\ref{sec:predictions}.
+
+\emph{Design.} Bell caps as Bell-basis measurements ($\mathrm{CX}$, $H$, measure) postselected on
+$00$, with the heralding rates themselves combinatorial witnesses ($\tfrac14$ for fusion,
+$\tfrac{5}{18}$ for the W contraction, $\tfrac{1}{32}$ for the triangle); on the postselected
+register, the standard two-setting GHZ pair --- $Z$-basis population and
+$\langle X^{\otimes n}\rangle$ parity.
+
+\emph{Verified outputs.} Exact: fused-GHZ$_{4}$ fidelity $1.000000$ at weight $0.2500$; W
+contraction fidelity with $\mathrm{W}_{4}$ exactly $0$ at weight $5/18$, the postselected state
+uniform at $0.2$ on the five strings $\{0000, 0101, 0110, 1001, 1010\}$; triangle fidelity
+$1.000000$ at weight $1/32$, singlet weight $1.000000$. Second witness (audit container, qiskit
+2.5.0, 12 July): all of the above to machine precision, including the uniform five-string
+distribution.
+
+\emph{Hardware record.} Two runs, one month apart. 12 June 2026, \texttt{ibm\_marrakesh}
+(13:48 UTC, $8192$, postselected): heralds $0.259/0.267$, $0.280$, $0.033/0.030$ on their
+ideals; fused GHZ$_{4}$ population $P(0000){+}P(1111) = 0.925$, parity $+0.837$; W contraction
+$91\%$ on the predicted five-state set with $7.6\%$ on $\mathrm{W}_{4}$'s single-excitation
+strings --- the level fully accounted for by single bit-flip noise, so the hypothesis
+$\mathrm{W}\circ\mathrm{W} = \mathrm{W}_{4}$ is excluded by better than ten to one; triangle
+population $0.970$, parity $+0.818$ on ${\sim}250$ events ($\pm 0.06$). 12 July 2026,
+\texttt{ibm\_kingston}: heralds $0.255/0.239$, $0.272$, $0.031/0.029$; GHZ$_{4}$ population
+$0.914$, parity $+0.826 \pm 0.013$; W five-set $0.905$ with forbidden weight $0.072$; triangle
+population $0.976$ --- the cleanest baryon assembly on record --- and parity
+$+0.798 \pm 0.039$. The June error-anatomy note reproduces: the fused state's dominant leakage is
+the correlated anti-aligned pair $0011/1100$ in both runs ($4.5\%$ then, $3.4\%$ now), a
+device-independent channel of the cap construction itself.
+
+\emph{Status.} Pre-house-rules cell layer (no job-identifier print, unpinned backend, no
+PASS/FAIL gates); the notebook's own refinement path --- more shots or a Pauli-frame correction
+in place of postselection --- stands as the modernisation route for tight parities. The prose is
+already clean of pre-retirement species language: the reading's claim is class assignment, not
+superposition.
+
+\emph{Consistency.} Every witness reproduces across the two devices within joint statistical
+precision --- populations $0.925/0.914$ and $0.970/0.976$, parities $0.837/0.826$ and
+$0.818/0.798$, forbidden weight $0.076/0.072$, and six heralding rates on their combinatorial
+ideals both times, a wiring-level checksum that costs nothing. The cap machinery exercised here
+is the direct ancestor of the two-gluon discriminator of Appendix~\ref{app:hw-two-gluon}, and the
+triangle's free-leg GHZ$_{3}$ is the state whose monogamy Appendix~\ref{app:hw-monogamy} then
+measures --- the June composition laws and the July confinement witnesses are one construction
+kit, tested twice.
+
+\subsection{Notebook D: the meson colour skeleton}
+\label{app:nb-D}
+% CUTOVER: plant \label{app:qiskit-meson} here when the old file retires.
+
+\emph{Provenance.} \texttt{meson\_exploration.py} and
+\texttt{notebook\_D\_meson\_skeleton\_2026-06-12.ipynb} (the script and notebook carry different
+stems --- unify at the next functional touch); created 12 June 2026 with the first hardware run
+the following morning; audit re-execution 12 July 2026 from a restarted kernel (sequential
+counts), \texttt{USE\_HARDWARE = True} drawing \texttt{ibm\_marrakesh} --- completing a device
+swap with notebook C, whose June/July pair ran marrakesh-then-kingston where D ran
+kingston-then-marrakesh. SamplerV2, $8192$ shots, four circuits in one job; job identifiers
+uncaptured in both eras.
+
+\emph{Claim.} A quark and an antiquark as GHZ nodes joined by two Bell caps --- the two-edge
+closed loop --- put \emph{exactly the Bell pair} on the free legs at heralding weight $\tfrac18$:
+the minimal singlet, the canonical maximally entangled orbit, as an output of the wiring. The W
+contrast closes onto the tilted pair $(2\lvert00\rangle + \lvert11\rangle)/\sqrt5$, Bell fidelity
+$0.9$, off the canonical orbit: the binding sector composes onto canonical objects and the
+non-binding sector does not. Feeds \S\ref{sec:canonical-orbits} and readies the composite-mass
+networks of Open Problem~\ref{op:associator-geodesic}; explicitly \emph{not} a meson mass, which
+awaits the invariant-to-mass map.
+
+\emph{Design.} Nodes on $(q_{0},q_{1},q_{2})$ and $(q_{3},q_{4},q_{5})$, caps $(q_{2},q_{3})$
+and $(q_{1},q_{4})$, free legs $q_{0}, q_{5}$; heralds $\tfrac18$ (GHZ) and $\tfrac{5}{36}$ (W);
+witnesses the $Z$ population and $\langle XX\rangle$ parity (ideals $+1$ and $+0.8$).
+
+\emph{Verified outputs.} Exact: GHZ output $(0.7071, 0, 0, 0.7071)$, Bell fidelity $1.000000$,
+weight $0.125$; W output $(0.8944, 0, 0, 0.4472)$, fidelity $0.900000$, weight $5/36$. Second
+witness (audit container, 12 July): all to machine precision, including the tilted pair's
+$\langle XX\rangle = 0.8$ and $0.8/0.2$ populations exactly.
+
+\emph{Hardware record.} 13 June 2026, \texttt{ibm\_kingston} (06:08 UTC, $8192$): GHZ free legs
+$P(00){+}P(11) = 0.949$, $\langle XX\rangle = +0.835$; W diagonal split $0.80/0.20$ renormalised
+--- on the predicted tilt; anatomy as recorded then: the GHZ diagonal itself imbalanced
+($0.546/0.403$), the amplitude-damping signature, pointing the same way in both circuits.
+12 July 2026, \texttt{ibm\_marrakesh}: heralds $0.119/0.127$ (GHZ, on ideal) against
+$0.127/0.122$ (W, $3$--$4\sigma$ low); GHZ population $0.985$ with a \emph{symmetric} split
+($0.482/0.503$), parity $+0.884 \pm 0.015$; W renormalised split $0.858/0.142$
+(over-tilted, $-5\sigma$ on the $\lvert11\rangle$ weight), parity $+0.710 \pm 0.022$ --- the
+first recorded W-skeleton parity, June's record having quoted only the tilt. Two structures in
+the July run carry the reading. First, the two parities share one visibility --- $0.884$ and
+$0.887$ of their ideals --- so the attenuation is state-independent and the tilt is real, not an
+artefact of differential loss on the coherence witness. Second, the anatomy \emph{contrast}
+between eras: June's relaxation was visible in everything including the shallow GHZ branch;
+July's shows only where the circuit is deep --- the W heralds low and the W tilt deepened, with
+the GHZ branch clean --- the same mechanism entering at a different depth, unlike notebook C's
+cap channel, which reproduced device-independently.
+
+\emph{Status.} Pre-house-rules cell layer (no job-identifier print, unpinned backend, no
+PASS/FAIL gates); the script/notebook stem mismatch to unify; prose already clean of
+pre-retirement species language --- binding against non-binding is sector talk, and the tilt is
+an orbit statement.
+
+\emph{Consistency.} With notebook C's triangle, both canonical hadron skeletons are now
+executable and reproduced across devices: population witnesses $0.949 \to 0.985$, parity
+$0.835 \to 0.884$, the tilt held at $0.80$--$0.86$ against the GHZ pair's balance. Closed colour
+wiring produces canonical entanglement classes as outputs --- the composite-mass programme's
+networks are ready-built, and the cap machinery shared by C, D and the two-gluon discriminator of
+Appendix~\ref{app:hw-two-gluon} has now been exercised on three devices without a structural
+failure.
+
+\subsection{Notebook E: beta decay, the entry point}
+\label{app:nb-E}
+% CUTOVER: plant \label{app:qiskit} here when the old file retires.
+
+\emph{Provenance.} \texttt{notebook\_E\_beta\_decay\_2026-06-12.ipynb}; the circuit is the
+\emph{oldest} artefact of the executable programme --- it entered as the 8 June appendix listing,
+explicitly illustrative and not yet validated --- and was promoted to a notebook on 12 June,
+fifth and last of the June set, which resolves the lettering puzzle this circuit poses: the
+letters record notebook-creation order, not circuit age, so the entry-point vertex carries E
+while its CKM extension, notebooked first, carries A. One lineage quirk recorded for anyone
+diffing the pair: the wire order was reversed between them ($A_{q}$ at $q_{0}$ and leptons at
+$q_{3}, q_{4}$ here; leptons at $q_{0}, q_{1}$ and $A_{q}$ at $q_{5}$ in notebook A). Audit
+re-execution 12 July 2026 from a restarted kernel (sequential counts), \texttt{USE\_HARDWARE =
+True} drawing \texttt{ibm\_kingston} --- the day's third kingston draw --- $8192$ shots, two
+circuits in one job; job identifier uncaptured (pre-house-rules layer).
+
+\emph{Claim.} The showcase vertex of \S\ref{sec:interactions}: the $W^{-}$ emission as the
+$T_{3}$ raise on the quark's $B$-qubit, the $W^{-}$ depositing its entanglement as the lepton
+Bell pair --- the bipartite shadow of the W-class lepton channels --- with every conservation law
+in the wiring: charge as arithmetic, colour untouched, baryon and lepton number by register
+count. The companion appendix carries a second component, a numpy-only numerical check of the
+no-FCNC proposition (Proposition~\ref{prop:fcnc}: a flavour-blind coupling induces no flavour
+change; a generation-reading coupling does); that listing has never been notebooked and is the
+one owed cell of this entry's modernisation touch.
+
+\emph{Design.} Five qubits, depth two --- $X$ on $B_{q}$, $H$ and CNOT on the leptons; witnesses
+$P(\text{up slot})$, the lepton $Z$-correlation, and the coherence $\langle XX\rangle$.
+
+\emph{Verified outputs.} Exact support $\{\lvert00010\rangle, \lvert11010\rangle\}$ at
+$1/\sqrt2$: the up quark in the $T_{3} = +\tfrac12$ slot, leptons maximally entangled. Second
+witness (audit container, 12 July): support reproduced to machine precision; simulator witnesses
+all $1.0000$.
+
+\emph{Hardware record.} One run --- the first this circuit has ever had. 12 July 2026,
+\texttt{ibm\_kingston}, $8192$ shots: $P(\text{up}) = 0.9918 \pm 0.0014$, lepton
+$Z$-correlation $0.9862 \pm 0.0018$, $\langle XX\rangle = +0.9829 \pm 0.0020$; the two ideal
+strings carry $0.976$ of the distribution, with ten strings observed against the ideal two.
+
+\emph{Status.} This entry's event is the epistemic promotion itself: illustrative listing
+(8 June) $\to$ exact-validated notebook (12 June) $\to$ hardware-confirmed (12 July, this audit)
+--- the June appendix's ``not yet validated'' caveat is retired here, and the retirement is the
+audit's doing. Pre-house-rules cell layer as elsewhere; the no-FCNC cell owed as above.
+
+\emph{Consistency.} The lineage to notebook A is exact: the same vertex gains a generation
+register and the output amplitudes become CKM factors --- E is the pedagogical first step its own
+closing cell prescribes. The depth-two witnesses at $0.983$--$0.992$ calibrate the family's cost
+ladder: against notebooks C and D's postselected parities at $0.80$--$0.88$, the price of the cap
+constructions is now a measured quantity rather than an impression. And the lepton Bell pair
+manufactured here is the object whose W-class provenance the ninth programme of
+Appendix~\ref{app:hw-ninth} prices. With this entry the June set closes: five notebooks, five
+audit re-executions, four cross-device reproductions and one first-validation, zero structural
+failures.
+
+\subsection{Notebook F: the full $3\times3$ CKM charged current}
+\label{app:nb-F}
+
+\emph{Provenance.} \texttt{notebook\_F\_full\_ckm\_2026-06-13.ipynb}; created 13 June 2026, the
+day after the A--E batch --- the sixth June-era notebook, which restores the lettering to full
+consistency (A through H in creation order; the only true collision left in the registry is the
+double letter I). F has never had an appendix home: this entry is its first documentation in the
+paper. Notebook K's header cites ``notebook F'' for the one-tag-qubit two-generation rung, which
+is notebook A's design --- a letter error, one word to fix at K's stop. Audit re-execution
+12 July 2026 from a restarted kernel (sequential counts), \texttt{USE\_HARDWARE = True} drawing
+\texttt{ibm\_fez}; whether a June hardware run existed is unrecorded (today's execution
+overwrote any stored output; the provider's 13 June job history would say).
+
+\emph{Claim.} Two-part contrast, and the contrast is the point. Part one loads the measured CKM
+--- three PDG angles \emph{and} the CP phase $\delta_{CP} = 1.144$ --- into a two-qubit gate and
+reads the three columns back from circuit amplitudes: machinery validation, the full complex
+mixing living inside the register. Part two runs the framework-structured ansatz from
+$\delta = \tfrac29$ alone and reads where it holds and where it breaks: the Cabibbo angle at
+$-2\%$ (the derived result), $\theta_{23} \approx \delta^{2}$ at $+18\%$ (suggestive, the
+needs-a-correction status), $\theta_{13} = \delta^{3}$ overshooting threefold with no CP phase at
+all --- ``the geometric hierarchy carries to second order and breaks at third,'' a diagnostic of
+Open Problem~\ref{op:cabibbo}'s gap, not a closing of it.
+
+\emph{Design.} The three-dimensional generation space embedded by
+$\mathrm{blockdiag}(V, 1)$ on two qubits --- generations at $\lvert00\rangle, \lvert01\rangle,
+\lvert10\rangle$ with spectator $\lvert11\rangle$. This is the \emph{pre-sedenion} realisation,
+historically first: notebook K's $1 \oplus 2$ tag pair (spectator $\lvert01\rangle$, the flagged
+doublet of Appendix~\ref{app:nb-K}) superseded it on 7 July when the sedenion $S_{3}$ structure
+supplied a reason to prefer one embedding over another. The design-decision history the register
+paragraph of Appendix~\ref{app:hw-ckm} records is therefore two-step, and F is its first step.
+
+\emph{Verified outputs.} Part one: circuit magnitudes match the PDG table to $10^{-5}$ (the
+residual is the parametrisation rebuilding world-average magnitudes from one consistent angle
+set, not circuit error). Part two: the ansatz table as quoted above. Second witness (audit
+container, 12 July): both reproduced to the digit.
+
+\emph{Hardware record --- with the audit's first code bug.} 12 July 2026, \texttt{ibm\_fez},
+$8192$ shots, three publishables. The printed columns are garbled by a counts-indexing
+transposition: the extraction weights $b[-2]$ by $1$ and $b[-1]$ by $2$, where qiskit's count
+strings put $q_{0}$ at $b[-1]$ --- so generations $1$ and $2$ are exchanged in the readout only
+(indices $0$ and $3$ are fixed points), while the exact cells, reading the statevector directly,
+are unaffected. Demonstrated on exact data: the notebook's extraction returns
+$(0.225, 0.041, 0.974)$ for input $s$ where the truth is $(0.225, 0.974, 0.041)$. Un-swapped, the
+fez data is sound: diagonals $-1\%$, $-2\%$, $-2\%$; every entry below
+$\lvert V\rvert \approx 0.05$ reads at the $\sqrt{P_{\mathrm{floor}}} \approx 0.10$ level with
+$P_{\mathrm{floor}} \approx 0.01$ --- the same unmitigated readout floor notebook K's first pass
+measured, independently corroborating the amplification rationale of Appendix~\ref{app:hw-ckm};
+spectator population $0.7$--$1.5\%$; the one outlier is $\lvert V_{us}\rvert$ at $+18\%$
+(single unmitigated run, gate-error redistribution, reported without excuse). The one-character
+fix (transpose the weights) is owed at the next functional touch.
+
+\emph{Status.} The pure-power ansatz exists in two variants across the record, found here:
+F places the powers in the \emph{angles} ($\sin\delta^{2} = 0.04936$,
+$\sin\delta^{3} = 0.01097$) where K places them in the \emph{sines}
+($\lambda^{2} = 0.04858$, $\lambda^{3} = 0.01071$), $1.6$--$2.5\%$ apart on rungs two and three
+--- which is exactly why F quotes $+18\%$ on $\lvert V_{cb}\rvert$ where K's table gives
+$+16\%$. The canonical convention is K's (it is what the paper's text and
+Appendix~\ref{app:hw-ckm} use); F's is recorded as the earlier variant, and any future quotation
+of the rung-two gap states which ladder it is priced in. Pre-house-rules cell layer as elsewhere;
+the extraction fix and a header pointer to this entry at next touch.
+
+\emph{Consistency.} F is the hinge between A and K: A validated the first rung as amplitudes, F
+validated the full-matrix machinery (CP phase included) and diagnosed the ansatz's break at third
+order, K re-founded the embedding on the sedenion $1 \oplus 2$ and then K-v2's amplification
+bought the small elements at metrology grade. The corrected fez floor here ($P \approx 0.01$ on
+every small entry) is the third independent measurement of that floor, after K's first pass and
+the mitigated-but-still-floor-limited control inside Appendix~\ref{app:hw-ckm} --- three runs,
+one message: the small CKM elements are unreachable by single application, which is what
+amplification is for.
+
+\subsection{Notebook G: confinement as the monogamy obstruction}
+\label{app:nb-G}
+
+\emph{Provenance.} \texttt{notebook\_G\_confinement\_budget\_2026-06-13.ipynb}; created 13 June
+2026 alongside F and H --- a ledger correction, since the registry had dated G from its hardware
+campaign (8 July, \texttt{ibm\_fez}, recorded in Appendix~\ref{app:hw-monogamy}) rather than its
+creation. Audit re-execution 12 July 2026 from a restarted kernel (sequential counts),
+\texttt{USE\_HARDWARE = True} drawing \texttt{ibm\_fez}: a fresh $27$-circuit tomography at
+$4096$ shots. Job identifiers uncaptured (pre-house-rules layer).
+
+\emph{Claim.} The centrepiece made runnable: confinement as a \emph{distance-free} monogamy
+obstruction. The colour singlet's $\tau_{3} = 1$ forces both two-tangles to zero --- no
+entanglement remains for any external partner --- and the lockstep demonstration makes the
+obstruction dynamical: external concurrence rises only as singlet fidelity falls, with no
+configuration holding both. Scope stated in the notebook's own voice: this is the
+\emph{why-confined}; the distance-dependent $V(r)$ is the open problem where
+\S\ref{sec:confinement} touches the emergent-distance machinery.
+
+\emph{Design.} Exact CKW budget table for GHZ, W, product; a partial-iSWAP coupling sweep between
+one singlet member and an external qubit; hardware path by full three-qubit state tomography ---
+$27$ Pauli bases, linear inversion --- since $\tau_{3}$ is a density-matrix functional, not a
+measurement outcome.
+
+\emph{Verified outputs.} GHZ: $\tau_{1} = 1$, both two-tangles $0$, $\tau_{3} = 1$; W:
+$\tau_{1} = \tfrac89$, two-tangles $\tfrac49$ each, $\tau_{3} = 0$; lockstep endpoints
+$(1.0000, 0.0000) \to (0.7288, 0.5000)$. Second witness (audit container, 12 July): all to the
+digit.
+
+\emph{Hardware record.} 8 July 2026, \texttt{ibm\_fez} (the recorded campaign): tomographic
+$\tau_{1} = 1.000$, $C_{12} = C_{13} = 0.000$. 12 July 2026, \texttt{ibm\_fez} audit run:
+identically $1.000 / 0.000 / 0.000$, $\tau_{3} = 1.000$. The exact reproduction is itself the
+recorded honesty clause demonstrated: these witnesses sit at noise fixed points --- the
+maximally mixed marginal is depolarisation-invariant, and the separable reduced pairs stay at
+zero concurrence under generic noise --- so the confirmation is noise-robust by construction and
+correspondingly weak as a device benchmark; its evidential weight is structural, not metrological.
+
+\emph{Status.} Pre-house-rules cell layer; the distance-free framing paragraph is already
+paper-grade prose; the W contrast row is class language throughout.
+
+\emph{Consistency.} The state G certifies is notebook C's triangle output --- C manufactures the
+free-leg GHZ$_{3}$ by wiring, G reads its saturated budget, H explains why the same structure is
+the classical-record tensor: one object, three notebooks. And G's W row \emph{is} notebook J's
+arithmetic read from the other end: $\tau_{1} = \tfrac89$ with $\tfrac49 + \tfrac49$ in the pairs
+is exactly the CKW saturation of Appendix~\ref{app:nb-J}'s limb (B), whose complement is the
+ninth --- the confined sector's budget table and the lepton sector's slack are one identity.
+
+\subsection{Notebook H: glueballs and self-FANOUT}
+\label{app:nb-H}
+
+\emph{Provenance.} \texttt{notebook\_H\_glueball\_fanout\_2026-06-13.ipynb}; created 13 June
+2026 (same ledger correction as G: the 8 July date in the registry was the fez campaign,
+Appendix~\ref{app:hw-two-gluon}). H has no old-appendix home; its triangle limb explicitly
+delegates to the baryon run of the composition appendix. Audit re-execution 12 July 2026
+(sequential counts), \texttt{USE\_HARDWARE = True} drawing \texttt{ibm\_fez}. Job identifiers
+uncaptured (pre-house-rules layer).
+
+\emph{Claim.} Quark trios broadcast classical colour records for free because the GHZ tensor
+\emph{is} the copy (FANOUT) tensor; a gluon's Bell pair is not, and cannot broadcast. For a
+glueball to be classically detectable its closure must \emph{manufacture} FANOUT --- and the
+computation finds the sharp split: the two-gluon network's open legs form a Bell pair (no
+FANOUT), the three-gluon triangle's form GHZ$_{3}$ (FANOUT manufactured). Prediction: classically
+detectable glueball structure lives in the $ggg$ topology. The notebook is explicit that the
+copy-tensor classification is a matrix property with nothing for hardware to evaluate --- the
+device tests the \emph{consequence}, the open-leg states.
+
+\emph{Design.} Copy-tensor test; exact two-gluon contraction; the two-gluon circuit with one Bell
+cap, postselected, population and $\langle XX\rangle$ witnesses; triangle result inherited from
+notebook C's run.
+
+\emph{Verified outputs.} GHZ is the copy tensor, W is not; two-gluon open legs Bell at weight
+$\tfrac14$; triangle free legs GHZ$_{3}$ at fidelity $1$. Second witness (audit container,
+12 July): all reproduced, including the postselection indexing on exact sampling (populations
+$0.519/0.481$) --- checked deliberately after the extraction bug found at notebook F; H's
+indexing is correct.
+
+\emph{Hardware record.} 8 July 2026, \texttt{ibm\_fez} campaign: postselection $0.255$ on the
+ideal $\tfrac14$, $\langle XX\rangle = +0.915$. 12 July 2026, \texttt{ibm\_fez} audit run:
+postselection $0.2555$, populations $\{00: 0.470,\ 11: 0.445\}$ summing to $0.915$,
+$\langle XX\rangle = +0.800 \pm 0.013$. The discriminator --- open legs a Bell pair, not a copy
+tensor --- fires identically in both eras; the coherence witness moved $0.915 \to 0.800$ across
+four days on one device, roughly eight standard errors: parity is placement- and
+calibration-sensitive where the population discriminator is not, the same populations-clean,
+parities-soft anatomy the June set recorded.
+
+\emph{Status.} Pre-house-rules cell layer; prose clean; the FANOUT framing ties
+\S\ref{sec:confinement} to the paper's core boundary architecture --- the copy tensor that
+defines the measurement boundary is the tensor that defines classical colour records, one
+structure with two jobs.
+
+\emph{Consistency.} H is notebook C's cap machinery re-read as gluon networks, with the triangle
+literally the same run; the two-gluon open-leg Bell is notebook D's meson skeleton seen from the
+gluon side. Across C, D, and H the cap construction has now run on three devices in two eras
+without a structural failure, while its coherence witnesses span $0.80$--$0.92$ --- the
+construction is device-robust, the parity is not, and the record now says which is which.
+
+\subsection{Notebook J: the leptonic ninth --- slack, saturation, and the r-channel}
+\label{app:nb-J}
+
+\emph{Provenance.} \texttt{notebook\_J\_leptonic\_ninth\_ceiling\_2026-07-07.ipynb} (its header
+internally ``v2 after the first run's finding'' --- the first execution taught the
+CKW-saturation refinement and the notebook was rewritten before its recorded run, which is why
+the mitigated successor is designated J-MIT rather than J-v2) together with
+\texttt{notebook\_J\_mitigated\_2026-07-11} (.py and .ipynb), built with pre-registered criteria.
+Created 7 July 2026, first of the fourth-qubit programme; the July layer is post-house-rules ---
+PASS/FAIL gates, job-identifier prints, guarded hardware blocks --- and J arrives with all three
+of its job identifiers, the first notebook in this record to do so. Audit re-execution of v1 on
+12 July (sequential counts) with a fresh \texttt{ibm\_fez} run; the attempted re-run of J-MIT the
+same day aborted on the account's monthly QPU ceiling, losing nothing: the 11 July execution is
+the canonical artefact.
+
+\emph{Claim.} The two-ninths identity's operational face, in four limbs: (A) slack
+$= r^{2} = 1 - 4\det\rho = \tfrac19$ per canonical W wire, exact; (B) CKW saturation,
+$C^{2}_{12} + C^{2}_{13} = \tfrac89 = $ the one-to-rest tangle, forcing external concurrence to
+zero at the canonical point; (C) the r-channel quantified --- tag-copying the wire basis yields
+$I = h(\tfrac13)$ of classical mutual information at exactly zero concurrence, the coupling the
+ninth licenses; (D) the shot-level circuit. The header's recorded refinement --- the ninth is
+base presence, not an entangling budget --- and the face-value PMNS constraint (large-angle
+mixing must ride the r-channel) seed the follow-up programme.
+
+\emph{Design.} Four qubits, W on the register with a CNOT tag copy; wire tomography (three
+settings) and pair tomography (fifteen); J-MIT adds gate and measure twirling, XY4 decoupling,
+in-job readout calibration, two-point affine probes, and a ZNE secondary, against pre-registered
+gates.
+
+\emph{Verified outputs.} Limbs (A)--(C) exact, reproduced by the second witness and by the
+J-MIT build's own local verification of 11 July; (D) simulator $r^{2} = 0.1051$ this run
+($0.1107$ on the 7 July execution --- independent draws, both within tolerance).
+
+\emph{Hardware record.} Four fez measurements of the ninth across six days. 7 July (job
+\texttt{d98cnvaf47jc73a7ooog}): raw $r^{2} = 0.0935$, $C = 0.0162$. 11 July, J-MIT (job
+\texttt{d994isqf47jc73a8k1n0}, $16384$ shots): the within-job ladder
+$0.1011 \to 0.1036 \to 0.1095 \pm 0.0051$ against $\tfrac19 = 0.1111$, $C \to 0.0043$, every
+pre-registered gate passed --- the deficit measured and removed by the probe closure, not
+assumed. 12 July, audit run (job \texttt{d99p0taf47jc73a9ci40}): raw $r^{2} = 0.1029$,
+$C = 0.0027$, depths $29$--$35$. Every raw value sits deficit-side of the ceiling, the spread
+$0.0935$--$0.1029$ being calibration-era variation; the raw concurrence floor ranges
+$0.0027$--$0.0162$ with qubit placement, all consistent with zero at the respective floors ---
+no value over-read.
+
+\emph{Status.} Post-house-rules layer; the only modernisation owed is the backend pin, already
+applied in J-MIT. The aborted 12 July J-MIT re-run is recorded as a non-event.
+
+\emph{Consistency.} The ninth is now the framework's most-measured number: six hardware
+determinations across two notebooks, three devices, and one month --- notebook B's pure-W row
+($0.3558$ June fez, $0.3373$ June marrakesh, $0.3175$ July kingston, as radii) and this
+notebook's three ($0.3058$, $0.3309 \pm 0.0077$ mitigated, $0.3208$) --- bracketing $\tfrac13$
+from $+6.7\%$ to $-8.3\%$ with the pre-registered mitigated measurement tightest at $-0.7\%$.
+Limbs (A) and (B) are notebook G's W row read from the lepton side: one CKW identity, certified
+from both sectors. The register these wires model is the one Appendix~\ref{app:hw-ninth} prices
+and the follow-up's PMNS design constraint inherits.
+
+\subsection{Notebook K: the full CKM on the tagged generation space}
+\label{app:nb-K}
+% CUTOVER: app:hw-ckm remains the hardware-detail home; this entry summarises and cross-refers.
+
+\emph{Provenance.} \texttt{notebook\_K\_full\_ckm\_2026-07-07.ipynb} together with
+\texttt{notebook\_K\_v2\_angle\_amplification\_2026-07-11} (.py and .ipynb), the latter built
+in-audit-era with pre-registered criteria. Created 7 July 2026, the fourth-qubit programme's
+flagship. No fresh hardware at this audit stop --- none was needed, both runs being final and
+job-stamped, and the account's QPU ceiling was in any case reached the same day. Second witness:
+v1's local checks re-executed in the audit container on 12 July (entrywise gap $0.00$, shot
+extraction to $0.0014$, Jarlskog circuit equal to closed form at $10^{-12}$), and K-v2's five
+local checks verified at build, including the forty-draw estimator ensemble. One citation fix
+recorded: K's header attributes the one-tag-qubit two-generation rung to ``notebook F'' ---
+that design is notebook A's (Appendix~\ref{app:nb-A}); F is the block-diagonal $3\times3$
+predecessor (Appendix~\ref{app:nb-F}). A one-word edit at the next functional touch.
+
+\emph{Claim.} The full mixing matrix on the $1 \oplus 2$ tagged generation space --- $t$ the
+singlet-against-doublet flag, $d$ the within-doublet coordinate, spectator $\lvert01\rangle$, a
+recorded design decision whose rationale and epistemic status the register paragraph of
+Appendix~\ref{app:hw-ckm} carries --- with mixing implemented at frame level per the budget
+theorem's quark side, and the pure-power ladder in its canonical form: the \emph{sines} as powers,
+$s_{12} = \lambda$, $s_{23} = \lambda^{2}$, $s_{13} = \lambda^{3}$, $\lambda = \sin\tfrac29$, no
+fit anywhere. The notebook's honest table prints the split --- rung one predicted, the
+Wolfenstein coefficients and phase owed --- and its Jarlskog check prices the CP slot: the
+$\sim3.3\times$ excess over PDG at the demonstration phase is exactly the owed $A, \rho, \eta$.
+
+\emph{Design.} One synthesised two-qubit unitary for the embedded $V$; counts parsed as
+$(c_{1}{\ll}1)\,|\,c_{0}$; four local checks with PASS/FAIL gates. K-v2: physical repetition of
+the compiled rung blocks, $n \le 25$ with barriers, the joint $(\gamma, c)$ fit across the two
+small rungs, all criteria pre-registered before submission.
+
+\emph{Verified outputs.} v1's four checks as printed and as re-witnessed; K-v2's five, including
+the branch-safety and ensemble checks whose failures during the build forced the $\pm25\%$ bounds
+and the joint estimator --- design decisions made from evidence and recorded in the notebook's
+own header.
+
+\emph{Hardware record.} Two runs, both on \texttt{ibm\_fez}, both job-stamped, full detail in
+Appendix~\ref{app:hw-ckm}. 7 July (job \texttt{d98cm0d2su3c739j4ang}): the structural validation
+--- diagonals $0.939/0.936/0.966$, rung one at $+5.7\%$, the $\lambda^{4}$-scale elements
+floor-limited at $9\times$ and $4\times$ high, spectator leakage $0.022$. 11 July, K-v2 (job
+\texttt{d9955motcv6s73dmrreg}): anchor $\lvert V_{us}\rvert$ to $1.27\%$, primary
+$\lvert V_{cb}\rvert$ to $6.22\%$ against the ten-per-cent target, the $\lambda^{3}$ stretch
+$\lvert V_{ub}\rvert$ to $3.60\%$ --- an element whose direct transfer probability is one part in
+ten thousand --- with the $+6.2\%$ primary deviation resolved at seven standard errors as a
+constant per-block over-rotation (the divide-by-$n$ table flat from $n \ge 3$), every
+pre-registered gate passed.
+
+\emph{Status.} Post-house-rules layer; owed at next touch: the F$\to$A citation fix and the
+backend pin in v1 (K-v2 already pins). The epistemic bounding paragraph closing
+Appendix~\ref{app:hw-ckm} --- what is derived, what is ansatz, hardware-against-programmed never
+conflated with framework-against-nature --- governs this entry by reference.
+
+\emph{Consistency.} K completes the arc A $\to$ F $\to$ K $\to$ K-v2: rung validated as
+amplitudes, machinery validated in full, embedding re-founded on the sedenion $1 \oplus 2$, small
+elements bought at metrology grade. The floor K's first pass measured is the same
+$P \approx 0.01$ found in F's corrected columns and in K-v2's own mitigated full-matrix control
+--- three determinations, one message, amplification the answer. And the suppression K measures
+--- physical mixing at $\lambda^{2}$ where notebook M finds the \emph{bare} sedenion
+cross-algebra vertex at maximal $\pi/4$ --- is precisely the gap the dressed-operator programme
+(notebook N) must close.
+
+\subsection{Notebook M: sedenion structure and the triple-angle inventory}
+\label{app:nb-M}
+
+\emph{Provenance.} \texttt{notebook\_M\_sedenion\_triple\_angle\_2026-07-10} (.py and .ipynb);
+created 10 July 2026 in the sedenion-mechanism session; simulator and numerics only --- there is
+no hardware content and none is owed, the objects being algebra, not states on a device. Audited
+at the 11 July session opening (four notes delivered and recorded) and entered here; second
+witness by direct execution of the uploaded source in the audit container, 12 July: every
+structural check and all eighteen scan rows reproduced exactly.
+
+\emph{Claim.} The sedenion machinery locked to conventions and interrogated for the flavour
+constant. Structural layer: the Cayley--Dickson recursion
+$(a,b)(c,d) = (ac - \bar d b,\ da + b\bar c)$; the three octonion subalgebras
+$V_{1} = \langle e_{1}, e_{5}, e_{9}, e_{13}\rangle$ and cyclic siblings over the shared
+quaternionic core $\langle e_{0}, e_{4}, e_{8}, e_{12}\rangle$; the $\sigma$ automorphism from
+generators $\{e_{4}, e_{8}, e_{1}, e_{2}\}$; zero-divisor diagonals
+$z = (e_{a} + \sigma(e_{8}e_{a}))/\sqrt2$ --- all checks PASS. Grading note from the audit: the
+sector structure is a Klein four-group ($\mathbb{Z}_{2} \times \mathbb{Z}_{2}$) grading,
+convention-robust, with $S_{3} = \mathrm{Aut}(\mathbb{Z}_{2} \times \mathbb{Z}_{2})$ giving
+Brown's permutation factor a structural home. Scan layer, pre-registered as a \emph{report}:
+eighteen angle comparisons against $\delta_{0} = \tfrac29$, and the result is the finding ---
+\emph{zero hits}. Twelve T1 entries identically zero (phase-blind or orthogonal, per the audit's
+honesty refinement --- the $\arctan2(0,0)$ convention, not measured nulls); four T2 leakage
+angles at exactly $\pi/4$ (the bare cross-algebra vertex is \emph{maximal} mixing, an exact and
+derivable statement); two T3 ratios at exactly $\tfrac14$. The bare sedenion geometry does not
+hand over $\tfrac29$.
+
+\emph{Design.} Pure numerics on $\mathbb{R}^{16}$; the exhaustive claim (``exactly three
+subalgebras'') holds over basis-unit core-doublings, with the mixed-sector lemma recorded as
+owed.
+
+\emph{Verified outputs.} As above; the scan's own closing line is the epistemic rule: a miss
+constrains where $\delta_{0}$ must come from and is recorded as such.
+
+\emph{Status.} The negative result is load-bearing. T2's exact $\pi/4$ says the undressed vertex
+maximally mixes generations one and three; the physical angles are small; therefore the
+\emph{dressing} carries the entire suppression --- which converts notebook N's task from a search
+into a computation with a pre-registered first hypothesis: first-order dressed shift
+$= -2 \times \tfrac19 = -\delta_{0}$, two elementary moves priced at the hardware-measured
+ninth. The multiplicative-Wolfenstein against additive-slack distinction is flagged for N's
+pre-registration.
+
+\emph{Consistency.} M is the algebra-side sibling of K's circuit-side generation work: K measures
+physical mixing at $\lambda^{2}$; M finds the bare vertex at $\pi/4$; the ratio is the dressed
+operator's job, now quantified from both ends. The ninth that prices N's hypothesis is the number
+Appendix~\ref{app:nb-J} measured six ways; the $S_{3}$-as-Klein-automorphisms note feeds the
+shadow-theorem queue; and the scan's twelve zeros are the reason the up-quark candidate's
+$\delta_{0}$ (the masses section's recorded identity) must be sought in the \emph{dressed}
+sector, exactly where Open Problem~\ref{op:up-quark} now points.
+
+\subsection{Notebook I: sedenion left-actions on the four-qubit space}
+\label{app:nb-I}
+
+\emph{Provenance.} \texttt{notebook\_I\_sedenion\_left\_actions\_2026-07-07.ipynb}; created
+7 July 2026, the fourth-qubit programme's check \#1 quantified. The letter collision --- a June
+notebook of the same letter, found at this stop --- resolves in this file's favour by the ledger
+principle: every written reference to ``notebook I'' in the July documents (Open
+Problem~\ref{op:up-quark}'s derivation chain, notebook M's conventions, notebook N's
+pre-registration) means this file keeps the letter, and the June file re-letters to O
+(Appendix~\ref{app:nb-O}; N being reserved). No hardware and none owed --- the content is
+structural, the transpile block for depth accounting only. Post-house-rules layer. Second
+witness 12 July: all five checks reproduced, with one precision recorded --- the zero-divisor
+kernel is multi-dimensional, so the exhibited kernel vector is basis-dependent; the uploaded
+run's $\{e_{5}, e_{14}\}$ support and the witness run's eight-index vector are both members,
+each annihilated to $10^{-16}$.
+
+\emph{Claim.} The $\mathbb{C}^{16} = \mathbb{C} \otimes \mathbb{S}$ machinery made a set of
+matrix facts: (1) the quaternionic core $\{e_{0}, e_{4}, e_{8}, e_{12}\}$ closes --- the
+generations' shared electroweak core; (2) octonion-subalgebra left-actions are isometries ---
+composition survives one rung past the register; (3) sedenion zero divisors exist, exhibited
+--- the no-fibration fact, flavour not force; (4) the composition ladder, the notebook's jewel:
+$L_{a}L_{b} = L_{ab}$ holds only on a complex line ($10^{-16}$ against order-one gaps for the
+quaternion core, $\mathbb{O}$, and $\mathbb{S}$) --- composition fails already for
+non-commuting quaternion pairs on the doubled space, so the sharpened check-\#1 verdict is that
+the tensor identity is necessary but not sufficient and the Clifford left-action routing is
+required one rung earlier than the zero divisors suggest; and \emph{composability selects}
+$\mathbb{C}$ --- the record direction is the algebra's own composable line, an independent
+algebraic vote for the framework's complex-amplitude selection; (5) an $\mathbb{O}_{1}$
+left-action compiles to four qubits at depth $230$, $52$ CX.
+
+\emph{Verified outputs.} All five checks PASS as printed; second witness reproduces each,
+including the ladder on two independent complex lines.
+
+\emph{Status.} This is notebook N's substrate: op:up-quark's sharpened target is precisely
+``this machinery extended by one operator'' --- the dressed leakage-angle computation.
+
+\emph{Consistency.} Notebook M's T2 diagonals \emph{are} this notebook's zero-divisor family,
+same conventions, cross-witnessed; the depth-$230$ transpile calibrates why the sedenion layer
+stays numerics-side while the register circuits of Appendix~\ref{app:nb-K} stay hardware-side;
+and the composability result gives the paper's selected $\mathbb{C}$ a second, purely algebraic
+derivation route worth a sentence where the record chain is introduced.
+
+\subsection{Notebook O (formerly the June notebook I): the three-gluon $K_{3}$ four-class
+structure}
+\label{app:nb-O}
+
+\emph{Provenance.} \texttt{notebook\_I\_ggg\_k3\_classes\_2026-06-13.ipynb}, created 13 June
+2026 --- the ninth June-era notebook, establishing that the June thread ran A through I.
+Re-lettered O at this audit stop: its letter appears in no written record found, against the
+July sedenion notebook's many, and N is reserved by pre-registration --- the one out-of-order
+assignment in the registry, recorded as such. The file rename on disk and a one-line header
+note are owed at next touch. No hardware and none owed; a single-cell enumeration. This entry
+is its first documentation anywhere.
+
+\emph{Claim.} Three gluons joined as a triangle are a $K_{3}$ network --- the same
+not-2-colourable complete graph whose obstruction generates the three fermion generations ---
+and the framework predicts three-gluon glueballs inherit $K_{3}$'s \emph{four} resolution
+classes (three frustrated-edge classes plus the symmetric class) as channel/C-parity classes.
+This is a differential prediction: standard QCD organises three-gluon singlets by \emph{two}
+couplings, $d^{abc}$ and $f^{abc}$; the framework predicts four classes, lattice-checkable
+against three-gluon spectra. Double duty, in the notebook's own words: the cleanest
+illustration of the $K_{3}$ obstruction itself, appearing here in the colour field ---
+independent evidence the obstruction is an organising principle rather than a coincidence of
+the fermion counting.
+
+\emph{Verified outputs.} The enumeration: four classes, two states each, no remainder;
+second witness exact.
+
+\emph{Status.} Whether the four-against-two glueball class prediction currently appears in
+\S\ref{sec:predictions} should be checked at the framing pass; if not, this entry is where it
+lives and a sentence there may be wanted. One structural dependency flagged for the pending
+derivation-of-record decision: this prediction flows from the $K_{3}$ route specifically, so if
+the sedenion $S_{3}$ mechanism supersedes $K_{3}$ outright the prediction needs re-derivation
+or retirement, while an equivalence proof preserves it --- the decision now has a testable
+consequence attached.
+
+\emph{Consistency.} Sits beside notebook H on the same network with complementary content: H
+says the $ggg$ closure manufactures classical detectability, O says it carries four classes ---
+topology and class-count, the framework's glueball story short of masses, which await
+op:associator-geodesic. The $K_{3}$ bridge to the generations gives the obstruction independent
+standing in the $K_{3}$-versus-$S_{3}$ decision.

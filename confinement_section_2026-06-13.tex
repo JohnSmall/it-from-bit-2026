@@ -1,6 +1,19 @@
+%  THIRTEENTH STOP 2026-07-06 (light audit + two integrations + one
+%  new subsection): mass-gap subsection INTEGRATED from its drop-in
+%  (sec:mass-gap; op:qcd-scale dependency satisfied by the
+%  simultaneous integration of the associator-Higgs subsection into
+%  boson-masses; the drop-in's optional settled-line was found ALREADY
+%  present -- the guard prevented a duplicate); NEW subsection
+%  sec:bell-not-counterexample after the ledger -- the Bell-pair
+%  objection at full strength, answered by the two disanalogies
+%  (record-sector; access ladder via the two-ninths identity),
+%  long-form per JS; settled ledger gains the Bell pointer; new key
+%  breidenbach1969observed (RIS delivered); script check 1g-v. No
+%  adjacency phrases; pure ASCII; accumulated additions
+%  self-consistent.
 % =====================================================================
 %  Section: Confinement
-%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-13 from the plan
+%  Paper 1, "It from Bit via G\"odel". Drafted 2026-06-13 from the plan
 %  confinement_section_plan_2026-06-13.md, with the unification decided
 %  in discussion 2026-06-13: ALL mass is associator-geodesic length.
 %
@@ -35,6 +48,50 @@
 %  map are the SAME object resolved two ways. op:associator-geodesic is
 %  hereby the mass map for ALL mass, not just fermions.
 %
+%  ADDED 2026-07-06 (later): subsection "The taxonomy past the triangle"
+%  (sec:exotic-taxonomy) before the all-mass subsection: pentaquarks as
+%  network topologies not new particles; molecular = product of two
+%  saturated singlets (cross-budget exactly zero => binding one level
+%  up, threshold-hugging as consonance), compact = the first
+%  mixed-spider (W-vertex) hadronic wiring; dichotomy = separability
+%  across the cut; masses under the widened op:associator-geodesic;
+%  development deferred to a dedicated short paper (suite member #3).
+%  New ref: lhcb2019pentaquark (PRL DOI formulaic, confirm on import).
+%  Session doc: pentaquark_networks_2026-07-06.md.
+%  ADDED 2026-07-06: subsection "The other reading of the ledger" +
+%  op:w-slack (the leptonic ninth): inward spending = species change;
+%  outward = converse of confinement, external pairwise <= 1/9 per
+%  qubit (tight; quark = exact 0), budget migrating to multipartite
+%  residual (1/9 + 8/9 at maximal coupling). Checks 1g-i..iii. Refs:
+%  koashiwinter2004 (confirm on import), higuchisudbery2000 +
+%  hubersiewert2026 (DOIs search-verified 2026-07-06).
+%  NOTEBOOK STATUS (2026-07-04, per JS): notebooks G and H not yet run.
+%  Their paper-facing content is covered meanwhile: G's tau3/trade-off
+%  by checks 1b' and 1f of confinement_ops_verification_2026-07-04.py
+%  (1f verifies the lockstep as the EXACT relation S_D = H2(F_GHZ));
+%  H's two-gluon->Bell and triangle->GHZ by the executed appendix and
+%  checks in the same script, which also hands H a bonus target: the
+%  four-class transmission table (2a-2d). Budget-subsection pointer
+%  reworded accordingly. Notebooks become confirmatory when run.
+%  RESOLVED 2026-07-04 (post-audit session): op:confinement-energy-locus
+%  discharged by dissolution (prop:energy-locus: pre-fusion pairwise,
+%  post-fusion tripartite, one-vertex GHZxBell, exclusion invariant;
+%  op shrunk to the energy-inheritance residue). op:glueball-spectrum
+%  class half discharged: fusion enforces K3 cycle parity, transmits the
+%  four classes to four orthogonal GHZ-type outputs (class-resolving),
+%  antiparticles via one antipode position-free, and the d/f dictionary
+%  worked (sym class's pair = the two cyclic trace orderings = d and f
+%  exactly, Gell-Mann-verified); mass half + lattice correlator remain.
+%  Script: confinement_ops_verification_2026-07-04.py (repo scripts/).
+%  op:confinement-potential untouched (Paper 2 / standalone, per JS).
+%  AUDITED 2026-07-04: FANOUT pointer gains sec:fanout-boundary
+%  formalisation ref (smallcaps normalised); geodesic-as-proxy
+%  calibration added to the all-mass subsection (aligning with the
+%  masses op's own title); gluon K3 enumeration tied to
+%  op:filatov-extension and the odd-vertex/frustrated-edge labelling
+%  bridge stated; CKW inequality, glueball table rows, proton numbers
+%  and GHZ tangle facts verified by hand; no dark-matter passage here
+%  (the question lives in the zoo's op:sterile-gravity, correctly).
 %  Single forward sentence on gravity + E=mc^2 (#4,#5 from discussion),
 %  full discussion deferred to Paper 2.
 %
@@ -72,7 +129,7 @@ maximal GHZ state --- the colour singlet. The decisive property of that state is
 monogamy of entanglement. Entanglement cannot be freely shared: a system that is maximally entangled
 with some partners has none left to spend on others. Quantitatively, for three qubits the
 Coffman--Kundu--Wootters monogamy inequality
-\autocite{coffmankunduwootters2000distributed,OsborneVerstraete2006} bounds the total,
+\autocite{coffmankunduwootters2000,osborneverstraete2006} bounds the total,
 \begin{equation}
   \tau_{A(BC)} \;\ge\; \tau_{AB} + \tau_{AC},
 \end{equation}
@@ -84,12 +141,13 @@ The consequence is confinement. A colour singlet has $\tau_3 = 1$, so it has no 
 whatever left over to share with anything outside the triple. A quark cannot be entangled with an
 external colour charge because the singlet it belongs to has spent its entire colour-entanglement
 budget on its two partners. There is no free quark because there is no budget for the external
-colour correlation a free quark would require. This is verified directly in
-Appendix~\ref{app:qiskit-composition} and its companion computation: the colour singlet returns
-$\tau_3 = 1$ with both bipartite tangles identically zero, and an attempt to entangle one quark with
-an external qubit succeeds only in lockstep with the destruction of the singlet --- the external
-correlation rises exactly as the GHZ fidelity falls, so a quark can acquire an outside partner only
-by ceasing to be part of a colour singlet.
+colour correlation a free quark would require. This is verified directly: the closed-wiring
+fusion laws are executed in Appendix~\ref{app:qiskit-composition}, and the executable verification
+accompanying the code release checks the rest --- the colour singlet returns $\tau_3 = 1$ with both
+bipartite tangles identically zero, and an attempt to entangle one quark with an external qubit
+succeeds only in lockstep with the destruction of the singlet, the external entanglement rising as
+an exact function of the falling GHZ fidelity --- so a quark can acquire an outside partner only by
+ceasing to be part of a colour singlet.
 
 The reading deserves emphasis because it differs from the standard one in kind, not merely in
 technique. This is not a force that grows with separation; it is a property of the \emph{state},
@@ -101,6 +159,145 @@ external colour partner. It is also, in consequence, \emph{exact}: a budget is e
 it is not, and the maximal GHZ state saturates it completely. Where lattice QCD extracts confinement
 as an asymptotic, numerically-determined property of the colour field, the framework states it as an
 exact property of the singlet state.
+
+\subsection{The other reading of the ledger}\label{sec:budget-converse}
+
+A careful reader of the budget argument will ask the obvious question: the W class does not
+exhaust its budget, so what may the leftover buy? The ledger makes the question precise. Each
+qubit of the canonical W state carries one-to-rest tangle $\tau = \tfrac89$ against the ceiling
+of $1$, spent as $\tfrac49$ on each internal pair with nothing on the three-tangle
+\autocite{coffmankunduwootters2000}; exactly $\tfrac19$ per qubit is unspent. Since the monogamy
+inequality holds for any number of parties \autocite{osborneverstraete2006}, the ledger is well
+posed against any exterior, and the leftover has exactly two possible destinations.
+
+Spent inward, it changes the species. Converting slack into three-tangle within the same register
+is continuously available at the level of amplitudes, but any non-zero three-tangle places the
+state in the GHZ class: the entanglement classes are discrete, and there is no such thing as a
+lepton with a little internal GHZ. This is the same discipline the up-quark discussion imposes on
+itself (\S\ref{sec:masses}): admixture is a perturbation off a canonical orbit, never a species
+spending a surplus at home.
+
+Spent outward, it is a theorem, and it is the converse of confinement. For any qubit that retains
+the W grade of internal commitment, the external pairwise tangle is bounded by the slack,
+$\tau_{\mathrm{ext}} \le 1 - \tfrac89 = \tfrac19$, while for a GHZ-class register the same
+bound reads zero, exactly, always. Confinement and unconfinement are one theorem read at two
+budget levels: the quark's register offers no external handle at all; the lepton's offers
+precisely one ninth of one, per qubit. The bound is tight --- a one-parameter coupling family
+attains $\tau_{\mathrm{ext}} = \tfrac19$ --- and the same computation shows where committed
+budget goes once the handle is grasped: at maximal coupling the internal pairwise tangles have
+drained to zero while the one-to-rest tangle saturates, the ledger reading $\tfrac19$ external
+pairwise plus $\tfrac89$ in the multipartite residual. The leftover budget is thus the door, and
+through it the whole commitment can migrate into collective, GHZ-type correlation spanning the
+register and its exterior: the leftover participates in GHZ entanglement freely, provided the GHZ
+is external. Whether the $\tfrac19$ ceiling is attainable with the internal
+$\tfrac49 + \tfrac49$ fully intact, our family does not settle; the question is recorded below.
+An executable verification of the ledger, the ceiling and the migration accompanies the code
+release.
+
+Two remarks bound the reading. First, the trade between a system's residual entanglement capacity
+and its external correlations is itself theorem-shaped in quantum information
+\autocite{koashiwinter2004}, which is the right footing for a structural suggestion this
+framework will need later: record-broadcast structures are GHZ-shaped copy tensors, external GHZ
+participation is the one mode whose pairwise cost vanishes, and the lepton's ninth is plausibly
+what makes it the fermion that appears in classical records directly --- a reading that travels to
+\S\ref{sec:fanout-boundary} as structure, not as claim. Secondly, at four parties the budget
+question has a celebrated sharp edge: no four-qubit state maximises every one-to-rest tangle at
+once \autocite{higuchisudbery2000}, the observation that founded the study of absolutely
+maximally entangled states, where the four-qubit no-go now has many proofs
+\autocite{hubersiewert2026}. The ledger's refusal to let everything be maximal everywhere is not
+a peculiarity of this framework but a theorem of the four-party landscape it opens onto.
+
+\begin{openproblem}[The leptonic ninth]\label{op:w-slack}
+Determine whether the external ceiling $\tau_{\mathrm{ext}} = \tfrac19$ is attainable with the
+internal W commitments $\tfrac49 + \tfrac49$ fully intact; characterise the four-party states
+realising the boundary of the ledger; and give the ceiling a physical reading --- what operational
+capacity of the lepton, record formation, binding correlation or participation in external
+GHZ-type structure, is bounded by one ninth per register qubit, and whether the bound is visible
+in any measurable setting. Part of the reading is already in hand: the ceiling has a geometric
+identity --- the slack equals the $\mathbb{C}$-access ceiling of the Hopf base, both being the
+squared marginal Bloch radius, $r^{2} = 1 - 4\det\rho = \sup C_{\mathrm{frac}}$
+(\S\ref{sec:entanglement-classes}) --- so the ninth \emph{is} the lepton's singlet-direction
+access seen in budget coordinates, and confinement is the $r = 0$ instance of the same identity.
+What remains is the operational half, and the attainment and boundary questions above.
+\end{openproblem}
+
+\subsection{Why the Bell pair is not a counterexample}\label{sec:bell-not-counterexample}
+
+A reader who has followed the ledger to this point will now press the strongest objection
+available, and it deserves to be stated at full strength before it is answered. In a Bell pair the
+entanglement budget is completely spent: each party's one-to-rest tangle is $1$, each marginal is
+$\tfrac12 I$, and by the identity above each party's slack is exactly zero --- the same per-party
+arithmetic as a GHZ member's. The pair is exactly as fragile: measure either photon and the
+entanglement is gone. And yet Bell photons are measured, singly and routinely, in every
+quantum-optics laboratory on Earth. If saturation plus fragility were what confinement means, the
+Bell pair would refute it. Why should a quark in a GHZ state be any different?
+
+The first move is to sharpen what confinement claims, because the objection quietly shifts it.
+Confinement is not the claim that the party cannot be measured: quarks are interrogated by the
+million in deep inelastic scattering \autocite{breidenbach1969observed}, exactly as Bell photons
+are counted in coincidence experiments. Fragility under measurement is symmetric between the two
+cases, and it is not the claim. Confinement is the claim that no classical record ever carries bare
+colour, and that no colour-charged channel ever acquires its own worldline --- its own node in the
+located relational network. The question is therefore not whether a saturated party can be touched,
+but what a record of the touching would have to carry, and whether the party's individuating data
+can ever join the network on its own.
+
+The first disanalogy is the sector of the would-be record. When a Bell photon is measured, the
+outcome --- a polarisation, a detector index --- is data of the recordable sector: base-side,
+frame-shared, Bloch-geometric. Polarisation is not a gauge charge; it is exactly the kind of thing
+\textsc{fanout} copies, because the selected complex direction \emph{is}, by construction, the
+direction classical records live in --- that is what the computability split
+$\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^{3}$ selects, at the epistemic status the
+selection carries (\S\ref{sec:hopf-honest-debt}). A colour outcome would be a record of
+$\mathbb{C}^{3}$-side data --- the non-selected directions --- and no classical wire carries them.
+To copy a colour state one needs an ancilla spanning the colour space, which is to say an ancilla
+carrying an $SU(3)$ representation, which is to say another coloured object: a colour-basis
+\textsc{fanout} is built of quarks and gluons, not of records. This is the fibre-privacy doctrine
+one level up: Propositions~\ref{prop:f1-dictionary} and~\ref{prop:trace-blind} prove that
+non-record-side data cannot enter any classical record for the $U(1)$ fibre, and colour is the
+$\mathbb{C}^{3}$ of the very same split. The Bell photon's measured quantity lives on the
+recordable side; the quark's defining charge lives on the other. Same budget arithmetic, opposite
+sectors.
+
+The second disanalogy is the access arithmetic, and here the identity of
+\S\ref{sec:entanglement-classes} does exactly the work it was drawn out for. Individuation in the
+relational network --- acquiring a location, in the reading of \S\ref{sec:space-of-computations}
+and \S\ref{sec:relationalism} --- means acquiring presence in the singlet-accessible sector, and
+the identity says that capacity is one invariant: slack $= r^{2} = \sup C_{\mathrm{frac}}$. Run it
+per party and the objection resolves into a ladder. The Bell photon's \emph{locked} wire has
+$r = 0$; but the photon-as-channel carries other, unentangled wires --- spatial mode, frequency ---
+at full access, so its locatability rides degrees of freedom the Bell pair never touched, and it
+was an individuated channel with its own worldline from the moment of emission; after the
+measurement, even the locked wire jumps to $r = 1$, and two legitimate free particles remain. The
+lepton's own species wire carries $r^{2} = \tfrac19$: the ninth is literally its admission ticket
+to the classical network. (Now measured: $r^{2} = 0.0935$ on hardware, the deficit exactly
+depolarisation's; Appendix~\ref{app:hw-ninth}.) The quark's locked wire \emph{is} its species-defining sector, its
+access is exactly zero, and there is nothing else colour-side to ride. Its electroweak wires are
+accessible --- which is precisely why deep inelastic scattering can interrogate a quark in place,
+the vertex turning the frame without holding the state (\S\ref{sec:frame}) --- but extraction as
+a free particle would mean the quark's \emph{defining} charge acquiring a record chain, and that
+sits at $r^{2} = 0$, in a sector no record can enter regardless. The hadron, whose completed colour
+part is $SU(3)$-trivial and record-side clean, is the unit that carries the worldline. The Bell
+case and the quark case, which the objection sets side by side, sit at opposite ends of the ladder
+once the right question is asked: not ``how entangled is the locked wire?'' but ``what access does
+the party's individuating data have?''
+
+A coda makes the difference vivid. Measuring half a Bell pair leaves two definite-polarisation
+photons: recordable species, genuine asymptotic states. ``Measuring'' one quark's colour, were the
+wire to exist, would leave a definite-colour quark and a non-singlet remainder --- objects whose
+defining data still cannot enter records. The operation would not liberate the quark; it would
+relocate the impossibility. And the co-location statement of this section's opening survives the
+objection refined rather than damaged: the Bell photons were never co-located in the relational
+sense --- each joined the network at emission through its spatial wires --- whereas the quarks'
+only network-joining data is collective, which is exactly what the ledger said in numbers.
+
+The statuses, plainly. The ladder's arithmetic is theorem-grade throughout --- the identity, the
+fibre-privacy propositions, the marginal facts --- and an executable verification of its rows
+accompanies the code release. The reading of the selected direction as the record direction
+inherits the status of the selection itself (\S\ref{sec:hopf-honest-debt}); the individuation
+reading is the relational thesis of the spacetime section, at that section's own flags. The
+objection was worth its subsection because its premise is true: the budget alone does not confine.
+The budget, the sector, and the access do.
 
 \subsection{One structure, two consequences: confinement and the vector-like colour force}
 
@@ -156,13 +353,40 @@ relational rather than a property of the vacuum --- but that commitment does not
 two intrinsic locations, and we do not exclude that the binding energy is carried by the gluon Bell
 pairs rather than the quark triple.
 
+The question can, however, be taken further than a stated commitment, because the framework's own
+calculus supplies the vertex relating the two candidate loci, and computing with it settles the
+form of the answer.
+
+\begin{proposition}[The binding admits no invariant locus]\label{prop:energy-locus}
+Let the closed baryon network be three Bell pairs on the triangle's edges with the register's
+Frobenius fusion at each vertex (the wiring of Appendix~\ref{app:qiskit-handles}). Before any
+fusion the network's correlation is wholly pairwise: each edge at unit concurrence, every
+cross-edge and external mutual information zero. After all three fusions it is wholly tripartite:
+exactly $\mathrm{GHZ}_3$ at success probability $\tfrac14$, with three-tangle $1$ and every
+pairwise concurrence zero. After a single fusion it is exactly $\mathrm{GHZ}_3 \otimes$ Bell at
+success probability $\tfrac12$ --- the tripartite content appearing vertex by vertex as
+contraction proceeds. The correlational locus therefore migrates with the presentation, and no
+presentation-independent locus exists; what is invariant is the exclusion, the network admitting no
+external colour correlation in any presentation. An executable verification of every statement
+accompanies the code release.
+\end{proposition}
+
+The quark triple and the gluon network are two contraction orders of one closed tensor --- one
+network, two coordinate systems, in exactly the sense of Open Problem~\ref{op:ideal-orbit}'s
+pairing of module and entanglement coordinates --- so the question of \emph{which} carries the
+binding dissolves, while what the physics needs survives in presentation-free form: the binding is
+a property of the closed network as such, and its exclusion of external correlation ---
+confinement --- holds in every presentation. The no-medium commitment is thereby strengthened: not
+only is there no vacuum condensate doing the work, there is no privileged internal locus either.
+
 \begin{openproblem}[Where the confining energy resides]\label{op:confinement-energy-locus}
-Determine whether the energy of colour binding is carried by the tripartite entanglement of the
-quark $C$-qubits or by the gluon Bell-pair network that mediates the colour field, given that it is
-in either case intrinsic and relational and not the property of any vacuum medium. Unlike
-Open Problem~\ref{op:confinement-potential}, this concerns the static structure of the singlet and
-is attackable with the entanglement measures already in hand, without the emergent-distance
-machinery.
+Proposition~\ref{prop:energy-locus} resolves the correlational form of this question by
+dissolution: quark triple and gluon network are presentations of one closed tensor, and only the
+network as a whole carries the binding. What remains is the energy reading: confirm, once the mass
+map of Open Problem~\ref{op:associator-geodesic} is in hand, that the associator debt attaches to
+the presentation-invariant closed network rather than to any particular cut, so that the
+dissolution survives the passage from correlation to energy. The binding remains in either case
+intrinsic and relational, the property of no vacuum medium.
 \end{openproblem}
 
 \subsection{Glueballs}
@@ -173,8 +397,8 @@ contract to a colour singlet with no external fermion register to terminate on. 
 the quark sector does not, and it is the deepest point of the section.
 
 A quark trio produces a \emph{classical} colour record for free, because the GHZ structure is special
-Frobenius --- it possesses the copy operation that broadcasts a record (the FANOUT of
-\S\ref{sec:entanglement-classes}). A single gluon cannot: its Bell pair is not a copy structure and
+Frobenius --- it possesses the copy operation that broadcasts a record (the \textsc{fanout} of
+\S\ref{sec:entanglement-classes}, formalised in \S\ref{sec:fanout-boundary}). A single gluon cannot: its Bell pair is not a copy structure and
 has nothing to broadcast. For a glueball to be a real, classically detectable bound state, the gluon
 network must therefore \emph{manufacture} the copy structure through its closure topology, asking the
 geometry of the network to do what a quark trio does intrinsically. Appendix~\ref{app:qiskit-meson}
@@ -209,7 +433,34 @@ antisymmetric $f^{abc}$. The framework predicts four channel classes where QCD s
 differential, lattice-checkable statement, and the same $K_3$ obstruction that gives the generations,
 now in the colour field. That the obstruction reproduces a four-class structure independently in the
 gluon sector is itself evidence that it is a genuine organising principle and not a coincidence of
-the fermion counting.
+the fermion counting. Two notes keep the parallel exact. The enumeration rests on the same
+foundational assumption as the fermion count --- the pairwise-independent extension of the Filatov
+constraint, Open Problem~\ref{op:filatov-extension} --- and inherits its status. And the labelling
+convention differs benignly: the fermion table of \S\ref{sec:generations} names each class by its
+odd vertex, this one by its frustrated edge, the two being complementary --- odd vertex $X$ is
+frustrated edge the remaining pair.
+
+The four-class prediction can be taken past assertion, because the framework's own vertex computes
+it. Realising an unlike-oriented edge as the antisymmetric Bell state and contracting the triangle
+with the same Frobenius fusion that binds the baryon yields three facts, each machine-verified.
+First, the fusion enforces vertex consistency by itself: an edge pattern arises from some
+orientation assignment exactly when its unlike-count is even --- the cycle parity of $K_3$ --- and
+the fusion transmits precisely the even patterns while annihilating every other, so the contraction
+already knows which networks are classes. Secondly, the four classes transmit, at equal probability
+$\tfrac14$, to four mutually orthogonal $\mathrm{GHZ}$-type outputs --- the aligned pair for the
+symmetric class and, for each frustrated class, the pair with the vertex opposite its aligned edge
+flipped --- so the framework's vertex is class-resolving, the class read directly off the output's
+parity pattern. Thirdly, the antiparticle member of each class transmits under a single antipode
+placed on any edge, position-free, exactly as a global conjugation should behave. The dictionary to
+the two QCD couplings then falls out. The symmetric class's particle--antiparticle pair corresponds
+to the two cyclic orderings of the colour trace, whose even and odd parts are exactly the
+couplings, $\mathrm{Tr}(T^aT^bT^c) \pm \mathrm{Tr}(T^aT^cT^b) = \tfrac12 d^{abc}$ and
+$\tfrac{i}{2} f^{abc}$, verified against the explicit Gell-Mann matrices: QCD's two couplings are
+the symmetric class read twice. The frustrated trio has no invariant-coupling counterpart at all
+--- its content is \emph{which} edge is aligned, a datum every vertex-symmetric scalar projects
+out and the orthogonal outputs retain --- which sharpens the falsifiable content of ``four where
+two'': the extra channel triple is invisible to coupling space and separable exactly by
+parity-resolved three-gluon correlators, which is what a lattice test should build.
 
 \begin{openproblem}[The glueball spectrum]\label{op:glueball-spectrum}
 Derive the three-gluon four-class spectrum above and the mass of the lightest ($J^{PC} = 0^{++}$)
@@ -218,8 +469,46 @@ $C$-only Bell network, the lattice value being $\approx 1.7\ \mathrm{GeV}$. The 
 its origin with all other mass in the framework --- it is geodesic length --- but on a network living
 entirely in the colour sector, with none of the hypercharge or weak-isospin activity that the fermion
 masses carry, so the relevant geometry is that of the pure-colour closed network rather than the
-mixed-fibre case of the charged fermions.
+mixed-fibre case of the charged fermions. The class half of this problem is discharged by the
+dictionary above and its verification; what remains is the mass half, together with the lattice
+formulation of the parity-resolved correlator that separates the frustrated trio.
 \end{openproblem}
+
+\subsection{The taxonomy past the triangle}\label{sec:exotic-taxonomy}
+
+Pentaquarks fit the framework by not being new particles at all. A quark is a GHZ register; a
+hadron is a closed colour network among $C$-qubits; the hadron spectrum is therefore the taxonomy
+of closed networks, and the baryon (the triangle, fusing to $\mathrm{GHZ}_3$ at success
+$\tfrac14$) and the meson (the two-edge loop, closing onto the canonical Bell pair) are merely its
+two minimal rows. A pentaquark --- four quarks and an antiquark closing to a colour singlet --- is
+the first entry that forces the taxonomy past the minimal rows, and the live experimental question
+about the observed states, which sit conspicuously close to baryon--meson thresholds
+\autocite{lhcb2019pentaquark}, maps onto two distinct network topologies. The \emph{molecular}
+picture is a product of two already-closed singlets, the triangle and the loop, each internally
+complete; the \emph{compact} picture is one connected five-leg network --- and the compact wiring
+needs something the baryon never did, an antisymmetric vertex, which the dictionary already
+stocks: the W spider, the anti-special Frobenius structure behind the verified
+$\mathrm{W} \circ \mathrm{W} = 0$ law. Ordinary hadrons wire only the GHZ spider; exotic hadrons
+are where the second species enters hadronic wiring for the first time. The molecule-or-compact
+question thereby becomes an entanglement-class dichotomy: is the contracted $C$-sector state
+separable across the baryon--meson cut, or genuinely five-connected?
+
+The budget theorem adjudicates what binding each picture is even allowed. In the molecular
+topology both sub-singlets are saturated --- every qubit at one-to-rest tangle $1$ --- so by the
+same monogamy that confines quarks and quantifies the leptonic ninth
+(\S\ref{sec:budget-converse}), the colour-sector cross-budget between the two blocks is exactly
+zero. Molecular binding therefore cannot be colour entanglement at all: it must live one level up,
+in hadron-level channels, the next rung of the same relational recursion --- and a next-level
+linkage is structurally weak, which is the right shape for what is observed, binding energies of a
+few MeV and masses hugging the thresholds. We flag this as consonance, not derivation.
+
+The rest is deferred, deliberately. The masses are network-geodesic targets one row past the
+glueballs, owed under the widened Open Problem~\ref{op:associator-geodesic}; the first
+computation is concrete and waiting in the machinery already built --- contract the compact
+five-leg mixed-spider network, read its success probability and output class, and compare against
+the molecular product, exactly as the glueball transmission table was constructed --- and the
+tetraquark rides the identical story one row earlier. These belong to a dedicated short paper on
+exotic hadrons as network topology. Here the taxonomy is opened, not walked.
 
 \subsection{All mass is geodesic length}
 
@@ -227,7 +516,11 @@ The glueball mass is not a special case but an instance of a single principle th
 commits to: \emph{all} mass is associator-geodesic length. The masses of the individual quarks and
 leptons (\S\ref{sec:generations}), the masses of glueballs, and --- the demanding case --- the masses
 of hadrons are all the same geometric quantity, the length of the relevant closed network read
-through the octonionic associator. The demanding case is demanding because most of a hadron's mass is
+through the octonionic associator. One calibration keeps the commitment honest: the claim is that
+all mass is one quantity --- the associator debt --- with the geodesic length as its computable
+stand-in in the sense \S\ref{sec:masses} fixes (Open Problem~\ref{op:associator-geodesic},
+\emph{Associator-debt and the geodesic proxy}); ``geodesic length'' below is shorthand for that
+pairing, and the unification asserted here is exactly as strong as that problem's resolution. The demanding case is demanding because most of a hadron's mass is
 not the mass of its constituents: the proton weighs about $938\ \mathrm{MeV}$, of which the
 current-quark masses contribute some nine, the remainder being the energy of the colour binding. Under
 the committed principle this binding energy must itself be associator-geodesic length --- the geodesic
@@ -247,7 +540,109 @@ is most of it --- is associator-geodesic length means that what gravitates is as
 length, so that the equivalence of energy and mass and the coupling of mass to spacetime must both, in
 the end, be statements about this one geometric quantity.
 
-\input{mass_gap_subsection_2026-07-03}
+\subsection{Confinement and pre-spatial co-location}.
+%
+%  REGISTER (deliberate): this is the highest-crankery-risk topic in
+%  physics; the subsection names the problem precisely so that no claim
+%  on it can be read into the section by implication, declines it with
+%  specific reasons (same kinematic/dynamical boundary as the QED
+%  scope statement), then records the framework-native structural seed
+%  (conditional, flagged) and two forward directions. NO new open
+%  problem is minted: the framework's pieces of the gap are already
+%  op:associator-geodesic, op:glueball-spectrum, op:qcd-scale,
+%  op:confinement-potential, and the four translation interfaces are
+%  given as a prose programme.
+%
+%  DEPENDENCY: references op:qcd-scale, which is DEFINED in
+%  associator_debt_higgs_mechanism_2026-07-03.tex -- paste that
+%  subsection into the boson-masses section first, or this reference
+%  dangles. (Fallback if you prefer: drop the op:qcd-scale clause.)
+%
+%  CROSS-REFS (all existing): sec:interactions, sec:space-of-computations,
+%  sec:masses, op:associator-geodesic, op:glueball-spectrum,
+%  op:confinement-potential, op:qcd-scale [see dependency].
+%  NEW citation keys (RIS in mass_gap_refs_2026-07-03.ris):
+%  jaffewitten2006, cubitt2015spectralgap.
+%
+%  OPTIONAL one-line addition to "What is settled and what is owed",
+%  end of the owed paragraph:
+%    "The Yang--Mills mass gap is named in \S\ref{sec:mass-gap}
+%     precisely so that no claim on it is read into this section by
+%     implication."
+% =====================================================================
+
+\subsection{The Yang--Mills mass gap}
+\label{sec:mass-gap}
+
+A reader who has followed this section to here will have noticed that its commitments walk up to
+the edge of a famous problem, and it would be evasive not to name it. The Clay Millennium
+formulation asks for two things \autocite{jaffewitten2006}: a mathematically rigorous construction
+of quantum Yang--Mills theory on $\mathbb{R}^{4}$, for any compact simple gauge group, meeting the
+Wightman axioms or standards of comparable stringency; and a proof that the constructed theory has
+a mass gap $\Delta > 0$ --- that its lightest excitation is strictly massive. As physics the gap is
+not in doubt: lattice computation exhibits it, and its lightest carrier is the scalar glueball near
+$1.7$ GeV whose derivation this section has already recorded as
+Open Problem~\ref{op:glueball-spectrum}. The Millennium problem is a problem of proof, not of
+phenomenology. This section has asserted that confinement is exact and structural, that glueballs
+are closed colour networks, and that all mass --- theirs included --- is associator-geodesic length.
+Having gone that far, we owe the reader a plain statement of why we go no further, and of what
+going further would require.
+
+The reasons are the boundary already drawn for quantum electrodynamics in \S\ref{sec:interactions},
+here made specific. The mass gap is a statement about the spectrum of a quantum dynamics, and this
+framework has not constructed that dynamics: there is no Hamiltonian here whose spectrum could be
+bounded, no Hilbert space of the field theory, and no continuum $\mathbb{R}^{4}$ to put one on ---
+spacetime itself being emergent in this framework, its construction deferred
+(\S\ref{sec:space-of-computations}). One cannot prove a spectral gap of an operator one has not
+built. Beneath that lies the framework's own open centre: the map from network geometry to physical
+mass is Open Problem~\ref{op:associator-geodesic}, and the statement ``every closed colour network
+has strictly positive geodesic length'' cannot be a theorem before the functional it concerns
+exists. Even were both supplied, the translation into the Millennium problem's terms crosses four
+interfaces, each a research programme in its own right: the continuum construction of the emergent
+spacetime; the translation of the categorical and entanglement-theoretic statements of this paper
+into an axiomatic form; the passage from the algebraic obstruction of this section to the standard
+criteria of confinement, the Wilson-loop area law above all; and the spectral proof itself. We claim
+none of these. One further limit of scope deserves its own sentence: the Millennium problem is posed
+for every compact simple gauge group, while the structural story of this section is specific to the
+colour sector as it arises here, on the octonionic register --- our route, even if completed, would
+speak to $SU(3)$, not to the problem in its full generality.
+
+What the framework does supply, and what we record because it gives the gap a concrete identity, is
+a structural reason to expect one. The photon is massless because the electroweak sector contains a
+debt-free direction: the associator-blind $\mathbb{C}$, along which nothing is owed
+(\S\ref{sec:masses}). The colour sector contains no such direction --- colour lives on the register
+exactly where the associator is non-trivial --- so no closed colour network can be debt-free. And
+closed networks are topologically discrete: the minimal closure is a finite structure, and there is
+no continuum of ever-smaller closed networks by which geodesic lengths could accumulate towards
+zero. If, as the framework's mass formulas everywhere suggest, the geodesic length of a closed
+network is fixed by its discrete topology rather than by any continuously variable modulus, then the
+spectrum of pure-colour states is bounded below by the length of the minimal closed network. On this
+reading the gap exists because the colour sector has no massless direction and no arbitrarily small
+closed structure; and $\Delta$ is then not an abstract bound but a particular number --- the mass of
+the lightest glueball, precisely the object of Open Problem~\ref{op:glueball-spectrum}, with its
+scale in physical units the object of Open Problem~\ref{op:qcd-scale}. Everything in this paragraph
+is conditional on the open map: it is a heuristic the framework makes natural, not a theorem the
+framework possesses, and we flag it as such.
+
+Two forward directions are worth leaving on the table. The first reframes the problem's notorious
+difficulty. Cubitt, P\'{e}rez-Garc\'{i}a and Wolf proved that the spectral-gap question is, in
+general, undecidable: for translationally invariant lattice Hamiltonians it encodes the halting
+problem, and their own statement of the result names the Yang--Mills gap conjecture as a particular
+case of the general problem so shown undecidable \autocite{cubitt2015spectralgap}. For a framework
+whose spine is self-referential non-computability this is orientation rather than discouragement.
+It says that any proof must exploit special structure --- no general algorithmic route exists ---
+and it locates the difficulty exactly where the bump-in-the-carpet principle of this framework
+expects to find it. The suggestion we record, in the same register as the other prospects of this
+paper --- a direction with a possible path, not a claim --- is that the special structure is the
+division-algebra rigidity itself, the Hurwitz--Adams rigidity that terminated the Hopf tower, and
+that a proof along this route would show the geodesic functional on closed colour networks to be
+bounded below by the minimal-network length, the discreteness of network topology doing the work
+that lattice regularisation does elsewhere. The second direction is nearer, and does not wait on the
+emergent-distance machinery: in a fixed lattice geometry, the question of whether the
+budget-saturation constraint of this section reproduces area-law Wilson loops is one that
+tensor-network methods can address now, and it is the interface at which this framework's account of
+confinement first becomes commensurable with the standard one. We leave the problem, and the route,
+in the record of open problems rather than in the claims of this paper.
 
 \subsection{Confinement and pre-spatial co-location}
 
@@ -272,7 +667,20 @@ by the colour singlet; it is exact rather than asymptotic; it is the same fact a
 CP-conserving character of the colour force; glueballs are closed gluon networks that must manufacture
 their own copy structure through closure, which ties classically detectable glueball states to the
 three-gluon topology; and the three-gluon sector carries a four-class structure where standard QCD has
-two couplings.
+two couplings --- now computed rather than asserted: the framework's vertex enforces the $K_3$
+cycle parity unaided, transmits the four classes to mutually orthogonal outputs, and locates both
+QCD couplings inside the symmetric class, the frustrated trio being edge-position data
+(Proposition~\ref{prop:energy-locus} and the dictionary of the glueball subsection, both
+machine-verified). The binding's locus question is resolved by dissolution: one closed network, two
+presentations. And the W class's unspent ninth is read as the converse
+theorem --- unconfinement quantified, external pairwise correlation bounded by $\tfrac19$ per
+qubit against the quark's exact zero --- with its boundary states and physical reading recorded as
+Open Problem~\ref{op:w-slack}. Both sides of the budget now carry hardware witness: the GHZ register's
+tomography returns collective tangle unity with pairwise concurrences zero, and the two-gluon
+network's open legs measure as a Bell pair, not a copy ($\langle XX \rangle = 0.915$;
+Appendix~\ref{app:hw-monogamy}, Appendix~\ref{app:hw-two-gluon}). The strongest counter-reading --- the Bell pair, saturated yet measurable ---
+is answered at \S\ref{sec:bell-not-counterexample}: same budget, opposite sectors, and the access
+ladder separates the cases.
 
 Owed, and recorded as the open problems above: the distance-dependent confinement potential, as the
 associator-geodesic length resolved by emergent distance (Open Problem~\ref{op:confinement-potential});

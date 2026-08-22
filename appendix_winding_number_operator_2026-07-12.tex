@@ -1,0 +1,86 @@
+% =====================================================================
+%  APPENDIX: The charge circle -- winding equals ladder number
+%  ADDED 2026-07-12. Discharges the first lemma of
+%  op:dictionary-lemmas (sec:algebraic-dictionary) in the same revision
+%  that posed it. Proof rests only on the composition-algebra identity
+%  and the standard Clifford rotor fact; verified to machine precision
+%  in a convention-independent implementation (Cayley--Dickson table;
+%  the third plane's (1,7,6) orientation emerged with the correct
+%  sign). CUTOVER: the verification is slated as notebook P of the
+%  notebook record; add \ref{app:nb-P} here when the record is input.
+% =====================================================================
+
+\section{The charge circle: winding equals ladder number}
+\label{app:winding-number}
+
+This appendix proves the charge row of the dictionary of \S\ref{sec:algebraic-dictionary}:
+Furey's electric-charge operator --- one third of the fermionic ladder count --- and the
+fibration's winding number are one operator in two coordinatisations. The proof is four steps,
+and every step rests only on structure this paper has already paid for.
+
+\emph{Setup.} Let $\ell$ be the selected imaginary unit ($e_{1}$ in the conventions of
+Appendix~\ref{app:setup}) and $J = L_{\ell}$ the complex structure it induces, splitting
+$\mathbb{O} = \mathbb{C}\ell \oplus \mathbb{C}^{3}$ with the three colour planes the Fano lines
+through $\ell$: $(e_{2}, e_{3})$, $(e_{4}, e_{5})$, $(e_{7}, e_{6})$, each oriented by
+$y_{k} = J x_{k}$. Write $c_{j} = L_{e_{j}}$ for the six left multiplications of the complement.
+The composition identity gives, in one line, the Clifford relations: $L_{a}^{2} = -|a|^{2}$ for
+imaginary $a$ by alternativity, and polarising, $\{c_{a}, c_{b}\} = -2\langle a, b\rangle$. The
+six $c_{j}$ therefore generate $\mathbb{C}l(6)$ acting irreducibly on
+$\mathbb{C} \otimes \mathbb{O} \cong \mathbb{C}^{8}$ --- Furey's arena, reached here from the
+fibration side.
+
+\emph{Modes.} For each colour plane set
+$\alpha_{k} = \tfrac12\,(c_{x_{k}} - \mathrm{i}\, c_{y_{k}})$. The Clifford relations give
+$\alpha_{k}^{2} = 0$ and $\{\alpha_{j}, \alpha_{k}^{\dagger}\} = \delta_{jk}$: three fermionic
+modes, one per colour plane. Their Fock grading of $\mathbb{C}^{8}$ is
+$\Lambda^{0} \oplus \Lambda^{1} \oplus \Lambda^{2} \oplus \Lambda^{3} = 1 + 3 + 3 + 1$ --- the
+multiplet row of the dictionary, and the grading of Open Problem~\ref{op:ideal-orbit}. Write
+$N = \sum_{k} \alpha_{k}^{\dagger}\alpha_{k}$ for the total number operator; Furey's electric
+charge is $Q = N/3$ on the particle ideal.
+
+\emph{The engine.} A two-line computation from the relations:
+\begin{equation}
+\alpha_{k}^{\dagger}\alpha_{k}
+ = -\tfrac14\,(c_{x_{k}} + \mathrm{i} c_{y_{k}})(c_{x_{k}} - \mathrm{i} c_{y_{k}})
+ = \tfrac12\,\bigl(1 + \mathrm{i}\, c_{x_{k}} c_{y_{k}}\bigr),
+\qquad\text{i.e.}\qquad
+\mathrm{i}\, c_{x_{k}} c_{y_{k}} = 2 N_{k} - 1 .
+\label{eq:winding-engine}
+\end{equation}
+The number operator of each mode \emph{is} the Clifford bilinear of its plane.
+
+\emph{The lift.} The rotation by angle $\theta$ in the plane $(x_{k}, y_{k})$ acts on the
+module by the rotor $\exp(\tfrac{\theta}{2}\, c_{x_{k}} c_{y_{k}})$ --- conjugation by it sends
+$c_{x_{k}} \mapsto \cos\theta\, c_{x_{k}} + \sin\theta\, c_{y_{k}}$, the standard half-angle
+fact. The \emph{colour circle} --- the determinant $U(1)$ of the $J$-commuting rotations
+$U(3)$, each colour plane turned once with the record plane fixed --- therefore acts on the
+ideal as
+\begin{equation}
+\exp\Bigl(\tfrac{\theta}{2} \sum_{k} c_{x_{k}} c_{y_{k}}\Bigr)
+ = \exp\bigl(-\mathrm{i}\,\theta\,(N - \tfrac32)\bigr),
+\label{eq:winding-lift}
+\end{equation}
+by~\eqref{eq:winding-engine}. The right side is diagonal in the Fock basis with winding numbers
+$W = \tfrac32 - N$ per full turn.
+
+\begin{lemma}[Winding equals ladder number]\label{lem:winding-number}
+On the ideal, the ladder number operator is the relative winding of the colour circle's spinor
+lift, $N = W_{\mathrm{vac}} - W$ with $W_{\mathrm{vac}} = \tfrac32$ the vacuum's winding, so that
+\begin{equation}
+Q \;=\; \frac{N}{3} \;=\; \frac{W_{\mathrm{vac}} - W}{3}.
+\end{equation}
+Furey's charge operator and the fibration's winding are one operator in two coordinatisations:
+the charge thirds are winding integers divided by the number of colour planes, and the ladder's
+integer spacing is the winding's.
+\end{lemma}
+
+Three remarks. First, the half-integer vacuum winding is not a blemish but the spinor double
+cover announcing itself --- the same $\mathbb{Z}_{2}$ that makes spin one half --- and it drops
+out of every physical (relative) statement. Second, adjoining the record plane's rotation ---
+the full $J$-circle in place of the colour circle --- contributes the mode-zero bilinear, an
+\emph{integer} unit shift: the leptonic sector's integer charges, whose alignment with the
+register normalisation of \S\ref{sec:charges} is the dictionary's next row. Third, on the
+conjugate ideal the windings negate and the antiparticle charges follow. The proof above uses
+only the composition identity and the rotor fact; it has been verified to machine precision in
+a convention-independent implementation, the multiplication table generated by Cayley--Dickson
+doubling and the three planes selected by $J$ itself.

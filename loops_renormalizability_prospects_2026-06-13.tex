@@ -1,0 +1,77 @@
+% =====================================================================
+%  DROP-IN: new \paragraph for the "Open problems and prospects"
+%  subsection (sec:spacetime-open-problems) of
+%  spacetime_from_non-computability.tex.
+%
+%  Drafted 2026-06-13. Adds the two future-work suggestions discussed:
+%    (1) Feynman loops as closed computational paths (CTC-like), which
+%        would give a SECOND route to the parallelisable-sphere constraint
+%        and unify the spacetime arc (CTCs -> dimensions) with the
+%        interaction arc (entanglement classes -> gauge group).
+%    (2) "Parallelisability determines renormalizability" -- a question
+%        posed in the division-algebra community's native language,
+%        explicitly offered for them to take up.
+%
+%  Both are flagged as NOT-yet-well-formed open questions -- suggestions
+%  with a possible path, not posed problems. This matches the subsection's
+%  existing voice (each prospect with its debt named) and the cautious
+%  posture of the QED-scope paragraph in the circuits section, which this
+%  complements: that paragraph defers the path-integral construction to
+%  Paper 2; this one notes what that construction might, in turn, illuminate.
+%
+%  PLACEMENT: append after the existing prospect paragraphs (e.g. after
+%  "Expansion and acceleration." and before, or as part of, the closing
+%  \medskip summary), inside sec:spacetime-open-problems. Adjust the
+%  \medskip summary if needed so it still reads as the section's close.
+%
+%  Cross-refs used (verify): sec:three-dimensions (the CTC ->
+%  parallelisable-sphere argument), sec:entanglement-classes (the
+%  entanglement-class -> gauge-group route), sec:interactions (the QED-scope
+%  paragraph). Citations: adams1960hopf already present; no new keys needed.
+% =====================================================================
+
+\paragraph{Loops, supertasks, and a second route to parallelisability.}
+The argument of \S\ref{sec:three-dimensions} derives the parallelisable-sphere constraint from
+closed timelike curves: a computation whose output is its own input requires information to be
+transported consistently around a loop, and consistent transport selects the parallelisable spheres
+$S^{1}$, $S^{3}$, $S^{7}$ \autocite{adams1960hopf}. There is a suggestion, which we record as a
+prospect rather than a result, that the same constraint may govern the loops of perturbative quantum
+field theory. The external legs of a Feynman diagram are on-shell classical boundary data; the
+quantum content, and the divergences, enter with the internal loops, where the loop momentum is
+integrated over all values and the action accumulated inside the loop is in this sense unbounded ---
+a supertask, an infinite computation closed into a finite process. If such a loop is, in the
+framework's terms, a closed computational path of the same kind as a closed timelike curve --- a
+cycle carrying information not derivable from the data outside it --- then the parallelisability
+constraint derived for closed timelike curves would apply to it, and the admissible interactions
+would be constrained by the same $S^{1}$, $S^{3}$, $S^{7}$ structure that fixes the gauge group in
+\S\ref{sec:entanglement-classes}. This would be a second and independent route to the Standard Model
+content: not only ``closed paths in spacetime select the parallelisable spheres'' but ``closed paths
+in interactions select them too,'' unifying the spacetime arc and the interaction arc under one
+principle. The decisive step, which we have not taken, is the identification of a field-theory loop
+with a closed computational path in the precise sense the framework requires --- a loop integral is a
+closed cycle in momentum space, a closed timelike curve a closed cycle in spacetime, and whether
+these are the same kind of self-consistent closed structure is exactly what would have to be
+established. It is offered as a direction, not a claim.
+
+\paragraph{Does parallelisability determine renormalisability?}
+A sharper and more self-contained question sits alongside the previous one, and we state it in the
+hope that it will be taken up by those equipped for it. Renormalisability is the property that the
+divergences of a quantum field theory can be consistently absorbed, leaving finite predictions; some
+theories have it and some do not, and the standard criterion for which is technical (power-counting
+of the coupling's dimension). The framework suggests a more structural reading. Parallelisable
+spheres are precisely the spheres on which a global, consistent transport exists where it generically
+does not; the non-parallelisable spheres are where the obstruction lives. If the divergence of a loop
+is, in the framework's language, an obstruction to closing a computational path consistently, then
+parallelisability would be exactly the structure that distinguishes the removable obstruction (a
+renormalisable theory) from the irremovable one. It is at least a suggestive coincidence that the
+renormalisable interactions of nature are the gauge theories built on $U(1)$, $SU(2)$ and $SU(3)$ ---
+the groups the framework ties to the three parallelisable spheres --- and that gravity, which resists
+renormalisation, is the sector \S\ref{sec:three-dimensions} ties to the geometry rather than the
+algebra. Whether this is structural or accidental we do not know. The question --- whether
+parallelisability, in the Hurwitz--Adams sense, is what determines renormalisability --- is posed in
+the native language of the division-algebra approach to the Standard Model, and is one we think that
+community is best placed to answer. We are careful to claim nothing more than that the question is
+well-motivated: this is emphatically not a method for computing renormalised quantities, whose finite
+remainders carry the precision agreement with experiment, but a conjecture about which theories admit
+such a computation at all. It is, like the previous prospect, a direction with a possible path to an
+answer rather than an answer, and it is left open deliberately.

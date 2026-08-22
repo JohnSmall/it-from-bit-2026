@@ -1,6 +1,26 @@
+%  ADDED 2026-07-06: full subsection "The frame" (sec:frame), between
+%  the two-sphere representation and the spin ladder: the frame defined
+%  (oriented coordinatisation; map-grid not territory), gauge-per-sphere
+%  / constraint-per-pair, discreteness as the promotion, the electroweak
+%  inventory frame-borne, the lepton/quark certification asymmetry,
+%  turned-never-held with the budget theorem (sec:budget-converse), the
+%  parity consonance (flagged; op:chirality), the bundle/cocycle reading
+%  (flagged; travels with op:filatov-extension). "Frame" is now a
+%  defined term citable via sec:frame.
+%
+%  RE-AUDITED 2026-07-06 (final pass, tenth stop, light leg): position
+%  10 adjacency claims TRUE (both "previous section" phrases refer to
+%  entanglement-classes content -- CK composition, class reading);
+%  frame-subsection seams verified ("previous subsection" = the
+%  two-sphere representation, "next subsection" = the spin ladder,
+%  both correct); op:chirality and op:filatov-extension confirmed
+%  DEFINED in the particle zoo -- the frame's references land; all ref
+%  targets exist; no textquote; header Goedel umlaut normalised, file
+%  now pure ASCII. No prose changes required: the deep audit and the
+%  frame insertion stand.
 % =====================================================================
 %  Section: A Fermion is Three Qubits   (Plan Stage 1)
-%  Paper 1, "It from Bit via Gödel"
+%  Paper 1, "It from Bit via G\"odel"
 %  Drafted 2026-06-08. Follows \S sec:entanglement-classes.
 %
 %  \input fragment. Assumes biblatex/\autocite, amsthm `proposition'.
@@ -18,7 +38,7 @@
 %    sec:masses                 -- Stage 5+ (mass), forward
 %
 %  Terminology follows terminology_reconciliation_entanglement_dictionary_2026-06-08:
-%  "Bell" is the entanglement class, never a synonym for SU(2); the ELL-H rung is
+%  "Bell" is the entanglement class, never a synonym for SU(2); the $\mathbb{H}$ rung is
 %  named as such. Dual-audience convention (QC view / GT view / Bridge) per the plan.
 % =====================================================================
 
@@ -45,7 +65,7 @@ channel conveys --- a useful repackaging, not the discovery of a blob.
 
 This is not a philosophical ornament bolted onto the mathematics; it is what makes the mathematics
 of the previous section the \emph{right} mathematics. The compositional structure of Coecke and
-Kissinger \autocite{coeckekissinger2010compositional} is a calculus of processes: systems are
+Kissinger \autocite{coeckekissinger2010compositional,CoeckeKissinger2017} is a calculus of processes: systems are
 wires, interactions are boxes, and the content of the theory is how they compose. A particle, in
 that calculus, is a wire carrying information between the events it connects, and the GHZ and W
 Frobenius structures are statements about how such a wire may branch, copy and merge --- properties
@@ -76,7 +96,8 @@ conventionally describe as a single fermion, written, by the caveat just stated,
 register with each qubit tied to one gauge sector. This section assembles that
 register. It is worth saying plainly that the result is \emph{structural}: every ingredient (the
 division-algebra tower, the Hopf fibrations, the two-sphere representation, the termination at
-$\mathbb{O}$) is established, but the identification of the assembled register with a Standard
+$\mathbb{O}$) is established in \S\ref{sec:division-algebras} and
+\S\ref{sec:hopf-justification}, but the identification of the assembled register with a Standard
 Model fermion is an argument from structure rather than a theorem, and we flag the assumptions as
 they arise.
 
@@ -90,7 +111,8 @@ both readings at once is the whole point, so each step below states a \textbf{QC
 
 The channel we describe as a single fermion is organised, by the convention of
 \S\ref{sec:register-preface}, into three qubits $A \otimes B \otimes C$, whose
-internal algebras are the three non-trivial rungs of the Cayley--Dickson tower above the reals:
+internal algebras are the three non-trivial rungs of the Cayley--Dickson ladder of
+\S\ref{sec:division-algebras}:
 $\mathbb{C}$, $\mathbb{H}$, $\mathbb{O}$. Each rung is the previous one doubled, and each doubling
 sacrifices a piece of algebraic structure: $\mathbb{C}$ is commutative and associative;
 $\mathbb{H}$ is non-commutative but associative; $\mathbb{O}$ is neither.
@@ -202,7 +224,101 @@ mutually entangled --- the W class --- demands opposite handedness on every edge
 which the complete graph $K_3$ cannot consistently support: $K_3$ is not two-colourable. That
 frustration is the seed of chirality and of the generation count, but it belongs to
 \S\ref{sec:generations}; here we only need the representation itself and the fact that the
-constraint is forced rather than imposed.
+constraint is forced rather than imposed. One disclosure travels with the picture: Filatov's
+theorem is for a single entangled pair, and the extension to three mutually constrained spheres ---
+each pair carrying its own quaternionic Hopf structure --- is assumed here, its formal proof open;
+the assumption is carried explicitly into \S\ref{sec:generations}.
+
+\subsection{The frame}\label{sec:frame}
+
+The sections that follow, and several that have gone before, lean on a word --- \emph{frame} ---
+that deserves more than a passing definition, because by the end of the paper it will be carrying
+a fermion's entire electroweak identity. We therefore stop and build the idea slowly, for a reader
+meeting it cold.
+
+Begin with what a Bloch sphere is not. A sphere, by itself, cannot be \emph{read}. To say that a
+state points ``up'', or that a rotation went ``clockwise'', one must first lay a grid over the
+sphere: choose which direction counts as $z$ (the axis the computational basis, and with it $T_3$,
+refers to), choose an equatorial pair $x$ and $y$, and --- the part that turns out to matter most
+--- choose the \emph{orientation} of the triple: whether $(x, y, z)$ is right-handed or
+left-handed. That oriented coordinatisation is the frame. Its continuous part is a rotation's worth
+of convention; its discrete kernel is a single bit per sphere, the handedness label
+$\chi \in \{L, R\}$, and this bit is the Filatov datum of the previous subsection. The crucial
+distinction, worth italicising: \emph{the frame is not the state}. The state is a point of the
+sphere; the frame is the grid the sphere is read through --- map-grid, not territory. Two
+descriptions of one state in two frames differ, and nothing physical has changed; a chart drawn
+with north at the top and a chart drawn with north at the left describe the same sea.
+
+Why, then, are frames physics at all? Because of the move this framework makes everywhere: a
+\emph{lone} sphere's frame is pure gauge --- there is nothing for its orientation to be relative
+to, no laboratory magnet to give ``up'' a meaning --- but \emph{relative} frame data between
+spheres is physical, and entanglement legislates it. Filatov's theorem
+\autocite{filatov2024towards} is exactly such legislation: an entangled pair of qubits
+\emph{forces} the two spheres' frames to be opposite-handed. A frame is thus a convention per
+sphere and a constraint per pair. And when three pairwise constraints meet on a triangle, they
+cannot all be satisfied --- $K_3$ is not two-colourable --- so the register is frustrated, and the
+inequivalent ways of resolving the frustration are \emph{discrete} invariants of the constraint
+graph. Discreteness is the promotion: one cannot smooth a resolution class away by
+re-conventioning, any more than one can re-convention a left glove into a right one. Continuous
+choices are bookkeeping; the classes they fall into are structure.
+
+Now count what is written on the frame, and notice that it is everything electroweak. Generation:
+\emph{which} vertex of the triangle is the odd one out --- which algebra rung's frame disagrees
+with the other two (\S\ref{sec:generations}). Chirality: the handedness content itself. Weak
+isospin: the frustrated pair has exactly two resolutions, and $T_3 = \pm\tfrac12$ is nothing but
+\emph{which resolution the channel instantiates} --- the doublet is two frame-labellings of one
+frustrated structure, connected by an $SU(2)$ rotation and by nothing smaller. Colour and
+hypercharge live elsewhere (on the fibres of \S\ref{sec:charges}); generation, chirality and
+isospin live here. A fermion's weak identity is frame-borne.
+
+The point sharpens into an asymmetry that the rest of the paper depends on. For a \emph{lepton},
+the frame structure is certified by the state itself: the W-class register has every pair
+entangled, so Filatov's theorem derives the handedness relations from the state, and the state
+even co-displays the distinguished axis --- the single-qubit marginal has the non-degenerate
+spectrum $(\tfrac23, \tfrac13)$ that singles out $T_3$ (Proposition~\ref{prop:w-doublet}). For a
+\emph{quark}, both certificates are absent: the GHZ register has no entangled pairs, and its
+single-qubit marginal is exactly $\tfrac12 I$, displaying no preferred axis whatsoever. A quark's
+electroweak identity is therefore written \emph{nowhere in its local state}: it lives entirely in
+the frame, as class-specification data. This is why \S\ref{sec:charges} routes the quark doublet
+through the resolution classes rather than through any marginal, and it is why the extension of
+Filatov's certification from entangled pairs to the GHZ class is precisely the companion clause of
+Open Problem~\ref{op:filatov-extension}: the certification gap and the open problem are the same
+thing, seen twice.
+
+The asymmetry answers a question a careful reader will have been storing up: if quarks have no
+entangled pairs, what does the weak force grab? The frame --- because there is nothing else on
+offer, and because frames are exactly what local operations rotate. The charged current's action on
+a fermion is a local unitary on the $B$ qubit, turning the register from one resolution of the
+frustrated structure to the other; a turn of the grid, costing no entanglement budget and
+preserving the species class exactly. Contrast the mode the vertex does \emph{not} have: attaching
+to a quark by state-level entanglement, a pairwise tangle lodging on its qubits. For a saturated
+register that mode is not merely absent from the dictionary --- it is forbidden by theorem, the
+external pairwise capacity of a GHZ register being exactly zero (\S\ref{sec:budget-converse}).
+The weak vertex on a quark has one legal mode: act on the grid, never on the territory. \emph{A
+quark interacts weakly by having its frame turned, never by being held.} The worked contrast ---
+the dictionary's implementation preserving the quark exactly while a pair-forming implementation
+destroys it at first order --- is exhibited at the beta-decay circuit of \S\ref{sec:interactions}.
+
+One consonance is too striking to leave unremarked, though we flag it as consonance and not yet
+derivation. Empirically, the weak force is \emph{the} parity-violating interaction --- the one
+force in nature that distinguishes left from right, the fact every textbook leads with. Here that
+is not an anomaly to be accommodated; it is the job description. The weak force is, by
+construction, the force whose entire mechanism is the rotation of oriented frames, and a force that
+acts on orientation could not fail to see orientation: parity sensitivity is what ``acting on
+frames'' \emph{means}. The derivation of the full left-only coupling remains the business of
+Open Problem~\ref{op:chirality}; what the frame picture supplies is the reason such a force was
+always going to be the odd one out under mirrors.
+
+Finally, the geometric home, recorded as structure. The handedness labelling is an orientation
+section of the product of the spheres' frame bundles; the pairwise demand is a cocycle condition on
+the edges of $K_3$; the $W$ is a fibre rotation; and the odd cycle's $\mathbb{Z}_2$ holonomy is
+the same object the next subsection reads as the $4\pi$ period of a spinor. That formulation is
+where the Filatov extension would naturally live, and it travels with
+Open Problem~\ref{op:filatov-extension}. \emph{QC view:} the frame is the per-wire basis choice
+plus one handedness bit, physical only in comparisons, constrained by entanglement, classified by
+the triangle. \emph{GT view:} an orientation datum on a frame bundle whose frustrated cocycle
+carries generation, chirality and isospin --- the electroweak charges as topology of the grid, not
+geography of the point.
 
 \subsection{Why three spheres make a fermion}
 
@@ -229,29 +345,35 @@ duality of \S\ref{sec:canonical-orbits}, a Bell register \emph{is} a transport m
 two spheres, and the physical excitations of a transporter are adjoint-valued fluctuations about
 the identity --- a connection's quanta. One relation, one vector index: spin $1$.
 
-The three-sphere register is the first configuration with a \emph{cycle}, and the cycle is odd:
-the pairwise anti-alignment constraints of the $K_3$ structure cannot all be satisfied --- that is
-the frustration --- so transporting an alignment choice once around the triangle returns it
-flipped, and only the second circuit restores it. A closed cycle does not add another vector; it
+The three-sphere register is the first configuration that can close a \emph{cycle}, and when all
+three pairs are entangled --- the W class, the leptons --- the cycle is odd: the pairwise
+anti-alignment constraints of the $K_3$ structure cannot all be satisfied --- that is the
+frustration --- so transporting an alignment choice once around the triangle returns it flipped,
+and only the second circuit restores it. A closed cycle does not add another vector; it
 adds a \emph{sign}. Holonomy $-1$ under one circuit and $+1$ under two is precisely the signature
 of a projective, double-valued representation --- the $4\pi$ period that defines a spinor --- and
 the canonical-orbit minimality of \S\ref{sec:canonical-orbits} selects the least representation
 consistent with that holonomy: spin $\tfrac12$. (Minimality chooses among representations carrying
 the same holonomy; it cannot empty a channel of the relation it is, which is why the Bell class is
-not spin $0$ by the same principle.) The Filatov constraint on jointly constrained spheres realises
-the double cover concretely \autocite{filatov2024towards}, and the same odd-cycle structure is
-what the entanglement budget renders monogamous --- the unshareability that shadows exclusion ---
-so the fermion/boson split and the frustrated/unfrustrated split are, structurally, one split seen
-twice.
+not spin $0$ by the same principle.) The GHZ class --- the quarks --- has no
+pairwise-entangled edges, so it does not close this triangle directly; its spinor character and
+doublet structure ride the same $K_3$ resolution machinery by the route \S\ref{sec:generations}
+takes --- exactly as its $T_3$ already does in \S\ref{sec:charges} --- and that extension is owed
+there, not assumed here. The Filatov constraint on jointly constrained spheres realises the double
+cover concretely for the entangled pairs \autocite{filatov2024towards}, and the same odd-cycle
+structure is what the entanglement budget renders monogamous --- the unshareability that shadows
+exclusion --- so the fermion/boson split and the frustrated/unfrustrated split are, structurally,
+one split seen twice: established on the W side, owed on the GHZ side.
 
 \emph{QC view:} count the constraint edges and cycles of the register. \emph{GT view:} read off
 the spin --- no relation, scalar; one relation, vector; one odd cycle, spinor. The ledger is owed
-exactly one identification, and we name it rather than gesture at it: that a $2\pi$ rotation of
-the channel in the emergent space of \S\ref{sec:space-of-computations} acts on the register as
-one circuit of its constraint cycle --- the bridge from internal holonomy to spatial spin. Given
-the relational premise, the ladder above is derived; that single bridge is structural here, and its
-formal version travels with the generation proof and the Filatov constraint in
-\S\ref{sec:generations}.
+exactly two identifications, and we name them rather than gesture at them: that a $2\pi$ rotation
+of the channel in the emergent space of \S\ref{sec:space-of-computations} acts on the register as
+one circuit of its constraint cycle --- the bridge from internal holonomy to spatial spin --- and
+that the pairwise Filatov constraint extends to three mutually constrained spheres, the assumption
+disclosed above on which the $K_3$ derivation itself rests. Given the relational premise and those
+two, the ladder above is derived; both are structural here, and their formal versions travel with
+the generation proof and the Filatov constraint in \S\ref{sec:generations}.
 
 \subsection{Status, and the standard objections}
 
@@ -263,19 +385,14 @@ each of $A$, $B$, $C$ is independently a two-state system, and Proposition~\ref{
 is the precise sense in which the three are nested yet distinct rather than collapsed into a single
 large space.
 
-Second, does using $\mathbb{H}$ and $\mathbb{O}$ as internal algebras inherit the well-known
-difficulties of quaternionic and octonionic quantum mechanics --- the tensor-product and
-composite-system problems catalogued by Adler and others \autocite{adler1995quaternionic}? The
-position is that it does not, because $\mathbb{C}$ remains the base field of the physical Hilbert
-space; $\mathbb{H}$ and $\mathbb{O}$ appear only as the internal algebras of individual qubits, not
-as alternative foundations for quantum theory. This is the same move that lets the division-algebra
-programme use $\mathbb{O}$ in Standard-Model constructions without asserting an octonionic quantum
-mechanics. (The $\mathbb{O}$-qubit is in any case best read geometrically: because $\mathbb{O}$ is
-non-associative, $\mathbb{O}^2$ is a normed module rather than a Hilbert space in the
-Dirac--von Neumann sense, and the $C$-qubit is handled as the geometric object $S^{15}$ with its
-Hopf structure.)
+Second, does using $\mathbb{H}$ and $\mathbb{O}$ as internal algebras inherit the composite-system
+difficulties of quaternionic and octonionic quantum mechanics? That objection was met in full in
+\S\ref{sec:division-algebras}: the base field remains $\mathbb{C}$ throughout, the higher
+algebras are internal to individual register qubits, and the $C$-qubit is handled geometrically as
+$S^{15}$ precisely because $\mathbb{O}^{2}$ is not a Hilbert space. The register instantiates that
+stance; nothing here reopens the question.
 
 With the register in place and each qubit tied to its gauge sector, the next stage reads the
 electric charge, weak isospin, hypercharge and colour directly off the state, recovering
-$Q = T_3 + Y$ as a statement about the register rather than a tabulated assignment
+$Q = T_3 + \tfrac12 Y$ as a statement about the register rather than a tabulated assignment
 (\S\ref{sec:charges}).

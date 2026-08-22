@@ -1,0 +1,234 @@
+% =====================================================================
+% Moved to appendices, 2026-08-17
+%  SECTION: The FANOUT Boundary (app:fanout-boundary; subsection
+%  sec:fanout-direction). DRAFTED 2026-07-06 -- the paper's last
+%  undrafted load-bearing section, closing every dangling reference in
+%  the manuscript.
+%
+%  RECOMMENDED PLACEMENT: between Wigner's friend and the
+%  quantum-postulates assembly (WF narrates measurement; this section
+%  formalises it; the postulates then consume it) --
+%      \input{wigners_friend_in_the_hopf_picture_2026-06-13}
+%      \input{fanout_boundary_section_2026-07-06}     <-- new
+%      \input{derivation_of_the_quantum_postulates}
+%  The section is position-portable (explicit refs only); the one
+%  deliberate forward reference (the O = C + C^3 split) is flagged in
+%  the text and lands at div-alg/hopf regardless of slot.
+%
+%  SOURCES: fanout_logic_measure_correspondence_theorem_v2_2026-05-17
+%  (the correspondence proposition and its ingredients);
+%  dynamics_companion_fanout_unitarity_2026-05-20 (the
+%  isometry-not-unitary characterisation; the GL-vs-U warning, which
+%  sec:continuity and the L2 section already honour);
+%  lawvere_inside_outside_fixed_point_theorem_2026-05-04.
+%
+%  STATUS ARCHITECTURE: the correspondence is stated as a proposition
+%  whose ingredients are each established in the cited literature and
+%  whose identification is the framework's; the diagonal reading is
+%  structural with its one-step-upstream honesty flag; the direction
+%  subsection delivers the CANDIDATE resolution hopf's honest debt
+%  promises, at candidate status, and mints op:fanout-selection for
+%  the uniqueness residue (cross-linked to op:sigma-functor, whose
+%  cargo includes the functorial completion).
+%
+%  NEW citation keys (RIS in fanout_refs_2026-07-06.ris):
+%  spekkens2008negativity, sorkin2007anhomomorphic,
+%  dowkerghazitabatabai2008. Existing keys: CoeckeKissinger2017,
+%  coeckepavlovicvicary2013orthogonal, zurek_2009, Landauer_1961,
+%  Lawvere_1969, Yanofsky2003.
+%  British English; \autocite; no bullets in prose; spaced dashes.
+% =====================================================================
+
+\section{The \textsc{fanout} Boundary}
+\label{app:fanout-boundary}
+
+Every section of this paper has leaned on one operation. The self-referential argument turned on
+what a system can and cannot copy of its own description; the continuity section defined its regime
+as the interval during which no copy has been made; the Born rule fell out of what a copy cannot
+carry; Wigner's friend was a story about who has copied what; and the particle sections' deepest
+claim --- that colour never enters a record --- is a claim about copying. The operation is
+\textsc{fanout}, the classical copy, and this section pays the debt of using it: what it is, where
+the boundary it draws sits, why the two sides of that boundary look the way they do, and what the
+firing of a copy commits.
+
+The definition is categorical and exact. A special commutative Frobenius algebra on a
+finite-dimensional Hilbert space is a copying--deleting pair $(\Delta, \varepsilon)$ with its
+adjoints, and the theorem of Coecke, Pavlovi\'{c} and Vicary says that such structures are in
+bijection with orthonormal bases: every classical structure \emph{is} a basis, and the
+comultiplication acts as $\Delta\lvert i\rangle = \lvert i\rangle\lvert i\rangle$
+\autocite{coeckepavlovicvicary2013orthogonal, CoeckeKissinger2017}. \textsc{fanout} in basis $B$ is
+the firing of that comultiplication with the second copy released as a record; on states it is
+$F_B(\rho) = \sum_i \langle i\rvert\rho\lvert i\rangle\, \lvert i\rangle\langle i\rvert$, which is
+decoherence in $B$, and operationally it is the production of a classical record of $\rho$ in $B$.
+Its dynamical character is sharper than ``stochastic'': the comultiplication is an isometry and not
+a unitary --- $\Delta^{\dagger}\Delta = I$ while $\Delta\Delta^{\dagger}$ is a projector --- so it
+embeds without erasing and cannot be run backwards from within its image. The non-surjectivity
+\emph{is} the irreversibility. No-cloning is the same fact read in the other direction: the quantum
+category has no natural diagonal, so a copy exists only where a classical structure has been
+committed, and committing one is exactly what firing means.
+
+\subsection{One boundary, synchronised signatures}
+
+The boundary \textsc{fanout} draws has two sides, and the framework's claim is that everything
+strange about the far side and everything familiar about the near side are one algebraic fact seen
+in different vocabularies.
+
+\begin{proposition}[The \textsc{fanout} correspondence]\label{prop:fanout-correspondence}
+Let $F_B$ be \textsc{fanout} in basis $B$ on a finite-dimensional Hilbert space, and let $\rho$ be
+a state. (a) Post-firing, the output $F_B(\rho)$ carries a measure on the Boolean lattice generated
+by $B$ satisfying the Kolmogorov axioms, and admits a Boolean truth-value homomorphism consistent
+with classical logic for every outcome. (b) Pre-firing --- whenever $\rho$ has a non-zero
+off-diagonal element in $B$ --- any tomographically complete quasi-probability representation
+respecting $B$ is signed, and the propositional structure on the projective lattice is
+anhomomorphic with respect to $B$: no Boolean homomorphism extends the eigenstate truth assignments
+to all projectors. (c) The off-diagonal elements $\langle i\rvert\rho\lvert j\rangle$ are the
+common algebraic source of both pre-firing signatures, so the two vanish simultaneously --- at the
+instant $F_B$ fires.
+\end{proposition}
+
+\begin{proof}
+(a) is immediate: $F_B(\rho)$ is diagonal, its diagonal entries are non-negative and sum to one, so
+they define a classical probability measure on $B$'s Boolean lattice, and each outcome fixes a
+two-valued homomorphism in the ordinary way. (b) assembles two established results basis-relatively:
+Spekkens' theorem that negativity of quasi-probability and generalised contextuality are equivalent
+\autocite{spekkens2008negativity} supplies the measure-theoretic signature, and the Kochen--Specker
+obstruction in its co-event form \autocite{sorkin2007anhomomorphic, dowkerghazitabatabai2008}
+supplies the logical one. (c) is inspection: both signatures are functions of exactly the
+off-diagonal data, and $F_B$ annihilates exactly that data. The individual ingredients are each
+established in the cited literature; the identification of the \emph{common} boundary --- that the
+logical and measure-theoretic signatures are synchronised, with \textsc{fanout} as the shared
+operational criterion both programmes lacked --- is this framework's.
+\end{proof}
+
+The proposition earns its keep as a reframing of two research traditions. Sorkin's anhomomorphic
+logic, developed with Dowker and collaborators for quantum measure theory, met its sharpest
+difficulty in the failure of modus ponens for co-events; on the present reading that failure is not
+a defect of the scheme but the correct signature of the regime it describes --- classical logic is
+the post-\textsc{fanout} regime by construction, and anhomomorphism is the proper logic of the
+interval in which no record has yet been formed, with the ``missing privilege'' of the one realised
+co-event supplied by the copy that fixes a record. Spekkens' negativity, likewise, is the measure
+face of the same interval, and the operational criterion for when positivity returns --- which the
+negativity theorem by itself does not supply --- is the firing. Two programmes, one boundary,
+and the boundary is an operation.
+
+The unification runs deeper than the two signatures, and it is worth one plain paragraph. Four
+things this paper has treated in four places are readings of the single fact that firing
+annihilates off-diagonals: the Born rule is the boundary condition on the measure side, signed
+amplitudes becoming positive probabilities (\S\ref{sec:complex-amplitudes},
+\S\ref{sec:born-rule}); bivalence is the boundary condition on the logic side, anhomomorphic
+becoming Boolean; decoherence is the mechanism, the off-diagonals going to zero; and the classical
+record is the operational content, a clonable copy released into the environment. One event, four
+faces. The framework's habit of deriving each face where it arose and then discovering them to be
+one is, by now, its signature move, and this is the move's cleanest instance.
+
+A corollary deserves a paragraph because it touches something usually taken as primitive. The
+Boolean predicate $x = y$ is operationally a comparison, and a comparison decomposes as a copy
+followed by an agreement test; the copy is \textsc{fanout}. By no-cloning the copy is available
+exactly when the state is diagonal in the copying basis, so \emph{identity-of-reference is
+Boolean-bivalently meaningful precisely in the post-\textsc{fanout} regime}. ``This particular
+particle'' is a phrase whose truth-conditions exist on one side of the boundary and not on the
+other --- which is why the indistinguishability of identical quantum particles needs no further
+postulate here: it is the pre-firing face of the same fact.
+
+\subsection{Three more faces of the same boundary}
+
+The categorical definition above is one derivation of the boundary; three others arrive from
+independent directions, and their convergence is the same over-determination this paper has leaned
+on elsewhere.
+
+The diagonal reading returns the boundary to the paper's founding argument. The copy map \emph{is}
+the diagonal $\Delta: A \to A \times A$, and Lawvere's fixed-point theorem --- the engine of
+\S\ref{sec:self-reference} --- is precisely a statement about what follows when a diagonal exists
+\autocite{Lawvere_1969, Yanofsky2003}. The absence of a natural diagonal in the quantum category is
+therefore the categorical face of the self-reference obstruction: the describer's private data is
+exactly the data for which no diagonal is available, and Proposition~\ref{prop:f1-dictionary} is
+the one-qubit instance --- the copier fibre-committed, the fibre uncopyable. We flag the honest
+residue: the full chain from the Lawvere--Yanofsky obstruction to specifically \emph{complex}
+rather than merely signed quasi-probability runs through the analytic continuation of
+\S\ref{sec:complex-amplitudes} and is one step upstream of the proposition above, which treats
+signedness only; the two-step structure is deliberate and the join is part of
+Open Problem~\ref{op:sigma-functor}'s cargo.
+
+The operational reading is redundancy. A measurement has happened, for a community of agents,
+exactly when the outcome has been \textsc{fanout}-copied into at least one record they can share,
+and the strength of the resulting fact grades with the number of independent copies --- the
+redundancy $R$ that quantum Darwinism measures \autocite{zurek_2009} and that the Wigner's-friend
+section used as its ladder (\S\ref{sec:wigners-friend}): the friend at small $R$, Wigner's
+``no record'' as the $R \approx 1$ idealisation, objectivity-for-a-community as large $R$. The
+boundary is not a metaphysical curtain but a countable quantity.
+
+The thermodynamic reading is Landauer's. A record that can later be reset or overwritten carries an
+entropy bill of $k_B T \ln 2$ per bit \autocite{Landauer_1961}, and the bill falls due at
+amplification --- at the copying into stable, resettable records --- not at the microscopic
+interaction, which is where the Wigner's-friend section placed it. The boundary is where the
+thermodynamic arrow first grips: pre-firing there is nothing to pay for, because there is nothing
+that counts as a record to erase.
+
+Categorical, diagonal, operational, thermodynamic: four derivations, four vocabularies, one
+boundary. None of the four is this paper's invention; the identification of the four as one is.
+
+\subsection{The direction of the copy}
+\label{sec:fanout-direction}
+
+Everything above concerns \emph{that} a copy fires; this subsection concerns \emph{which way} it
+points, and it is where the section pays the paper's largest outstanding debt. By the
+basis--structure bijection, a copy cannot fire abstractly: every firing is a firing \emph{in a
+basis}, which is to say every \textsc{fanout} event commits a direction. At one qubit this is not a
+reading but a theorem --- Proposition~\ref{prop:f1-dictionary} exhibits the copier as
+fibre-committed, the committed direction as the record direction, and the orthogonal data as what
+no record carries.
+
+The register-level claim is the candidate this section owes to the honest-debt subsection of the
+geometry section (\S\ref{sec:hopf-honest-debt}). There the load-bearing assumption was named: the
+selection of a preferred $\mathbb{C} \subset \mathbb{O}$ --- the split
+$\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^{3}$ on which the gauge group, the record sector and
+the confinement argument all stand (\S\ref{sec:division-algebras}, \S\ref{sec:hopf-justification}
+--- a deliberate forward reference at this section's recommended position). The candidate
+resolution is that the selection is not an additional postulate but the register-level shadow of
+classicality existing at all: a world with records is a world in which copying structures have
+fired, every fired copy is a committed direction, and the ``preferred'' complex line is nothing
+over and above the standing commitment of the network's record-making. No copy, no $\mathbb{C}$; a
+classical world, and the split comes with it. What the candidate does not yet deliver is
+uniqueness, and we price that plainly.
+
+\begin{openproblem}[The uniqueness of the selection]\label{op:fanout-selection}
+Show that the copying commitments of a connected record-forming network cohere into exactly one
+global complex direction --- that the local basis commitments of separately fired \textsc{fanout}
+events, each a theorem at its own site, patch into a single
+$\mathbb{C} \subset \mathbb{O}$ for the register --- or characterise the obstruction to their
+doing so. This is the local-to-global half of the honest debt of \S\ref{sec:hopf-honest-debt},
+whose mereological half it inherits; a resolution would upgrade the candidate argument of this
+subsection from ``classicality selects a direction'' to ``classicality selects \emph{the}
+direction''. The problem is cross-linked with Open Problem~\ref{op:sigma-functor}, whose functorial
+cargo --- the \textsc{fanout} functor from pre-firing structures to classical ones --- is the
+natural setting for the patching question, and through it with
+Open Problem~\ref{op:hopf-frobenius}.
+ A solvable model system exists: the thin-spectrum analysis of symmetry-broken
+superconductors makes the choosing of a vacuum a calculable decoherence process, exhibited as a
+candidate route at \S\ref{sec:superconductor-witness}.
+\end{openproblem}
+
+\subsection{The arrow, for the agent}
+
+One consequence has been used by the spacetime sections and deserves its one-paragraph home. The
+comultiplication's non-surjectivity means the copy has no two-sided inverse \emph{from within its
+image}: an agent holding the record cannot, by any operation on what she holds, undo the firing
+that produced it. That is a local arrow of time --- irreversibility for the record-holder, exact
+and observer-indexed --- and it is the arrow the spacetime section's account of the time direction
+and the predictions section's CPT discussion both lean on. Nothing global is claimed: the arrow is
+as local as the record, which is the relational reading of \S\ref{sec:relationalism} applied to
+time's direction rather than to position.
+
+\subsection{What this section settles, and what it prices}
+
+Settled: the definition (classical structure, basis, isometry-not-unitary, the non-surjectivity as
+the irreversibility); the correspondence proposition, whose ingredients are established and whose
+identification is the framework's; the four-readings unification --- Born boundary, bivalence,
+decoherence, record as one event's four faces; the identity corollary; the one-qubit direction
+theorem via Proposition~\ref{prop:f1-dictionary}. Candidate, flagged as such: the register-level
+selection argument --- classicality as the origin of the preferred $\mathbb{C}$ --- delivered to
+the honest-debt subsection in exactly the form promised there. Owed, and numbered: the uniqueness
+of the selection (Open Problem~\ref{op:fanout-selection}); the functorial completion and the
+signed-to-complex join, both carried as cargo of Open Problem~\ref{op:sigma-functor}. The
+infinite-dimensional extension of the correspondence is noted and not needed: every register in
+this paper is finite. What the paper has used everywhere, it now owns.

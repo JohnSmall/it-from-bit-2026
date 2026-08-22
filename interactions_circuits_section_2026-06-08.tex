@@ -1,6 +1,15 @@
+%  RE-AUDITED 2026-07-06 (final pass, sixteenth stop, light leg):
+%  adjacency plural-and-true at position 16; op:vertex-factors'
+%  sec:associator-higgs reference went LIVE with the morning
+%  integration and lands; provenance paragraph, prop:fcnc and
+%  sec:absent-gate all present as the week's inbound stitches assume
+%  (spacetime CP fourth-party, masses cabibbo forward, classes
+%  absent-gate pointer); umlaut normalised, pure ASCII; the session's
+%  accumulated additions (neutral-blind, absent-gate, provenance,
+%  forced-architecture, widened fcnc-all-orders) self-consistent.
 % =====================================================================
 %  Section: Interactions as Quantum Circuits   (Branch A)
-%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Paper 1, "It from Bit via G\"odel". Drafted 2026-06-08.
 %  Forks after \S sec:charges (registers) and \S sec:boson-masses
 %  (bosons as edges). Precedes \S sec:predictions.
 %
@@ -31,6 +40,51 @@
 %    op:state-gate       -- carried from sec:boson-masses (referenced,
 %                           not re-minted).
 %
+%  ADDED 2026-07-12: subsection "What hardware execution adds, and
+%  what it cannot" (sec:why-hardware), sibling to the discipline
+%  subsection -- answers the "plain python does as well" objection by
+%  conceding it at full strength (simulator the better calculator; no
+%  run tests framework against nature) then stating the four values:
+%  forcing function (incl. the generation-register -> sedenion chain),
+%  commitment ledger, instantiability, robustness taxonomy + forced
+%  metrology; coda on the future regime and noise-as-premature-FANOUT.
+%  ADDED 2026-07-06 (later still): subsection "The absent gate"
+%  (sec:absent-gate) after op:fcnc-all-orders -- the GHZ<->W converter
+%  exists once SLOCC is ignored (exact, reversible, register-entangling,
+%  non-Clifford); its ledger (tau3 1->0, pairwise 0->4/9, one-to-rest
+%  1->8/9 releasing the ninth, marginal axis appearing, sector
+%  migration); boundary-stratum path geometry; the dictionary stocks no
+%  such gate => B/L conservation as class conservation, leptoquarks =
+%  the absent gates, SU(5) exclusion = proton stability
+%  (sec:predictions cross-ref); op:fcnc-all-orders widened with the
+%  species clause. Check 1i in the verification script; hardware
+%  demonstration queued (JS, when IBM returns).
+%  ADDED 2026-07-06 (later): provenance paragraph after the CKM gate --
+%  the generation wire licensed as the sedenion doubling (4 qubits =
+%  C x S), Aut(S) = G2 x S3 / Gillard-Gresnigt three intersecting
+%  octonion subalgebras; two conjectures recorded as directions
+%  (mixing forced by no-AME(4,2); CKM-small/PMNS-large from the budget
+%  split), development deferred to a dedicated follow-up paper. Session
+%  doc: fourth_qubit_ckm_pmns_2026-07-06.md (project documents).
+%  ADDED 2026-07-06: forced-architecture paragraph after the beta-decay
+%  verification invitation -- the local frame-flip (sec:frame) as the
+%  unique budget-legal weak vertex on a confined quark
+%  (sec:budget-converse); pair-forming alternative first-order
+%  forbidden; check 1h in the verification script.
+%  AUDITED 2026-07-04: prop:neutral-blind minted and proved (diagonal +
+%  C-local gate structure => class preservation; verified, check 2f of
+%  confinement_ops_verification), discharging op:fcnc-all-orders'
+%  dictionary half (op shrunk to the dynamical completion);
+%  op:vertex-factors partially discharged (g'/g = 1/sqrt3 relative
+%  weights; Higgs row = the derived Yukawas via sec:associator-higgs,
+%  paste dependency); invitations ledger updated to stated-and-executed;
+%  hardware figures verified against the appendix (0.88 baryon record,
+%  0.89 summary -- both the appendix's own numbers); eq:zphase algebra,
+%  beta-decay charge accounting, app:qiskit label all verified clean.
+%  NOTEBOOK STATUS (JS 2026-07-04): notebooks G and H not yet run
+%  (servers unresponsive); their content is meanwhile covered by the
+%  executed appendix (fusion laws, triangles) and by checks 1b'/1f and
+%  2a-2d of the released script; the notebooks become confirmatory.
 %  FRAMEWORK-LEVEL CORRECTION (2026-06-12), flagged prominently: the
 %  source claim "FCNC absent / exactly zero at all orders" (session
 %  summary 2026-04-09 1; framework_summary_for_llm_review 7) is
@@ -187,10 +241,48 @@ two basis states --- the signature of the surviving Bell pair, in the appendix's
 convention; apply a partial trace over either lepton wire and confirm the other is maximally mixed,
 which \emph{is} the entanglement the $W^-$ deposited; attach the two spectator-quark registers and
 confirm they decouple; and attempt to violate any of the conservation laws above without leaving the
-vertex dictionary, and fail. This worked example is single-generation: it sets the CKM factor
+vertex dictionary, and fail.
+
+The architecture of this circuit is forced, not chosen, and the forcing is worth stating because it
+closes a question the register section raises (\S\ref{sec:frame}): with no entangled pairs in a
+GHZ register, what does the weak force grab? The circuit's answer is the frame, and the budget
+theorem says it is the only possible answer. Under the dictionary's implementation --- a local
+frame-flip on the $B$ qubit, with the lepton pair created on fresh wires --- the quark register
+keeps its three-tangle at exactly $1$, remains an exact product with the lepton sector, and the
+process's entire entanglement lives on the emitted pair. Under the alternative one might naively
+draw --- the boson attaching to the quark by a pair-forming coupling to a lepton wire --- the GHZ
+fidelity degrades as $\cos^2\theta$ at first order, entangling the confined register outward,
+which \S\ref{sec:budget-converse} forbids outright: a saturated register has external pairwise
+capacity exactly zero. The fresh-wire, local-flip shape is therefore the unique budget-legal
+implementation of the weak vertex on a confined quark --- a quark interacts weakly by having its
+frame turned, never by being held --- and the correlation the process genuinely requires flows
+through the $W$ edge itself, the boson's own Bell register acting as the transporter, without ever
+lodging on the quark. An executable check of both implementations accompanies the code release. This worked example is single-generation: it sets the CKM factor
 $V_{ud}\approx0.974$ to one. The full charged-current gate is the $T_3$ raise tensored with the CKM
 rotation on the generation index, and making that executable is the first of the concrete
 extensions below.
+
+A remark on where the generation wire itself comes from, recorded because the circuit forced the
+question. The two-generation gate required an extra qubit to carry the generation label, and that
+wire entered as a pragmatic device, unlicensed by the register architecture. It has since acquired
+a candidate licence, and the arithmetic behind it is exact: four qubits are
+$(\mathbb{C}^2)^{\otimes 4} = \mathbb{C}^{16} = \mathbb{C}\otimes\mathbb{S}$, the complex
+sedenions --- the same Cayley--Dickson doubling that built the register, taken one rung further.
+That rung cannot add a force: the Hopf tower terminates and the sedenions have zero divisors, so
+the fourth qubit carries flavour, never gauge structure. What it can carry is generations:
+$\mathrm{Aut}(\mathbb{S}) = G_2 \times S_3$, and in the construction of Gillard and Gresnigt the
+three generations are three intersecting octonion subalgebras of $\mathbb{S}$, their common
+intersection a shared quaternionic core \autocite{gillardgresnigt2019three}. Two structural
+conjectures then suggest themselves, and we record them as directions rather than results. Since no
+four-qubit state is maximally entangled across every cut
+\autocite{higuchisudbery2000,hubersiewert2026}, a fourth-party generation tag can never be
+perfect, generations cannot superselect, and mixing is forced --- the CKM and PMNS structure, its CP phase included, as the operational shadow
+of the sedenion zero divisors. And since the lepton register offers exactly one
+ninth of external budget per qubit (\S\ref{sec:budget-converse}) while the quark register offers
+none, the lepton tag may couple at the state level where the quark tag must remain frame-coupled
+(\S\ref{sec:frame}) --- the right shape for the observed asymmetry between the small,
+hierarchical CKM and the large PMNS angles. The development of both belongs to a dedicated
+follow-up paper; here, the extra wire simply stops being an apology.
 
 \subsection{What the circuits compute, and what they do not}
 
@@ -209,8 +301,14 @@ gap.
 \begin{openproblem}[Vertex factors]\label{op:vertex-factors}
 Fix the coupling normalisations of the vertex dictionary --- the amplitude carried by each gate ---
 from the fibre geometry, so that circuit amplitudes become numerical predictions for the
-internal-structure factors of processes rather than structural skeletons. The fibre-dimension
-scaling that fixed $\sin^2\theta_W$ in \S\ref{sec:charges} is the natural starting point.
+internal-structure factors of processes rather than structural skeletons. Part of this is already
+in hand: the fibre-dimension scaling that fixed $\sin^2\theta_W$ in \S\ref{sec:charges} fixes the
+\emph{relative} electroweak weights, $g'/g = 1/\sqrt3$, so the ratio of the $A$- and $B$-sector
+gate amplitudes is not free; and the Higgs row's factors are not open at all --- they are the
+Yukawa couplings the mass sections derive (\S\ref{sec:masses}, \S\ref{sec:associator-higgs}).
+What remains is the overall normalisation --- one number, part of the one-parameter audit of
+Open Problem~\ref{op:vev} --- the colour-sector weight, and the demonstration that these exhaust
+the freedom.
 \end{openproblem}
 
 Three computations are within reach of the present dictionary and would each extend the framework's
@@ -219,7 +317,9 @@ Appendix~\ref{app:qiskit-handles}. First, the CKM-extended charged current
 (Appendix~\ref{app:qiskit-ckm}): append a
 generation register --- a qutrit, or two qubits encoding the triality sector of
 \S\ref{sec:generations} --- and promote the $W$ gate to the $T_3$ raise tensored with the CKM
-rotation $V$. Executing it turns the observation of \S\ref{sec:masses}, that the Koide phase
+rotation $V$. The core has since been extended to the full three-generation mixing circuit on hardware:
+the first rung demonstrated within six per cent, the $\lambda^{4}$ elements found at the
+device's error floor and their amplified repetition priced (Appendix~\ref{app:hw-ckm}). Executing it turns the observation of \S\ref{sec:masses}, that the Koide phase
 $\delta = 2/9$ sits at the Cabibbo angle (Open Problem~\ref{op:cabibbo}), into something that can be
 tested inside the circuit picture: the executed two-generation form returns
 $\lvert V_{ud}\rvert = \cos(2/9)$ to $+0.11\%$ and $\lvert V_{us}\rvert = \sin(2/9)$ to $-1.74\%$
@@ -291,6 +391,80 @@ they do not remove the burden of honesty everywhere the floor has not yet reache
 episode is an argument for encoding more of the framework over time: every claim that can be pushed
 from prose into a check is a claim moved from sounding right to being shown right, or shown wrong.
 
+\subsection{What hardware execution adds, and what it cannot}
+\label{sec:why-hardware}
+
+A reader who has followed the appendices may reasonably ask what the device runs are for, since
+every circuit in this paper is small enough that a statevector simulator computes its output
+exactly, in milliseconds, on the laptop the opening of this section recommended. We state the
+objection at its full strength, because we agree with its premise: at these register sizes the
+simulator is a strictly better calculator than the processor, and no run reported anywhere in
+this paper tests the framework against nature. The comparisons with measurement happen on paper
+--- a processor executing a circuit with $\sin(2/9)$ programmed into a rotation cannot report
+whether nature's Cabibbo angle is $\sin(2/9)$, only whether the device turned the angle it was
+asked to --- and the appendices' standing rule, that execution validates the encoding and never
+the claim, is this concession stated as policy. A reader who concludes that the hardware runs add
+no evidential weight to the derivations has understood us exactly. What they add is four things
+of a different kind.
+
+First, the device completes the discipline of the previous subsection. A simulator permits what
+no laboratory does: states prepared by fiat, postselection at no cost, amplitudes read directly
+off the wavefunction --- and a claim encoded only for a simulator never has to answer the
+question \emph{what is the observable?} The physical target forced answers throughout. The Bell
+caps of the composition laws had to become Bell-basis measurements with heralding budgets that
+are themselves checkable numbers; the three-tangle of the confinement argument had to be admitted
+for what it is, a density-matrix functional demanding twenty-seven tomography settings rather
+than a single measurement; and the question of how three generations occupy qubit hardware --- a
+machine constraint, not a physics one, since no current device offers a qutrit --- became the
+two-qubit generation register, whose spectator state demanded an interpretation, whose
+interpretation led through the fourth qubit to the sedenion structure of
+\S\ref{sec:sedenion-announcement}. That chain, from a transpiler's complaint to a candidate
+mechanism for the generations, is the previous subsection's discipline with its teeth in: the
+forcing function forces because a real machine waits at the end of it.
+
+Second, the runs are a commitment device. Every hardware result in this paper carries a job
+identifier on the provider's servers --- an external, timestamped record we cannot quietly
+revise; the later runs were pre-registered, criteria fixed before submission; and every corrected
+number is quoted beside its raw partner. The paper's stance that its own apparatus is invited to
+disprove its claims is credible only because that apparatus exists outside our own filesystem.
+For work developed without institutional infrastructure the same ledger externalises trust in the
+other direction: the reader is asked to check artefacts, not to extend authority, and anyone with
+a free account can re-run the entry-point circuit of Appendix~\ref{app:qiskit} tomorrow.
+
+Third, the runs demonstrate that the framework's ontology is instantiable. The identification
+this paper defends is not that matter is \emph{like} these entanglement structures but that it
+\emph{is} them; and there now exist, in a dilution refrigerator, manufactured colour singlets
+obeying the claimed composition laws under uncontrolled noise --- anti-speciality as an
+inspectable distribution, both canonical hadron skeletons assembling from closed wiring. This is
+a consistency demonstration, not a test; but a proposal whose constituents are exhibitably
+manufacturable operations occupies different ground from one whose objects exist only in
+notation.
+
+Fourth, the reproduction campaign returned an empirical structure we did not commission. Across
+three devices and a month of calibration drift, the class discriminators, the populations, and
+the fixed-point quantities reproduced essentially unchanged, while the coherence parities moved
+by many standard errors between runs on a single device; the record and its analysis close the
+appendix subsections. In a framework whose species assignments are discrete entanglement classes,
+the observation that the \emph{discrete} structure is what device noise cannot kill is a
+consonance worth having on the record --- and a practical instruction about which witnesses can
+carry weight. The same pressure produced technique: the readout floor that makes the small CKM
+elements unreachable by single application forced the amplified-repetition metrology that then
+delivered them (Appendix~\ref{app:hw-ckm}).
+
+These four are today's ledger; there is also tomorrow's. The composite-mass programme of Open
+Problem~\ref{op:associator-geodesic} heads toward closed networks at sizes where classical
+simulation stops being free, and the pipeline these small circuits built --- the conventions, the
+mitigation stack, the habit of pre-registration --- is infrastructure for the regime in which the
+processor stops being a witness and becomes the calculator. And one further fact deserves its
+sentence, because it is not an accident of convenience. The entire engineering battle of a
+quantum processor is fought against uncontrolled record formation: decoherence is the environment
+performing the copy operation whose deliberate absence from the vertex dictionary
+\S\ref{sec:absent-gate} records, without being asked. Every error channel catalogued in the
+hardware appendix is, in the framework's own vocabulary, premature record formation --- the noise
+budget is the FANOUT boundary charging rent --- so the instrument's central operating problem is
+this framework's central object, and there is a fitness, which we note without leaning on it, in
+the framework being disciplined by precisely this machine.
+
 \subsection{No flavour-changing neutral currents}
 
 The generation index of a fermion is the triality sector of \S\ref{sec:generations} --- which of the
@@ -348,12 +522,85 @@ plainly: Proposition~\ref{prop:fcnc} establishes the tree-level result rigorousl
 prohibition at all orders is structural and strongly motivated, and we record its promotion to a
 theorem as the open problem of this subsection.
 
+The vertex-level half of that promotion can in fact be delivered now, because the dictionary's
+neutral gates are of a very restricted kind, and the restriction is exactly what the claim needs.
+
+\begin{proposition}[Neutral compositions are generation-blind]\label{prop:neutral-blind}
+Every neutral gate of the vertex dictionary acts on a fermion register either as a
+computational-basis-diagonal operation on the $A$--$B$ pair (the photon and $Z$ phases, which on a
+definite-species channel reduce to $Z$-axis rotations and a global phase) or as a single-qubit
+unitary on $C$ (the gluon action). Diagonal operations preserve the basis support of the canonical
+orbits, and single-qubit unitaries are local; every finite composition of neutral gates therefore
+preserves the species class, and preserves the discrete resolution class of
+\S\ref{sec:generations}, which no continuous family of class-preserving operations can change.
+Granted the class structure of \S\ref{sec:generations} --- and inheriting its foundational
+assumption, Open Problem~\ref{op:filatov-extension} --- no composition of neutral gates changes a
+channel's generation. An executable verification accompanies the code release.
+\end{proposition}
+
+\begin{proof}
+A diagonal gate multiplies basis amplitudes by phases and cannot move amplitude onto new basis
+states; the canonical GHZ, W and product orbits are characterised by their supports, so each is
+carried to itself. The gluon gate is a local unitary on $C$, and local unitaries preserve the
+entanglement class. The gate set is generated by one-parameter families through the identity, so
+the discrete resolution label, constant along each family, is constant under every composition.
+\end{proof}
+
 \begin{openproblem}[The all-orders vertex prohibition]\label{op:fcnc-all-orders}
-Prove that the triality index is inaccessible to the neutral gates under arbitrary composition ---
-that no sequence of dictionary operations equivalent to a neutral-boson insertion changes the
-generation bracketing --- promoting the structural no-mediator claim, and with it the
-pinned-at-the-floor prediction for all flavour observables, to a theorem.
+Proposition~\ref{prop:neutral-blind} discharges the vertex-level statement within the dictionary:
+no composition of neutral gates changes the generation class. What remains is the dynamical
+completion --- show that the dynamical layer, when built (Paper~2), introduces no neutral operation
+outside the dictionary's gate set, equivalently that no flavour-changing neutral mediator can be
+added without a register qubit to carry it --- so that the pinned-at-the-floor prediction becomes a
+theorem of the completed framework rather than of its kinematic layer alone. The same completion
+carries the species prohibition of \S\ref{sec:absent-gate}: show that the dynamical layer stocks
+no class-changing operation of any charge --- the absence, at every order, of the gate whose
+existence would be proton decay.
 \end{openproblem}
+
+\subsection{The absent gate}\label{sec:absent-gate}
+
+The generation prohibition just recorded has a species-level sibling, and the pair together form
+the conservation architecture of the vertex dictionary. Ask the natural question: the GHZ and W
+classes are inequivalent under stochastic local operations and classical communication --- no local
+protocol converts one to the other with any probability at all \autocite{durvidalcirac2000three}
+--- but what if the restriction is simply ignored? Then the answer flips completely. The two
+canonical states are exactly orthogonal, so a single unitary --- a quarter rotation in their
+two-dimensional span, or constructively the W preparation composed with the inverse GHZ preparation
+--- converts them exactly, deterministically, and reversibly in both directions. Its cost signature
+is precise: the converter is register-entangling, requiring entangling gates among the three qubits
+--- which is exactly what locality withholds --- and non-Clifford, the $1/\sqrt3$ amplitudes
+insisting. An executable verification accompanies the code release; the laboratory demonstration is
+queued with the other hardware extensions.
+
+The conversion's ledger says what such a gate would do. The three-tangle drains from $1$ to $0$;
+each pairwise tangle fills from $0$ to $\tfrac49$; the one-to-rest tangle un-saturates from $1$ to
+$\tfrac89$, releasing exactly the leptonic ninth of \S\ref{sec:budget-converse} per qubit; the
+single-qubit marginal passes from $\tfrac12 I$ to the spectrum $(\tfrac23, \tfrac13)$, the
+isospin axis appearing in the state; and under the Hopf map the register migrates from the
+colour-triplet to the lepton sector. The path geometry adds a subtlety: the W class lies on the
+boundary of the GHZ orbit's closure, so the three-tangle stays strictly positive at every interior
+point of the conversion --- turning a quark into a lepton means traversing the open quark stratum
+and landing on a measure-zero stratum at the final instant.
+
+Now inventory the dictionary, and notice what is missing. Every gate the derived forces supply is
+class-preserving: the neutral gates by Proposition~\ref{prop:neutral-blind}; the charged current
+as a local flip on $B$; the Higgs vertex as a two-channel connector that entangles neither register
+internally, its circuit form in Appendix~\ref{app:qiskit} acting between channels and never within
+one. The converter exists as mathematics and is absent from the gate set --- and the absence has a
+name. Baryon and lepton number conservation \emph{is} class conservation: ignoring the SLOCC
+restriction is physics-speak for positing a leptoquark, the $X$ and $Y$ bosons of $SU(5)$ are
+exactly the missing GHZ--W gates, and the framework's structural exclusion of the $SU(5)$ embedding
+is its standing claim of proton stability (\S\ref{sec:predictions}). The dynamical completion
+this prohibition awaits is the one Open Problem~\ref{op:fcnc-all-orders} already names, its
+statement widened accordingly.
+
+One precision keeps the claim honest. The converter is a perfectly legitimate laboratory operation
+on three physical qubits --- a short circuit, performable on any quantum processor. The framework's
+claim is not that the unitary is impossible but that a particle's register qubits are not
+laboratory qubits: nature applies to them only the dictionary's operations, and the dictionary is
+class-closed. The gap between what mathematics allows and what the dictionary stocks is exactly
+where a conservation law lives.
 
 \subsection{The Higgs vertex}
 
@@ -362,7 +609,7 @@ gives mass (\S\ref{sec:masses}): it couples a doublet member to its singlet part
 generation. Like the neutral currents, it does not change the triality bracketing, so it too is
 flavour-diagonal --- the statement that the Higgs couples each fermion to itself, the coupling being
 the Yukawa of \S\ref{sec:masses}. The chirality flip is the circuit-level form of the
-\emph{Zitterbewegung} turnaround: in circuit terms a gate connecting the doublet and singlet
+\emph{Zitterbewegung} turnaround \autocite[628--632]{Penrose1994}: in circuit terms a gate connecting the doublet and singlet
 registers of a single generation.
 
 \subsection{What is settled, and what is owed}
@@ -371,14 +618,51 @@ Settled: the vertex dictionary, with each boson a gate on definite qubits, two o
 (photon and $Z$) fully explicit up to normalisation through~\eqref{eq:zphase}; beta decay as an
 executable circuit on the active quark, with every conservation law holding by wiring; the
 capability boundary drawn honestly --- structure computed today, rates awaiting the vertex factors
---- with three concrete extensions stated as invitations; and, rigorously at tree level, the absence
+--- with three concrete extensions stated and executed, on simulator and hardware; and, rigorously at tree level, the absence
 of flavour-changing neutral currents (Proposition~\ref{prop:fcnc}), strengthened to the structural
 no-mediator claim that pins all flavour observables at their charged-loop floor and is falsifiable
-at every collider.
+at every collider --- with the dictionary half of the all-orders statement now a theorem
+(Proposition~\ref{prop:neutral-blind}).
 
-Owed, and recorded as the named problems: the vertex factors (Open Problem~\ref{op:vertex-factors}),
-which are what stands between circuit amplitudes and numerical predictions; the all-orders vertex
-prohibition (Open Problem~\ref{op:fcnc-all-orders}); and, carried from \S\ref{sec:boson-masses}, the
+Owed, and recorded as the named problems: the vertex factors (Open Problem~\ref{op:vertex-factors},
+partly in hand: the electroweak ratio and the Higgs row), which are what stands between circuit
+amplitudes and numerical predictions; the dynamical completion of the neutral-vertex prohibition
+(Open Problem~\ref{op:fcnc-all-orders}, its dictionary half discharged); and, carried from \S\ref{sec:boson-masses}, the
 state-to-gate correspondence underlying the whole translation
 (Open Problem~\ref{op:state-gate}). The neutrino masses and the scalar glueball, the remaining
 forward-testable predictions, are collected in \S\ref{sec:predictions}.
+
+There is a larger boundary to draw, and we draw it plainly because it governs how everything in this
+section should be read. The circuits represent the \emph{kinematic} structure of interactions --- the
+channels, the gauge operations as gates, the conservation laws, the selection rules, the entanglement
+class that results --- which is the layer at which the framework's identifications live. They do not
+represent the \emph{dynamical} apparatus of quantum field theory: there is no propagator, no loop
+integral, no coupling-constant expansion, no renormalisation in any circuit here, because those
+quantities belong to a layer the framework has not yet built. A Feynman diagram carries both its
+topology and the analytic value of the integral that topology stands for; the circuits capture the
+topology and the conservation structure faithfully, and say nothing about the analytic value.
+Quantities defined as sums of loop amplitudes --- the anomalous magnetic moment of the electron, the
+running of the couplings beyond the tree-level relations derived in \S\ref{sec:boson-masses}, cross
+sections --- are therefore outside the scope of these circuits entirely, and could not be reached by
+making the circuits larger, because the quantity sought lives in a different layer from the one the
+circuits describe. On this dynamical layer the framework is \emph{silent}, not revisionary: nothing
+here predicts a deviation from quantum electrodynamics, whose account of the electron's magnetic
+moment is the most precisely confirmed prediction in physics, and nothing should be read as doing so.
+The framework reproduces or explains the kinematic structure of the Standard Model and is, for now,
+simply not yet in possession of its dynamical engine.
+
+That engine is not, however, foreign to the framework's resources, and the direction in which it
+would be built is worth naming even though the building is deferred. The reading of proper time as a
+count of completed loops, and of the Lagrangian as a count of action quanta (\S\ref{sec:comp-distance}),
+is the seed of an action principle; the framework's complex-information measure already supplies the
+phase that an action principle requires; and the \textsc{fanout} boundary supplies the
+irreversibility that separates the amplitude regime from the regime of classical records. These are
+the three ingredients of a path-integral formulation --- an action, a complex phase, and a measure on
+histories --- and they are present in the framework already, scattered across the time-as-computation
+and complex-amplitude arguments rather than assembled. Assembling them into a path-integral
+formulation, and building the renormalised perturbation theory that would yield quantities such as the
+electron's anomalous moment on top of it, is the natural route from this framework to quantum field
+theory's dynamical predictions. It is substantial work, it is not attempted here, and it is deferred
+to the second paper, where the loop-counting account of time is developed in full. We claim no more
+than that the route exists and that its starting materials are the framework's own; whether it
+reaches quantum electrodynamics's quantitative agreement with experiment is left genuinely open.

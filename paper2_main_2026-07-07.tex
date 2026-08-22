@@ -1,0 +1,418 @@
+% =====================================================================
+%  PAPER 2 (working skeleton): It from Bit via G\"odel, II ---
+%  Spacetime from the FANOUT Boundary
+%  CONVERTED 2026-07-07 from paper2_metric_identification_2026-07-07.md
+%  (the seed remains the idea-log; this file is the manuscript).
+%
+%  STATE: sections 2, 4, 5, 6 are drafted at paper register; sections
+%  3, 7, 8 are structured stubs with their content minted as numbered
+%  open problems. Six problems minted; the paper opens, like its
+%  parent, with its debts on display.
+%
+%  PREAMBLE: mirrors Paper 1's machinery (amsthm + thmtools
+%  openproblem + the Open Problems list). SYNC NOTE for JS: copy the
+%  exact \declaretheorem styling from Paper 1's main.tex for visual
+%  identity, and point \addbibresource at the shared library --- every
+%  Paper-1 key (doraumuch2026relative, brillouin1956science,
+%  bose2017spin, marlettovedral2017gravitationally,
+%  procopio2015experimental, toffoli_2003, Jacobson1995, Penrose1996,
+%  small_2006, Landauer_1961, zurek_2009 ...) is reused here; four new
+%  keys are in paper2_starter_refs_2026-07-07.ris.
+%
+%  CROSS-PAPER REFERENCES: \Pone{...} marks references into Paper 1
+%  (its sections and open problems); resolve to a self-citation key at
+%  Paper 1's publication. British English; \autocite; no bullets in
+%  prose (one table, deliberate).
+% =====================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{thmtools}
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage[backend=biber, style=numeric-comp, sorting=none]{biblatex}
+\addbibresource{self-ref-2026.bib} % shared library; TODO(JS): confirm path
+\newtheorem{proposition}{Proposition}
+\newtheorem{conjecture}{Conjecture}
+\declaretheorem[style=definition, name=Open Problem]{openproblem}
+\newcommand{\docversion}{Draft 0.1 --- 2026-07-07}
+\newcommand{\Pone}[1]{[Paper~I, #1]} % TODO: resolve at publication
+\newcommand{\fanout}{\textsc{fanout}}
+\title{It from Bit via G\"odel, II:\\ Spacetime from the \fanout{} Boundary}
+\author{John Small}
+\date{\docversion}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+% TODO(JS): working abstract; replace at will.
+The first paper of this programme derived the structure of quantum mechanics and the Standard
+Model from self-reference, and defined a spacetime interval by counting: computable steps counted
+real, non-computable bits counted imaginary. This paper identifies that computational metric with
+the spacetime of general relativity. The identification has a kinematic half --- the
+Margolus--Levitin theorem and the de~Broglie relation make energy--momentum and step-count density
+the same data in two currencies, with $\hbar$ the exchange rate --- and a dynamic half, for which
+the trail is now paved: Dorau and Much have proved, with modular-theoretic rigour, that the
+semiclassical Einstein equations follow from quantum relative entropy once the entropy--area law
+is assumed, and the entropy--area law is exactly what this programme's counting supplies. We state
+the count-density dictionary as a conjecture, mint the problems that would close it, give the
+four-constant junction by which one \fanout{} locking is billed simultaneously in $c$, $\hbar$,
+$G$ and $k_{B}$, and supply the two-level ontology under which thermodynamic derivations of the
+Einstein equations stop consuming what they produce. Gravity, we argue, lives in the
+post-\fanout{} regime: the quantum layer beneath it is pre-geometric, and the experimental
+programme this reading organises --- gravitationally induced entanglement predicted without a
+quantised metric, standard decoherence rates, no recorded indefinite causal order --- is already
+under construction in the laboratories.
+\end{abstract}
+
+\section{Introduction and programme}
+\label{sec:p2-intro}
+
+% TODO(JS): full introduction at the final-block stage, as in Paper 1.
+% The paragraphs below are the load-bearing framing, drafted.
+
+The first paper of this programme \Pone{} ended its spacetime section with a deferral: the deepest
+questions --- why the counting metric should be \emph{the} metric, and what makes its geometry
+obey Einstein's equations --- were owed to a second paper. This is that paper. Its central claim
+can be put in one sentence: the metric general relativity builds from energy and momentum and the
+metric the first paper builds from computable and non-computable counts are the same metric,
+because energy--momentum and count-density are the same data in two currencies. The claim has a
+provenance: the counting convention, spacelike distance in imaginary units of information, was
+proposed in the author's CASYS paper two decades ago with its proof flagged, already then, as a
+key open problem \autocite{small_2006}; the machinery assembled since --- the \fanout{} boundary,
+the relational reading of causal structure, and now the modular-theoretic derivation of the
+semiclassical Einstein equations by Dorau and Much \autocite{doraumuch2026relative} --- is what
+lets the flag be answered rather than waved.
+
+One remark orients the whole paper. The oldest tool of the programme --- Lawvere's fixed-point
+shape, the inside description constraining what it describes --- turns out to be what the newest
+and most rigorous result in the emergent-gravity literature is missing: read without a two-level
+ontology, the thermodynamic derivations of Einstein's equations consume the arena they produce;
+read with one, they are exactly the inside view deriving the law its own arena must satisfy. The
+first paper's first move fixes the field's latest theorem. Sections~\ref{sec:p2-rosetta}
+and~\ref{sec:p2-kinematic} state the identification and its kinematic gate, with
+Section~\ref{sec:p2-energy} spending the dictionary's first dividend --- the non-localisability
+of gravitational energy dissolved rather than defined around;
+Section~\ref{sec:p2-dynamic} walks the paved trail; Section~\ref{sec:p2-junction} gives the
+four-constant junction; Section~\ref{sec:p2-ontology} supplies the ontology;
+Section~\ref{sec:p2-postfanout} states where gravity lives and what the laboratories can do about
+it; Section~\ref{sec:p2-cognates} maps the neighbours. The problems are numbered where they arise
+and indexed at the end, in the parent paper's habit: the debts are the invitation.
+
+\section{The Rosetta line}
+\label{sec:p2-rosetta}
+
+The Margolus--Levitin theorem bounds the rate at which a system of mean energy $E$ above its
+ground state can pass through orthogonal states: at most $2E/h$ distinguishable steps per unit
+time \autocite{margoluslevitin1998}. Its spatial sibling is de~Broglie read computationally: a
+system of momentum $p$ passes through orthogonal position states at rate $p/\hbar$ per unit
+length. Together they say that, up to $\hbar$, the pair $(E, p)$ \emph{is} the pair (computable
+steps per unit time, distinguishable marks per unit length). General relativity sources the metric
+on $T_{\mu\nu}$; the first paper builds the metric from counting computational events; the
+Margolus--Levitin--de~Broglie pair says the density of computational events \emph{is}
+$T_{\mu\nu}$. The two definitions of the metric were never rivals to be reconciled: they are one
+definition read through Planck's constant. There is a structural echo worth recording: the
+temporal count rides $E$ and the spatial count rides $p$, so the real/imaginary split of the
+computational distance maps onto the time/space block structure of the stress tensor exactly where
+it should.
+
+\begin{conjecture}[The count-density dictionary]\label{conj:dictionary}
+Let the computational metric of \Pone{sec:space-of-computations} be a genuine pseudo-metric with
+Minkowski signature (the content of \Pone{op:comp-metric}). Then the map sending a region's
+computable-step density and distinguishable-mark density to $(E/\hbar, p/\hbar)$ identifies the
+counting interval with the Lorentzian interval, and the stress--energy tensor with the density of
+computational events, exactly and with $\hbar$ as the sole conversion.
+\end{conjecture}
+
+The conjecture is conditional by construction --- it inherits the parent paper's open problem as
+its hypothesis --- and honest about its two gaps: the $\hbar$ bookkeeping must be stated with the
+factor-of-two conventions of the Margolus--Levitin bound handled explicitly, and the counted
+``step'' must be an \emph{orthogonalising} transition for the bound to bind at all, which the
+\fanout{} images guarantee by construction and the definition must be made to say.
+% TODO: the hbar bookkeeping paragraph (seed item 1).
+
+\begin{openproblem}[The stress components]\label{op:p2-pressure}
+Extend the dictionary beyond the $(E, p)$ pair: pressure and shear are momentum flux, and the
+computational reading of flux --- distinguishable marks carried across a cut per unit time ---
+must be defined and shown to reproduce the perfect-fluid form of $T_{\mu\nu}$ in the appropriate
+regime. The wire-crossing bookkeeping of the relational network is the candidate machinery, and the
+flagship instance is Isaacson's effective stress of the gravitational wave itself
+(Section~\ref{sec:p2-energy}): re-bookkeeping activity as event-density after averaging.
+\end{openproblem}
+
+\section{Energy, undefined exactly where it should be}
+\label{sec:p2-energy}
+
+The dictionary of Section~\ref{sec:p2-rosetta} has a corollary that dissolves one of general
+relativity's oldest embarrassments. Energy, on the counting reading, is a rate: computable steps
+per unit time, information moving through time as momentum is information moving through space.
+A rate needs a direction to be counted along, and in general relativity the time direction is not
+an invariant of the theory but a local choice --- the light cone tips, timelike converts to
+spacelike, and time translation belongs to the diffeomorphism gauge group rather than to any rigid
+symmetry. The famous non-localisability of gravitational energy is therefore not a technical
+misfortune awaiting a cleverer definition: it is what the dictionary \emph{predicts}. Energy is
+exactly as well-defined as the temporal chart is coherent, which is why the textbook criterion ---
+conserved energy if and only if a timelike Killing field exists --- translates verbatim: a Killing
+time is a globally locked step-direction, and stationarity is temporal lock-uniformity, the chart
+of Open Problem~\ref{op:p2-chart} extended in time.
+
+Aoki's recent analysis gives the group-theoretic face of the same dissolution
+\autocite{aoki2025energy}: attempts to restore conservation by assigning energy to the
+gravitational field fail by Noether's second theorem \autocite{noether1918invariante} --- the
+candidate currents are conserved identically, off-shell, so the pseudotensors and quasilocal
+energies of the textbooks are constraints rather than dynamical charges, fragile under total
+derivatives and vanishing in closed universes. The ledger reading says why this had to be so:
+geometry does not carry counts because geometry \emph{is} the bookkeeping of counts, and asking
+the gravitational field to have energy is asking the ledger to book itself --- the diagonal move
+this programme polices everywhere, met here in its energetic clothing. What survives, in the same
+analysis, is the framework's own currency: the conserved charge that replaces energy is the
+streamline count, and for perfect fluids it is the entropy current
+\autocite{aokihidakakawanashimada2025}. Curved spacetime conserves not the chart-relative
+count-rate but the chart-free count of entries --- bits, worldlines, locked identities --- and the
+prohibition of vacuum-to-matter transitions their charge enforces reads, in this vocabulary, as
+``no entries appear in the ledger without formation events''.
+
+The objection every reader will now raise deserves its answer in place: gravitational radiation
+carries energy --- binary pulsars spin down at the quadrupole rate, interferometer mirrors move,
+and the loudest events close their books short by solar masses. If there is no gravitational
+energy, how? The verdict denies none of it; it denies a \emph{local, tensorial, chart-independent
+energy density}, and the mature literature's actual inventory is precisely what the dictionary
+predicts a tipping-bulk theory should possess. Energy exists at the matter endpoints, which are
+locked systems; at the asymptotic boundaries, where the Bondi mass-loss formula is theorem-grade
+geometry with no pseudotensor in it \autocite{bondivanderburgmetzner1962} --- null infinity being
+the ultimate locked chart, so that Bondi energy is a boundary-ledger difference; and in the wave
+zone only after Isaacson's averaging over several wavelengths
+\autocite{isaacson1968gravitational}, which the dictionary reads exactly: \emph{the averaging
+scale is the chart re-emergence scale}, the minimum region over which enough locking pattern
+accumulates for an effective step-direction, hence a count-rate, to exist again. Pointwise in the
+bulk there is no energy because the count-direction is the very thing oscillating --- the wave is
+the ledger updating, the phonon of the network doing matter-side work wherever it meets a locked
+system --- and the pseudotensors' century of frame-dependence is the locked/unlocked split made
+visible. Conservation survives as what it operationally always was: a balance between locked
+bookends, matter loss against boundary flux, silent about a location in the unlocked between. One
+demand falls out and is filed where it belongs: the wave's own gravitating --- Isaacson's
+back-reaction --- requires that re-bookkeeping activity itself count as event-density after
+averaging, the flagship instance of Open Problem~\ref{op:p2-pressure}.
+
+\begin{openproblem}[Worldlines as locked identities]\label{op:p2-worldlines}
+Aoki and collaborators note that the non-termination and non-emergence of the streamlines
+underlying their conserved charge is plausible but unproven. Derive it from record persistence:
+a worldline is a locked identity chain (the individuation of \Pone{}'s confinement analysis), and
+its non-termination should follow from the same practical irreversibility that grades the
+\fanout{} locking --- turning their assumption into this framework's theorem, and the contact
+point into a contribution.
+\end{openproblem}
+
+\section{The kinematic rung}
+\label{sec:p2-kinematic}
+
+% STUB. Content: the gate is Paper I's op:comp-metric, restated here with its
+% Paper-2 face --- the record-side chart. Seed items: the wedge/modular target.
+
+The identification's kinematic half waits on one gate, and the gate now has a sharper target than
+when the parent paper priced it. \Pone{op:comp-metric} asks that the paired distance be a genuine
+pseudo-metric with derived signature; the dynamic rung below adds the demand that the resulting
+causal structure furnish \emph{local wedges with modular structure} --- the bifurcate-horizon
+scaffolding on which the rigorous derivations run. We record the strengthened form.
+
+\begin{openproblem}[The record-side chart]\label{op:p2-chart}
+Construct, from the relational network's locked sector, the local chart a community of
+high-redundancy observers shares: show that it is locally flat (locking locally uniform), that its
+causal wedges carry the modular structure the Bisognano--Wichmann setting requires, and that the
+construction reduces, at one qubit, to the record-side data of \Pone{prop:f1-dictionary}. This is
+the parent's open problem with its quality bar raised to modular-theoretic standard.
+\end{openproblem}
+
+\section{The dynamic rung: the paved trail}
+\label{sec:p2-dynamic}
+
+Jacobson derived the Einstein equations as a thermodynamic equation of state
+\autocite{Jacobson1995}; Dorau and Much have now carried the derivation to modular-theoretic
+rigour: the Araki--Uhlmann relative entropy between the vacuum and coherent excitations on a
+bifurcate Killing horizon equals the energy flux across it, and, \emph{under the assumption of the
+Bekenstein--Hawking entropy--area law}, the semiclassical Einstein equations follow
+\autocite{doraumuch2026relative}. The interface with this programme could not be cleaner, and we
+state it as the paper's division of labour: \emph{their hypothesis is our conjecture's
+conclusion}. They prove that local horizon structure plus the entropy--area law yields the
+Einstein equations; this programme proposes to derive exactly those two inputs --- the
+entropy--area law from counting (Section~\ref{sec:p2-junction}) and the horizon structure from the
+network (Open Problem~\ref{op:p2-chart}). The composition of their theorem with these two
+deliveries is the full route from self-reference to the field equations. Their coherent-state
+scope, moreover, is not a limitation to be transcended but a domain announcement: coherent states
+are the record-friendly states, and Section~\ref{sec:p2-ontology} argues that the semiclassical
+equations they obtain are the \emph{exact} law of the regime their states inhabit.
+
+\section{The four-constant junction}
+\label{sec:p2-junction}
+
+In the native ledger --- time in steps, space in $i \times$ bits --- the four fundamental
+constants are the four exchange rates into human units, and a single graded-\fanout{} locking is
+billed in all four currencies at once. The copy is a step ($c$: one bit of spatial relation per
+causal step; natively $c = 1$). It is an orthogonalising transition ($\hbar$: the
+Margolus--Levitin pricing of Section~\ref{sec:p2-rosetta}). Its permanence is paid ($k_{B}$:
+Landauer's bill of $k_{B} T \ln 2$ per locked bit \autocite{Landauer_1961}, with the practical
+irreversibility supplied by redundancy \autocite{zurek_2009}). And the locked bit increments the
+boundary ledger ($G$: one bit-pair of native area). Because spacelike distance is imaginary, a
+spacelike area is the product of two imaginary lengths and is \emph{negative} in native units ---
+the entropy--area law's sign is $i^{2}$, and Bekenstein--Hawking in native currency reads
+$A = -S$, coefficient owed \autocite{brillouin1956science}. Newton's constant is then the memory,
+kept in human units, of how large one bit of space is; its native value is unity, and gravity's
+weakness is the report that the bit is small.
+
+The junction can be displayed in one line. One locking at the recorder's Unruh temperature
+satisfies
+\begin{equation}
+\frac{\delta Q}{T} \;=\; k_{B} \ln 2 \, \cdot\, \mathrm{d}N_{\mathrm{bits}}
+\;=\; \frac{k_{B} c^{3}}{4 G \hbar}\, \mathrm{d}A ,
+\end{equation}
+each equality one exchange rate; fed to the Clausius relation, $\hbar$ and $k_{B}$ cancel and the
+Einstein equations emerge in $G$ and $c$ alone. The cancellation is a standing self-check for
+every derivation in this paper: \emph{no final geometric equation of the framework's may contain
+$\hbar$ or $k_{B}$}. What the junction motivates it does not fix: the $\mathcal{O}(1)$
+coefficient --- bits per bit-pair, equivalently the bit's size in Planck lengths --- is the
+entire physical content of ``deriving $G$'', and it is triple-routed.
+
+\begin{openproblem}[The coefficient]\label{op:p2-coefficient}
+Derive the bits-per-bit-pair coefficient of the native area law $A = -S$ by any of its three
+routes --- the one-bit-per-closed-curve pricing of \Pone{}, the Bekenstein normalisation, or the
+Landauer--Unruh energy audit of a single locking --- and show the three agree. Agreement would
+over-determine the coefficient and complete the derivation of $G$; the minimal loop's
+circumference-versus-enclosed-area bookkeeping on a network is the known hard part, and the
+Jacobson-lineage circularity warning applies: the coefficient must be earned from the framework's
+own counting, not borrowed back from the law it derives.
+\end{openproblem}
+
+\begin{openproblem}[The Newtonian limit]\label{op:p2-newton}
+Show that computational load slowing local clocks reproduces the $1/r$ potential in the
+appropriate regime, checked against the Regge construction of Lloyd's computational-universe
+programme \autocite{lloyd2005quantum} --- the first place the identification can fail
+quantitatively, and therefore the first computation to run.
+\end{openproblem}
+
+\begin{openproblem}[Equivalence from blindness]\label{op:p2-equivalence}
+The Margolus--Levitin bound is species-blind: only $E$ enters, never the substrate. Derive the
+universality of free fall as the clock-rate theorem's indifference to what is computing ---
+locating whatever auxiliary premise the derivation secretly needs --- so that the equivalence
+principle joins the parent paper's collection of derived postulates. A second face of the same
+statement is geometric: local flatness as locally \emph{uniform locking}
+(Section~\ref{sec:p2-ontology}).
+\end{openproblem}
+
+\section{The ontology: what the fixed background is}
+\label{sec:p2-ontology}
+
+% Drafted from seed 3c --- the paper's philosophical spine.
+
+Every derivation in the Jacobson lineage, the rigorous ones most visibly, runs on a fixed arena:
+modular theory needs a vacuum, the vacuum needs a wedge algebra, the wedge needs a horizon, the
+flow needs a Killing field --- all objects of a given, per-solution non-dynamical background. The
+output is the law that makes the background dynamical. Read at one level, the derivation consumes
+what it produces, and the standard bootstrap defence --- only local flatness is assumed, and the
+derived theory's own equivalence principle guarantees it --- answers the technical circularity
+while leaving the ontological one untouched: the local patch is still treated as given.
+
+The two-level reading dissolves the problem by saying what the fixed background \emph{is}: the
+post-\fanout{} description --- the arena as recorded, locked, and shared at high redundancy. It
+looks pre-existing and non-dynamical for precisely the reason classical records look objective,
+and it is not ontic but epistemic-made-rigid. The dynamical, relational layer is the nascent
+locking of Section~\ref{sec:p2-junction}. Relocated, the rigorous derivations become the inside
+view deriving the law its own arena must satisfy --- the parent paper's founding shape --- and two
+corollaries arrive at once. Semiclassicality is exact: $\langle T_{\mu\nu}\rangle$ rather than
+$\hat{T}_{\mu\nu}$ is the record-side shadow of the matter operator, so the semiclassical Einstein
+equations are not an approximation awaiting transcendence but the exact law of the locked regime
+--- and the equations' textbook failure mode, macroscopic superpositions sourcing gravity toward
+the empty middle, marks the regime boundary rather than a pathology: the Page--Geilker experiment
+\autocite{pagegeilker1981} sits directly on that boundary, and its result --- gravity follows the
+resolution, not the average --- is what relation-formation-at-locking predicts for free. And local
+flatness acquires its second face: every locked patch looks the same because locking is what
+looking classical means, which is the geometric half of Open Problem~\ref{op:p2-equivalence}.
+
+% TODO: one paragraph engaging the equation-of-state moral's history (Jacobson's
+% own caveats; Padmanabhan's atoms of spacetime) --- seed 3c's defence-and-limit
+% passage, expanded with citations at drafting.
+
+\section{Gravity lives in the post-\fanout{} regime}
+\label{sec:p2-postfanout}
+
+The parent paper states the thesis \Pone{sec:no-quantised-gravity}: causal structure is the
+bookkeeping of locked relations, so a superposition of causal structures is a category error, and
+the quantum layer beneath gravity is pre-geometric --- amplitudes over relation-formation, not
+over formed geometries --- with gravitons permitted as the phonons of the locking network and
+forbidden as fundamental metric quanta. This section owes that thesis its engagement with the two
+literatures it reorganises. The indefinite-causal-order programme --- process matrices, the
+quantum switch --- becomes the nascent layer's native formalism: the realised switches
+\autocite{procopio2015experimental} demonstrate sub-threshold indefiniteness that definitises at
+locking, the time-delocalised-subsystems analyses showing the photonic realisations need no exotic
+spacetime are allies rather than deflations, and the boundary --- \emph{no indefinite causal order
+survives amplification into records} --- is this paper's theorem target in that formalism.
+% TODO: Oreshkov--Costa--Brukner engagement paragraph; mint keys at drafting.
+The gravitationally-induced-entanglement programme
+\autocite{bose2017spin, marlettovedral2017gravitationally} is met head-on: the framework predicts
+the entanglement, because the pre-geometric layer is quantum, while denying that a positive result
+witnesses a superposed metric --- the mediator is nascent relational structure, non-classical in
+exactly the sense the LOCC-mediator theorems require, without being a graviton.
+% TODO: the LOCC-theorem engagement in detail.
+
+The reading's experimental content fits in one table, and the exposure is the point.
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Probe & This framework's posture \\
+\hline
+BMV-class entanglement & Positive predicted; witnesses the pre-geometric layer \\
+Decoherence rates & Standard only; no gravity-specific (Penrose-rate) collapse \\
+Indefinite causal order & Real below threshold; never amplified into records \\
+Page--Geilker-class tests & Gravity follows the locking, not the average \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{openproblem}[The nascent regime, formalised]\label{op:p2-nascent}
+State the low-redundancy regime in the relative-entropy toolkit the rigorous derivations use:
+the grading as a data-processing statement (each copy a channel, monotonicity the
+irreversibility), the Landauer bill as the relative-entropy inequality its modern proofs already
+make it, and the Wigner's-friend phase recovery of \Pone{sec:wf-reconciliation} as the un-forming
+of a relation before its bill is paid --- superposed geometry as low-$R$ relational structure,
+made precise.
+\end{openproblem}
+
+\section{Cognates and differentiators}
+\label{sec:p2-cognates}
+
+% STUB, drafted skeleton. Seed §4 + the Dorau--Much reference trail.
+
+Three neighbours bound the territory. Lloyd's computational-universe programme
+\autocite{lloyd2005quantum} builds geometry from a generic computation's causal structure; this
+programme's computation is \emph{specified} --- a derived particle content, a \fanout{} boundary,
+a Standard Model attached --- so where Lloyd shows that some computation yields a geometry, the
+claim here is that this computation yields this universe, predictions included. The causal-set
+programme's sequential growth dynamics \autocite{rideoutsorkin2000} postulates that spacetime
+accretes events under stochastic rules; this programme proposes the identity of the accretion
+event --- a \fanout{} crossing its redundancy threshold --- and the currency of its
+stochasticity, the thermodynamic ledger. And the modular-theoretic derivations
+\autocite{doraumuch2026relative}, with their reference trail through Longo, Casini and Hollands,
+supply the rigorous macroscopic face whose microscopic ledger and two-level ontology this paper
+offers.
+% TODO: expand the trail's citations at drafting.
+
+\section{Scope, honesty, and what this paper does not claim}
+\label{sec:p2-scope}
+
+% Drafted from seed §5 + the standing flags.
+
+Three cautions govern everything above. The counted step must be an orthogonalising transition or
+the Margolus--Levitin bound does not bind; the \fanout{} images satisfy this by construction and
+every definition in this paper is to be audited against it. The dissolution of
+Section~\ref{sec:p2-ontology} is a structural reading until Open Problem~\ref{op:p2-chart}
+delivers the record-side chart --- the gap is named and its filling proposed, not yet performed.
+And the one-bit-per-closed-curve pricing meets the computational-power-of-closed-timelike-curves
+literature at an interface this paper maps and does not cross.
+% TODO: the Deutsch / Aaronson--Watrous interface paragraph.
+
+\renewcommand{\listtheoremname}{Open Problems of Paper II}
+\listoftheorems[ignoreall, show={openproblem}]
+
+\printbibliography
+\end{document}

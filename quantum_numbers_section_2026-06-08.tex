@@ -1,6 +1,12 @@
+%  RE-AUDITED 2026-07-06 (final pass, eleventh stop, light leg): zero
+%  adjacency phrases -- position-portable at 11; trace-blind stitch
+%  confirmed two-way and retargeted to the precise sec:born-rule label;
+%  the quark-T3 routing line now names the frame (sec:frame) as the
+%  defined term for the resolution classes; header umlaut normalised,
+%  file pure ASCII; no other prose changes -- the deep audit stands.
 % =====================================================================
 %  Section: Quantum Numbers   (Plan Stage 2)
-%  Paper 1, "It from Bit via Gödel". Drafted 2026-06-08.
+%  Paper 1, "It from Bit via G\"odel". Drafted 2026-06-08.
 %  Follows \S sec:register; precedes \S sec:generations (the particle zoo).
 %
 %  \input fragment. biblatex/\autocite, amsthm `proposition'.
@@ -15,7 +21,7 @@
 %    prop:gsm                  -- G_SM as the Spin(9) stabiliser
 %    app:ghz-proof, app:w-proof-- the proofs
 %    sec:generations           -- the particle zoo / three generations (forward)
-%    sec:masses                -- masses, where sin^2 theta_W is applied (forward)
+%    sec:boson-masses          -- boson masses, where sin^2 theta_W is applied (forward)
 %    sec:interactions          -- the quantum-circuit branch (forward)
 %
 %  REVISED 2026-06-11 after review: canonical-orbit scope; corrected
@@ -37,7 +43,9 @@
 %  (option B, manual: \theoremstyle{definition}
 %  \newtheorem{openproblem}{Open Problem} and a hand-written closing
 %  section using \ref{op:...}.)
-%  Labels in this section: op:traceless, op:anomalies.
+%  Labels in this section: prop:hypercharge, prop:trace-blind (added
+%  2026-07-04), op:traceless (shrunk 2026-07-04), op:anomalies,
+%  sec:rh-singlets.
 %
 %  Hypercharge convention: Q = T_3 + Y/2, with Y(lepton C-singlet) = -1 and
 %  Y(quark C^3-triplet) = +1/3, matching \S sec:entanglement-classes.
@@ -62,8 +70,12 @@ circuits in \S\ref{sec:interactions}.
 The two non-abelian charges are already in hand. By Proposition~\ref{prop:ghz} a quark channel ---
 a canonical GHZ orbit, under the identification of \S\ref{sec:canonical-orbits} --- has its Hopf
 image on the unit sphere of the colour-triplet sector $\mathbb{C}^3$, so its $C$-qubit carries the
-$\mathbf{3}$ of $SU(3)$: this is colour, and a quark is a channel whose $C$-qubit is GHZ-entangled
-with its partners in a hadron. A lepton channel --- a canonical W orbit --- is a colour singlet:
+$\mathbf{3}$ of $SU(3)$: this is colour. Two levels of one structure should not be conflated
+here: the GHZ class that makes the channel a quark is the register's own --- the entanglement among
+its $A$-, $B$- and $C$-qubits, which is what Proposition~\ref{prop:ghz} classifies --- while within
+a hadron the quark's $C$-qubit is additionally GHZ-networked with its partners' $C$-qubits, the
+closed colour structure of \S\ref{sec:confinement}. The species is register-level; the binding is
+inter-channel; both are GHZ, one scale apart. A lepton channel --- a canonical W orbit --- is a colour singlet:
 its $C$-qubit carries the trivial representation. Operationally, colour is what a gate on the
 $C$-qubit reads, and the confinement of Proposition~\ref{prop:ghz} is, at register level, the
 statement that no local gate moves a quark channel off the colour locus: no gate can isolate a
@@ -75,7 +87,8 @@ a W-class channel has the non-degenerate spectrum $(\tfrac23,\tfrac13)$, which s
 distinguished $T_3$ axis and an ordered pair of eigenstates --- the two doublet members --- so its
 $B$-qubit carries $T_3 = \pm\tfrac12$ along that axis: for the leptons, the neutrino and the
 charged lepton. The quark doublet carries the same $T_3 = \pm\tfrac12$ structure, supplied not by
-the W-marginal spectrum but by the resolution classes of \S\ref{sec:generations}. A weak-isospin
+the W-marginal spectrum but by the resolution classes of \S\ref{sec:generations} --- the frame of \S\ref{sec:frame}. A
+weak-isospin
 singlet has $T_3 = 0$. The raising and lowering operators
 about the distinguished axis are exactly what a $W^\pm$ gate on the $B$-qubit applies, taking one
 doublet member to the other; that the doublet is left-handed --- that only one chirality sits in it
@@ -110,7 +123,7 @@ assembled, because half of the promotion has since become a theorem. A trace par
 rotation proportional to the identity on $\mathbb{O}$ --- an overall phase of the whole register.
 That direction is provably invisible to records: the computation of
 Proposition~\ref{prop:f1-dictionary} is dimension-independent and extends verbatim from
-$\mathbb{C}^{2}$ to the register (the Born-rule construction of \S\ref{sec:self-reference} rests
+$\mathbb{C}^{2}$ to the register (the Born-rule construction of \S\ref{sec:born-rule} rests
 on the same fact).
 
 \begin{proposition}[The trace direction is record-blind]\label{prop:trace-blind}
@@ -180,8 +193,9 @@ trace; the cubic and colour-weighted traces are the genuinely open pair.
 \end{openproblem}
 
 The right-handed singlets complete the table.\label{sec:rh-singlets} They have $T_3 = 0$, and the
-chirality flip that produces them preserves electric charge (the \emph{Zitterbewegung} zigzag,
-adopted here and made circuit-level at the Higgs vertex of \S\ref{sec:interactions}), so their
+chirality flip that produces them preserves electric charge (the \emph{Zitterbewegung} zigzag of Penrose, an
+approach he himself calls ``slightly non-standard'' \autocite[628--632]{Penrose1994}, adopted here
+and made circuit-level at the Higgs vertex of \S\ref{sec:interactions}), so their
 hypercharges are fixed by $Y = 2Q$: $-2$ for the charged leptons, $+\tfrac43$ and $-\tfrac23$ for
 the up- and down-type quarks, and $0$ for the sterile class of \S\ref{sec:generations}. This is the
 full Standard Model assignment, with the zigzag mechanism flagged as adopted rather than
@@ -275,7 +289,7 @@ identification of \emph{which} combination is the photon --- the direction blind
 structure as well as VEV-invariant --- is sharpened only once that structure is in place, in
 \S\ref{sec:generations}; here we have used only that one of the four directions survives unbroken.
 We derive $\sin^2\theta_W = \tfrac14$ at this point because it is fixed by the hypercharge embedding,
-and apply it to the boson masses in \S\ref{sec:masses}.
+and apply it to the boson masses in \S\ref{sec:boson-masses}.
 
 \subsection{Charges as operations}
 

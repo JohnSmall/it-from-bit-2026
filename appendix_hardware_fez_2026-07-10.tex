@@ -1,0 +1,248 @@
+% =====================================================================
+%  APPENDIX: Hardware Results on a Heron-Class Device (the fez batch).
+%  DRAFTED 2026-07-10 from hardware_results_fez_2026-07-10.md.
+%  REVISED 2026-07-11 from hardware_results_fez_addendum_2026-07-11.md:
+%  the two owed refinements delivered and folded in -- J-MIT (mitigated
+%  ninth, job d994isqf47jc73a8k1n0, HW_SHOTS 16384) and K-V2 (angle
+%  amplification, job d9955motcv6s73dmrreg), both with every
+%  pre-registered gate PASS at first hardware attempt. Intro and
+%  closing updated; the epistemic-bounding paragraph on the CKM claims
+%  (what is derived / what is ansatz / hardware-vs-programmed against
+%  framework-vs-nature) added to close app:hw-ckm.
+%  ADDED 2026-07-11 (second pass): app:hw-ckm retitled and opened with
+%  the generation-register block -- why not a qutrit (Cayley-Dickson
+%  chain + CP^2 degeneration, Hurwitz/Adams), the sedenion rung
+%  C(x)S with Aut(S) = G2 x S3, the 1(+)2 tag-pair realisation
+%  (design-decision status stated), the spectator's measured vacancy,
+%  frame-mode, and the no-AME(4,2) mixing-obligation clause. New
+%  citations used: gillardgresnigt2019three, higuchisudbery2000 (both
+%  already in the library per fourth_qubit doc, 2026-07-06).
+%
+%  PLACEMENT in main.tex: after the existing three appendices --
+%      \input{appendix_qiskit_three_computations_2026-06-12}
+%      \input{appendix_hardware_fez_2026-07-10}          <-- new
+%
+%  STATUS ARCHITECTURE: measured values reported as measured, with
+%  their unmitigated noise readings stated (the tau = 1 noise-attractor
+%  honesty for the monogamy run; the depolarisation-shrinkage reading
+%  for the ninth; the noise-floor verdict and the owed K-v2 for the
+%  CKM small elements; the visibility prefactor for the Meissner run).
+%  Job identifiers recorded; the notebooks are in the code release.
+%  Consumers stitched same day: confinement (settled ledger),
+%  Bell-counterexample (the admission ticket, measured), interactions
+%  (the CKM extension), the superconductor witness (the demonstration
+%  carried out), predictions (already-tested), the summary
+%  (instantiated clause). British English; no bullets.
+% =====================================================================
+
+\section{Hardware Results on a Heron-Class Device}
+\label{app:hardware-fez}
+
+The computations of the preceding appendices established the framework's circuits on simulators
+and, where noted, on hardware. This appendix records a five-notebook batch executed on
+\texttt{ibm\_fez}, a Heron-class processor, on 8--11 July 2026 at $8192$ shots per setting
+($16384$ for the mitigated repetition of the ninth), with job identifiers retained in the code
+release. The batch tests five distinct claims from five sections of the paper; all five are
+confirmed. The first pass left two quantitative refinements owed and priced; both were designed
+with criteria pre-registered before submission, executed on 11 July, and passed every gate ---
+they are reported in their subsections below, with the first-pass values retained beside them.
+First-pass values are reported unmitigated, with each run's dominant noise mechanism read
+explicitly --- the readings are part of the result, since a confirmation whose noise behaves
+wrongly would be no confirmation at all; the two repetitions report their correction ladders step
+by step, so no corrected number is quoted without its raw partner.
+
+\subsection{The monogamy signature}
+\label{app:hw-monogamy}
+
+Tomography of the three-qubit GHZ register returns a collective tangle
+$\tau_{1(23)} = 1.000$ with pairwise concurrences $C_{12} = C_{13} = 0.000$ and residual
+externally available tangle zero: everything in the collective, nothing pairwise --- the
+entanglement-budget signature of \S\ref{sec:confinement}, on hardware. One honesty clause is owed
+and paid here: this particular signature is confirmed with noise-\emph{robustness} rather than
+despite noise, because the maximally mixed marginal is a fixed point of depolarisation --- the
+hardware is pulled \emph{toward} $\tau = 1$ --- and the Wootters floor pins separable pair
+marginals at zero concurrence. The signature is real; its hardware cleanliness is partly the
+noise's gift, and a reader auditing the tomography should know so.
+
+\subsection{The two-gluon network's open legs}
+\label{app:hw-two-gluon}
+
+The two-gluon network, postselected at $2089/8192 = 0.255$ against the ideal $\tfrac14$, shows
+open-leg populations $0.504$ and $0.438$ on the Bell diagonal with $5.8\%$ leakage --- and the
+number that decides the question: $\langle XX \rangle = +0.915$ against the ideal $+1$. A
+classical copy tensor at the open legs would reproduce the same diagonal with
+$\langle XX \rangle \approx 0$; the measured coherence is therefore the discriminator firing as
+designed. The open legs of the two-gluon network are a Bell pair, not a \textsc{fanout} --- the
+distinction the glueball construction of \S\ref{sec:confinement} requires, measured.
+
+\subsection{The leptonic ninth}
+\label{app:hw-ninth}
+
+Single-wire tomography of the canonical W register with a basis-copying tag returns
+$r^{2} = 0.0935$ against the target $\tfrac19 = 0.1111$, and pair tomography returns
+$C(\text{wire}, \text{tag}) = 0.0162$ against the target zero. The deficit in $r^{2}$ is sixteen
+per cent \emph{low}, which is the depolarisation prediction in sign and size --- Bloch vectors
+shrink as $(1-p)$ per axis, here $p \approx 0.08$ over circuit depths of $27$--$41$ --- and the
+small concurrence is at exactly the scale the Wootters floor manufactures from correlated readout.
+The two-ninths identity's operational content (\S\ref{sec:entanglement-classes},
+\S\ref{sec:bell-not-counterexample}) therefore stands measured: the ninth is base presence, and
+the state-level tag concurrence is zero. The mitigated repetition was executed on 11 July with its criteria pre-registered before
+submission: the corrected $r^{2}$ within $0.010$ of $\tfrac19$; the probe-predicted raw
+$\langle Z\rangle$ agreeing with the measured value within two standard errors, so that the
+depolarisation story would be closed quantitatively rather than asserted; and the mitigated
+concurrence below $0.010$. The stack was gate and measurement twirling (the former makes the
+stochastic-Pauli model that the first pass's deficit reading assumed into an enforced property of
+the run), XY4 dynamical decoupling, an in-job readout calibration inverted per qubit, and --- the
+primary correction --- two-point affine probes at matched two-qubit-gate count on the wire's
+physical qubit, measuring the channel $\langle s\rangle \mapsto a + b\langle s\rangle$ per Bloch
+axis; the affine form matters because the device's $T_{1}$ bias enters as an offset that naive
+division by a visibility would misread. At $16384$ shots per setting the within-job ladder ran
+$0.1011$ (raw under decoupling and twirling) $\to 0.1036$ (readout-corrected) $\to
+0.1095 \pm 0.0051$ (probe-corrected) against $\tfrac19 = 0.1111$, with every pre-registered gate
+passed: the corrected value sits $0.0016$ from the ceiling; the probes \emph{predicted} the raw
+$\langle Z\rangle$ at $+0.3242$ against the measured $+0.3218$ --- the deficit measured and
+removed, not assumed; and the concurrence fell to $0.0043$, four times tighter than the first
+pass. The corrected Bloch vector $(-0.0054,\, -0.0001,\, +0.3308)$ states the result plainly: the
+ninth is pure $Z$-presence, transverse components consistent with zero, exactly as the canonical W
+marginal demands. One comparison is stated and deliberately not priced: the first pass's bare
+$0.0935$ against this run's raw $0.1011$ crosses days and calibrations, so the
+decoupling-and-twirling layer is confounded with drift; the quoted pair is the within-job one. A
+zero-noise extrapolation run alongside as the pre-registered secondary check returned $0.1043$,
+consistent and gating nothing.
+
+\subsection{The generation register and the mixing core}
+\label{app:hw-ckm}
+
+Why the generation register is two qubits and not a qutrit deserves its explanation before the
+numbers, because the framework's refusal here is principled rather than practical. The register
+architecture descends the Cayley--Dickson chain, one binary distinction --- one qubit --- per
+rung, and dimension three is not on the chain; no doubling produces a three-level system. The
+qutrit's own geometry certifies the exclusion independently: its pure states form
+$\mathbb{CP}^{2}$, a four-dimensional, measure-zero subset of the seven-dimensional boundary of
+its state body, where the qubit's pure states \emph{are} its boundary; that boundary is cubic
+($\det\rho = 0$) where the qubit's is the quadratic sphere; orthogonal states sit at the vertices
+of a triangle rather than at antipodes; and the total space $S^{5}$ of its phase fibration is not
+parallelisable. Each failure traces to the absence of a normed division algebra in dimension
+three, by the same theorems of Hurwitz and Adams that terminate the gauge tower --- so a
+fundamental three-level register would stand outside every structure this paper runs on: no Hopf
+fibration beneath it, no privacy-of-phase route to the Born rule, no Frobenius composition law.
+The constraint has in fact been paid once already: colour's three is representation multiplicity,
+$SU(3)$ acting on the $\mathbb{C}^{3}$ of $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^{3}$,
+never a three-level state space --- the framework refuses the qutrit twice, by two different
+mechanisms, under the one constraint.
+
+What the two qubits are instead is the next rung itself. Four qubits are
+$(\mathbb{C}^{2})^{\otimes 4} = \mathbb{C}^{16} = \mathbb{C} \otimes \mathbb{S}$, the complex
+sedenions, exactly as the three-qubit register is
+$\mathbb{C}^{8} = \mathbb{C} \otimes \mathbb{O}$: the tag structure is one Cayley--Dickson
+doubling past the register, and Brown's theorem gives the doubling's entire automorphism gain as a
+permutation factor, $\mathrm{Aut}(\mathbb{S}) = G_{2} \times S_{3}$, the $S_{3}$ permuting three
+intersecting octonion subalgebras that share a quaternionic
+core~\autocite{gillardgresnigt2019three} (\S\ref{sec:generations}). Three generations under an
+$S_{3}$ do not form an irreducible three --- $S_{3}$ has no three-dimensional irreducible
+representation --- but the reducible $1 \oplus 2$, trivial plus standard, and the register
+realises exactly that: the $t$ qubit flags singlet against doublet, the $d$ qubit rotates within
+the doublet, with $\lvert t_{0} d_{0}\rangle = g_{1}$, $\lvert t_{1} d_{0}\rangle = g_{2}$,
+$\lvert t_{1} d_{1}\rangle = g_{3}$. A qutrit would thus be doubly wrong: topologically
+unsupported, and representation-theoretically mistaken, treating as irreducible a space the
+sedenion $S_{3}$ says is reducible. The epistemic split is the notebook's own: the $1 \oplus 2$
+organisation is the sedenion $S_{3}$'s representation content; the particular basis realisation is
+a recorded design decision, not a derivation --- a single tag qubit sufficed for the
+two-generation Cabibbo rung of Appendix~\ref{app:qiskit-ckm}, and the pair is what $1 \oplus 2$
+minimally needs.
+
+The pair has four states and the representation needs three. The fourth,
+$\lvert t_{0} d_{1}\rangle$ --- the doublet coordinate raised while the singlet flag is down ---
+is syntactically available and semantically empty: the embedded mixing unitary decouples it
+exactly (below $10^{-12}$ in the constructed operator), and the device measures its emptiness,
+$0.022$ on the first pass and $0.005$ mitigated below. The spectator is the price of housing a
+three-dimensional representation in the minimal qubit register, and its measured vacancy is the
+circuit-level face of --- though not a proof of --- the algebra's refusal of a fourth generation.
+Two clauses complete the register's honest description. Mixing is implemented at \emph{frame}
+level, a basis rotation at the vertex rather than a tag-register entangling operation, per the
+budget theorem's quark side: the quark register offers exactly zero state-level external
+correlation room, where the leptonic ninth of Appendix~\ref{app:hw-ninth} is precisely such room
+--- the recorded engine, at structural-candidate status, of the observed CKM-small/PMNS-large
+asymmetry. And mixing at this rung is obligatory rather than optional: no four-qubit state is
+maximally entangled across every bipartition \autocite{higuchisudbery2000}, so a generation tag
+can never correlate perfectly with the register --- generations cannot superselect, and a
+nontrivial mixing matrix is the operational shadow of the sedenion zero divisors (conjecture
+status, developed in the dedicated follow-up).
+
+The two-qubit generation core of the mixing circuit, at transpiled depths $13$--$15$, returns the
+full $|V_{ij}|^{2}$ table with maximum deviation $0.032$ from the programmed pure-power baseline
+and spectator leakage $0.022$ (ideal zero --- pure hardware). At the first rung,
+$|V_{us}| = 0.233$ measured against the programmed $\sin\tfrac29 = 0.2204$: the Cabibbo
+prediction demonstrated on hardware within six per cent, unmitigated. The second and third rungs
+are read at $0.0214$ and $0.0094$ against programmed $0.0024$ and $0.0025$: the $\lambda^{4}$
+elements sit below the device's $\sim 2\%$ unmitigated error floor, and their excess is the floor,
+not physics. The amplified repetition was executed on 11 July with its criteria pre-registered before
+submission: the anchor $|V_{us}|$ within two per cent, the primary $|V_{cb}|$ within the ten per
+cent just named, the stretch $|V_{ub}|$ within fifteen per cent reported without gating, and the
+fitted visibility reported as a health line. Each rung is a rotation on a two-dimensional
+generation subspace, so $G(\theta)^{n} = G(n\theta)$ exactly; amplification is by \emph{physical
+repetition} of the same compiled block, barriers preventing the optimiser from collapsing the
+product. Compiling $G(n\theta)$ directly would be depth-free but would certify only a large
+programmed angle; repetition makes the hardware accumulate its own implemented angle, coherent
+miscalibration included, which is what honest metrology of the element must price. Sweeping
+$n \le 25$ and fitting $p(n) = \gamma^{n}\sin^{2}(n\theta) + (1-\gamma^{n})\,c$, with
+$(\gamma, c)$ shared between the two small rungs --- licensed by their identical two-gate
+compilations on the same physical pair, and necessary because the $\lambda^{3}$ signal alone sits
+below its own depolarised floor --- the device returned $|V_{us}| = 0.2232$ ($1.27\%$ from
+$\lambda$, against six per cent unamplified), $|V_{cb}| = 0.0516$ ($6.2\%$ from $\lambda^{2}$,
+the element the first pass read nine times high), and $|V_{ub}| = 0.0111$ ($3.6\%$ from
+$\lambda^{3}$). The last number deserves its own sentence: the $\lambda^{3}$ element's direct
+transfer probability is $\lambda^{6} \approx 1.2\times10^{-4}$, two orders of magnitude below the
+device floor and invisible to the first pass by construction; amplification recovered it to a few
+per cent. Two readings close the run honestly. The primary deviation, $+6.2\%$ at roughly seven
+standard errors of the fit, is not shot noise but a resolved property of the device: the
+divide-by-$n$ estimates are flat from $n \ge 3$, the signature of a constant per-block
+over-rotation rather than of decoherence drift --- amplification is a coherent-error microscope,
+and the residual is now characterised where the first pass could only bound it; the pre-registered
+claim, recovery of the programmed element within ten per cent, passes. And the same job carries
+its own control: the full-matrix circuit rerun with readout mitigation alone still reads
+$|V_{cb}|^{2}$ at $0.0125$ against the programmed $0.0024$ --- floor-limited however corrected ---
+while the amplified route lands at six per cent; mitigation cannot buy these elements, and the
+amplification does real epistemic work. The mitigated full table's maximum deviation fell from
+$0.032$ to $0.015$ and the spectator leakage from $0.022$ to $0.005$.
+
+What these numbers do and do not establish should be stated with the care the criteria were. The
+framework derives one number here with no free parameter, $\lambda = \sin\tfrac29$, and with it
+the four first-rung entries at the per-cent level against experiment
+(Appendix~\ref{app:qiskit-ckm}); the second and third rungs enter as the pure-power baseline
+$s_{23} = \lambda^{2}$, $s_{13} = \lambda^{3}$, a structural candidate whose order-one Wolfenstein
+coefficients and CP phase are exactly the content of Open Problem~\ref{op:cabibbo} --- the
+baseline's gaps against the measured matrix ($+16\%$ on $|V_{cb}|$, a factor $2.9$ on $|V_{ub}|$,
+with $|V_{td}|$'s near-cancellation at zero phase collapsing into the underived $\delta$) are
+those owed objects, printed rather than hidden. Two comparisons therefore run through this
+subsection and must not be conflated. Hardware against programmed --- the $1.3\%$, $6.2\%$ and
+$3.6\%$ above --- establishes that the framework's structure is \emph{executable} and that a
+physical device implements it faithfully down to an element of one part in ten thousand; that is
+implementation fidelity and metrology, and no quantum processor can promote it into more.
+Framework against nature is the comparison with the measured mixing matrix, made in the body of
+the paper and in Appendix~\ref{app:qiskit-ckm} against values determined in accelerator
+experiments, with no quantum computer involved. The first comparison's value is that it readies
+the second: when the dressed-operator programme delivers corrections to the pure powers, this
+pipeline tests the corrected elements at the few-per-cent level on request.
+
+\subsection{The Meissner response}
+\label{app:hw-meissner}
+
+The pair-condensate notebook of the superconductor witness (\S\ref{sec:superconductor-witness})
+prepares $\lvert D^{4}_{2} \rangle$ at transpiled depths $57$--$73$ and measures the long-range
+correlator under a phase twist: $\langle \sigma^{+}_{0}\sigma^{-}_{3} \rangle = +0.2864$,
+$-0.0167$, $-0.2948$ at twist $0$, $\tfrac{\pi}{2}$ and $\pi$ across the pair, against the ideal
+$+\tfrac13$, $0$, $-\tfrac13$. \emph{The sign flip is measured.} The three points are a single
+visibility prefactor $V \approx 0.87$ on the ideal $\cos$ response --- the stiffness's functional
+form intact, the amplitude attenuated exactly as the depth predicts, the mid-point and the
+end-asymmetry both inside shot tolerance. And the identity verified in the same notebook,
+$\tau_{1} = 4\,\langle \sigma^{+}\sigma^{-} \rangle\,(N-1)/N$, converts the measured correlator
+into a measured one-site tangle of $0.859$ with no further experiment: the device measured one
+number wearing both names --- the order parameter and the entanglement measure as a single
+measurement, which is the witness section's central consonance executed rather than argued. A
+lower-depth preparation (B\"artschi--Eidenbenz) would raise $V$ toward the mid-nineties and is
+noted for the figure; the demonstration does not need it.
+
+The batch, in one line: five claims from five sections, five confirmations, and the two priced
+refinements delivered against criteria fixed before the device was asked --- the paper's habit of
+inviting its own hardware to try to kill it, continued.

@@ -1,0 +1,194 @@
+% =====================================================================
+%  SECTION: Summary of Results (sec:summary; closing subsection
+%  sec:what-remains -- the suite index). DRAFTED 2026-07-07.
+%
+%  DIVISION OF LABOUR (JS 2026-07-07): this section collects the
+%  results; the Conclusions section that follows it is JS's, in his
+%  own voice, and is not drafted here. A placeholder comment marks the
+%  seam.
+%
+%  RECOMMENDED PLACEMENT in main.tex: between predictions and the
+%  Open Problems list --
+%      \input{predictions_section_2026-06-13}
+%      \input{summary_section_2026-07-07}          <-- new
+%      \input{conclusions_section}                  <-- JS's file
+%      \renewcommand{\listtheoremname}{Open Problems}
+%      \listoftheorems[ignoreall,show={openproblem}]
+%  so the prose closes before the formal index, and the index reads as
+%  the paper's last word before the appendices -- which suits it.
+%
+%  STRUCTURE: the identifications framing paired at once with the
+%  zero-parameter record (the strategic pairing the programme
+%  committed to); then results by strata (theorems / structural /
+%  quantitative / the open-problem economy); then sec:what-remains,
+%  the suite index, where every "belongs to a dedicated paper"
+%  deferral in the body finds its collection point. If JS prefers
+%  "What remains" as its own \section, one cut extracts the final
+%  subsection.
+%
+%  UPDATED 2026-07-07 (post-witness): supports three -> four; the
+%  chain gains the witness at 15.5; companions four -> five (the
+%  Anderson--Higgs dictionary before Filatov's closer).
+%  No new citation keys; every \ref verified to exist in the audited
+%  corpus (2026-07-07). British English; \autocite; no bullets.
+% =====================================================================
+
+\section{Summary of Results}
+\label{sec:summary}
+
+The contribution of this paper is not, for the most part, new theorems. It is a chain of new
+identifications between existing ones: Lawvere's fixed-point theorem identified with the situation
+of a system describing itself; the analytic continuation of Shannon's information measure
+identified with the origin of complex amplitudes; Lamperti's isometry classification and Hardy's
+axiom identified as two roads to one metric; the Frobenius classification of copying structures
+identified with the boundary of the classical; Hurwitz's and Adams' termination theorems identified
+with the end of the ladder of forces; the Hopf fibrations identified with the state spaces the
+ladder equips; the SLOCC classes identified with the particle kinds; and monogamy of entanglement
+identified with confinement. Each theorem was already in the literature; the claim of this paper is
+that they are about one another, and the test of that claim is the record it produces: a Standard
+Model with zero adjustable dimensionless parameters, the electroweak vacuum value $v$ its single
+dimensional input, and a list of numbered problems where the chain is not yet closed. This section
+collects the results by their epistemic stratum, because the paper has insisted throughout that the
+strata not be mixed.
+
+\subsection{The chain, in one pass}
+
+Self-reference forces the first structure: a system rich enough to describe itself admits the
+inside/outside exchange, Lawvere's theorem applies, and the price of consistency is a number system
+in which the parts of a probability can cancel --- complex amplitudes, with the phase as continued
+information (\S\ref{sec:self-reference}). Reversible continuity, itself derived conditionally from
+the same source (\S\ref{sec:continuity}, Open Problem~\ref{op:limit-realisability}), selects the
+$L^{2}$ metric twice over --- by isometry classification and by Hardy's counting
+(\S\ref{sec:l2-metric-fibre}) --- and the Born rule arrives by two independent routes, record-theoretic
+and geometric (\S\ref{sec:born-rule}, \S\ref{sec:born-invariance}). Wigner's friend becomes an
+exercise in the resulting geometry rather than a paradox (\S\ref{sec:wigners-friend}); the
+postulates of quantum mechanics assemble from the pieces (\S\ref{sec:postulates}); and the boundary
+the whole account keeps invoking --- the classical copy --- is formalised, with its two regimes'
+signatures proved synchronised (\S\ref{sec:fanout-boundary},
+Proposition~\ref{prop:fanout-correspondence}). The question ``why stop at $\mathbb{C}$?'' then opens
+the second act (\S\ref{sec:division-algebras}): the Cayley--Dickson ladder climbs to the octonions
+and provably no further, the first spending of that terminal fact excludes $S^{7}$ as a ruler and
+fixes three spatial dimensions (\S\ref{sec:space-of-computations}), and the Hopf tower carries the
+algebra into geometry, terminating in the stabiliser computation that yields
+$G_{\mathrm{SM}} = (SU(3) \times SU(2) \times U(1))/\mathbb{Z}_{6}$
+(\S\ref{sec:hopf-justification}, Proposition~\ref{prop:gsm}). The entanglement dictionary then
+does the particle physics: product, Bell, GHZ and W classes as Higgs, gauge boson, quark and
+lepton (\S\ref{sec:entanglement-classes}), the three-qubit register as the arena
+(\S\ref{sec:register}), charges from its geometry (\S\ref{sec:charges}), three generations and one
+a-chiral sterile class from the $K_3$ obstruction (\S\ref{sec:generations}), confinement from the
+entanglement budget (\S\ref{sec:confinement}), masses from associator debt and phase dilution
+(\S\ref{sec:masses}, \S\ref{sec:boson-masses}), the mass mechanism's condensed-matter
+witness exhibited (\S\ref{sec:superconductor-witness}), interactions from the gate dictionary
+(\S\ref{sec:interactions}), and the predictions, postdictions and kill-conditions collected where
+they can be shot at (\S\ref{sec:predictions}).
+
+\subsection{Theorems}
+
+The following are proved, in the text or the appendices, at theorem grade. The inside/outside
+fixed-point proposition (Proposition~\ref{prop:inside-outside}); the discreteness and
+divisible-closed propositions that price the continuity derivation; the fibre-privacy dictionary at
+one qubit (Proposition~\ref{prop:f1-dictionary}) and its register-level extension
+(Proposition~\ref{prop:trace-blind}), which together make the global phase's absence from every
+classical record a theorem rather than a gloss; the \textsc{fanout} correspondence
+(Proposition~\ref{prop:fanout-correspondence}), whose ingredients are the literature's and whose
+identification is this paper's; the termination of the Hopf tower
+(Proposition~\ref{prop:termination}) and the gauge-group computation (Proposition~\ref{prop:gsm});
+the canonical-orbit results --- GHZ confined to the colour triplet with no CP-violating phase, so
+that $\theta_{\mathrm{QCD}} = 0$ structurally (Proposition~\ref{prop:ghz}), the W orbit's
+$\mathbb{C}$-access ceiling of exactly one ninth (Proposition~\ref{prop:w-access}), and the
+$(\tfrac23, \tfrac13)$ marginal that singles out weak isospin (Proposition~\ref{prop:w-doublet}) ---
+with their proofs in Appendix~\ref{app:ghz-w-proofs}; the two-ninths identity, by which the access
+ceiling and the entanglement-budget slack are one invariant, $r^{2}$, so that confinement and
+vanishing singlet-access are one fact (\S\ref{sec:entanglement-classes},
+\S\ref{sec:budget-converse}); the absence of an invariant energy locus for binding
+(Proposition~\ref{prop:energy-locus}); the absence of tree-level flavour-changing neutral currents
+(Proposition~\ref{prop:fcnc}) and the generation-blindness of the neutral gates
+(Proposition~\ref{prop:neutral-blind}); and the generation combinatorics of $K_3$, rigorous
+conditional on the tripartite extension recorded as Open Problem~\ref{op:filatov-extension}.
+
+\subsection{Structural results, flagged as such}
+
+A second stratum carries the framework's readings: results that organise the theorems into physics
+and are flagged, everywhere they appear, as structural rather than proved. The identification of
+the selected complex direction with the record direction, delivered in candidate form
+(\S\ref{sec:fanout-direction}) with its uniqueness priced (Open Problem~\ref{op:fanout-selection});
+the geometric face of the Born rule; measurement as cone-tipping and the Unruh reading that
+accompanies it; the computational metric and the $(3+1)$ count, numbered as
+Open Problems~\ref{op:comp-metric} and~\ref{op:three-dimensions}; the dictionary assignment itself,
+supported four independent ways --- tangle structure, Frobenius classification, the octonionic
+Hopf projection, and the superconductor witness of \S\ref{sec:superconductor-witness}, where
+the Bell and product rows appear as the two strata of the Anderson--Higgs mechanism --- precisely so that no reviewer need take it as stipulation; the frame as the
+carrier of the quark's electroweak identity, with the lepton state-certified and the quark
+specification-certified (\S\ref{sec:frame}); the forced architecture of the weak vertex; mass as
+debt against the selection rather than residence at a rung; and the confinement account whose
+strongest objection is stated and answered in its own subsection
+(\S\ref{sec:bell-not-counterexample}): the budget alone does not confine; the budget, the sector,
+and the access do.
+
+\subsection{The quantitative record}
+
+The numbers, at their honest weights. Postdictive, with zero dimensionless parameters and $v$ the
+single dimensional input: $\sin^{2}\theta_{W} = \tfrac14$ at tree level, running to $0.2312$
+against the measured $0.23122$; $m_{H} = v/2$ within $1.7\%$; $y_{t} = 1$ within $0.9\%$; the Koide
+relation at $\delta_{0} = \tfrac29$ to about a tenth of a per cent; $\theta_{\mathrm{QCD}} = 0$
+exactly; eight of the nine charged-fermion masses within about one per cent, the ninth fenced as
+Open Problem~\ref{op:up-quark}. Predictive, and exposed: the massless lightest neutrino, normal
+ordering, $\sum m_{\nu} \approx 52$~meV, two sterile states at the matching scale near
+$3.6$~TeV, the heavy splitting within a few per cent and the light splitting honestly wrong by a
+factor of thirty (Open Problem~\ref{op:neutrino-splitting}) --- with JUNO's ordering measurement
+named as the cleanest kill. Null, forever: no flavour-changing neutral currents above the
+charged-loop floor, exactly Standard-Model Higgs couplings, no fourth generation, no new physics
+below the matching scale, no unification-mediated proton decay. And instantiated: the framework's
+structural claims run as circuits on quantum hardware --- the hadron skeletons assembled from their
+wiring, the charged-current mixing returning $\lvert V_{ud}\rvert$ from the framework's phase ---
+so that ``testable'' has already begun to mean ``tested by construction'' --- most recently the
+witness section's Meissner response, sign flip measured on a Heron-class device
+(Appendix~\ref{app:hardware-fez})
+(\S\ref{sec:predictions}).
+
+\subsection{The open-problem economy}
+
+The paper's honesty is architectural: every gap is a numbered problem, listed in the index that
+follows this summary, and the statuses --- proved, structural, owed, open --- are never silently
+upgraded. The economy is not decorative, and the paper itself is the evidence: several of its own
+problems were partly paid during its writing. The scheme-consistent account of the $W/Z$ ratio gap
+dissolved into a running-and-dictionary statement; the complex clause of the Hopf--Frobenius
+conjecture was discharged by the fibre-privacy dictionary; the leptonic ninth acquired its
+geometric identity, leaving only its operational half open. The flagship problems that remain ---
+the two premises of continuity (Open Problem~\ref{op:limit-realisability}), the functor of the
+inside/outside exchange (Open Problem~\ref{op:sigma-functor}), the compositional conjecture
+(Open Problem~\ref{op:hopf-frobenius}), the uniqueness of the selection
+(Open Problem~\ref{op:fanout-selection}), the map from network geodesics to physical mass
+(Open Problem~\ref{op:associator-geodesic}), and the quartic coupling
+(Open Problem~\ref{op:higgs-lambda}) --- are stated with candidate routes and, where possible,
+with the constraints any solution must meet. They are written as invitations. A framework that
+derives this much from this little should expect, and welcome, many hands.
+
+\subsection{What remains, and where it goes}
+\label{sec:what-remains}
+
+Every deferral in this paper has a destination, and we collect them so the reader can see the
+programme whole. The dynamical layer --- propagators, rates, the kinetic terms, the completion of
+the all-orders flavour statement, and the unification of quantum mechanics with general relativity
+at ordinary scales through \textsc{fanout} as causal dressing --- is the second paper. The
+cosmological consequences, with the Landauer accounting of the information-theoretic foundations,
+are the third. Dark matter as relational solitons at galactic scale is a fourth, contingent on the
+second and third. Five shorter companions branch from specific sections: the confinement potential
+and the running of the strong coupling, where the budget-commitment reading meets the
+renormalisation group; the fourth-qubit programme, in which the sedenion tag carries the
+generations and the CKM and PMNS matrices are the operational shadow of its zero divisors
+(\S\ref{sec:interactions}); exotic hadrons as network topology, the taxonomy this paper opened and
+did not walk (\S\ref{sec:exotic-taxonomy}); the Anderson--Higgs dictionary, developing the
+superconductor witness of \S\ref{sec:superconductor-witness} --- the entanglement-stiffness
+route to the boson masses and the thin-spectrum model of vacuum selection --- into a study of its
+own; and the tripartite extension of the Filatov
+correspondence, recorded as Open Problem~\ref{op:filatov-extension} and reserved, with its author's
+knowledge, for the colleague whose two-qubit result it extends. The mass gap is named and declined
+where it belongs (\S\ref{sec:mass-gap}); the adelic constraints on the mass spectrum and the
+categorical completion of the boundary functor stand in the problem index for whoever moves first.
+The paper's claims end here; its programme does not.
+
+% ---------------------------------------------------------------------
+%  SEAM: JS's Conclusions section follows (his file, his voice).
+%      \input{conclusions_section}
+% ---------------------------------------------------------------------

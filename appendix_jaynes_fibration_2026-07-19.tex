@@ -1,0 +1,460 @@
+% =====================================================================
+%  APPENDIX: The Jaynes separation as a fibration --- the density
+%  matrix as invariant ring, the missing global section, and the two
+%  kinds of forgetting. Paper 1, "It from Bit via Goedel".
+%  CREATED 2026-07-19. Expands the main-body insert
+%  jaynes_paragraph_2026-07-19.tex; consolidates the session records
+%  of 2026-07-19 and elevates the pure/mixed-state observations of the
+%  2026-04-11 session (operational indistinguishability of partial
+%  trace and Bayesian updating) to their theorem form (HJW).
+%
+%  USAGE. Plain \section --- no appendices wrapper in this file; wrap
+%  all appendix inputs once in the main document, as for
+%  appendix_ghz_w_proofs_2026-06-11.tex.
+%
+%  PREAMBLE. Requires: amsthm environments (proposition, remark ---
+%  the starred remark style as in the GHZ/W appendix), \ket/\bra
+%  (braket or physics package), biblatex \autocite.
+%
+%  CROSS-REFERENCES to the main text (adjust to master-file labels):
+%    sec:hopf           -- the Hopf-fibration picture
+%    sec:born           -- the degree-two Born argument
+%    sec:fanout         -- the FANOUT logic-measure correspondence
+%    sec:self-reference -- the diagonal obstruction
+%    sec:contextuality  -- Hopf nontriviality = single-qubit
+%                          contextuality (the framework's
+%                          identification; see honesty flag in
+%                          \S\ref{app:jaynes:section})
+%  Companion-paper cross-references are marked with %% PAPER2 / %% PAPER3
+%  comments; replace with \autocite of the companion papers when their
+%  citation keys exist.
+%
+%  NEW CITATION KEYS used in this file (RIS entries for Mendeley
+%  import in jaynes_references_2026-07-19.ris):
+%    jaynes1990probability, schrodinger1936probability,
+%    hughston1993ensemble, steenrod1951topology, berry1984quantal,
+%    simon1983holonomy, wootters1981statistical, bengtsson2006geometry,
+%    atiyah1982convexity, selinger2007dagger, coecke2017picturing,
+%    abramsky2011sheaf, zurek2003decoherence, landauer1961irreversibility,
+%    cleve1998quantum, wigner1961remarks, bargmann1954unitary,
+%    pusey2012reality, harrigan2010einstein.
+%  Several of these (jaynes, zurek, landauer, coecke2017, abramsky2011)
+%  may already be in the Mendeley library under existing keys; check
+%  before importing, and reconcile keys rather than duplicating.
+%
+%  STATUS DISCIPLINE. The working-document tags map onto
+%  \S\ref{app:jaynes:status} as follows: STRUCTURAL = "established
+%  mathematics"; CANDIDATE = "the framework's assembly"; RHYME =
+%  "a fenced analogy". VERIFY flags: page ranges in the RIS file are
+%  from memory and should be checked at final drafting.
+% =====================================================================
+
+\section{The Jaynes separation as a fibration: the density matrix, the
+  missing section, and the two kinds of forgetting}
+\label{app:jaynes}
+
+Jaynes's complaint \autocite{jaynes1990probability} is that the
+density-matrix formalism scrambles ``realities of Nature'' with
+``incomplete human information'' and that no one has shown how to
+unscramble them. The main text answers with a claim: both ingredients
+are epistemic, but the ignorance differs in kind --- classical
+probability is ignorance of an external state, quantum probability is
+the observer's ignorance of their own state, carried by the global
+phase. The immediate objection is that the formalism has already
+discarded the phase: $\rho = \ket{\psi}\bra{\psi}$ is phase-invariant,
+and every prediction factors through $\rho$. This appendix develops
+the answer given in outline in the main text, in four steps: the
+density matrix is the invariant ring of the phase action, not a
+formalism from which the phase is absent
+(\S\ref{app:jaynes:invariants}); the quotient leaves a quantum residue
+because the bundle admits no global section, and what survives the
+quotient is the fibre's curvature (\S\ref{app:jaynes:section}); for
+mixed states the two kinds of probability enter through two distinct
+forgetful operations whose provenance is recorded in the FANOUT
+structure, not in the state (\S\ref{app:jaynes:mixed}); and the
+unobservability of a phase is boundary-relative, with exactly one
+phase --- that of the self-inclusive total --- unobservable for
+structural rather than contingent reasons
+(\S\ref{app:jaynes:boundary}). A closing section separates the
+established mathematics from the framework's assembly, fences one
+analogy, and answers the $\psi$-epistemic objection
+(\S\ref{app:jaynes:status}). Throughout, ``the bundle'' means the
+principal $U(1)$-bundle $S^{2n-1} \to \mathbb{C}P^{n-1}$ of
+\S\ref{sec:hopf}, of which the qubit case $S^{3} \to S^{2}$ is the
+Hopf fibration proper.
+
+\subsection{The density matrix as the invariant ring of the phase
+  action}
+\label{app:jaynes:invariants}
+
+Let $U(1)$ act on unit vectors $\psi \in \mathbb{C}^{n}$ by
+$\psi \mapsto e^{i\alpha}\psi$. The framework's reading of this
+action, established in \S\ref{sec:self-reference} and
+\S\ref{sec:born}, is that the fibre coordinate is the observer's
+self-referential ignorance: the one datum about the total
+configuration that the observer, being part of it, cannot FANOUT. The
+question is then what an observer so constituted can consistently
+write down. The answer is: exactly the invariants.
+
+\begin{proposition}[The density matrix is a complete invariant]
+\label{prop:invariant-ring}
+(i) Two unit vectors satisfy
+$\ket{\psi}\bra{\psi} = \ket{\varphi}\bra{\varphi}$ if and only if
+$\varphi = e^{i\alpha}\psi$ for some $\alpha$. (ii) Every
+$U(1)$-invariant polynomial in the components $(\psi, \bar\psi)$ is a
+polynomial in the entries $\psi_i\bar\psi_j$ of
+$\ket{\psi}\bra{\psi}$, and these entries span the invariants of
+minimal degree.
+\end{proposition}
+
+\begin{proof}
+(i) A rank-one projector determines its range, hence the ray. (ii) A
+monomial $\psi^{a}\bar\psi^{b}$ of bidegree $(|a|,|b|)$ picks up
+$e^{i\alpha(|a|-|b|)}$ under the action, so invariance forces
+$|a| = |b|$; there are consequently no invariants of bidegree $(1,0)$
+or $(0,1)$, and the bidegree-$(1,1)$ invariants are spanned by the
+$\psi_i\bar\psi_j$. Any monomial of bidegree $(k,k)$ is a product of
+$k$ such factors.
+\end{proof}
+
+The proposition is elementary, but its reading is the point. The
+density matrix is not a formalism in which the phase happens to be
+absent; it is, by construction, \emph{everything except the phase} ---
+the invariant ring of the self-ignorance symmetry, packaged as an
+operator. Its diagonal entries are the Born weights of
+\S\ref{sec:born}; its off-diagonal entries are the relative phases,
+which is to say the interference data. Three consequences follow.
+
+First, the Born rule is quadratic in $\psi$ but \emph{linear} in
+$\rho$. There is no tension between these facts: the quadratic toll
+identified in \S\ref{sec:born} --- the minimum-degree passage from
+fibre coordinates to public quantities --- is paid exactly once, in
+forming the invariants, after which every expectation value is linear.
+The squaring \emph{is} the crossing.
+
+Second, the shape of the object is the fingerprint of the quotient. A
+classical epistemic state is a point of a simplex because classically
+every quantity is in principle observable: the symmetry group of the
+ignorance is trivial, and the invariant ring is the full coordinate
+ring. A quantum epistemic state is a point of the invariant ring of a
+nontrivial action, and invariant rings of nontrivial actions carry
+relations --- here Hermiticity, positivity, and (for pure states)
+rank one, with the off-diagonal structure as the residue of the
+quotiented fibre. That quantum states are operators rather than
+distributions is not an unexplained formal peculiarity; it is what the
+invariant ring of a $U(1)$ action looks like.
+
+Third, the construction has a categorical name. The passage
+$\psi \mapsto \ket{\psi}\bra{\psi}$ is the doubling of categorical
+quantum mechanics --- Selinger's CPM construction
+\autocite{selinger2007dagger}, the doubled category of Coecke and
+Kissinger \autocite{coecke2017picturing} --- which annihilates global
+phases by construction and, augmented with discarding, generates
+exactly the completely positive maps on density matrices. The
+framework's dictionary of classical structures
+(\S\ref{sec:fanout}) sits downstream of this doubling; the present
+appendix supplies its epistemic reading.
+
+\subsection{Why the quotient leaves a quantum residue: no section, but
+  a connection}
+\label{app:jaynes:section}
+
+If the phase could be split off cleanly --- an objective ray together
+with a subjective phase coordinate --- then the state space would be a
+product, $S^{2n-1} \cong \mathbb{C}P^{n-1} \times S^{1}$, and
+amplitudes would be classical probabilities wearing a decorative
+label. The obstruction to this split is the content of the following
+standard facts.
+
+\begin{proposition}[No global phase convention]
+\label{prop:no-section}
+A principal bundle admits a global section if and only if it is
+trivial \autocite{steenrod1951topology}. The bundle
+$S^{2n-1} \to \mathbb{C}P^{n-1}$ is nontrivial for every $n \geq 2$:
+its associated line bundle has first Chern class generating
+$H^{2}(\mathbb{C}P^{n-1};\mathbb{Z}) \cong \mathbb{Z}$; equivalently,
+for $n = 2$, the clutching map is the generator of
+$\pi_{1}(U(1)) \cong \mathbb{Z}$, which is the statement that the Hopf
+map has Hopf invariant one. Consequently there is no continuous
+assignment of a representative state vector to every ray: no global
+phase convention exists.
+\end{proposition}
+
+The interpretive step --- the framework's, not the literature's --- is
+to read this as the precise formal content of Jaynes's
+unscramblability. A separation of the description into ``objective
+part'' and ``subjective part'' would be a global section: a consistent
+rule, defined once for the whole state space, saying which datum is
+the world and which is the observer's ignorance of themselves. Such a
+rule exists chart by chart --- that is exactly what a local phase
+convention, a gauge, is --- and Proposition~\ref{prop:no-section} says
+the charts cannot be glued. Classical ignorance is a product, world
+$\times$ credence, and a product unscrambles by projection.
+Self-referential ignorance is a twisted bundle, and the twist is
+measured by a nonvanishing class. The omelette does not unscramble
+pointwise; it \emph{classifies}.
+
+This does not mean the quotient discards the fibre's structure. What
+survives is the fibre's differential geometry: the natural connection
+on the associated line bundle, whose holonomy is the geometric phase
+--- observable entirely within the projective description
+\autocite{berry1984quantal, simon1983holonomy} --- and whose curvature
+is the Fubini--Study form. The real part of the Fubini--Study
+structure is the metric of statistical distinguishability
+\autocite{wootters1981statistical}; the imaginary part is the
+symplectic form whose Hamiltonian flow is the Schr\"odinger equation
+\autocite{bengtsson2006geometry}. In one sentence: the observer
+quotients out the phase but keeps its curvature. On this reading
+Jaynes's two ingredients are assigned as follows --- the ``realities
+of Nature'' are the curvature, chart-invariant and public; the
+``incomplete human information'' is the fibre coordinate, chartful and
+private, together with the classical mixing weights of
+\S\ref{app:jaynes:mixed}.
+
+\begin{remark}[Relation to contextuality, with an honesty flag]
+Abramsky and Brandenburger define contextuality as the nonexistence of
+a global section of an empirical presheaf \autocite{abramsky2011sheaf}.
+Proposition~\ref{prop:no-section} is the continuous, bundle-theoretic
+counterpart of that schema, and the main text's identification of Hopf
+nontriviality with single-qubit contextuality
+(\S\ref{sec:contextuality}) is the bridge between the two. The flag:
+standard Kochen--Specker contextuality requires Hilbert-space
+dimension at least three and is silent about a single qubit. The
+single-qubit usage here is the framework's bundle-theoretic extension
+of the term, argued in the main text; to our knowledge the discrete
+sheaf-theoretic and continuous bundle-theoretic obstruction
+literatures have not been joined in print, and we do not attribute the
+identification to either.
+\end{remark}
+
+\subsection{Mixed states: two forgetful operations, and where the
+  provenance lives}
+\label{app:jaynes:mixed}
+
+The general density matrix
+$\rho = \sum_i p_i \ket{\psi_i}\bra{\psi_i}$ is built by two
+operations, and the two kinds of probability in Jaynes's omelette
+enter one through each. The first is the projective quotient of
+\S\ref{app:jaynes:invariants}: its kernel is the fibre coordinate, the
+observer's ignorance of their own state, unresolvable for the
+structural reason of \S\ref{sec:self-reference}. The second is the
+partial trace together with convex mixing: its kernel is correlation
+with systems outside the description --- by purification, every mixed
+$\rho_A$ is $\mathrm{Tr}_B\ket{\Psi}\bra{\Psi}$ for a pure state on a
+larger system --- and this ignorance is resolvable in principle,
+because whoever holds $B$, or a record of the preparation, can supply
+the missing fact. The framework's founding pair of sentences ---
+quantum probability is ignorance of one's own state, classical
+probability is ignorance of an external state --- is thereby realised
+as the pair of kernels of the two maps that construct $\rho$.
+
+The scrambling is then a theorem rather than a confusion. Schr\"odinger
+observed the ensemble ambiguity \autocite{schrodinger1936probability};
+Hughston, Jozsa and Wootters completed it: every ensemble
+decomposition of a given $\rho$ is realisable by a suitable
+measurement on a purifying system \autocite{hughston1993ensemble}.
+The two mechanisms --- tracing out entanglement, and mixing over
+preparation ignorance --- are therefore operationally
+indistinguishable at the level of $\rho$ itself. In statistical
+language: $\rho$ is a sufficient statistic for all future predictions,
+and sufficiency is forgetting. Jaynes demanded that the separation be
+exhibited within the state object; the theorem says the state object
+is precisely the invariant that forgets it. Seventy-five years of
+failure to unscramble the omelette inside the formalism is thereby
+explained rather than lamented.
+
+Where, then, does the separation live? In the provenance. Two
+decompositions of the same $\rho$ correspond to two candidate
+histories of irreversible FANOUT events --- which copies were actually
+made, by whom, of what --- and the actual history disambiguates. The
+correspondence of \S\ref{sec:fanout} supplies the formal home for that
+record structure. The slogan form: the omelette is unscrambled in the
+circuit, not in the state. We flag honestly that the composite
+statement --- FANOUT record structure plus the
+Hughston--Jozsa--Wootters ambiguity yields a well-defined
+classical/quantum provenance for any $\rho$ arising in a given circuit
+--- is here a definition plus two theorems standing adjacent to one
+another; we have not written the composite as a single theorem, and
+\S\ref{app:jaynes:status} records it as the natural point of attack
+for a critical reader.
+
+The conversion between the two kinds of ignorance also has a clean
+geometric expression. Complete dephasing in a pointer basis
+\autocite{zurek2003decoherence} maps $\rho$ to its diagonal; restricted
+to pure states it is the map
+\[
+  \mathbb{C}P^{n-1} \longrightarrow \Delta^{n-1}, \qquad
+  [\psi] \longmapsto \bigl(|\psi_1|^2, \dots, |\psi_n|^2\bigr),
+\]
+which is the moment map of the residual torus action on
+$\mathbb{C}P^{n-1}$ --- the relative phases that survived the first
+quotient --- and its image is the probability simplex by the convexity
+theorem \autocite{atiyah1982convexity}. The chain
+\[
+  S^{2n-1} \;\longrightarrow\; \mathbb{C}P^{n-1}
+  \;\longrightarrow\; \Delta^{n-1}
+\]
+thus separates the two quotients in kind: the first is private and
+structural, effected by the observer's constitution; the second is
+public and processual, effected by FANOUT in a pointer basis,
+converting fibre-type, interference-capable ignorance into
+simplex-type, record-resolvable ignorance. The second quotient is
+irreversible and carries Landauer's toll
+\autocite{landauer1961irreversibility}; its thermodynamic ledger is
+the subject of the companion paper.
+%% PAPER3: replace the preceding clause's prose pointer with a
+%% \autocite of Paper 3 when its key exists.
+
+\subsection{Two grades of unobservability: ``global'' is
+  boundary-relative}
+\label{app:jaynes:boundary}
+
+One residual form of the objection remains: if the density matrix
+``eliminates'' the phase, in what sense is the phase still anything at
+all? The answer is that a phase is global only relative to a system
+boundary, and the boundary can usually be moved. Phase kickback makes
+this operational \autocite{cleve1998quantum}: a controlled unitary
+acting on an eigenstate of its target writes the target's eigenphase
+--- global, hence unobservable, on the target alone --- onto the
+relative phase of the control, where it interferes. Wigner's friend is
+the same fact with the observer in the target's role
+\autocite{wigner1961remarks}: the friend's overall phase is
+unobservable to the friend and interference-accessible to Wigner. A
+subsystem's global phase is therefore only \emph{contingently}
+unobservable: enlarge the boundary and it becomes relative.
+
+Exactly one phase resists this manoeuvre: that of the self-inclusive
+total, because the observer cannot enlarge the boundary past
+themselves. That is the diagonal obstruction of
+\S\ref{sec:self-reference}, and that phase --- not the movable
+subsystem phases --- is what the framework means by the observer's
+self-ignorance. There are thus two grades of unobservability,
+contingent and structural, and only the second is self-ignorance
+proper. The density matrix of a subsystem removes the contingent grade
+reversibly --- an outside party can restore the phase by interference
+--- while the projective quotient on the self-inclusive description
+removes the structural grade from every chart, permanently. Even then
+the curvature shows through, as \S\ref{app:jaynes:section} records:
+interference is the structural grade's public shadow. The tower of
+observers that this picture generates, and its termination, are taken
+up in the companion paper on measurement-scale unification.
+%% PAPER2: replace the preceding clause's prose pointer with a
+%% \autocite of Paper 2 when its key exists.
+
+\subsection{Status of the claims, one fenced analogy, and the
+  \texorpdfstring{$\psi$}{psi}-epistemic objection}
+\label{app:jaynes:status}
+
+\emph{Established mathematics.} Proposition~\ref{prop:invariant-ring}
+is elementary invariant theory; Proposition~\ref{prop:no-section} is
+Steenrod plus the computation of a Chern class; the geometric phase as
+holonomy and the Fubini--Study structure as metric-plus-symplectic
+form are standard \autocite{berry1984quantal, simon1983holonomy,
+wootters1981statistical, bengtsson2006geometry}; the ensemble
+ambiguity is Schr\"odinger and Hughston--Jozsa--Wootters
+\autocite{schrodinger1936probability, hughston1993ensemble}; the
+moment-map identification of the simplex is the convexity theorem
+\autocite{atiyah1982convexity}; the doubling construction is Selinger
+and Coecke--Kissinger \autocite{selinger2007dagger,
+coecke2017picturing}. None of this is ours, and none of it is at
+stake.
+
+\emph{The framework's assembly.} Three readings are ours and stand or
+fall with the main text's derivation chain: that the fibre coordinate
+is the formal carrier of self-referential ignorance
+(\S\ref{sec:self-reference}, \S\ref{sec:born}); that the nonvanishing
+obstruction class of Proposition~\ref{prop:no-section} is the formal
+content of Jaynes's unscramblability; and that the classical/quantum
+provenance of a given $\rho$ is fixed by the FANOUT record rather than
+by the state. The first two inherit whatever support the main text's
+chain has earned. The third is, as flagged in
+\S\ref{app:jaynes:mixed}, a definition and two theorems not yet
+composed into one; a reader wishing to break the framework's answer to
+Jaynes should push exactly there, and a reader wishing to complete it
+should prove exactly that.
+
+\emph{A fenced analogy.} Quotienting phases at the level of states
+forces central extensions at the level of symmetry groups: projective
+unitary representations of the Galilei group are true representations
+of its central extension, and the central charge is the mass, with
+Bargmann's superselection rule as enforcement
+\autocite{bargmann1954unitary}. The phase one cannot see returns in
+the group cohomology carrying a mass label --- an arresting echo of
+the framework's identification of mass with un-narratable debt. The
+fence: the mechanism is Galilei-specific; the corresponding extensions
+of the Poincar\'e group are trivial and mass enters through the
+Casimir instead. We record the rhyme and build nothing on it.
+
+\emph{The $\psi$-epistemic objection.} A reader who hears ``quantum
+probability is epistemic'' will reach for the theorem of Pusey,
+Barrett and Rudolph \autocite{pusey2012reality}, which --- within the
+ontological-models framework of Harrigan and Spekkens
+\autocite{harrigan2010einstein}, and granted preparation independence
+--- excludes models in which distinct pure states correspond to
+overlapping probability distributions over an observer-independent
+ontic state space $\Lambda$. The present reading is not such a model,
+and not by evasion: the ignorance asserted here is reflexive, and
+there is no observer-independent $\Lambda$ over which it could be a
+distribution --- Proposition~\ref{prop:no-section} is the geometric
+expression of the absence of any global assignment of ``the underlying
+value''. An ontological model in the Harrigan--Spekkens sense is,
+structurally, a section-like object, and the bundle has no section. We
+state the residue honestly: this is a structural observation, not a
+theorem that the framework evades the Pusey--Barrett--Rudolph
+constraint, because we have not formalised the framework as, or
+against, an ontological model. A careful placement of the framework
+relative to the Harrigan--Spekkens taxonomy is an open item, and we
+would welcome it being carried out by hands other than ours.
+
+% =====================================================================
+% BIBLIOGRAPHY STUBS (informal; authoritative RIS entries in
+% jaynes_references_2026-07-19.ris; VERIFY page ranges at final
+% drafting)
+% jaynes1990probability: E. T. Jaynes, Probability in quantum theory,
+%   in Complexity, Entropy, and the Physics of Information (ed. W. H.
+%   Zurek), Addison-Wesley (1990), 381-403.
+% schrodinger1936probability: E. Schroedinger, Probability relations
+%   between separated systems, Math. Proc. Camb. Phil. Soc. 32 (1936),
+%   446-452.
+% hughston1993ensemble: L. P. Hughston, R. Jozsa, W. K. Wootters, A
+%   complete classification of quantum ensembles having a given
+%   density matrix, Phys. Lett. A 183 (1993), 14-18.
+% steenrod1951topology: N. Steenrod, The Topology of Fibre Bundles,
+%   Princeton University Press (1951).
+% berry1984quantal: M. V. Berry, Quantal phase factors accompanying
+%   adiabatic changes, Proc. R. Soc. Lond. A 392 (1984), 45-57.
+% simon1983holonomy: B. Simon, Holonomy, the quantum adiabatic
+%   theorem, and Berry's phase, Phys. Rev. Lett. 51 (1983), 2167-2170.
+% wootters1981statistical: W. K. Wootters, Statistical distance and
+%   Hilbert space, Phys. Rev. D 23 (1981), 357-362.
+% bengtsson2006geometry: I. Bengtsson, K. Zyczkowski, Geometry of
+%   Quantum States, Cambridge University Press (2006).
+% atiyah1982convexity: M. F. Atiyah, Convexity and commuting
+%   Hamiltonians, Bull. London Math. Soc. 14 (1982), 1-15.
+% selinger2007dagger: P. Selinger, Dagger compact closed categories
+%   and completely positive maps, ENTCS 170 (2007), 139-163.
+% coecke2017picturing: B. Coecke, A. Kissinger, Picturing Quantum
+%   Processes, Cambridge University Press (2017).
+% abramsky2011sheaf: S. Abramsky, A. Brandenburger, The sheaf-theoretic
+%   structure of non-locality and contextuality, New J. Phys. 13
+%   (2011), 113036.
+% zurek2003decoherence: W. H. Zurek, Decoherence, einselection, and
+%   the quantum origins of the classical, Rev. Mod. Phys. 75 (2003),
+%   715-775.
+% landauer1961irreversibility: R. Landauer, Irreversibility and heat
+%   generation in the computing process, IBM J. Res. Dev. 5 (1961),
+%   183-191.
+% cleve1998quantum: R. Cleve, A. Ekert, C. Macchiavello, M. Mosca,
+%   Quantum algorithms revisited, Proc. R. Soc. Lond. A 454 (1998),
+%   339-354.
+% wigner1961remarks: E. P. Wigner, Remarks on the mind-body question,
+%   in The Scientist Speculates (ed. I. J. Good), Heinemann (1961),
+%   284-302.
+% bargmann1954unitary: V. Bargmann, On unitary ray representations of
+%   continuous groups, Ann. Math. 59 (1954), 1-46.
+% pusey2012reality: M. F. Pusey, J. Barrett, T. Rudolph, On the
+%   reality of the quantum state, Nature Physics 8 (2012), 475-478.
+% harrigan2010einstein: N. Harrigan, R. W. Spekkens, Einstein,
+%   incompleteness, and the epistemic view of quantum states, Found.
+%   Phys. 40 (2010), 125-157.
+% =====================================================================

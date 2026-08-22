@@ -1,0 +1,231 @@
+% =====================================================================
+%  Section: Entanglement Classes and the Quark--Lepton Division
+%  Paper 1, "It from Bit via Gödel"
+%  Drafted 2026-06-08. Follows \S sec:hopf-justification.
+%
+%  \input fragment. Assumes:
+%    - biblatex with \autocite;
+%    - amsthm-style `proposition', `lemma', `proof' environments;
+%    - the bib resources hopf_particle_physics_refs_2026-06-08.bib AND
+%      entanglement_classes_refs_2026-06-08.bib.
+%
+%  Cross-reference labels (placeholders -- re-point before compiling):
+%    sec:hopf-justification    -- the previous section (Hopf fibrations)
+%    prop:gsm                  -- the G_SM = Spin(9)-stabiliser proposition there
+%    sec:fanout-direction      -- the FANOUT / direction-selection argument
+%    sec:masses                -- the mass / Koide section (forward ref, owed)
+%    sec:generations           -- the triality + K_3 generations result (forward ref)
+%  The corrected G2 root-length assignment (gluons = long roots, colour
+%  triplet C^3 = short-root coset) follows g2_root_length_correction_2026-06-08.
+% =====================================================================
+
+\section{Entanglement Classes and the Quark--Lepton Division}
+\label{sec:entanglement-classes}
+
+The previous section left us with the gauge group $G_{\mathrm{SM}}$ acting on the split
+$\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$ once a complex direction is fixed
+(Proposition~\ref{prop:gsm}), and with the entanglement-sensitivity of the octonionic Hopf map
+as the hinge of any physical reading. We now cash that in. The two inequivalent classes of
+genuinely tripartite three-qubit entanglement map onto the two summands of the split, so that the
+division of fermions into quarks and leptons follows from the entanglement \emph{type} of the
+three-qubit state rather than being assigned by hand.
+
+It should be said at once what is and is not new here. The identification of the $\mathbb{C}$
+summand with a colour singlet and the $\mathbb{C}^3$ summand with a colour triplet --- leptons and
+quarks respectively --- is already in the literature at the level of representations, both in
+Krasnov's spinorial treatment \autocite{krasnov2021so9} and, in a form especially close to ours,
+in Szangolies's recent paper \autocite{szangolies2025standardmodel}. What the present section adds
+is that the \emph{SLOCC class} of the three-qubit state selects which summand it can occupy:
+the genuinely tripartite GHZ class is confined to $\mathbb{C}^3$, while the distributed W class
+generically reaches $\mathbb{C}$. The assignment becomes a theorem about entanglement, and the
+relationship to Szangolies's work is one of convergence, set out in
+\S\ref{sec:entanglement-szangolies}.
+
+\subsection{The two classes of tripartite entanglement}
+
+Three qubits admit exactly two inequivalent classes of genuinely tripartite entanglement under
+stochastic local operations and classical communication: the GHZ class and the W class
+\autocite{durvidalcirac2000three}. They are distinguished by every reasonable invariant. The
+three-tangle is maximal on GHZ and identically zero on W \autocite{coffmankunduwootters2000distributed};
+tracing out one qubit of a GHZ state leaves the remaining pair separable, whereas the same
+operation on a W state leaves them entangled. Coecke and Kissinger sharpened the distinction into
+an algebraic one: GHZ-class states induce a \emph{special} commutative Frobenius algebra and
+W-class states an \emph{anti-special} one, the difference being purely topological --- whether a
+certain compose--decompose loop is connected or annihilates \autocite{coeckekissinger2010compositional}.
+The two Frobenius structures are the primitives of a graphical calculus expressive enough to
+generate arbitrary $N$-qubit states, so that no genuinely new entanglement primitive appears beyond
+three qubits. This dovetails with the termination established in the previous section: the
+division-algebra ladder closes at $\mathbb{O}$ (Proposition~\ref{prop:termination}), and the
+entanglement alphabet closes at the same point.
+
+\subsection{The map into the octonion algebra}
+
+We use the identification, set out in full in the companion derivations, of a three-qubit state
+$\psi \in \mathbb{C}^8$ with a pair of octonions $(o_1, o_2) \in \mathbb{O}^2$ obtained by splitting
+on the first qubit under the Cayley--Dickson correspondence, together with the $\mathbb{O}$-valued
+part of the octonionic Hopf map $\mathbf{h} = o_1 \bar{o}_2$. Fixing the preferred complex direction
+$e_1$ --- the computability split, the same singling-out discussed in \S\ref{sec:fanout-direction}
+--- gives $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$, with $\mathbb{C} = \{e_0, e_1\}$ and
+$\mathbb{C}^3 = \{e_2,\dots,e_7\}$ carrying the $\mathbf{3} \oplus \bar{\mathbf{3}}$ of the colour
+$SU(3) \subset G_2$. The whole of the analysis rests on a single identity.
+
+\begin{lemma}[$\mathbb{C}$-projection is a Hermitian inner product]\label{lem:cproj}
+With the Cayley--Dickson identification above, the projection of $\mathbf{h}$ onto the
+$\mathbb{C} = \{e_0, e_1\}$ summand satisfies
+\[
+  \pi_{\mathbb{C}}(\mathbf{h}) \;=\; \overline{\langle o_1, o_2\rangle_{\mathbb{C}^4}},
+\]
+where $\langle\cdot,\cdot\rangle_{\mathbb{C}^4}$ is the standard Hermitian inner product on the
+$\mathbb{C}^4$ that $\psi$'s first-qubit branches inhabit. Hence $\pi_{\mathbb{C}}(\mathbf{h}) = 0$
+if and only if the two branches $o_1, o_2$ are $\mathbb{C}^4$-orthogonal.
+\end{lemma}
+
+The lemma is proved by checking on basis pairs and using the Fano multiplication rules; the
+$\mathbb{C}$-component collects exactly the four index pairs $\{0,1\},\{2,3\},\{4,5\},\{6,7\}$ that
+constitute the Hermitian inner product with $e_1$ as the imaginary unit
+\autocite{baez2002octonions}. The composition-algebra identity $|\mathbf{h}|^2 = |o_1|^2|o_2|^2$,
+which holds on $\mathbb{O}$ and on no larger Cayley--Dickson algebra, makes the resulting
+\emph{$\mathbb{C}$-fraction} $C_{\mathrm{frac}}(\psi) = |\pi_{\mathbb{C}}(\mathbf{h})|^2/|\mathbf{h}|^2$
+a well-defined local invariant. It is worth noting that $e_1$ is not merely a convenient choice:
+it is the unique direction along which the relevant subalgebra is commutative, which is precisely
+what makes the cancellation in the next proposition go through, and which ties the selection of the
+direction back to the measurement argument of \S\ref{sec:fanout-direction}.
+
+\subsection{GHZ states are confined to the colour sector}
+
+\begin{proposition}[GHZ confinement]\label{prop:ghz}
+Let $\psi$ lie in the SLOCC orbit of $\lvert\mathrm{GHZ}\rangle = (\lvert000\rangle + \lvert111\rangle)/\sqrt2$
+under the full local unitary group $SU(2)^3$. Then $\pi_{\mathbb{C}}(\mathbf{h}(\psi)) = 0$ identically,
+so the Hopf image lies entirely in the colour-triplet sector $\mathbb{C}^3 = \mathbf{3} \oplus \bar{\mathbf{3}}$.
+The statement holds symmetrically under each of the three choices of qubit to split on. Conversely,
+among genuinely tripartite states, vanishing $\mathbb{C}$-projection under every split characterises
+the GHZ class.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+By Lemma~\ref{lem:cproj} it suffices to show $\langle o_1, o_2\rangle_{\mathbb{C}^4} = 0$ for every
+local-unitary image. The bare GHZ state has orthogonal branches of \emph{equal} norm
+($\rho_k = \tfrac12\mathbb{I}$ for every $k$). The internal unitaries $U_2 \otimes U_3$ preserve both
+orthogonality and equal norms; the first-qubit unitary $U_1 = \begin{psmallmatrix} a & b \\ -\bar b & \bar a\end{psmallmatrix}$
+mixes the branches, and the inner product evaluates to
+$-\bar a \bar b \cdot \tfrac12 + \bar b \bar a \cdot \tfrac12 = 0$, the cancellation holding because
+multiplication in $\mathbb{C}$ is commutative. The full proof and the converse are given in Paper~2.
+\end{proof}
+
+The cancellation is exact, and numerically the $\mathbb{C}$-fraction over $2\times10^4$ random
+$SU(2)^3$ samples sits at machine zero ($<10^{-15}$) under all three splits. Two consequences follow,
+both \emph{proved} rather than conjectured. First, confinement is topological: since the
+$\mathbb{C}$-projection is continuous and identically zero on the GHZ stratum but generically nonzero
+on the W stratum, it is a discrete invariant of the SLOCC class, and no continuous parameter can
+carry a colour triplet out of $\mathbb{C}^3$ into the lepton sector --- confinement is structural,
+not dynamical. Second, the QCD vacuum angle vanishes: the GHZ image carries no oriented pairwise
+linking structure capable of orienting the $\theta\,\mathrm{Tr}(G\wedge G)$ term, so $\theta_{\mathrm{QCD}} = 0$
+is forced and no Peccei--Quinn axion is admitted. The identification therefore reads GHZ $\leftrightarrow$
+colour triplet $\leftrightarrow$ quark, with the colour-triplet $\mathbb{C}^3$ occupying the short-root
+coset of $G_2$ in the corrected assignment of \S\ref{sec:hopf-justification}.
+
+\subsection{W states reach the lepton sector and carry the weak doublet}
+
+\begin{proposition}[W accessibility]\label{prop:w-access}
+For $\psi$ in the SLOCC orbit of $\lvert\mathrm{W}\rangle = (\lvert001\rangle + \lvert010\rangle + \lvert100\rangle)/\sqrt3$,
+the Hopf image has generically nonzero $\mathbb{C}$-projection; it vanishes only on a measure-zero
+subset of $SU(2)^3$, and $\sup_{U_1} C_{\mathrm{frac}} = \tfrac19$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+The W branches are orthogonal but of \emph{unequal} norm, $\lvert o_1\rvert^2 = \tfrac23$,
+$\lvert o_2\rvert^2 = \tfrac13$ (equivalently $\rho_k$ has spectrum $(\tfrac23,\tfrac13)$). The same
+mixing computation now gives $\langle o_1, o_2\rangle_{\mathbb{C}^4} = \bar a\bar b\,(-\tfrac23 + \tfrac13)
+= -\tfrac13\,\bar a\bar b$, which vanishes only when $U_1$ is diagonal or anti-diagonal. The supremum
+follows from maximising the exact expression $C_{\mathrm{frac}} = p(1-p)/[(1+p)(2-p)]$ at $p = \tfrac12$.
+\end{proof}
+
+The contrast with GHZ is entirely in the branch norms: equal norms force the cancellation, unequal
+norms leave a residue. The same $(\tfrac23,\tfrac13)$ spectrum underwrites the weak-doublet content.
+
+\begin{proposition}[W carries the $SU(2)_L$ doublet]\label{prop:w-doublet}
+For any W-class state, each single-qubit reduced state $\rho_k$ is supported on a two-dimensional
+subspace carrying the fundamental representation of $SU(2)$, with
+$\rho_k = \tfrac13\mathbb{I} + \tfrac13\bigl(\lvert v_1\rangle\langle v_1\rvert - \lvert v_2\rangle\langle v_2\rvert\bigr)$:
+an $SU(2)$-invariant singlet background of weight $\tfrac13$ plus a traceless preferred-direction
+component that transforms as a doublet. The decomposition is symmetric across all three qubits.
+\end{proposition}
+
+The proof is immediate from the spectrum and the fact that the only faithful two-dimensional
+representation of $SU(2)$ is the fundamental; tracing W over a single qubit returns
+$\tfrac23\lvert\Psi^+\rangle\langle\Psi^+\rvert + \tfrac13\lvert00\rangle\langle00\rvert$, a genuine
+Bell pair weighted against a separable tail, which is the pairwise shadow of the doublet. The W
+class therefore reads W $\leftrightarrow$ colour singlet $\leftrightarrow$ lepton, organised into
+weak-isospin doublets. Which of the two quaternionic actions $SU(2)_L$ (left multiplication) or
+$SU(2)_R$ (right multiplication) becomes physical weak isospin is inherited from the third qubit
+through the same computability split; we treat that selection as \emph{structural} and defer its
+full formulation.
+
+\subsection{The dictionary}
+
+Collecting the strands, the correspondence between entanglement structure and the matter and gauge
+content of the Standard Model reads as follows, with the gauge rows established in
+\S\ref{sec:hopf-justification} and the fermion rows the content of Propositions~\ref{prop:ghz}--\ref{prop:w-doublet}.
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Entanglement & Division algebra & Hopf fibration & Standard Model \\
+\hline
+separable & $\mathbb{C}$ & $S^3 \to S^2$ & $U(1)$ phase \\
+Bell (two-qubit) & $\mathbb{H}$ & $S^7 \to S^4$ & $SU(2)$ weak isospin \\
+GHZ (special) & $\mathbb{O}$, $\mathbb{C}^3$ sector & $S^{15} \to S^8$ & $SU(3)$ colour / quarks (confined) \\
+W (anti-special) & $\mathbb{O}$, $\mathbb{C}$ sector & $S^{15} \to S^8$ & colour singlets / leptons (free) \\
+\hline
+\end{tabular}
+\end{center}
+
+The two octonionic rows share the same fibration and are separated only by their position relative
+to the computability split: GHZ confined to $\mathbb{C}^3$, W reaching $\mathbb{C}$. That the
+colour-triplet sector sits on the short-root coset of $G_2$, with the gluons on the long roots,
+is the bridge to the mass discussion of \S\ref{sec:masses}, where the non-associativity of the
+short-root directions is what distinguishes quark from lepton couplings.
+
+\subsection{Relation to Szangolies's construction}
+\label{sec:entanglement-szangolies}
+
+It is worth being precise about the overlap, because the convergence is itself evidence. Szangolies
+\autocite{szangolies2025standardmodel} obtains the same lepton/quark split directly from the
+representation theory of the $\mathrm{Spin}(9)$ stabiliser: under the embedding of $U(1)\times SU(3)$
+he finds the octonionic spinor decomposing into a leptonic part from the $\mathbb{C}$ factor --- an
+$SU(3)$ singlet of hypercharge $-1$ --- and a quark part from $\mathbb{C}^3$ --- an $SU(3)$ triplet of
+hypercharge $\tfrac13$ --- both transforming as $SU(2)$ doublets, that is, one left-handed generation.
+This is reached with no reference to entanglement classes; the octonionic state is treated as
+carrying a generation wholesale, and the split is a fact about the gauge group acting on
+$\mathbb{C} \oplus \mathbb{C}^3$.
+
+Our result is complementary rather than competing. Where Szangolies fixes the representation content
+of each summand, Propositions~\ref{prop:ghz} and~\ref{prop:w-access} fix \emph{which states populate
+which summand}, and do so by their SLOCC class: a genuinely tripartite GHZ-class state cannot leave
+$\mathbb{C}^3$, and a W-class state generically reaches $\mathbb{C}$. The lepton/quark division he
+assigns by representation theory we obtain as a consequence of entanglement type. The two arrivals
+reinforce each other --- he reaches the assignment from the gauge side, we reach it from the
+entanglement side --- and his independent derivation is the strongest external check we have that the
+$\mathbb{C}$/$\mathbb{C}^3$ identification is not an artefact of our route. We adopt his
+representation-theoretic assignment and supply the selection principle his construction does not
+contain.
+
+\subsection{What is proved and what is owed}
+
+Proved here, or in the companion derivations carried into Paper~2: GHZ confinement to $\mathbb{C}^3$
+(Proposition~\ref{prop:ghz}), W accessibility of $\mathbb{C}$ (Proposition~\ref{prop:w-access}), the
+$SU(2)_L$ doublet content of W (Proposition~\ref{prop:w-doublet}), the topological character of
+confinement, and $\theta_{\mathrm{QCD}} = 0$. These rest only on the composition-algebra identity and
+the local-unitary invariance of single-qubit reduced spectra, with no free parameters and numerical
+agreement to machine precision.
+
+Owed, and flagged as such: the appearance of exactly three generations, which requires the triality
+of the octonionic fibration together with the $K_3$ non-two-colourability obstruction
+(\S\ref{sec:generations}); the orientation that fixes the $\mathbf{3}$ versus $\bar{\mathbf{3}}$
+assignment of quark against antiquark, which the present pointwise statement does not determine; the
+selection of $SU(2)_L$ over $SU(2)_R$ as physical weak isospin, structural but not yet a theorem; the
+dynamical content of confinement, namely the string tension, which would require the torsionful Dirac
+spectrum on the parallelised $S^7$ and remains open; and the quark--lepton mass ratios, which the
+short-root/long-root split makes available but does not by itself fix (\S\ref{sec:masses}). The
+division of fermions into quarks and leptons, however, is settled: it is the division of genuinely
+tripartite entanglement into its two SLOCC classes.

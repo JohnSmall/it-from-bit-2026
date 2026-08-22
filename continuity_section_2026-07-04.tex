@@ -4,14 +4,12 @@
 %  (now in project documents) and the May record
 %  (dynamics_companion_fanout_unitarity_2026-05-20T1430.md).
 %
-%  PLACEMENT in main.tex: a standalone section between the
-%  self-reference slot and the division-algebras section --
-%      \input{self_reference_section_...}            % undrafted
+%  PLACEMENT in main.tex: a standalone section between self-reference
+%  and division-algebras --
+%      \input{self_reference_section_2026-07-04}
 %      \input{continuity_section_2026-07-04}
 %      \input{division_algebras_section_2026-07-03}
-%  (JS's architecture call is open: this can be demoted to subsections
-%  of sec:self-reference by deleting the \section line and promoting;
-%  drafted standalone per the 2026-07-04 recommendation.)
+%  (Architecture call SETTLED by the sync manifest: standalone.)
 %
 %  CITATIONS -- existing keys (as supplied by JS 2026-07-04):
 %    Hardy2001a, Aaronson2004h, Thomson_1954, Lawvere_1969,
@@ -19,13 +17,24 @@
 %  NEW keys (RIS in continuity_refs_2026-07-04.ris):
 %    cantor1891diagonal, benacerraf1962tasks, broeckertomdieck1985compact.
 %  Deliberately excluded per JS: Chiribella--D'Ariano--Perinotti;
-%  Bargmann/Wigner's theorem. Yanofsky omitted pending a key (the
-%  Lawvere-shaped clause cites Lawvere_1969 alone); supply a key if
-%  wanted and one clause absorbs it.
+%  Bargmann/Wigner's theorem. Yanofsky2003 now paired on the
+%  Lawvere-shaped clause (the pending-key excuse was void: the key
+%  exists and sec:self-reference uses it).
 %
-%  CROSS-REFS: backward-dangling until their sections are drafted --
-%  sec:self-reference, sec:fanout-boundary (same status as the
-%  division-algebras section's). Deliberate FORWARD references --
+%  CROSS-REFS: sec:self-reference now DRAFTED (2026-07-04, later the
+%  same day) -- no longer dangling; only sec:fanout-boundary (and its
+%  sibling sec:fanout-direction) -- DRAFTED 2026-07-06.
+%
+%  AUDITED 2026-07-06 (final pass, second stop): both proofs
+%  re-verified by hand (Lagrange divisibility sentence exact; the
+%  Baire countable-escape chain sound); caveat-discharge with
+%  sec:self-reference confirmed two-way (already present); file pure
+%  ASCII; no pre-definition "frame"; all citations used as declared.
+%  Fixes: Yanofsky2003 paired on the Lawvere clause; the op's two
+%  candidate routes anchored to printed propositions (f1-dictionary
+%  for the divisibility premise's referent, inside-outside for the
+%  closedness demand) -- statuses unchanged, referents sharpened;
+%  header staleness corrected. Deliberate FORWARD references --
 %  prop:f1-dictionary and sec:hopf-justification (defined later in the
 %  paper; fine under two-pass LaTeX and flagged in prose),
 %  sec:division-algebras, sec:space-of-computations.
@@ -46,7 +55,7 @@ Hardy derives quantum theory from five axioms \autocite{Hardy2001a}. Four of the
 classical probability theory; the fifth --- that a \emph{continuous} reversible transformation
 connects any two pure states --- is the entire difference, the single postulate that turns the
 classical simplex into the complex Hilbert space. Every reconstruction programme pays an equivalent
-toll: continuous reversibility in Masanes and M\"{u}ller \autocite{muller_p_2011}, the corresponding
+toll: continuous reversibility in Masanes and M\"{u}ller \autocite{mullerp2011}, the corresponding
 postulate in Daki\'{c} and Brukner \autocite{Brukner2009}. The axiom is load-bearing, and in every
 programme it is unexplained: it is where the quantumness is put in by hand. The claim of this
 section is that in the present framework it is not an axiom. Continuity is the fifth face of the
@@ -134,7 +143,7 @@ Closedness is the deeper premise, and it is where the section's title is earned.
 limit-realisability: a Cauchy sequence of available transformations whose convergence the system can
 itself describe must have its limit available, for otherwise the system's own description refers to
 a transformation that does not exist, and self-referential closure fails --- a demand of exactly
-Lawvere's fixed-point shape \autocite{Lawvere_1969}. What limit-realisability adds to the line is
+Lawvere's fixed-point shape \autocite{Lawvere_1969,Yanofsky2003}. What limit-realisability adds to the line is
 worth stating exactly, because it is the corrected form of a natural intuition. Cantor's diagonal
 \autocite{cantor1891diagonal} does not build the continuum; its output is an infinite decimal --- a
 Cauchy sequence of rationals --- which exists \emph{as a point} only because the line is complete.
@@ -189,9 +198,12 @@ Derive, from the self-referential closure of \S\ref{sec:self-reference}, the two
 Proposition~\ref{prop:divisible-closed}: that the reversible-transformation group of the
 pre-measurement regime is divisible --- the candidate route being that no selected basis leaves no
 distinguished step, so that every transformation is realisable in $n$ equal describable stages for
-every $n$ --- and that it is topologically closed --- the candidate route being that a Cauchy
-sequence of available transformations whose convergence the system can itself describe must have its
-limit available, on pain of the description referring to a transformation that does not exist. With
+every $n$ (with ``no selected basis'' now the exact statement that no classical structure has
+committed, Proposition~\ref{prop:f1-dictionary}) --- and that it is topologically closed --- the
+candidate route being that a Cauchy sequence of available transformations whose convergence the
+system can itself describe must have its limit available, on pain of the description referring to a
+transformation that does not exist, a failure of exactly the fixed-point closure that
+Proposition~\ref{prop:inside-outside} formalises. With
 both premises, continuity follows by the proposition and everything downstream is Hardy's theorem,
 cited; the finite, countable and disconnected escapes are closed unconditionally above. What is open
 is exactly the two derivations named, and nothing wider.
