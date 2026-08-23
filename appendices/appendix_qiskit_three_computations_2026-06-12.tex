@@ -33,6 +33,17 @@
 %
 %  Labels: app:qiskit-handles (umbrella), app:qiskit-ckm,
 %  app:qiskit-interference, app:qiskit-composition, app:qiskit-meson.
+%  EDITED 2026-07-11 (second pass): app:qiskit-interference opening
+%  reframed after the class-discreteness retirement (2026-07-06,
+%  fourth_qubit doc, section 10): the alpha GHZ + beta W family is a
+%  PROBE PATH within the GHZ class (SLOCC classes are orbits, not
+%  superposing sectors); species never superpose; the surviving
+%  admixture carrier is the sedenion cross-algebra sector. The two
+%  verified findings (first-order response, phase rigidity) are
+%  unchanged, now stated as binding any effective admixture.
+%  EDITED 2026-07-11: closing sentence of app:qiskit-ckm now
+%  cross-references app:hw-ckm (the full-CKM execution on hardware and
+%  its angle-amplified small elements).
 %  ADDED 2026-06-12 (evening): fourth computation, the meson colour
 %  skeleton (two-edge closed loop -> exact Bell pair; W contrast ->
 %  tilted pair, fidelity 0.9), executed and verified.
@@ -103,7 +114,12 @@ charm: the circuit computes the internal-structure factor, and the kinematic exc
 the spacetime sector. The division of labour of \S\ref{sec:interactions} is thus visible in a single
 statevector. Second, the comparison row is the test the framework must pass or fail: a reader who
 believes the Cabibbo angle is not $2/9$ can replace one rotation angle and watch the first column
-move.
+move. Extending $g$ to the full three-dimensional generation space --- realised on a two-qubit tag
+pair rather than a qutrit, for reasons Appendix~\ref{app:hw-ckm} makes precise --- and $R_y$ to a
+$3\times3$ unitary built from the framework's phases is the full-CKM version of the same handle,
+built and run in Appendix~\ref{app:hw-ckm}, where the $\lambda^{2}$ and $\lambda^{3}$ elements,
+invisible to a single application at the device's error floor, are recovered by angle
+amplification to $6.2\%$ and $3.6\%$.
 
 \emph{Hardware record.} Run on \texttt{ibm\_marrakesh} (12 June 2026, 14:15 UTC, 8192 shots,
 SamplerV2), extracting the CKM factors from the generation-qubit marginal:
@@ -120,11 +136,23 @@ untouched by where the circuit runs.
 \label{app:qiskit-interference}
 
 The candidate mechanism for the up-quark discrepancy (Open Problem~\ref{op:up-quark}) is
-interference between the tripartite (GHZ) and pairwise (W) contributions at the first generation.
-This computation makes the interference itself executable: prepare
+interference between the tripartite (GHZ) and pairwise (W) \emph{contributions to the mass
+functional} at the first generation. One clarification carries this subsection's epistemic
+weight, because the framework assigns species by entanglement class and the classes are discrete:
+a quark is never a superposition of species. The probe family prepared below,
 $\lvert\psi\rangle = \alpha\lvert\mathrm{GHZ}\rangle + \beta e^{\mathrm{i}\varphi}\lvert\mathrm{W}\rangle$,
-trace to one qubit, and read the Bloch radius $r$ of the cut --- the base coordinate from which the
-geodesic mass proxy is built (Appendix~\ref{app:setup}).
+is --- generically, up to isolated vanishing-tangle points --- a path \emph{within} the GHZ
+class, parametrised by proximity to the W boundary: the vector sum of class representatives is
+itself a GHZ-class state, since SLOCC classes are orbits, not sectors that superpose. The
+computation therefore measures how the mass-relevant invariant responds as a GHZ-class state
+approaches the W boundary; it never required, and the framework does not assert, a quark that is
+`partly lepton'. An earlier state-level superposition reading of the mechanism was considered and
+retired; the surviving carrier of the generation-one admixture is the sedenion cross-algebra
+sector (\S\ref{sec:sedenion-announcement}), as Open Problem~\ref{op:up-quark} now states, and
+the two findings below --- first-order response and phase rigidity --- bind \emph{any} such
+effective admixture, which is exactly why the computation outlives its first framing. With that
+placed: prepare the probe family, trace to one qubit, and read the Bloch radius $r$ of the cut
+--- the base coordinate from which the geodesic mass proxy is built (Appendix~\ref{app:setup}).
 
 \begin{lstlisting}[language=Python,basicstyle=\small\ttfamily]
 vec = a*GHZ + b*np.exp(1j*phi)*W

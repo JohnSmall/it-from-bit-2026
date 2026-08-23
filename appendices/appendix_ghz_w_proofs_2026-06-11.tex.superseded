@@ -1,10 +1,6 @@
-%  AUDITED 2026-07-06 (final pass, appendices sweep): all body refs
-%  land; app:setup / app:ghz-proof / app:w-proof / the ceiling lemma
-%  all have live consumers; umbrella app:ghz-w-proofs minted at stop 8
-%  (texorpdfstring casualty repaired same stop); umlaut normalised.
 % =====================================================================
 %  Appendices: full proofs for "Entanglement Classes and Gauge Groups"
-%  Paper 1, "It from Bit via G\"odel".
+%  Paper 1, "It from Bit via Gödel".
 %  CORRECTED VERSION 2026-06-11 --- supersedes appendix_ghz_w_proofs_2026-06-08.tex.
 %
 %  Changes from the 06-08 version (review of 2026-06-11):
@@ -58,7 +54,7 @@
 %    sec:canonical-orbits -- the canonical-orbit identification (main text)
 % =====================================================================
 
-\section{Octonionic Setup and the \texorpdfstring{$\mathbb{C}$}{C}-Projection Lemma}\label{app:ghz-w-proofs}
+\section{Octonionic Setup and the \texorpdfstring{$\mathbb{C}$}{C}-Projection Lemma}
 \label{app:setup}
 
 This appendix fixes the octonionic conventions used throughout --- the multiplication table, the
@@ -106,14 +102,14 @@ which acts on the basis, by the table~\eqref{eq:fano-lines}, as
 $J$ preserves the four real planes
 $\{e_0,e_1\},\{e_2,e_3\},\{e_4,e_5\},\{e_6,e_7\}$ --- the \emph{blocks} --- because these are
 exactly the pairs whose units multiply into $\pm e_1$: the pair $\{0,1\}$ trivially, and the pairs
-$\{2,3\},\{4,5\},\{6,7\}$ because $(1,2,3)$, $(1,4,5)$ and $(1,7,6)$ are the three Fano lines through
+$\{2,3\}, \{4,5\},\\ \{6,7\}$ because $(1,2,3)$, $(1,4,5)$ and $(1,7,6)$ are the three Fano lines through
 $e_1$. Every imaginary direction spans a commutative plane with $e_0$; what is special about $e_1$ is
 this block structure and, below, its alignment with the qubit amplitudes.
 
 \subsection{The identification of \texorpdfstring{$\mathbb{C}^4$}{C4} with \texorpdfstring{$\mathbb{O}$}{O}}
 
 A three-qubit state $\psi\in\mathbb{C}^8$ with components $\psi_{ijk}$ splits on the first qubit into
-$\psi_0 = (\psi_{000},\psi_{001},\psi_{010},\psi_{011})$ and
+$\psi_0 = (\psi_{000},\psi_{001},\psi_{010},\\ \psi_{011})$ and
 $\psi_1 = (\psi_{100},\psi_{101},\psi_{110},\psi_{111})$ in $\mathbb{C}^4$. Each is identified with
 an octonion by sending the $k$-th complex amplitude $c_k = x_k + \mathrm{i}y_k$ into the $k$-th
 block, with the imaginary part along $J(e_{2k})$:
@@ -130,7 +126,7 @@ with it the lemma below fails. (Both statements have been verified numerically t
 alongside every identity in these appendices.)
 
 Writing $\mathcal{C}:\psi\mapsto(o_1,o_2)$ for the resulting map, the octonionic Hopf map is
-$h(o_1,o_2) = (2\,o_1\bar o_2,\,|o_1|^2-|o_2|^2)$; we study $\mathbf{h} := o_1\bar o_2$ and its
+$h(o_1,o_2) = (2\,o_1\bar o_2,\,\\ |o_1|^2-|o_2|^2)$; we study $\mathbf{h} := o_1\bar o_2$ and its
 $\mathbb{C}$-projection $\pi_{\mathbb{C}}(\mathbf{h}) := h_0 + \mathrm{i}\,h_1$, read as a complex
 number.
 
@@ -205,7 +201,7 @@ with Bloch vector $\vec r$. Then $x_9 = r_z$ and $2\,\pi_{\mathbb{C}}(\mathbf{h}
   \label{eq:base-split}
 \end{equation}
 where $w\in\mathbb{C}^3$ is the colour component of $2\mathbf{h}$. The base $S^8$ is the unit sphere
-of $(\text{Bloch vector of the cut})\oplus(\text{colour sector})$: three real dimensions of
+of $(\text{Bloch vector of the cut}) \\ \oplus(\text{colour sector})$: three real dimensions of
 single-qubit data and six of colour.
 \end{lemma}
 
