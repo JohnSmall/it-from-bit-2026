@@ -40,6 +40,26 @@
 % ADDED 2026-07-12: sec:algebraic-dictionary prior-work subsection
 % (Furey/Dixon/Krasnov dictionary; two REF-OWED keys; see its header).
 \section{Entanglement Classes and Gauge Groups}
+I'll quote from Szangolies \autocite{szangolies2025standardmodel} because this is very much his idea. 
+\begin{quote}
+Our main result is then to show how to use a construction of Dubois–Violette and Todorov \autocite{duboisviolette2016exceptional}, 
+as extended and clarified by Krasnov \autocite{krasnov2021so9}, to derive the exact symmetry
+and degrees of freedom of (a generation of) Standard Model fermions from the entanglement properties of a three-qubit state.
+\end{quote}
+I had been looking for a relationship between entanglement and gauge theory for many years and then I saw Szangolies 
+give a ten minute session in an online workshop on division algebras in particle physics \autocite{szangolies_j_2021} 
+during the presentation he flashed up a screen shot of a paper he was working on relating entanglement to particle physics.
+I instantly knew this was what I was looking for and contacted him to ask if the paper was ready for publication. He very kindly let me
+see a pre-print and I encouraged him with the phrase "perfection is the enemy of done". So I was very please to see the final thing published. 
+
+A short while after that at a conference on quantum foundations in V\"axj\"o in 2023 I saw a single A4 poster by Filtov describing
+a geometrical view of bi-partite entanglement with two Block spheres related by inversion. I already knew that bi-partite entanglement was 
+related to SU(2), so the fact that Filtov had so clearly demonstrated the chirality inherent in SU(2) was the most significant 
+contribution to the conference. A poster on a single sheet of A4! Which eventually led to \autocite{filatov2024towards}
+
+That got me thinking that relating 3 Bloch spheres by inversion would be impossible and therefore if you could show a relationship between 3 particle entanglement and SU(3)
+then the the fact that the colour force is blind to chirality would fall out immediately. And this is where we'll pick up. 
+
 \label{sec:entanglement-classes}
 
 The previous section established that the division-algebra ladder forces exactly three nontrivial
@@ -125,7 +145,8 @@ Frobenius structures are the primitives of a calculus expressive enough to build
 states, so the entanglement alphabet, like the division-algebra ladder, closes at three: there is no
 third primitive to find, just as there is no fourth division algebra (Proposition~\ref{prop:termination}).
 
-That there are exactly two genuinely tripartite classes, and exactly two matter sectors that colour
+We're now at the point where it should seem completely obvious to ask the question "That split between GHZ and W looks suspiciously like the split between 
+the quark and lepton sectors, tell me more about it?" That there are exactly two genuinely tripartite classes, and exactly two matter sectors that colour
 distinguishes, is the coincidence the rest of the section makes precise.
 
 \subsection{The map into the octonion algebra}
@@ -187,6 +208,13 @@ $\mathbb{C}$-projection, and their status is fixed by the identification of
 no oriented pairwise linking structure to orient a $\theta\,\mathrm{Tr}(G\wedge G)$ term, so
 $\theta_{\mathrm{QCD}} = 0$ is forced and no Peccei--Quinn axion is admitted. The reading is
 GHZ $\leftrightarrow$ colour triplet $\leftrightarrow$ quark.
+
+This is the first result to drop out of the identification between GHZ and the colour force, and it was the one 
+I was looking for, SU(3) is blind to chirality because you cannot have a geometric construction analogous to the 
+2 Bloch sphere case with 3 Bloch spheres. But once a bridge between the gauge groups of the Standard Model
+and multi-particle entanglement has been built then a lot of two way traffic becomes possible. One can move hard problems
+on one end of the bridge to the other end where they have easy solutions, $\theta_{QCD}=0$ being only the first. This also means
+you can express particle interactions in terms of quantum circuits acting on entangled states, which we pick up in \ref{sec:interactions}
 
 \subsection{W states reach the lepton sector and carry the weak doublet}
 
@@ -428,7 +456,8 @@ and~\ref{prop:w-access} populate them.
 
 The division of labour is then plain. What the module coordinates cannot supply is anything with
 a measure in it --- and the last row of the table is this rule at the foundations rung, the
-closing paragraph of \S\ref{sec:postulates} stating the reading and guarding its arrow: no $\tfrac29$, no mass, no probability --- the algebraic programmes have no
+closing paragraph of \S\ref{sec:postulates} stating the reading and guarding its arrow: no $\tfrac29$,
+no mass, no probability --- the algebraic programmes have no
 Born-rule story at all --- and no compositional statement of confinement, which here is
 compactness of the base. What the entanglement coordinates cannot supply without translation is
 an associative operator calculus ready for Lagrangians and the parameter-free integer bookkeeping
