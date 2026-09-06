@@ -103,8 +103,7 @@
 \label{sec:masses}
 
 \S\ref{sec:generations} enumerated the spectrum and asserted, qualitatively, that mass grows with
-the
-algebraic depth of the frustrated qubit. This section makes that quantitative. It begins by saying
+the algebraic depth of the frustrated qubit. This section makes that quantitative. It begins by saying
 what mass \emph{is} in this framework --- the promised definition of the ``debt'' whose absence made
 the photon massless in \S\ref{sec:charges} --- and then computes two spectra: the charged leptons,
 which are the clean showcase, reproduced from a single dimensional scale and no free dimensionless
@@ -135,6 +134,58 @@ bracketings are inequivalent, but it does \emph{not} by itself set the mass hier
 comes from how the triality structure breaks --- the angle of the next subsection --- while the
 associator supplies the fact of mass. This division of labour, associator for existence and triality
 angle for ratios, is the honest reading of the calculation and we keep the two separate throughout.
+%% ============================================================================
+%% SPLICE: the debt-to-defect bridge  (2026-09-01)
+%% Target file: masses_section (current master; the 2026-06-08 lineage).
+%% Suggested anchor: immediately AFTER the paragraph ending
+%%   "... and we keep the two separate throughout."
+%%   (the division-of-labour paragraph of \subsection{What mass is: associator-debt}).
+%%   The existing "Two structural points complete the picture." paragraph then
+%%   follows the splice unchanged. VERIFY the anchor whitespace-insensitively
+%%   before splicing.
+%% Label: eq:debt-defect -- grep the master for collisions before compiling.
+%% Citation keys: harvey1982calibrated and bryant1987exceptional are NEW, carried
+%%   in calibration_refs_2026-09-01.ris (web-verified 2026-09-01, DOIs included).
+%%   VERIFY-KEY: replace \autocite{hurwitz1898} below with the library's existing
+%%   Hurwitz key before compiling.
+%% Status of claims: the displayed identity is machine-verified in convention A
+%%   (sedenion_debt_koide_scan_2026-08-31.py; double-verified on both
+%%   environments). The calibration identification Delta = 4(*phi), with the
+%%   four-form built independently via the Hodge star, is verified in
+%%   defect_calibration_scan_2026-09-01.py (single environment; echo owed).
+%%   Orientation sign sigma = +1 in convention A.
+%% House CAUTION honoured: "bump in the carpet" below refers to the algebraic
+%%   instance only (the computability split), per the instance-discipline
+%%   comment in the computability-split introduction.
+%% ============================================================================
+%% BEGIN SPLICE bridge-debt-defect
+A word on the provenance of the term, because its standing has changed.
+\emph{Associator-debt} began as a coinage of this programme: we conceived of it
+as a logical debt --- the information owed by a bracketing that the algebra
+never discharges, the bump in the carpet in its algebraic instance --- and we
+kept it because it priced the mass sector correctly, not because the object had
+an address in the wider literature. It acquired one when we stopped treating
+the sedenion zero divisors as a bare obstruction and asked what structure they
+carry. At the sedenion step, exactly where Hurwitz's theorem ends the division
+tower \autocite{hurwitz1898}, the norm of a product first fails to factorise,
+and the failure \emph{is} the debt:
+\begin{equation}
+  \bigl\lvert (a,b)(c,d) \bigr\rvert^{2}
+  - \bigl\lvert (a,b) \bigr\rvert^{2} \bigl\lvert (c,d) \bigr\rvert^{2}
+  \;=\; 2 \,\bigl\langle a,\, [c,b,d] \bigr\rangle ,
+  \label{eq:debt-defect}
+\end{equation}
+and the right-hand side is, up to normalisation, the coassociative calibration
+four-form of the $G_2$-structure evaluated on the four octonionic components
+\autocite{harvey1982calibrated,bryant1987exceptional}, with the zero divisors
+sitting exactly at the calibration bound. \emph{Norm defect} is therefore
+another way of saying \emph{associator-debt}: the associator prices the debt at
+issuance, where the octonion norm still balances the books; the sedenion norm
+defect is where it settles; and the settlement geometry is standard calibrated
+geometry rather than a private idiom. The identity fixes the object, not the
+spectrum --- the division of labour above stands, with the generation splitting
+still supplied by the frame and the $\mathbb{Z}_3$ structure of the tag.
+%% END SPLICE bridge-debt-defect
 
 Two structural points complete the picture. First, because the non-associativity forbids a metric on
 the octonionic fibre $S^7$, mass cannot literally be a geodesic length on that fibre; it is the

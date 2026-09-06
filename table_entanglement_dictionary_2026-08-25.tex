@@ -1,0 +1,112 @@
+% =====================================================================
+%  REPLACEMENT for the dictionary table at main.tex lines 113-124.
+%  Drafted 2026-08-25. Label preserved: tab:entanglement-hopf-particles.
+%
+%  WHAT CHANGED AND WHY.
+%  (1) Bosons and fermions now occupy separate columns, so gluons have
+%      a home. They were missing because the old "Particles" column
+%      held whichever species the row's SLOCC class named, and the
+%      GHZ row named quarks.
+%  (2) The rows are now keyed to the Cayley-Dickson SECTOR rather than
+%      to the SLOCC class alone. This is forced by (1): the moment
+%      bosons get their own column, a row must be a place where both
+%      species can be listed, and the sector is that place. It also
+%      repairs the category error flagged in
+%      terminology_reconciliation_entanglement_dictionary_2026-06-08.md
+%      section 5, item 4 -- the old table read as the LEVEL dictionary
+%      (rung -> gauge group) in rows 1-2 and the TOPOLOGY dictionary
+%      (SLOCC class -> particle) in rows 3-4.
+%  (3) The gauge-group column is now explicit and uses the level
+%      reading throughout, per the same note's item 5.
+%
+%  READING OF THE BOSON COLUMN. A gauge boson is a bipartite
+%  (Bell-class) EDGE; its gauge group is the group of the sector the
+%  edge connects. So every entry in the boson column is Bell-class in
+%  the topology sense, including the gluons, which are bipartite colour
+%  links at the octonionic rung -- NOT at the quaternionic rung. This
+%  is why the boson column carries a footnote: without it, listing
+%  gluons on the GHZ row re-imports the "Bell = SU(2)" misreading the
+%  reconciliation note exists to prevent.
+%
+%  STATUS. The fermion column is PROVED (GHZ -> quark colour triplet;
+%  W -> lepton singlet). The boson column is STRUCTURAL: per section 6
+%  of the reconciliation note, two calculations are owed -- the four
+%  electroweak bosons as a C-tensor-H bipartite quartet, and the eight
+%  gluons as the SU(3) adjoint at the octonionic rung. The caption
+%  carries that flag explicitly; do not drop it before those are
+%  discharged.
+%
+%  THE HIGGS is deliberately absent from the table and remains in the
+%  prose immediately following, since it is not an entanglement class
+%  but the bundle's nontriviality promoted to a field. With a boson
+%  column now present a reader will look for it, so the following
+%  sentence should be adjusted to say so explicitly.
+%
+%  REQUIRES: booktabs. Set in \footnotesize to fit a4 one-column text
+%  width; at 11pt \small it overruns by ~10pt. If your text block is
+%  narrower still,
+%  switch table -> table* (two-column layouts) or wrap in
+%  \resizebox{\textwidth}{!}{...}.
+% =====================================================================
+
+\begin{table}[h]
+  \centering
+  \footnotesize
+  \begin{tabular}{@{}lllll@{}}
+    \toprule
+    \textbf{Sector} & \textbf{Hopf map} & \textbf{Gauge group}
+      & \textbf{Gauge bosons}\footnotemark{} & \textbf{Fermions} \\
+    \midrule
+    $\mathbb{C}$ (single qubit)
+      & $S^{1} \to S^{3} \to S^{2}$
+      & $U(1)$
+      & $B$
+      & --- \\
+    $\mathbb{H}$ (Bell)
+      & $S^{3} \to S^{7} \to S^{4}$
+      & $SU(2)$
+      & $W^{\pm}$, $Z$, $\gamma$
+      & --- \\
+    $\mathbb{O}$, $\mathbb{C}$ (W)
+      & $S^{7} \to S^{15} \to S^{8}$
+      & singlet
+      & ---
+      & Leptons \\
+    $\mathbb{O}$, $\mathbb{C}^{3}$ (GHZ)
+      & $S^{7} \to S^{15} \to S^{8}$
+      & $SU(3)$
+      & 8 gluons
+      & Quarks \\
+    \bottomrule
+  \end{tabular}
+  \ \caption{Cayley--Dickson sectors, Hopf fibrations, and the
+    corresponding Standard Model species. The $\mathbb{C}$-sector boson
+    is the hypercharge $B$; the photon is the post-mixing combination,
+    listed with the electroweak quartet. The two octonionic rows share
+    one bundle and split under the computability decomposition
+    $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^{3}$, and that split
+    is visible in the root system of the octonionic automorphism group
+    $G_{2} = \operatorname{Aut}(\mathbb{O})$, whose roots come in two
+    lengths. The eight long roots close into a subalgebra, and that
+    subalgebra is the colour $\mathfrak{su}(3)$: the gluons are those
+    eight. The six short roots do not close, forming instead the coset
+    that carries the colour triplet, and it is this failure to close
+    that confines the quarks, since a single colour direction cannot be
+    assembled into a self-contained subalgebra. Dashes are structural,
+    not omissions: matter appears only at the octonionic rung, because
+    a fermion is a node carrying internal Cayley--Dickson structure and
+    that structure is complete only at three qubits; and the
+    $\mathbb{C}$ sector carries no colour edge, which is why leptons do
+    not feel the strong force. The fermion column is established
+    (Appendix~\ref{app:ghz-w-proofs}); the gauge-boson column is a
+    structural identification, with the electroweak quartet and the
+    gluon octet as calculations still owed.}
+  \label{tab:entanglement-hopf-particles}
+\end{table}
+\footnotetext{Every gauge boson is a bipartite (Bell-class) edge, and
+  its gauge group is that of the sector the edge connects. The gluons
+  are therefore Bell-class \emph{in topology} while living at the
+  octonionic rung: ``Bell'' names the two-party connector here, not the
+  quaternionic level. The coincidence of the two readings in row two,
+  where the Bell class and the $SU(2)$ rung genuinely agree, is special
+  to the weak sector.}
