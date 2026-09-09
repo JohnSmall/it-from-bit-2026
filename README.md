@@ -25,8 +25,19 @@ Requires TeX Live 2025 (pinned to match Overleaf) with biber.
     latexmk -pvc       # rebuild on save
     latexmk -C         # clean; use when citations misbehave after a .bib change
 
-`.latexmkrc` in the root sets pdflatex + biber. Check `main.log` for lines
-beginning with `!` before treating a build as clean.
+`.latexmkrc` in the root sets pdflatex + biber, and names `main.tex` as the
+default target. Check `main.log` for lines beginning with `!` before
+treating a build as clean.
+
+Paper 2 is a separate build and must be named explicitly, including when
+cleaning, since the default target covers Paper 1 only:
+
+    latexmk paper2_main_2026-07-07.tex
+    latexmk -C paper2_main_2026-07-07.tex
+
+`texlive.profile` is the answer file that produced this installation.
+`install-tl --profile texlive.profile` reproduces the same TeX Live on
+another machine, which is what "pinned" above means in practice.
 
 ## Bibliography
 
