@@ -1,0 +1,31 @@
+# --- LaTeX build artefacts -------------------------------------------
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.run.xml
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+*.lof
+*.lot
+*.loe
+*.thm
+*.idx
+*.ind
+*.ilg
+*.dvi
+*.xdv
+*.auxlock
+*.figlist
+*.makefile
+
+# Compiled output. No figure PDFs are tracked; if one is ever added,
+# force it in with `git add -f path/to/figure.pdf`.
+*.pdf
+
+# --- patch-script backups (scripts/ write these before editing) ------
+*.bak
