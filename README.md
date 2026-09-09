@@ -9,7 +9,7 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 | Path            | What it is                                              |
 |-----------------|----------------------------------------------------------|
 | `main.tex`      | Paper 1 root document                                   |
-| `sections/`     | One file per section, included from `main.tex`          |
+| `*.tex`         | One file per section, at top level, input from `main.tex`|
 | `paper2/`       | Paper 2 (separate root)                                  |
 | `references.bib`| Generated from Zotero (see Bibliography)                 |
 | `ris/`          | Dated RIS import batches                                 |
@@ -80,5 +80,5 @@ self-ref-2026/
 │   └── archive/
 │       ├── INDEX.md
 │       └── conversations/        # export target
-├── main.tex, sections/, scripts/, ris/, attic_* ...
+├── main.tex, section .tex files, scripts/, ris/, attic_* ...
 
