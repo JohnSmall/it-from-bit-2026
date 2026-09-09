@@ -10,8 +10,8 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 |-----------------|----------------------------------------------------------|
 | `main.tex`      | Paper 1 root document                                   |
 | `*.tex`         | One file per section, at top level, input from `main.tex`|
-| `paper2/`       | Paper 2 (separate root)                                  |
-| `references.bib`| Generated from Zotero (see Bibliography)                 |
+| `paper2_main_*.tex` | Paper 2 root document, built separately              |
+| `references*.bib`| Generated from Zotero, one per paper (see Bibliography) |
 | `ris/`          | Dated RIS import batches                                 |
 | `scripts/`      | Python calculations and LaTeX patch scripts              |
 | `knowledge/`    | Curated results, open problems, and session archive      |
@@ -30,11 +30,25 @@ beginning with `!` before treating a build as clean.
 
 ## Bibliography
 
-`references.bib` is auto-exported by Better BibTeX from the Zotero
-collection "self-ref-2026"; do not edit it by hand. New references go in
-via a dated RIS batch under `ris/` imported into Zotero, then the AUX
-scanner keeps the collection aligned with what the paper cites. Citation
-keys are `author+year+keyword`.
+Each paper has its own bibliography, exported by Better BibTeX from its
+own Zotero collection: `references.bib` from `self-ref-2026-cited` for
+Paper 1, and `references_paper2.bib` from `self-ref-2026-paper2-cited` for
+Paper 2. Some references appear in both. Neither file is edited by hand; a
+missing key is a Zotero problem, not a `.bib` one. To export, right-click
+the collection, choose Export Collection, and pick the Better BibTeX
+format. Keep BBT's "Fields to omit from export" set to `abstract,file`, or
+the export carries local storage paths into the repository.
+
+New references go in as a dated RIS batch under `ris/`, imported into
+Zotero. Zotero's importer discards the RIS `ID` field, so Better BibTeX
+assigns a formula key on import and the intended key must then be pinned by
+hand in the item's Citation Key field; the export honours whatever is
+pinned there. Keys are `author+year+keyword`, inherited from the Mendeley
+library the collections were built from.
+
+A collection is aligned with its paper when the exported keys and the
+`\abx@aux@cite` entries in that paper's `.aux` file are the same set. That
+comparison is the check worth running after any change to either side.
 
 ## Scripts
 
