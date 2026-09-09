@@ -1,0 +1,34 @@
+TY  - GEN
+ID  - aoki2025energy
+AU  - Aoki, Sinya
+TI  - Is energy conserved in general relativity?
+PY  - 2025
+N1  - arXiv:2512.21471 (v2). Report for the 40th anniversary of IJMPA and MPLA, summarising the Aoki-Onogi-Yokoyama-et-al. series: matter-energy non-conservation in curved spacetime; Noether's 2nd theorem blocking gravitational-field energy; the surviving conserved charges (geometric/gravitational). Cited at Paper II's sec:p2-energy. Journal version expected IJMPA/MPLA 2026 -- complete on import.
+ER  -
+
+TY  - JOUR
+ID  - noether1918invariante
+AU  - Noether, Emmy
+TI  - Invariante Variationsprobleme
+JO  - Nachrichten von der Gesellschaft der Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse
+SP  - 235
+EP  - 257
+PY  - 1918
+N1  - The source of both theorems; the second theorem is the formal face of the energy dissolution at sec:p2-energy. English translation: Transport Theory and Statistical Physics 1, 186 (1971), DOI 10.1080/00411457108231446 -- cite original with translation note per house preference.
+ER  -
+
+TY  - JOUR
+ID  - aokihidakakawanashimada2025
+AU  - Aoki, Sinya
+AU  - Hidaka, Yoshimasa
+AU  - Kawana, Kiyoharu
+AU  - Shimada, Kengo
+TI  - Geometric conservation in curved spacetime and entropy
+JO  - European Physical Journal C
+VL  - 85
+IS  - 4
+SP  - 419
+PY  - 2025
+DO  - 10.1140/epjc/s10052-025-14138-5
+N1  - The jewel: the conserved charge replacing energy is the entropy current (J = s u) for perfect fluids. Cited at sec:p2-energy as GR conserving the framework's chart-free entry-count. DOI taken from the report's reference list as found.
+ER  -

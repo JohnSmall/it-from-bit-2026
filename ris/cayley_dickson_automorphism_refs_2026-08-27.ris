@@ -1,0 +1,32 @@
+TY  - JOUR
+AU  - Eakin, Paul
+AU  - Sathaye, Avinash
+TI  - On automorphisms and derivations of Cayley-Dickson algebras
+JO  - Journal of Algebra
+JA  - J. Algebra
+VL  - 129
+IS  - 2
+SP  - 263
+EP  - 278
+PY  - 1990
+DO  - 10.1016/0021-8693(90)90221-9
+UR  - https://doi.org/10.1016/0021-8693(90)90221-9
+N1  - VERIFY-CITE: page range 263-278 per the ScienceDirect listing checked 2026-08-27; some secondary sources quote 263-280. General doubling step: Aut(A_{n+1}) = Aut(A_n) x G with G in {Z/2, S_3}; proves Brown's conjecture on the higher Cayley-Dickson automorphism groups (per Chan and Dokovic). Over R with the standard parameters the branch is S_3 at every rung >= 4 (Brown proved equality for n = 4, 5, 6; notebook T checks rungs 4-6 directly). Used by: sec:wf-chain-type (Wigner chain coda), rem:no-fifth-force (sedenion section, 2026-08-27 revision).
+ID  - eakinsathaye1990automorphisms
+ER  - 
+
+TY  - JOUR
+AU  - Schafer, R. D.
+TI  - On the algebras formed by the Cayley-Dickson process
+JO  - American Journal of Mathematics
+JA  - Amer. J. Math.
+VL  - 76
+IS  - 2
+SP  - 435
+EP  - 446
+PY  - 1954
+DO  - 10.2307/2372583
+UR  - https://doi.org/10.2307/2372583
+N1  - VERIFY-CITE: volume 76 and JSTOR doi from memory; confirm volume/issue/doi before commit. Derivation algebra of the Cayley-Dickson algebras: Der(A_n) = g_2 for n >= 3 (no new derivations beyond the octonions; the identity component of Aut never grows). Notebook T confirms dim Der = 14 at n = 3, 4, 5 numerically. Used by: sec:wf-chain-type, rem:no-fifth-force (2026-08-27 revision).
+ID  - schafer1954cayleydickson
+ER  - 
