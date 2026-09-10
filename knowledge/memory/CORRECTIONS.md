@@ -27,13 +27,15 @@ than design.
 
 ## A real correspondence was overstated
 
-The primary record (`project-docs/Pure_states_and_mixed_states_in_quantum_foundations_2026_04_11.md`)
-says Scott Aaronson confirmed by private communication that **his own** ideas
-on negative probability leading to quantum amplitudes were "not even well
-developed enough to form into a conjecture".
+A private communication from Scott Aaronson, in which he characterised the
+development of **his own** related ideas, was rendered in the distilled memory
+as an endorsement of *this framework's* Shannon-information route -- a
+different and much stronger claim, and one he has never been asked about.
 
-`memory/project/overview.md` and `memory/project/rolling-memory.md` render
-[wording removed; see CORRECTIONS.md]
+The inflated wording is not reproduced here, since repeating it would
+propagate a false attribution to a named person, which is what this
+correction exists to stop. `people.md` states positively what the
+correspondence did and did not establish, and that is the record to rely on.
 
 ## A private remark was redacted
 
