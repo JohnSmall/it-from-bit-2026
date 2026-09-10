@@ -20,11 +20,21 @@ corresponding with them.
   John's MSc.
 - Andrei Khrennikov (Linnaeus/Vaxjo).
 - Jochen Szangolies (DLR).
-- Scott Aaronson -- private communication in which he said his own related
-  ideas on negative probability leading to quantum amplitudes were "not even
-  well developed enough to form into a conjecture". He has NOT been asked
-  about, and has NOT endorsed, this framework's Shannon-information route.
-  Any statement that he confirmed that route to be novel is incorrect.
+- Scott Aaronson -- email, 21 June 2021, five years before this project began.
+  He said the argument in his Chapter 9 is not a proof and not well defined
+  enough to be called a conjecture, that almost nothing technical in it is
+  original to him, and he offered a citation form pointing at the published
+  book rather than the email: roughly, "for further details about how
+  generalizing probability theory to negative and complex numbers seems to
+  lead almost inevitably to QM, see [Aaronson, Ch 9]". Cite `Aaronson:dem`
+  chapter 9 accordingly; a personal-communication citation is neither needed
+  nor appropriate when he has named a public source.
+
+  He has NOT been asked about, and has NOT endorsed, this framework's
+  Shannon-information route. He also volunteered a correction that the papers
+  should respect: on his view there are no negative probabilities for actual
+  events -- the generalisation is to negative and complex *numbers*, the
+  amplitudes, with probabilities themselves remaining real and in [0,1].
 
 ## Conferences
 

@@ -31,6 +31,27 @@ reasoning. Delete when done.
       abstract, preamble check, conclusions. Named in the project memory as
       the only thing between Paper 1 and arXiv submission.
 
+## Aaronson citation
+
+- [ ] Add `chapter = {9}` to `Aaronson:dem` in Zotero and re-export. He asked
+      specifically for "[Aaronson, Ch 9]"; the entry currently has no chapter,
+      only a `lec9.html` URL.
+- [ ] Reconcile the gloss at `paper1/what_is_a_quantum_state.tex` line 97,
+      "Accept negative probability as a fact", with his own position. His email
+      of 21 June 2021 states there are no negative probabilities for actual
+      events: the generalisation is to negative and complex *numbers*, the
+      amplitudes, with probabilities remaining real in [0,1]. The direct
+      quotation in that passage is accurate; the gloss around it is not. His
+      correction is already the framework's position -- signed entries are
+      internal bookkeeping, observable entries stay honest probabilities -- so
+      aligning the two costs nothing and closes an obvious line of attack on a
+      paper whose project is named "negative probability".
+- [ ] Do NOT cite him as a personal communication. He named a public source,
+      and ICMJE says to avoid personal communications where one exists. If a
+      personal-communication citation is ever wanted anyway, ICMJE requires
+      "written permission and confirmation of accuracy from the source" -- the
+      same rule the Abramsky provenance note already applies.
+
 ## Ledgers
 
 - [ ] Confirm the four status labels marked `[JUDGED]` in
