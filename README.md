@@ -72,10 +72,17 @@ Outputs are recorded verbatim in the session note of the same date.
 
 ## Conventions
 
-British English, pure ASCII in .tex and .md, prose over bullets. Dated
-filenames as `description_YYYY-MM-DDTHHMM`. Nothing is deleted: rename to
+British English, prose over bullets. Dated filenames as
+`description_YYYY-MM-DDTHHMM`. Nothing is deleted: rename to
 `attic_<name>.superseded`. Every claim carries a status label; see
 `knowledge/README.md` for the vocabulary.
+
+Unicode is allowed in `.tex` and `.md` where it belongs to a name, title or
+quoted source: Gödel, Göttingen and Časlav all need it. Typography is not a
+name, so use the LaTeX idioms and not the literal characters: `---` and `--`
+for dashes, ``` `` ```, `''` and `'` for quotes, `\S` for the section sign.
+Ligature codepoints (U+FB01 fi, U+FB03 ffi) are PDF copy-paste damage and are
+always wrong. `CLAUDE.md` states the same rule for AI assistants.
 
 ## For AI assistants
 
