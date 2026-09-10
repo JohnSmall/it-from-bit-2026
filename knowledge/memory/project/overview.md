@@ -24,7 +24,6 @@ aliases: ["It from Bit via Gödel", "self-ref-2026", "Paper 1", "Paper 2"]
 - [stated] Karl Svozil
 - [stated] Jochen Szangolies (DLR)
 - [stated] Cohl Furey
-- [stated] [redacted 2026-09-10: private remark by a named third party; see knowledge/memory/CORRECTIONS.md]
 - [stated] Scott Aaronson — [redacted 2026-09-10: private remark by a named third party; see knowledge/memory/CORRECTIONS.md]
 - [stated] John has presented at Växjö quantum foundations conferences (2022–2025)
 - [stated] John attended Filatov and Auzinsh's poster at the 2024 Växjö conference and encouraged their publication
