@@ -5,19 +5,13 @@ reasoning. Delete when done.
 
 ## Zotero housekeeping
 
-- [ ] **Empty the trash** (295 items). Everything worth recovering has been
-      recovered; the four values the sweep still reports belong to records
-      that now hold them correctly (`wigner_1967` for the Am. J. Phys. review,
-      `repository`/`archiveID` for the Castagnoli preprint). The three trashed
-      attachments whose parents are live are duplicate Mendeley
-      `m-api-*.pdf` copies; every parent keeps its own PDF.
-- [ ] Decide whether `attic_self-ref-2026.bib.superseded` and
-      `attic_notes_old.tex.superseded` belong in `paper1/attic/`. Both were
-      shared across the series or belonged to neither paper.
 
 ## Manuscript
 
-- [ ] Place the seven fragments in `orphans/`. Some may be splice sources
+- [ ] Place the remaining six fragments in `orphans/`.
+      `associator_debt_higgs_mechanism_2026-07-03.tex` is done: its
+      norm-defect version replaced the subsection in
+      `paper1/boson_masses_section_2026-06-08.tex` and it is atticked. Some may be splice sources
       whose content already lives in a section, in which case they are
       superseded rather than pending -- `jaynes_paragraph_2026-07-19.tex` has
       a live counterpart of the same date, so diff before deciding.
