@@ -55,6 +55,32 @@ One instance is deliberately kept: the provenance note in
 flag raised and honoured -- and is the single qualified statement on the
 matter rather than one of several unqualified ones.
 
+## Two conversations were removed as off-topic
+
+The 100 archived conversations were selected from a 237-conversation account
+export by scoring names and summaries against the framework's vocabulary,
+because the export carries no project field. Two passed on a single stray
+keyword and were removed on 2026-09-10 after review, leaving 98:
+
+- **An onboarding-prompt review for EMFA**, a commercial Atlassian/Jira
+  project. It contained *one* occurrence of "self-referential" -- describing
+  EMFA's own architecture, not this framework -- against 744 mentions of
+  EMFA, 300 of Jira and 426 of sprint, and zero occurrences of Hopf,
+  octonion, FANOUT, sedenion, negative probability, Godel, entanglement or
+  qubit. 484 KB of unrelated client work.
+- **A conversation on productising expertise**, mixing meditation and quantum
+  computing: business positioning rather than physics.
+
+The lesson generalises: a keyword filter over summaries will admit anything
+sharing a term of art, and "self-referential" is common enough in software
+architecture to be a poor discriminator. Any future addition to this archive
+should be checked by term *density*, not term presence.
+
+Separately, `2026-07-11_sedenion-extensions-onboarding` was tagged
+`[tooling]` in error -- the word "onboarding" matched a tooling regex. It is
+one of the largest physics sessions in the corpus and the tag has been
+removed.
+
 ## Why this is published rather than quietly fixed
 
 The corpus is public so that the collaboration can be audited rather than

@@ -24,7 +24,7 @@ written from. Lines there marked `[stated]` carry a provenance flag, not a
 status label.
 
 **Raw archive.** `project-docs/` (the 122 documents attached to the web
-project) and `archive/conversations/` (100 conversations, full turns). This is
+project) and `archive/conversations/` (98 conversations, full turns). This is
 primary source material: it is where a claim's derivation actually lives, and
 it contains superseded reasoning alongside current reasoning. Nothing here is
 authoritative on its own.
@@ -54,7 +54,7 @@ authoritative on its own.
     project-docs/          122 web-project documents + INDEX.md
     archive/
       INDEX.md             greppable: date, title, summary, size
-      conversations/       100 conversations, full turns
+      conversations/       98 conversations, full turns
 
 ## Provenance
 
@@ -62,7 +62,7 @@ Exported from the Claude web project "negative probability"
 (uuid `019bd5b6-57f1-76bf-bda6-1c102e52f609`, created 2026-01-19) on
 2026-09-09; imported here 2026-09-10.
 
-The conversation export carries no project field, so the 100 archived
+The conversation export carries no project field, so the 98 archived
 conversations were selected from a 237-conversation account export by scoring
 names and summaries against the framework's vocabulary. The 137 excluded are
 software consulting work — Elixir, XSLT, Atlassian — unrelated to the physics.
