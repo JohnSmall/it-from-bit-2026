@@ -61,7 +61,11 @@ output you did not produce.
 - Session notes go in knowledge/sessions/ (dated); new results, retractions
   and open problems are proposed as ledger entries, not left in the note.
 - Never commit build artefacts (.gitignore covers them). Commit messages:
-  dated, one line on what changed and why. No force-push.
+  dated, one line on what changed and why. No force-push, with one
+  exception: a deliberate rewrite of published history to remove private
+  or third-party material before publication. Such a rewrite must be
+  recorded in knowledge/memory/CORRECTIONS.md, saying that it happened and
+  why, without repeating the content it removed.
 
 ## Ending a session
 Summarise: files changed, compile status, any status-label proposals,

@@ -81,6 +81,29 @@ Separately, `2026-07-11_sedenion-extensions-onboarding` was tagged
 one of the largest physics sessions in the corpus and the tag has been
 removed.
 
+## The published history was rewritten
+
+On 2026-09-10, before this repository was made public, its git history was
+rewritten with `git filter-repo` to remove two things it should never have
+carried: two conversations belonging to unrelated commercial work, and a
+private remark by a named third party made in passing and without consent to
+publication.
+
+Redacting the working tree would not have been enough. Both were already
+pushed, and git keeps every earlier version reachable, so anyone cloning the
+repository could have recovered them from the history. The rewrite removes
+them from every commit. Commit history is otherwise preserved: the record of
+how this corpus was assembled, corrected and checked is intact, and the
+commits that performed the redaction are part of it.
+
+The GitHub repository was deleted and recreated rather than force-pushed,
+because a force-push leaves the superseded commits addressable by their
+hashes until GitHub garbage-collects them, which is neither immediate nor
+guaranteed.
+
+CLAUDE.md's standing rule is "No force-push". It was amended in the same pass
+to record this exception rather than leaving the rule quietly broken.
+
 ## Why this is published rather than quietly fixed
 
 The corpus is public so that the collaboration can be audited rather than
