@@ -120,7 +120,7 @@ verification code can be reused without the attribution obligations that
 suit prose.
 
 Attribute as: John Small, "It from Bit via Gödel",
-https://github.com/JohnSmall/self-ref-2026
+https://github.com/JohnSmall/it-from-bit-2026
 
 `knowledge/archive/` holds transcripts of research conversations, which
 contain both the author's words and model output. They are published here
