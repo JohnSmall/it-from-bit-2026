@@ -3,14 +3,6 @@
 Actionable items with enough context to act on without reconstructing the
 reasoning. Delete when done.
 
-## Blocking a clean build
-
-- [ ] **Re-export both Zotero collections.** `self-ref-2026-cited` holds 193
-      items and `self-ref-2026-paper2-cited` holds 19, but `references.bib`
-      and `references_paper2.bib` are still at 192 and 18. Both papers now
-      cite `rubino2017indefinite`, which is in neither file, so a build gives
-      an undefined citation until this is done.
-
 ## Zotero housekeeping
 
 - [ ] **Empty the trash** (295 items). Everything worth recovering has been
