@@ -24,7 +24,7 @@ written from. Lines there marked `[stated]` carry a provenance flag, not a
 status label.
 
 **Raw archive.** `project-docs/` (the 122 documents attached to the web
-project) and `archive/conversations/` (98 conversations, full turns). This is
+project) and `archive/conversations/` (99 conversations, full turns). This is
 primary source material: it is where a claim's derivation actually lives, and
 it contains superseded reasoning alongside current reasoning. Nothing here is
 authoritative on its own.
@@ -54,7 +54,7 @@ authoritative on its own.
     project-docs/          122 web-project documents + INDEX.md
     archive/
       INDEX.md             greppable: date, title, summary, size
-      conversations/       98 conversations, full turns
+      conversations/       99 conversations, full turns
 
 ## Provenance
 
@@ -62,14 +62,29 @@ Exported from the Claude web project "negative probability"
 (uuid `019bd5b6-57f1-76bf-bda6-1c102e52f609`, created 2026-01-19) on
 2026-09-09; imported here 2026-09-10.
 
-The conversation export carries no project field, so the 98 archived
-conversations were selected from a 237-conversation account export by scoring
-names and summaries against the framework's vocabulary. The 137 excluded are
-software consulting work — Elixir, XSLT, Atlassian — unrelated to the physics.
-Conversations about the project's *tooling* are included and marked
-`[tooling]` in the index. That selection is a heuristic: if something is
-missing, the full export is still at
-`~/Documents/claude_downloads/conversations-000/`.
+Two exports were needed. The first, taken 2026-09-09, covered the whole
+account but began on 2026-02-18 — it appears to window on a conversation's
+creation date, and the project's founding conversation was created on
+2026-01-19 and stayed open until March, so it fell outside. That absence was
+visible in the archive itself: the earliest conversation opened "in previous
+conversations we discovered…", referring to material that was not there. A
+second export for 2026-01-17 to 2026-02-17 recovered it.
+
+The conversation export carries no project field, so conversations were
+selected by scoring text against the framework's vocabulary. From the first
+export, 100 of 237 were taken and two later removed on review; from the
+second, 1 of 11. The remainder is software consulting work — Elixir, XSLT,
+Atlassian — unrelated to the physics. Conversations about the project's
+*tooling* are included and marked `[tooling]` in the index.
+
+Selection by keyword is fallible in both directions and has erred once in
+each: see `../memory/CORRECTIONS.md`. The unfiltered exports remain at
+`~/Documents/claude_downloads/` and `~/Documents/claude_downloads_2026-01/`.
+
+**What this archive is not.** It records the collaboration with Claude, which
+began on 2026-01-19. It is not the history of the ideas: the framework dates
+from a 2005 CASYS conference paper, and two decades of work precede anything
+here.
 
 Of the 122 project documents, 12 were exact duplicates and were dropped, and 4
 were omitted because the repository already carries them as live sources.

@@ -5,7 +5,7 @@ Claude web on 2026-09-09. This index exists to be grepped: each entry
 carries the conversation's own summary, so a term search here will point
 you at the right file without opening any of them.
 
-98 conversations, 2696 messages, 22 MB, 2026-03-09 to 2026-09-08.
+99 conversations, 2730 messages, 22 MB, 2026-01-19 to 2026-09-08.
 
 Selected from a 237-conversation account export by scoring names and
 summaries against the framework's vocabulary; the 137 excluded are
@@ -16,6 +16,20 @@ having passed the filter on a single stray keyword; see
 Claude Code) are included and are marked `[tooling]`.
 
 ---
+
+## 2026-01-19 — Negative probability and self-reference in quantum mechanics
+
+`conversations/2026-01-19_negative-probability-and-self-reference-in-quantum-mechanics_30568e33.md` · 34 messages · 159 KB
+
+**Conversation Overview**
+
+This conversation represents an extended research consultation in theoretical physics and mathematics, continuing from a previous session. The person is developing a novel theoretical framework connecting negative probability, self-reference, contextuality, and quantum foundations. The work spans mathematical logic, quantum mechanics, particle physics, and cosmology, with the person driving the conceptual synthesis and Claude providing literature research, mathematical elaboration, and critical engagement.
+
+The session extended prior work on negative probability and self-reference by investigating supertasks and quantum mechanics as alternative routes to non-computability. Key developments included identifying a structural parallel between Laraudogoitia's classical creation ex nihilo (infinite particle lattice, spontaneous emergence from void) and Norton's quantum supertask (infinite quantum lattice, spontaneous excitation without external input). The person proposed that Thomson's lamp's indeterminate final state is best described by complex probabilities P(ON) = (1+i)/2 and P(OFF) = (1−i)/2, and that supertask completion points are precisely where classical probability breaks down and complex probability becomes necessary.
+
+A major theoretical synthesis emerged around resolving Jaynes' critique of quantum mechanics. The person proposed that quantum randomness is not ontological but epistemological, arising from the in-principle impossibility of complete self-knowledge when observer and system are entangled—a self-referential limitation with Lawvere-Yanofsky diagonal structure. Analytically continuing Shannon information S = −ln(p) to complex probabilities yields a real part (classical information gain) and imaginary part (information debt), naturally encoding the uncertainty principle as a constraint on imaginary information across conjugate pairs. The framework was then applied to CP violation in particle physics: the CKM matrix's complex phase was interpreted as signaling contextuality in the flavor-mass complementarity of quarks, with three generations being the minimum structure for irreducible self-reference. Discussion of the Andrianov et al. paper on neutral kaon propagation in matter led the person to identify a positive feedback mechanism for baryogenesis—environmental CP violation enhancement creating a self-reinforcing cascade from microscopic quantum fluctuation to macroscopic matter dominance—with the conjecture that the CKM phase is a cosmological fixed point rather than a fundamental constant.
+
+The session concluded with document production: a LaTeX document with BibLaTeX bibliography (compiled to PDF) and a Markdown version optimized for project file reference. The Markdown summary was explicitly requested for use as context in future conversations. The person outlined three upcoming research phases: (1) complex information distance between computable and non-computable states, (2) parallelizable spheres S¹, S³, S⁷, division algebras, and Standard Model symmetry groups, and (3) inconsistent mathematics extended via quantum superposition. The person indicated they would upload key papers to begin Phase 1 in the next conversation.
 
 ## 2026-03-09 — Distance between computable and non-computable states
 
@@ -1097,7 +1111,7 @@ The person demonstrated consistent preferences throughout: fences and status lab
 
 ## 2026-07-28 — Self-reference and complex valued logic dialogue
 
-`conversations/2026-07-28_self-reference-and-complex-valued-logic-dialogue_f639a491.md` · 22 messages · 187 KB
+`conversations/2026-07-28_self-reference-and-complex-valued-logic-dialogue_f639a491.md` · 22 messages · 186 KB
 
 **Conversation overview**
 
