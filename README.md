@@ -8,10 +8,10 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 
 | Path            | What it is                                              |
 |-----------------|----------------------------------------------------------|
-| `main.tex`      | Paper 1 root document                                   |
-| `*.tex`         | One file per section, at top level, input from `main.tex`|
-| `paper2_main_*.tex` | Paper 2 root document, built separately              |
-| `references*.bib`| Generated from Zotero, one per paper (see Bibliography) |
+| `paper1/`       | Paper 1: `main.tex`, its sections, `appendices/`, its bib|
+| `paper2/`       | Paper 2: root document and its bibliography              |
+| `orphans/`      | Fragments reachable from neither paper; not yet placed   |
+| `notebooks/`    | Jupyter notebooks behind the appendix computations       |
 | `ris/`          | Dated RIS import batches                                 |
 | `scripts/`      | Python calculations and LaTeX patch scripts              |
 | `knowledge/`    | Curated results, open problems, and session archive      |
@@ -21,19 +21,21 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 
 Requires TeX Live 2025 (pinned to match Overleaf) with biber.
 
-    latexmk            # full build of main.tex
-    latexmk -pvc       # rebuild on save
-    latexmk -C         # clean; use when citations misbehave after a .bib change
+    latexmk                        # build every paper
+    latexmk paper1/main.tex        # one paper only
+    latexmk -pvc paper1/main.tex   # rebuild on save
+    latexmk -C                     # clean every paper
 
-`.latexmkrc` in the root sets pdflatex + biber, and names `main.tex` as the
-default target. Check `main.log` for lines beginning with `!` before
-treating a build as clean.
+Each paper is built in its own directory: `.latexmkrc` sets `$do_cd`, so
+latexmk changes into `paper1/` or `paper2/` before running. That is why the
+`\input` paths inside a paper are plain filenames with no directory
+prefix, and why build artefacts land beside their source rather than in the
+shared root. A raw `pdflatex paper1/main.tex` from the root does not chdir
+and will fail to find the sections; use latexmk, or run pdflatex from
+inside the paper's directory.
 
-Paper 2 is a separate build and must be named explicitly, including when
-cleaning, since the default target covers Paper 1 only:
-
-    latexmk paper2_main_2026-07-07.tex
-    latexmk -C paper2_main_2026-07-07.tex
+Check the paper's `.log` for lines beginning with `!` before treating a
+build as clean.
 
 `texlive.profile` is the answer file that produced this installation.
 `install-tl --profile texlive.profile` reproduces the same TeX Live on
@@ -105,5 +107,5 @@ self-ref-2026/
 │   └── archive/
 │       ├── INDEX.md
 │       └── conversations/        # export target
-├── main.tex, section .tex files, scripts/, ris/, attic_* ...
+├── paper1/, paper2/, orphans/, notebooks/, scripts/, ris/, attic_* ...
 
