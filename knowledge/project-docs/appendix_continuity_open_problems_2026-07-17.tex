@@ -1,0 +1,463 @@
+% =====================================================================
+%  APPENDIX: Self-referential ignorance and Hardy's continuity axiom
+%  -- the owed arrow, its decomposition, and open problems
+%  ADDED 2026-07-17. Consolidates the session records
+%  continuity_limit_realisability_2026-07-04.md and
+%  continuity_blocks_and_routes_2026-07-17.md into paper form.
+%  Requires (amsthm): \newtheorem{lemma}{Lemma}, {theorem}, {corollary},
+%  {remark}, and \newtheorem{openproblem}{Open Problem} -- the last
+%  matching the numbering stream of op:dictionary-lemmas if shared.
+%  All \cite keys are stubs; a commented bibliography list is at the
+%  end of this file. VERIFY flags mark memory-based citations.
+% =====================================================================
+%
+% ---------------------------------------------------------------------
+%  MAIN-BODY INSERT (place in sec:self-reference at the continuity
+%  passage; adjust the lead-in to the surrounding prose):
+%
+%  It would complete the arch of this section to prove that
+%  self-referential ignorance \emph{implies} continuity in Hardy's
+%  form -- his Axiom~5, a continuous reversible transformation between
+%  any two pure states -- so that the reconstruction theorems could be
+%  cited with no axiom left unexplained. A conclusive proof remains
+%  elusive. The obstruction, however, is no longer vague: the
+%  derivation decomposes into a chain in which every link but three is
+%  a theorem, and the three that remain are stated as sharply
+%  constrained open problems in Appendix~\ref{app:continuity-open}.
+%  That appendix also records why the tempting short routes fail
+%  (uncountability is not continuity; completeness is not
+%  connectedness; superposition alone does not force a continuum),
+%  which established mathematics bears on each link (automatic
+%  continuity, the classification of the completions of $\mathbb{Q}$,
+%  Specker sequences), and what would count as a proof.
+% ---------------------------------------------------------------------
+
+\section{Self-referential ignorance and Hardy's continuity axiom: status and open problems}
+\label{app:continuity-open}
+
+This appendix isolates the one arrow of the reconstruction this paper does not prove:
+that self-referential ignorance implies Hardy's continuity axiom \cite{hardy2001}
+(\emph{Axiom~5}: ``there exists a continuous reversible transformation on a system between
+any two pure states of that system''). The strategy of \S\ref{sec:self-reference} is to
+derive Hardy's premises and then cite his theorem for everything downstream --- complex
+Hilbert space, the quadratic norm, $U(n)$. Four of the five premises are treated in the
+main text; continuity is the residue. We state here exactly what is proved, exactly what
+is assumed, why the naive routes fail, and which sharply bounded open problems separate
+the current position from a theorem. The appendix is written to be self-contained, since
+we believe the question --- posed at this level of detail --- is new, and we would like it
+to be answerable by readers who do not share the framework's other commitments.
+
+\subsection{What ``continuity'' asserts: six inequivalent notions}
+\label{app:cont-ladder}
+
+Hardy's axiom does not assert the continuity of a function. It asserts the
+\emph{path-connectedness of a group action}: the reversible transformations form a group
+$G$ acting on the pure states, and any two pure states lie on a continuous $G$-path. At
+least six inequivalent notions circulate in informal discussions of ``continuity,'' and
+the failed short routes of \S\ref{app:cont-deadroutes} each conflate two of them:
+(i)~topological continuity of a map; (ii)~connectedness of a space, and the strictly
+stronger path-connectedness; (iii)~Cauchy completeness of a uniform space (every Cauchy
+sequence has a limit); (iv)~order-completeness plus the Archimedean property --- Dedekind's
+\emph{Stetigkeit}, which for ordered fields is categorical for $\mathbb{R}$;
+(v)~local compactness, the ambient property on which the classical structure theorems
+(Cartan, Baire, Haar) run; (vi)~analytic rigidity over $\mathbb{C}$, where the identity
+theorem makes a germ determine a function on a \emph{connected} domain.
+
+\begin{remark}[Three separating witnesses]\label{rem:witnesses}
+(a)~\emph{Complete $\neq$ connected}: $\mathbb{Q}_p$ is Cauchy-complete and totally
+disconnected; its additive group is moreover divisible, so completeness and divisibility
+together, without more, do not yield connectedness.
+(b)~\emph{Uncountable $\neq$ connected}: the Cantor set.
+(c)~\emph{Connected $\neq$ path-connected}: the $p$-adic solenoid, a compact connected
+abelian group with a dense proper path-component; a transformation group of solenoid type
+would satisfy every naive ``continuity'' demand and still violate Axiom~5 for pairs of
+states in different path-components. What excludes (a) at the group level is the
+Archimedean side of the fork of \S\ref{app:cont-scalar} (no-small-subgroups, in the sense
+of Hilbert's fifth problem \cite{gleason1952, montgomeryzippin}); what excludes (c) is
+the Lie structure supplied by Cartan's theorem once the group acts on a finite-dimensional
+real state body. Both exclusions therefore \emph{consume} the real scalars, whose
+derivation is Layer~1 below.
+\end{remark}
+
+\subsection{The two layers, and where hidden imports sit}
+\label{app:cont-layers}
+
+The owed arrow is two arrows. \emph{Layer~1 (scalars)}: why the probability scalars are
+$\mathbb{R}$ --- Dedekind-complete, Archimedean, connected --- rather than $\mathbb{Q}$,
+the computable reals, a hyperreal field, or a $p$-adic completion. \emph{Layer~2 (group)}:
+why, over those scalars, the reversible-transformation group is closed, divisible, and
+transitive, whence connected and path-connected (Theorem~\ref{thm:conditional} below).
+Keeping the layers separate exposes two hidden imports in the standard treatments. First,
+Hardy's Axiom~1 already assumes relative frequencies \emph{tend to definite limits} --- a
+limit-realisability premise of exactly the kind at issue. Second, Kolmogorov's axiom of
+countable additivity is literally his \emph{continuity} axiom, the one de Finetti rejected
+as non-operational \cite{kolmogorov1933, definetti}; the present framework takes the
+opposite side of that dispute, and holds that self-reference is what forces the
+completion de Finetti resisted. Both imports discharge to the same principle (P1 below).
+
+\subsection{Layer 1: which completion? The Accumulation Lemma}
+\label{app:cont-scalar}
+
+Probability values enter operationally as frequency ratios: rationals, refined without
+bound, never completed by any internal agent. If the scalar set is a completion of
+$\mathbb{Q}$, Ostrowski's theorem \cite{ostrowski1916} forces a fork: every nontrivial
+absolute value on $\mathbb{Q}$ is equivalent to the real one or to a $p$-adic one. The
+$p$-adic tine is not vacant --- Khrennikov's programme lives on it
+\cite{khrennikov-padic} --- so the Archimedean choice must be argued, not assumed. The
+super-task thread of \S\ref{sec:self-reference} supplies the argument.
+
+\begin{lemma}[Accumulation selects the Archimedean completion]\label{lem:accumulation}
+Consider the Thomson schedule $t_n = 1 - 2^{-n}$ \cite{thomson1954}. The schedule
+accumulates ($|t_n - 1| \to 0$) if and only if $|2^{-n}| \to 0$. This holds for the real
+absolute value; it fails for every other completion of $\mathbb{Q}$ and for every
+non-Archimedean ordered field: for $p$ odd, $|2^{-n}|_p = 1$ for all $n$; for $p = 2$,
+$|2^{-n}|_2 = 2^{n} \to \infty$; and in an ordered field with an infinitesimal
+$\varepsilon$ one has $0 < \varepsilon < 2^{-n}$ for all $n$, so $2^{-n} \not\to 0$ in the
+order topology. Consequently a scalar system in which the super-task can so much as
+accumulate carries the Archimedean absolute value, and its Cauchy completion is
+$\mathbb{R}$ --- uniquely, since $\mathbb{R}$ is the only complete Archimedean ordered
+field.
+\end{lemma}
+
+The lemma divides the labour exactly. The \emph{Archimedean} property (shared by
+$\mathbb{Q}$) is what lets super-tasks accumulate --- the textbook lamp's limit point
+$t=1$ is rational. \emph{Completeness} ($\mathbb{R}$ only) is what guarantees a terminal
+point for \emph{generic} super-tasks; \S\ref{app:cont-specker} exhibits the witness. Two
+further remarks. The uniformity is not conventional: closeness of frequencies means
+proportionally few discordant trials --- the order uniformity; $p$-adic closeness of
+counts (congruence modulo $p^n$) has no operational reading. And the framework's
+phase mechanism is Archimedean-specific: $\mathbb{Q}_p$ and its unit groups are totally
+disconnected, so no $p$-adic scalar system carries a continuous interpolating phase, a
+$U(1)$, or a winding integer (cf.\ Appendix~\ref{app:winding-number}).
+
+\subsection{Layer 2: the proved machinery}
+\label{app:cont-machinery}
+
+Let $K$ be the state body --- granting Layer~1, a compact convex set with nonempty
+interior in $\mathbb{R}^{K}$ --- and let $\mathrm{Sym}(K)$ be its (compact) group of
+affine automorphisms. Let $G_0 \subseteq \mathrm{Sym}(K)$ be the group of reversible
+transformations \emph{available} in the pre-FANOUT regime (composition and inverses of
+available transformations are available; reversibility is the regime's second face,
+\S\ref{sec:fanout-boundary}).
+
+\begin{lemma}[Closure preserves divisibility]\label{lem:closure-divisible}
+If $H$ is a divisible subgroup of a compact metrizable group, then $\overline{H}$ is
+divisible.
+\end{lemma}
+
+\begin{proof}
+Let $x = \lim_k h_k$ with $h_k \in H$, and fix $n$. Write $h_k = r_k^{\,n}$ with
+$r_k \in H$. By compactness pass to $r_{k_j} \to r \in \overline{H}$; by continuity of
+the power map, $r^{\,n} = \lim_j r_{k_j}^{\,n} = x$. (Dependent choice suffices
+throughout; no stronger choice principle is used in this appendix.)
+\end{proof}
+
+\begin{lemma}[Divisible and closed implies connected Lie]\label{lem:closedness}
+Let $G \le \mathrm{Sym}(K)$ be topologically closed and divisible. Then $G$ is a compact
+connected Lie group; in particular it is path-connected.
+\end{lemma}
+
+\begin{proof}
+Closed in compact is compact; a closed subgroup of the linear group $\mathrm{Sym}(K)$ is
+Lie with finitely many components (Cartan). The component group $\pi_0(G) = G/G_0$ is a
+finite quotient of a divisible group, hence divisible; a finite divisible group is
+trivial (with $|\pi_0| = m$, every $h$ satisfies $h^m = e$, so only $e$ admits an $m$-th
+root). Hence $G = G_0$ is connected, and a connected Lie group is path-connected.
+\end{proof}
+
+\begin{theorem}[Conditional derivation of Axiom 5]\label{thm:conditional}
+Assume Layer~1, and:
+\begin{itemize}
+\item[\textup{(P1)}] \emph{Descriptive closure.} The theory's transformation group is
+$G = \overline{G_0}$, the closure of the available group in $\mathrm{Sym}(K)$.
+\item[\textup{(P2$'$)}] \emph{Divisibility.} Every available transformation is realisable
+in $n$ equal available stages, for every $n$: $G_0$ is divisible.
+\item[\textup{(P3)}] \emph{No superselection.} $G$ acts transitively on the pure states
+(extreme points of $K$).
+\end{itemize}
+Then $G$ is a compact connected Lie group acting transitively on pure states, and for any
+two pure states $x, y$ there is a continuous path $t \mapsto g(t)$ of reversible
+transformations with $g(0) = e$ and $g(1)x = y$: Hardy's Axiom~5.
+\end{theorem}
+
+\begin{proof}
+$G$ is closed by (P1) and divisible by (P2$'$) with Lemma~\ref{lem:closure-divisible};
+Lemma~\ref{lem:closedness} makes it compact, connected, Lie, path-connected. By (P3)
+choose $g$ with $gx = y$ and a path from $e$ to $g$.
+\end{proof}
+
+\begin{remark}[A weaker premise buys less]\label{rem:fallback}
+Replacing (P2$'$) by the weaker \emph{no minimal step} --- the identity is not isolated in
+$G_0$, since a gap around ``do nothing'' would be a smallest detectable change, a
+self-clock --- still forces $\overline{G_0}$ to be non-discrete, hence of dimension
+$\ge 1$ with nontrivial identity component: continuous reversible paths \emph{exist}. But
+$\pi_0$ may survive, and Axiom~5 is then available only within path-components. The full
+axiom needs full divisibility. We record the gap rather than paper over it.
+\end{remark}
+
+\subsection{The premises: grounding and status}
+\label{app:cont-premises}
+
+\emph{(P1), descriptive closure,} is the framework-native premise. Its grounding is the
+founding obstruction of \S\ref{sec:self-reference}: no physical system can specify its
+own state to unbounded precision (Church--Turing; \cite{popper1950}; Lawvere's
+fixed-point form \cite{lawvere1969}). States and transformations are therefore
+finite-precision description-classes; a coherent family of ever-finer descriptions is a
+Cauchy class; and the space of Cauchy classes is complete \emph{by the universal property
+of completion} --- not because the world contains actual infinite limits, but because the
+theory's objects are descriptions-up-to-operational-indistinguishability. Three
+independent mathematical literatures corroborate the principle by deriving continuity
+from ``being given by data'': measurable homomorphisms of Polish groups are continuous
+(Steinhaus--Pettis--Christensen; survey \cite{rosendal2009}); every abstract homomorphism
+from a compact \emph{semisimple} Lie group into a compact group is continuous, so the
+topology of $SU(n)$ is remembered by its algebra (van der Waerden
+\cite{vanderwaerden1933}; cf.\ \cite{tsankov2013}); and in computable analysis and domain
+theory, \emph{computable implies continuous} is a theorem \cite{weihrauch2000,
+abramskyjung, smyth}. The tori are the pointed exception to the second face: $U(1)$ has
+discontinuous abstract automorphisms under choice, so the one component of quantum
+symmetry whose topology algebra does \emph{not} remember is the phase --- precisely the
+component this framework identifies with self-referential ignorance. The piece of
+topology that self-reference must personally supply is the piece that encodes it.
+(The same Andrew Gleason stands at both ends of this bridge: the no-small-subgroups case
+of Hilbert's fifth problem \cite{gleason1952}, and the frame-function theorem, whose
+analytic core is again continuity-from-additivity \cite{gleason1957}.)
+
+\emph{(P2$'$), divisibility,} is grounded in the anti-event. An un-happening with no
+distinguished intermediate stage must admit an $n$-th stage for every $n$; over
+$\mathbb{R}$ the anti-event $-1$ has no stage at all even for $n = 2$ --- $\sqrt{-1}$ is
+half an anti-event, and this, not calculational convenience, is where the scalars leave
+the real line. The minimal divisible group containing an element of order two is its
+injective hull, the Pr\"ufer group $\mathbb{Z}(2^{\infty})$: exactly the dyadic tower
+$\{\pm 1, \pm i, e^{\pm i\pi/4}, \dots\}$, i.e.\ the Thomson schedule's halvings read as
+phases. Its closure is $U(1)$. Thus the two premises (P2$'$)~then~(P1), applied to the
+single primitive $-1$, construct the phase group:
+\begin{equation}
+U(1) \;=\; \overline{\,\mathrm{divisible\ hull}(-1)\,}
+\;=\; \overline{\,\mathbb{Z}(2^{\infty})\,},
+\label{eq:dyadic-tower}
+\end{equation}
+and the same two premises, applied one level up to $G_0$, are the hypotheses of
+Lemma~\ref{lem:closedness}. One motor, two layers. What (P2$'$) still lacks is a
+\emph{derivation} from the regime's defining property; Open Problem~\ref{op:stage-lattice}
+states the candidate reduction.
+
+\emph{(P3), no superselection,} we expect to be a restatement of the regime's third face
+(``no classical record''): a superselection sector label would be a basis-free,
+measurement-free, absolute distinguished fact --- a classical observable commuting with
+everything, i.e.\ a record predating FANOUT. Open Problem~\ref{op:transitivity} asks for
+the orbit-level argument.
+
+\subsection{Why each premise is necessary: the foils}
+\label{app:cont-deadroutes}
+
+Each premise is calibrated against a live counterexample, and the counterexamples also
+close the tempting short routes.
+
+\emph{Superposition does not imply continuity.} Modal quantum theory
+\cite{schumacherwestmoreland2012} has superposition over finite fields and no continuity
+(and no probabilities). Spekkens's toy theory and the epistricted theories
+\cite{spekkens2007, spekkens2016} are \emph{ignorance-based and discrete}: the
+transformation group of a toy bit is finite, and the epistemic restriction is
+integer-quantised (knowing one quadrature costs exactly one bit of the other). These
+theories prove that ignorance in general does not force a continuum; the separating
+premise is (P2$'$), which their finite groups violate maximally (a finite group has no
+$n$-th roots beyond its exponent). Whether \emph{self-referential} ignorance can be
+similarly quantised is Open Problem~\ref{op:quantised}.
+
+\emph{Uncountability is not continuity, and the diagonal builds no completion.} Cantor's
+argument is non-exhaustion, not construction: given a listing it exhibits an unlisted
+element; it neither enumerates the gaps nor fills them, and uncountable totally
+disconnected sets abound (Remark~\ref{rem:witnesses}). The diagonal's true role in this
+programme is stated in \S\ref{app:cont-specker}.
+
+\emph{Completeness is not connectedness.} $\mathbb{Q}_p$ (Remark~\ref{rem:witnesses})
+--- hence the Archimedean selection of Lemma~\ref{lem:accumulation} is a premise doing
+real work, and $p$-adic probability \cite{khrennikov-padic} is the consistent mathematics
+of the road not taken.
+
+\emph{Connected is not path-connected.} The solenoid --- excluded here only because
+Cartan's theorem applies to groups of real matrices; that is, excluded by Layer~1.
+
+\subsection{Super-tasks, Specker sequences, and what the diagonal does}
+\label{app:cont-specker}
+
+Specker \cite{specker1949} constructed a computable, monotone, bounded sequence of
+rationals whose limit is not a computable real --- canonically
+$\sigma = \sum_{n \in K} 2^{-n}$ with $K$ the halting set. This is the Thomson lamp
+arithmetised: a dyadic super-task whose terminal value encodes halting information. It is
+the exact formal witness for the situation (P1) legislates: a describable Cauchy sequence
+whose limit the internal agent provably cannot realise. Three consequences. First, the
+completion demanded by (P1) necessarily contains non-computable points --- the computable
+reals are countable and Lebesgue-null --- so the continuity axiom is, on this reading,
+the demand that the transformation group contain its \emph{non-computable} limits:
+continuity is the topological face of the founding non-computability. Second, generic
+super-tasks \emph{are} diagonalisations: Specker's $\sigma$ is a single act that is at
+once a convergent super-task and an escape from every internal enumeration; the corpus
+slogan identifying the two is cashed at the level of objects, not merely of licences.
+Third, the record side has no canonical completion: infinite-time Turing machines
+\cite{hamkinslewis2000} complete every $\omega$-super-task only by \emph{convention}
+(the limsup rule assigns the lamp the value $1$; liminf would assign $0$) --- Benacerraf's
+arbitrariness \cite{benacerraf1962} formalised --- whereas the amplitude-side fixed point
+assigned in \S\ref{sec:fanout-boundary} is basis-free. Two ways to answer Thomson:
+legislation or superposition; only the second is coordinate-free.
+
+\subsection{Open problems}
+\label{app:cont-openproblems}
+
+\begin{openproblem}[Formalising descriptive closure]\label{op:fdp}
+State (P1) as a principle about descriptions --- e.g.\ ``the theory's objects are the
+finite-precision-specifiable classes, and its spaces the completions thereof'' --- and
+either (a) derive it from the self-specification obstruction with no further physical
+input, showing the closure $\overline{G_0}$ is the unique representative of $G_0$'s
+operational-indistinguishability class definable without choice principles beyond
+dependent choice; or (b) exhibit a countermodel: an operational theory whose
+transformation set is describable, dense in its closure, and defensibly \emph{not}
+closed. A solution to (a) turns Theorem~\ref{thm:conditional} into a derivation of
+Axiom~5 from self-reference modulo Problems~\ref{op:stage-lattice}
+and~\ref{op:transitivity}.
+\end{openproblem}
+
+\begin{openproblem}[The stage-lattice reduction: no records implies divisibility]
+\label{op:stage-lattice}
+Prove or refute: if some available transformation lacks an available $n$-th stage, then
+its achievable-stage structure is a distinguished discrete invariant of the theory ---
+a preferred-basis-like structure, hence a classical record --- contradicting the
+pre-FANOUT regime's defining property. A proof reduces (P2$'$) to the regime's third
+face, exactly as Problem~\ref{op:transitivity} reduces (P3), leaving
+Problem~\ref{op:fdp} as the single bridge from self-referential ignorance proper. The
+argument should have the shape of the preferred-basis proposition of
+\S\ref{sec:fanout-boundary}: discreteness is what a record is.
+\end{openproblem}
+
+\begin{openproblem}[Is self-referential ignorance quantised or divisible?]
+\label{op:quantised}
+The epistricted theories show ignorance \emph{can} come in integer units; Chaitin's
+$\Omega$ is maximally unknowable bit by bit. Show that \emph{pre-record} self-referential
+ignorance admits no minimal unit --- e.g.\ because any unit would be a standard, a stable
+copyable referent, hence a record --- so that bit-quantised ignorance ($\Omega$, FANOUT
+outcomes) is post-record and divisible ignorance (phase) is pre-record, consistently
+with the two-sided reading of the boundary. Alternatively, exhibit a discrete toy theory
+whose epistemic restriction is genuinely self-referential; this would refute the
+programme's strongest claim and is the honest falsifier.
+\end{openproblem}
+
+\begin{openproblem}[Transitivity from no records]\label{op:transitivity}
+Make rigorous: orbits of the compact group $G$ on pure states are closed; a proper
+invariant closed distinguished set of pure states defines a classical superselection
+observable; a superselection observable is a record predating any FANOUT; hence in the
+pre-FANOUT regime $G$ is transitive on pure states.
+\end{openproblem}
+
+\begin{openproblem}[The Lawvere unification]\label{op:lawvere}
+Lawvere proved the diagonal fixed-point theorem in cartesian closed categories
+\cite{lawvere1969} and, separately, characterised metric Cauchy completeness as
+representability of limit-bimodules in enriched category theory \cite{lawvere1973}.
+Conjecture: in a closed category with an amplitude object $A$ admitting a point-surjective
+self-describer $e : X \to A^{X}$ (the categorical form of inside/outside equivalence),
+the enriched homs into $A$ must be Cauchy-complete --- an unrepresented describable
+limit-bimodule yields a diagonalisation witness against point-surjectivity (``the
+description refers to a transformation that does not exist''). A proof would derive (P1)
+inside one mathematician's two theorems and would constitute the sought result in full.
+\end{openproblem}
+
+\subsection{Relation to existing work}
+\label{app:cont-related}
+
+Every individual mathematical ingredient above is classical: Cartan's closed-subgroup
+theorem; the Baire argument for countable compact groups; Ostrowski's classification;
+Specker's sequence; the automatic-continuity literature; the structure theory of compact
+groups \cite{hofmannmorris}. What we have not found anywhere is the \emph{question}: no
+reconstruction of quantum theory derives its continuity axiom from anything --- Hardy
+postulates Axiom~5 \cite{hardy2001}; Schack's four-axiom variant retains it
+\cite{schack2003}; continuous reversibility is likewise postulated by Dakić--Brukner and
+Masanes--M\"uller \cite{dakicbrukner2011, masanesmueller2011}, and the
+operational-probabilistic framework of Chiribella--D'Ariano--Perinotti \emph{assumes}
+topological closure of its procedure sets \cite{cdp2011} --- the assumption (P1) makes
+explicit and seeks to ground. The nearest programmes run adjacent arrows: computable
+analysis and domain theory prove computable-implies-continuous, but in a semantic
+category rather than an operational state space \cite{weihrauch2000, abramskyjung};
+Gisin's finite-information physics argues from finite information \emph{against} the
+completed continuum \cite{gisin2019, gisin2021} --- the reverse of the present arrow,
+which holds that finite description forces the completion \emph{as the description
+space}, importing the non-computable as superposition rather than expelling it; Svozil
+connects the lamp, diagonalisation, and superposition as fixed points, at the level of
+analogy \cite{svozil2009}; and the finite-precision Kochen--Specker debate
+\cite{meyer1999, kent1999, cliftonkent2000} is exactly a dispute about whether the
+completion carries physics its dense describable skeleton lacks --- this framework
+answers yes, and locates the content in self-reference. We therefore offer
+Problems~\ref{op:fdp}--\ref{op:lawvere} in the expectation that either they are new, or
+a reader will point us to their solutions; both outcomes advance the programme, and the
+problems are stated so that a specialist can engage each without adopting the framework
+whole.
+
+% ---------------------------------------------------------------------
+% BIBLIOGRAPHY STUBS (informal; VERIFY all at final drafting)
+% hardy2001: L. Hardy, Quantum Theory From Five Reasonable Axioms,
+%   arXiv:quant-ph/0101012 (2001).
+% schack2003: R. Schack, Quantum theory from four of Hardy's axioms,
+%   Found. Phys. 33, 1461 (2003); arXiv:quant-ph/0210017.
+% dakicbrukner2011: B. Dakic, C. Brukner, Quantum theory and beyond...,
+%   in Deep Beauty (ed. Halvorson), CUP (2011); arXiv:0911.0695.
+% masanesmueller2011: L. Masanes, M. Mueller, A derivation of quantum
+%   theory from physical requirements, New J. Phys. 13, 063001 (2011).
+% cdp2011: G. Chiribella, G. M. D'Ariano, P. Perinotti, Informational
+%   derivation of quantum theory, PRA 84, 012311 (2011).
+% lawvere1969: F. W. Lawvere, Diagonal arguments and cartesian closed
+%   categories, LNM 92 (1969); reprinted TAC.
+% lawvere1973: F. W. Lawvere, Metric spaces, generalized logic, and
+%   closed categories, Rend. Sem. Mat. Fis. Milano 43 (1973).
+% specker1949: E. Specker, Nicht konstruktiv beweisbare Saetze der
+%   Analysis, J. Symbolic Logic 14, 145-158 (1949).
+% weihrauch2000: K. Weihrauch, Computable Analysis, Springer (2000).
+% abramskyjung: S. Abramsky, A. Jung, Domain theory, in Handbook of
+%   Logic in Computer Science III (1994).
+% smyth: M. B. Smyth, Topology, in Handbook of Logic in Computer
+%   Science I (1992) -- opens as observable properties.
+% rosendal2009: C. Rosendal, Automatic continuity of group
+%   homomorphisms, Bull. Symbolic Logic 15 (2009).
+% vanderwaerden1933: B. L. van der Waerden, Stetigkeitssaetze fuer
+%   halbeinfache Liesche Gruppen, Math. Z. 36 (1933).
+% tsankov2013: T. Tsankov, Automatic continuity for the unitary group,
+%   Proc. AMS / arXiv:1109.1200 (VERIFY venue).
+% gleason1952: A. M. Gleason, Groups without small subgroups,
+%   Ann. Math. 56 (1952).
+% gleason1957: A. M. Gleason, Measures on the closed subspaces of a
+%   Hilbert space, J. Math. Mech. 6 (1957).
+% montgomeryzippin: D. Montgomery, L. Zippin, Topological
+%   Transformation Groups, Interscience (1955).
+% hofmannmorris: K. H. Hofmann, S. A. Morris, The Structure of Compact
+%   Groups, de Gruyter -- compact abelian: connected iff divisible
+%   (VERIFY theorem number).
+% ostrowski1916: A. Ostrowski, Ueber einige Loesungen der
+%   Funktionalgleichung..., Acta Math. 41 (1916).
+% kolmogorov1933: A. N. Kolmogorov, Grundbegriffe der
+%   Wahrscheinlichkeitsrechnung (1933), axiom V.
+% definetti: B. de Finetti, Theory of Probability, Wiley (1974) --
+%   finite additivity.
+% popper1950: K. Popper, Indeterminism in quantum physics and in
+%   classical physics I & II, BJPS 1 (1950). [project PDFs]
+% thomson1954: J. F. Thomson, Tasks and super-tasks, Analysis 15 (1954).
+% benacerraf1962: P. Benacerraf, Tasks, super-tasks, and the modern
+%   Eleatics, J. Phil. 59 (1962).
+% hamkinslewis2000: J. D. Hamkins, A. Lewis, Infinite time Turing
+%   machines, J. Symbolic Logic 65 (2000).
+% spekkens2007: R. W. Spekkens, Evidence for the epistemic view of
+%   quantum states: a toy theory, PRA 75, 032110 (2007).
+% spekkens2016: R. W. Spekkens, Quasi-quantization: classical
+%   statistical theories with an epistemic restriction (2016).
+% schumacherwestmoreland2012: B. Schumacher, M. Westmoreland, Modal
+%   quantum theory, Found. Phys. 42 (2012) (VERIFY year).
+% khrennikov-padic: A. Khrennikov, p-adic probability and statistics /
+%   Non-Archimedean analysis (VERIFY best citation).
+% meyer1999: D. A. Meyer, Finite precision measurement nullifies the
+%   Kochen-Specker theorem, PRL 83, 3751 (1999).
+% kent1999: A. Kent, Noncontextual hidden variables and physical
+%   measurements, PRL 83, 3755 (1999).
+% cliftonkent2000: R. Clifton, A. Kent, Simulating quantum mechanics by
+%   non-contextual hidden variables, Proc. R. Soc. A 456 (2000).
+% gisin2019: N. Gisin, Indeterminism in physics, classical chaos and
+%   Bohmian mechanics..., arXiv:1803.06824 / Erkenntnis (VERIFY).
+% gisin2021: N. Gisin, Indeterminism in physics and intuitionistic
+%   mathematics, Synthese 199 (2021).
+% svozil2009: K. Svozil, arXiv:0904.1649 (RECORDED in corpus).
+% =====================================================================

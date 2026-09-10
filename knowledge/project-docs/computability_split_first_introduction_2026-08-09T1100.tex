@@ -1,0 +1,174 @@
+% =====================================================================
+%  SPLICE: The computability split -- first-use introduction
+%  DATED 2026-08-09. Purpose: give the term a proper pedagogical
+%  introduction at its first load-bearing appearance. Recommended
+%  placement: opening of the Hopf-justification material, immediately
+%  before the stabiliser computation of Proposition \ref{prop:gsm};
+%  JS to confirm the seam. Sectioning level (\subsection) may need
+%  adjusting to the host section.
+%
+%  External labels referenced (verify all present in the corpus):
+%    sec:division-algebras, sec:self-reference, sec:fanout-boundary,
+%    prop:gsm, prop:ghz, prop:w-access, lem:cproj,
+%    app:setup, app:winding-number, lem:winding-number.
+%
+%  Citation keys used, already in the ledger:
+%    baez2002octonions, furey2012unified, furey2018three,
+%    krasnov2021spin9, duboisviolettetodorov2019exceptional,
+%    szangolies2025standardmodel.
+%  VERIFY-KEY (mint or confirm before compile; sourced from memory):
+%    gunaydingursey1973  (Gunaydin & Gursey, J. Math. Phys. 14, 1651)
+%    conwaysmith2003     (Conway & Smith, On Quaternions and
+%                         Octonions, A K Peters, 2003, Sect. 8.4)
+%
+%  Assumes the amsthm environment `definition' exists in the preamble
+%  alongside proposition/lemma; if not, add
+%    \newtheorem{definition}[theorem]{Definition}
+%  Pure ASCII throughout; British English; no bullets.
+%  REV 2026-08-09b: carpet / self-referential-imposition imagery
+%    installed after the sorting sentence, with sibling-instance
+%    caution; strike freely if the paper voice should stay plainer.
+% =====================================================================
+% ===== BEGIN SPLICE: computability-split-first-introduction 2026-08-09 =====
+
+\subsection{The computability split}
+\label{sec:computability-split}
+
+The octonions arrive from \S\ref{sec:division-algebras} with no marked
+directions. The automorphism group $G_2 = \operatorname{Aut}(\mathbb{O})$
+acts transitively on the unit imaginary octonions
+\autocite{baez2002octonions}, so every imaginary direction is the equal of
+every other; nothing in the algebra prefers one. The Standard Model gauge
+group is nevertheless about to appear, in Proposition~\ref{prop:gsm}, as
+the stabiliser of one of them. Between those two sentences sits the step on
+which every algebraic route from $\mathbb{O}$ to $G_{\mathrm{SM}}$ turns,
+and it deserves a more careful introduction than the literature usually
+gives it. Three questions want answers before the term below can carry
+weight: what exactly is being chosen, why some choice is unavoidable, and
+what --- in the present framework --- does the choosing.
+
+\begin{definition}[Computability split]
+\label{def:computability-split}
+Let $\ell$ be a unit imaginary octonion and $J = L_{\ell}$ left
+multiplication by $\ell$, a complex structure on $\mathbb{O}$. The
+\emph{computability split} is the $J$-invariant orthogonal decomposition
+\begin{equation}
+  \mathbb{O} \;\cong\; \mathbb{C}\ell \,\oplus\, \mathbb{C}^{3},
+  \label{eq:computability-split}
+\end{equation}
+in which $\mathbb{C}\ell = \operatorname{span}_{\mathbb{R}}\{1,\ell\}$ is
+called the \emph{record plane} and the six-dimensional complement,
+organised by $J$ into the three planes cut out by the Fano lines through
+$\ell$, is called the set of \emph{colour planes}. In the conventions of
+Appendix~\ref{app:setup}, $\ell = e_1$, with colour planes
+$\{e_2,e_3\}$, $\{e_4,e_5\}$ and $\{e_7,e_6\}$.
+\end{definition}
+
+The mathematics of the definition is classical: the stabiliser of $\ell$
+in $G_2$ is $SU(3)$, acting on the colour planes as the fundamental
+representation and on the record plane trivially, and that stabiliser
+computation is how Proposition~\ref{prop:gsm} will extract
+$G_{\mathrm{SM}}$. What is not classical is the name, and the name is the
+point of this subsection.
+
+The first two questions have the same answer across the division-algebra
+literature: what is chosen is a preferred complex direction, and the
+choice is unavoidable because the gauge group is its stabiliser --- no
+selection, no subgroup. Furey selects an idempotent whose stabiliser is
+this $SU(3)$ \autocite{furey2012unified,furey2018three}; Krasnov selects a
+complex structure $J_R$ on the $Spin(9)$ spinor space $\mathbb{O}^2$
+\autocite{krasnov2021spin9}; Dubois-Violette and Todorov select the
+subalgebra $\mathbb{C} \subset \mathbb{O}$
+\autocite{duboisviolettetodorov2019exceptional}; Szangolies selects the
+direction that reduces the three-qubit geometry from $9{+}1$ to $3{+}1$
+dimensions \autocite{szangolies2025standardmodel}; the tradition reaches
+back to G\"unaydin and G\"ursey \autocite{gunaydingursey1973}. In every
+case the selection is an input: the right structure emerges, but only by
+assuming a preference the algebra itself does not contain.
+
+The framework's answer to the third question is that no external hand is
+needed, because the selection is made by any completed measurement. This
+is a framework claim, not established mathematics, and we flag it as
+such. In the language of \S\ref{sec:self-reference} and
+\S\ref{sec:fanout-boundary}, an observer is a record-keeper: a system
+that copies information into classical, readable, erasure-priced form. A
+measurement, in the framework's geometric description, is the completion
+of a closed information loop on $S^7$, and completing such a loop is
+multiplication by a unit imaginary octonion. Which unit is immaterial in
+a precise sense: choosing one determines the complementary six, since the
+six left multiplications of the complement generate the Clifford algebra
+$\mathbb{C}\mathrm{l}(6)$ whose volume element is $L_{\ell}$ itself
+(Appendix~\ref{app:winding-number}) --- Conway and Smith's ``seven rights
+make a left'' \autocite{conwaysmith2003}. Different measurements select
+different $\ell$; all selections are related by $G_2$; and the
+stabiliser, hence the gauge group, is the same for every one. The
+derivation does not need a particular direction. It needs the fact of a
+direction, and the fact of a direction is what ``a measurement has
+occurred'' means. Within a fixed register the selection is pinned
+further still: the orbit-wide cancellations behind the confinement
+theorem hold only for the direction whose Fano blocks align with the
+real--imaginary pairing of the register's amplitudes (the alignment
+analysis following Lemma~\ref{lem:cproj}), so a register singles out its
+own $\ell$ rather than borrowing an arbitrary one.
+
+The name records what distinguishes the two summands relative to the
+observer doing the selecting. A record is built sequentially ---
+operations composed one after another --- and composition of operations
+is associative whatever the operations are, so a record can transcribe
+without loss only structure that is associatively organised. The record
+plane is such a structure: a commutative associative subalgebra in which
+a phase is a winding number and a winding number is, by
+Lemma~\ref{lem:winding-number}, a ladder count --- the natural currency
+of bookkeeping. It is the same plane in which the observer's own
+amplitudes were assembled in \S\ref{sec:self-reference}, the analytic
+continuation whose $2\pi\mathrm{i}$ ambiguities became windings. The
+complement is nothing of the kind. It is not closed under multiplication
+--- the colour planes multiply into one another and back into the record
+plane along the Fano lines --- and triples drawn from distinct colour
+planes feel the associator, so no single sequential transcript
+coordinatises it. Its content is carried collectively or not at all,
+which is the structural seed of confinement
+(Proposition~\ref{prop:ghz}). The split is a \emph{computability} split
+because it sorts the algebra by what a record can hold: the serialisable
+part is the record plane, and the remainder is the address to which the
+founding non-computability of \S\ref{sec:self-reference} is relocated.
+The diagonal argument guarantees a residue that no self-description
+captures; the split says where that residue lives.
+
+% CAUTION (house rule: each instance carries its own proof): the
+% paragraph below formalises the ALGEBRAIC instance of the
+% bump-in-the-carpet principle. The dynamical instance --- relocation
+% to the QM/GR interface at the FANOUT boundary, Paper 2's business ---
+% is a sibling requiring its own statement, not a citation to this one.
+This is the precise form of two heuristic images the framework has
+carried from the start. The first is a carpet nailed flat in a room:
+the room is what a record can hold, the carpet is the non-computability
+the diagonal argument guarantees, and a carpet that cannot be removed
+must bump somewhere. The split is the nailing, the colour planes are
+the bump's address, and the transitivity of $G_2$ is the statement that
+the bump can be relocated but never flattened --- every choice of
+$\ell$ sorts the same algebra and strands the same excess. The second
+image is the imposition of a non-self-referential structure on an
+underlying self-referential one: a record is a transcript licensed to
+forget bracketing --- associativity is exactly that licence --- while
+the octonions' bracketing is content, and the associator is what the
+imposition cannot flatten. The two images coincide because the
+framework's founding inference runs from self-reference to
+non-computability; the split gives them both their address.
+
+The strata should be kept distinct. The
+decomposition~\eqref{eq:computability-split}, the transitivity of $G_2$,
+and the stabiliser computation are established mathematics. The
+identification of the distinguished plane with the record plane, and of
+measurement as the selecting event, are framework claims; their
+consistency tests are the theorems the identification makes provable ---
+the sector populations of Propositions~\ref{prop:ghz}
+and~\ref{prop:w-access}, and the operator identity of
+Lemma~\ref{lem:winding-number}, which would have no reason to hold if
+the record plane and the algebra's selected plane were different planes.
+% OPTIONAL (JS to decide; strike if the EWSB material stays in a later
+% paper): The dynamical face of the selection --- its identification
+% with electroweak symmetry breaking, the Higgs expectation value as the
+% moment the direction freezes --- is developed in [TODO-REF].
+
+% ===== END SPLICE: computability-split-first-introduction 2026-08-09 =====

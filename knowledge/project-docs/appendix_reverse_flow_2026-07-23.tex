@@ -1,0 +1,276 @@
+% =====================================================================
+%  APPENDIX: The dictionary read in reverse -- Standard-Model facts as
+%  conjecture generators in multipartite entanglement theory.
+%  ADDED 2026-07-23. Consolidates the reverse-flow session of
+%  2026-07-23 into paper form.
+%
+%  PURPOSE: invitations, not results. Nothing in this appendix is posed
+%  as a well-defined open problem; the openproblem environment is
+%  deliberately NOT used, and no item carries a status above fenced
+%  RHYME. The appendix exists so that readers who do not share the
+%  framework's other commitments can take an area and run with it.
+%
+%  REQUIREMENTS: amsmath, amssymb; biblatex with \autocite (as main).
+%  No amsthm environments are used. No internal \ref's to main-text
+%  labels are used (deliberately, to avoid label-mapping debt); the
+%  only label defined here is app:reverse-flow and its subsections.
+%
+%  EXISTING library keys reused (verified against the master section
+%  file of 2026-06-08 and the fourth-qubit session doc of 2026-07-06):
+%    coeckekissinger2010compositional, durvidalcirac2000three,
+%    coffmankunduwootters2000, higuchisudbery2000, hubersiewert2026,
+%    gillardgresnigt2019three.
+%  NEW keys, delivered in reverse_flow_refs_2026-07-23.ris:
+%    bali2005string, barnum1996broadcast,
+%    pianihorodeckihorodecki2008local, thooft1980naturalness,
+%    grosswilczek1973ultraviolet, politzer1973reliable,
+%    vidal2007renormalization, vidal2000monotones, klyachko2006marginal,
+%    walter2013polytopes, verstraete2002four, jarlskog1985commutator,
+%    hickeygour2018imaginarity, wu2021imaginarity, horodecki1998bound,
+%    zyczkowski1998volume, dennis2002topological, brown2016memories,
+%    beane2019entanglement, zanardizalkafaoro2000entangling,
+%    lichenfisher2018zeno, skinnerruhmannahum2019measurement.
+%  POSSIBLE DUPLICATES to check on import: grosswilczek1973ultraviolet,
+%  politzer1973reliable, thooft1980naturalness may already exist under
+%  other keys if the asymptotic-freedom material cited them.
+%
+%  USAGE. Plain \section, no appendices wrapper in this file. In the
+%  main document, inside the existing appendices block:
+%      \input{appendix_reverse_flow_2026-07-23}
+% =====================================================================
+%
+% ---------------------------------------------------------------------
+%  OPTIONAL MAIN-BODY INSERT (one sentence for the conclusions, at the
+%  point where the open problems are surveyed; adjust the lead-in):
+%
+%  The dictionary, if it is right, is bidirectional: every empirically
+%  secure Standard-Model fact becomes a statement about multipartite
+%  entanglement, and Appendix~\ref{app:reverse-flow} records --- without
+%  posing them --- the areas where that reverse reading looks most
+%  likely to pay.
+% ---------------------------------------------------------------------
+
+\section{The dictionary read in reverse: areas for exploration}
+\label{app:reverse-flow}
+
+Everything quantitative in this paper runs in one direction: from the structure of
+multipartite entanglement to the structure of the Standard Model. If the dictionary is
+right, it is not a one-way street. Read through the same correspondence, every
+empirically secure fact about the Standard Model becomes a statement about multipartite
+entanglement --- and the Standard Model is the most precisely measured physical theory
+ever constructed, while the theory of multipartite entanglement, for all the depth of its
+classification results \autocite{durvidalcirac2000three, coeckekissinger2010compositional},
+is young and short of organising principles. This appendix records the areas where the
+reverse reading looks most likely to pay. Nothing below is a result, and nothing below is
+even a well-posed problem; that is deliberate. Each area is stated at the level of
+definiteness it actually possesses, with the literature a visitor would want, and the
+field is left open.
+
+One discipline governs the whole appendix. Where this paper \emph{derives} a
+Standard-Model fact --- the gauge group, the charge assignments, the tree-level
+$\sin^{2}\theta_{W}$ --- the reverse reading yields only a consistency check on the
+derivation. The genuinely new content lives where the Standard-Model fact is empirically
+secure but underived here: the dynamics of confinement, the running of the couplings, the
+magnitude of \textsc{cp} violation, the existence of a gravitating dark sector. Those are
+the facts treated below as generators.
+
+\subsection{A string tension for entanglement extraction}
+\label{app:rev-string}
+
+Kinematic confinement is a theorem of the main text: the GHZ class has zero external
+correlation budget and no singlet-direction access. The \emph{dynamical} face of
+confinement has never been translated. In QCD, pulling colour charges apart does not
+liberate them but creates pairs --- string breaking, observed on the lattice
+\autocite{bali2005string}. The reverse reading suggests a dynamical counterpart: any
+local protocol attempting to isolate one party of a GHZ-class state should either fail or
+generate fresh GHZ triples, at a resource cost growing with the operational separation
+--- a string tension for entanglement extraction. What ``separation'' means operationally
+(circuit distance? the number of intervening FANOUT events?) is exactly the kind of
+question we decline to settle here. A toy model exhibiting a linear cost law would
+already be informative, and a proof that no such law can exist would locate precisely
+where the dictionary's dynamical extension breaks. Monogamy
+\autocite{coffmankunduwootters2000} supplies the kinematics; the dynamics is open
+country.
+
+\subsection{What confinement lets you broadcast}
+\label{app:rev-broadcast}
+
+Operationally, confinement is the statement that only colour-singlet combinations are
+ever classically recorded. The main text reads classical recording as FANOUT and reads
+the broadcastable content of a quantum description as an invariant ring. The natural
+generalisation is that the FANOUT-broadcastable content of a multipartite entanglement
+class is the invariant ring of that class's stabiliser. If true, this would refine the
+no-broadcasting theorem \autocite{barnum1996broadcast} and its local-broadcasting
+sharpening \autocite{pianihorodeckihorodecki2008local} class by class, with the GHZ
+class --- whose stabiliser is explicit --- the obvious first case. Whether the
+refinement holds, and whether it reproduces the quantum-Darwinism account of which
+observables proliferate into records, are both unexplored.
+
+\subsection{Anomaly cancellation as circuit bookkeeping}
+\label{app:rev-anomaly}
+
+The Standard Model's anomaly conditions --- per generation, $\sum Y = \sum Y^{3} = 0$
+over the fermion content --- constrain which charges may \emph{coexist}, and 't~Hooft's
+matching condition \autocite{thooft1980naturalness} makes the constraint stable under
+change of scale. Pulled back through the dictionary, this suggests sum rules on closed
+circuits: a reversible network with no external legs, decomposed into the Bell, GHZ and
+W primitives whose compositional completeness Coecke and Kissinger proved
+\autocite{coeckekissinger2010compositional}, should satisfy conservation laws over the
+class invariants of its components, and the laws should survive blocking. An invariant
+protected under both local operations and coarse-graining is exactly the tool the
+many-body community wants for classifying phases by their entanglement; small closed ZX
+diagrams are the obvious laboratory. Which invariants, and which decomposition, we do
+not say --- in part because the charge assignments are derived rather than imported in
+this paper, so the honest reverse content is the closed-circuit \emph{form} of the
+constraint, not its coefficients.
+
+\subsection{Beta functions as entanglement-renormalisation flow}
+\label{app:rev-beta}
+
+Asymptotic freedom \autocite{grosswilczek1973ultraviolet, politzer1973reliable} is not
+derived in this paper, so the measured running of $\alpha_{s}$ is clean input. Read
+backwards, it should predict how the density of genuinely tripartite correlation flows
+under blocking in an entanglement-renormalisation scheme
+\autocite{vidal2007renormalization}: logarithmically, with a coefficient fixed by
+$b_{0} = 11 - \tfrac{2}{3}n_{f}$. Even the sign is untested --- does GHZ-type
+correlation density grow toward the infrared, as confinement suggests, in any MERA whose
+disentanglers are restricted to the dictionary's primitives? A numerical answer either
+way would be the first contact between the renormalisation group of a gauge theory and
+the renormalisation of entanglement made through this correspondence, rather than
+through holography.
+
+\subsection{A monotone calibrated in MeV}
+\label{app:rev-monotone}
+
+Multipartite entanglement lacks an agreed canonical measure; what any acceptable measure
+must satisfy was axiomatised long ago \autocite{vidal2000monotones}. The mass functional
+of this paper --- geodesic distance against the selected direction --- is a definite
+functional on states whose spectrum on the physical classes is experimentally calibrated
+at the per-cent level. The unexamined question is whether it is, or bounds, an
+entanglement monotone: non-increasing under local operations and classical
+communication. A numerical monotonicity scan over random states and random LOCC maps is
+an afternoon's work, and either outcome is interesting. A pass would hand entanglement
+theory a preferred multipartite measure with an experimentally measured spectrum; the
+failure pattern of a fail --- which operations break monotonicity, and whether they
+correspond to anything physical --- would be data about the dictionary itself.
+
+\subsection{Charges as invariants, and the polytopes}
+\label{app:rev-polytopes}
+
+The three-tangle already separates the confined class from the free one. The dictionary
+suggests that \emph{every} conserved charge of the Standard Model should pull back to a
+computable invariant of entanglement classes, with charge quantisation appearing as the
+prediction that the invariants take discrete spectra on physical configurations. The
+natural home for this is the entanglement-polytope programme
+\autocite{klyachko2006marginal, walter2013polytopes}, in which one-body marginal spectra
+classify multiparticle entanglement --- through the dictionary, precisely single-particle
+quantum numbers classifying particle content. The rigidity of the Standard Model's
+charge assignments would then translate into predicted vertex structure for higher-party
+polytopes, in a regime where the polytopes are largely uncomputed.
+
+\subsection{Flavour as a measured chart of the four-qubit landscape}
+\label{app:rev-flavour}
+
+Four qubits can be entangled in nine different ways \autocite{verstraete2002four}, and
+no four-qubit state is maximally entangled across every bipartition
+\autocite{higuchisudbery2000, hubersiewert2026}. The companion programme flagged in the
+interactions section runs the forward direction: mixing forced by the AME deficit,
+generations from the sedenion doubling \autocite{gillardgresnigt2019three}. The reverse
+direction is available to anyone, with no commitment to that programme: take the
+measured Wolfenstein and PMNS parameters as experimental data \emph{about} the geometry
+of the four-qubit landscape near the frustration optimum, ask which of the nine families
+the flavour configuration inhabits, and let that family's invariants return predictions.
+On this reading, flavour physics is the most precisely measured four-party entanglement
+experiment ever performed, and nobody has yet looked at it as one.
+
+\subsection{CP violation as imaginarity}
+\label{app:rev-cp}
+
+The magnitude of \textsc{cp} violation is not derived here, so it too is clean input.
+Its invariant form is Jarlskog's rephasing-invariant quartic
+\autocite{jarlskog1985commutator}, and its natural entanglement-theoretic home is the
+young resource theory of imaginarity \autocite{hickeygour2018imaginarity,
+wu2021imaginarity}, which quantifies what a state's description needs beyond the reals.
+The area: whether the Jarlskog quartic is the canonical conjugation-sensitive monotone
+at four parties, and whether the chirality of physically realisable four-party
+configurations is bounded by the unitarity maximum $J \leq 1/(6\sqrt{3})$. Any progress
+here would also bear on the chirality question this paper leaves open in the dictionary
+lemmas.
+
+\subsection{Electroweak decoherence spectroscopy}
+\label{app:rev-ew}
+
+This paper reads mass as debt, and debt as fragility. The photon is the unbroken,
+massless combination of the electroweak quartet; the $Z$ is the broken, massive one.
+Read backwards: the two orthogonal combinations of bipartite correlation at the
+$\mathbb{C}\otimes\mathbb{H}$ level should decohere at systematically different rates,
+with the unbroken combination protected and the ratio tied to $\cos\theta_{W}$. We know
+no mechanism theorem linking mass to decoherence rate, and we flag the idea at
+correspondingly low status; but the experiment requires no theory at all. Prepare the
+quartet structure on any noisy processor, track both combinations under the native
+noise, and see whether the unbroken direction lives longer. It is the kind of
+measurement a small hardware notebook could perform this year.
+
+\subsection{Bound entanglement and the gauge-blind sector}
+\label{app:rev-bound}
+
+In the dictionary a gauge boson is a bipartite (Bell-class) edge, so distillable
+entanglement --- extractable Bell pairs \autocite{horodecki1998bound} --- is precisely
+gauge-visible correlation. Bound entanglement, entangled but undistillable, is then
+correlation with no gauge edge available: matter that correlates without coupling to any
+gauge channel --- structurally dark. The geometry of the separable and bound sets
+\autocite{zyczkowski1998volume} thereby acquires an unexpected phenomenological
+interest. Is bound entanglement generic at many parties, as the dark sector's abundance
+would suggest? Does the known activation of bound entanglement have a portal analogue?
+We record the rhyme and nothing more.
+
+\subsection{A confining sector as a quantum memory}
+\label{app:rev-memory}
+
+Confinement plus a mass gap, read as code properties: logical information stored in the
+gauge-invariant sector, non-singlet errors energetically penalised, and the logical
+operators the colour-singlet composites --- a baryon as a weight-three composite of GHZ
+primitives, a meson as a GHZ primitive against its conjugate. Whether such a sector is a
+self-correcting quantum memory at finite temperature is then a sharp question aimed at a
+famous one: self-correction is established in four dimensions
+\autocite{dennis2002topological} and open or obstructed below
+\autocite{brown2016memories}. The dictionary at least says where to look: networks of
+GHZ primitives under the budget-saturation constraint of the main text. A sharp negative
+would illuminate both sides.
+
+\subsection{The vertex set as a gate library}
+\label{app:rev-gates}
+
+One beachhead already exists in the literature, found from the physics side: low-energy
+strong-interaction scattering suppresses entanglement generation, and the suppression
+correlates with an emergent symmetry \autocite{beane2019entanglement}. The dictionary
+suggests the systematic version. The images of the Standard-Model vertices form a small
+gate library, and their entangling powers \autocite{zanardizalkafaoro2000entangling}
+should sit at values fixed by the framework's constants --- the fractions $\tfrac{2}{9}$
+and $\tfrac14$ recur throughout this paper, and computing the entangling power of the
+vertex gates against them is a day's numerics. If the values land, the Standard Model's
+interaction strengths acquire an operational meaning inside quantum information; if they
+do not, the vertex-image construction is wrong in an instructive way.
+
+\subsection{Symmetry breaking as a measurement-induced transition}
+\label{app:rev-mipt}
+
+The haziest entry, recorded because two communities are adjacent and apparently unaware
+of each other. Measurement-induced phase transitions \autocite{lichenfisher2018zeno,
+skinnerruhmannahum2019measurement} tune between entangling unitaries and disentangling
+measurements; FANOUT density is this framework's native version of the tuning parameter.
+The electroweak vacuum, in the dictionary, is a condensate of the product class. The
+guess: the Standard Model's breaking pattern predicts the order-parameter structure of a
+measurement-induced transition --- condensation of the product class with a residual
+unbroken correlation subgroup --- and possibly a critical FANOUT density expressible in
+the framework's constants. We can defend no part of this beyond the observation that
+both subjects are, at bottom, about where entanglement goes when copying wins.
+
+\subsection*{Coda}
+
+None of the above carries a status above fenced rhyme, and none is posed; that is the
+point. The forward direction of this paper took two decades because the dictionary had
+to be built before it could be read. The reverse direction requires only that the
+dictionary be read the other way, and it can be read by anyone. We would be glad to hear
+from readers who take any of these up --- and gladder still to be told which of them
+fail.

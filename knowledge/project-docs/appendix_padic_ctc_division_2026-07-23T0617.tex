@@ -1,0 +1,526 @@
+% =====================================================================
+%  APPENDIX: The non-Archimedean shadow -- supertasks, closed causal
+%  loops, and the division-algebra ledger at the finite places
+%  ADDED 2026-07-23. Writes up, as an invitation to the community, the
+%  p-adic / CTC / division-algebra correspondences developed in the
+%  session of 2026-07-23. Companion to the open-problem document
+%  open_problem_adelic_mass_constraints.md (whose Problems 2, 4(b),
+%  4(c) and minimal-progress criterion (B) are engaged below, without
+%  upgrading the status of its conjectures) and to the continuity
+%  appendix app:continuity-open, whose Accumulation Lemma
+%  (lem:accumulation), separating witnesses (rem:witnesses),
+%  Archimedean fork (app:cont-scalar) and dyadic-tower construction
+%  (eq:dyadic-tower) are cross-referenced and MUST be present in the
+%  same document.
+%  Requires (amsthm): lemma, theorem, corollary, remark, openproblem
+%  as declared for app:continuity-open, plus
+%  \newtheorem{proposition}[theorem]{Proposition} if not already
+%  declared (VERIFY against the master preamble).
+%  External labels assumed from the master file: sec:self-reference,
+%  sec:fanout-boundary, sec:born, sec:hopf (VERIFY the last two --
+%  the same mapping task as the Jaynes appendix).
+%  Citations use \autocite per house convention. Keys tagged NEW in
+%  the trailer block are supplied in the accompanying batch
+%  refs_padic_ctc_division_2026-07-23T0617.ris; keys tagged EXISTING
+%  are assumed already in the master bibliography (VERIFY each).
+% =====================================================================
+%
+% ---------------------------------------------------------------------
+%  MAIN-BODY INSERT (place in sec:self-reference, at the discussion of
+%  negative probability and supertasks; adjust the lead-in):
+%
+%  The analytic continuation that carries Shannon's measure to complex
+%  and negative values is the Archimedean route to a pre-record
+%  ledger. Ostrowski's fork offers a second route: Khrennikov's
+%  p-adic probability theory realises negative probabilities as
+%  honest limits of relative frequencies in the non-Archimedean
+%  completions, where a negative integer is written with infinitely
+%  many digits to the left --- the completed value of a supertask of
+%  borrowing. Appendix~\ref{app:padic-shadow} develops the
+%  correspondence: which supertasks converge at which places, why the
+%  closed-loop reading of measurement acquires contractive fixed
+%  points p-adically, how Hilbert reciprocity forces the
+%  division-algebra obstructions of the main text to balance across
+%  the places with the prime two as Hamilton's partner, and six open
+%  problems inviting the p-adic and division-algebra communities to
+%  meet.
+% ---------------------------------------------------------------------
+
+\section{The non-Archimedean shadow: supertasks, closed loops, and the division-algebra ledger at the finite places}
+\label{app:padic-shadow}
+
+The framework's record layer is Archimedean by argument, not habit:
+Lemma~\ref{lem:accumulation} selects the real completion of $\mathbb{Q}$ because the
+Thomson halving schedule accumulates there and nowhere else, and the exclusions of
+Remark~\ref{rem:witnesses} then consume those real scalars. But the road not taken at
+Ostrowski's fork is not empty. Khrennikov's $p$-adic probability theory
+\autocite{khrennikov1995} is its consistent mathematics, realising negative probabilities
+as honest limits of relative frequencies in the non-Archimedean topologies --- with the
+striking feature, noted in the main text, that a negative integer's $p$-adic expansion
+carries infinitely many digits to the \emph{left}, so that writing down $-1$ is already
+the completed value of a supertask of borrowing. Historically the two tines were offered
+as rivals, $p$-adic quantum mechanics competing with complex quantum mechanics for the
+role of true home of the theory, and the proposal found little uptake. This appendix
+takes the opposite view: the tines have complementary jobs. Records, whose statistics
+are counts of copies, must live at the Archimedean place; the pre-record ledger, where
+the framework's sign cancellations are thermodynamically free, owes Archimedes nothing;
+and the adelic product formula $\prod_v |x|_v = 1$ \autocite{ostrowski1916} is the
+consistency condition binding the two descriptions of one bookkeeping, in the register
+of the adelic programme of Vladimirov, Volovich and Dragovich
+\autocite{vladimirovvolovich1989, dragovich1995}.
+
+What follows contains two elementary lemmas and two propositions (proved), one theorem
+compiled from classical local--global algebra (cited, not reproved), one corollary, and
+six open problems. As throughout the corpus, RHYME marks a resemblance offered for
+interrogation, not evidence; CANDIDATE marks a framework reading of a theorem; nothing
+below upgrades the status of the adelic mass-consistency conjecture, though one of its
+minimal-progress criteria is discharged by citation in \S\ref{app:padic-ledger}. The
+problems are stated so that a specialist can engage each without adopting the
+framework's other commitments, in the manner of
+Appendix~\ref{app:continuity-open}.
+
+\subsection{Two supertasks, two tines}
+\label{app:padic-supertasks}
+
+Lemma~\ref{lem:accumulation} concerns the halving schedule: infinitely many digits
+completed to the \emph{right}, convergent at the Archimedean place alone. Its dual
+concerns doubling.
+
+\begin{lemma}[The doubling schedule converges only $p$-adically]\label{lem:doubling}
+Fix a prime $p$ and consider $\sum_{k \ge 0} (p-1)\,p^{k}$, with partial sums
+$s_n = p^{n+1} - 1$. The series diverges in $\mathbb{R}$ and in every
+$\mathbb{Q}_{\ell}$ with $\ell \ne p$; in $\mathbb{Q}_p$ it converges, with
+\begin{equation}
+\sum_{k=0}^{\infty} (p-1)\,p^{k} \;=\; -1,
+\qquad\text{in particular}\qquad
+1 + 2 + 4 + 8 + \cdots \;=\; -1 \ \text{ in } \mathbb{Q}_2.
+\label{eq:fanout-tally}
+\end{equation}
+Moreover $p^{n} \to 0$ in $\mathbb{Q}_p$.
+\end{lemma}
+
+\begin{proof}
+Real divergence: the partial sums are monotone and unbounded. In $\mathbb{Q}_{\ell}$
+with $\ell \ne p$ the terms have constant nonzero absolute value
+$|(p-1)p^{k}|_{\ell} = |p-1|_{\ell}$, and a series in a non-Archimedean field converges
+only if its terms tend to zero \autocite{gouvea1997}. In $\mathbb{Q}_p$,
+$|s_n - (-1)|_p = |p^{n+1}|_p = p^{-(n+1)} \to 0$.
+\end{proof}
+
+\begin{remark}[Digits and directions]\label{rem:digits}
+A real number completes infinitely many digits rightward; the Thomson schedule of
+Lemma~\ref{lem:accumulation} is that completion read as a schedule
+\autocite{thomson1954}. A $p$-adic integer completes infinitely many digits leftward;
+the expansion $-1 = \cdots(p-1)(p-1)(p-1)$ is Lemma~\ref{lem:doubling} read as digits,
+the carry propagated forever. Ostrowski's fork is thus a choice of \emph{direction}:
+which of the two digit-infinities is permitted to terminate. A negative integer,
+$p$-adically, is not a primitive but the completed value of a supertask of borrowing
+--- creation from nothing, in the sense of the classical supertask literature
+\autocite{laraudogoitia1998}, in arithmetic rather than mechanical dress.
+\end{remark}
+
+\begin{lemma}[FANOUT-blindness of the finite places]\label{lem:fanout-blind}
+An absolute value on $\mathbb{Q}$ is non-Archimedean if and only if $|n| \le 1$ for
+every integer $n$.
+\end{lemma}
+
+\begin{proof}
+Standard; the nontrivial direction is the binomial estimate \autocite{gouvea1997}.
+\end{proof}
+
+The Archimedean axiom is the statement that repetition accumulates:
+$|1 + 1 + \cdots + 1|$ is unbounded. Repetition of a token is precisely what FANOUT
+(\S\ref{sec:fanout-boundary}) outputs, and frequencies are counts of copies. The record
+layer is therefore not merely permitted to be Archimedean; counting forces it --- the
+Accumulation Lemma seen from the copy side. Conversely, by Lemma~\ref{lem:fanout-blind}
+the finite places are \emph{FANOUT-blind}: copying never increases magnitude there, and
+by Lemma~\ref{lem:doubling} an unbounded doubling cascade has, $2$-adically, a record
+count tending to zero and a cumulative tally converging to minus one.
+Equation~\eqref{eq:fanout-tally} is this appendix's emblem: unbounded copying, tallied
+at the FANOUT-blind place proper to doubling, is finite, convergent --- and negative.
+We record the identification as STRUCTURAL: it rereads Ostrowski's dichotomy,
+Khrennikov's frequency theory (collectives whose relative frequencies stabilise
+$p$-adically though not really \autocite{khrennikov1995}), and the framework's Landauer
+accounting (extensive erasure costs are Archimedean counting; pre-FANOUT sign
+cancellation is free exactly where repetition does not accumulate) as three faces of
+one fork.
+
+\begin{openproblem}[Measurement as Archimedeanisation]\label{op:padic-frequency}
+Formulate the FANOUT criterion inside $p$-adic frequency theory: show that a collective
+admits Archimedean stabilisation of its relative frequencies precisely when its
+outcomes are copied records, and exhibit at least one of the framework's pre-FANOUT
+sign cancellations as a collective that stabilises $p$-adically in Khrennikov's sense.
+Progress in either direction is informative. A worked example would give the
+pre-record ledger a non-Archimedean probability semantics requiring no analytic
+continuation; a proof that the framework's cancellations never stabilise $p$-adically
+would separate the two routes to negative probability cleanly.
+\end{openproblem}
+
+\subsection{One fixed point, two temperaments}
+\label{app:padic-carry}
+
+\begin{proposition}[The carry map]\label{prop:carry}
+Let $f(x) = px + (p-1)$. On $\mathbb{Z}_p$, $f$ is a contraction with constant
+$p^{-1}$; its unique fixed point is $-1$, and the orbit of $0$ is
+$f^{n}(0) = p^{n} - 1 \to -1$. On $\mathbb{R}$, the same map is expanding with constant
+$p$; the fixed point $-1$ is repelling, and the orbit of $0$ diverges.
+\end{proposition}
+
+\begin{proof}
+$|f(x) - f(y)|_p = |p|_p\,|x - y|_p = p^{-1}|x - y|_p$; Banach's theorem on the
+complete ultrametric space $\mathbb{Z}_p$ gives a unique fixed point, which solves
+$x = px + (p-1)$, that is $x = -1$; induction gives $f^{n}(0) = p^{n} - 1$. Over
+$\mathbb{R}$ the Lipschitz constant is $p > 1$ and the orbit of $0$ is
+$p^{n} - 1 \to \infty$.
+\end{proof}
+
+\begin{remark}[Hensel]\label{rem:hensel}
+Hensel's lemma is the general machine of the same kind: approximate self-consistency
+modulo $p$ lifts, by ultrametric contraction, to exact self-consistency in
+$\mathbb{Z}_p$ \autocite{gouvea1997, serre1973}.
+\end{remark}
+
+The main text models a measurement outcome as computationally indistinguishable from
+information generated at the fixed point of a closed causal loop
+(\S\ref{sec:self-reference}; \autocite{deutsch1991, aaronsonwatrous2009}). Deutsch's
+consistency condition $\rho = \Phi(\rho)$ is solved over $\mathbb{R}$ by a compactness
+argument --- Brouwer's theorem on the convex body of density operators --- which
+certifies existence without exhibiting convergence; the supertask reading of the same
+situation \autocite{laraudogoitia1998} is exactly the divergent Archimedean iteration.
+Proposition~\ref{prop:carry} displays the two temperaments on the simplest
+self-consistency equation there is: one equation, one fixed point, repelling at the
+Archimedean place and attracting at the finite one. We fence the reading as RHYME:
+\emph{what is a paradox at the Archimedean place is an attractor at the finite
+places.} A closed timelike curve and a $p$-adic metric are, on this reading, two
+devices for rendering a self-referential equation consistent --- the first geometric
+(impose the fixed point on a loop), the second analytic (complete in the topology
+where the iteration contracts).
+
+\begin{openproblem}[Deutsch consistency as Hensel lifting]\label{op:padic-hensel}
+Characterise the Deutsch-type self-consistency maps $\Phi$ that become contractions in
+a suitable $p$-adic operator framework, so that their fixed points are delivered
+constructively by Banach--Hensel iteration rather than existentially by Brouwer. The
+$p$-adic dynamics literature \autocite{khrennikovnilsson2004} classifies attracting
+fixed points of polynomial and monomial maps on $\mathbb{Z}_p$; the question is which
+physically meaningful consistency conditions fall in the attracting class, with
+Proposition~\ref{prop:carry} as the seed example. A positive answer would give the
+closed-loop reading of measurement a constructive backend at the finite places.
+\end{openproblem}
+
+\subsection{The division-algebra ledger}
+\label{app:padic-ledger}
+
+The main text's spine runs from closed-loop consistency through parallelisable spheres
+to the Hurwitz tower $\mathbb{R} \subset \mathbb{C} \subset \mathbb{H} \subset
+\mathbb{O}$ \autocite{hurwitz1898, adams1960}. That tower has always been read at the
+real place. Classical local--global algebra reads it at all places at once, and the
+result is a ledger. Write $(a,b)_v$ for the Hilbert symbol of
+$a, b \in \mathbb{Q}^{\times}$ at a place $v$.
+
+\begin{theorem}[The ledger at the finite places; classical]\label{thm:ledger}
+\begin{itemize}
+\item[\textup{(i)}] \emph{Reciprocity.} $\prod_v (a,b)_v = 1$: the product formula for
+Hilbert symbols, equivalent to quadratic reciprocity \autocite{serre1973}.
+\item[\textup{(ii)}] \emph{Hamilton's partner.} $(-1,-1)_v = -1$ exactly for
+$v \in \{2, \infty\}$; hence the rational Hamilton algebra $(-1,-1)_{\mathbb{Q}}$ is a
+division algebra at precisely the real place and the prime two \autocite{serre1973}.
+\item[\textup{(iii)}] \emph{Even ramification.} A quaternion algebra over $\mathbb{Q}$
+is a division algebra at a finite set of places of even cardinality, and is determined
+up to isomorphism by that set (Albert--Brauer--Hasse--Noether)
+\autocite{brauerhassenoether1932, alberthasse1932}.
+\item[\textup{(iv)}] \emph{Local uniqueness.} Each $\mathbb{Q}_p$ carries exactly one
+quaternion division algebra up to isomorphism; for odd $p$ it may be presented as
+$(u, p)$ with $u$ a non-square unit \autocite{serre1973}.
+\item[\textup{(v)}] \emph{No local octonions.} Every quadratic form over $\mathbb{Q}_p$
+in five or more variables is isotropic \autocite{serre1973}; octonion algebras over a
+field are classified by their norm forms and are division precisely when the norm form
+is anisotropic \autocite{jacobson1958, springerveldkamp2000}; hence every octonion
+algebra over every $\mathbb{Q}_p$ is split.
+\item[\textup{(vi)}] \emph{Archimedean exclusivity.} Over $\mathbb{Q}$ there are
+exactly two octonion algebras --- the split algebra and the classical division
+octonions --- and they are distinguished at the real place alone
+\autocite{springerveldkamp2000}.
+\end{itemize}
+\end{theorem}
+
+\begin{corollary}[The standard tower at the finite places]\label{cor:cd-tower}
+Run the Cayley--Dickson construction over $\mathbb{Q}_p$ with parameter $-1$ at every
+doubling. For odd $p$ the tower splits already at the quaternion rung, since
+$(-1,-1)_p = 1$; for $p = 2$ it is a division tower through the quaternions and splits
+at the octonion rung. At no finite place does the tower reach a division octonion
+algebra.
+\end{corollary}
+
+\begin{proof}
+Immediate from Theorem~\ref{thm:ledger}(ii) and (v).
+\end{proof}
+
+Three readings. \emph{First, a criterion discharged.}
+Corollary~\ref{cor:cd-tower} settles, by citation rather than new computation, the
+minimal-progress criterion of the adelic constraints programme that asked at which
+stage the Cayley--Dickson construction over $\mathbb{Q}_2$ ceases to produce division
+algebras --- and it shows the failure mode differs in kind from the real case. At the
+real place the tower's termination is topological, Hopf invariant one
+\autocite{adams1960}, and strikes one rung \emph{later}, at the sedenions; at the
+finite places it is arithmetic, isotropy forced by the $u$-invariant
+$u(\mathbb{Q}_p) = 4$ \autocite{lam2005, serre1973}, and strikes one rung
+\emph{earlier}. Whether the Hopf-invariant-one obstruction has a motivic or etale
+avatar at the finite places we leave untouched.
+
+\emph{Second, conservation of obstruction.} Reciprocity, Theorem~\ref{thm:ledger}(i),
+is a conservation law: the local obstructions of a quaternion algebra multiply to one,
+so obstruction is never created or destroyed, only relocated among the places --- the
+corpus's bump in the carpet, adelic edition. Hamilton's noncommutativity debt at the
+real place is necessarily paired, and its partner, by (ii), is the prime two: the
+binary place. The octonionic obstruction, by contrast, cannot be shared: (v) and (vi)
+locate it at the Archimedean place alone.
+
+\emph{Third, a CANDIDATE reading in the dictionary.} In the entanglement dictionary of
+the main text the quaternionic layer carries the bipartite and measurement structure
+($S^3$, $SU(2)$) and the octonionic layer the irreducibly tripartite GHZ structure.
+The ledger then says: the quaternionic layer possesses a $2$-adic shadow --- the
+compact, totally disconnected unit group of the $2$-adic quaternion division algebra
+--- while the GHZ layer possesses none. CANDIDATE, since what is being read is the
+dictionary entry, not the algebra.
+
+\begin{openproblem}[A $p$-adic asymmetry between CHSH and GHZ]\label{op:padic-ghz}
+Determine whether irreducibly tripartite (GHZ-class) correlations admit $p$-adic
+probabilistic models in the frequency sense, as bipartite interference does in
+Khrennikov's analyses \autocite{khrennikov2009}. The ledger predicts an asymmetry:
+obstruction-sharing with a finite place is available to the quaternionic layer and
+unavailable to the octonionic one. Either outcome is progress. An obstruction theorem
+would be the first physical trace of the octonions' non-Archimedean splitting; a model
+would refute the CANDIDATE reading above, and is the honest falsifier.
+\end{openproblem}
+
+\subsection{A $p$-adic Hopf quotient; positivity as the exotic phenomenon}
+\label{app:padic-hopf}
+
+\begin{proposition}[A Hopf-type quotient at $p$]\label{prop:padic-hopf}
+Let $S = \mathbb{Z}_p^2 \setminus (p\mathbb{Z}_p)^2$ be the set of unimodular pairs.
+The map $S \to \mathbb{P}^1(\mathbb{Q}_p)$, $(x,y) \mapsto [x:y]$, is a surjection
+whose fibres are exactly the orbits of the unit group $\mathbb{Z}_p^{\times}$ acting
+by scaling, so $S$ is a principal $\mathbb{Z}_p^{\times}$-bundle over
+$\mathbb{P}^1(\mathbb{Q}_p)$. This bundle is trivial: the base is compact and
+zero-dimensional, and admits a clopen partition over which unimodular sections exist.
+Finally, the complete invariant of the $\mathbb{Z}_p^{\times}$-scaling action on
+$\mathbb{Q}_p$ is the absolute value: $x$ and $y$ lie in one orbit if and only if
+$|x|_p = |y|_p$.
+\end{proposition}
+
+\begin{proof}
+Every point of $\mathbb{P}^1(\mathbb{Q}_p)$ has a representative with
+$\max(|x|_p, |y|_p) = 1$, unique up to $\mathbb{Z}_p^{\times}$. The sets
+$\{|x|_p \le |y|_p\}$ and $\{|x|_p > |y|_p\}$ are clopen and carry the sections
+$[x:y] \mapsto (x/y,\, 1)$ and $[x:y] \mapsto (1,\, y/x)$ respectively. The orbits of
+$\mathbb{Z}_p^{\times}$ on $\mathbb{Q}_p^{\times}$ are the spheres
+$\{\,|x|_p = p^{-k}\,\}$, $k \in \mathbb{Z}$, together with the fixed point $0$.
+\end{proof}
+
+At the real place the Born derivation of the main text (\S\ref{sec:born}) quotients
+the $U(1)$ ignorance fibre of the Hopf bundle (\S\ref{sec:hopf}); the surviving
+invariant is quadratic, and positive. Proposition~\ref{prop:padic-hopf} runs the same
+quotient at a finite place: the phase group is $\mathbb{Z}_p^{\times}$ --- for odd $p$
+a torsion clock times a pro-$p$ depth,
+$\mathbb{Z}_p^{\times} \cong \mu_{p-1} \times (1 + p\mathbb{Z}_p)$
+\autocite{gouvea1997} --- and the Born datum it leaves is the valuation $|x|_p$. On
+rational data the product of all Born data, real and $p$-adic, is one: the product
+formula as a distributed Born ledger, in the register of adelic quantum mechanics
+\autocite{vladimirovvolovich1989, dragovich1995}. Two inversions follow.
+
+\emph{Positivity.} By Artin--Schreier a field is orderable if and only if it is
+formally real \autocite{artinschreier1927}; $\mathbb{R}$ is the unique orderable
+completion of $\mathbb{Q}$, while every $\mathbb{Q}_p$ has finite level --- minus one
+is a sum of at most four squares there \autocite{lam2005} --- so squared magnitudes
+carry no sign at any finite place. Non-negativity of probability is a theorem
+available at exactly one place of $\mathbb{Q}$. From the non-Archimedean side it is
+positivity, not negativity, that is the exotic phenomenon; negativity is
+contextuality's Archimedean face \autocite{spekkens2008}, and the finite places never
+had the positivity to lose.
+
+\emph{The twist.} The bundle of Proposition~\ref{prop:padic-hopf} is trivial: a
+zero-dimensional base cannot support the obstruction that, at the real place, encodes
+the irrecoverability of the self-referential phase. The Hopf twist has no local avatar
+at any finite place. Its conservation law is global: nontriviality at the real place
+is the statement $(-1,-1)_{\infty} = -1$, and reciprocity,
+Theorem~\ref{thm:ledger}(i)--(ii), forces the balancing entry at $p = 2$. We fence the
+reading as RHYME: \emph{the Hopf twist obeys Gauss reciprocity.} The prime two will
+appear once more, by duality, in \S\ref{app:padic-solenoid}.
+
+\begin{openproblem}[The twist's conservation law]\label{op:padic-reciprocity}
+Make the rhyme a theorem or refute it: identify the nontriviality class of the
+Archimedean Hopf bundle with the infinite component of a global reciprocity datum ---
+the class of $(-1,-1)_{\mathbb{Q}}$ in the $2$-torsion of the Brauer group is the
+obvious candidate --- so that the $2$-adic component is the forced complement of the
+observer's phase ignorance, and the triviality of Proposition~\ref{prop:padic-hopf} at
+every finite place is the local expression of a globally conserved twist. Refutation
+would consist in exhibiting a precise sense in which the bundle-theoretic and
+Brauer-theoretic obstructions come apart.
+\end{openproblem}
+
+\subsection{The Tsirelson bound as ramification at two}
+\label{app:padic-tsirelson}
+
+For $\pm 1$-valued observables $A, A'$ and $B, B'$ on two sites, the CHSH operator
+$\mathcal{C} = A \otimes B + A \otimes B' + A' \otimes B - A' \otimes B'$ obeys
+Landau's identity
+\begin{equation}
+\mathcal{C}^{2} \;=\; 4\,\mathbb{I} \otimes \mathbb{I} \;-\; [A, A'] \otimes [B, B'],
+\label{eq:landau}
+\end{equation}
+whence the quantum bound $\|\mathcal{C}\| \le 2\sqrt{2}$
+\autocite{landau1987, tsirelson1980}, against the classical bound $2$
+\autocite{chsh1969} and the algebraic maximum $4$. The $2$-adic valuations of the
+three rungs are $v_2(2) = 1$, $v_2(2\sqrt{2}) = 3/2$, $v_2(4) = 2$: the quantum bound
+occupies the unique half-integral rung, and half-integral valuations are precisely the
+signature of ramification --- $\sqrt{2}$ generates the ramified quadratic extension
+$\mathbb{Q}_2(\sqrt{2})/\mathbb{Q}_2$. The algebra concurs on where the excess lives.
+For qubit observables $A = \mathbf{a} \cdot \boldsymbol{\sigma}$ the commutators lie
+in the bivector sector, and the even Clifford algebra of the rational observable form
+$\langle 1, 1, 1 \rangle$ is
+$C_0(\langle 1,1,1 \rangle) \cong (-1,-1)_{\mathbb{Q}}$ \autocite{lam2005} --- the
+ledger's algebra, division at exactly $\{2, \infty\}$. The classical bound consumes
+only the commutative data in \eqref{eq:landau}; the excess factor $\sqrt{2}$ is
+contributed by the quaternionic sector whose rational form ramifies at two. The
+valuation bookkeeping above is exact; the causal reading --- that the
+quantum--classical gap is ramification at the binary place made Archimedean-visible
+--- is a fenced RHYME, and Problem~\ref{op:padic-tsirelson} states what would cash it.
+
+\begin{openproblem}[The Tsirelson exponent from local invariants]\label{op:padic-tsirelson}
+Derive the exponent $3/2$ --- equivalently the excess factor $\sqrt{2}$ --- from the
+local invariants of the observable algebra rather than from the operator norm: a
+Hilbert-symbol or ramification computation in which the quantum bound's residence in
+$\mathbb{Q}_2(\sqrt{2})$ is forced by the fact that the commutator sector generates
+$(-1,-1)_{\mathbb{Q}}$. This sharpens the standing question of whether the adelic
+product formula constrains the Tsirelson bound from a slogan to a target computation;
+any derivation in which $\sqrt{2}$ enters as a ramification datum, however special the
+setting, would constitute progress.
+\end{openproblem}
+
+\subsection{Loops, solenoids, and the dual of the dyadic tower}
+\label{app:padic-solenoid}
+
+The continuity appendix already meets the solenoid, as the witness that connected does
+not imply path-connected, excluded at the record layer by Cartan's theorem once the
+scalars are real (Remark~\ref{rem:witnesses}). Here is the same object from the loop
+side. A closed loop whose traversal count is tallied $p$-adically is the $p$-solenoid
+$\Sigma_p = (\mathbb{R} \times \mathbb{Z}_p)/\mathbb{Z}$, the inverse limit of the
+circle under $z \mapsto z^{p}$: a compact connected abelian group fibring over the
+circle with Cantor fibre $\mathbb{Z}_p$ \autocite{vandantzig1930, hewittross1963}. Its
+bonding map is the monomial dynamics at the centre of the $p$-adic dynamical systems
+programme \autocite{khrennikovnilsson2004}, and winding $p^{n}$ times is small: many
+traversals converge rather than accumulate, which is Proposition~\ref{prop:carry} in
+geometric dress. Completing at every prime at once gives the adelic solenoid
+$(\mathbb{R} \times \widehat{\mathbb{Z}})/\mathbb{Z}$, the Pontryagin dual of the
+discrete rationals \autocite{hewittross1963} --- the character group of exactly the
+field whose places the product formula ranges over.
+
+One duality sharpens the imagery into an interface with the continuity appendix. The
+phase group is constructed there through the dyadic tower: $U(1)$ is obtained as the
+Archimedean closure of the Pr\"ufer group $\mathbb{Z}(2^{\infty})$,
+equation~\eqref{eq:dyadic-tower}. Pontryagin duality assigns that same tower a
+canonical non-Archimedean completion: the dual of $\mathbb{Z}(2^{\infty})$ is
+$\mathbb{Z}_2$ \autocite{hewittross1963}. The very group from which the framework
+builds the observer's phase already carries a $2$-adic shadow by duality --- the prime
+two's second, independent appearance, after Theorem~\ref{thm:ledger}(ii). Whether this
+is coincidence or structure is Problem~\ref{op:padic-solenoid}. The status of this
+subsection short of that problem is RHYME, fenced.
+
+\begin{openproblem}[Circle or solenoid]\label{op:padic-solenoid}
+The exclusions that force the phase group to be $U(1)$ at the record layer --- no
+small subgroups, and Cartan's theorem over the real scalars
+(Remark~\ref{rem:witnesses}, \S\ref{app:cont-scalar}) --- consume Archimedean,
+record-side premises. Determine whether any pre-record consistency condition of the
+framework distinguishes $U(1)$ from its solenoidal completions: is the pre-FANOUT
+phase group the circle, the $2$-solenoid, or the adelic solenoid, with the record
+layer seeing only the Archimedean face in every case? An answer in either direction is
+structural. The circle would mean the Archimedean selection reaches deeper than
+records; a solenoid would give the ledger of this appendix a geometric carrier, and
+would make the fibrewise digits of the phase literal.
+\end{openproblem}
+
+\subsection{Bridge condition, and an invitation}
+\label{app:padic-bridge}
+
+One condition governs every correspondence above. Identifying an Archimedean
+quasi-probability value with a $p$-adic one requires the value to lie in $\mathbb{Q}$,
+or in a fixed number field, so that every completion sees the same element. The
+framework's finite, stabiliser-level bookkeeping satisfies this; the Tsirelson datum
+satisfies it in $\mathbb{Q}(\sqrt{2})$, whose places above two carry the ramification
+reading of \S\ref{app:padic-tsirelson}. Quantities irrational without qualification
+must first be located in a number field before the ledger applies; that is a
+constraint, and we state it as one.
+
+The six problems are stated so that a specialist can engage each without adopting the
+framework whole: Problem~\ref{op:padic-frequency} is a question inside $p$-adic
+frequency theory; \ref{op:padic-hensel} inside $p$-adic dynamics;
+\ref{op:padic-ghz} inside $p$-adic models of correlation experiments;
+\ref{op:padic-reciprocity} inside the arithmetic of quadratic forms;
+\ref{op:padic-tsirelson} a finite computation with quaternion algebras; and
+\ref{op:padic-solenoid} inside topological group theory, run against the continuity
+appendix's premises. The communities they address --- the $p$-adic mathematical
+physics of Khrennikov, Volovich, Dragovich and Zelenov
+\autocite{khrennikov1995, vladimirovvolovich1989, dragovich1995}, the division-algebra
+particle physics of Dixon, Furey, Krasnov and Dubois-Violette, and the $p$-adic
+state-space geometry of Palmer's invariant set programme \autocite{palmer2009} ---
+have developed with almost no contact, and neither has had reason to ask the other's
+questions. Ostrowski's fork, read as complementarity rather than rivalry, is the
+meeting point this appendix proposes. What was sterile as a competition --- which
+completion is the true home of quantum probability --- becomes a programme as a
+division of labour: records at the Archimedean place, ledger at the finite places, and
+the product formula as the treaty between them.
+
+% ---------------------------------------------------------------------
+% CITATION KEYS (NEW = supplied in refs_padic_ctc_division_2026-07-23T0617.ris;
+% EXISTING = assumed in master bibliography, VERIFY each key)
+%
+% NEW keys:
+% serre1973: J.-P. Serre, A Course in Arithmetic, GTM 7, Springer
+%   (1973). Hilbert symbols, reciprocity, isotropy in >= 5 variables.
+% lam2005: T. Y. Lam, Introduction to Quadratic Forms over Fields,
+%   GSM 67, AMS (2005). Levels, u-invariants, even Clifford algebras.
+% springerveldkamp2000: T. A. Springer, F. D. Veldkamp, Octonions,
+%   Jordan Algebras and Exceptional Groups, Springer (2000).
+% jacobson1958: N. Jacobson, Composition algebras and their
+%   automorphisms, Rend. Circ. Mat. Palermo 7, 55-80 (1958).
+% gouvea1997: F. Q. Gouvea, p-adic Numbers: An Introduction, 2nd ed.,
+%   Springer (1997). (Accent in surname carried in the RIS file.)
+% artinschreier1927: E. Artin, O. Schreier, Algebraische Konstruktion
+%   reeller Koerper, Abh. Math. Sem. Univ. Hamburg 5, 85-99 (1927).
+% brauerhassenoether1932: R. Brauer, H. Hasse, E. Noether, Beweis
+%   eines Hauptsatzes in der Theorie der Algebren, J. reine angew.
+%   Math. 167, 399-404 (1932).
+% alberthasse1932: A. A. Albert, H. Hasse, A determination of all
+%   normal division algebras over an algebraic number field, Trans.
+%   AMS 34, 722-726 (1932).
+% landau1987: L. J. Landau, On the violation of Bell's inequality in
+%   quantum theory, Phys. Lett. A 120, 54-56 (1987).
+% khrennikovnilsson2004: A. Yu. Khrennikov, M. Nilsson, p-adic
+%   Deterministic and Random Dynamics, Kluwer (2004).
+% vandantzig1930: D. van Dantzig, Ueber topologisch homogene Kontinua,
+%   Fund. Math. 15, 102-125 (1930).
+% hewittross1963: E. Hewitt, K. A. Ross, Abstract Harmonic Analysis I,
+%   Springer (1963). Solenoids, Pruefer duals, character groups.
+% palmer2009: T. N. Palmer, The invariant set postulate, Proc. R.
+%   Soc. A 465, 3165-3185 (2009).
+% tsirelson1980: B. S. Cirel'son, Quantum generalizations of Bell's
+%   inequality, Lett. Math. Phys. 4, 93-100 (1980). (Included in the
+%   RIS batch; VERIFY against master bibliography for duplication.)
+% chsh1969: J. F. Clauser, M. A. Horne, A. Shimony, R. A. Holt,
+%   Proposed experiment to test local hidden-variable theories, PRL
+%   23, 880-884 (1969). (Included in RIS; VERIFY for duplication.)
+%
+% EXISTING keys (VERIFY spelling of each against master bibliography):
+% ostrowski1916: as in app:continuity-open.
+% thomson1954: as in app:continuity-open.
+% khrennikov1995: A. Yu. Khrennikov, p-adic description of Dirac's
+%   hypothetical world with negative probabilities, IJTP 34 (1995);
+%   listed in the adelic open-problem document.
+% khrennikov2009: A. Yu. Khrennikov, p-adic probability prediction of
+%   correlations..., arXiv:0906.0509; listed in the adelic document.
+% vladimirovvolovich1989, dragovich1995: adelic QM; listed in the
+%   adelic document.
+% hurwitz1898, adams1960: listed in the adelic document and main text.
+% deutsch1991, aaronsonwatrous2009, laraudogoitia1998, spekkens2008:
+%   listed in the grounding-argument reference list.
+% =====================================================================
