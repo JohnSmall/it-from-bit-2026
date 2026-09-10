@@ -18,6 +18,14 @@ the citation key pinned by hand afterwards; see README.md.
 
 - `project-docs/extended_wigners_friend_literature_2026-08-30.md`
 
+## Resolved
+
+- `rideoutsorkin2000` -- year confirmed as 2000 (checked 2026-09-10). Crossref
+  carries only `published-online` 1999-12-13 and no `published-print`; Phys.
+  Rev. D volume 61 issue 2 is dated 15 January 2000, so 1999 is the
+  online-first date rather than the citation year. The standard citation is
+  Phys. Rev. D 61, 024002 (2000), which is what Zotero holds. No change made.
+
 ## Still to verify
 
 - `noether1918invariante` — no DOI exists for the 1918 original and the page

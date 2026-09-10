@@ -17,7 +17,11 @@ retried.
      This ledger is append-only: supersede with a dated entry, never edit
      history. -->
 
-## 2026-09-10 — seeded from the Claude web project memory
+Entries here carry no status label. The six labels grade claims the project
+makes; a route recorded here is one the project does not make, and its status
+is exactly that it failed. Each entry records why.
+
+## 2026-09-10 -- seeded from the Claude web project memory
 
 - Geodesic/path-length picture for quark mass (§7.8, March 18): retracted; replaced by associator debt framing
 - GHZ–W superposition reading for quarks: fails — SLOCC classes are orbits, not orthogonal summands; canonical orbit postulate requires zero pairwise concurrence
