@@ -85,7 +85,35 @@ Claude Code are in `CLAUDE.md`.
 
 ## Authors and citation
 
-John ..., with ... . Cite as: [bibtex block once there's a preprint].
+John Small ([0000-0001-7123-411X](https://orcid.org/0000-0001-7123-411X)).
+
+Citation metadata is in `CITATION.cff`; GitHub renders it as a "Cite this
+repository" button and Zenodo reads it when minting a DOI. Once a preprint
+exists, cite that in preference and use the repository DOI for the exact
+source state it was built from.
+
+Claude (Anthropic) was used for mathematical elaboration, literature
+verification, LaTeX production and bibliography management. It is not an
+author: arXiv's policy is that "generative AI language tools should not be
+listed as an author", while significant use must be reported, and
+responsibility for any AI-generated error rests with the author. Papers
+carry a disclosure statement to that effect.
+
+## Releases and DOI
+
+Tags are paper-scoped and follow arXiv version numbering, `paper1-v1`,
+`paper2-v1`, so a tag can be checked out to reproduce exactly the source
+behind a given preprint version. Dated `snapshot-YYYY-MM-DD` tags mark
+working states and are not released.
+
+Semantic versioning is deliberately not used: it encodes an API
+compatibility contract, and there is no API here.
+
+Publishing a GitHub release mints a Zenodo version DOI, plus one concept DOI
+resolving to the latest. Note that a release archives the **whole**
+repository, `knowledge/` included, and Zenodo records are not designed to be
+withdrawn.
+
 ## Directory Structure
 self-ref-2026/
 ├── CLAUDE.md                     # behaviour contract (short)

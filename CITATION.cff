@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: "It from Bit via Gödel"
+message: >-
+  If you refer to this work, please cite the repository using the metadata
+  below. Once a preprint exists, cite that in preference and use the
+  repository DOI for the exact source state it was built from.
+type: software
+authors:
+  - family-names: Small
+    given-names: John
+    orcid: "https://orcid.org/0000-0001-7123-411X"
+repository-code: "https://github.com/JohnSmall/self-ref-2026"
+abstract: >-
+  A multi-paper series deriving Standard Model structure, the quantum
+  postulates, and spacetime dimensionality from self-reference and
+  computability. Paper 1 covers foundations; Paper 2 derives spacetime from
+  the FANOUT boundary. The repository holds the LaTeX sources, the Zotero
+  exported bibliographies, the supporting computations, and an archive of the
+  research conversations from which the work developed.
+keywords:
+  - quantum foundations
+  - self-reference
+  - negative probability
+  - Hopf fibration
+  - division algebras
+  - Standard Model
+  - computability
