@@ -99,6 +99,25 @@ listed as an author", while significant use must be reported, and
 responsibility for any AI-generated error rests with the author. Papers
 carry a disclosure statement to that effect.
 
+## Licence
+
+Two licences, by kind of material.
+
+**CC BY 4.0** (`LICENSE`) covers the prose, figures and everything under
+`knowledge/`: the papers, their sections and appendices, the ledgers, and the
+document and conversation archive. Reuse freely with attribution.
+
+**MIT** (`LICENSE-MIT`) covers `scripts/` and `notebooks/`, so the
+verification code can be reused without the attribution obligations that
+suit prose.
+
+Attribute as: John Small, "It from Bit via Gödel",
+https://github.com/JohnSmall/self-ref-2026
+
+`knowledge/archive/` holds transcripts of research conversations, which
+contain both the author's words and model output. They are published here
+under the same CC BY 4.0 terms.
+
 ## Releases and DOI
 
 Tags are paper-scoped and follow arXiv version numbering, `paper1-v1`,
