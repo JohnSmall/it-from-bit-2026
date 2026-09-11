@@ -5,8 +5,11 @@ the papers themselves; do not duplicate entries here.
 
 | file | source collection | entries |
 |---|---|---|
-| `paper1/references.bib` | Zotero `self-ref-2026-cited` | 192 |
-| `paper2/references_paper2.bib` | Zotero `self-ref-2026-paper2-cited` | 18 |
+| `paper1/references.bib` | Zotero `self-ref-2026-cited` | 201 |
+| `paper2/references_paper2.bib` | Zotero `self-ref-2026-paper2-cited` | 19 |
+
+Counts are as exported on 2026-09-11 and drift with every re-export;
+`grep -c '^@' paper1/references.bib` is the current figure.
 
 New references enter as a dated BibLaTeX batch in `bib/`, imported to Zotero.
 The entry key is the citation key: Better BibTeX keeps and pins it on import,
