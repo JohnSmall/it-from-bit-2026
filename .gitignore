@@ -1,27 +1,85 @@
 # --- LaTeX build artefacts -------------------------------------------
+# Everything the compiler writes beside the source. Sources that happen to
+# look like artefacts are not here: .tex, .TEX, .bib, .BIB, .cls, .clo, .sty,
+# .latexmkrc and Makefile all stay tracked. If a pattern below ever shadows a
+# file that belongs in the repository, force it in with `git add -f`.
+
+# The core run: pdflatex, lualatex, latexmk.
 *.aux
-*.bbl
-*.bcf
-*.blg
 *.log
-*.run.xml
-*.synctex.gz
-*.fdb_latexmk
-*.fls
 *.out
 *.toc
 *.lof
 *.lot
 *.loe
+*.lol
+*.lox
+*.los
 *.thm
+*.dvi
+*.xdv
+*.ps
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.synctex
+*.synctex(busy)
+*.synctex.gz(busy)
+*.pdfsync
+
+# Bibliography: biber, bibtex, biblatex. A *-SAVE-ERROR file is biber's dump
+# after a failed run, which is what two concurrent builds produce.
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*-SAVE-ERROR
+*.brf
+
+# Index, glossary and nomenclature.
 *.idx
 *.ind
 *.ilg
-*.dvi
-*.xdv
+*.xdy
+*.glo
+*.gls
+*.glg
+*.glsdefs
+*.acn
+*.acr
+*.alg
+*.nlo
+*.nls
+*.nlg
+
+# Beamer and beamerposter, which the posters under knowledge/publications/
+# would write if anyone ran their Makefile.
+*.nav
+*.snm
+*.vrb
+
+# Package leftovers: todonotes, minitoc, listings, minted, sagetex, elsarticle.
+*.tdo
+*.maf
+*.mtc
+*.mtc[0-9]*
+*.listing
+*.pyg
+_minted*/
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+*.spl
+
+# TikZ and pgfplots externalisation.
 *.auxlock
 *.figlist
 *.makefile
+*.md5
+*.dpth
+*.gnuplot
+*.table
+svg-inkscape/
 
 # Compiled output. No figure PDFs are tracked; if one is ever added,
 # force it in with `git add -f path/to/figure.pdf`.
