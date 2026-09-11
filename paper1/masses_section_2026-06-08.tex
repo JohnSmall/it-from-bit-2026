@@ -1,3 +1,4 @@
+% EDITED 2026-09-11 scripts/patch_koide_gap_and_parameter_count_2026-09-11T1700.py
 % EDITED 2026-09-09 scripts/patch_hurwitz_citekey_2026-09-09T1640.py
 %  EDITED 2026-07-12 (second pass): op:up-quark records the N -> R -> S
 %  outcome -- refutation (annihilation lemma), core-coherence
@@ -272,8 +273,9 @@ $\tau$ & $1776.9$  & $1776.9$  & (scale) \\
 \end{tabular}
 \end{center}
 
-This is the showcase: three masses from one dimensional input and no free dimensionless parameters,
-the dimensionless content being the two theoretically fixed numbers $\alpha=\sqrt2$ and $\delta=2/9$.
+This is the showcase: three masses from one dimensional input and no fitted dimensionless
+parameters, the dimensionless content being the two numbers $\alpha=\sqrt2$, which the theory
+fixes, and $\delta=2/9$, which it matches.
 
 We flag the one genuine gap squarely. Proposition~\ref{prop:koide} derives the $2/3$ relation from
 $\alpha=\sqrt2$ and the $\mathbb{Z}_3$ ansatz, both of which the framework supplies; but the specific
@@ -281,11 +283,78 @@ phase $\delta = 2/9$ is at present a \emph{matched} value with a suggestive geom
 not a derived one.
 
 \begin{openproblem}[The Koide phase]\label{op:koide-delta}
-Derive $\delta = 2/9$ from the holonomy of the octonionic Hopf connection. This is the single most
-important open calculation in the mass sector. One route is already closed: the simplest
-holonomy-squared model, $m_k \propto \sin^4(\theta_0 + 2\pi k/3)$, does not reproduce the spectrum
-and is recorded as tried and failed.
+Derive $\delta = 2/9$ from the holonomy of the octonionic Hopf connection. This is the single
+most important open calculation in the mass sector. A derivation passes if it lands inside the
+measured band, $\delta = 0.222225 \pm 0.000006$ radians, with no fitted input
+(\S\ref{sec:koide-gap}). Three routes are closed: the simplest holonomy-squared model, $m_k
+\propto \sin^4(\theta_0 + 2\pi k/3)$, does not reproduce the spectrum; the structural angles of
+the bare sedenion triple contain no $2/9$ (Appendix~\ref{app:nb-M}); and the norm-defect
+identity~\eqref{eq:debt-defect}, being a magnitude, cannot fix a phase.
 \end{openproblem}
+
+\subsection{The shape of the gap}
+\label{sec:koide-gap}
+
+Since the phase is the one number in the charged-lepton sector that the framework matches rather
+than derives, it is worth being exact about what kind of gap it is, what has been tried, and
+what a derivation would have to look like. A well-posed gap is an invitation; a vague one is a
+hole.
+
+What the data fix. Inverting the triality form~\eqref{eq:z3} on the three measured masses is
+exact --- three masses, three parameters --- and with the PDG uncertainties propagated it
+returns $\alpha = 1.41421 \pm 0.00001$, within half a standard deviation of $\sqrt2$, and
+$\delta = 0.222225 \pm 0.000006$ radians, within half a standard deviation of $2/9 = 0.222222$.
+The band is set almost entirely by the tau mass and fixes between four and five significant
+figures of $\delta$; any candidate derivation is tested against that band and nothing looser.
+
+Why the norm defect does not close it. The identity~\eqref{eq:debt-defect} is quartic in the
+magnitudes: it says how badly the norm of a product fails to factorise and bounds the failure by
+the coassociative calibration. Everything it can fix is a size --- the existence of mass, the
+scale of the debt, the amplitude $\alpha$, which is itself a norm. The phase $\delta$ is not a
+size but an orientation, the angle of the $\mathbb{Z}_3$ triality frame against the preferred
+complex structure, and a magnitude identity has no handle on an orientation. That is the content
+of the sentence that closes the bridge above: the identity fixes the object, not the spectrum.
+The division of labour --- existence from the associator, ratios from the frame --- holds at the
+sedenion rung exactly as at the octonion rung, and the elegance of the norm defect as an account
+of mass does not carry over to the phase.
+
+What is already excluded. Three routes are closed. The simplest holonomy-squared model fails
+(Open Problem~\ref{op:koide-delta}). The bare sedenion geometry was inventoried in the up-quark
+investigation (Appendix~\ref{app:nb-M}): an eighteen-comparison scan of the structural angles of
+the sedenion triple --- twelve identically zero, four at exactly $\pi/4$, two ratios at exactly
+$\tfrac14$ --- contains no occurrence of $2/9$. That scan was run against the up-quark leakage
+angle, but it is the same number and the same geometry, and it closes the frame-orientation
+route for the Koide phase as well. And the associator has a uniform magnitude on every
+bracketing not forced to vanish, by $G_2$-transitivity, so no choice of octonionic direction can
+supply the number either.
+
+The shape any derivation must take. The number $2/9$ is a rational number of \emph{radians}, and
+that is an unusual thing for a geometric angle to be. An angle fixed by a discrete symmetry is a
+rational multiple of $\pi$; the inventory's $\pi/4$ is what such angles look like. An angle
+between two vectors is an inverse trigonometric function of an algebraic number. A holonomy on a
+round sphere around a loop singled out by symmetry is a rational fraction of $4\pi$, and a loop
+not singled out by symmetry is a fitted input by another name. A pre-registered scan of these
+families against the measured band finds no member of any of them at a simple denominator: the
+nearest rational multiple of $\pi$ with denominator up to sixty lies nearly three hundred
+standard deviations from the band, and the nearest inverse trigonometric value of a rational or
+a surd with denominator up to a hundred lies ten away. (Pushing the denominators to four hundred
+eventually produces a chance coincidence, $22\pi/311$, at exactly the rate a random search
+would; it carries no information.) The dimension-ratio reading $2/9 =
+\dim_{\mathbb{R}}\mathbb{C} \,/\, \dim_{\mathbb{R}}(\mathbb{O}\oplus\mathbb{R})$ meets the same
+difficulty in another form. A ratio of dimensions is a pure number, and turning it into an angle
+requires a unit; the natural unit of angle in a symmetric geometry is the turn, and two-ninths
+of a turn is $1.396$ radians, nowhere near. The reading needs a mechanism in which one radian is
+the natural unit --- in which the angle is an arc measured against its radius, two units of arc
+on a radius of nine --- and until that mechanism is exhibited the reading remains what we called
+it: suggestive, matched rather than derived.
+
+The constraint is nonetheless informative. An angle that is a rational number of radians is an
+arc-to-radius ratio, and arc-to-radius ratios come out rational where the arc is a run of unit
+steps along a flat direction, not where it is a symmetric fraction of a round circle. If
+$\delta$ is a holonomy at all, the connection carrying it is more likely flat along the
+direction that matters --- the fibre circle, a torus --- than the round Hopf connection of Open
+Problem~\ref{op:koide-delta}, and the computation to attempt is the one that specifies that flat
+structure. We record this as a conjecture about where to look, not as a result.
 
 \subsection{Quarks: the colour correction}
 
