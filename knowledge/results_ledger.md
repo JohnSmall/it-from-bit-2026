@@ -78,3 +78,39 @@ should check first.
 - **OPEN** Delta m^2_21 x30 tension and 0.6 degree theta_nu fine-tuning.
 - *Superseded:* the earlier figure of 2.6 meV in `quark_neutrino_masses.md`.
   Recorded, not labelled: a retraction is not a claim.
+
+## 2026-09-11 -- the Koide phase, refitted and split
+
+<!-- Proposed by Claude Code in the session recorded at
+     sessions/koide_delta_gap_2026-09-11T1600.md. Labels are PROPOSED; JS to
+     confirm, amend or reject. Script: scripts/koide_delta_fit_and_angle_scan
+     _2026-09-11T1600.py, seed 20260911. -->
+
+- **ESTABLISHED** `[PROPOSED]` With alpha = sqrt2 and delta = 2/9 rad set by
+  hand, and the scale M fixed by the tau mass, the electron and muon masses
+  are reproduced to -0.003% and -0.002% (PDG 2024 inputs; -0.007% and -0.006%
+  on PDG 2022). Inverting the Z3 form on the data gives
+  delta = 0.2222248 +/- 0.0000063 rad, with 2/9 at -0.41 sigma, and
+  alpha = 1.414209 +/- 0.000011, with sqrt2 at -0.43 sigma. The band, set by
+  the tau mass, fixes 4.6 significant figures of delta. *Supersedes* the
+  2026-09-10 entry "delta_0 = 2/9 reproduces charged lepton masses to <0.006%
+  with zero free dimensionless parameters": the number was right, the
+  parameter clause was not -- delta is matched, not derived, and counts as one
+  matched dimensionless number.
+- **CANDIDATE** `[PROPOSED]` The geometric reading
+  2/9 = dim_R C / dim_R (O + R). It is a ratio of dimensions and delta is a
+  number of radians; no mechanism yet makes one radian the natural unit
+  (2/9 of a turn is 1.396 rad). RHYME is arguable. The section already calls
+  it "suggestive, matched rather than derived".
+- **ESTABLISHED** `[PROPOSED]` 2/9 rad is not a natural angle at any simple
+  denominator: a pre-registered scan finds no rational multiple of pi with
+  denominator up to 60 within 280 sigma of the fitted band, and no arccos,
+  arcsin or arctan of a rational or surd (denominators to 100), nor any
+  symmetric-cap Berry phase (denominators to 200), within 10 sigma. Widening
+  the pi-multiples to denominator 400 produces one chance hit (22 pi/311, 2
+  sigma) at the rate a random search would (expectation 0.58). Numerical
+  fact; its reading is the CONJECTURE below.
+- **CONJECTURE** `[PROPOSED]` A rational number of radians is the signature of
+  flat geometry with rational periods, not of round geometry; if delta is a
+  holonomy, its connection is flat along the direction that carries it (the
+  S1 fibre, a torus), not the round Hopf connection. Direction, not result.

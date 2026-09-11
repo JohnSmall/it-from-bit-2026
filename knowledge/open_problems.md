@@ -49,3 +49,20 @@ Also: `project-docs/fermion_topology_open_problems.md` and
 - Paper 2 ("Spacetime from the FANOUT Boundary") has a compilable skeleton
 - The gravitational wave energy objection is answered: Isaacson averaging scale = chart re-emergence scale
 - Seven open problems are priced; next computation is the Newtonian limit (op:p2-newton)
+
+## 2026-09-11 -- op:koide-delta sharpened (see sessions/koide_delta_gap_2026-09-11T1600.md)
+
+- **OPEN** `[PROPOSED]` Derive delta = 2/9 rad. PASS: a mechanism that returns
+  a value inside delta = 0.2222248 +/- 0.0000063 rad (PDG 2024; the tau mass
+  sets the band) with no fitted input. FAIL: any route that ends in a rational
+  multiple of pi, an inverse trigonometric function of a simple algebraic
+  number, or a round-sphere holonomy -- these are excluded by the scan and by
+  notebook M. Constraint: the answer is a rational number of radians, which
+  points at a flat structure with rational periods (the S1 fibre) rather than
+  the round Hopf connection the problem is currently phrased around. Four
+  routes closed; see invalid_routes.md, 2026-09-11.
+- Parameter count, for the headline claims: the charged-lepton sector has no
+  fitted dimensionless parameter and one matched one (delta). The paper's
+  "zero adjustable dimensionless parameters" is made consistent with this in
+  the 2026-09-11 patch; the count returns to zero only when op:koide-delta
+  closes.

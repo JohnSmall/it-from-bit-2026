@@ -59,14 +59,12 @@ reasoning. Delete when done.
       instances), predating the move to `\enquote{}`. Converting is mechanical
       but touches most of the paper, so worth doing as one deliberate pass.
 
-- [ ] The results ledger says delta_0 = 2/9 reproduces charged lepton masses
-      to "<0.006%"; `paper1/masses_section_2026-06-08.tex` says the phase is
-      "matched to five significant figures". These may be measuring different
-      quantities, or one may be stale. The headline snippet now follows the
-      section. Worth reconciling, and the ledger entry is labelled ESTABLISHED
-      while the section calls delta = 2/9 "the one genuine gap", matched rather
-      than derived, with op:koide-delta attached -- so the label may want
-      revisiting too.
+- [ ] Reconciled 2026-09-11 (sessions/koide_delta_gap_2026-09-11T1600.md):
+      "<0.006%" is the mass error and "five significant figures" the digits of
+      delta; both hold on PDG 2024. The ESTABLISHED entry is superseded by a
+      split entry (numerical fact ESTABLISHED, dimension-ratio reading
+      CANDIDATE) awaiting JS's confirmation of the PROPOSED labels in the
+      three ledgers.
 
 ## Ledgers
 
@@ -106,3 +104,9 @@ have not been checked since.
       the Tsirelson-as-ramification correspondence.
 - [ ] Label mapping for the four master-file section labels (`sec:hopf`,
       `sec:born`, `sec:fanout`, `sec:contextuality`) in the Jaynes appendix.
+
+- [ ] `paper1/main.tex` introduction has 13 undefined references that predate
+      2026-09-11 (build warnings, not errors): `sec:Kioid` (typo),
+      `sec:negative_probaility` (typo), `sec:self-ignorance`,
+      `sec:achirality_qcd`, `sec:quantum_number` and others. They render as
+      "??" in the PDF. Re-point each to the section label that now exists.
