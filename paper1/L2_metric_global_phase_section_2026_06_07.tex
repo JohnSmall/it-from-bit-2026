@@ -34,118 +34,128 @@
 %  British English; \autocite; no bullets in prose.
 % =====================================================================
 
-\section{The Euclidean metric on the state sphere, and the global phase as
-self-referential ignorance}
+\section{The Euclidean metric on the state sphere, and the global phase as self-referential ignorance}
 \label{sec:l2-metric-fibre}
-Popper's systems $C^{+}$, $C$ and $E$ --- the predictor, its target and their shared environment,
-whose argument \S\ref{sec:wigners-friend} anchors and quotes --- are, in modern dress, Wigner, his
-friend and a qubit $S$ to be measured. The natural arena for analysing them is the Hopf fibration
-and the Bloch sphere; but even to draw the Bloch sphere one must first justify the $L^{2}$ metric,
-and this section earns that right. The principle doing the work is the reversible continuity of
-\S\ref{sec:continuity} --- derived there from self-reference conditionally, on the two premises
-priced as Open Problem~\ref{op:limit-realisability}. Assuming those premises can be proved,
-everything below inherits the derivation; we carry that status, and do not upgrade it.
+Popper's systems $C^{+}$, $C$ and $E$ --- the predictor, its target and their shared
+environment, whose argument \S\ref{sec:wigners-friend} anchors and quotes --- are, in modern
+dress, Wigner, his friend and a qubit $S$ to be measured. The natural arena for analysing them
+is the Hopf fibration and the Bloch sphere; but even to draw the Bloch sphere one must first
+justify the $L^{2}$ metric, and this section earns that right. The principle doing the work is
+the reversible continuity of \S\ref{sec:continuity} --- derived there from self-reference
+conditionally, on the two premises priced as Open Problem~\ref{op:limit-realisability}. Assuming
+those premises can be proved, everything below inherits the derivation; we carry that status,
+and do not upgrade it.
 
-We have established that the amplitudes of a single qubit form a complex vector space $\mathbb{C}^{2}\cong\mathbb{R}^{4}$. We have not yet fixed which norm on this space singles out the physical state manifold. That choice is not free: the principle of \emph{reversible continuity} forces the Euclidean ($L^{2}$) norm, and hence the round three-sphere, before any appeal to the Born rule. The quadratic structure usually \emph{posited} as the Born rule is therefore already present in the metric, and the global phase emerges as a geometrically forced fibre rather than an added convention.
+We have established that the amplitudes of a single qubit form a complex vector space
+$\mathbb{C}^{2}\cong\mathbb{R}^{4}$. We have not yet fixed which norm on this space singles out
+the physical state manifold. That choice is not free: the principle of
+\emph{reversible continuity} forces the Euclidean ($L^{2}$) norm, and hence the round
+three-sphere, before any appeal to the Born rule. The quadratic structure usually \emph{posited}
+as the Born rule is therefore already present in the metric, and the global phase emerges as a
+geometrically forced fibre rather than an added convention.
 
 \subsection{Reversible continuity selects the 2-norm}
 \label{sec:reversible-continuity-l2}
 
-The principle is the one isolated by Hardy as the single axiom distinguishing quantum from classical probability \autocite{Hardy2001a}: \emph{there exists a continuous reversible transformation between any two pure states.} Operationally a reversible transformation of states is a symmetry of the state manifold, hence norm-preserving; the demand is that such symmetries form a \emph{connected} group acting \emph{transitively} on the pure states. Linearity is inherited from the complex vector-space structure already in hand, so the admissible transformations are the complex-linear isometries of whatever norm we place on $\mathbb{C}^{2}$.
+The principle is the one isolated by Hardy as the single axiom distinguishing quantum from
+classical probability \autocite{Hardy2001a}:
+\emph{there exists a continuous reversible transformation between any two pure states.}
+Operationally a reversible transformation of states is a symmetry of the state manifold, hence
+norm-preserving; the demand is that such symmetries form a \emph{connected} group acting
+\emph{transitively} on the pure states. Linearity is inherited from the complex vector-space
+structure already in hand, so the admissible transformations are the complex-linear isometries
+of whatever norm we place on $\mathbb{C}^{2}$.
 
-Take the candidate norms to be the $\ell^{p}$ family, $\lVert x\rVert_{p}=\bigl(\sum_{k}\lvert x_{k}\rvert^{p}\bigr)^{1/p}$, with the state manifold the unit $\ell^{p}$ sphere. Their linear isometries are completely classified.
+Take the candidate norms to be the $\ell^{p}$ family,
+$\lVert x\rVert_{p}=\bigl(\sum_{k}\lvert x_{k}\rvert^{p}\bigr)^{1/p}$, with the state manifold
+the unit $\ell^{p}$ sphere. Their linear isometries are completely classified.
 
 
 \begin{proposition}[Lamperti; after Banach]
 \label{prop:lamperti}
-For $1\le p<\infty$, $p\neq 2$, every linear isometry of $L^{p}$ (and hence of $\ell^{p}$) is a generalised permutation: a weighted composition operator which, in the finite-dimensional case, acts as $(x_{k})\mapsto(\omega_{k}\,x_{\sigma(k)})$ with $\lvert\omega_{k}\rvert=1$ and $\sigma$ a permutation of the coordinates.
+For $1\le p<\infty$, $p\neq 2$, every linear isometry of $L^{p}$ (and hence of $\ell^{p}$) is a
+generalised permutation: a weighted composition operator which, in the finite-dimensional case,
+acts as $(x_{k})\mapsto(\omega_{k}\,x_{\sigma(k)})$ with $\lvert\omega_{k}\rvert=1$ and $\sigma$
+a permutation of the coordinates.
 \end{proposition}
 
-\noindent Banach gave this for $L^{p}[0,1]$; the general $\sigma$-finite
-statement is Lamperti's \autocite{Banach1932, Lamperti1958}. Its consequence for
-our four real dimensions is decisive. For every $p\neq 2$ the isometry group is,
-in the real case, the finite group of signed permutations (the hyperoctahedral
-group $B_{4}$), and in the complex case the group $\mathbb{T}^{n}\rtimes S_{n}$
-of diagonal phases composed with permutations. Even the complex group, though it
-contains the continuous torus $\mathbb{T}^{n}$, fails to act transitively on the
-sphere: the orbit of a basis state $e_{1}$ is only the phased basis vectors
-$\{\omega\,e_{k}\}$, a measure-zero union of circles. No continuous reversible
-transformation carries a basis state into a generic superposition such as
-$(e_{1}+e_{2})/\sqrt{2}$. Reversible continuity therefore \emph{fails} for every
-$p\neq 2$.
+\noindent Banach gave this for $L^{p}[0,1]$; the general $\sigma$-finite statement is Lamperti's
+\autocite{Banach1932, Lamperti1958}. Its consequence for our four real dimensions is decisive.
+For every $p\neq 2$ the isometry group is, in the real case, the finite group of signed
+permutations (the hyperoctahedral group $B_{4}$), and in the complex case the group
+$\mathbb{T}^{n}\rtimes S_{n}$ of diagonal phases composed with permutations. Even the complex
+group, though it contains the continuous torus $\mathbb{T}^{n}$, fails to act transitively on
+the sphere: the orbit of a basis state $e_{1}$ is only the phased basis vectors
+$\{\omega\,e_{k}\}$, a measure-zero union of circles. No continuous reversible transformation
+carries a basis state into a generic superposition such as $(e_{1}+e_{2})/\sqrt{2}$. Reversible
+continuity therefore \emph{fails} for every $p\neq 2$.
 
-At $p=2$ the isometry group is $O(4)$ in the real picture and $U(2)$ in the
-complex one; the identity component acts transitively on the unit sphere, and any
-two unit vectors are joined by a continuous one-parameter subgroup. Among the
-$\ell^{p}$ geometries, reversible continuity is satisfiable at $p=2$ alone.
+At $p=2$ the isometry group is $O(4)$ in the real picture and $U(2)$ in the complex one; the
+identity component acts transitively on the unit sphere, and any two unit vectors are joined by
+a continuous one-parameter subgroup. Among the $\ell^{p}$ geometries, reversible continuity is
+satisfiable at $p=2$ alone.
 
-Aaronson states the same selection in the quantum-foundations setting and
-sharpens it into a physical, rather than merely aesthetic, necessity
-\autocite{Aaronson2004h}: the $2$-norm is the unique $p$-norm admitting a
-nontrivial continuous group of norm-preserving linear maps, every other $p$
-yielding only generalised permutations; and the alternative of keeping linearity
-and reversibility while \emph{dropping} norm preservation lands one in the full
-general linear group $\mathrm{GL}(n,\mathbb{C})$, which permits superluminal
-signalling and collapses the complexity class $\mathsf{PP}$ into polynomial time ---
-the same fact \S\ref{sec:continuity} uses to price the classical--quantum cut.
-Bare reversibility on the amplitude space buys only $\mathrm{GL}(n,\mathbb{C})$;
-what carves the unitary group $U(n)$ out of it is preservation of the quadratic
-($\ell^{2}$) form, and reversibility of the resulting maps is then a corollary
+Aaronson states the same selection in the quantum-foundations setting and sharpens it into a
+physical, rather than merely aesthetic, necessity \autocite{Aaronson2004h}: the $2$-norm is the
+unique $p$-norm admitting a nontrivial continuous group of norm-preserving linear maps, every
+other $p$ yielding only generalised permutations; and the alternative of keeping linearity and
+reversibility while \emph{dropping} norm preservation lands one in the full general linear group
+$\mathrm{GL}(n,\mathbb{C})$, which permits superluminal signalling and collapses the complexity
+class $\mathsf{PP}$ into polynomial time --- the same fact \S\ref{sec:continuity} uses to price
+the classical--quantum cut. Bare reversibility on the amplitude space buys only
+$\mathrm{GL}(n,\mathbb{C})$; what carves the unitary group $U(n)$ out of it is preservation of
+the quadratic ($\ell^{2}$) form, and reversibility of the resulting maps is then a corollary
 rather than a premise.
 
-The conclusion is that the physical state manifold of a single qubit is the unit
-sphere of the Euclidean norm,
+The conclusion is that the physical state manifold of a single qubit is the unit sphere of the
+Euclidean norm,
 \begin{equation}
   S^{3}=\Bigl\{\,x\in\mathbb{R}^{4}\;:\;\textstyle\sum_{i=1}^{4}x_{i}^{2}=1\,\Bigr\}
   =\bigl\{\,\psi\in\mathbb{C}^{2}\;:\;\lvert z_{1}\rvert^{2}+\lvert z_{2}\rvert^{2}=1\,\bigr\},
 \end{equation}
-with $z_{j}=x_{2j-1}+\mathrm{i}\,x_{2j}$, carrying the round metric induced from
-the ambient inner product,
+with $z_{j}=x_{2j-1}+\mathrm{i}\,x_{2j}$, carrying the round metric induced from the ambient
+inner product,
 \begin{equation}
   \mathrm{d}s^{2}=\sum_{i=1}^{4}\mathrm{d}x_{i}^{2}\,\Big|_{S^{3}}
   =\operatorname{Re}\langle\mathrm{d}\psi,\mathrm{d}\psi\rangle,
   \qquad
   \langle\phi,\psi\rangle=\bar\phi_{1}\psi_{1}+\bar\phi_{2}\psi_{2}.
 \end{equation}
-One bound deserves explicit statement, in the interest of claiming no more than
-is proved: reversible continuity fixes the \emph{metric} as $L^{2}$, but not the
-underlying field. Real and quaternionic quantum theory equally satisfy reversible
-continuity and equally carry Euclidean state-space metrics; the restriction to
-$\mathbb{C}$ is pinned elsewhere in the framework --- the analytic continuation of the
-information measure and the additivity of phase information, \S\ref{sec:self-reference} --- not
-here.
+One bound deserves explicit statement, in the interest of claiming no more than is proved:
+reversible continuity fixes the \emph{metric} as $L^{2}$, but not the underlying field. Real and
+quaternionic quantum theory equally satisfy reversible continuity and equally carry Euclidean
+state-space metrics; the restriction to $\mathbb{C}$ is pinned elsewhere in the framework ---
+the analytic continuation of the information measure and the additivity of phase information,
+\S\ref{sec:self-reference} --- not here.
 
 \subsection{Hardy's independent route}
 \label{sec:hardy-route}
 
 The same conclusion is reached by Hardy along a route that never invokes
-Proposition~\ref{prop:lamperti} \autocite{Hardy2001a}. His reconstruction turns on
-the counting relation $K=N^{r}$, where $N$ is the number of states
-distinguishable in a single measurement and $K$ the number of fiducial
-probabilities needed to specify a state. The continuity axiom excludes the
-classical case $r=1$: there the pure states are the $N$ vertices of a simplex and
+Proposition~\ref{prop:lamperti} \autocite{Hardy2001a}. His reconstruction turns on the counting
+relation $K=N^{r}$, where $N$ is the number of states distinguishable in a single measurement
+and $K$ the number of fiducial probabilities needed to specify a state. The continuity axiom
+excludes the classical case $r=1$: there the pure states are the $N$ vertices of a simplex and
 the reversible maps merely permute them --- a discrete group of motions --- so there is no
 continuous path between distinct pure states, which is the simplex face of the same $\ell^{1}$
-isometry fact. A simplicity assumption then selects $r=2$, yielding complex
-quantum theory with its quadratic norm and trace rule. The quadratic structure is
-not extracted from continuity as a separate step; it is built into Hardy's first
-axiom (probabilities linear in the fiducial set) together with $K=N^{2}$.
+isometry fact. A simplicity assumption then selects $r=2$, yielding complex quantum theory with
+its quadratic norm and trace rule. The quadratic structure is not extracted from continuity as a
+separate step; it is built into Hardy's first axiom (probabilities linear in the fiducial set)
+together with $K=N^{2}$.
 
-We thus have two genuinely independent demonstrations that reversible continuity
-forces the $L^{2}$ metric: Hardy's operational $K=N^{2}$ counting, and the
-Lamperti--Aaronson classification of the isometries. They converge on the same
-step by different mathematics, and should be cited as two roads rather than one
-road traversed twice.
+We thus have two genuinely independent demonstrations that reversible continuity forces the
+$L^{2}$ metric: Hardy's operational $K=N^{2}$ counting, and the Lamperti--Aaronson
+classification of the isometries. They converge on the same step by different mathematics, and
+should be cited as two roads rather than one road traversed twice.
 
 \subsection{The Hopf fibration and the Bloch sphere}
 \label{sec:hopf-bloch}
 
-The round metric is exactly what makes the global phase a clean symmetry. The
-phase action $\psi\mapsto\mathrm{e}^{\mathrm{i}\theta}\psi$ is a one-parameter
-subgroup of $U(2)\subset SO(4)$ and so acts on $S^{3}$ by \emph{isometries}, a
-statement that holds only because the metric is the $L^{2}$ one just derived. Its
-orbits are great circles $S^{1}$, all of circumference $2\pi$, and the quotient
-is the complex projective line,
+The round metric is exactly what makes the global phase a clean symmetry. The phase action
+$\psi\mapsto\mathrm{e}^{\mathrm{i}\theta}\psi$ is a one-parameter subgroup of
+$U(2)\subset SO(4)$ and so acts on $S^{3}$ by \emph{isometries}, a statement that holds only
+because the metric is the $L^{2}$ one just derived. Its orbits are great circles $S^{1}$, all of
+circumference $2\pi$, and the quotient is the complex projective line,
 \begin{equation}
   S^{3}\big/U(1)=\mathbb{CP}^{1}\cong S^{2},
 \end{equation}
@@ -164,34 +174,32 @@ whose projection sends an amplitude to its Bloch vector,
                \lvert z_{1}\rvert^{2}-\lvert z_{2}\rvert^{2}\bigr).
 \end{equation}
 The Hopf map is quadratic in the amplitudes, and this is the geometric face of the Born rule:
-the third component is $p_{0}-p_{1}$ with $p_{k}=\lvert z_{k}\rvert^{2}$, and the squaring is the
-lowest-degree $U(1)$-invariant available on the fibre --- the record-theoretic derivation of the
-same rule is \S\ref{sec:born-rule}'s. Because the metric is round, the
-projection is a Riemannian submersion with totally geodesic fibres of constant
-length \autocite{GluckWarnerZiller1986}: the same amount of phase is hidden at
-every point of the base, so the phase is hidden \emph{uniformly}, not in a
-position-dependent way that the metric could partially betray.
+the third component is $p_{0}-p_{1}$ with $p_{k}=\lvert z_{k}\rvert^{2}$, and the squaring is
+the lowest-degree $U(1)$-invariant available on the fibre --- the record-theoretic derivation of
+the same rule is \S\ref{sec:born-rule}'s. Because the metric is round, the projection is a
+Riemannian submersion with totally geodesic fibres of constant length
+\autocite{GluckWarnerZiller1986}: the same amount of phase is hidden at every point of the base,
+so the phase is hidden \emph{uniformly}, not in a position-dependent way that the metric could
+partially betray.
 
 \subsection{The fibre as self-referential ignorance}
 \label{sec:fibre-self-ignorance}
 
-The interpretation the framework places on this geometry --- and here we are
-reading physics into the mathematics, so the claim is interpretive rather than
-proved --- is that the $S^{1}$ fibre is the observer's own un-narratable
-self-ignorance. The global phase is the imaginary part of the complex information
-measure $S=-\ln\lvert p\rvert-\mathrm{i}\theta$: information the observer lacks
-about their own state. Lacking it, they cannot communicate it; there is no
+The interpretation the framework places on this geometry --- and here we are reading physics
+into the mathematics, so the claim is interpretive rather than proved --- is that the $S^{1}$
+fibre is the observer's own un-narratable self-ignorance. The global phase is the imaginary part
+of the complex information measure $S=-\ln\lvert p\rvert-\mathrm{i}\theta$: information the
+observer lacks about their own state. Lacking it, they cannot communicate it; there is no
 \textsc{fanout} of information one does not possess. Uncommunicable, it cannot enter any
-measurement record --- and this last step is no longer interpretive: Proposition~\ref{prop:f1-dictionary}
-proves the global phase absent from every classical record a copying structure induces --- so every
-observable is $U(1)$-invariant; and a
-$U(1)$-invariant quantity is a function on the quotient. The physical state is
-therefore the orbit, not the representative point---the base $S^{2}$---and the
-$S^{1}$ fibre carries exactly the inaccessible self-referential phase. It is a
-null direction of statistical distinguishability: two global phases are
-indistinguishable by any measurement whatever \autocite{wooters_1981}, so the fibre is a gauge direction without physical content. This phase is irrecoverably
-discarded, and must remain so: it is the relative phase, living in the $S^{3}$
-fibre of the quaternionic Hopf fibration at two qubits, that is genuinely
-recoverable, whereas the single-qubit global phase of the complex fibration is
-gauge-private without remainder. The self-reference that opened the derivation
-thus reappears, at its end, as the circle the observer can never see around.
+measurement record --- and this last step is no longer interpretive:
+Proposition~\ref{prop:f1-dictionary} proves the global phase absent from every classical record
+a copying structure induces --- so every observable is $U(1)$-invariant; and a $U(1)$-invariant
+quantity is a function on the quotient. The physical state is therefore the orbit, not the
+representative point---the base $S^{2}$---and the $S^{1}$ fibre carries exactly the inaccessible
+self-referential phase. It is a null direction of statistical distinguishability: two global
+phases are indistinguishable by any measurement whatever \autocite{wooters_1981}, so the fibre
+is a gauge direction without physical content. This phase is irrecoverably discarded, and must
+remain so: it is the relative phase, living in the $S^{3}$ fibre of the quaternionic Hopf
+fibration at two qubits, that is genuinely recoverable, whereas the single-qubit global phase of
+the complex fibration is gauge-private without remainder. The self-reference that opened the
+derivation thus reappears, at its end, as the circle the observer can never see around.

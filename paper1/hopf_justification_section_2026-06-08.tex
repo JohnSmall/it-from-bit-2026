@@ -31,222 +31,335 @@
 \section{Why Hopf Fibrations Belong in Particle Physics}
 \label{sec:hopf-justification}
 
-Invoking Hopf fibrations in a discussion of the Standard Model invites an immediate and fair objection: that the move is decorative, an analogy between two pieces of attractive mathematics with no load-bearing connection between them. The purpose of this section is to dispose of that objection before the construction is put to work. The connection is not an analogy. It is carried by two independent and independently published theorems, and the structures it relies upon are not selected for convenience but compelled by a pair of classification results. We take as already established the correspondence between qubit entanglement and the Hopf fibrations themselves --- the subject of a mature literature \autocite{mosseri2001hopf,bernevigchen2003geometry} --- and do not reproduce it here. What this section addresses is the prior question of why that correspondence is entitled to carry physical content at all.
+Invoking Hopf fibrations in a discussion of the Standard Model invites an immediate and fair
+objection: that the move is decorative, an analogy between two pieces of attractive mathematics
+with no load-bearing connection between them. The purpose of this section is to dispose of that
+objection before the construction is put to work. The connection is not an analogy. It is
+carried by two independent and independently published theorems, and the structures it relies
+upon are not selected for convenience but compelled by a pair of classification results. We take
+as already established the correspondence between qubit entanglement and the Hopf fibrations
+themselves --- the subject of a mature literature
+\autocite{mosseri2001hopf,bernevigchen2003geometry} --- and do not reproduce it here. What this
+section addresses is the prior question of why that correspondence is entitled to carry physical
+content at all.
 
 \subsection{Two theorems, joined end to end}
 
-The bridge from qubit entanglement to the Standard Model is built from two distinct results, neither of which is original to the present framework and neither of which depends on the other.
+The bridge from qubit entanglement to the Standard Model is built from two distinct results,
+neither of which is original to the present framework and neither of which depends on the other.
 
-The first is geometric. The unit sphere in the Hilbert space of $n$ qubits is the total space of a Hopf fibration: $S^3 \to S^2$ for one qubit, $S^7 \to S^4$ for two, and $S^{15} \to S^8$ for three. For two and three qubits the fibration is \emph{entanglement-sensitive} --- separability is precisely the condition under which the base degenerates to a product of single-qubit Bloch spheres and the additional dimensions associated with the higher imaginary directions collapse \autocite{mosseri2001hopf,bernevigchen2003geometry}. This is a statement about the geometry of state spaces and requires no physical interpretation whatever.
+The first is geometric. The unit sphere in the Hilbert space of $n$ qubits is the total space of
+a Hopf fibration: $S^3 \to S^2$ for one qubit, $S^7 \to S^4$ for two, and $S^{15} \to S^8$ for
+three. For two and three qubits the fibration is \emph{entanglement-sensitive} --- separability
+is precisely the condition under which the base degenerates to a product of single-qubit Bloch
+spheres and the additional dimensions associated with the higher imaginary directions collapse
+\autocite{mosseri2001hopf,bernevigchen2003geometry}. This is a statement about the geometry of
+state spaces and requires no physical interpretation whatever.
 
-The second is algebraic. Singling out a preferred complex structure on the octonions --- equivalently, fixing the split $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$ --- leaves a residual symmetry, and that residual symmetry is exactly the gauge group of the Standard Model. This was established through the exceptional Jordan algebra by Dubois-Violette and Todorov \autocite{duboisviolette2016exceptional,duboisviolettetodorov2019exceptional,todorovduboisviolette2018deducing} and given its sharpest spinorial form by Krasnov \autocite{krasnov2021so9}, who showed that the relevant group is the stabiliser of a complex structure inside $\mathrm{Spin}(9)$. We record the result in the form in which it enters the present work.
+The second is algebraic. Singling out a preferred complex structure on the octonions ---
+equivalently, fixing the split $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$ --- leaves a
+residual symmetry, and that residual symmetry is exactly the gauge group of the Standard Model.
+This was established through the exceptional Jordan algebra by Dubois-Violette and Todorov
+\autocite{duboisviolette2016exceptional,duboisviolettetodorov2019exceptional,todorovduboisviolette2018deducing}
+and given its sharpest spinorial form by Krasnov \autocite{krasnov2021so9}, who showed that the
+relevant group is the stabiliser of a complex structure inside $\mathrm{Spin}(9)$. We record the
+result in the form in which it enters the present work.
 
-\begin{proposition}[Dubois-Violette--Todorov; Krasnov]\label{prop:gsm}
-Let $J_R$ be the complex structure on the space $\mathbb{O}^2$ of $\mathrm{Spin}(9)$ spinors determined by a choice of unit imaginary octonion, equivalently the split $\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$. The subgroup of $\mathrm{Spin}(9)$ commuting with $J_R$ is
-\[
-  G_{\mathrm{SM}} \;=\; \frac{SU(3) \times SU(2) \times U(1)}{\mathbb{Z}_6},
-\]
-acting on the singled-out $\mathbb{C}$ summand as a colour singlet of hypercharge $-1$ and on the $\mathbb{C}^3$ summand as a colour triplet of hypercharge $\tfrac{1}{3}$, both as $SU(2)$ doublets --- the quantum numbers of one left-handed generation.
+\begin{proposition}[Dubois-Violette--Todorov; Krasnov]\label{prop:gsm} Let $J_R$ be the complex
+structure on the space $\mathbb{O}^2$ of $\mathrm{Spin}(9)$ spinors determined by a choice of
+unit imaginary octonion, equivalently the split
+$\mathbb{O} \cong \mathbb{C} \oplus \mathbb{C}^3$. The subgroup of $\mathrm{Spin}(9)$ commuting
+with $J_R$ is \[ G_{\mathrm{SM}} \;=\; \frac{SU(3) \times SU(2) \times U(1)}{\mathbb{Z}_6}, \]
+acting on the singled-out $\mathbb{C}$ summand as a colour singlet of hypercharge $-1$ and on
+the $\mathbb{C}^3$ summand as a colour triplet of hypercharge $\tfrac{1}{3}$, both as $SU(2)$
+doublets --- the quantum numbers of one left-handed generation.
 \end{proposition}
 
-The two results are independent, and the join between them is the only place a physical theory must do work. Each result is a theorem; what neither supplies is a reason why nature should fix one complex direction within $\mathbb{O}$ rather than treating all directions symmetrically. We return to this --- the genuine load-bearing assumption --- in \S\ref{sec:hopf-honest-debt}, and resolve it, in candidate form, in \S\ref{sec:fanout-direction}.
+The two results are independent, and the join between them is the only place a physical theory
+must do work. Each result is a theorem; what neither supplies is a reason why nature should fix
+one complex direction within $\mathbb{O}$ rather than treating all directions symmetrically. We
+return to this --- the genuine load-bearing assumption --- in \S\ref{sec:hopf-honest-debt}, and
+resolve it, in candidate form, in \S\ref{sec:fanout-direction}.
 
 \subsection{The ladder is forced, not chosen}
 
-It might still be objected that selecting the octonions, or the Hopf fibrations, is itself a modelling choice carrying as much latitude as the choice of a grand-unified group. It is not, and the reason is a pair of classification theorems that close off the alternatives entirely.
+It might still be objected that selecting the octonions, or the Hopf fibrations, is itself a
+modelling choice carrying as much latitude as the choice of a grand-unified group. It is not,
+and the reason is a pair of classification theorems that close off the alternatives entirely.
 
-By Hurwitz's theorem the only normed division algebras are $\mathbb{R}$, $\mathbb{C}$, $\mathbb{H}$ and $\mathbb{O}$ \autocite{hurwitz1898composition,baez2002octonions}. By Adams's resolution of the Hopf-invariant-one problem --- together with the parallelisability results of Bott--Milnor and Kervaire --- the only parallelisable spheres are $S^0$, $S^1$, $S^3$ and $S^7$, so that there exist exactly three nontrivial Hopf fibrations, in bijection with $\mathbb{C}$, $\mathbb{H}$ and $\mathbb{O}$ \autocite{adams1960hopf,bottmilnor1958parallelizability,kervaire1958nonparallelizability}. These are not heuristics; they are among the more durable theorems in topology and algebra. Their force here is that, once a framework is committed to amplitudes valued in a normed division algebra --- a commitment that in the present construction is made far upstream, by the self-referential argument of \S\ref{sec:self-reference} and \S\ref{sec:division-algebras}, and not by fiat at this stage --- the ladder of Hopf fibrations is not selected but compelled, and it terminates of its own accord.
+By Hurwitz's theorem the only normed division algebras are $\mathbb{R}$, $\mathbb{C}$,
+$\mathbb{H}$ and $\mathbb{O}$ \autocite{hurwitz1898composition,baez2002octonions}. By Adams's
+resolution of the Hopf-invariant-one problem --- together with the parallelisability results of
+Bott--Milnor and Kervaire --- the only parallelisable spheres are $S^0$, $S^1$, $S^3$ and $S^7$,
+so that there exist exactly three nontrivial Hopf fibrations, in bijection with $\mathbb{C}$,
+$\mathbb{H}$ and $\mathbb{O}$
+\autocite{adams1960hopf,bottmilnor1958parallelizability,kervaire1958nonparallelizability}. These
+are not heuristics; they are among the more durable theorems in topology and algebra. Their
+force here is that, once a framework is committed to amplitudes valued in a normed division
+algebra --- a commitment that in the present construction is made far upstream, by the
+self-referential argument of \S\ref{sec:self-reference} and \S\ref{sec:division-algebras}, and
+not by fiat at this stage --- the ladder of Hopf fibrations is not selected but compelled, and
+it terminates of its own accord.
 
-\begin{proposition}[Termination]\label{prop:termination}
-The Cayley--Dickson tower of normed division algebras and the tower of parallelisable spheres both terminate at real dimension eight. Consequently there are exactly three nontrivial Hopf fibrations, the largest being the octonionic $S^{15} \to S^8$, and the construction admits no extension to a fourth case.
+\begin{proposition}[Termination]\label{prop:termination} The Cayley--Dickson tower of normed
+division algebras and the tower of parallelisable spheres both terminate at real dimension
+eight. Consequently there are exactly three nontrivial Hopf fibrations, the largest being the
+octonionic $S^{15} \to S^8$, and the construction admits no extension to a fourth case.
 \end{proposition}
 
-The termination is worth dwelling on, because it is unusual for a model of this kind to predict its own boundary. The next rung of the Cayley--Dickson sequence, the sedenions, possesses zero divisors; the Hopf map can no longer be globally defined; there is no fourth fibration. This is not a limitation imposed from outside but a structural fact, and it carries a physical consequence that we develop later: there is no room in the construction for a fourth gauge force or a fifth interaction, so that the discovery of either would count as evidence against the framework rather than as an invitation to extend it. The endpoint is a theorem, not a stipulation.
+The termination is worth dwelling on, because it is unusual for a model of this kind to predict
+its own boundary. The next rung of the Cayley--Dickson sequence, the sedenions, possesses zero
+divisors; the Hopf map can no longer be globally defined; there is no fourth fibration. This is
+not a limitation imposed from outside but a structural fact, and it carries a physical
+consequence that we develop later: there is no room in the construction for a fourth gauge force
+or a fifth interaction, so that the discovery of either would count as evidence against the
+framework rather than as an invitation to extend it. The endpoint is a theorem, not a
+stipulation.
 
 \subsection{Independent arrival as corroboration}
 
-The most persuasive evidence that the destination is not an artefact of the route is that it is reached by routes sharing none of the same machinery. Szangolies \autocite{szangolies2025standardmodel} reaches $G_{\mathrm{SM}}$ from the emergent-gravity and Kaluza--Klein programmes, reading the singled-out complex direction as a dimensional reduction of a $9+1$-dimensional spacetime; the present framework reaches it from self-reference (\S\ref{sec:self-reference}); and Furey and Gillard--Gresnigt reach the same gauge group, and the same three-generation structure, through the minimal left ideals of the Dixon and Clifford algebras, without invoking Hopf fibrations at all \autocite{furey2018three,gillardgresnigt2019three}; the relation between their minimal ideals and the entanglement classes used here is taken up in \S\ref{sec:canonical-orbits}. The octonionic route to particle physics is in any case an old one, going back to the use of $\mathbb{O}$ to model the strong force \autocite{gunaydingursey1974quark}.
+The most persuasive evidence that the destination is not an artefact of the route is that it is
+reached by routes sharing none of the same machinery. Szangolies
+\autocite{szangolies2025standardmodel} reaches $G_{\mathrm{SM}}$ from the emergent-gravity and
+Kaluza--Klein programmes, reading the singled-out complex direction as a dimensional reduction
+of a $9+1$-dimensional spacetime; the present framework reaches it from self-reference
+(\S\ref{sec:self-reference}); and Furey and Gillard--Gresnigt reach the same gauge group, and
+the same three-generation structure, through the minimal left ideals of the Dixon and Clifford
+algebras, without invoking Hopf fibrations at all
+\autocite{furey2018three,gillardgresnigt2019three}; the relation between their minimal ideals
+and the entanglement classes used here is taken up in \S\ref{sec:canonical-orbits}. The
+octonionic route to particle physics is in any case an old one, going back to the use of
+$\mathbb{O}$ to model the strong force \autocite{gunaydingursey1974quark}.
 
-That programmes with disjoint starting points converge on $SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ and on the same quark--lepton division is the coincidence Szangolies himself remarks upon: the characteristic structure of the Standard Model, routinely regarded as arbitrary, turns up independently in unrelated settings, and its appearing twice would then be doubly odd unless the two settings are in fact related. We read the convergence the same way --- as evidence that the division-algebraic description is singled out by the mathematics rather than imposed by the modeller, and therefore that Proposition~\ref{prop:gsm} is structural rather than contrived.
+That programmes with disjoint starting points converge on
+$SU(3) \times SU(2) \times U(1)/\mathbb{Z}_6$ and on the same quark--lepton division is the
+coincidence Szangolies himself remarks upon: the characteristic structure of the Standard Model,
+routinely regarded as arbitrary, turns up independently in unrelated settings, and its appearing
+twice would then be doubly odd unless the two settings are in fact related. We read the
+convergence the same way --- as evidence that the division-algebraic description is singled out
+by the mathematics rather than imposed by the modeller, and therefore that
+Proposition~\ref{prop:gsm} is structural rather than contrived.
 
 \subsection{The honest debt}
 \label{sec:hopf-honest-debt}
 
-It would be misleading to leave the impression that this route is free of assumptions, so we state plainly the one assumption that all of these programmes share. Proposition~\ref{prop:gsm} requires that \emph{some} complex direction in $\mathbb{O}$ be singled out, and the uniqueness of that choice is not supplied by the theorem. Krasnov parametrises the complex structure $J_R$ by an arbitrary unit imaginary octonion, and the residual group is the same for every such choice because $G_2 = \mathrm{Aut}(\mathbb{O})$ acts transitively on the unit imaginary octonions. The theorem therefore guarantees the gauge group \emph{given} that a direction is fixed, while remaining silent on \emph{why} one is fixed. Szangolies treats this as a free choice and flags it, in his own conclusions, as an open element of the construction --- one to which several inequivalent answers are available.
+It would be misleading to leave the impression that this route is free of assumptions, so we
+state plainly the one assumption that all of these programmes share. Proposition~\ref{prop:gsm}
+requires that \emph{some} complex direction in $\mathbb{O}$ be singled out, and the uniqueness
+of that choice is not supplied by the theorem. Krasnov parametrises the complex structure $J_R$
+by an arbitrary unit imaginary octonion, and the residual group is the same for every such
+choice because $G_2 = \mathrm{Aut}(\mathbb{O})$ acts transitively on the unit imaginary
+octonions. The theorem therefore guarantees the gauge group \emph{given} that a direction is
+fixed, while remaining silent on \emph{why} one is fixed. Szangolies treats this as a free
+choice and flags it, in his own conclusions, as an open element of the construction --- one to
+which several inequivalent answers are available.
 
-This, and not the appeal to Hopf fibrations, is the genuine load-bearing assumption of the whole approach. The Hopf fibrations are forced (Proposition~\ref{prop:termination}); the singling-out is not. The present framework offers a candidate resolution that the prior literature lacks: the act of measurement, modelled as \textsc{fanout}, selects the direction physically, and the transitivity of $G_2$ then guarantees that the gauge group is independent of which direction the measurement happens to select. This argument is given in \S\ref{sec:fanout-direction}; we flag here, at the appropriate epistemic status, that it is structural rather than fully proved, and that the residual question --- why a measurement selects \emph{exactly one} imaginary direction rather than merely \emph{permitting} a selection --- remains open. It is now priced as
-Open Problem~\ref{op:fanout-selection}.
+This, and not the appeal to Hopf fibrations, is the genuine load-bearing assumption of the whole
+approach. The Hopf fibrations are forced (Proposition~\ref{prop:termination}); the singling-out
+is not. The present framework offers a candidate resolution that the prior literature lacks: the
+act of measurement, modelled as \textsc{fanout}, selects the direction physically, and the
+transitivity of $G_2$ then guarantees that the gauge group is independent of which direction the
+measurement happens to select. This argument is given in \S\ref{sec:fanout-direction}; we flag
+here, at the appropriate epistemic status, that it is structural rather than fully proved, and
+that the residual question --- why a measurement selects \emph{exactly one} imaginary direction
+rather than merely \emph{permitting} a selection --- remains open. It is now priced as Open
+Problem~\ref{op:fanout-selection}.
 
-A second debt is shared with every programme of this character and is not closed by anything said here: why the abstract quantum state should admit a tensor-product decomposition into qubits in the first place. This is the quantum factorisation, or mereology, problem. The entanglement-sensitivity on which the construction turns is meaningful only once such a decomposition is fixed, and we treat the decomposition as a necessary input rather than a derived result. Naming it is preferable to letting it pass unremarked.
+A second debt is shared with every programme of this character and is not closed by anything
+said here: why the abstract quantum state should admit a tensor-product decomposition into
+qubits in the first place. This is the quantum factorisation, or mereology, problem. The
+entanglement-sensitivity on which the construction turns is meaningful only once such a
+decomposition is fixed, and we treat the decomposition as a necessary input rather than a
+derived result. Naming it is preferable to letting it pass unremarked.
 
 \subsection{The termination read epistemically}
 \label{sec:hopf-information-bound}
 
 The termination of the tower (Proposition~\ref{prop:termination}) has so far been stated
-algebraically: the Cayley--Dickson sequence acquires zero divisors at the sedenions and the Hopf map
-can no longer be globally defined. There is a second reading of the same boundary, epistemic rather
-than algebraic, which we offer as a motivated conjecture rather than a settled result, because it
-connects the tower's endpoint to a bound that arises independently in the foundations of measurement.
+algebraically: the Cayley--Dickson sequence acquires zero divisors at the sedenions and the Hopf
+map can no longer be globally defined. There is a second reading of the same boundary, epistemic
+rather than algebraic, which we offer as a motivated conjecture rather than a settled result,
+because it connects the tower's endpoint to a bound that arises independently in the foundations
+of measurement.
 
 A particle, in this framework, is a reified relation between events, and its internal content is
 carried by the octonionic $A,B,C$ register --- the $S^{7}$ sector serving as internal degrees of
-freedom in the channel that connects the events (\S\ref{sec:space-of-computations}). The termination
-of the tower is then a statement about that content: a single such relation can support genuine
-entanglement among at most three parties, because there is no fourth fibration to carry a fourth
-independent party within the same irreducible relation. Every particle is, on this reading, a
-\emph{completed} octonionic-level relation --- topped out at three parties not by circumstance but
-because the tower admits no further rung. The information that can be encoded in one
-relation-between-events, and hence extracted by one measurement of it, is correspondingly bounded:
-it is the information of a completed three-party register, and no measurement of a single particle
-can yield more.
+freedom in the channel that connects the events (\S\ref{sec:space-of-computations}). The
+termination of the tower is then a statement about that content: a single such relation can
+support genuine entanglement among at most three parties, because there is no fourth fibration
+to carry a fourth independent party within the same irreducible relation. Every particle is, on
+this reading, a \emph{completed} octonionic-level relation --- topped out at three parties not
+by circumstance but because the tower admits no further rung. The information that can be
+encoded in one relation-between-events, and hence extracted by one measurement of it, is
+correspondingly bounded: it is the information of a completed three-party register, and no
+measurement of a single particle can yield more.
 
 This is exactly the kind of bound that the epistemic-restriction programmes reach from the other
-direction. Spekkens' toy theory is built on a knowledge-balance principle that caps the information
-obtainable about a system \autocite{spekkens2007toy}, and Szangolies derives such an epistemic
-horizon not by positing it but from the same self-referential non-computability on which the present
-tower rests \autocite{szangolies_j_2018}. That the two accounts --- the algebraic termination
-of the Hopf tower and the epistemic bound on measurement information --- should coincide is, we
-suggest, not a numerical accident but a shared root: both are consequences of the self-referential
-non-computability of \S\ref{sec:self-reference}, wearing an algebraic face in the one case and an
-epistemic face in the other. The Hurwitz--Adams ceiling and the knowledge-balance ceiling would then
-be one limit seen twice, and Szangolies' programme, which reaches $G_{\mathrm{SM}}$ by an independent
-route (\S\ref{sec:hopf-honest-debt}) and the epistemic horizon from the same non-computable source,
-shares with this framework not merely a conclusion but its origin.
+direction. Spekkens' toy theory is built on a knowledge-balance principle that caps the
+information obtainable about a system \autocite{spekkens2007toy}, and Szangolies derives such an
+epistemic horizon not by positing it but from the same self-referential non-computability on
+which the present tower rests \autocite{szangolies_j_2018}. That the two accounts --- the
+algebraic termination of the Hopf tower and the epistemic bound on measurement information ---
+should coincide is, we suggest, not a numerical accident but a shared root: both are
+consequences of the self-referential non-computability of \S\ref{sec:self-reference}, wearing an
+algebraic face in the one case and an epistemic face in the other. The Hurwitz--Adams ceiling
+and the knowledge-balance ceiling would then be one limit seen twice, and Szangolies' programme,
+which reaches $G_{\mathrm{SM}}$ by an independent route (\S\ref{sec:hopf-honest-debt}) and the
+epistemic horizon from the same non-computable source, shares with this framework not merely a
+conclusion but its origin.
 
-The reading must be kept distinct from a different climb, with which it would otherwise be conflated.
-The Wigner's-friend regress of \S\ref{sec:wigners-friend} ascends without end: each observer may be
-measured by a further observer, each carrying a fresh gauge-private circle, and that chain has no top
---- it is the bump in the carpet, unbounded in length. The termination bounds something else: not the
-length of the chain of observers, but the internal structure of each single relation, each particle,
-that the chain is built from. The regress is unbounded precisely because each of its links is a
-bounded, completed three-party object; termination-of-each-link and non-termination-of-the-chain are
-not in tension but complementary, the former individuating the links of the latter. What the bound
-caps is the information in one particle; what the regress leaves uncapped is the number of particles
-and observers that can be chained. The precise identification of ``the information of a completed
-three-party register'' with the formal measures of the epistemic-restriction literature is the
-technical step that would turn this conjecture into a theorem, and we flag it as owed; the structural
-claim --- that the tower's endpoint and the measurement bound share the non-computable root --- is
-what we advance here.
+The reading must be kept distinct from a different climb, with which it would otherwise be
+conflated. The Wigner's-friend regress of \S\ref{sec:wigners-friend} ascends without end: each
+observer may be measured by a further observer, each carrying a fresh gauge-private circle, and
+that chain has no top --- it is the bump in the carpet, unbounded in length. The termination
+bounds something else: not the length of the chain of observers, but the internal structure of
+each single relation, each particle, that the chain is built from. The regress is unbounded
+precisely because each of its links is a bounded, completed three-party object;
+termination-of-each-link and non-termination-of-the-chain are not in tension but complementary,
+the former individuating the links of the latter. What the bound caps is the information in one
+particle; what the regress leaves uncapped is the number of particles and observers that can be
+chained. The precise identification of ``the information of a completed three-party register''
+with the formal measures of the epistemic-restriction literature is the technical step that
+would turn this conjecture into a theorem, and we flag it as owed; the structural claim --- that
+the tower's endpoint and the measurement bound share the non-computable root --- is what we
+advance here.
 
 \subsection{The termination read compositionally}
 \label{sec:hopf-compositional}
 
-There is a third termination theorem, proved in a community that has so far had no contact with the
-two joined above. Coecke and Kissinger showed that the GHZ and W classes --- realised as the
-commutative special and the anti-special Frobenius algebras of categorical quantum mechanics --- are
-\emph{compositionally complete}: every $N$-qubit entanglement class under SLOCC is generated by
-composing these tripartite primitives with bipartite entanglement and product states
+There is a third termination theorem, proved in a community that has so far had no contact with
+the two joined above. Coecke and Kissinger showed that the GHZ and W classes --- realised as the
+commutative special and the anti-special Frobenius algebras of categorical quantum mechanics ---
+are \emph{compositionally complete}: every $N$-qubit entanglement class under SLOCC is generated
+by composing these tripartite primitives with bipartite entanglement and product states
 \autocite{coeckekissinger2010compositional}. Above three parties nothing new appears; the
-entanglement alphabet closes at exactly the point where the fibration tower terminates. The mutual
-silence of the two literatures is itself striking: Coecke and Kissinger make no reference to Hopf
-fibrations or division algebras, and the fibration literature on entanglement
-\autocite{mosseri2001hopf,bernevigchen2003geometry} nowhere cites compositional completeness. Two
-classifications, in different mathematics, draw the same line in the same place, unaware of one
-another. That silence has, in the months this paper was in draft, just begun to break from the
-categorical side, with a projective, base-level reading of the same calculus
+entanglement alphabet closes at exactly the point where the fibration tower terminates. The
+mutual silence of the two literatures is itself striking: Coecke and Kissinger make no reference
+to Hopf fibrations or division algebras, and the fibration literature on entanglement
+\autocite{mosseri2001hopf,bernevigchen2003geometry} nowhere cites compositional completeness.
+Two classifications, in different mathematics, draw the same line in the same place, unaware of
+one another. That silence has, in the months this paper was in draft, just begun to break from
+the categorical side, with a projective, base-level reading of the same calculus
 \autocite{burtonanwar2026meromorphic}; we engage it below.
 
-The framework's conjecture is that this is one termination wearing a third face: the alphabet has
-the letters it has --- Bell, GHZ, W --- because the parallelisable spheres have the dimensions they
-have. There is partial evidence at every rung. At one qubit, the commutative special Frobenius
-algebras on $\mathbb{C}^{2}$ are classified by orthonormal bases --- points of $S^{2}$, the base of
-the first fibration --- so that the copied basis plays the role of a section of the bundle and the
-spider theorem expresses its idempotence. At two qubits, the $SU(2)$ fibre of $S^{7} \to S^{4}$
-carries exactly the entanglement that survives local operations, and L\'{e}vay's result that the
-bundle's natural connection is the $SU(2)$ Yang--Mills instanton \autocite{levay2004geometry} stands
-on the geometric side where the interaction of two Frobenius structures stands on the categorical
-one. At three qubits, the split of D\"{u}r, Vidal and Cirac \autocite{durvidalcirac2000three}
-mirrors the algebra exactly: GHZ is genuinely tripartite, demanding the full non-associative
-octonion, while W is pairwise-robust and housed in the associative subalgebra
-$\mathbb{H} \subset \mathbb{O}$ --- the special/anti-special Frobenius distinction in geometric
-dress.
+The framework's conjecture is that this is one termination wearing a third face: the alphabet
+has the letters it has --- Bell, GHZ, W --- because the parallelisable spheres have the
+dimensions they have. There is partial evidence at every rung. At one qubit, the commutative
+special Frobenius algebras on $\mathbb{C}^{2}$ are classified by orthonormal bases --- points of
+$S^{2}$, the base of the first fibration --- so that the copied basis plays the role of a
+section of the bundle and the spider theorem expresses its idempotence. At two qubits, the
+$SU(2)$ fibre of $S^{7} \to S^{4}$ carries exactly the entanglement that survives local
+operations, and L\'{e}vay's result that the bundle's natural connection is the $SU(2)$
+Yang--Mills instanton \autocite{levay2004geometry} stands on the geometric side where the
+interaction of two Frobenius structures stands on the categorical one. At three qubits, the
+split of D\"{u}r, Vidal and Cirac \autocite{durvidalcirac2000three} mirrors the algebra exactly:
+GHZ is genuinely tripartite, demanding the full non-associative octonion, while W is
+pairwise-robust and housed in the associative subalgebra $\mathbb{H} \subset \mathbb{O}$ --- the
+special/anti-special Frobenius distinction in geometric dress.
 
-The first of the four conditions the correspondence requires can be discharged at once, and we do so
-here, because a problem whose first step has been walked is a different kind of invitation from one
-merely posed.
+The first of the four conditions the correspondence requires can be discharged at once, and we
+do so here, because a problem whose first step has been walked is a different kind of invitation
+from one merely posed.
 
-\begin{proposition}[The one-qubit dictionary]\label{prop:f1-dictionary}
-The $\dagger$-special commutative Frobenius algebras on $\mathbb{C}^{2}$ correspond bijectively to
+\begin{proposition}[The one-qubit dictionary]\label{prop:f1-dictionary} The $\dagger$-special
+commutative Frobenius algebras on $\mathbb{C}^{2}$ correspond bijectively to
 \emph{lifted antipodal skeletons} of the complex Hopf fibration $\pi \colon S^{3} \to S^{2}$:
-unordered antipodal pairs $P \subset S^{2}$ together with a section of $\pi$ over $P$. The copyable
-states of a structure are exactly the section's image, so the lifts are recorded faithfully --- the
-projectively trivial centre of $U(2)$ acts non-trivially on structures --- and the correspondence is
-$U(2)$-equivariant, the ordered structures forming a single free and transitive $U(2)$-orbit. The
-channel a structure induces on density matrices is dephasing in its skeleton and is independent of
-the section: the fibre freedom, a torsor for $\mathrm{Map}(P, U(1))$, is exactly the data absent
-from the classical record a structure induces.
+unordered antipodal pairs $P \subset S^{2}$ together with a section of $\pi$ over $P$. The
+copyable states of a structure are exactly the section's image, so the lifts are recorded
+faithfully --- the projectively trivial centre of $U(2)$ acts non-trivially on structures ---
+and the correspondence is $U(2)$-equivariant, the ordered structures forming a single free and
+transitive $U(2)$-orbit. The channel a structure induces on density matrices is dephasing in its
+skeleton and is independent of the section: the fibre freedom, a torsor for
+$\mathrm{Map}(P, U(1))$, is exactly the data absent from the classical record a structure
+induces.
 \end{proposition}
 
 \begin{proof}
 By the classification of Coecke, Pavlovic and Vicary, such structures correspond to orthonormal
-bases, recovered as the sets of copyable states \autocite{coeckepavlovicvicary2013orthogonal}. An
-orthonormal basis of $\mathbb{C}^{2}$ is two orthogonal rays --- an antipodal pair on the Bloch
-sphere --- together with a unit representative of each, which is precisely a section of $\pi$ over
-the pair; and $\delta(e^{i\theta}x) = e^{i\theta}\, x \otimes x$ against
+bases, recovered as the sets of copyable states \autocite{coeckepavlovicvicary2013orthogonal}.
+An orthonormal basis of $\mathbb{C}^{2}$ is two orthogonal rays --- an antipodal pair on the
+Bloch sphere --- together with a unit representative of each, which is precisely a section of
+$\pi$ over the pair; and $\delta(e^{i\theta}x) = e^{i\theta}\, x \otimes x$ against
 $(e^{i\theta}x) \otimes (e^{i\theta}x) = e^{2i\theta}\, x \otimes x$ pins the phases.
 Equivariance, the action of the centre, the orbit structure and the induced channel are direct
 computations; an executable verification of every finite check accompanies the code release.
 \end{proof}
 
-Two remarks fix the proposition's scope. It corrects a natural first reading: a classical structure
-does not project to the base but selects lifts into the total space --- classicality is section
-data, and what the copy operation broadcasts is a lift, not a ray. And it claims nothing topological
-about cloning: the finiteness of the copyable set is linear, structural no-cloning residing in
-non-naturality \autocite{abramskyheunen2012hstar}, so the first place the bundle's global topology
-can bite is the quaternionic rung, where the degree-one clutching map stands ready to be compared
-with the strong-complementarity law governing an interacting pair of structures. The dictionary is,
-finally, the complement of the projective treatment cited above: Burton and Anwar pass functorially
-to the base and deliberately discard the fibre \autocite{burtonanwar2026meromorphic}, and the
-classical structures turn out to live in exactly the data their projectivisation forgets --- the two
-readings compose, and the resulting triangle is a consistency condition available to constrain the
-remaining conditions of the correspondence.
+Two remarks fix the proposition's scope. It corrects a natural first reading: a classical
+structure does not project to the base but selects lifts into the total space --- classicality
+is section data, and what the copy operation broadcasts is a lift, not a ray. And it claims
+nothing topological about cloning: the finiteness of the copyable set is linear, structural
+no-cloning residing in non-naturality \autocite{abramskyheunen2012hstar}, so the first place the
+bundle's global topology can bite is the quaternionic rung, where the degree-one clutching map
+stands ready to be compared with the strong-complementarity law governing an interacting pair of
+structures. The dictionary is, finally, the complement of the projective treatment cited above:
+Burton and Anwar pass functorially to the base and deliberately discard the fibre
+\autocite{burtonanwar2026meromorphic}, and the classical structures turn out to live in exactly
+the data their projectivisation forgets --- the two readings compose, and the resulting triangle
+is a consistency condition available to constrain the remaining conditions of the
+correspondence.
 
-\begin{openproblem}[The Hopf-fibration--Frobenius correspondence]\label{op:hopf-frobenius}
-Let $\mathbf{Hopf}$ denote the category of the three fibrations
+\begin{openproblem}[The Hopf-fibration--Frobenius correspondence]\label{op:hopf-frobenius} Let
+$\mathbf{Hopf}$ denote the category of the three fibrations
 $S^{2^{k}-1} \hookrightarrow S^{2^{k+1}-1} \to S^{2^{k}}$, $k = 1, 2, 3$, with bundle maps as
 morphisms, and let $\mathbf{Frob}$ denote the Frobenius algebras on $\mathbb{C}^{2}$ in
-$\mathbf{FdHilb}$, with the commutative-special (GHZ) and anti-special (W) classes distinguished.
-Construct a functor $F \colon \mathbf{Hopf} \to \mathbf{Frob}$ --- or prove that none exists ---
-under which the complex fibration yields the single-qubit classical structures ---
-Proposition~\ref{prop:f1-dictionary} identifies these as the lifted antipodal skeletons, section
-data over two base points rather than the points alone; the quaternionic fibration yields the interaction of two such structures,
-with the $SU(2)$ fibre carrying the entanglement that survives the classical quotient; the
-octonionic fibration yields the GHZ/W pair, GHZ on the full non-associative fibre and W on the
-associative $\mathbb{H} \subset \mathbb{O}$; and the composition by which Coecke--Kissinger generate
-the $N$-qubit classes corresponds to a well-defined geometric operation on the bundles. If such an
-$F$ exists, compositional completeness follows from Adams's theorem as a topological corollary ---
-there is no fourth fibration to supply a fourth primitive --- and if $F$ is faithful enough that the
-implication also runs back, the termination of the tower and the completeness of the alphabet are
-equivalent expressions of a single classification. The first condition is discharged by
+$\mathbf{FdHilb}$, with the commutative-special (GHZ) and anti-special (W) classes
+distinguished. Construct a functor $F \colon \mathbf{Hopf} \to \mathbf{Frob}$ --- or prove that
+none exists --- under which the complex fibration yields the single-qubit classical structures
+--- Proposition~\ref{prop:f1-dictionary} identifies these as the lifted antipodal skeletons,
+section data over two base points rather than the points alone; the quaternionic fibration
+yields the interaction of two such structures, with the $SU(2)$ fibre carrying the entanglement
+that survives the classical quotient; the octonionic fibration yields the GHZ/W pair, GHZ on the
+full non-associative fibre and W on the associative $\mathbb{H} \subset \mathbb{O}$; and the
+composition by which Coecke--Kissinger generate the $N$-qubit classes corresponds to a
+well-defined geometric operation on the bundles. If such an $F$ exists, compositional
+completeness follows from Adams's theorem as a topological corollary --- there is no fourth
+fibration to supply a fourth primitive --- and if $F$ is faithful enough that the implication
+also runs back, the termination of the tower and the completeness of the alphabet are equivalent
+expressions of a single classification. The first condition is discharged by
 Proposition~\ref{prop:f1-dictionary}; what remains open is the quaternionic and octonionic
 conditions and, above all, the correspondence of compositions. Both open conditions are already
-constrained: the quaternionic fibre's physical content --- the recoverable relative phase and its
-purity ledger --- is established (\S\ref{sec:wf-reconciliation}), leaving the
+constrained: the quaternionic fibre's physical content --- the recoverable relative phase and
+its purity ledger --- is established (\S\ref{sec:wf-reconciliation}), leaving the
 clutching-map-to-strong-complementarity comparison as the structural residue; and any candidate
 functor must reproduce the proved canonical-orbit images, GHZ to the colour triplet and W to the
-singlet (\S\ref{sec:canonical-orbits}, Appendix~\ref{app:ghz-w-proofs}). A proof that no such functor exists, or a
-correspondence at the level of the classifications without functoriality on compositions, would each
-also resolve the problem: the first would make the agreement of two independent classifications a
-fact demanding its own explanation; the second would establish the weaker reading.
+singlet (\S\ref{sec:canonical-orbits}, Appendix~\ref{app:ghz-w-proofs}). A proof that no such
+functor exists, or a correspondence at the level of the classifications without functoriality on
+compositions, would each also resolve the problem: the first would make the agreement of two
+independent classifications a fact demanding its own explanation; the second would establish the
+weaker reading.
 \end{openproblem}
 
-A resolution in the affirmative would do three things. It would explain compositional completeness
-rather than merely prove it --- a corollary of the division-algebra structure of quantum mechanics
-rather than an independent algebraic fact. It would give the diagrammatic language of this paper's
-own interaction circuits a topological warrant: the GHZ/W spider calculus would be the unique
-language the topology permits, not a convenient notation. And it would open a two-way bridge,
-translating problems on compositions of Frobenius structures into operations on bundles and back.
-The problem sits at the intersection of categorical quantum mechanics, the quantum-information
-geometry of the fibrations, and the division-algebra approaches to particle physics, and it is posed
-here so that any of the three communities can take it up in its own language. It is perhaps worth
-noticing that both classifications already answer to the same name --- the fibrations are Heinz
-Hopf's, and so, through the bialgebra structure of the diagrammatic calculus, are the Hopf algebras
---- a coincidence of eponymy that the conjecture proposes to promote to a theorem. With the
-epistemic reading above, an affirmative resolution would leave the tower's endpoint as one limit
-seen four ways: algebraic, geometric, compositional, epistemic --- the last being the fixed-point
-classification of Open Problem~\ref{op:sigma-functor}, with which this problem is cross-linked,
-each constraining the other.
+A resolution in the affirmative would do three things. It would explain compositional
+completeness rather than merely prove it --- a corollary of the division-algebra structure of
+quantum mechanics rather than an independent algebraic fact. It would give the diagrammatic
+language of this paper's own interaction circuits a topological warrant: the GHZ/W spider
+calculus would be the unique language the topology permits, not a convenient notation. And it
+would open a two-way bridge, translating problems on compositions of Frobenius structures into
+operations on bundles and back. The problem sits at the intersection of categorical quantum
+mechanics, the quantum-information geometry of the fibrations, and the division-algebra
+approaches to particle physics, and it is posed here so that any of the three communities can
+take it up in its own language. It is perhaps worth noticing that both classifications already
+answer to the same name --- the fibrations are Heinz Hopf's, and so, through the bialgebra
+structure of the diagrammatic calculus, are the Hopf algebras --- a coincidence of eponymy that
+the conjecture proposes to promote to a theorem. With the epistemic reading above, an
+affirmative resolution would leave the tower's endpoint as one limit seen four ways: algebraic,
+geometric, compositional, epistemic --- the last being the fixed-point classification of Open
+Problem~\ref{op:sigma-functor}, with which this problem is cross-linked, each constraining the
+other.
 
 \subsection{What this sets up}
 
-The entanglement-sensitivity of the Hopf maps is not a side feature but the hinge of the physical reading that follows. Because separability is exactly the collapse of the base to a product of Bloch spheres, the structure of the entanglement --- the SLOCC class of a multi-qubit state, and within it the canonical maximally entangled orbit --- is carried by precisely the degrees of freedom on which $G_{\mathrm{SM}}$ acts in Proposition~\ref{prop:gsm}. This is what makes it possible, in \S\ref{sec:entanglement-classes}, to read the two genuinely tripartite entanglement classes onto the $\mathbb{C} \oplus \mathbb{C}^3$ split through their canonical representatives: the GHZ orbit confined to the colour-triplet $\mathbb{C}^3$ sector, the W orbit reaching the $\mathbb{C}$ singlet, recovering the quark--lepton division not as an assignment but as a consequence of the entanglement structure. The scope of those statements --- canonical orbits rather than whole classes, and the identification of the canonical orbits with the physical particles --- is made precise there. The Hopf fibrations are the bridge; the entanglement classes, treated next, are the traffic that crosses it.
+The entanglement-sensitivity of the Hopf maps is not a side feature but the hinge of the
+physical reading that follows. Because separability is exactly the collapse of the base to a
+product of Bloch spheres, the structure of the entanglement --- the SLOCC class of a multi-qubit
+state, and within it the canonical maximally entangled orbit --- is carried by precisely the
+degrees of freedom on which $G_{\mathrm{SM}}$ acts in Proposition~\ref{prop:gsm}. This is what
+makes it possible, in \S\ref{sec:entanglement-classes}, to read the two genuinely tripartite
+entanglement classes onto the $\mathbb{C} \oplus \mathbb{C}^3$ split through their canonical
+representatives: the GHZ orbit confined to the colour-triplet $\mathbb{C}^3$ sector, the W orbit
+reaching the $\mathbb{C}$ singlet, recovering the quark--lepton division not as an assignment
+but as a consequence of the entanglement structure. The scope of those statements --- canonical
+orbits rather than whole classes, and the identification of the canonical orbits with the
+physical particles --- is made precise there. The Hopf fibrations are the bridge; the
+entanglement classes, treated next, are the traffic that crosses it.

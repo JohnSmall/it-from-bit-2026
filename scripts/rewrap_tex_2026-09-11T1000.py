@@ -13,6 +13,7 @@ Only the line breaks change. Specifically it will NOT break:
   * inside inline math $...$;
   * a comment line, or any line beginning with % (left exactly as found);
   * inside a verbatim-like or tabular-like environment;
+  * anything before \begin{document}, if the file has a preamble;
   * a line that is a lone command such as \\input{...} or \\label{...}.
 
 Paragraphs are blank-line separated and reflowed independently, so blank lines,
@@ -74,7 +75,12 @@ def main():
     src = open(path, encoding="utf-8").read()
     lines = src.split("\n")
 
-    out, para, env = [], [], []
+    # never reflow a preamble: \newcommand and friends carry nested braces
+    # that the lone-command test below cannot recognise
+    doc = next((i for i, l in enumerate(lines) if l.strip().startswith(r"\begin{document}")), None)
+    head, lines = (lines[:doc + 1], lines[doc + 1:]) if doc is not None else ([], lines)
+
+    out, para, env = list(head), [], []
     def flush():
         if para:
             out.extend(wrap_paragraph(" ".join(para)))
