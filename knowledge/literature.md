@@ -8,8 +8,9 @@ the papers themselves; do not duplicate entries here.
 | `paper1/references.bib` | Zotero `self-ref-2026-cited` | 192 |
 | `paper2/references_paper2.bib` | Zotero `self-ref-2026-paper2-cited` | 18 |
 
-New references enter as a dated RIS batch in `ris/`, imported to Zotero, with
-the citation key pinned by hand afterwards; see README.md.
+New references enter as a dated BibLaTeX batch in `bib/`, imported to Zotero.
+The entry key is the citation key: Better BibTeX keeps and pins it on import,
+so no pinning by hand is needed. See `../bib/README.md`.
 
 <!-- Seeded 2026-09-10 from the Claude web project memory exported 2026-09-09.
      Unlabelled: status labels are John's to apply. Append-only. -->
