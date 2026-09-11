@@ -8,11 +8,11 @@ reasoning. Delete when done.
 
 ## Manuscript
 
-- [ ] Place the remaining two fragments in `orphans/`, both structural rather
-      than mechanical: `summary_section_2026-07-07.tex` is a whole section
-      needing an \input line in main.tex, and
-      `headline_results_snippet_2026-07-07.tex` is an introduction list its
-      own header says you were to approve or veto item by item.
+- [ ] Spacetime dimensionality now appears twice in the introduction: as a
+      structural derivation in `Principal Results`, and as a hedged glimpse
+      (op:three-dimensions) in the headline list spliced after it. That may be
+      deliberate -- the same result seen structurally and numerically -- or it
+      may read as repetition. Worth a look when reviewing the finished paper.
       `associator_debt_higgs_mechanism_2026-07-03.tex` is done: its
       norm-defect version replaced the subsection in
       `paper1/boson_masses_section_2026-06-08.tex` and it is atticked. Some may be splice sources
