@@ -161,5 +161,5 @@ self-ref-2026/
 │   └── archive/
 │       ├── INDEX.md
 │       └── conversations/        # export target
-├── paper1/, paper2/, orphans/, notebooks/, scripts/, ris/, attic_* ...
+├── paper1/, paper2/, notes/, notebooks/, scripts/, ris/ ...
 
