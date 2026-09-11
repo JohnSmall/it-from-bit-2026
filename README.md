@@ -20,7 +20,8 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 
 ## Building
 
-Requires TeX Live 2025 (pinned to match Overleaf) with biber.
+Requires TeX Live 2025 with biber. The papers are written and built locally;
+`texlive.profile` below is what pins the version.
 
     latexmk                        # build every paper
     latexmk paper1/main.tex        # one paper only
