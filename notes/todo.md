@@ -23,6 +23,15 @@ reasoning. Delete when done.
       2009 (Koide QED-correction problem) is the other missing reference;
       see sessions/koide_flat_direction_2026-09-11T1900.md.
 
+- [ ] The `\medskip` summary closing `sec:spacetime-open-problems` in
+      `paper1/spacetime_from_non-computability.tex` enumerates the prospects by
+      name and now under-counts: the two loops/renormalisability paragraphs
+      spliced on 2026-09-11 are not mentioned. Which prospects to name there is
+      an editorial call.
+- [ ] TeX-style ``...'' quoting survives in 20 files across paper 1 (77
+      instances), predating the move to `\enquote{}`. Converting is mechanical
+      but touches most of the paper, so worth doing as one deliberate pass.
+
 ## Aaronson citation
 
 - [ ] Add `chapter = {9}` to `Aaronson:dem` in Zotero and re-export. He asked
@@ -43,15 +52,6 @@ reasoning. Delete when done.
       personal-communication citation is ever wanted anyway, ICMJE requires
       "written permission and confirmation of accuracy from the source" -- the
       same rule the Abramsky provenance note already applies.
-
-- [ ] The `\medskip` summary closing `sec:spacetime-open-problems` in
-      `paper1/spacetime_from_non-computability.tex` enumerates the prospects by
-      name and now under-counts: the two loops/renormalisability paragraphs
-      spliced on 2026-09-11 are not mentioned. Which prospects to name there is
-      an editorial call.
-- [ ] TeX-style ``...'' quoting survives in 20 files across paper 1 (77
-      instances), predating the move to `\enquote{}`. Converting is mechanical
-      but touches most of the paper, so worth doing as one deliberate pass.
 
 ## Ledgers
 
