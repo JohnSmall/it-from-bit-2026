@@ -52,7 +52,7 @@ Also: `project-docs/fermion_topology_open_problems.md` and
 
 ## 2026-09-11 -- op:koide-delta sharpened (see sessions/koide_delta_gap_2026-09-11T1600.md)
 
-- **OPEN** `[PROPOSED]` Derive delta = 2/9 rad. PASS: a mechanism that returns
+- **OPEN** Derive delta = 2/9 rad. PASS: a mechanism that returns
   a value inside delta = 0.2222248 +/- 0.0000063 rad (PDG 2024; the tau mass
   sets the band) with no fitted input. FAIL: any route that ends in a rational
   multiple of pi, an inverse trigonometric function of a simple algebraic
@@ -69,7 +69,7 @@ Also: `project-docs/fermion_topology_open_problems.md` and
 
 ## 2026-09-11 -- op:koide-delta restated in the paper's own construction (see sessions/koide_flat_direction_2026-09-11T1900.md)
 
-- **OPEN** `[PROPOSED]` op:koide-delta, restated: derive Re(u_1 u_2 u_3) =
+- **OPEN** op:koide-delta, restated: derive Re(u_1 u_2 u_3) =
   cos(2/3) for the three off-diagonal unit octonions of the democratic J3(O)
   element, equivalently the Bargmann invariant 3 delta = 2/3 of three mutually
   unbiased generation states (prop:koide-jordan). PASS: a value of 3 delta
@@ -81,7 +81,7 @@ Also: `project-docs/fermion_topology_open_problems.md` and
   area or a length in natural units. Supersedes the 2026-09-11 entry above in
   its phrasing of "the S1 fibre" as the flat structure. Eight routes closed in
   all; see invalid_routes.md, both 2026-09-11 sections.
-- **OPEN** `[PROPOSED]` The QED problem: an exact tree-level 2/9 at the pole
+- **OPEN** The QED problem: an exact tree-level 2/9 at the pole
   masses must survive corrections of relative size alpha_em/pi, which would
   move delta by about 5e-4 rad (eighty sigma) unless they cancel in the
   combination the Z3 form sees. Any derivation inherits this; cf. Sumino 2009

@@ -82,11 +82,11 @@ should check first.
 ## 2026-09-11 -- the Koide phase, refitted and split
 
 <!-- Proposed by Claude Code in the session recorded at
-     sessions/koide_delta_gap_2026-09-11T1600.md. Labels are PROPOSED; JS to
-     confirm, amend or reject. Script: scripts/koide_delta_fit_and_angle_scan
+     sessions/koide_delta_gap_2026-09-11T1600.md; labels accepted by JS on
+     2026-09-11. Script: scripts/koide_delta_fit_and_angle_scan
      _2026-09-11T1600.py, seed 20260911. -->
 
-- **ESTABLISHED** `[PROPOSED]` With alpha = sqrt2 and delta = 2/9 rad set by
+- **ESTABLISHED** With alpha = sqrt2 and delta = 2/9 rad set by
   hand, and the scale M fixed by the tau mass, the electron and muon masses
   are reproduced to -0.003% and -0.002% (PDG 2024 inputs; -0.007% and -0.006%
   on PDG 2022). Inverting the Z3 form on the data gives
@@ -97,12 +97,12 @@ should check first.
   with zero free dimensionless parameters": the number was right, the
   parameter clause was not -- delta is matched, not derived, and counts as one
   matched dimensionless number.
-- **CANDIDATE** `[PROPOSED]` The geometric reading
+- **CANDIDATE** The geometric reading
   2/9 = dim_R C / dim_R (O + R). It is a ratio of dimensions and delta is a
   number of radians; no mechanism yet makes one radian the natural unit
   (2/9 of a turn is 1.396 rad). RHYME is arguable. The section already calls
   it "suggestive, matched rather than derived".
-- **ESTABLISHED** `[PROPOSED]` 2/9 rad is not a natural angle at any simple
+- **ESTABLISHED** 2/9 rad is not a natural angle at any simple
   denominator: a pre-registered scan finds no rational multiple of pi with
   denominator up to 60 within 280 sigma of the fitted band, and no arccos,
   arcsin or arctan of a rational or surd (denominators to 100), nor any
@@ -110,14 +110,14 @@ should check first.
   the pi-multiples to denominator 400 produces one chance hit (22 pi/311, 2
   sigma) at the rate a random search would (expectation 0.58). Numerical
   fact; its reading is the CONJECTURE below.
-- **CONJECTURE** `[PROPOSED]` A rational number of radians is the signature of
+- **CONJECTURE** A rational number of radians is the signature of
   flat geometry with rational periods, not of round geometry; if delta is a
   holonomy, its connection is flat along the direction that carries it (the
   S1 fibre, a torus), not the round Hopf connection. Direction, not result.
 
 ## 2026-09-11 -- the Koide phase along the flat direction (sessions/koide_flat_direction_2026-09-11T1900.md)
 
-- **STRUCTURAL** `[PROPOSED]` The triality form is the spectrum of the
+- **STRUCTURAL** The triality form is the spectrum of the
   democratic element of J3(O) (unit diagonal, off-diagonal octonions of common
   norm rho): eigenvalues in the Jordan sense 1 + 2 rho cos((Phi + 2 pi k)/3)
   with cos Phi = Re(u_1 u_2 u_3) for the unit off-diagonals, so alpha = 2 rho
@@ -129,7 +129,7 @@ should check first.
   the bound and sqrt(m_e)/M = (pi/4 - 3 delta)/3 to two per cent. Verified to
   1e-15 (complex) and 3e-15 (Convention A octonions); paper1
   prop:koide-jordan.
-- **STRUCTURAL** `[PROPOSED]` If delta = 2/9 exactly (or is any non-zero
+- **STRUCTURAL** If delta = 2/9 exactly (or is any non-zero
   algebraic number) then e^{i delta} is transcendental
   (Lindemann--Weierstrass), hence: u_1 u_2 u_3 cannot be algebraic; no
   configuration of generation states with algebraic coordinates, no
@@ -140,16 +140,16 @@ should check first.
   as chance (expectation 1e-3 for a denominator-nine fraction in the six-sigma
   band; the band has narrowed 3.2x since the value was proposed and still
   contains it).
-- **STRUCTURAL** `[PROPOSED]` Fit-free form of the Koide data: with p_k =
+- **STRUCTURAL** Fit-free form of the Koide data: with p_k =
   sqrt(m_k)/sum sqrt(m), K = sum p_k^2 and sum_k p_k e^{-2 pi i k/3} =
   (alpha/2) e^{i delta}, so |b|^2 = (3K - 1)/2 = 1/2 at K = 2/3. The
   Z3-invariant phase is 3 delta = 0.6666743 +/- 0.0000188 rad (PDG 2024); 2/3
   at -0.41 sigma.
-- **RHYME** `[PROPOSED]` 3 delta = 2/3 = K: the invariant phase in radians
+- **RHYME** 3 delta = 2/3 = K: the invariant phase in radians
   equals the Koide ratio, tr X^2/(tr X)^2. Also 2/3 = 2 (1/sqrt3)^2, the Weyl
   commutator phase of two orthogonal displacements of squared amplitude 1/3.
   Arithmetic on one number; no mechanism.
-- **CANDIDATE** `[PROPOSED]` Reading of alpha = sqrt2: the three generation
+- **CANDIDATE** Reading of alpha = sqrt2: the three generation
   states are pairwise mutually unbiased, |<psi_j|psi_k>|^2 = 1/2. Proposed to
   stand beside "the doubling norm |1 + i|" in the paper, which names the
   number without saying what it is the norm of.
