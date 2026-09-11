@@ -1,0 +1,115 @@
+TY  - JOUR
+ID  - bargmann1964wigner
+AU  - Bargmann, Valentine
+TI  - Note on Wigner's Theorem on Symmetry Operations
+JO  - Journal of Mathematical Physics
+VL  - 5
+IS  - 7
+SP  - 862
+EP  - 868
+PY  - 1964
+DO  - 10.1063/1.1704188
+N1  - Verified against Crossref 2026-09-11 (title, journal, volume, issue, pages, year, DOI). Crossref gives the author as "V. Bargmann"; the forename is supplied. Supports "the Bargmann invariant of the triple", the cyclic product of three overlaps as the invariant of three rays, in sec:koide-gap.
+ER  -
+
+TY  - JOUR
+ID  - mukundasimon1993kinematic
+AU  - Mukunda, N.
+AU  - Simon, R.
+TI  - Quantum Kinematic Approach to the Geometric Phase. I. General Formalism
+JO  - Annals of Physics
+VL  - 228
+IS  - 2
+SP  - 205
+EP  - 268
+PY  - 1993
+DO  - 10.1006/aphy.1993.1093
+N1  - Verified against Crossref 2026-09-11. Supports the statement that the Bargmann invariant's argument is the geometric phase of the geodesic triangle through the three states (sec:koide-gap).
+ER  -
+
+TY  - JOUR
+ID  - pancharatnam1956interference
+AU  - Pancharatnam, S.
+TI  - Generalized theory of interference, and its applications. Part I. Coherent pencils
+JO  - Proceedings of the Indian Academy of Sciences - Section A
+VL  - 44
+IS  - 5
+SP  - 247
+EP  - 262
+PY  - 1956
+DO  - 10.1007/BF03046050
+N1  - Verified against Crossref 2026-09-11; the subtitle "Part I. Coherent pencils" is Crossref's subtitle field. The phase of an overlap as a physical (interference) phase; cited beside mukundasimon1993kinematic for the geometric-phase reading of the Koide phase.
+ER  -
+
+TY  - JOUR
+ID  - woottersfields1989unbiased
+AU  - Wootters, William K.
+AU  - Fields, Brian D.
+TI  - Optimal state-determination by mutually unbiased measurements
+JO  - Annals of Physics
+VL  - 191
+IS  - 2
+SP  - 363
+EP  - 381
+PY  - 1989
+DO  - 10.1016/0003-4916(89)90322-9
+N1  - Verified against Crossref 2026-09-11. Source of the term "mutually unbiased"; supports "each pair is mutually unbiased, |<psi_j|psi_k>|^2 = 1/2" in sec:koide-gap.
+ER  -
+
+TY  - JOUR
+ID  - durt2010unbiased
+AU  - Durt, Thomas
+AU  - Englert, Berthold-Georg
+AU  - Bengtsson, Ingemar
+AU  - Życzkowski, Karol
+TI  - On mutually unbiased bases
+JO  - International Journal of Quantum Information
+VL  - 8
+IS  - 4
+SP  - 535
+EP  - 640
+PY  - 2010
+DO  - 10.1142/S0219749910006502
+N1  - Verified against Crossref 2026-09-11 (Crossref gives volume and issue as "08" and "04"; title in capitals there, sentence case here). Review; cited with woottersfields1989unbiased so the reader has a survey for the term. Native Unicode in the fourth author's name is intended.
+ER  -
+
+TY  - BOOK
+ID  - baker1975transcendental
+AU  - Baker, Alan
+TI  - Transcendental Number Theory
+PB  - Cambridge University Press
+CY  - Cambridge
+PY  - 1975
+SN  - 9780521204613
+DO  - 10.1017/CBO9780511565977
+N1  - Verified against Crossref 2026-09-11 (title, author, publisher, year, ISBN, DOI) and the publisher's contents page (chapter 1 is "The origins"). That chapter 1 carries the Lindemann--Weierstrass theorem, used in sec:koide-gap as the FAIL criterion for op:koide-delta and cited as \autocite[ch.~1], is confirmed only from secondary descriptions of the book (the BAMS review); the theorem number was not checked. Reissued 1990 in the Cambridge Mathematical Library; either printing serves.
+ER  -
+
+TY  - BOOK
+ID  - springerveldkamp2000octonions
+AU  - Springer, Tonny A.
+AU  - Veldkamp, Ferdinand D.
+TI  - Octonions, Jordan Algebras and Exceptional Groups
+T3  - Springer Monographs in Mathematics
+PB  - Springer
+CY  - Berlin
+PY  - 2000
+SN  - 9783642085635
+DO  - 10.1007/978-3-662-12622-6
+N1  - Verified against Crossref 2026-09-11 (title, authors, series, publisher, year, ISBNs, DOI). Supports two facts in prop:koide-jordan: the associativity of the trace form on a composition algebra (Re((xy)z) = Re(x(yz))), and the spectral decomposition of an element of J3(O) into orthogonal primitive idempotents with the roots of the characteristic cubic as coefficients. The chapter and lemma numbers for these two facts were not checked.
+ER  -
+
+TY  - JOUR
+ID  - draymanogue1999eigenvalue
+AU  - Dray, Tevian
+AU  - Manogue, Corinne A.
+TI  - The Exceptional Jordan Eigenvalue Problem
+JO  - International Journal of Theoretical Physics
+VL  - 38
+IS  - 11
+SP  - 2901
+EP  - 2916
+PY  - 1999
+DO  - 10.1023/A:1026699830361
+N1  - Verified against Crossref and arXiv 2026-09-11; arXiv:math-ph/9910004, whose abstract opens "We discuss the eigenvalue problem for 3x3 octonionic Hermitian matrices which is relevant to the Jordan formulation of quantum mechanics." Supports the clause "eigenvalues in the Jordan sense" in prop:koide-jordan.
+ER  -

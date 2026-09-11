@@ -334,6 +334,40 @@ the second that the algebra actually says.
   `paper1/masses_section_2026-06-08.tex.2026-09-11T1930.bak`.
 - `notes/todo.md`: one line on crediting the 2/9 parametrisation, one on
   the stray build artefact below.
+- Later the same day, at JS's request: `bib/koide_bargmann_jordan_refs_2026-09-11T2000.ris`
+  (eight entries, verified as recorded under VERIFY-CITE below; written to
+  `ris/`, which was renamed `bib/` the same evening, commit bbac638) and
+  `scripts/patch_koide_citations_jordan_sense_2026-09-11T2000.py`, which
+  cites them in sec:koide-gap and adds the clause "eigenvalues of $X$ in the
+  Jordan sense --- the roots of its characteristic cubic ..." to
+  prop:koide-jordan, since for octonionic Hermitian matrices the naive
+  eigenvalue equation has solutions outside the cubic's roots. Applied, not
+  built: the keys enter references.bib only when JS imports the RIS into
+  Zotero and re-exports. Backup
+  `paper1/masses_section_2026-06-08.tex.2026-09-11T2000.bak`.
+- After the import and re-export: Better BibTeX did not take the RIS ID
+  fields as citation keys and generated its own. The cause, established by
+  JS afterwards (commits 182e214, bbac638, bib/README.md): Zotero's RIS
+  importer has no citation-key field and discards the ID, whereas BBT's own
+  importer keeps and pins the entry key of a .bib. Reference batches are
+  now written as .bib with the intended key, so the citation can be written
+  before the import; this .ris stays in bib/ as imported and no new .ris is
+  to be written. The exported entries are
+  complete and correct (Unicode surname intact, every DOI as verified).
+  `scripts/patch_koide_citation_keys_bbt_2026-09-11T2100.py` re-points the
+  eight citations (backup `.2026-09-11T2100.bak`):
+  bargmann1964wigner -> bargmannNoteWignersTheorem1964;
+  mukundasimon1993kinematic -> mukundaQuantumKinematicApproach1993;
+  pancharatnam1956interference -> pancharatnamGeneralizedTheoryInterference1956;
+  woottersfields1989unbiased -> woottersOptimalStatedeterminationMutually1989;
+  durt2010unbiased -> durtMutuallyUnbiasedBases2010;
+  baker1975transcendental -> bakerTranscendentalNumberTheory1975;
+  springerveldkamp2000octonions -> springerOctonionsJordanAlgebras2000 (twice);
+  draymanogue1999eigenvalue -> drayExceptionalJordanEigenvalue1999.
+  Build authorised by JS after the re-export: `latexmk paper1/main.tex` exit
+  0, no `^!` lines, zero undefined citations, all eight entries present in
+  main.bbl, no biber warnings for them; the thirteen pre-existing undefined
+  references unchanged.
 
 Compile: baseline `latexmk paper1/main.tex` clean (exit 0, no `^!` lines in
 main.log). The first patched build failed with a truncated main.aux because
@@ -439,9 +473,19 @@ No ledger was edited. Proposed entries follow.
   for the cubic norm of J3(O), section 3.4; I have read that section in the
   past but did not reopen it this session, so the section number should be
   checked at proof stage.
-- Lindemann--Weierstrass is stated without citation in the patch, as a
-  named theorem; a textbook reference (Baker, Transcendental Number Theory,
-  1975, ch. 1) could be added through Zotero if JS wants one.
+- The eight references added at T2000 for the Bargmann-invariant material
+  (bargmann1964wigner, mukundasimon1993kinematic, pancharatnam1956interference,
+  woottersfields1989unbiased, durt2010unbiased, baker1975transcendental,
+  springerveldkamp2000octonions, draymanogue1999eigenvalue) were first
+  written from memory and then verified against Crossref, and for Dray and
+  Manogue against arXiv, on 2026-09-11: every title, author list, journal,
+  volume, issue, page range, year and DOI matched. Two things remain
+  unchecked at the level of the citation: that Baker's chapter 1 is where
+  Lindemann--Weierstrass sits (confirmed only from secondary descriptions;
+  the chapter title "The origins" is from the publisher's contents page),
+  and the chapter and lemma numbers in Springer and Veldkamp for the two
+  facts cited. Neither is marked VERIFY-CITE in the text; both are noted in
+  the RIS N1 lines.
 
 ## Not done
 
@@ -450,5 +494,7 @@ No ledger was edited. Proposed entries follow.
   is recorded; the object to look for is a rational sum of three rotation
   angles in complex lines of O.
 - The QED question is stated, not computed.
-- No RIS batch: the two references I would add (Brannen, Sumino) are not
-  verified against sources read this session.
+- No RIS entries for Brannen 2006 and Sumino 2009: neither was verified
+  against a source this session. The eight Bargmann-invariant and
+  Jordan-algebra references were added and verified later the same day
+  (see VERIFY-CITE).
