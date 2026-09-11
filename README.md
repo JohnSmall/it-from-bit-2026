@@ -12,7 +12,7 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 | `paper2/`       | Paper 2: root document and its bibliography              |
 | `notes/`        | Working state: to-do items and ideas, no status labels   |
 | `notebooks/`    | Jupyter notebooks behind the appendix computations       |
-| `ris/`          | Dated RIS import batches                                 |
+| `ris/`          | Dated bibliography import batches (`.bib`; `.ris` legacy)|
 | `scripts/`      | Python calculations and LaTeX patch scripts              |
 | `knowledge/`    | Curated results, open problems, and session archive      |
 | `knowledge/publications/` | The author's earlier papers and posters, frozen |
@@ -54,12 +54,29 @@ the collection, choose Export Collection, and pick the Better BibTeX
 format. Keep BBT's "Fields to omit from export" set to `abstract,file`, or
 the export carries local storage paths into the repository.
 
-New references go in as a dated RIS batch under `ris/`, imported into
-Zotero. Zotero's importer discards the RIS `ID` field, so Better BibTeX
-assigns a formula key on import and the intended key must then be pinned by
-hand in the item's Citation Key field; the export honours whatever is
-pinned there. Keys are `author+year+keyword`, inherited from the Mendeley
-library the collections were built from.
+New references go in as a dated BibLaTeX batch under `ris/`, imported into
+Zotero. Write the batch as `.bib`, not `.ris`. RIS has no citation-key field,
+so Zotero discards the `ID` on import and Better BibTeX assigns a formula key
+instead, which then has to be pinned by hand or the citations re-pointed to
+match. A `.bib` entry key is a citation key, and BBT's own importer keeps it
+and pins it: the preference is `importCitationKey`, "On import, assign the
+existing citation key to the item being imported", and it is on by default.
+So the entry key you write is the key the export will carry.
+
+Import with File > Import, choose the `.bib`, and check that the Citation Key
+column shows your key rather than a generated one before exporting. Two things
+to know when writing the batch. BBT sentence-cases titles on import
+(`importSentenceCase` defaults to `on+guess`), so brace any word whose capitals
+must survive: `title = {The {Octonions}}`. And the generated key, if pinning
+ever fails, comes from `citekeyFormat`, which in this library is
+`auth.lower + shorttitle(3, 3) + year` --- a key like
+`bakerTranscendentalNumberTheory1975` is the sign that an entry arrived
+unpinned.
+
+Keys are `author+year+keyword`, inherited from the Mendeley library the
+collections were built from. The `.ris` files already in `ris/` are the
+historical batches, kept as they were imported; the directory name is
+likewise historical.
 
 A collection is aligned with its paper when the exported keys and the
 `\abx@aux@cite` entries in that paper's `.aux` file are the same set. That
