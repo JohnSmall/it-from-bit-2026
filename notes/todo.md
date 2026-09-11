@@ -59,6 +59,15 @@ reasoning. Delete when done.
       instances), predating the move to `\enquote{}`. Converting is mechanical
       but touches most of the paper, so worth doing as one deliberate pass.
 
+- [ ] The results ledger says delta_0 = 2/9 reproduces charged lepton masses
+      to "<0.006%"; `paper1/masses_section_2026-06-08.tex` says the phase is
+      "matched to five significant figures". These may be measuring different
+      quantities, or one may be stale. The headline snippet now follows the
+      section. Worth reconciling, and the ledger entry is labelled ESTABLISHED
+      while the section calls delta = 2/9 "the one genuine gap", matched rather
+      than derived, with op:koide-delta attached -- so the label may want
+      revisiting too.
+
 ## Ledgers
 
 - [ ] Confirm the four status labels marked `[JUDGED]` in
