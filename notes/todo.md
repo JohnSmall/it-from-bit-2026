@@ -17,11 +17,16 @@ reasoning. Delete when done.
 - [ ] Complete the four framing prose sections for Paper 1 -- introduction,
       abstract, preamble check, conclusions. Named in the project memory as
       the only thing between Paper 1 and arXiv submission.
-- [ ] The masses section credits Koide 1983 for the ratio and nobody for the
-      delta = 2/9 parametrisation, which is Brannen's (2006, as recalled;
-      VERIFY-CITE). Add via Zotero/RIS once the source is in hand. Sumino
-      2009 (Koide QED-correction problem) is the other missing reference;
-      see sessions/koide_flat_direction_2026-09-11T1900.md.
+- [ ] Import `bib/koide_attribution_refs_2026-09-11T2011.bib` into Zotero and
+      re-export, then credit the phase in the masses section. Both references
+      are now verified and the VERIFY-CITE is cleared: Brannen 2006 (read in
+      full) and Sumino 2009 (Crossref and arXiv). Brannen turns out to carry
+      more than the number -- the circulant Hermitian form with
+      lambda_n = mu(1 + 2 eta cos(delta + 2 pi n/3)), eta^2 = 1/2 (the
+      framework's alpha = sqrt2) and delta_1 = 0.2222220(19) -- so it is the
+      complex precursor of prop:koide-jordan, not only of delta = 2/9. How
+      much to credit, and where, is JS's call; see the 2026-09-11T2011
+      session note.
 
 - [ ] The `\medskip` summary closing `sec:spacetime-open-problems` in
       `paper1/spacetime_from_non-computability.tex` enumerates the prospects by
