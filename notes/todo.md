@@ -28,6 +28,15 @@ reasoning. Delete when done.
 - [ ] Complete the four framing prose sections for Paper 1 -- introduction,
       abstract, preamble check, conclusions. Named in the project memory as
       the only thing between Paper 1 and arXiv submission.
+- [ ] The masses section credits Koide 1983 for the ratio and nobody for the
+      delta = 2/9 parametrisation, which is Brannen's (2006, as recalled;
+      VERIFY-CITE). Add via Zotero/RIS once the source is in hand. Sumino
+      2009 (Koide QED-correction problem) is the other missing reference;
+      see sessions/koide_flat_direction_2026-09-11T1900.md.
+- [ ] `paper1/main.bcf-SAVE-ERROR` is a biber artefact left by two latexmk
+      runs colliding on 2026-09-11 (a second session built paper1 while this
+      one did). Not gitignored; remove or ignore. Serialise builds: check
+      `pgrep -af latexmk` before running one.
 
 ## Aaronson citation
 
