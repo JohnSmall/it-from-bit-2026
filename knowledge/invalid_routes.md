@@ -56,3 +56,28 @@ is exactly that it failed. Each entry records why.
   read as a fraction of a turn. None lands within the experimental band
   (script koide_delta_fit_and_angle_scan_2026-09-11T1600.py). A derivation
   that ends in one of these families is wrong before it is checked.
+
+## 2026-09-11 -- the flat direction (see sessions/koide_flat_direction_2026-09-11T1900.md)
+
+- A compact flat torus, with or without quantised flux: quantised flux gives
+  rational multiples of 2 pi (Pick's theorem on lattice areas), the family the
+  scan excludes; an unquantised flat holonomy is a modulus and re-houses the
+  fitted number. Hopf tori in S^3 are flat with a flat restricted connection,
+  but their holonomies are the excluded cap phases by Stokes. Closes the
+  "torus" half of the 2026-09-11T1600 conjecture; the "flat" half stands as
+  "exponential of a rational number, non-compact direction".
+- Any construction in which e^{i delta} is algebraic: roots of unity,
+  finite-group phases (Clifford, Pauli, Weyl of G2), algebraic state
+  configurations, SIC and MUB overlaps, octonionic structure-constant triples,
+  round holonomies around polygons with algebraic vertices. Excluded exactly
+  by Lindemann--Weierstrass if 2/9 is exact, and numerically by the 1600 scan
+  at simple denominators if it is not. A derivation that ends here is wrong
+  before it is checked.
+- The coherent-state (Pancharatnam) model: three coherent states on an
+  equilateral triangle in phase space, mass roots the Gram eigenvalues, phase
+  twice the enclosed area. One parameter, two targets: fixing the overlap at
+  1/sqrt2 gives Phi = (sqrt3/2) ln 2 = 0.600 rad (3500 sigma from 2/3), fixing
+  Phi = 2/3 gives alpha = 1.361 (4900 sigma from sqrt2). Script
+  koide_flat_direction_gram_2026-09-11T1900.py, Part D.
+- Near-miss, not a route: 108 p_e p_mu p_tau = 4 det G = 2 sqrt2 cos(3 delta)
+  - 2 = 0.2228, 0.27% above 2/9, 18 sigma. Do not chase.

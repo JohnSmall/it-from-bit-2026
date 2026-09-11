@@ -70,9 +70,12 @@ reasoning. Delete when done.
       "delta_0 = 2/9 ... zero free dimensionless parameters" entry into the
       numerical match (ESTABLISHED) and the dimension-ratio reading
       (CANDIDATE), with the reasoning in
-      `sessions/koide_delta_gap_2026-09-11T1600.md`. A second set is proposed
-      but not yet written into the ledgers, at the end of
-      `sessions/koide_flat_direction_2026-09-11T1900.md`.
+      `sessions/koide_delta_gap_2026-09-11T1600.md`. A second set, from
+      `sessions/koide_flat_direction_2026-09-11T1900.md`, is now written into
+      all three ledgers under the "flat direction" headings of 2026-09-11
+      (five labelled entries in `results_ledger.md`, two in
+      `open_problems.md`, four unlabelled routes in `invalid_routes.md`) and
+      awaits the same acceptance; the labels there are still `[PROPOSED]`.
 
 ## Before the repository goes public
 

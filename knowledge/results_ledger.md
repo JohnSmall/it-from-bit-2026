@@ -114,3 +114,47 @@ should check first.
   flat geometry with rational periods, not of round geometry; if delta is a
   holonomy, its connection is flat along the direction that carries it (the
   S1 fibre, a torus), not the round Hopf connection. Direction, not result.
+
+## 2026-09-11 -- the Koide phase along the flat direction (sessions/koide_flat_direction_2026-09-11T1900.md)
+
+- **STRUCTURAL** `[PROPOSED]` The triality form is the spectrum of the
+  democratic element of J3(O) (unit diagonal, off-diagonal octonions of common
+  norm rho): eigenvalues in the Jordan sense 1 + 2 rho cos((Phi + 2 pi k)/3)
+  with cos Phi = Re(u_1 u_2 u_3) for the unit off-diagonals, so alpha = 2 rho
+  and 3 delta = Phi. The phase is bracketing-independent and the spectrum
+  depends on Phi only. Over C: the Koide spectrum with alpha = sqrt2 is the
+  spectrum of the Gram matrix of three pairwise mutually unbiased states and 3
+  delta is their Bargmann invariant. Positivity gives |Phi| <= pi/4 with
+  equality iff one generation is massless; the measured 3 delta is 0.849 of
+  the bound and sqrt(m_e)/M = (pi/4 - 3 delta)/3 to two per cent. Verified to
+  1e-15 (complex) and 3e-15 (Convention A octonions); paper1
+  prop:koide-jordan.
+- **STRUCTURAL** `[PROPOSED]` If delta = 2/9 exactly (or is any non-zero
+  algebraic number) then e^{i delta} is transcendental
+  (Lindemann--Weierstrass), hence: u_1 u_2 u_3 cannot be algebraic; no
+  configuration of generation states with algebraic coordinates, no
+  finite-group phase, no root of unity, no round holonomy around a polygon
+  with algebraic vertices can be exact; and every charged-lepton mass ratio is
+  transcendental. Any mechanism yielding an algebraic mass ratio yields delta
+  zero or transcendental and must explain the five-figure agreement with 2/9
+  as chance (expectation 1e-3 for a denominator-nine fraction in the six-sigma
+  band; the band has narrowed 3.2x since the value was proposed and still
+  contains it).
+- **STRUCTURAL** `[PROPOSED]` Fit-free form of the Koide data: with p_k =
+  sqrt(m_k)/sum sqrt(m), K = sum p_k^2 and sum_k p_k e^{-2 pi i k/3} =
+  (alpha/2) e^{i delta}, so |b|^2 = (3K - 1)/2 = 1/2 at K = 2/3. The
+  Z3-invariant phase is 3 delta = 0.6666743 +/- 0.0000188 rad (PDG 2024); 2/3
+  at -0.41 sigma.
+- **RHYME** `[PROPOSED]` 3 delta = 2/3 = K: the invariant phase in radians
+  equals the Koide ratio, tr X^2/(tr X)^2. Also 2/3 = 2 (1/sqrt3)^2, the Weyl
+  commutator phase of two orthogonal displacements of squared amplitude 1/3.
+  Arithmetic on one number; no mechanism.
+- **CANDIDATE** `[PROPOSED]` Reading of alpha = sqrt2: the three generation
+  states are pairwise mutually unbiased, |<psi_j|psi_k>|^2 = 1/2. Proposed to
+  stand beside "the doubling norm |1 + i|" in the paper, which names the
+  number without saying what it is the norm of.
+- *Superseded in part:* the 2026-09-11 CONJECTURE above, in its clause "the S1
+  fibre, a torus". A compact flat torus cannot carry a rational number of
+  radians (invalid_routes.md, same date, flat-direction section). The "flat"
+  clause stands, sharpened: the phase must be the exponential of a rational
+  number, carried by a non-compact flat direction. Recorded, not labelled.

@@ -66,3 +66,23 @@ Also: `project-docs/fermion_topology_open_problems.md` and
   "zero adjustable dimensionless parameters" is made consistent with this in
   the 2026-09-11 patch; the count returns to zero only when op:koide-delta
   closes.
+
+## 2026-09-11 -- op:koide-delta restated in the paper's own construction (see sessions/koide_flat_direction_2026-09-11T1900.md)
+
+- **OPEN** `[PROPOSED]` op:koide-delta, restated: derive Re(u_1 u_2 u_3) =
+  cos(2/3) for the three off-diagonal unit octonions of the democratic J3(O)
+  element, equivalently the Bargmann invariant 3 delta = 2/3 of three mutually
+  unbiased generation states (prop:koide-jordan). PASS: a value of 3 delta
+  inside 0.6666743 +/- 0.0000188 rad with no fitted input. FAIL before
+  checking: any route ending in an algebraic e^{i delta}. Constraint: the u_i
+  must be exponentials exp(theta_i n_i) of rational multiples of imaginary
+  units, with angles summing to 2/3 in the coplanar case; the flat structure
+  is non-compact in the direction that carries the phase, and the number is an
+  area or a length in natural units. Supersedes the 2026-09-11 entry above in
+  its phrasing of "the S1 fibre" as the flat structure. Eight routes closed in
+  all; see invalid_routes.md, both 2026-09-11 sections.
+- **OPEN** `[PROPOSED]` The QED problem: an exact tree-level 2/9 at the pole
+  masses must survive corrections of relative size alpha_em/pi, which would
+  move delta by about 5e-4 rad (eighty sigma) unless they cancel in the
+  combination the Z3 form sees. Any derivation inherits this; cf. Sumino 2009
+  (VERIFY-CITE). No PASS/FAIL yet beyond the band itself.
