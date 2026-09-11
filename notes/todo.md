@@ -97,8 +97,16 @@ have not been checked since.
 - [ ] Label mapping for the four master-file section labels (`sec:hopf`,
       `sec:born`, `sec:fanout`, `sec:contextuality`) in the Jaynes appendix.
 
-- [ ] `paper1/main.tex` introduction has 13 undefined references that predate
-      2026-09-11 (build warnings, not errors): `sec:Kioid` (typo),
-      `sec:negative_probaility` (typo), `sec:self-ignorance`,
-      `sec:achirality_qcd`, `sec:quantum_number` and others. They render as
-      "??" in the PDF. Re-point each to the section label that now exists.
+- [ ] Nine of the ten undefined section references are resolved (patch
+      2026-09-11T2030; see sessions/tidy_after_koide_handover_2026-09-11T2011.md
+      for the mapping). Needs a build to confirm the warning count falls from
+      thirteen to one. The one left is `sec:sedenions-mixing` in
+      `wigners_friend_in_the_hopf_picture`: the sentence says that section
+      "reads that phase ... as this wire's contextual cargo", which could be
+      the masses section's `\subsection{Mass eigenstates versus weak
+      eigenstates}` or the interactions section's provenance paragraph on the
+      sedenion route to the full CKM. JS to choose.
+- [ ] The eighteen references in main.tex's "Paper structure" paragraph are
+      bare `\ref{}`, so they render as "1.2" rather than "\S1.2" as the rest
+      of the paper does. A one-paragraph style pass, unrelated to the warnings
+      above.
