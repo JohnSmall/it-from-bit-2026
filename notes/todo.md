@@ -3,9 +3,6 @@
 Actionable items with enough context to act on without reconstructing the
 reasoning. Delete when done.
 
-## Zotero housekeeping
-
-
 ## Manuscript
 
 - [ ] Spacetime dimensionality now appears twice in the introduction: as a
@@ -13,14 +10,6 @@ reasoning. Delete when done.
       (op:three-dimensions) in the headline list spliced after it. That may be
       deliberate -- the same result seen structurally and numerically -- or it
       may read as repetition. Worth a look when reviewing the finished paper.
-      `associator_debt_higgs_mechanism_2026-07-03.tex` is done: its
-      norm-defect version replaced the subsection in
-      `paper1/boson_masses_section_2026-06-08.tex` and it is atticked. Some may be splice sources
-      whose content already lives in a section, in which case they are
-      superseded rather than pending -- `jaynes_paragraph_2026-07-19.tex` has
-      a live counterpart of the same date, so diff before deciding.
-      `spacetime_additions_2026-07-04.tex` carries a header warning about
-      colliding with the Overleaf state, which no longer exists.
 - [ ] Check the cross-reference from `predictions_section` line 227 ("no
       experiment will ever hold a record of indefinite causal order") through
       to the qualified statement in `sec:no-quantised-gravity`. That
@@ -33,10 +22,6 @@ reasoning. Delete when done.
       VERIFY-CITE). Add via Zotero/RIS once the source is in hand. Sumino
       2009 (Koide QED-correction problem) is the other missing reference;
       see sessions/koide_flat_direction_2026-09-11T1900.md.
-- [ ] `paper1/main.bcf-SAVE-ERROR` is a biber artefact left by two latexmk
-      runs colliding on 2026-09-11 (a second session built paper1 while this
-      one did). Not gitignored; remove or ignore. Serialise builds: check
-      `pgrep -af latexmk` before running one.
 
 ## Aaronson citation
 
@@ -68,13 +53,6 @@ reasoning. Delete when done.
       instances), predating the move to `\enquote{}`. Converting is mechanical
       but touches most of the paper, so worth doing as one deliberate pass.
 
-- [ ] Reconciled 2026-09-11 (sessions/koide_delta_gap_2026-09-11T1600.md):
-      "<0.006%" is the mass error and "five significant figures" the digits of
-      delta; both hold on PDG 2024. The ESTABLISHED entry is superseded by a
-      split entry (numerical fact ESTABLISHED, dimension-ratio reading
-      CANDIDATE) awaiting JS's confirmation of the PROPOSED labels in the
-      three ledgers.
-
 ## Ledgers
 
 - [ ] Confirm the four status labels marked `[JUDGED]` in
@@ -87,6 +65,14 @@ reasoning. Delete when done.
       **OPEN**. Only STRUCTURAL, CANDIDATE and RHYME are defined in the
       corpus, in `paper1/appendices/appendix_jaynes_fibration_2026-07-19.tex`
       section `app:jaynes:status`. The other three were inferred.
+- [ ] Accept or reject the labels marked `[PROPOSED]` on 2026-09-11: four in
+      `results_ledger.md` and one in `open_problems.md`, which split the old
+      "delta_0 = 2/9 ... zero free dimensionless parameters" entry into the
+      numerical match (ESTABLISHED) and the dimension-ratio reading
+      (CANDIDATE), with the reasoning in
+      `sessions/koide_delta_gap_2026-09-11T1600.md`. A second set is proposed
+      but not yet written into the ledgers, at the end of
+      `sessions/koide_flat_direction_2026-09-11T1900.md`.
 
 ## Before the repository goes public
 
