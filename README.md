@@ -10,7 +10,6 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 |-----------------|----------------------------------------------------------|
 | `paper1/`       | Paper 1: `main.tex`, its sections, `appendices/`, its bib|
 | `paper2/`       | Paper 2: root document and its bibliography              |
-| `orphans/`      | Fragments reachable from neither paper; not yet placed   |
 | `notes/`        | Working state: to-do items and ideas, no status labels   |
 | `notebooks/`    | Jupyter notebooks behind the appendix computations       |
 | `ris/`          | Dated RIS import batches                                 |
