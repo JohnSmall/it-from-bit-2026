@@ -1,0 +1,164 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+%
+% We try to keep this Overleaf template in sync with the canonical source on
+% GitHub, but it's recommended that you obtain the template directly from
+% GitHub to ensure that you are using the latest version.
+
+\documentclass[final]{beamer}
+
+% ====================
+% Packages
+% ====================
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{poster.bib}
+\usepackage[english]{babel}
+\usepackage[strict]{csquotes}% Recommended
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage[size=a0,width=120,height=72,scale=1.0]{beamerposter}
+\usepackage[size=a1,orientation=portrait,scale=0.95]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{gemini}
+%\usepackage{graphicx}
+\usepackage{braket} %Dirac notation
+\usepackage{booktabs}
+\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+\usepackage{amsfonts} 
+%\pgfplotsset{compat=1.14}
+%\\setlength{\parskip}{0.5em}
+\setlength{\parskip}{\baselineskip} 
+% ====================
+% Lengths
+% ====================
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.011\paperwidth}
+\setlength{\colwidth}{0.35\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% ====================
+% Title
+% ====================
+
+\title{Non-locality, non-computability and PR Boxes. A first-person view}
+
+\author{John D. Small}
+
+% ====================
+% Footer (optional)
+% ====================
+
+\footercontent{
+   \hfill
+  Quantum Information and Probability: from Foundations to Engineering, Vaxjo, Sweden, 2024 \hfill
+  \href{mailto:john.small06@alumni.imperial.ac.uk}{john.small06@alumni.imperial.ac.uk}
+  }
+% (can be left out to remove footer)
+
+% ====================
+% Logo (optional)
+% ====================
+
+% use this to include logos on the left and/or right side of the header:
+% \logoright{\includegraphics[height=7cm]{logo1.pdf}}
+% \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
+
+% ====================
+% Body
+% ====================
+
+\begin{document}
+
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn
+
+\begin{column}{\colwidth}
+  \begin{block}{The First Person perspective and Solipsism}
+    The first person point of view of quantum mechanics is unpopular because it runs into the philosophical problem of solipsism. All authors proposing a resolution to problems in quantum foundations by taking a first person view have to engage in philosophical arguments to counter the accusation of solipsism (e.g. \autocite{Mueller2017}). I propose a better way of dealing with this issue, just ignore it and focus on solving actual problems to see how far we get.  
+\end{block}
+\begin{block}{Observer, Observed and the process of Observation.\\ Karl Popper has a thought}
+    All measurements are the outcome of bringing together the observer and the observed via the process of observation. In classical mechanics the role of the observer can be ignored. Well, most of the time but not always. 
+    
+    In 1950 Karl Popper published two articles \autocite{Popper1950IndeterminismI, Popper1950IndeterminismII} pointing out that even in classical mechanics an observation entails an element of unpredictability because an observer cannot in principle have detailed knowledge of their own internal state and therefore cannot make accurate predictions about a future interaction with an external entity for which the observer does have complete information.
+    
+    This means that an observer's prediction of the outcome of an observation must be entail epistemic probabilities even though they have complete knowledge of the external entity and even though everything proceeds according to fully deterministic laws. Furthermore a third person observer would view the interaction of the first observer with the object of observation as a purely deterministic evolution because that third person can have full knowledge of the first observer's state, knowledge which is inaccessible to the first observer themselves. If the first observer were to have knowledge of their own state, that would change their state thus erasing that information. 
+    
+    If a state is erased from the record that state would have a negative probability of existing, see \autocite{Burgin2013} for a more complete argument. Therefore the first observer must use negative probability when predicting their own future state. Sadly Karl Popper did not make this connection even though he described it quite clearly. Using $C$ to refer to the first-person observer and $C^{+}$ to refer to the third-person observer he wrote;-
+    
+    \begin{quote}
+        And this explains why $C^+$ can predict $C$ while $C$ cannot predict $C$. The reason is that $C^+$ can be given information about $C$ which is up to date, while if that same information is given to $C$, its up-to-dateness is destroyed
+    \end{quote}
+
+    In modern parlance we would say that it is non-computable for an observer to know their own state.
+    
+    On the subject of negative probabilities Aaronson, \autocite{Aaronson:dem} writes;-
+    
+    \begin{quote}
+      Quantum mechanics is what you would inevitably come up with if you started from probability theory, and then said, let's try to generalize it so that the numbers we used to call \textquote{probabilities} can be negative numbers. As such, the theory could have been invented by mathematicians in the nineteenth century without any input from experiment. It wasn't, but it could have been.\\
+    \end{quote}
+  \end{block}
+  \begin{block}{Claude Shannon gets involved}
+  It is generally assumed that the randomness of quantum measurement is due to some intrinsic property of Nature rather than a consequence of some lack of knowledge on the part of the observer and so the outcome of a measurement does not increase an observer's knowledge. For this reason we can't use Shannon Information Theory to quantify the information gained due to making a measurement. Brukner and Zeilinger 
+  \autocite{brukner_2000_shannon} write ;-
+  
+  \begin{quote}
+  In a classical measurement the Shannon information is a natural measure of our ignorance about properties of a system. There, observation removes that ignorance in revealing properties of the system which can be considered to preexist prior to and independent of observation. Because of the completely different root of a quantum measurement as compared to a classical measurement conceptual difficulties arise when we try to define the information gain in a quantum measurement using the notion of Shannon information. The reason is that, in contrast to classical measurement, quantum measurement, with very few exceptions, cannot be claimed to reveal a property of the individual quantum system existing before the measurement is performed.
+  \end{quote}
+  But in the first-person view the randomness of a quantum measurement is not due to some intrinsic property of Nature but is solely a consequence of the inability of an observer to know their own internal state. Therefore when a measurement of some external entity is made the observer gains information about their own internal state and so it is appropriate to use Shannon Information Theory to quantify the information gained. But that means we have to plug negative probabilities into the log function. To do that we have to analytically continue the domain of the log function to the complex plane and accept negative and complex values. So an observer has to use complex probability amplitudes to make predictions about a future interaction between themselves and the object of observation.
+  
+  But because the outcome of an observation is the result of an interaction between the observer and the observed, we can just as well treat the observer as purely classical and the observed entity as being imbued with complex probability amplitudes having a mysterious origin in some fundamental property of Nature. 
+
+  Taking a first person view of measurement leads directly to complex probability amplitudes as a consequence of the fact that an observer cannot in principle know their own internal state. As a side note this implies that non-computable states have a negative or complex probability of existing. 
+  \end{block}
+
+  \begin{block}{Edwin Jaynes and his quantum omelette}
+  Edwin Jaynes was a key proponent of the Bayesian, epistemological, view of probability. But he was particularly troubled by the issue of quantum probabilities since they appear to be intrinsic and not due to a lack of knowledge. He described the density matrix which mixes classical probability and quantum probability as a "quantum omelette". In \autocite{Jaynes_89_a} he writes;-
+  
+  \begin{quote}
+      But our present QM formalism is not purely epistemological; it is a peculiar mixture describing in part realities of Nature, in part incomplete human information about Nature all scrambled up by Heisenberg and Bohr into an omelette that nobody has seen how to unscramble. Yet we think that the unscrambling is a prerequisite for any further advance in basic physical theory. For, if we cannot separate the subjective and objective aspects of the formalism, we cannot know what we are talking about; it is just that simple
+  \end{quote}
+  In the first-person view the QM formalism is purely epistemological because quantum probabilities are due to an observer's incomplete information about their own state of knowledge. This unscrambles the quantum omelette. 
+\end{block}
+
+\end{column}
+\separatorcolumn
+\begin{column}{\colwidth}
+\begin{block}{Popescu and Rohrlich pose a question}
+In 1994 Popescu and Rohrlich, \autocite{Popescu1994} suggested that non-locality could be taken as a founding axiom for quantum mechanics, and posed the question, why is quantum mechanics not more non-local than it is? It is certainly possible to conceive of a system which violates locality more than quantum mechanics, yet still does not permit faster than light signaling. Based on what we learn from taking a first person view we can state that quantum non-determinism is a consequence of the known inability for an observer to completely know their own state, which leads to a purely epistemological view in which complex probability amplitudes must be used in such a way that a quantum measurement informs the observer of their own state at the point of measurement. 
+
+Unscrambling the quantum omelette in this way constrains the quantum formalism to be exactly as it is and therefore it cannot be more non-local than it is.
+\end{block}
+\begin{block}{Bonus point}
+By connecting non-computability with negative and complex probabilities we have by accident stumbled into a view that undecidable propositions have negative or complex probabilities of being true or false. We can see this quite clearly in the fact that a quantum computer is capable of being in the classically impossible state of halted and not halted at the same time. This is a pretty big clue as to what quantum states are. 
+
+This suggests that we can define an epistemological, information theoretic space of computations such that we could measure distances between states by the number of computations required to move from one state to another. Time would be measured by counting the number of computable steps and space by counting the number of non-computable steps, which would have to be measured by imaginary numbers, see \autocite{small_2006}. This has curious parallels with the ontological spacetime we are familiar with. Measuring a time interval as the number of computable steps between states and a space interval as the number of non-computable steps between states is tantalizingly similar to the metric of General Relativity which involves the energy-momentum tensor.
+
+In addition, since non-computability can be achieved by closed time like loops (CTCs), this information theoretic measure of spatial distance is equivalent to defining space-like distances in terms of information flowing in CTCs. This concurs with the familiar ontologic spacetime where if we could send signals between space-like separated agents we could create closed time like flows of information. The difference being that in the epistemological view we define space-like separation 'as if' information could flow in CTCs. But this requires parallel vector transport on circles $S^1$ and the higher dimensional spheres $S^3$ and $S^7$, see \autocite{baez_2002}. Since rotations on $S^7$ are not associative they don't form a group, therefore the highest number of space-like dimensions an information theoretic space of computations could have is 3. 
+
+We also note that since we are defining space-like distance using imaginary numbers to count non-computable information then the square is negative information, i.e entropy so we automatically get a holographic principle. But in the holographic principle we are familiar with in ontological spacetime, surface area is proportional to entropy, which is negative information, and therefore by implication we already are measuring space-like distances by counting with imaginary numbers.
+
+This idea needs to be explored in greater depth. If we can show an identify between ontological spacetime and and an epistemological information theoretic space time then it automatically means that space is infinite, must always have been infinite, and there are no rolled up spatial dimensions. Which rather nicely rules out string theory and probably means that inflation is not required in the early Universe. 
+\end{block}
+
+  \begin{block}{References}
+    \printbibliography
+  \end{block}
+\begin{block}{Dedication}
+I would like to dedicate this presentation to the memory of Dr Geoffrey Clements who did so much to inspire my interest in these matters. 
+\end{block}
+\end{column}
+
+\separatorcolumn
+\end{columns}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,168 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+%
+% We try to keep this Overleaf template in sync with the canonical source on
+% GitHub, but it's recommended that you obtain the template directly from
+% GitHub to ensure that you are using the latest version.
+
+\documentclass[final]{beamer}
+
+% ====================
+% Packages
+% ====================
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{poster.bib}
+\usepackage[english]{babel}
+\usepackage[strict]{csquotes}% Recommended
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage[size=a0,width=120,height=72,scale=1.0]{beamerposter}
+\usepackage[size=a0,orientation=landscape,scale=0.95]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{gemini}
+%\usepackage{graphicx}
+\usepackage{braket} %Dirac notation
+\usepackage{booktabs}
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+\usepackage{amsfonts} 
+%\pgfplotsset{compat=1.14}
+\setlength{\parskip}{0.5em}
+
+% ====================
+% Lengths
+% ====================
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.3\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% ====================
+% Title
+% ====================
+
+\title{Self-reference, Circles and the Standard Model}
+
+\author{John D. Small}
+
+% ====================
+% Footer (optional)
+% ====================
+
+\footercontent{
+   \hfill
+  Quantum Information and Probability: from Foundations to Engineering, Vaxjo, Sweden, 2022 \hfill
+  \href{mailto:john.small06@alumni.imperial.ac.uk}{john.small06@alumni.imperial.ac.uk}
+  }
+% (can be left out to remove footer)
+
+% ====================
+% Logo (optional)
+% ====================
+
+% use this to include logos on the left and/or right side of the header:
+% \logoright{\includegraphics[height=7cm]{logo1.pdf}}
+% \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
+
+% ====================
+% Body
+% ====================
+
+\begin{document}
+
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+  \begin{block}{Self-reference}
+
+    Quantum states have the curious property that they are precisely the states required to represent the classically inadmissible states which occur in self-referential logic, such as the Liar Paradox. The fact that a superposition of $\ket{TRUE}$ and $\ket{FALSE}$ is a perfectly reasonable quantum state and also a fixed point of the Liar Paradox is a pretty big clue. Therefore all interpretations need to find ways to accommodate this property, and all constructionist models need to sneak self-reference in, but disguised as something else, retro-causality, epistemological limitations on knowledge, reversible continuity, negative probability, and so on. See \autocite{svozil_k_2018} and references therein for a full review. In addition it has been suggested that self-reference is the key principle which distinguishes quantum from classical mechanics, \autocite{Wheeler1974, szangolies_j_2018, Realpe-Gomez2020} and it has been proved \autocite{bendersky_non_computable_2016,calude_value_indefiniteness_2006} that non-computability plays a key role  in quantum mechanics.
+    \par
+    Rather than hide self-reference behind such terms as \textquote{reversible continuity}, \textquote{retrocausality} or \textquote{epistemic limitations}, \textquote{non-computability} it's better to be completely open about it, state that self-reference is the fundamental postulate that differentiates quantum from classical mechanics and then move on to see if we can do anything useful with the idea.
+  \end{block}
+
+  \begin{block}{Self-reference requires negative probability}
+  Self-reference arises because a quantum measurement is never about revealing existing properties of an external thing. It's only ever about discovering the relationship between the observer and the thing being observed, and therefore an observer's prediction about the outcome of a future measurement requires the observer to self-referentially know its own state. Which is impossible according to Turing. Because an observer lacks information about their own state they cannot be certain of the outcome of a future interaction with a thing being observed and therefore from the \textquote{first person}, the observer's, point of view the outcome is non-computable, non-unitary, non-deterministic and therefore their state of belief about the future outcome of a measurement is uncertain . But the key feature of the Liar Paradox is that we go back and change the assumption we started with. Changing something that has happened, is an anti-event, and anti-events have a negative probability \autocite{Burgin2013}. Undecidable propositions have a negative probability of being true. But negative probabilities are an important feature of quantum computation. Feynman writes \autocite{Feynman_r_82} ;-
+  
+  \begin{quote}
+    The only difference between a probabilistic classical world and the equations of the quantum world is that somehow or other it appears as if the probabilities would have to go negative.
+  \end{quote}
+  
+  Aaronson also writes \autocite{Aaronson:dem};-
+  
+  \begin{quote}
+  Quantum mechanics is what you would inevitably come up with if you started from probability theory, and then said, let's try to generalize it so that the numbers we used to call \textquote{probabilities} can be negative numbers. As such, the theory could have been invented by mathematicians in the nineteenth century without any input from experiment. It wasn't, but it could have been.\\
+  \end{quote}
+  \par
+  A full review of negative and extended probabilities can be found in \autocite{muckenheim_1986}. We cannot accommodate negative probabilities in the frequentist view of probabilities, since that about collating records of events that have happened, and things that have happened stay happened. But negative probabilities can be accommodated in the Bayesian view because that is about a state of belief of the likelihood of a future event, and we can imagine events that un-happen, if they haven't already happened yet. 
+  \end{block}
+
+  \begin{block}{Negative probability requires complex probability amplitudes}
+ It is often suggested that Shannon Information Theory cannot be applied to quantum probabilities because they are something innate in Nature and not due to an observer's ignorance see e.g. \autocite{brukner_2000_shannon}, but since quantum probabilities are a consequence of an observer's lack of knowledge about themselves then it is appropriate to use Shannon Information Theory. But we can only plug a negative probability $P(x)$ of an event $x$ into the the $\log$ function in $I(x) = -\log_2(P(x))$ if we use analytic continuation to extend the domain of $\log$ to the complex plane. Therefore negative probabilities imply complex probabilities and because negative and complex probabilities lead to interference, then by analogy with constructive and destructive interference in waves we call them \textquote{\emph{Probability Amplitudes}}.
+ 
+ \par
+ But because a quantum measurement involves the coming together of the observer and the observed then the observer can assume that they do have complete knowledge of themselves (contrary to Turing!) and the indeterminacy is an innate property of the thing being observed. So we can happily calculate as if the complex amplitudes are \textquote{out there}, and it's only a problem if we start asking questions about the source of that indeterminacy, when we find that assuming the indeterminacy is \textquote{out there} leads to terrible problems. Jaynes \autocite{Jaynes1989} refers to this as the \textquote{Mind Projection Fallacy} 
+  \end{block}
+ 
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
+\begin{block}{Circles}
+In regard to negative probability and extended probability in general Jaynes \autocite{muckenheim_1986}  made this key point 
+\begin{quote}
+    When such a radical innovation is proposed the onus is not on you and me to to either reject it or accept it; but on the innovator to justify it by demonstrating that it has positive advantages not otherwise attainable
+\end{quote}
+It's not enough to prove that self-reference is a core part of quantum mechanics, that's already been done, if it is a genuine insight then it must lead to new solutions to old problems.
+\par
+Accepting that self-reference is fundamental, can we solve any problems that are otherwise hard to solve? Not yet, but we can certainly see old problems in a new light. The most obvious being the strange connection between the symmetry groups of the Standard Model and circles. Since the indeterminism of quantum mechanics is due to the observer's lack of knowledge about themselves, from an observer's point of view outcome of an interaction with the observed is completely random, information appears \textquote{as if} from nowhere. The element of non-computable randomness means that a quantum measurement is equivalent to the act of completing a self-referential computation and therefore completing a self-referential logical loop \autocite{calude_value_indefiniteness_2006, bendersky_non_computable_2016}.  But an outsider, the \textquote{third person} who is in possession of complete information about the observer and thing being observed, sees the interaction between them as purely unitary and deterministic. This is the standard quantum formalism (some think it's a paradox), Wigner's friend and all that.   
+\par 
+Logical loops rely on a property of being able to cover the circle with arrows pointing head to tail, this is called parallelisability. There are three parallelisable spheres the circle $S^1$, and its higher dimensional analogues the spheres $S^3$ and $S^7$. Each of these is associated with a division algebra, $S^1$ with the ordinary complex numbers, $S^3$ with the quaternions, and $S^7$ with the octonions. See \autocite{baez_2002} and references therein. It has long been noticed that the symmetry groups of the Standard Model $U(1) \times SU(2) \times SU(3) $ seem to have some relationship with the division algebras. $U(1)$ with the complex numbers $\mathbb{C}$ and the sphere $S^1$, $SU(2)$ with the quaternions $\mathbb{H}$ and the sphere $S^3$. But because the octonions are non-associative they don't form a group so there's no direct connection between $SU(3)$ and $\mathbb{O}$ and the sphere $S^7$. However there is an indirect connection. See \autocite{baez_2002, dixon_G_94, Furey2018_fixed} and references therein. 
+\par 
+The fact that self-reference is fundamental and that the symmetry groups of the Standard Model are in some ways an expression of circularity is deeply suspicious. Could it be that the only way to reconcile the first person view of a quantum measurement, as the non-unitary closing of a self-referential logical loop, and the third person view of the same event as a unitary deterministic evolution is that the information exchanged between the observer and observed is constrained to appear as a unitary group operation on parellisable spheres?
+\end{block}
+
+  \begin{block}{Possible routes to the Standard Model}
+The links between self-reference, parallelisability and the Standard Model are too suspicious to ignore and too tenuous to be believable. What are the concepts we need to grasp to be able to derive the Standard Model from self-reference? Can we calculate some of the free parameters of the Standard Model? I suggest three possible routes up that particular mountain.
+    \begin{enumerate}
+      \item \textbf{Statistical field theory with complex information}\\
+      \par statistical field theories can be mapped to quantum field theories via a wick rotation. \autocite{Peskin_and_schroder_95}, i.e. complex time. Since self-referential loops on the surface of $S^7$ can have up to 7 degrees of self-reference, each of which involves complex information, what do we get if we plug 7 dimensions of complex information into standard statistical field theory?
+      \item \textbf{7 rolled up dimensions}. Self-referential loops have some properties analogous to space-like separation. Can this be made more rigorous? Can this be extended to extra rolled up dimensions?
+      \item \textbf{Imaginary components of weak measurements}. Weak measurements allow us to explore the epistemological subjective states of belief of an observer as if they are ontological states of nature outside an observer. Weak measurements are an expression of the retrocausal interpretation \autocite{ElitzurCohen-2011} which is an ontological view of self-referential loops. A good guess is that there might be some sort of link between the imaginary components of weak measurements (the self-referential loop part), and $U(1)$, $SU(2)$, $SU(3)$. Another poster in this presentation \autocite{Ferraz2022GeometricalSystems} hints that that this might be the case. Can this work be extended to derive free parameters of the Standard Model?
+    \end{enumerate}
+ If any of these, or other routes not yet thought of, turn out to be useful then it would mean that the Standard Model is constrained to be as it is by virtue of the fundamental nature of self-reference, and that therefore there are no higher order symmetry groups, and no Grand Unified Theory. This idea gains weak support from the absence of any sign of physics beyond the Standard Model in recent LHC runs.
+  \end{block}
+\begin{block}{A Universe Without Foundation}
+
+    If it can be shown that the Standard Model is a consequence of self-reference that would imply that the Universe is without foundation. A suggestion already made by Rovelli \autocite{rovelli_helgoland_2021}, Wheeler \autocite{wheeler_1986} and M\"{u}ller \autocite{Mueller2017}. The Universe self-referentially informs itself, of itself by itself. It pulls itself up by its own bootstraps. 
+
+  \end{block}
+\end{column}
+
+\separatorcolumn
+
+\begin{column}{\colwidth}
+ 
+  \begin{block}{Acknowledgments}
+   I'd like to thank Thomas and Penny power for their encouragement to work on this.
+  \end{block}
+  \begin{block}{References}
+    \printbibliography
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+\end{columns}
+\end{frame}
+
+\end{document}

@@ -49,6 +49,9 @@ append-only: supersede with a dated entry, never edit history.
   Better BibTeX emits it for author names and it must not be mangled back.
 - Any citation you cannot verify against a source you actually read is
   marked VERIFY-CITE in the text and listed in your summary.
+- knowledge/publications/ is exempt from all of the above. Those .bib files
+  belong to finished work and keep their own keys; never regenerate them,
+  reconcile them with Zotero, or cite from them.
 
 ## Python
 Fixed seed, Cayley-Dickson Convention A, no hidden state. Run the script
@@ -56,6 +59,9 @@ and paste exact stdout into the dated session note; never describe an
 output you did not produce.
 
 ## Files and git
+- knowledge/publications/ is frozen: the 2005 paper and the Vaxjo posters are
+  presented work, kept verbatim. Do not reformat them to house style, rebuild
+  them, or edit them at all; corrections go upstream. See its INDEX.md.
 - Nothing is deleted: rename to attic_<name>.superseded.
 - Dated filenames: description_YYYY-MM-DDTHHMM.<ext>.
 - Session notes go in knowledge/sessions/ (dated); new results, retractions

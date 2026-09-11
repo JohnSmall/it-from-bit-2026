@@ -1,0 +1,145 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+%
+% We try to keep this Overleaf template in sync with the canonical source on
+% GitHub, but it's recommended that you obtain the template directly from
+% GitHub to ensure that you are using the latest version.
+
+\documentclass[final]{beamer}
+
+% ====================
+% Packages
+% ====================
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{references_2025.bib}
+\usepackage[english]{babel}
+\usepackage[strict]{csquotes}% Recommended
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage[size=a0,width=120,height=72,scale=1.0]{beamerposter}
+\usepackage[size=a1,orientation=portrait,scale=0.92]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{gemini}
+%\usepackage{graphicx}
+\usepackage{braket} %Dirac notation
+\usepackage{booktabs}
+\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+\usepackage{amsfonts} 
+%\pgfplotsset{compat=1.14}
+%\\setlength{\parskip}{0.5em}
+\setlength{\parskip}{\baselineskip} 
+% ====================
+% Lengths
+% ====================
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.011\paperwidth}
+\setlength{\colwidth}{0.35\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% ====================
+% Title
+% ====================
+
+\title{A curious connection between non-locality and the relationalist view of spacetime}
+
+\author{John D. Small}
+
+% ====================
+% Footer (optional)
+% ====================
+
+\footercontent{
+   \hfill
+  Quantum Information and Probability: from Foundations to Engineering, Vaxjo, Sweden, 2025 \hfill
+  \href{mailto:john.small06@alumni.imperial.ac.uk}{john.small06@alumni.imperial.ac.uk}
+  }
+% (can be left out to remove footer)
+
+% ====================
+% Logo (optional)
+% ====================
+
+% use this to include logos on the left and/or right side of the header:
+% \logoright{\includegraphics[height=7cm]{logo1.pdf}}
+% \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
+
+% ====================
+% Body
+% ====================
+
+\begin{document}
+
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn
+
+\begin{column}{\colwidth}
+  \begin{block}{What does locality mean in General Relativity?}
+    The 'Hole Problem' which held up Einstein for a few years when developing General Relativity can be worked around by giving up the substantivalist view that spacetime is a thing of itself which exists independently of the things in it, \autocite{Stachel2014TheImplications, NortonTheArgument}. General Relativity invites us to switch to the relationalist view only relations between events exist and we deduce notions of space and time in order to interpret them as a neat sequence cause and effect. 
+
+    In quantum mechanics entities do not have intrinsic values, they acquire definite values only in relationship to other entities called 'observers' or 'contexts'. So if space and time emerge from relationships between events, entities bumping into each other, and if quantum states only gain definite values in relation to other things that have definite values, that would seem to imply that until measured a quantum system exists outside the network of events we interpret as space and time. This is suspicious, non-locality is inherent in the relationalist view of spacetime. Let's mash these ideas together and see if anything interesting comes out. 
+\end{block}
+
+\begin{block}{A peculiar property of quantum states}
+    Quantum states have the peculiar property that through superposition they are precisely what we require to represent the state of classically impossible states encountered in the self-referencing logical systems such as the Liar Paradox, and more formally in Godel's Theorems and Turing's proof that a universal computer which could solve the halting problem cannot exist. The superposition of \textit{TRUE} and \textit{FALSE} or \textit{HALTED} and \textit{NOT HALTED} are disallowed in classical physics and the classical logic based on everyday experience of classical mechanics. But such superposition is both unremarkable in a quantum state and is the defining feature of quantum states. This is a big clue to what quantum states actually are. Self-referencing states of knowledge. 
+
+    This feature is so obvious it has not gone unnoticed. Famously by J.A. Wheeler \autocite{Wheeler1974}, but an earlier hint comes from K. Popper \autocite{Popper1950IndeterminismI, Popper1950IndeterminismII}  and of course R. Penrose \autocite{Penrose1996} who suggests that state reduction involves and element of non-computability. 
+\end{block}
+
+\begin{block}{Karl Popper's key idea}
+In \autocite{Popper1950IndeterminismI, Popper1950IndeterminismII} Popper pointed out that even purely deterministic classical mechanics becomes unpredictable when a classical agent is asked to predict the outcome of a future interaction between itself and another classical object that it has complete knowledge of. The reason is that in principle it cannot have knowledge of its own state and hence cannot predict the outcome of an interaction between itself and something else. He pointed out that if the agent did have knowledge of its own state then that would erase the state. Sadly he didn't go the extra step to point out that erasing a state can be assigned a negative probability as pointed out by M. Burgin in \autocite{Burgin2013}. This implies that the randomness of quantum measurement is due to the lack of knowledge on the part of an agent of their own personal state and that an agent gains knowledge of their own personal state by interacting with an external entity of which it has complete knowledge. Therefore we can use the standard result from Claude Shannon \autocite{shannon_1948} and plug negative probability into the log function, but that requires analytic continuation of the log function to $\bb(C)$, and hence we get the reason why complex amplitudes appear in quantum states. The complex component reflects ignorance on the part of an agent of their own personal state. 
+
+Which in turn means we can assign complex probabilities to non-computable propositions. 
+\end{block}
+
+\begin{block}{Joined with another key idea from Gregory Chaitin}
+    Chaitin points out that some theorems can be no-computable from a given collections of axioms if the information content of those axioms is insufficient \autocite{Chaitin1987AlgorithmicTheory}. For example Goodstein's Theorem is non-computable from the axioms of Peano arithmetic, but becomes computable if we add an extra axiom \autocite{Kirby1982AccessibleArithmetic}. This suggests that there can be degrees of non-computability which can be measured by the amount of information we have to add to a given collection of axioms in order to be able prove certain theorems. 
+    
+    Let's be bold and suggest we can think of a space of computations where the distance between states is measured by the amount of computation required to get from one state to another. In this scheme certain states would be inaccessible from some starting states if the information in those starting states is insufficient, but can become accessible if more information is added (we do this every day when feeding data into computers). But, closed time like loops can implement non-computable action since they can generate information as if from nowhere. So we propose a model where 'timelike' distance between states is measured by the number of computable steps required to get from one state to another, and 'spacelike' distance by the number of non-computable steps required to get from one state to another. 
+
+    Since we can assign negative probability and hence complex valued information to non-computable theorems, we can measure the amount of non-computability using imaginary units. So we get the notion of computable distance between states counted in real units, and non-computable distance counted in imaginary units. 
+\end{block}
+\end{column}
+\separatorcolumn
+\begin{column}{\colwidth}
+\begin{block}{3 dimensions?}
+    Notice that we've defined non-computable 'distance' in terms of the amount of information that has to be added by acausal closed time like loops. 'timelike' computational distance does not involve self-referential loops, but 'spacelike' computation very explicitly does involve self-referential loops. There's a curious similarity to the spacetime of Special Relativity where if we could transmit information between spacelike separated points then we can create closed time like loops, but let's not get too excited, we've not even shown that this space of computations is a metric space. It's just a hazy idea we're playing with. 
+    
+    No matter, we notice something interesting. Because we've defined non-computable 'distance' in terms of closed time like loops we have to use parallel transport of information around in a circle, the sphere $S^1$. But there are higher dimensional spheres which have the same property. These are the parallelisable spheres $S^3$, $S^7$ \autocite{baez_2002}. Rotations of $S^3$ form the group $SU(2)$ and therefore preserve information, but rotations on $S^7$ are non-associative and therefore do not form a group, which means they're not information preserving. 
+
+    Let's impose a constraint on the information arriving from outside the causal zone, such information must appear to have its own causal history, which means that it must appear to be the result of a sequence of information preserving operations, hence a sequence of group operations. Therefore the closed time like loops must be either one dimensional or three dimensional. But rotations in one dimension form an abelian group, and to include non-abelian group operations we have to go up to rotations of $S^3$. Hence spacelike distance in this space of computations must have three dimensions. 
+
+    Which is nice, but there's more. Since non-computable distance is measured in imaginary units of information and we have to work with 3 dimensions, then a surface area has to be measured in negative units of information, i.e. entropy. Well this looks a lot like a holographic principle. 
+
+    Taking this hint over to the relationalist view of space time in General Relativity where making a measurement of a quantum state forms a relationship between that state and the network of cause and effect which we interpret as space and time we can see that a measurement changes the causal structure. The inverse of the idea from Penrose that tipping the light cone collapses the wave function \autocite{Penrose1996}. Interesting, we also note that since entanglement has an interpretation as if causal loops are formed due to retro-causal action, then we have to think in terms of information transport on parallelisable spheres. In addition the relationalist view requires us to interpret our catalogue of events as neat sequences of cause and effect, therefore we have to impose the constraint that the apparent non-computability of these retro-causal loops be interpreted as causal sequences, and hence abelian and non-abelian group operations, and as above that implies exactly 3 dimension of space, no more, no less. Which agrees with current experimental data. 
+
+    The idea that we can use an information theoretic understanding of space and time to deduce three dimensions of space has also been proposed in \autocite{muller_p_2012}
+\end{block}
+
+
+\begin{block}{Where next?}
+  Although this is only a hazy glimpse of the sketch of an outline of an idea, because it seems so easy understand why we have three dimensions of space that entices thoughts that we might be able to go further. 
+  
+  If we could show that there's an identity between the notions of spacetime and computability/non-computability then it would mean that space is infinite and flat. Infinite because we already know that non-computable theorems are infinite and flat because if space and time are a construct of the relations between things, then if there are no things then space and time don't exist and hence there can be no background space time to have positive or negative curvature. Although we can see that if the space like distance between world lines is defined by the amount of non-computable information that needs to be exchanged to connect them, then as time passes and interactions of those world lines with other world lines 'close' to them accumulate then more information would have to be exchanged to connect them and therefore the distance between world lines increases with time. Analogous to the way species drift apart as they accumulated different mutations. 
+
+  But the first task is to put the idea that we can count degrees of non-computability using imaginary units on a firmer footing. It's a good guess, it leads to well known results, three dimensions of space and the holographic principle, but we require a formal proof. 
+\end{block}
+
+  \begin{block}{References}
+    \printbibliography
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+\end{columns}
+\end{frame}
+
+\end{document}

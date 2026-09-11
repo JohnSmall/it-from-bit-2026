@@ -1,0 +1,158 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+%
+% We try to keep this Overleaf template in sync with the canonical source on
+% GitHub, but it's recommended that you obtain the template directly from
+% GitHub to ensure that you are using the latest version.
+
+\documentclass[final]{beamer}
+
+% ====================
+% Packages
+% ====================
+\usepackage[style=numeric,backend=biber]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{poster.bib}
+\usepackage[english]{babel}
+\usepackage[strict]{csquotes}% Recommended
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%\usepackage[size=a0,width=120,height=72,scale=1.0]{beamerposter}
+\usepackage[size=a0,orientation=landscape,scale=0.84]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{gemini}
+%\usepackage{graphicx}
+\usepackage{braket} %Dirac notation
+\usepackage{booktabs}
+\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{pgfplots}
+\usepackage{amsfonts} 
+%\pgfplotsset{compat=1.14}
+%\\setlength{\parskip}{0.5em}
+\setlength{\parskip}{\baselineskip} 
+% ====================
+% Lengths
+% ====================
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.3\paperwidth}
+
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% ====================
+% Title
+% ====================
+
+\title{Self-reference, Hopf Fibrations and the Standard Model}
+
+\author{John D. Small}
+
+% ====================
+% Footer (optional)
+% ====================
+
+\footercontent{
+   \hfill
+  Quantum Information and Probability: from Foundations to Engineering, Vaxjo, Sweden, 2023 \hfill
+  \href{mailto:john.small06@alumni.imperial.ac.uk}{john.small06@alumni.imperial.ac.uk}
+  }
+% (can be left out to remove footer)
+
+% ====================
+% Logo (optional)
+% ====================
+
+% use this to include logos on the left and/or right side of the header:
+% \logoright{\includegraphics[height=7cm]{logo1.pdf}}
+% \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
+
+% ====================
+% Body
+% ====================
+
+\begin{document}
+
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn
+
+\begin{column}{\colwidth}
+
+  \begin{block}{Self-reference}
+
+    Quantum states have the curious property that they are precisely the states required to represent the classically inadmissible states which occur in self-referential logic, such as the Liar Paradox. The fact that a superposition of $\ket{TRUE}$ and $\ket{FALSE}$ is a perfectly reasonable quantum state and also a fixed point of the Liar Paradox is a pretty big clue. All interpretations need to find ways to accommodate this property, and all constructionist models need to sneak self-reference in, but disguised as something else, retro-causality, epistemological limitations on knowledge, reversible continuity, negative probability, and so on. See \autocite{svozil_k_2018} and references therein for a full review. In addition it has been suggested that self-reference is the key principle which distinguishes quantum from classical mechanics, \autocite{Wheeler1974, szangolies_j_2018, szangolies_2020, Realpe-Gomez2020} and it has been proved \autocite{bendersky_non_computable_2016,calude_value_indefiniteness_2006} that non-computability plays a key role in quantum mechanics.
+\end{block}
+\begin{block}{The One True Interpretation of QM does not exist}
+    Rather than hide self-reference behind such terms as \textquote{reversible continuity}, \textquote{retrocausality}, \textquote{epistemic limitations} or \textquote{non-computability} it's better to be completely open about it and state that self-reference is the fundamental postulate that differentiates quantum from classical mechanics and then move on to see if we can do anything useful with the idea. Taking self-reference and hence non-computability to be a fundamental property then we can see that it will not be possible to have a perfect mapping between quantum phenomena and our classical reality which cannot accommodate self-referential logic. All interpretations of quantum mechanics and all constructivist models of quantum mechanics are analogous to different projections of the globe onto a flat 2D map. They're all wrong, but some are useful. Arguing over which interpretation is the correct one is like arguing over whether the Mercator or Robinson's projections of the globe is the one true projection. Therefore we can abandon the attempt to find the \textquote{One True Interpretation of quantum mechanics}, and instead turn our attention to the pragmatic task of finding maps which can be useful. In this spirit it is useful to take the Qbist view (see \autocite{Fuchs2015}) that a quantum state is a state of knowledge and note that the state of knowledge has to be encoded in some physical observer because this leads directly to understanding why a quantum state can represent the classically inadmissible states which occur in self-referential logic. 
+  \end{block}
+
+  \begin{block}{Self-reference in the observer}
+  A quantum measurement is always an interaction between the observer, including instruments, and the thing being measured, therefore the outcome of the measurement depends on the precise disposition of the the elements of the observer and the thing being measured. But by the Church-Turing thesis an observer can never know their own state since if any collection of physical object could be arranged to predict it's own future state it could solve the halting problem. This has been pointed out in \autocite{Popper1950IndeterminismI, Popper1950IndeterminismII}. Taking the Qbist view that a quantum state is a state of knowledge located in some observer and that state of knowledge must be encoded in a physical structure, and that physical structure cannot know it's own state, we can see that this is quite naturally the source of nondeterminism in quantum mechanics, \emph{no special magic required}. But it's only nondeterminism about the observer's state from the point of view of that observer. An external observer can have complete knowledge of the dynamics of the interaction when the first observer makes a measurement and therefore an external observer sees a completely deterministic evolution in the interaction. Which means that in principle the component of the quantum state which represents the observer's lack of knowledge about themselves cannot be conveyed to another agent. It's the non-observable component. 
+  \end{block}
+
+  \begin{block}{Self-reference requires negative probability}
+  Self-reference such as that encountered in the Liar Paradox and similarly, G\"odel's Theorems, Turing's proof and so on all have a similar structure \autocite{Yanofsky2003}, going back and changing something that has happened and making it un-happen, which is an anti-event, and anti-events have a negative probability \autocite{Burgin2013}. Therefore undecidable propositions have a negative probability of being true. But negative probabilities are an important feature of quantum computation. Feynman writes \autocite{Feynman_r_82} ;-
+  
+  \begin{quote}
+    The only difference between a probabilistic classical world and the equations of the quantum world is that somehow or other it appears as if the probabilities would have to go negative.
+  \end{quote}
+  
+  Aaronson also writes \autocite{Aaronson:dem};-
+  
+  \begin{quote}
+  Quantum mechanics is what you would inevitably come up with if you started from probability theory, and then said, let's try to generalize it so that the numbers we used to call \textquote{probabilities} can be negative numbers. As such, the theory could have been invented by mathematicians in the nineteenth century without any input from experiment. It wasn't, but it could have been.\\
+  \end{quote}
+  \end{block}
+\begin{block}{Negative probability requires complex probability amplitudes}
+It is generally held that Shannon Information Theory cannot be applied to quantum probabilities because they are something innate in Nature and not due to an observer's ignorance and therefore there is no information gain when a measurement happens and that ignorance is corrected,  see \autocite{brukner_2000_shannon}. But since quantum probabilities are a consequence of an observer's lack of knowledge about themselves and the observer gains information about their own state when they make a measurement of an external thing, then it is appropriate to use Shannon Information Theory. But we can only plug a negative probability $P(x)$ of an event $x$ into the the $\log$ function in $I(x) = -\log_2(P(x))$ if we use analytic continuation to extend the domain of $\log$ to the complex plane. Therefore negative probabilities imply complex probabilities and because negative and complex probabilities lead to interference, then by analogy with constructive and destructive interference in waves we call them \textquote{\emph{Probability Amplitudes}}.
+\end{block}
+\begin{block}{Negative Information \& Epistemic Horizons}
+But introducing complex probabilities into Shannon Information Theory means we will have negative information, therefore after a measurement happens we will know less than we did before the measurement. This is exactly what happens in quantum measurements, if we make a precise measurement of position we lose information about momentum. This is the reason for epistemic horizons as discussed in \autocite{szangolies_j_2018}. Complex probability amplitudes are only relevant when talking about an observer's state of belief about their own future state at the point of interaction with an external entity and thus making a measurement. Hence the complex component of a quantum amplitude is a purely subjective state of belief of an observer about their own state and cannot be communicated to another agent. In addition when a measurement is made an observer gains information about their own state which therefore wipes out the complex component of the quantum state. 
+\end{block}
+\end{column}
+
+\separatorcolumn
+\begin{column}{\colwidth}
+
+\begin{block}{Circles \textbf \& Division Algebras}
+The logical loops involved in self-reference rely on a property of being able to cover the circle with arrows pointing head to tail, this is called parallelisability. There are three parallelisable spheres the circle $S^1$, and its higher dimensional analogues the spheres $S^3$ and $S^7$. Each of these is associated with a division algebra, $S^1$ with the ordinary complex numbers, $S^3$ with the quaternions, and $S^7$ with the octonions. See \autocite{baez_2002} and references therein. It has long been noticed that the symmetry groups of the Standard Model $U(1) \times SU(2) \times SU(3) $ seem to have some relationship with the division algebras. $U(1)$ with the complex numbers $\mathbb{C}$ and the sphere $S^1$, $SU(2)$ with the quaternions $\mathbb{H}$ and the sphere $S^3$ and indirectly $SU(3)$ with the octonions $\mathbb{O}$ see \autocite{Furey2018_fixed, dixon_G_94}. \textbf{The prospect that this might be due to self-reference being fundamental is a prospect too crazy to be believable, but too tempting to ignore.}
+\end{block}
+\begin{block}{Division Algebras \& Hopf Fibrations}
+Succumbing to that temptation we note that one possible route to understand the relationship between self-reference and the Standard Model is to investigate the relationships between multi-particle entanglement and the Standard Model. Due to the self-referential nature of quantum states expressed in the non-locality of entangled particles we expect to find the higher dimensional parallelisable spheres are important in multi-particle entanglement. The epistemic self-referential (or ontic non-local, retro-causal, take your pick) loops in multi-particle entanglement should have the same mathematical structure as the symmetries of the Standard Model. This is indeed the case. The division algebra property enables us to map higher dimensional spheres onto lower dimensional spheres. This is called the \emph{Hopf fibration}. We expect to find that the non-local component, the entanglement bit, will live in the component that is a parallelisable sphere, because entanglement looks like sending information around in acausal loops, and hence transport on a parallelelisable sphere.  The Hilbert space of two qubits can be mapped to the surface of $S^7$ and it has been shown \autocite{mosseri_2001} that this permits the Hopf fibration $S^7 \xrightarrow{S^3} S^4$ such that the entanglement between the particles in a sense lives in the fibre $S^3$. Similarly in \autocite{mosseri_2003} it was shown that in the case of 3 qubit entanglement with Hopf fibration $S^{15} \xrightarrow{S^7} S^8$ the entanglement lives in the fibre $S^7$. The remaining Hopf fibration of 1 qubit takes the Hilbert space $S^3$ to the Bloch Sphere $S^2$, via $S^3 \xrightarrow{S^1} S^2$, such that the non-observable global phase, the subjective self-referential component, lives in $S^1$ as expected. In each of the Hopf fibrations the fibre identifies that component which arises from non-locality in the case of entanglement, and self-referential subjectivity in the case of a single particle.
+\end{block}
+\begin{block}{Hopf fibrations \& The Standard Model}
+The fact that the division algebras are important in multi-particle entanglement suggests a relationship with the Standard Model. In \autocite{Szangolies_J_not_yet_published, szangolies_j_2021} Szangolies points out that in 3 particle entanglement the octonionic Hopf fibration can be equivalently expresssed as;-
+\begin{equation}
+S^{15} \xrightarrow{S^7} S^8 \equiv \frac{Spin(9}{Spin(8)} \xrightarrow{\frac{Spin(8)}{Spin(7)}} \frac{Spin(9)}{Spin(8)}    
+\end{equation}
+Then one has to single out an octonion imaginary direction to get a subgroup of $Spin(9)$ which respects the split $\mathbb{O} \simeq \mathbb{C} \oplus (\mathbb{C})^3$. It has been shown by Dubois-Violette and Todorov \autocite{Dubois_v_2018} and put into a more explicit form by Krasnov \autocite{Krasnov_k_2019} that this is just the gauge group of the Standard Model $U(1) \times SU(2) \times SU(3) / \mathbb(Z)_6$. One nice thing about this approach is that you get a chiral theory.  \emph{However the problem is to find a natural process that singles out one imaginary octonion direction.} 
+\end{block}
+\begin{block}{Singling out one imaginary octonion}
+We note two things, firstly that the division algebras are related to rotations on the parallelisable spheres \autocite{baez_2002}, and secondly that non-computablity can be modeled by a simple computable function, augmented by a truly random sequence of bits \autocite{Tanner_Edis_98, calude_value_indefiniteness_2006}, \textbf{which means there's no computable way to tell the difference between the completion of a non-computable, self-referential, acausal loop and information arriving at random from outside an observer's causal history.} Putting these two things together we can see that any quantum measurement has an equivalent interpretation as a non-computable function (see also \cite{Penrose_ENM}), i.e the closure of a self-referential loop, but we have to take into account loops on all possible parallelisable spheres. A result from Fury and Hughes \autocite{Furey_n_hughes_m_2021, Furey2022DivisionBreaking} shows that singling out one imaginary octonion and then left multiplying, is equivalent to right multiplication by the other 6 imaginary octonions, and the algebra of the 6 remaining imaginary octonions breaks down to the Standard Model symmetries. Which means that going round a self-referential loop on $S^7$ in one direction is equivalent to going round in the other 6 directions \emph{which means that any quantum measurement can be interpreted as some action via the Standard Model symmetries.}  Szangolies in in \autocite{Szangolies_J_not_yet_published} has also hinted that maybe the act of observation is the process that singles out one imaginary octonion. Recognising the equivalence between completing a self-referential, non-computable loop and making a quantum measurement shows that this is in fact the case.
+\end{block}
+\begin{block}{Beyond the Standard Model?}
+Because there are only 3 complex division algebras, there are no Hopf fibrations of the spheres beyond the ones listed above. This appears to imply that because self-reference is fundamental and the Standard Model is a consequence of that, then there is no physics beyond the Standard Model, as suggested in \autocite{small_2006} and so far corroborated by results from CERN. Which is a problem with respect to the search for dark matter. The relationship between multi-particle entanglement and the Standard Model therefore suggests we should investigate multi-particle entanglement beyond 3 qubits to better understand physics beyond the Standard Model.  
+\end{block}
+\begin{block}{Acknowledgments}
+   I'd like to thank Thomas and Penny Power for their encouragement to work on this.
+  \end{block}
+\end{column}
+\separatorcolumn
+\begin{column}{\colwidth}
+ 
+  \begin{block}{References}
+    \printbibliography
+  \end{block}
+
+\end{column}
+
+\separatorcolumn
+\end{columns}
+\end{frame}
+
+\end{document}

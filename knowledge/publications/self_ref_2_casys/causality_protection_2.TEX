@@ -1,0 +1,1046 @@
+%%
+%% This is file `template-8s.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% template.raw  (with options: `8s')
+%% 
+%% Template for the LaTeX class aipproc.
+%% 
+%% (C) 1998,2000,2001 American Institute of Physics and Frank Mittelbach
+%% All rights reserved
+%% 
+%%
+%% $Id: template.raw,v 1.11 2004/10/31 08:06:14 frank Exp $
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Please remove the next line of code if you
+%% are satisfied that your installation is
+%% complete and working.
+%%
+%% It is only there to help you in detecting
+%% potential problems.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\input{aipcheck}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SELECT THE LAYOUT
+%%
+%% The class supports further options.
+%% See aipguide.pdf for details.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[
+   ,final            % use final for the camera ready runs
+%% ,draft            % use draft while you are working on the paper
+%%  ,numberedheadings % uncomment this option for numbered sections
+%%  ,                 % add further options here if necessary
+  ]
+  {aipproc}
+
+\layoutstyle{8x11single}
+\usepackage{palatino,url,amsmath,amssymb,enumerate,inputenc}
+%\usepackage[latin1]{inputenc} % From LaTeX distribution
+\usepackage{calc}         % From LaTeX distribution
+\usepackage{graphicx}     % From LaTeX distribution
+\usepackage{ifthen}       % From LaTeX distribution
+\usepackage{subfigure}    % From CTAN/macros/latex/contrib/supported/subfigure
+\usepackage{pst-all}      % From PSTricks
+\usepackage{pst-poly}     % From pstricks/contrib/pst-poly
+\usepackage{multido}      % From PSTricks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% FRONTMATTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title[Quantum Systems \& Self-referentiality]{Why do Quantum Systems Implement Self-referential
+Logic? A Simple Question With a Catastrophic Answer.}
+
+\classification{12.10.-g,04.20,-q,03.67.Lx,03.65.Ta}
+\keywords      {Causality protection, self-referentiality, entanglement, spacetime dimensionality,Standard Model}
+
+\author{John Small}{
+  address={40 West Street, Faversham, Kent, ME13 7JG, UK \\
+  email:jds@mindoro-marine.co.uk}
+}
+
+\begin{abstract}
+Simple self-referential algorithms can model the essential logic of quantum systems and the quantum formalism is sufficiently rich to be able to model %%@
+the output states of
+self-referential alogrithms. We identify a key feature of self-referentiality and show that both
+quantum mechanics and general relativity exhibit this feature in distinct yet complementary ways. This implies
+that self-referentiality must be a foundational principle, but causality protection prohibits it being directly
+observed. Examining two facets of causality protection we find that quantum mechanics implements one and
+general relativity the other. The implication is that there can be no mathematically consistent theory for quantum
+gravity. However we can gain understanding of the constraints imposed on physical law when viewing a noncausal
+reality as if it were a causal sequence. We derive the 3+1 dimensionality of spacetime and
+quantum non-locality and also possible rationale for the $U(1) \times SU(2) \times SU(3)$ symmetry of the
+Standard Model. We also identify a number of key open problems. 
+\end{abstract}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% MAINMATTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{1 INTRODUCTION }
+\par
+It is widely held that the task of finding a generally accepted Unified Field Theory, or even the more
+limited task of finding a theory of quantum gravity, is presently held up by lack of some key insight into
+the nature of both quantum theory and general relativity. There are key aspects of quantum theory which
+disagree with key aspects of general relativity. Some authors contend that general relativity must yield to
+quantum theory, and others that quantum theory must yield to general relativity, still others contend that
+both must be derivative of some underlying theory, but we cannot yet specify what that is ( see \citet*{phys_meets_philosophy} and \citet{Isham_92} %%@
+for a good introduction). Both
+these theories tell us something important about the true nature of the physical world, but but seem to
+express that in different and irreconcilable ways. It is sometimes thought that a theory of quantum gravity, or a Unified Field Theory
+is a case of finding the right mathematical formula. I believe the task, which this paper takes up, is
+to find the right concepts to which we can apply our mathematical tools. As John Baez says in \citep[chap.~8]{phys_meets_philosophy}
+\begin{quotation}General relativity and quantum field theory are based on some profound insights about the
+nature of reality. These insights are crystallized in the form of mathematics, but there is a limit
+to how much progress we can make by just playing around with this mathematics. We need to
+go back to the insights behind general relativity and quantum field theory, learn to hold them
+together in our minds, and dare to imagine a world more strange, more beautiful, but ultimately
+more \emph{reasonable} than our current theories of it. For this daunting task, philosophical reflection is
+bound to be of help
+\end{quotation}
+\par
+The purpose of this paper is to make an attempt to find those insights to which we can apply mathematics. 
+Therefore the word to equation ratio is very much in favour of the former. We look directly at the most paradoxical features of these theories to %%@
+learn the deepest lessons. Analysis of these key insights allows us to make a connection with mathematics which does then lead to useful
+predictions about the physical world although the implication is that there can be no Unified Field Theory.  The two main sections of the paper are %%@
+(2) and (3), the first of these collects
+evidence from current theory that an element of non-computability in both quantum mechanics and general relativity
+but appearing in different guises.  From this we deduce that such non-computability must be a fundamental
+feature of Nature and hence a mathematically consistent Unified Field Theory is not possible. In section (3) we look at the fact that 
+we do not directly find evidence for such non-computablity because physical law appears to be constructed
+so as to disallow the violation of causality which would ensue. I propose to turn this around and ask "If
+we explicitly disallow non-computability what what form must physical law take?". This part of
+the paper examines those constraints which must be imposed on our view of such a non-computable, and
+hence non-causal reality if we to try to represent it as a strictly causal sequence of computable steps. In this
+case making use of computational models of reality is useful because it enables us to more easily deal with
+the notion of non-computability. From this we can gain insight into problems which are otherwise hard to
+understand and we can start to make some useful deductions about the form of physical law. However
+we are not seeking a full formal theory at present, at this level we are merely seeking out possible plausible
+arguments that might point us in the right direction to find a full theory, absolute rigor will have to wait.
+\section{2 LESSONS FROM CURRENT THEORY }
+\subsection{2.1 The lesson from quantum mechanics }
+\par
+The recent advance in quantum computation has very much improved our understanding of the logic
+of quantum mechanics. The present literature on quantum computation is too vast to review here; however a foundational
+paper by \citet{Deutsch_91} discusses the use of quantum logic in cases where closed time-like loops are present
+and finds that the quantum formalism can model the states encountered in such systems. This seems to be a very important result that has not received %%@
+the attention it deserves and so before progressing to the main body of the argument we need to look at the points he brought out in that paper. In %%@
+summary we envisage a situation where, by some means, we can create a closed time-like loop such that information about the state of a system can be %%@
+sent into the causal past of that system. In classical mechanics this can lead to paradoxes since classical mechanics requires that the basis states %%@
+of the system remain fixed within the causality violating region, but quantum mechanics allows a superposition of the basis states which can maintain %%@
+a consistent state under the logical operations which would be allowed in a causality violating region. Hence the paradoxes of time travel disappear %%@
+when using quantum logic. He also identifies another crucial feature of this arrangement; an observer viewing a companion entering a closed time-like %%@
+loop will find that they can enter a state which can be represented as a quantum superposition, but if the observer joins their companion in the %%@
+closed time-like loop then they experience one particular outcome with 100\% certainty. This suggests that state vector reduction may be associated %%@
+with a change in the reference framework of time.
+\par
+Using time travel as a way to explain the puzzling features of quantum mechanics has a long history and there have been many attempts to introduce the %%@
+notion of information going backwards in
+time as a explanation of quantum mechanics, as for example \citet{Aharonov_64,Cramer_jg,Hadley}. The features of quantum computation such as %%@
+teleportation and counter-factual computation, ( see \citet{mitcheson_jozsa_2001}), indicate that quantum computation cannot be regarded as just a %%@
+large set of classical computations running in parallel. These subtler process rely on the fact that quantum information can appear as if it could be %%@
+transmitted backwards in time \citet{penrose_98}.  \citet{Cramer_jg,Cramer_casys} has developed the "Transactional Interpretation of Quantum %%@
+Mechanics" using this idea, and \citet*{Antippa_dubois_2004} have shown that \emph{anticipation} in the sense that the future state of a system is one %%@
+of the inputs determining the behaviour of the system is a fundamental feature of nature and that such \emph{anticipation} is required for a dynamics %%@
+embedded in a discrete spacetime framework.
+\par
+If a quantum system genuinely could send information backwards in time then we could implement a quantum computation to solve the halting problem, %%@
+since we could then create a computation that could send information about its future state \emph{halted} or \emph{not halted} back to an earlier %%@
+point in the computation and it's this tantalizing feature of quantum mechanics that has led  \citet{Kieu} and  \citet{Calude_turing_barrier} to %%@
+propose that quantum computation could in principle solve the halting problem. However in both cases an infinite number of measurements would be %%@
+required. The difficulty is that it's not classical information that goes backwards in time but quantum information and so
+it is widely believed that quantum computation does not offer any way to effectively compute this class of
+non-computable functions, (see \citet{bennet_and_bernstein} and \citet{Margolus_03}). The issue of the halting of a quantum computer is not resolved, %%@
+(see \citet{linden_popescu}) but we should note that Turing's proof \cite{Turing} of the insoluability of the halting
+problem relies on the assumption, informed by our experience of classical mechanics, that a system cannot
+be in the state of \emph{halted} and \emph{not halted} at the same time. This assumption is not valid in the case of a quantum computer
+which can certainly be in a superposition of \emph{halted} and \emph{not halted}. The point that the notion of superposition allows a consistent %%@
+answer to problems encountered in closed time-like loops was brought out by \citet{Deutsch_91} and he also argues in %%@
+\citet{deutsch_ekert_lupacchini_00} that the physical existence of superposition in quantum systems requires us to extend our understanding of formal %%@
+logic to include states which are a superposition of alternatives. 
+\par
+It is possible here to get bogged down in a lot of discussion about what time is and isn't and what is meant by causal sequence. The usual goal of %%@
+such discussions is to find a unifying concept of time which will work for both general relativity and quantum mechanics. We're going to say that such %%@
+a thing doesn't exist and take a very liberal notion that time is simply a way to order things so that information in the past is transformed into %%@
+information in the present by a computable process. 
+In order to make any progress in our understanding we need somehow to introduce non-computability into the scheme.  %%@
+\citet{penrose_98,Penrose_ENM,Penrose_SOM} has argued
+that the act of quantum measurement introduces some element of non-computability into Nature's functioning. To understand the implications of this we %%@
+must make use of computational models of physical law and then find a place in these models for non-computability. So we'll start by examining what we %%@
+understand computability to be. First of all the notion of computability was developed in the context of classical mechanics by Alan Turing %%@
+\cite{Turing}. The assumption derived from classical mechanics is that if we start with fully specified initial conditions we can progress to other %%@
+states in a finite number of discrete steps via a set of rules which can be implemented on some other physical system. This is the basis of the %%@
+Universal Turing Machine. We can diagram this as follows;- see figure $(\ref{fig:causal_computation})$ 
+\begin{figure}[h]
+\centering
+\begin{pspicture}(0,0)(8,3)
+\rput(0,1.5){\circlenode{A}{\begin{tabular}{c}State \\ \emph{A} \end{tabular}}}
+\rput(8,1.5){\circlenode{B}{\begin{tabular}{c}State \\ \emph{B} \end{tabular}}}
+\rput(4,2){\psframebox[framearc=0.3]{Some computable process}}
+\ncline[nodesep=0.3pt]{->}{A}{B}
+\end{pspicture}
+\caption{Causal processes assume computability}
+\label{fig:causal_computation}
+\end{figure}
+\par
+In this case the only uncertainty comes from insufficient knowledge of the initial conditions and insufficient accuracy during the computable process. %%@
+Quantum systems do not follow this scheme since even if we are given enough information about $A$ to specify completely the wave function of the %%@
+system at $B$ we still can't predict the outcome of a measurement, only the probability of an outcome. If we add a closed time-like loop then we can %%@
+have a system which is not computable in the sense that it can be emulated by a finite process operating according to purely classical physical laws.  %%@
+Not all such systems are incapable of being emulated by classical mechanics; only those where the information about the final state of the system that %%@
+is sent backwards in time results in a change of the final state of the system such that the output state cannot be represented in a physical system %%@
+operating with classical mechanics. We illustrate this in figure (\ref{fig:non_causal_computation})
+\begin{figure}[h]
+\centering
+\begin{pspicture}(0,0)(8.5,3)
+\psline{->}(0,0)(7.5,0)
+\rput(8,0){\emph{time}}
+\rput(0,1.5){\circlenode{A}{\begin{tabular}{c}State \\ \emph{A} \end{tabular}}}
+\rput(8,1.5){\circlenode{B}{\begin{tabular}{c}State \\ \emph{B} \end{tabular}}}
+\rput(4,2.25){\psframebox[framearc=0.3]{\emph{A} completely determines \emph{B}}}
+\rput(4,0.75){\psframebox[framearc=0.3]{\emph{B} completely determines \emph{A}}}
+\ncarc{->}{A}{B}
+\ncarc{->}{B}{A}
+\end{pspicture}
+\caption{Non-causal processes are global non-computable but locally computable}
+\label{fig:non_causal_computation}
+\end{figure}
+\par
+In the figure (\ref{fig:non_causal_computation}) we've adopted sense of time increasing as we go to the right, and so the connection from \emph{B} to %%@
+\emph{A} is identified as information flowing backwards in time. In this case both \emph{A} and \emph{B} determine the output state. But because we %%@
+can no longer place \emph{A} and \emph{B} in causal order then we can drop the notion of time completely and simply abstract away this feature of %%@
+cyclic dependency. When this feature is encountered in the context of a framework of time then it'll appear is if information can be sent backwards in %%@
+time, but there may be other situations where such a framework is absent. Within the context of a framework of time such systems can be said to be %%@
+\emph{anticipatory} (see \cite{Antippa_dubois_2004}) in that the future state of a system is part of the input to the system. This can be implemented %%@
+as a purely causal process if the final state settles to a single value under the logic implemented by such a causal loop. Indeed this is something we %%@
+do all the time when using numerical methods to solve differential equations by taking approximations to some future state and using that as part of %%@
+the inputs iteratively to refine the final output. Of course we may end up with unstable conditions such that the algorithm never settles to a single %%@
+value and we may choose to model such a situation as a superposition of basis states of the possible solutions. However quantum mechanics does things %%@
+a little bit differently, it's not the future state of the system at some arbitrary point that is allowed to become an input but the state of the %%@
+system at the future point of measurement, in the measurement basis provided by the observer. In this regard it is useful to adopt the point of view %%@
+expressed by  \citet*{Castagnoli_finkelstein_2001} that the algorithm computed in a quantum computation is not fully defined until
+we make a measurement. That is, the answer to a computation in the reference frame of the observer is part of the information input into the
+computation. This idea is useful because, as a pedagogic exercise, it then becomes quite easy to generate toy
+algorithms which embody this property and which then have properties very similar to quantum systems.
+\par
+To construct these toy models we have to take as an input to the system some feature which is not defined until the answer is computed, and is only %%@
+defined in terms of something that an outside observer can measure. This requires that we create some kind of self-referencing statement which can %%@
+only be resolved by external observation. What we mean by self-referencing is that the logic of the system refers to itself such that the state of the %%@
+system at the point the answer is read out is one of the inputs to the system. If we could create a closed time-like loop then the system could %%@
+"observe itself" as if it were an outside observer at some point in the future and use the results of that observation to determine its output. This %%@
+would be similar in form to the classically inadmissible case of a Turing machine to solve the halting problem, which could accept a copy of itself as %%@
+an input, determine its own resultant state and use that as another input to determine its future state. We could then create a Turing machine that %%@
+has no consistent final state according to the laws of classical mechanics. To implement a self-referential process therefore requires a closed %%@
+time-like loop, hence a self-referencing process implies non-causality.
+\par
+For example consider the following self-referential statement, which is defined such that the answer is part
+of the question and which can be completed in two possible ways;-
+\begin{equation}
+\begin{array}{l}
+ 5\; divided\; by\; the\; number\; of\; characters\; in\; this\; sentence\; plus\; the\; answer\;\\ 
+ output\; as\; a\; fraction\; is\;
+5 \mathord{\left/
+ {\vphantom {5 {}}} \right.
+ \kern-\nulldelimiterspace} {} 
+ \mathop {\_}\limits_{98} 
+ \mathop {\_}\limits_{99} 
+ \mathop {\_}\limits_{100}
+ \end{array} 
+\end{equation}
+(The numbers underneath the characters are an index of the characters and are there to allow the reader to
+find the two solutions more easily).
+\par
+Here one of the inputs is something which is only available at the time that the answer is produced, namely the total number of characters in the %%@
+sentence. This is a property which has a definite value only in the framework of the observer once the answer has been determined. Obviously this is a %%@
+highly contrived example but it does serve a purpose in that it makes much easier to understand the logic. In this instance
+there are two possible answers which are consistent with the way the question is formulated.
+We can either complete the statement with 99 in which case we get the internally statement
+\begin{equation}
+\text{\emph{5 divided by the number of characters in this sentence plus the answer
+out put as a fraction is 5/99}}
+\end{equation}
+or with 100, in which case we have a different, but again internally consistent statement
+\begin{equation}
+\text{\emph{5 divided by the number of characters in this sentence plus the answer
+out put as a fraction is 5/100}}
+\end{equation}
+\par
+Having chosen one way to complete the sentence the other possibility immediately becomes invalid, and
+from that moment on the only correct answer is the one we selected. The two completed sentences form
+the eigenstates of the system and completing the sentence forces the choice of one eigenstate.
+This seems like a very trivial instance of a self-referential sentence, and it looks like a simple NP problem
+in that there is a two-way propagation of logical implication, and it is in fact an instance of a statisfiability
+problem (SAT), where one needs to find a string of bits which can satisfy some logical clause. However it
+also has some interesting features in common with a quantum mechanical measurement. The interesting
+features are:-
+\begin{enumerate}[(a)]
+\item %(a)
+The "state" of the system is undetermined until the point of "measurement".
+\item %(b)
+"measurement" constrains the system to output only one of the possible values.
+\item %(c)
+Once "measurement" has happened the system is consistent with only that one value and the other
+value is no longer a possibility.
+\item %(d)
+In "computing" the output state we note that we don't have all the information required for the
+computation until the output has been determined. Therefore the computation cannot be expressed
+as a deterministic computation from known inputs and therefore the "output state" will be random, but
+evenly distributed between 99 and 100.
+\item %(e)
+To produce an answer to the statement we must have access to a global property of the system, in this
+case the number of characters including the answer, which is information that is locally inaccessible
+from within the system.
+\item % (f)
+The requirement that the answer participates in the formulation of the question severely constrains the
+form of the algorithm, the possible values of the starting data and the data at the point of "measurement".
+\end{enumerate}
+\par
+Clearly we can  create a purely causal implementation of something like this as in the case of numerical solutions to differential equations where we %%@
+use forward looking approximations to the correct solution and the
+computation can settle down to one solution amongst many, but if we change things a little so that we require an input to be something that has to be %%@
+determined by an outside observer at the point the answer is read out then we have something that cannot have an implementation by any classically %%@
+operating computer. We define a self-referential algorithm as being one which requires one of the inputs to be a property of the system as measured by %%@
+an outside observer at the time the answer is determined. With this rule
+it's then trivial to create other similar sentences or self-referencing algorithms, for example;-
+\begin{equation}
+\text{\emph{An input integer value divided by the number of discrete steps required to calculate and output the answer.}}
+\end{equation}
+\par
+Clearly such a number could exist, if there are a finite number of computational steps involved there must
+exist at least one rational number that is the input integer divided by the number of steps. And because of
+the way we've arranged the logic there may well be more than one. But the system has properties (a)-(f) and
+because the logical behaviour of such as system is so close to what we would expect of a quantum measurement
+that it is tempting to suggest that a quantum computation could provide a true answer to the question.
+\par
+There is yet another important feature we can extract from such trivial statements. There are two views
+of the computation. One view is from the outside where solutions can be found by exploring all possible
+answers to find those that are consistent with the initial statement of the problem. In this case the problem
+is simply and NP problem. The other from is the view from inside the computation. This example makes
+matters clearer;-
+\begin{equation}
+\text{\emph{Calculate 5 multiplied by the number of computational steps required to calculate and print out the answer.}}
+\end{equation}
+\par
+Clearly we can create another algorithm that operates outside the computation to do an exhaustive search
+of answer states that give a result consistent with the question. In this sense it is an NP-complete problem
+and therefore computable. But if we modify the statement so that our external computations are required
+to be included in the total number of computational steps as in;-
+\begin{equation}
+\begin{aligned}
+&\text{\emph{Calculate 5 multiplied by the number of computational steps required to calculate and print out the answer }}\\
+&\text{ \emph{including any computational steps used by an outside agent.}}
+\end{aligned}
+\end{equation}
+\par
+Then such a problem cannot be implemented as a computable algorithm as one of the inputs is information
+that is only accessible to an outside observer. So such an algorithm is non-computable.
+\par
+We have converted an NP-complete problem into a non-computable problem by stepping inside the
+self-referential loop and also we can convert a non-computable problem into an NP-complete problem
+by stepping outside the loop, where we are in a position to add the information required to compute the
+problem. This observation is potentially interesting as \citet*{Castagnoli_Finkelstein_2002_09_084} have argued that
+there are non-dynamical forms of quantum computation for which NP=P and Brun \citep{Brun_ctc} has also
+shown that a computer that makes use of closed time-like loops can efficiently solve NP problems because
+the extra information required can appear as if from nowhere. Once the extra information is available, then
+a solution to an NP problem can be verified in P time.
+
+\subsubsection{2.1.1 Is there a level problem here?}
+The statement above appears to embody a logic level problem and would therefore be formally illegal. However if it turns out that we need to
+introduce logic level problems in order to create toy logical systems that emulate the logic of quantum mechanics then this is surely telling us %%@
+something important about the nature of quantum mechanics. 
+In fact if we go back to the archetypical logical level problem identified by Russell and Whitehead in \citet{Russel_Whithead}, the statement "Is the %%@
+set of all sets that are not members of themselves a member of itself or not?" we can see that the problem arises because classical logic, informed by %%@
+classical mechanics, does not allow a superposition of \emph{True} and \emph{False}. But as Deutsch et al \cite{deutsch_ekert_lupacchini_00} have %%@
+argued quantum mechanics presents us with physical systems which have states that are not permitted by classical logic so we must extend the %%@
+repertoire of permissible logical states to include those which can represent a superposition of \emph{True} and \emph{False}. With such states we can %%@
+then present a consistent answer to the question "Is the set of all sets that are not members of themselves a member of itself or not?", the answer %%@
+being $\frac{1}{\sqrt{2}}(|YES \rangle+|NO \rangle)$. With such logical states available the reason for the prohibition of logic level errors is %%@
+removed. With quantum logic we can allow sets to contain themselves.
+
+\subsubsection{2.1.2 Entanglement as self-referential computation }
+\par
+However the algorithms we've listed so far seem far removed from any recognizable quantum system. Is
+it possible to create a self-referential algorithm that can be identified as a well known quantum system, the
+measurement of which would effectively carry out the computation? There is a very well known example
+of this, we can set up "entangled statements" obeying the same principle as embodied in the self-referential
+statement above, that is, the calculation depends on some feature of the system which is not available until
+the point of measurement for example;-
+\begin{equation}
+\begin{aligned}
+X:&\text{\emph{ Calculate a function f(a,y) where a is an input value and y is the result of }}Y\\
+Y:&\text{\emph{ Calculate a function f(a,x) where a is an input value and x is the result of }}X\\
+\end{aligned}
+\end{equation}
+We can easily find an equivalent quantum mechanical system such as;-
+\begin{equation}
+\begin{aligned}
+X:&\text{\emph{Set the spin state of particle A be anti-parallel to the result of}} \\ 
+  &\text{\emph{measurement of particle B in the measurement basis of Y}}\\
+Y:&\text{\emph{Set the spin state of particle B be anti-parallel to the result of}}\\
+  &\text{\emph{measurement of particle A in the measurement basis of X.}}\\
+\end{aligned}
+\end{equation}
+\par
+This is of course the algorithm that is effectively computed by measurement of spin half entangled particles
+in an EPR paradox type experiment, and we know this has a real physical existence. By performing measurement
+on a pair of entangled particles we are effectively determining a consistent result for such a self-referencing
+computation.
+\subsubsection{2.1.3 Extracting the key lesson}
+In examining the source of the exponential speed up exhibited by quantum computation \citet{Castagnoli_finkelstein_2001,cast_and_monti_2000} , have %%@
+shown that it can be attributed to the non-mechanistic requirement that both the initial
+preparation and final measurement are necessary to fully define the problem to be solved. So that the
+initial state and the final state play an equal role in determining the parameters of the computation.
+Hence the randomness of quantum measurement does not occur by chance and the idea that the measurement 
+participates in the problem definition provides a valuable insight to understand the origin of randomness
+in quantum measurement. If the final measurement plays an equal role along with initial preparation in
+determining the inputs to the problem being solved then it is not possible for the algorithm that is embodied
+by the quantum system to be modeled as a purely deterministic evolution from initial starting conditions.
+Therefore there can be no deterministic algorithm that can take the initial conditions and produce the
+answer, the implication is that each measurement will appear random
+and the closest we can get is a statistical calculation of the probability of any one answer. Gregory Chaitin
+\cite{Chaitin_limits_book} provides a useful insight from Algorithmic Information Theory.
+\begin{quotation}
+This is because algorithmic information theory sometimes enables one to measure the information
+content of a set of axioms and of a theorem and to deduce that the theorem cannot be obtained
+from the axioms because it contains too much information.
+\end{quotation}
+\par
+This is precisely the issue that Castagnoli has identified in quantum computation, that the final measurement
+provides the additional information that is not present in the initial conditions that allows us
+to fully determine the inputs to the problem. Therefore Castagnoli's insight together with Chaitin's work
+on randomness in mathematics allows us to see that the source of randomness in quantum measurement
+is the inability of a strictly deterministic computation evolving from fully specified starting conditions to
+encompass an algorithm which is self-referencing in the sense that one of the inputs that define the problem is not available
+until the answer is determined. The fact that energy has to be provided from an external observer to perform a quantum measurement important because %%@
+in the context of computation energy can be identified with information see \citet{Bennet_1982}.
+\par As the critical features of quantum systems can be modeled by
+self-referencing algorithms and as quantum systems can model self-referential algorithms then quantum
+systems very probably are self-referential algorithms. If we are given two black boxes, one which contains
+a quantum system the other contains something that can effectively compute a self-referential algorithm
+of the type described above, and we are given only the paired values of inputs and outputs for each box,
+there is no way we could determine which is which. I'll conjecture that all the apparent paradoxes of
+quantum mechanics can be understood as the result of attempting to interpret self-referential logic within
+a deterministic framework. 
+\par
+In this context we can better understand the results of \citet{Kieu} and \citet{Calude_turing_barrier} since they both propose
+quantum systems that can solve the halting problem yet each assumes that an infinite number of measurements
+can be made on a quantum system. Since a computation to solve the halting problem would require
+infinite information then each measurement can be seen as adding the extra information required. However
+taking Chaitin's point about being able to determine the information content of axioms and theorems we
+can see that there will be certain theorems that are inaccessible by any deterministic computation from any
+given finite set of axioms but which will become accessible if we add extra information in the axioms. This implies that
+we can define a measure of non-computability for a theorem from a given set of axioms as the number of extra bits
+of information that need to be added to the set of axioms to make the theorem computable from that set of axioms.
+\par
+It should be noted that while the existence of superposition allows a quantum system to represent the
+state of a computatation which is formally non-computable according to the rules of classical mechanics, we
+do lose that state when we make a measurement. We never perceive superposition directly, it's a notion we
+are forced to introduce to make sense of definite measurements. For example if we did create a machine that
+could solve the halting problem and then from that created another machine which could self-referentially
+examine itself and the halt if it didn't halt, that output state could be implemented in a quantum computer
+as a superposition of halted and not halted. But we'd only ever measure it as one or the other. This is why
+the complete determination of $\Psi$ would require an infinite number of measurements. This is an important
+idea which we will make use of in later on, a quantum system, prior to measurement, can represent the output
+state of a computation that is formally non-computable, but physical reality is so constructed that we can
+never directly perceive that state. 
+\par
+We generally take "quantising a system" as meaning to discretize it. Our analysis so far suggests that it means something deeper, "quantising a %%@
+system" in fact means to find a mathematical representation of the system that would allow the state of the system at the future point of measurement %%@
+to be one of the inputs to the system. This kind of representation can result in a limited number of discrete solutions. \citet*{Antippa_dubois_2004} %%@
+have shown that such kind of anticipatory computation is required to model dynamics in a discreet spacetime framework, our analysis suggests that it %%@
+may be the other way round, that \emph{anticipation} forces dynamics to be discreet because it adds a stringent contraint on the possible values a %%@
+system can take. 
+\par
+This is the key lesson we want to get from quantum mechanics, the quantum formalism can be used to represent the states of self-referential and hence %%@
+non-computable algorithms. This poses a crucial question \emph{"Why does quantum superposition exist and why is physical reality so arranged that we
+can never experience it directly?"}
+\subsubsection{2.1.4 A signature of self-referentiality?}
+We can now identify that the "signature" of self-referentiality, we take self-referentiality of an algorithm to mean that some feature of the system %%@
+which is only determined at the point that the answer is read out is an input to the system. This makes such an algorithm formally non-computable,  %%@
+and also if we evisage the algorithm as a sequence of events evolving in time it would be non-causal. The essential feature being that that things %%@
+only acquire definite values in the context of the answer to a question and cannot have any definite
+values except in the context of an answer. 
+
+\subsection{The lesson from general relativity 2.2}
+\par
+In general relativity non-causal computation is also allowed because general relativity allows the existence
+of closed time-like loops. This is the basis of idea presented by \citet{Hadley} that the logic of quantum mechanics
+can be derived from general relativity. People often dismiss such solutions to the field equations as being "unphysical", which seems a trifle %%@
+reckless since one can always gain useful information from awkward solutions, particularly by asking "why are they unphysical?". General relativity is %%@
+a deterministic mathematical model and it shouldn't be possible to model such non-causal computation starting from purely deterministic building %%@
+blocks. So there must be something buried in general
+relativity that is of inherently non-computable nature. I've suggested that the signature of self-referential computation
+is that things acquire values only as part of an answer to a question, general relativity is a theory of space
+and time so we should expect that if self-referential logic is buried somewhere within general relativity
+then space and time would acquire meaning only as part of the answer to a question. Christian in \citep[chap.~14]{phys_meets_philosophy}
+argues that general covariance, carries with it the implication that points in space-time cannot possess any
+sense of individuality a priori. As he puts it; -
+\begin{quotation}
+"Thus, strictly speaking the bare space manifold does not even become 'space-time' with physical
+meaning until both the global and local spatio-temporal structures are dynamically determined
+along with a metric. Further since spacetime points acquire their individuality in no other way
+but as a byproduct of a solution of Einstein's field equations, in general relativity 'here' and 'now'
+cannot be part of a physical question, but can only be part of the answer to a question. As Stachel
+so aptly puts it \cite{Stachel}, the concepts 'here' and 'now' - and hence the entire notion of local causality -
+acquire ontological meaning only \emph{a postereriori}, as a part of the answer to a question."
+\end{quotation}
+\par
+Yet this is precisely the observation that allows us to infer self-referential computation in quantum mechanics, certain aspects of quantum systems %%@
+cannot be said to have values until a measurement happens and the determination of the answer to a question participates in the determination
+of the problem to be solved. In general relativity it is the observation of an event that participates in the
+creation of the whole concept of space and time for the event to occur in. However, there is a difference here in that the notion that future state of %%@
+the system becomes an input to the system is absent since we have to define the notion of spacetime first before we know what "future" means so we %%@
+have to use the idea of self-reference more abstract way than one which relies on information being sent backwards in time. 
+\par
+The core problem that frustrates efforts to unite quantum mechanics and general relativity, is that
+quantum mechanics does treat space-time as a non-dynamical causal structure in the background that does
+allow 'here' and 'now' to be part of the question, points in space-time are assumed to have individuality a
+priori, whereas in general relativity they don't, see also \citet{weinstein_2001}. This is the key lesson we take from general relativity which we %%@
+need to complement the key lesson we take from quantum mechanics.
+\par
+\subsection{2.3 Are quantum mechanics and general relativity dual?}
+This notion of self-referential logic allows us to identify a potentially interesting duality between general relativity
+and quantum mechanics. In quantum mechanics the measurements we make on material bodies carry
+the signature of self-referential logic and the background space-time in which the bodies move is strictly
+causal, in general relativity space-time itself carries the signature of a self-referential logic and it is the
+material bodies in space-time that behave in a strictly causal manner. But such self-referentiality cannot in principle be the the consequence of the %%@
+action of any computable process and must therefore be axiomatic. In this case we would have to accept that nature is at root self-referential and yet %%@
+quantum mechanics and general relativity introduce a different notion of causal sequence in order to allow a tractable mathematical description of an %%@
+underlying
+intractable self-referential reality. See figure $(\ref{fig:duality_1})$
+\begin{figure}[h]
+% This is done using pspicture because in tabular the vertical lines don't connect with the horizontal lines
+\centering
+\begin{pspicture}(0,0)(12,4)
+\psframe(4,3)(8,4)\rput(6,3.5){\emph{General Relativity}}
+\psframe(8,3)(12,4)\rput(10,3.5){\emph{Quantum Mechanics}}
+% next line
+\psframe(0,1.5)(4,3)\rput(2,2.25){\emph{Spacetime framework}}
+\psframe(4,1.5)(8,3)\rput(6,2.25){\begin{tabular}{c} Answer is part \\ of the question \end{tabular}}
+\psframe(8,1.5)(12,3)\rput(10,2.25){Strictly causal}
+% next line
+\psframe(0,0)(4,1.5)\rput(2,0.75){\begin{tabular}{c} \emph{Particle interaction in}  \\ \emph{the spacetime framework }\end{tabular}  }
+\psframe(4,0)(8,1.5)\rput(6,0.75){Strictly causal}
+\psframe(8,0)(12,1.5)\rput(10,0.75){\begin{tabular}{c} Answer is part \\ of the question \end{tabular}}
+\end{pspicture}
+\caption{Is there a duality between general relativity and quantum mechanics? $\label{fig:duality_1}$}
+\end{figure}
+\par
+Although this is only a hint that such a duality exists, to show it we need to exhibit a function that can transform the concepts embodied in one into %%@
+the other, we will assume that it is the case. We know that the differences in the concept of time underlie the problem of finding a theory of quantum %%@
+gravity so it would seem a sensible question to ask if these different concepts of time are dual to each other. In the meantime there are two obvious %%@
+implications;-
+\begin{enumerate}[(1)]
+\item
+Whatever underlies the operation of quantum mechanics and general
+relativity must be purely self-referencing and hence not amenable to being modeled by computable mathematics. So there can be no theory of quantum %%@
+gravity and hence no Unified Field Theory. 
+\item
+All is not lost as we might gain some insight into the distinct forms of those theories by looking at those constraints which must be imposed in order %%@
+for each to implement the notion of causal sequence. So now we turn to what those constraints might be.
+\end{enumerate}
+\section{CAUSALITY PROTECTION AND NON-COMPUTABILITY 3}
+\subsection{Non-computability via super-tasks 3.1}
+\par
+So far we've discussed non-computability in terms of self-referencing systems, that is the answer is part of
+the question, and that if information could be sent backwards in time then non-Turing computable action
+would be possible. But there exists another way of attaining non-computable action. The precise definition
+of a computable action is that it should yield a result in a finite number of steps, if we allow an infinite
+number of steps then we can construct a machine that would solve the halting problem. But an infinite
+number of steps would take an infinite amount of time so we would not be around to gather the answer.
+\citet{Thomson_1954} proposed that one could make a machine that could perform an infinite number of steps in a
+finite amount of time. In his example, the Thomson Lamp, if we set up lamp that is switched on for half a
+minute, then switched off for a quarter of a minute, then on for an eighth of a minute and so on each switch
+over happening exactly after exactly half the period of the previous one then at the end of one minute we
+would have switched the light on and off an infinite number of times. But when we look at the light is it on
+or off? It cannot be on for that would imply stopping the process after a finite number of steps, likewise it
+cannot be off for the same reason. There exists no state in classical mechanics that can describe the state of
+the light after an infinite number of switchings. Hence such a thing is impossible. But quantum mechanics
+introduces new logical states that allow us to extend logic beyond that which is informed by our experience
+of the classical world (see \citet{deutsch_ekert_lupacchini_00}). If we introduce the notion of quantum superposition then the light can be both
+on and off at the same time. See figure $(\ref{fig:supertask})$ 
+\begin{figure}[h]
+\begin{pspicture}(0,0)(8,4)
+%\psset{xunit=4cm}
+%\psgrid[subgriddiv=1,griddots=10,gridlabels=7pt](0,0)(2,4)
+\psset{xunit=1cm}
+\psset{linewidth=2pt}
+\psline(0,3)(2,3)
+\psline(2,1)(3,1)
+\psline(3,3)(3.5,3)
+\psline(3.5,1)(3.75,1)
+\psline(3.75,3)(3.875,3)
+\psline(3.875,1)(3.9375,1)
+\psline(3.9375,3)(3.984375,3)
+\psline(3.984375,1)(3.9921875,1)
+\psset{linecolor=gray,linewidth=1pt}
+\psline(2,3)(2,1)
+\psline(3,1)(3,3)
+\psline(3.5,1)(3.5,3)
+\psline(3.75,1)(3.75,3)
+\psline(3.875,1)(3.875,3)
+\psline(3.9375,1)(3.9375,3)
+\psline(3.984375,1)(3.984375,3)
+\psline(3.9921875,1)(3.9921875,3)
+\psset{linecolor=black,linewidth=0.1pt}
+%
+\rput(1,3){\rnode{A}{\psdots(0,0)}}
+\rput(1,4){\ovalnode{B}{ON}}
+\nccurve[angleB=270,angleA=90,arrowscale=3]{<-}{A}{B}
+%
+\rput(2.5,1){\rnode{A1}{\psdots(0,0)}}
+\rput(2.5,0){\ovalnode{B1}{OFF}}
+\nccurve[angleB=90,angleA=270,arrowscale=3]{<-}{A1}{B1}
+%
+\rput(4,2){\rnode{A2}{\psdots(0,0)}}
+\rput(7,3){\ovalnode{B2}{$\frac{1}{\sqrt{2}}(|ON\rangle+|OFF\rangle)$}}
+\nccurve[angleB=180,arrowscale=3]{<-}{A2}{B2}
+%
+\end{pspicture}
+\caption{The end result of a super-task is a superposition of states}
+\label{fig:supertask}
+\end{figure}
+\par
+Yet again we have the situation where the quantum formalism is sufficiently rich to be able to model the
+logical states that are to be expected as the output of a non-computable task. In this case it's not the
+idea of information flowing backwards in time to create causal loops but the notion of a super-task. 
+But such a machine cannot be made precisely because of
+the physical limits imposed by quantum mechanics on the rapidity of switchings which are possible. In
+quantum mechanics the quantity $h$ puts a boundary on how fast we can change the state of something.
+This restriction is in addition to the causality protection scheme operated by the finite speed of light. If we
+have a system in a superposition of basis states then it looks like the end product of an infinite number
+of switchings between the basis states, when we make a measurement we measure one basis state and
+the system then looks like only a finite number of changes have occurred. 
+\subsection{3.2 Causality protection has two facets}
+\par
+We hypothesise that although there exists some kind of self-referentiality as fundamental principle of Nature's functioning we do not directly %%@
+experience it because there are also causality protection rules which prevent us seeing it.
+Causality protection has two facets, $\mathcal{A}$ preventing the use of super-tasks and $\mathcal{B}$ preventing the use of causal loops.
+Quantum mechanics and general relativity each have a different notion of time, that is a different notion of how to put things into causal sequence, %%@
+so the
+obvious question to ask is "Can we recover each of these theories as limit cases by applying these rules over an
+assumed non-computable reality?".  
+\par
+At this point we immediately run into a deep philosophical problem which
+I'll highlight and then ignore. An important objection to computational models of physics is that
+all such models would appear to assume another underlying physical reality on which to implement the
+computation and hence an infinite regression of such physical realities. When we talk about an underlying
+non-computable reality we have an even greater problem; such a thing cannot be modeled by any arrangement
+of physical particles operating according to normal causal laws. Hence, since our intellectual conceptions are
+the products of the operations of material particles operating according to causal laws, we cannot have a
+conception of what such a thing might be. Penrose in \citet{Penrose_ENM,Penrose_SOM,penrose_hameroff} has argued that there must be something
+of a non-computable nature going on in the brain to produce the experience of consciousness, but until
+we have any firm evidence that such a thing could happen we have to conclude that contemplation of
+an underlying non-computable reality is outside the bounds our comprehension. This means that any
+explanation of how the appearance of causality can arise in a non-computable and hence non-causal reality must, by necessity, be either
+incomplete or inconsistent. We can never have a complete theory in the sense we normally understand it,
+but must be content getting closer asymptotically to an unattainable goal.
+\par
+We can however make some general observations about the nature of an non-computable reality which will motivate the ideas to follow;-
+\begin{enumerate}[(1)]
+\item
+A self-referential process could in principle exceed the power of any degree of oracle machine (see \citep[chap. 7.8]{Penrose_SOM}) and
+therefore can determine the result of performing any finite computation. Though we should note that the word "process" is not the correct term since %%@
+it implies a sequence of things happening in time. 
+\item
+Since such a process can determine the truth or falsehood of any theorem then it is complete, and so by 
+Gödel's First Incompleteness Theorem \cite{Godel} it must be inconsistent.
+\item
+Being inconsistent theorems $P$ and \emph{not} $P$ are both provable by the system.
+\item
+Hence the system can negate itself.
+\item
+The negation of self-reference is non self-reference, so causal sequences are produced from the system, and because all theorems can be checked by the
+process, all possible causal sequences are outputs. 
+\end{enumerate}
+\par If we start with an abstract notion of self-referentiality then we can by some means evolve all possible causal sequences. We now make the
+simplifying assumption that reality is inherently self-referential, and thus not capable of being represented as a causal sequence, but we want to %%@
+find an approximate representation of it as if it were a causal sequence. 
+\par
+The first approximation is that we're not going to be rigorously specific about the possible states of such a non-computable computation, we'll not %%@
+specify what we mean by states or states of what. We will just assume that there are patterns
+of information, and that some patterns can be transformed into others by a computable, and hence causal,
+process and others cannot. From any axiom system certain theorems are provable and some are not unless
+we extend the axiom system. This is the case that \citet{Chaitin_Randomness_in_Arithmetic} has pointed out. So without being more
+specific, we'll just assume that the output of a non-computable computation contains states that can be
+put into causal order and states that can't. If we attempt to model an underlying non-causal reality with
+either of the causality protection rules in place we have to find a place in that model for states that will
+arise if the rule were violated. 
+\par
+If the idea that time, or causal sequence, is something superimposed over
+an underlying non-causal reality is to be any good then as a bare minimum it should give us some insight
+into the nature of space and perhaps even an understanding of non-locality. So with these caveats in mind
+we look at the consequences of each rule.
+\subsection{3.3 Preventing Super-Tasks}
+\par
+We'll define our first rule as;-
+\begin{equation}
+\text{Rule }\mathcal{A} \text{ we can't we can't access the output of a super-task}
+\end{equation}
+Since a super-task goes through an infinite number of steps in a finite amount of time measured by reference to an external observer, then we prevent %%@
+a super-task from happening by enforcing a rule that there is a finite maximum number of
+configurations that a system can go through in a finite period of time measured according to the external reference
+frame. Following \citet{Margolus_03} we define $\Omega(t)$ the number of configuration changes in a unit of time.
+This is a dimensionless number, but if we call this number action we can then create another concept energy
+which is the maximum rate at which configurations can change. We then have a constant of proportionality,
+let's call it $K$ which puts a boundary on the number of configuration changes in a unit time via
+\begin{equation}
+Et=K\Omega(t)
+\end{equation}
+\par
+So that $K$ has the dimension of $energy \times time$ since $\Omega(t)$ is dimensionless. The actual equation in our world 
+is
+\begin{equation}
+Et=\frac{h}{2}\Omega(t)
+\end{equation}
+So that $K=h/2$, hence we can see that the operation of rule $\mathcal{A}$ demands a fundamental constant which has the units of action. But it also %%@
+requires us to have an external reference framework of time.
+\par
+In this instance we are creating a representation of the world by putting this
+rule in place over an underlying self-referential, hence non-computable reality so we have to have a way to
+represent the states of non-computable processes. A non-computable process could decide the result of a formally undecidable proposition, so we have %%@
+to have a way to represent a formally undecidable proposition. Under this scheme we represent a non-computable process as
+a violation of rule $\mathcal{A}$, if we violate rule $\mathcal{A}$ then we could have a super-task so in this case we represent a formally %%@
+undecidable proposition as a superposition of possible outcomes, like the state
+of Thomson's Lamp at the end of one minute. With the rule $\mathcal{S}$ in place we interpret an underlying non-computable
+reality as if it we a causal sequence of events evolving in a background reference framework
+of time and a constant which has the dimension of action which serves to prevent the output of a super-task ever being accessed, we represent the %%@
+violation of the rule as a superposition of states. See figure $\ref{fig:qm_1}$
+\begin{figure}[h]
+\begin{pspicture}(-0.5,-0.5)(6,6)
+% qm picture
+\rput(2,5){\emph{Quantum Mechanics}}
+\psline{->}(0,0)(0,4) 
+\rput(-0.85,3){\rnode{B1}{$\frac{1}{\sqrt{2}}|FALSE\rangle$}}
+\psline{->}(0,0)(4,0)
+\rput(3,-0.3){\rnode{B2}{$\frac{1}{\sqrt{2}}|TRUE\rangle$}}
+%\nccurve[angleB=180,arrowscale=2]{<-}{A2}{B2}
+\psline{->}(0,0)(3,3)
+\rput(4,4){\ovalnode{B}{$\frac{1}{\sqrt{2}}(|TRUE\rangle+|FALSE\rangle)$}}
+\rput(3,3){\rnode{A}{\psdots(0,0)}}
+\psline[linestyle=dotted](0,3)(3,3)
+\psline[linestyle=dotted](3,0)(3,3)
+\nccurve[angleB=270,arrowscale=2,nodesep=0.1]{<-}{A}{B}
+\end{pspicture}
+\caption{Quantum mechanics represents an undecidable proposition as a super-position \newline of alternative outcomes }
+\label{fig:qm_1}
+\end{figure}
+\par
+Hence applying this rule allows us to start recovering quantum mechanics from the notion of self-referentiality.
+It also reveals an interesting conclusion, which is not anticipated in the quantum formalism; simply by
+stating rule $\mathcal{A}$ as "there will be no super-tasks" we deduce that at any point in time there can only be a finite
+number of prior configuration changes. Therefore interpreting a non-computable reality using this rule
+makes it look like causal processes began at a finite time in the past.
+\subsection{3.4 Preventing causal loops}
+\par
+We define our second rule as;-
+\begin{equation}
+\text{Rule }\mathcal{B} \text{ we can't we can't access the output of a causal loop }
+\end{equation}
+In this case we enforce a rule over an assumed non-computable reality such that if rule $\mathcal{B}$ could be violated we could create a causal loop. %%@
+This rule does not require a global reference framework of time; it simply requires that locally we only ever experience time as a strict causal %%@
+sequence in the changes of the configuration of things. This has interesting consequences, in special and general relativity if we could send signals %%@
+at superluminal speed then we can create a causal loop. See figure $(\ref{fig:ftl})$.
+\begin{figure}[h]
+\centering
+\begin{pspicture}(-2,0)(6,3)
+\psset{arrowscale=3}
+\psline{->}(3,0)(1.5,1.5)
+\psline{->}(1.5,1.5)(0,3)
+\psline{->}(0.5,2.5)(4.5,1.5)
+\psline{<-}(2.5,0.5)(4.5,1.5)
+\psline{->}(3,0)(6,3)
+\rput(0.5,2.5){\psdots[dotscale=2](0,0)}
+\rput(0,2.5){A}
+\rput(4.5,1.5){\psdots[dotscale=2](0,0)}
+\rput(4.8,1.5){B}
+\rput(-1.75,1.75){\begin{tabular}{c}A sends a superluminal\\ signal to B \end{tabular}}
+\rput(7,1){\begin{tabular}{c} B responds with \\ a superluminal  signal \\ to the past of A \end{tabular}}
+\end{pspicture}
+\caption{Superluminal signaling can be used to create a causal loop}
+\label{fig:ftl}
+\end{figure}
+\par
+But superluminal signaling means that we can communicate between space-like separated events, so in this scheme we represent a formal undecidable %%@
+proposition as an event outside the light cone, see figure $(\ref{fig:duality_2})$.
+\begin{figure}[h]
+\centering
+\begin{pspicture}(0,0)(6,6)
+%gr picture
+\rput(2,5){\emph{Einsteinian Causality}}
+\psline{->}(0,0)(4,4)\psline{->}(4,0)(0,4)
+\psline{->}(0,2)(0,3)\psline{->}(0,2)(1,2)
+\rput(0.4,2.8){\emph{time}}
+\rput(0.5,1.8){\emph{space}}
+\rput(2.25,2){\rnode{A}{\psdots(0,0)}}
+\rput(5,3){\rnode{B}{\begin{tabular}{c}\emph{Undecidable}\\ \emph{Proposition} \end{tabular}}}
+\nccurve[angleB=180,arrowscale=2,nodesep=0.1]{<-}{A}{B}
+\end{pspicture}
+\caption{In special and general relativity a undecidable proposition is represented as a space-like separated event}
+\label{fig:duality_2}
+\end{figure}
+\par
+In this picture the notion of space-like separation is born from the need to represent non-causality as if we could create a closed time-like loop.
+Straight away by putting figure $(\ref{fig:qm_1})$ alongside figure $(\ref{fig:duality_2})$ we can see why spatial separation in quantum mechanics %%@
+does not carry the same meaning of causal separation that it does in special and general relativity. Under rule $\mathcal{A}$ causality protection is %%@
+ensured by the quantity $h$ under rule $\mathcal{B}$ causality protection is ensured by the quantity $c$, the speed of light. Therefore the %%@
+representation of reality we get from $\mathcal{A}$ does not see $c$ as a limit on the speed of information transfer between space-like separated %%@
+measurements. Similarly the representation of reality under rule $\mathcal{B}$ does not use $h$ and so general relativity is formulated as if $h$ does %%@
+not exist.
+\par
+By looking at figure $(\ref{fig:ftl})$ we can see something else, the arrows have to be lined up head to tail. Being able to line all the arrows up %%@
+head to tail like this means that we can parallel transport our vectors around the loop. The property of a circle that allows us to do parallel vector %%@
+transport is called "parallelisability" and the circle is a one dimensional parallelisable sphere. This sphere is called $S^1$, we get the unit sphere %%@
+$S^1$ by taking  exponentials of unit modulus complex numbers. We now observe that ;-
+\begin{enumerate}[(1)]
+\item
+If we count the number of configuration changes required in a computation that proceeds from a set of axioms to a given theorem as a real quantity %%@
+then we can use that as a measure of time. 
+\item
+We can measure the degree of non-computability of a theorem from a given set of axioms; it's the amount of information we need to add to an axiom %%@
+system in order to be able to derive the theorem by computable means. The measure of space-like distance between space-like separated events is the %%@
+amount of information that has to be added to allow one event to become causally connected to another.
+\item
+A causal loop can add information as if from nowhere.
+\item
+We can generate a loop by taking the exponential of a complex number then the amount of information that needs to be added can be represented by a %%@
+complex number. 
+\item
+Then we can we measure space-like distances using complex numbers so that with one spatial dimension the metric has signature $(+-)$.
+\par
+Now that is not a proof, the only justification for it at present is that it's how Nature does things. This is a major open problem in this line of %%@
+argument. We need to prove that if we represent causal steps in a computation with real numbers we can represent non-causal steps using complex %%@
+numbers. But since that is how Nature does things we will assume that such a proof will be available at some point and move on to the next step in the %%@
+argument. 
+\item
+There are two other continuous spheres that have the parallelisability property, they are $S^3$ and $S^7$. Each of the continuous parallelisable %%@
+spheres is associated with a complex normed division algebra.  So that the unit circle $S^1 \equiv e^{z}\text{, } \{z \in \mathbb{C}:|z|=1 \}$ and %%@
+similarly with the quaternions and octonions to get $S^3$ and $S^7$, (see \citet{baez_2002} for a comprehensive introduction to the octonions). This %%@
+means that we also have to exclude the possibility of creating causal loops on $S^3$ and $S^7$. Which in turn means we now have to represent causal %%@
+loops by parallel vector transport on these spheres. But these spheres are the equivalent to the exponentiation of the quaternions and the octonions. %%@
+The quaternions are defined by
+\begin{equation}
+i^2=j^2=k^2=ijk=-1
+\end{equation} 
+from which we deduce that
+\begin{equation}
+ij=k
+\end{equation}
+so we only need two base quaterions to create the full set. 
+\item
+Similarly with the octonions we need only three base octonions to generate all of them and this means that we can generate any rotation on $S^7$ from %%@
+three base rotations. Hence the information required to create a causal loop by parallel transporting our vectors around $S^7$ is contained in just %%@
+three quantities.
+\item
+If we measure computable steps using real numbers and we use complex numbers to count non-computable steps then since rotations on the largest sphere %%@
+can be represented by the exponentiation of just three independent complex numbers then we must measure space-like separation using at most three %%@
+dimensions. Furthermore since we are counting non-computable steps using complex numbers these dimensions must be complex with respect to the time %%@
+dimension so that the metric has signature $(+---)$. 
+\end{enumerate}
+\par
+In summary;If we could send information between space like separated events then we could create a causal loop. A causal loop requires the %%@
+parallelisability property. Rotations on the largest parallelisable sphere can be specified with just three independent pieces of information and %%@
+therefore space has three dimensions.
+\par
+We also see that we've had to make use of the notion of computability and computable sequences in order to define our rule $\mathcal{B}$. From %%@
+\citet{Margolus_03} we can understand computation, i.e. changes in the configuration of things, in terms of energy and momentum and so to define a %%@
+metric on the notion of space and time which springs into existence under the operation of rule $\mathcal{B}$ we have to define it in terms of energy %%@
+and momentum. This brings us very close to Einstein's field equations, although not quite there. We can see that we must have three spatial %%@
+dimensions, with one of time and a metric with signature $(+---)$ and that it's going to involve defining space-time in computational terms, i.e. in %%@
+terms of energy and momentum, but how we get the metric isn't clear. This is work in progress.
+\par 
+That we are able to find a pointer to a plausible explanation for the observed number of dimensions of space and the non-locality of quantum phenomena %%@
+with such little effort suggests that the view that time is a notion of causal sequence super-imposed on a non-causal reality using a causality %%@
+protection rule may be good one to pursue further. However so far we have only a plausible explanation, not a rigorous one, but it is none the less %%@
+encouraging. It shows that the dimensionality of space is not something determined by the flavour of the month in particle theories but is completely %%@
+determined by the actual meaning of space-like separation. Space like separation has the hidden implication that if we could send signals between %%@
+space-like separated events then we could create causal loops and it is this that determines the number of space dimensions. If we have a theory that %%@
+requires more than three apparent spatial dimensions then these extra dimensions cannot have the meaning of causal separation that they do in the %%@
+relativistic viewpoint.
+\par
+This insight reveals something quite unexpected, if we translate it into the framework of Algorithmic Information Theory it implies that the %%@
+information content of new axioms added to an axiom system can be measured in at most three independent ways and also that we can measure the degree %%@
+of non-computability of a theorem from a given finite set of axioms by counting in imaginary numbers. Proving this is a key open problem. 
+\par
+Bearing in mind that much work remains to be done I'll conjecture that the relationships between quantum mechanics, general relativity and a %%@
+fundamental purely self-referential and hence non-computable reality can be summarised in figure $(\ref{fig:qm_gr_1})$
+\begin{figure}[h]
+\begin{pspicture}(0,0)(6,4)
+\rput(3,3.5){\rnode{A}{\psframebox[framearc=0.3]{Underlying Self-Referential Reality}}}
+\rput(1,0.5){\rnode{B}{\psframebox[framearc=0.3]{Quantum Mechanics}}}
+\rput(5,0.5){\rnode{C}{\psframebox[framearc=0.3]{General Relativity}}}
+\ncline[nodesep=0.2]{->}{A}{B}
+\ncline[nodesep=0.2]{->}{A}{C}
+\rput(1.75,2){\psframebox*{\begin{tabular}{c}Enforce \\ rule  $\mathcal{A}$ \end{tabular}}}
+\rput(4.25,2){\psframebox*{\begin{tabular}{c}Enforce \\ rule  $\mathcal{B}$ \end{tabular}}}
+\end{pspicture}
+\caption{Conjectured relationship between quantum mechanics \newline general relativity and an underlying reality }
+\label{fig:qm_gr_1}
+\end{figure} 
+\subsection{3.5 Further development of the idea}  
+We'll now step on to more tentative areas. If we look at the implementation of rule $\mathcal{A}$ we see we have to define it with reference to an %%@
+external global framework of time, but an external framework of space and time seems to require the implementation of rule $\mathcal{B}$. Yet to %%@
+define rule $\mathcal{B}$ we have to assume that computations can only proceed in finite steps so our rules are better defined as;-
+\begin{equation}
+\text{RULE:}\mathcal{A}\text{ -  Assuming rule }\mathcal{B}\text{ is in place then in addition we can't access the output of super-tasks}
+\end{equation}
+and
+\begin{equation}
+\text{RULE:}\mathcal{B}\text{ -  Assuming rule }\mathcal{A}\text{ is in place then in addition we can't access the output of causal loops}
+\end{equation}
+\par
+This then tells us what this "underlying self-referential reality" actually is, it's the totality of the physics generated by general relativity and %%@
+quantum mechanics together. Expressing it in the form of two separate concepts each of which is purely causal in its own domain allows us to use %%@
+standard computable mathematics. When we put them together we get a system where the concepts underpinning each one depend on the other. The notion of %%@
+there being finite number of states  a system can go through in a finite amount of time, which is essential for the creation of the spacetime %%@
+framework of general relativity requires quantum theory to ensure that only a finite number of states are possible. Quantum theory has to make use of %%@
+the framework of space and time that is ultimately derived as a limit case from the relativistic view. Hence if we put them together we get a fully %%@
+self-referential system which is mathematically intractable. The case is closely analogous to the case shown in figure %%@
+$(\ref{fig:non_causal_computation})$ where each segment of a loop in isolation is computable though the whole loop is not. The two rules together %%@
+therefore represent a more detailed view of this "self-referential reality" which we can represent in this diagram $(\ref{fig:first_expansion})$
+\begin{figure}[h]
+\begin{pspicture}(0,0)(10,6)
+\cnode(1.5,3){1.5}{A}
+\cnode(8,3){2}{B}
+\ncline[arrowscale=3]{->}{A}{B}
+\rput(4.5,3.25){Is detailed as}
+\rput(1.5,3){\begin{tabular}{c}Pure \\ Self-referentiality \end{tabular}}
+\rput(8,3){
+\rput(0,1){\ovalnode{A1}{Rule $\mathcal{A}$}}
+\rput(0,-1){\ovalnode{B1}{Rule $\mathcal{B}$}}
+\nccurve[arrowscale=3]{->}{A1}{B1}
+\nccurve[angleB=180,angleA=180,arrowscale=3]{->}{B1}{A1}
+}
+\end{pspicture}
+\caption{Rules $\mathcal{A}$ and $\mathcal{B}$ together form a more detailed version of the self-referential system}
+\label{fig:first_expansion}
+\end{figure}
+\par
+The consequences of this arrangement are;-
+\begin{enumerate}[(1)]
+\item Since $\mathcal{A}$ and $\mathcal{B}$ form a self-referencing logical loop, and one underlies quantum mechanics and the other general relativity %%@
+then a theory of quantum gravity would have to be fully self-referential which means it could model a mechanism to solved the halting problem which %%@
+isn't possible, therefore there is no theory of quantum gravity.\\
+\item In cases where we have infinite energies then we can't assume $\mathcal{A}$ so rule $\mathcal{B}$ breaks down. Since rule $\mathcal{B}$ is %%@
+needed to construct the notion of space-like separation then the notion of space breaks down. This is the point at which general relativity breaks %%@
+down.
+\item At the point of measurement of a quantum system, since the system is defined with the value at measurement as part of the inputs then we have an %%@
+apparent causal loop, which means that rule $\mathcal{B}$ is invalid and so rule $\mathcal{A}$ breaks down, and since rule $\mathcal{A}$ is required %%@
+to create the notion of super-position then we lose super-position of possibilities.
+\item
+Rule $\mathcal{A}$ requires a global notion of time, while rule $\mathcal{B}$ only a local one, so as we go round the loop some things will be %%@
+invariant under global-local transformations hence the laws of nature that arise from the interaction of these rules must be expressed as gauge %%@
+theories.
+\item
+\begin{enumerate}[(a)]
+\item
+In the relativistic case the number of degrees of freedom in space is constrained to three by the operation of rule $\mathcal{B}$, but in the quantum %%@
+case space-like separation is not constrained to three dimensions. We can have an infinite number of degrees of freedom and only some of these can be %%@
+mapped into the framework of space used when we make a measurement. How are the others to be represented? 
+\item
+In terms of the observer framework derived from rule $\mathcal{B}$ we can interpret these extra degrees of freedom as extra spatial dimensions with %%@
+the peculiar property that $c=\infty$ which makes them look like tiny causal loops which we can represent as a fibration over Minkowski space using %%@
+the parallelisable spheres. 
+\item
+But these spheres arise form the exponentiation of the hypercomplex division algebras and a result due to \citet{dixon_G_94,dixon_99} and other work %%@
+by \citet{smith_t_95} shows that we can derive the $U(1)\times SU(2) \times SU(3)$ symmetry of the Standard Model from the hypercomplex division %%@
+algebras. 
+\item
+Since the interaction between rules $\mathcal{A}$ and $\mathcal{B}$ when we make a measurement requires the transformation from a global concept of %%@
+time to a local concept of time then we should expect that our measurements can be interpreted in the form of gauge transformations with $U(1)\times %%@
+SU(2) \times SU(3)$ symmetry. So there is a case to be made that the symmetry of the Standard Model is the inevitable consequence of observing a %%@
+self-referential totality as if it were a locally a causal sequence. 
+\par
+Although the work on the relationships between the symmetry groups of the Standard Model and the division algebras was done a long time ago it has %%@
+languished unregarded because it's hard to fit it into research programs attempting to develop a Unified Field Theory, or even a Grand Unified Theory. %%@
+However the arguments presented here suggest that such programs may well fail and that the significance of parallelisable spheres is greater than %%@
+previously thought. 
+\end{enumerate}
+\end{enumerate}
+\par
+But such a derivation would have peculiar consequences;-
+\begin{enumerate}[(a)]
+\item
+In this a picture the symmetry group ultimately derives from rotations of $S^7$ which don't form a group because octonion multiplication is %%@
+non-associative. The symmetry group springs into existence fully formed rather than via symmetry breaking from some higher order group such as %%@
+$SU(5)$. The implication is that there is no Grand Unified Theory, which fits the current data, and can be refuted by experiments due to be performed %%@
+at CERN.
+\item
+If the Standard Model symmetry group is the consequence of the interaction between causality protection rules, then could particle mass be another %%@
+consequence? A natural derivation of particle mass could come from finding a way to define the metric of general relativity in computational terms. %%@
+Because entanglement is a computational resource in quantum systems it could be that the capacity for particles to engage in entangled ensembles is %%@
+what gives rise to mass. The idea that there may be a relationship between entanglement and mass has been suggested by \citet{Vedral_2004}. However he %%@
+proposes that the entanglement could be between virtual Higgs bosons and particles, though of course entanglement with any other virtual particle will %%@
+do just as well and then there would be no need for a Higgs boson. In our suggested scheme, a measure of space like distance between events is the %%@
+amount of information that has to be added to allow one event to become causally connected to another. If there are particles present which are %%@
+engaging in entanglements with each other and the vacuum then this will obviously affect the amount of information separating events and hence affect %%@
+the metric.   
+\end{enumerate}
+\section{4 CONCLUSIONS}
+\par
+In this essay I've explored some of the issues raised by the question "Why is the quantum formalism so uniquely adapted to representing %%@
+self-referential, non-computable states?". We've seen that this issue has been addressed already in many different guises. By taking the lesson %%@
+seriously and assuming that it is telling us something important about the nature of reality we've been able to formulate arguments that may lead to %%@
+solutions of otherwise intractable problems. 
+\par
+I've had to jump logical chasms with arguments that are are not properly justified and have left open problems, but the broad outlines of a theory %%@
+that starts to emerge from the mist are nevertheless very interesting; it begins to match what we see in the world and seems to give some insight into %%@
+hard problems. The idea that
+self-referentiality may be a foundational principle is not novel, it has for example been been mooted by \citet{hawkin_2003}
+in despair at ever finding a mathematically consistent Unified Field Theory. A similar idea has been presented in  a different form by
+\citet{Barbour_EOT}. Barbour argues that since the notion of time is so different in quantum mechanics and
+general relativity that we should abandon the notion of time altogether. Since this would imply that causal
+sequence is not a fundamental property of nature this seems to suggest that non-causality is fundamental
+instead. 
+\par
+The early attempts to create a theory of quantum gravity ran into problems with causality and infinite energies. Subsequent programs in this area have %%@
+attempted to create theories which avoid these problems and at the same time match the world we live in. These programs have not been as succesful as %%@
+people have hoped (see \citet{smolin_03}). The suggestion that self-referentiality may be attained by causality violation or infinite energy implies %%@
+that if it is to be regarded as a foundational principle then the problems encountered in the early work were actually the right answers.   
+\par
+However as we have seen the case is not a bad as it looks, for while it seems that a mathematically consistent
+Unified Field Theory cannot exist, we can at least get some understanding of why
+our limited theories have the forms that they do. Because getting a consistent result from a self-referential algorithm places very strong constraints %%@
+on the possible solutions, the requirement that the sum total of physical laws form a self-referential system places very strong constraints on the %%@
+form those physical laws can take if we want the physical theory for each segment of the logical loop to present its own consistent view of Nature. %%@
+The arguments gathered so far point to there being profound reasons for the world being the way it is, not as some have suggested merely a lucky %%@
+selection from maybe $10^{500}$ different string theories (see \citet{susskind_2003,susskind_2003_ns}). It may be that if we pursue this idea we will %%@
+find that the free parameters of the Standard Model have to take the values that they do in order to preserve self-reference in the totality of %%@
+physical laws.  An added bonus is that since a self-referential system can generate information as if from nowhere then it can also generate the %%@
+physics required to implement itself from nowhere. So, seemingly out of nowhere, we would get a set of physical laws that are individually purely %%@
+causal, but collectively non-causal. When viewed from a narrow perspectives of limited theories the physics would be purely causal with three %%@
+dimensions of space, a spacetime metric defined in terms of computations, quantum non-locality and a gauge theory using a $U(1) \times SU(2) \times %%@
+SU(3)$ group. But if we attempt to create a single mathematical model of all of physical law together it would contain causality violations and %%@
+infinite energies. There remain major technical problems and great philosophical problems in this approach. The philosophical problems I propose to %%@
+ignore and I'll just list the major technical problems to be resolved. 
+\subsection{4.1 Open problems}
+\begin{enumerate}[(1)]
+\item % (1)
+The idea that if we count computable steps with numbers on the real axis, we must use complex
+numbers to count non-computable steps is crucial. This needs to be placed on a rigorous footing. The suggestion, hinted at from Nature and supported %%@
+with knowledge of the parallelisable spheres, that we must measure the degree of non-computability in at most three linearly independent ways is very %%@
+odd, entirely unexpected, and needs more study. 
+\item % (2)
+A super-task and a causal loop can both compute what is otherwise non-computable, we need to show
+that they are in fact equivalent in this sense. I've simply stated without proof that we can represent the end state of a super-task as a %%@
+superposition of outcomes. Proof is required. 
+\item % (3)
+I've suggested that there is a duality between general relativity and quantum mechanics, we need to exhibit a transformation that maps one to the %%@
+other.
+\end{enumerate}
+\bibliographystyle{plainnat}
+\bibliography{quantm_self_reference_3}
+\end{document}
+

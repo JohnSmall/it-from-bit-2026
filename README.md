@@ -15,6 +15,7 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 | `ris/`          | Dated RIS import batches                                 |
 | `scripts/`      | Python calculations and LaTeX patch scripts              |
 | `knowledge/`    | Curated results, open problems, and session archive      |
+| `knowledge/publications/` | The author's earlier papers and posters, frozen |
 | `attic_*`       | Superseded material, kept for provenance; never deleted  |
 
 ## Building
@@ -62,6 +63,10 @@ library the collections were built from.
 A collection is aligned with its paper when the exported keys and the
 `\abx@aux@cite` entries in that paper's `.aux` file are the same set. That
 comparison is the check worth running after any change to either side.
+
+The `.bib` files under `knowledge/publications/` are outside all of this. They
+belong to finished work, carry their own citation keys, and are never
+regenerated or reconciled with Zotero.
 
 ## Scripts
 
@@ -125,6 +130,13 @@ https://github.com/JohnSmall/it-from-bit-2026
 contain both the author's words and model output. They are published here
 under the same CC BY 4.0 terms.
 
+**Third-party, under their own terms.** `knowledge/publications/` bundles
+LaTeX templates that are not the author's and are not his to relicense: Anish
+Athalye's Gemini beamerposter theme in each poster directory, which carries
+its own MIT `LICENSE.md`, and the American Institute of Physics `aipproc`
+class with the 2005 paper. The posters and the paper themselves are the
+author's, under the CC BY 4.0 above.
+
 ## Releases and DOI
 
 Tags are paper-scoped and follow arXiv version numbering, `paper1-v1`,
@@ -156,6 +168,7 @@ self-ref-2026/
 │   ├── principles.md
 │   ├── literature.md
 │   ├── people.md
+│   ├── publications/             # prior papers and posters, frozen + INDEX.md
 │   ├── memory/                   # exported Claude.ai memory files, as-is
 │   ├── project-docs/             # export target (docs not already in repo)
 │   └── archive/

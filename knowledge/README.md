@@ -29,6 +29,14 @@ primary source material: it is where a claim's derivation actually lives, and
 it contains superseded reasoning alongside current reasoning. Nothing here is
 authoritative on its own.
 
+**Published, and frozen.** `publications/` holds John's own prior work as
+LaTeX source: the 2005 CASYS paper and the five Vaxjo posters, 2022 to 2026.
+These are neither distilled nor raw but finished --- each was presented, and
+each is kept here exactly as it was, not edited. They are authoritative about
+what was claimed on the day and about nothing else: where a poster and a paper
+disagree, the paper is later and wins. See `publications/INDEX.md`, which also
+explains why the `.bib` files there must not be reconciled with Zotero.
+
 ## Consult order
 
 1. `results_ledger.md` and `open_problems.md` — loaded into every session by
@@ -39,6 +47,9 @@ authoritative on its own.
 4. Only then the raw archive. `archive/` is never imported wholesale. Grep
    `archive/INDEX.md`, which carries every conversation's summary, then open at
    most three files. `project-docs/INDEX.md` does the same for the documents.
+5. `publications/INDEX.md` when the question is what was claimed publicly, and
+   when --- the framework's own history, 2005 to 2026, which the archive does
+   not cover.
 
 ## Layout
 
@@ -50,6 +61,7 @@ authoritative on its own.
     people.md              collaborators and interlocutors
     literature.md          pointer to the two Zotero-exported bibliographies
     sessions/              dated session notes (CLAUDE.md writes them here)
+    publications/          John's own prior papers and posters + INDEX.md
     memory/                exported Claude.ai memory files, as-is
     project-docs/          122 web-project documents + INDEX.md
     archive/
@@ -84,7 +96,9 @@ each: see `../memory/CORRECTIONS.md`. The unfiltered exports remain at
 **What this archive is not.** It records the collaboration with Claude, which
 began on 2026-01-19. It is not the history of the ideas: the framework dates
 from a 2005 CASYS conference paper, and two decades of work precede anything
-here.
+here. `publications/`, added 2026-09-11, carries what of that earlier record
+exists as LaTeX source --- the 2005 paper and the Vaxjo posters --- but the
+two decades between them are not written down anywhere in this repository.
 
 Of the 122 project documents, 12 were exact duplicates and were dropped, and 4
 were omitted because the repository already carries them as live sources.
