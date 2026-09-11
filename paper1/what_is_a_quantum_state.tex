@@ -1,3 +1,4 @@
+% EDITED 2026-09-11 scripts/patch_splice_jaynes_insert_2026-09-11T1130.py
 % EDITED 2026-09-10 scripts/patch_quoting_and_typography_2026-09-10T0620.py
 % EDITED 2026-09-09 scripts/patch_duplicate_citekeys_2026-09-09T1630.py
 \section{What is a quantum state?}
@@ -328,6 +329,61 @@ object. The obstruction has a continuous, single-qubit face: the complex Hopf bu
 cannot be glued --- the same schema with phase conventions as the contexts;
 Appendix~\ref{app:jaynes} develops the identification and prices its status. So we get
 self-reference $\iff$ contextuality $\iff$ negative probability.
+
+An objection now presents itself, and it is sharp enough to deserve an
+answer at full strength. The formalism already discards the global
+phase: the pure-state density matrix $\rho = \ket{\psi}\bra{\psi}$ is
+invariant under $\ket{\psi} \mapsto e^{i\alpha}\ket{\psi}$, every
+empirical prediction factors through $\rho$, and the map
+$\psi \mapsto \ket{\psi}\bra{\psi}$ is nothing other than the
+projection of \S\ref{sec:hopf-bloch} written in operator coordinates --- for
+a single qubit, literally the Hopf map. If the observer's
+self-referential ignorance is carried by the phase, has the standard
+formalism not already deleted the subjective ingredient? And yet what
+remains is still quantum. The resolution is that a formalism encodes
+ignorance of a quantity not by carrying that quantity as a variable
+but by working on the quotient by it. The entries $\psi_i\bar\psi_j$
+of $\ket{\psi}\bra{\psi}$ generate the ring of $U(1)$-invariants of
+the state: the density matrix is the invariant ring of the
+self-ignorance symmetry, packaged as an operator, with the Born
+weights on its diagonal and the interference data off it. (Indeed the
+Born rule, quadratic in $\psi$, is \emph{linear} in $\rho$: the
+quadratic toll of \S\ref{sec:born-invariance} is paid once, in forming the
+invariants, after which everything is linear.) That the quotient
+leaves a quantum rather than a classical residue is a statement about
+the bundle: a principal bundle admits a global section if and only if
+it is trivial \autocite{steenrod1951topology}, and this one is not, so
+there exists no globally consistent split of the state into
+``objective ray'' plus ``subjective phase coordinate''. The separation
+Jaynes demanded \autocite{Jaynes_89_a} is a fibration, not a
+decomposition, and fibrations decompose only when trivial. Nor does
+the quotient discard everything: the fibre's connection and curvature
+survive it --- the geometric phase \autocite{berry1984quantal} and the
+Fubini--Study geometry --- and these are precisely the interference
+structure. Classical ignorance lives on a trivial bundle, world
+$\times$ credence, and products unscramble; self-referential ignorance
+lives on a bundle with no section.
+
+For mixed states the omelette has exactly two eggs, and they enter
+through two distinct forgetful operations: the projective quotient,
+whose kernel is the observer's own fibre coordinate and is
+structurally unresolvable; and the partial trace with convex mixing,
+whose kernel is correlation with external systems and is resolvable in
+principle by records. The state retains no memory of which operation
+contributed what: every ensemble decomposition of a given $\rho$ is
+realisable by a suitable measurement on a purifying system
+\autocite{schrodinger1936probability,hughston1993ensemble}, so $\rho$
+is a sufficient statistic for future predictions, and sufficiency is
+forgetting. This is why the separation Jaynes sought cannot be found
+in the state. It resides in the record structure --- in which
+irreversible FANOUT events of \S\ref{sec:fanout-boundary} have actually
+occurred: two decompositions of the same $\rho$ are two candidate
+FANOUT histories, and the actual history disambiguates. The omelette
+is unscrambled in the circuit, not in the state.
+Appendix~\ref{app:jaynes} develops each of these claims, separates the
+established mathematics from the framework's assembly, and answers the
+$\psi$-epistemic objection that this reading invites.
+
 
 But Spekkens' result uses quantum theory, so we cannot use it to argue the case that
 self-reference implies negative probability in the Popper model. Worringly, even in the quantum
