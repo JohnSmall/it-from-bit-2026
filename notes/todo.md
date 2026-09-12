@@ -127,14 +127,15 @@ and are filed. Three patch scripts are ready to run, none of them applied.
 
 ## The build, and what is blocking it
 
-- [ ] **Re-export `self-ref-2026-cited` once more.** The 2026-09-12 export
-      closed every citation gap --- 252 entries, nothing cited missing, no
-      duplicate keys --- but three titles in it carry literal `$S_3$`, which
-      biblatex would set as visible dollar signs rather than a subscript. The
-      three Zotero items (`gresnigt2026three`,
-      `gresnigtgourlayvarma2023three`, `gourlaygresnigt2024algebraic`) were
-      corrected the same day to use Zotero's `<sub>` markup, which BBT exports
-      as `\textsubscript`; the fix is in the library and not yet in the file.
+- [ ] **Re-export `self-ref-2026-cited` once more**, for `szangolies_2020`.
+      Its title is genuinely mathematical --- "This Sentence Is
+      $\frac{1}{\sqrt{2}}(|True\rangle + |False\rangle)$" --- and Zotero
+      held it as literal text, so the export escaped every backslash and it
+      would have printed as `\textbackslash frac\{1\}...`. It is cited three
+      times, including from `main.tex`, so it would have been visible. Fixed in
+      the library with BBT's raw passthrough, `tex.title = ...` in Extra; see
+      `bib/README.md`. A scan of all 252 entries for escaped maths, stray
+      backslashes, escaped braces and ligature codepoints found nothing else.
 - [ ] Four newly imported entries carry no DOI, eprint, URL or ISBN:
       `hickeygour2018imaginarity`, `klyachko2006marginal`,
       `thooft1980naturalness`, `vidal2000monotones`. Not errors --- the batches

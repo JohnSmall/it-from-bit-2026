@@ -68,6 +68,27 @@ an import pinned the key and that brace protection survived. There is an
 equivalent collection endpoint but its path syntax is not obvious, so a full
 re-export is still a right-click in the GUI.
 
+## Getting LaTeX into a field
+
+Zotero stores plain text, so a title containing maths arrives as literal
+characters and Better BibTeX escapes it on export: `$S_3$` becomes
+`\${{S}}\_3\$`, which typesets as visible dollar signs. Two ways out,
+both driven from the item's Extra field or its title.
+
+For a subscript or an italic, use the markup Zotero itself understands ---
+`S<sub>3</sub>` in the title field --- which BBT exports as
+`{{S}}{\textsubscript{3}}`. That is the right tool for the common case.
+
+For real mathematics, put the LaTeX in Extra as `tex.<field> = <value>`, with
+an **equals sign**. BBT passes an `=` line through verbatim; a `:` line is
+treated as text and escaped like anything else. So
+
+    tex.title = Epistemic Horizons: This Sentence Is $\frac{1}{\sqrt{2}}(...)$
+
+exports as that exact string, maths intact, while `tex.title:` would not. The
+same `tex.<field>` mechanism supplies fields Zotero has no slot for --- a
+`chapter` on a book, for instance.
+
 Writes do need a key, and the local API takes them: `POST` to
 `/api/users/0/items`, or `PATCH` a single item with
 `If-Unmodified-Since-Version` set to the version last read. The key is minted
