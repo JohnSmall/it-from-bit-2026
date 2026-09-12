@@ -145,8 +145,13 @@ and are filed. Three patch scripts are ready to run, none of them applied.
       mangling of the article number 052112. It was already in the library and
       is now cited by the reverse-flow appendix, so the wrong range would
       print. One field to correct in Zotero.
-- [ ] `sec:flavour-conservation` is now the only undefined label in the live
-      tree. Everything else resolves.
+- [ ] Confirm the substitution made for `sec:flavour-conservation` on
+      2026-09-12. The label was defined nowhere -- the 2026-08-12 flavour
+      splice went in without a section label -- and the sedenion section's own
+      preamble said to "use prop:fcnc / prop:neutral-blind if the splice has no
+      section label of its own". The clause now reads "the no-force
+      propositions of \S\ref{sec:interactions}, Propositions~\ref{prop:fcnc}
+      and~\ref{prop:neutral-blind}". Editorial, so worth a glance.
 - [ ] One `.tex` in `paper1/` is still unreached from `main.tex`:
       `zoo_sedenion_pointer_replacement_2026-08-25T0700.tex`, the source its
       patch will paste in. The other consumed sources were atticked on
