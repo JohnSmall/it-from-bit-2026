@@ -68,6 +68,33 @@ reasoning. Delete when done.
       "written permission and confirmation of accuracy from the source" -- the
       same rule the Abramsky provenance note already applies.
 
+## Bibliography hygiene
+
+- [ ] Re-export `self-ref-2026-cited` again: `Laraudogoitia_1997` was fixed in
+      Zotero on 2026-09-12 (the Mendeley fossil `ISBN: 00070882` removed from
+      Extra, the ISSN corrected to the hyphenated `0007-0882`). With the 1998
+      entry already fixed, both biber ISBN warnings should then be gone.
+- [ ] `Brukner2009` is a book chapter filed as a journalArticle. Its
+      `publicationTitle` is "Deep Beauty: Understanding the Quantum World
+      Through Mathematical Innovation", a Cambridge volume, its DOI is
+      `10.1017/CBO9780511976971.011` and its ISBN is that book's. So the ISBN
+      is right and the item type is wrong; it should be a bookSection with
+      `bookTitle` set, which exports as `@incollection` and carries the ISBN
+      legitimately. Changes how the entry renders, so it is a decision, not a
+      sweep --- the same shape as the Aaronson one.
+- [ ] Nineteen journalArticles in the library carry a stray `ISBN:` line in
+      Extra, a Mendeley-import fossil that Better BibTeX turns into an `isbn`
+      field. Only entries that get cited reach `references.bib`, so they
+      surface one at a time. Roughly: six are arXiv identifiers in the ISBN
+      slot (`Linden1998` has `9806054v229`, and `vaswaniAttentionAllYou2017`,
+      `giovannelliPhysicalInterpretationImaginary2024`,
+      `budinichPossibleRolePure2002`, `cerfComplexvaluedWignerEntropy2023`,
+      `Padillla_2024a` likewise); two are ISSNs (`Laraudogoitia2003`,
+      `Sudarshan_93`); two are nonsense digit strings (`Svozil2005`,
+      `Redei2003`); the rest are real book ISBNs on items that are probably
+      mis-typed book chapters, as `Brukner2009` is. Worth one pass through
+      Zotero rather than fixing them as they appear.
+
 ## Ledgers
 
 - [ ] Confirm the four status labels marked `[JUDGED]` in
