@@ -1,3 +1,5 @@
+% EDITED 2026-09-12 scripts/patch_koide_brannen_credit_2026-09-12T1330.py
+% EDITED 2026-09-11 scripts/patch_koide_freeze_2026-09-11T2300.py
 % EDITED 2026-09-11 scripts/patch_undefined_section_refs_2026-09-11T2030.py
 % EDITED 2026-09-11 scripts/patch_koide_citation_keys_bbt_2026-09-11T2100.py
 % EDITED 2026-09-11 scripts/patch_koide_citations_jordan_sense_2026-09-11T2000.py
@@ -55,9 +57,9 @@
 %  HONESTY FLAGS, now recorded as named open problems (paper-wide
 %  convention; preamble in the quantum-numbers header):
 %    op:associator-geodesic -- associator-debt vs geodesic proxy;
-%    op:koide-delta         -- derive delta = 2/9 from Hopf holonomy
-%                              (key open calculation; sin^4 holonomy route
-%                              recorded as tried-and-failed);
+%    op:koide-delta         -- derive the Koide phase and amplitude
+%                              (frozen 2026-09-11 with bands, a 1e-6 rad
+%                              ceiling and nine closed routes);
 %    op:colour-correction   -- derive |Q|^{3/2} law + phase-dilution rule;
 %                              reconcile Casimir-vs-fitted Georgi-Jarlskog;
 %    op:up-quark            -- the +29% discrepancy (candidate mechanism:
@@ -257,14 +259,18 @@ $9M^2$, while $\sum_k m_k = M^2\sum_k(1+\alpha\cos)^2 = M^2(3 + \tfrac32\alpha^2
 The ratio is $(1+\tfrac12\alpha^2)/3$, and $\alpha^2=2$ gives $2/3$.
 \end{proof}
 
-The Koide relation is thus derived, not fitted: it is the statement that the triality amplitude is
-the doubling norm. The phase is $\delta = 2/9$ in radians, the value that the measured masses
-require, matched to five significant figures and carrying a natural geometric reading as
-$2/9 = \dim_{\mathbb{R}}\mathbb{C} \,/\, \dim_{\mathbb{R}}(\mathbb{O}\oplus\mathbb{R})$: the
-preferred complex plane against the nine-dimensional ambient space of the Hopf base $S^8$ ---
-exactly the (Bloch)$\,\oplus\,$(colour) space of Appendix~\ref{app:setup}. The reading is
-suggestive, matched rather than derived. With $\alpha$ fixed by the theory, $\delta$ matched once,
-and the single scale $M$ set by the heaviest mass, the other two follow:
+The Koide relation is thus derived, not fitted: it is the statement that the triality amplitude
+is the doubling norm. The phase is $\delta = 2/9$ in radians, the value that the measured masses
+require. The coincidence is Brannen's: his 2006 note writes the square-root masses as the
+eigenvalues of a circulant matrix with unit diagonal and off-diagonal entries $\eta e^{\pm
+i\delta}$, so that $\eta^2 = \tfrac12$ is the Koide relation, fits $\delta = 0.2222220$ to the
+masses of the day, and records that it is close to $2/9$ \autocite{brannen2006lepton}. It is now
+matched to five significant figures and carries a natural geometric reading as $2/9 =
+\dim_{\mathbb{R}}\mathbb{C} \,/\, \dim_{\mathbb{R}}(\mathbb{O}\oplus\mathbb{R})$: the preferred
+complex plane against the nine-dimensional ambient space of the Hopf base $S^8$ --- exactly the
+(Bloch)$\,\oplus\,$(colour) space of Appendix~\ref{app:setup}. The reading is suggestive,
+matched rather than derived. With $\alpha$ fixed by the theory, $\delta$ matched once, and the
+single scale $M$ set by the heaviest mass, the other two follow:
 
 \begin{center}
 \begin{tabular}{lccc}
@@ -282,25 +288,39 @@ This is the showcase: three masses from one dimensional input and no fitted dime
 parameters, the dimensionless content being the two numbers $\alpha=\sqrt2$, which the theory
 fixes, and $\delta=2/9$, which it matches.
 
-We flag the one genuine gap squarely. Proposition~\ref{prop:koide} derives the $2/3$ relation from
-$\alpha=\sqrt2$ and the $\mathbb{Z}_3$ ansatz, both of which the framework supplies; but the specific
-phase $\delta = 2/9$ is at present a \emph{matched} value with a suggestive geometric interpretation,
-not a derived one.
+We flag the one genuine gap squarely, and it has two parts of different standing.
+Proposition~\ref{prop:koide} derives the $2/3$ relation from $\alpha=\sqrt2$ and the
+$\mathbb{Z}_3$ form, and Proposition~\ref{prop:koide-jordan} below derives the form itself from
+the Jordan algebra. The amplitude $\alpha = \sqrt2$ is \emph{identified} --- with the doubling
+norm, or equivalently with pairwise unbiased generation states --- and not yet derived from a
+mechanism that forces it; the phase $\delta = 2/9$ is \emph{matched}, with a suggestive
+geometric reading and no derivation. The open problem that follows carries both as targets, with
+the bands a derivation must meet and the routes already closed. We do not expect to close it in
+this paper; it is stated so that it can be worked on.
 
-\begin{openproblem}[The Koide phase]\label{op:koide-delta}
-Derive $\delta = 2/9$ from the holonomy of the octonionic Hopf connection. This is the single
-most important open calculation in the mass sector. A derivation passes if it lands inside the
-measured band, $\delta = 0.222225 \pm 0.000006$ radians, with no fitted input; the invariant
-target is $3\delta = 2/3$, the phase of the cyclic product of the three off-diagonal units
-(Proposition~\ref{prop:koide-jordan}). It fails before any number is checked if it ends in an
-algebraic value of $e^{i\delta}$ --- a root of unity, the argument of a configuration of vectors
-with algebraic coordinates, the phase of a cyclic product of algebraic octonions --- since
-$e^{2i/9}$ is transcendental (\S\ref{sec:koide-gap}). Four routes are closed: the simplest
-holonomy-squared model, $m_k \propto \sin^4(\theta_0 + 2\pi k/3)$, does not reproduce the
-spectrum; the structural angles of the bare sedenion triple contain no $2/9$
-(Appendix~\ref{app:nb-M}); the norm-defect identity~\eqref{eq:debt-defect}, being a magnitude,
-cannot fix a phase; and a coherent-state realisation of the triality frame, with the phase as
-the enclosed phase-space area, cannot meet the amplitude and the phase at once.
+\begin{openproblem}[The Koide phase and amplitude]\label{op:koide-delta}
+Derive the two numbers of the triality form~\eqref{eq:z3}. The invariant targets are the phase,
+$3\delta = 2/3$, the real part $\cos(2/3)$ of the cyclic product of the three off-diagonal
+units, and the amplitude, $\alpha = 2\rho = \sqrt2$, the off-diagonal norm $\rho = 1/\sqrt2$ at
+which the generation states are pairwise unbiased (Proposition~\ref{prop:koide-jordan}). A
+derivation of the phase passes if it lands inside the measured band, $\delta = 0.222225 \pm
+0.000006$ radians, with no fitted input; a derivation of the amplitude passes if it lands inside
+$\alpha = 1.414209 \pm 0.000011$ on the same terms. The comparison is made with the band and not
+below $10^{-6}$ radians, where the pole-mass and self-scale readings of the relation part
+(\S\ref{sec:koide-gap}); no derivation is asked to say more than the data can. A route fails
+before any number is checked if it ends in an algebraic value of $e^{i\delta}$ --- a root of
+unity, the argument of a configuration of vectors with algebraic coordinates, the phase of a
+cyclic product of algebraic octonions --- since $e^{2i/9}$ is transcendental, or if its output
+is a relation among running masses at a common scale, since the relation holds among pole masses
+(\S\ref{sec:koide-gap}). Nine routes are closed: the holonomy-squared model $m_k \propto
+\sin^4(\theta_0 + 2\pi k/3)$; the structural angles of the bare sedenion triple
+(Appendix~\ref{app:nb-M}); any single octonionic direction, by $G_2$-transitivity; the
+norm-defect identity~\eqref{eq:debt-defect}, a magnitude; the natural-angle families of the
+pre-registered scan; a compact flat torus; any construction with algebraic $e^{i\delta}$; the
+coherent-state realisation of the triality frame; and a relation among running masses at a
+common scale. What survives is a phase that is the exponential of a rational number along a
+non-compact flat direction, and an amplitude that makes three states mutually unbiased; the
+mechanism that produces either is the problem.
 \end{openproblem}
 
 \subsection{The shape of the gap}
@@ -391,21 +411,27 @@ amplitude $\alpha = \sqrt2$ is the statement that the off-diagonal entries have 
 half; read through the Gram matrix of three generation states, whose entries are the overlaps
 $\langle\psi_j|\psi_k\rangle$, it says that each pair is mutually unbiased,
 $|\langle\psi_j|\psi_k\rangle|^2 = \tfrac12$
-\autocite{woottersOptimalStatedeterminationMutually1989,durtMutuallyUnbiasedBases2010}, and the Koide ratio then follows exactly
-as in Proposition~\ref{prop:koide}. The phase is the Bargmann invariant of the triple
-\autocite{bargmannNoteWignersTheorem1964}, the argument of the cyclic product of the three overlaps, which
-is the one continuous invariant three states possess beyond their overlaps and is the geometric
-phase of the geodesic triangle through them
-\autocite{pancharatnamGeneralizedTheoryInterference1956,mukundaQuantumKinematicApproach1993}; its octonionic form is the
-real part of the cyclic product of the three off-diagonal units. The measured $3\delta = 0.6667$
-sits at $0.85$ of the positivity bound $\pi/4$, and to first order the electron's square-root
-mass is one third of the shortfall, $\sqrt{m_e}/M \simeq (\pi/4 - 3\delta)/3$, accurate to two
-per cent. So the question ``why $2/9$'' is, precisely, ``why does the cyclic product of the
-three off-diagonal units have real part $\cos(2/3)$''. The number to derive is the
-$\mathbb{Z}_3$-invariant $3\delta = 2/3$, and it is worth recording that this is also the value
-of the Koide ratio: the invariant phase, in radians, equals
+\autocite{woottersOptimalStatedeterminationMutually1989,durtMutuallyUnbiasedBases2010}, and the
+Koide ratio then follows exactly as in Proposition~\ref{prop:koide}. The phase is the Bargmann
+invariant of the triple \autocite{bargmannNoteWignersTheorem1964}, the argument of the cyclic
+product of the three overlaps, which is the one continuous invariant three states possess beyond
+their overlaps and is the geometric phase of the geodesic triangle through them
+\autocite{pancharatnamGeneralizedTheoryInterference1956,mukundaQuantumKinematicApproach1993};
+its octonionic form is the real part of the cyclic product of the three off-diagonal units. The
+measured $3\delta = 0.6667$ sits at $0.85$ of the positivity bound $\pi/4$, and to first order
+the electron's square-root mass is one third of the shortfall, $\sqrt{m_e}/M \simeq (\pi/4 -
+3\delta)/3$, accurate to two per cent. So the question ``why $2/9$'' is, precisely, ``why does
+the cyclic product of the three off-diagonal units have real part $\cos(2/3)$''. The number to
+derive is the $\mathbb{Z}_3$-invariant $3\delta = 2/3$, and it is worth recording that this is
+also the value of the Koide ratio: the invariant phase, in radians, equals
 $\operatorname{tr}X^2/(\operatorname{tr}X)^2$. We have no mechanism that makes a phase equal a
-trace ratio and record the equality as a rhyme.
+trace ratio and record the equality as a rhyme. The complex half of this reading is also
+Brannen's \autocite{brannen2006lepton}: in the same note he builds the circulant from three
+projectors of the Pauli algebra, reads the off-diagonal norm as their overlap and $3\delta$ as
+half the oriented area of the spherical triangle they span, and observes that an overlap of
+$1/\sqrt2$ then forces the phase to $\pi/4$, incompatible with the data, so that a larger
+algebra is needed. Proposition~\ref{prop:koide-jordan} names the algebra, and the bound $|\Phi|
+\le \pi/4$ is the general form of his observation.
 
 What kind of number it must be. If $\delta = 2/9$ exactly then $e^{i\delta}$ is transcendental,
 by the Lindemann--Weierstrass theorem \autocite[ch.~1]{bakerTranscendentalNumberTheory1975}: $e^{a}$ is
@@ -437,6 +463,26 @@ enclosed area --- has one parameter and two targets and fails both ways: fixing 
 $1/\sqrt2$ gives a phase of $0.600$ rather than $0.667$, and fixing the phase gives an amplitude
 of $1.361$ rather than $\sqrt2$. We record the shape of the derivation as a constraint, the
 model as a closed route, and the earlier suggestion of a torus as superseded.
+
+Which masses. The relation is among pole masses. Under one-loop QED running to any common scale
+$\mu$, every mass ratio acquires the factor $(m_j/m_k)^{3\alpha_{\mathrm{em}}/2\pi}$,
+independent of $\mu$, and the parameters move to $K = 2/3 + 1.2\times10^{-3}$, $\alpha = \sqrt2
++ 2.5\times10^{-3}$ and $\delta = 2/9 - 1.1\times10^{-3}$, each more than a hundred and seventy
+standard deviations from the data. A relation imposed on Yukawa couplings at the matching scale
+would therefore fail at the pole unless something cancels the logarithm, which is the problem
+Sumino's family gauge symmetry was built to solve \autocite{sumino2009family,sumino2009origin}.
+A relation among pole masses has no such problem: they are scheme-independent observables, and a
+framework with one dimensional scale and ratios fixed by a scale-free geometry can only be
+making a statement about them. To one loop the same relation holds for the masses at their own
+scales, $\bar m_k(\bar m_k)$, since $m_k/\bar m_k(\bar m_k) = 1 + \alpha_{\mathrm{em}}/\pi$ is
+the same for all three. The two readings part only at two loops, through the lighter leptons in
+each lepton's self-energy: with the physical $\alpha_{\mathrm{em}}$, $m_k/\bar m_k(\bar m_k)$
+differs between generations by $(\alpha_{\mathrm{em}}/\pi)^2\sum_{l<k}\bigl[\tfrac23\ln(m_k/m_l)
+- \tfrac{71}{96} - \tfrac{\pi^2}{12}\bigr]$ \autocite{melnikovvanritbergen2000threeloop}, which
+moves $\delta$ by $1.4\times10^{-6}$ radians, a fifth of the present band. The claim $\delta =
+2/9$ is thus free of scheme to about $10^{-6}$ radians and no further, which is the ceiling
+written into Open Problem~\ref{op:koide-delta}; separating the two readings would need the tau
+mass to $\pm0.007$ MeV.
 
 \subsection{Quarks: the colour correction}
 
@@ -616,8 +662,9 @@ and the two dimensionless numbers $\alpha=\sqrt2$, $\delta=2/9$, the electron an
 $0.01\%$; and the quark colour correction~\eqref{eq:quarkalpha}, with the phase-dilution
 rule~\eqref{eq:dilution}, reproduces eight of nine charged fermion masses to about a per cent.
 
-Owed, and recorded as the named problems above: the derivation of $\delta = 2/9$ from the Hopf
-holonomy (Open Problem~\ref{op:koide-delta}, the key open calculation); the associator--geodesic
+Owed, and recorded as the named problems above: the derivation of the Koide amplitude and phase
+(Open Problem~\ref{op:koide-delta}, frozen with its bands, its ceiling and its closed routes);
+the associator--geodesic
 reconciliation (Open Problem~\ref{op:associator-geodesic}); the up-quark discrepancy
 (Open Problem~\ref{op:up-quark}); the derivation of the colour correction and the dilution rule
 (Open Problem~\ref{op:colour-correction}); the reduction of the sector scales
