@@ -17,7 +17,7 @@ reasoning. Delete when done.
 - [ ] Complete the four framing prose sections for Paper 1 -- introduction,
       abstract, preamble check, conclusions. Named in the project memory as
       the only thing between Paper 1 and arXiv submission.
-- [ ] Import `bib/koide_attribution_refs_2026-09-11T2011.bib` into Zotero and
+- [X] Import `bib/koide_attribution_refs_2026-09-11T2011.bib` into Zotero and
       re-export, then credit the phase in the masses section. Both references
       are now verified and the VERIFY-CITE is cleared: Brannen 2006 (read in
       full) and Sumino 2009 (Crossref and arXiv). Brannen turns out to carry
@@ -39,7 +39,7 @@ reasoning. Delete when done.
 
 ## Aaronson citation
 
-- [ ] Re-export `self-ref-2026-cited` to pick up `chapter = {9}` on
+- [X] Re-export `self-ref-2026-cited` to pick up `chapter = {9}` on
       `Aaronson:dem`. Written to Zotero 2026-09-12 via the local API as
       `tex.chapter: 9` in the item's Extra field (Zotero has no chapter field
       for a bookSection), and confirmed in BBT's own export. The change is in
@@ -61,7 +61,7 @@ reasoning. Delete when done.
       internal bookkeeping, observable entries stay honest probabilities -- so
       aligning the two costs nothing and closes an obvious line of attack on a
       paper whose project is named "negative probability".
-- [ ] Do NOT cite him as a personal communication. He named a public source,
+- [X] Do NOT cite him as a personal communication. He named a public source,
       and ICMJE says to avoid personal communications where one exists. If a
       personal-communication citation is ever wanted anyway, ICMJE requires
       "written permission and confirmation of accuracy from the source" -- the
