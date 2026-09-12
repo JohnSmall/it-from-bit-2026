@@ -1,0 +1,584 @@
+% =====================================================================
+%  Section: Sedenions and the Three Generations
+%  Paper 1, "It from Bit via Goedel". Created 2026-08-25T0700.
+%
+%  EDITED 2026-08-27 (supersedes the 2026-08-25 file, never committed):
+%  MECHANISM CORRECTED after notebook T's direct check. The 08-25 draft
+%  (and the corpus's zoo subsection, mechanism document and notebook M)
+%  attached the doubling's S_3 to the WRONG triple: the three octonion
+%  copies through the quaternion core (core (+) V_i). Notebook T shows
+%  Brown's S_3 stabilises each of those copies; they are cycled by a
+%  lifted G_2 element (the colour-line three-cycle) and are a colour
+%  structure -- the March finding (three lines through the preferred
+%  direction are colours, not generations) one rung up. The doubling's
+%  S_3 permutes a different triple: the three octonion HALVINGS
+%  O, psi O, psi^2 O of S, sharing the doubling unit. The generations
+%  are the psi-orbit, exactly as in gresnigtgourlayvarma2023three and
+%  gresnigt2026three (the Gresnigt line itself moved from the core split
+%  of 2019 to the psi-orbit). Consequences applied here: the promotion
+%  subsection rewritten on the psi-orbit; gauge-blindness now follows
+%  from the DIRECT product (psi commutes with G_2), which is the
+%  framework's reason for Gresnigt's untriplicated gauge sector;
+%  rem:sedenion-triple replaced by rem:two-triples; the shadow problem
+%  re-posed against the halvings, its Fano-line bridge WITHDRAWN (both
+%  sides colour); the mixing paragraph's notebook-M verdict flagged as
+%  owed a re-run on the correct triple; the fifth-rung remark made
+%  precise (Brown n = 4, 5, 6 equality; Eakin--Sathaye; Schafer; notebook
+%  T). Back-stitch to sec:wf-chain-type added. INVALID ROUTE LOGGED in
+%  notebook T and in corrections_ledger_sedenion_triples_2026-08-27.md.
+%  New keys: eakinsathaye1990automorphisms, schafer1954cayleydickson
+%  (RIS cayley_dickson_automorphism_refs_2026-08-27.ris).
+%
+%  EDITED 2026-08-30 (per JS): the CP-PHASE RECOGNITION installed in
+%  sec:sedenions-mixing, instantiating the chain the corpus already
+%  records (cp_context_fourth_qubit_speculation_2026-08-16T0639.md;
+%  fourth_qubit doc sec. 7's "Wigner's-friend phase of the flavour
+%  sector"): Kobayashi-Maskawa counting (three generations = the phase
+%  threshold); the Jarlskog quartets exhibited as fourth-order Bargmann
+%  invariants of the two mass bases (new display eq:jarlskog-bargmann);
+%  J != 0 read as a global-realification obstruction -- the
+%  local-vs-global shape sec:contextuality identifies as contextuality,
+%  equivalent to negativity (spekkens2008negativity, in library) in the
+%  signed calculus the amplitudes came from (sec:self-reference) -- so
+%  "irremovable phase => contextual data" is stated as the COROLLARY
+%  the speculation note records, not an imported association. Location
+%  claim at CANDIDATE (one added wire, three generations, one phase;
+%  the tag wire as the phase's anchor; back-stitch sec:wf-chain-type).
+%  Cabibbo-real consonance recorded (N = 2 licenses zero phases; the
+%  executed real rotation was the whole content). The theta_QCD /
+%  delta_CKM one-sentence reading included at candidate, standing
+%  derivation explicitly untouched. Deferral paragraph: "the CP phase"
+%  -> "the value of the CP phase" (the location is claimed, the value
+%  is not). GUARDS HONOURED per the speculation note: Spekkens-sense
+%  contextuality only (the environmental identification stays in the
+%  follow-up lineage, as does op:jarlskog-witness); KM counting cited
+%  as basis arithmetic with no double-counting of support (the
+%  parametrisation-landing derivation remains Conjecture 3(a)'s, the
+%  companion paper's).
+%  KEYS 2026-08-30: kobayashimaskawa1973, jarlskog1985 -- from the
+%  already-delivered batch refs_cp_context_2026-08-16T0639.ris (import
+%  it; dedupe against self-ref-2026.bib per that note's own checklist);
+%  spekkens2008negativity, arvidssonshukur2024kirkwood in library.
+%  MAP-LABELs 2026-08-30: sec:contextuality (minted June per the
+%  cross-ref task -- confirm); sec:self-reference; sec:confinement
+%  (assumed home of the standing strong-CP derivation -- re-point if
+%  theta_QCD = 0 lives under its own label).
+%
+%  EDITED 2026-08-30 (second edit, per JS): EQUIVARIANCE PARAGRAPH added
+%  to sec:sedenions-promotion as the fourth structural consequence --
+%  why an exact S_3 yields unequal masses (mass is frame-referenced
+%  debt; Fix(psi) = <1, u>, notebook T; the functional is equivariant,
+%  not invariant) and the identification, at CANDIDATE status, of the
+%  Koide 2/3 as the orbit's invariant, i.e. the unbroken S_3 as seen in
+%  the mass sector; the frame offset delta as the hierarchy datum,
+%  reappearing as the first mixing angle per the masses section's own
+%  suggestive identification. Backward refs: sec:masses, eq:z3,
+%  prop:koide; app:notebook-record. Companion: the masses section gains
+%  the reciprocal psi-orbit re-grounding of eq:z3 by
+%  patch_masses_z3_psi_orbit_2026-08-30.py. Session record:
+%  generation_masses_weak_transitions_note_2026-08-30.md.
+%
+%  DECISION (JS, 2026-08-25): the sedenion / three-generation connection
+%  is an established line (Gillard-Gresnigt 2019; Gresnigt-Gourlay-Varma
+%  2023; Gourlay-Gresnigt 2024; Gresnigt 2026 Cl(10)) and is leaned on by
+%  Szangolies's Entropy paper. It is therefore promoted from a follow-up
+%  topic to a standalone section INSIDE Paper 1, rather than deferred.
+%
+%  WHAT THIS SECTION SUPERSEDES / ABSORBS:
+%    - The old \subsection sec:sedenion-announcement in
+%      particle_zoo_section_2026-06-08.tex ("The extra wire: how a deeper
+%      mechanism announced itself"). Its content -- the K3 rough edge,
+%      the circuit forcing the fourth wire, the promotion theorem, the
+%      shadow-theorem relation, the Klein-four sentence -- is folded in
+%      here, expanded and re-levelled. When this section lands,
+%      sec:sedenion-announcement should be REDUCED in the zoo to a single
+%      forward pointer (draft replacement supplied separately), keeping
+%      the discovery-narrative flavour there but housing the mechanism
+%      here. Do NOT run the 2026-08-25T0633 positioning patch: that patch
+%      inserted a positioning paragraph into the OLD subsection; this
+%      section replaces the plan behind it. The four references that
+%      patch introduced (pinillaluthra2009hopf,
+%      gresnigtgourlayvarma2023three, gourlaygresnigt2024algebraic,
+%      tangtang2023unified) are used here; its RIS is still the right RIS,
+%      plus the one new key below.
+%
+%  PLACEMENT (recommended): as its own section AFTER masses and the
+%  electroweak/boson-mass arc, so the register-level generation reading
+%  (zoo \S sec:generations) and the mass hierarchy (\S sec:masses) are
+%  both on the table when the deeper account arrives. Concretely, in
+%  main.tex, after \input{boson_masses_section_2026-06-08} (and the
+%  superconductor witness if present), before \input{interactions...}:
+%      \input{sedenions_generations_section_2026-08-27}   <-- new
+%  Position-portable; explicit cross-refs only.
+%
+%  NEW CITATION KEY (this section adds ONE beyond the 2026-08-25T0633
+%  batch; RIS delivered alongside as
+%  gresnigt_cl10_ref_2026-08-25T0700.ris; source-verified against the
+%  Phys. Lett. B article and its arXiv companion 2601.07857):
+%    gresnigt2026three  -- Phys. Lett. B 880 (2026) 140782,
+%                          "Three fermion generations and an untriplicated
+%                          gauge sector with S3 family symmetry".
+%  ALSO USED (deliver via szangolies_sedenion_refs_2026-08-25T0633.ris):
+%    pinillaluthra2009hopf, gresnigtgourlayvarma2023three,
+%    gourlaygresnigt2024algebraic, tangtang2023unified.
+%  NEW KEYS 2026-08-27 (RIS cayley_dickson_automorphism_refs_2026-08-27.ris):
+%    eakinsathaye1990automorphisms, schafer1954cayleydickson (VERIFY-CITE).
+%  MAP-LABEL 2026-08-27: app:notebook-record (the notebook-record
+%    appendix, appendices/appendix_notebook_record_2026-07-11.tex).
+%  IN-LIBRARY: szangolies2025standardmodel, gillardgresnigt2019three,
+%    furey2018three, brown1967generalized, baez2002octonions,
+%    coeckekissinger2010compositional, durvidalcirac2000three,
+%    adams1960nonexistence (VERIFY-KEY: confirm the Adams key spelling
+%    used in prop:termination), higuchisudbery2000, hubersiewert2026.
+%
+%  CROSS-REFS OUT (re-point to master-file labels before compiling;
+%  all verified present in the synced source 2026-08-25 except the two
+%  MAP-LABELs flagged):
+%    sec:generations        -- the zoo's register-level generation count
+%    sec:masses             -- associator debt; the mass hierarchy
+%    sec:charges            -- the W action on the B-qubit
+%    prop:gsm               -- G_SM as the Spin(9) stabiliser
+%    prop:termination       -- Hurwitz/Adams termination of the tower
+%    sec:entanglement-szangolies -- the Szangolies convergence subsection
+%    sec:canonical-orbits   -- permutation-symmetric canonical orbits
+%    app:setup              -- octonion multiplication table / Fano lines
+%    app:qiskit-ckm, app:hw-ckm -- the Cabibbo / CKM circuits
+%  MAP-LABELs (NOT confirmed in project knowledge; substitute real
+%  labels or delete the clause):
+%    sec:flavour-conservation -- the 2026-08-12 flavour splice
+%                                (no-force propositions). Use prop:fcnc /
+%                                prop:neutral-blind if the splice has no
+%                                section label of its own.
+%    op:generation-mechanism  -- if the paper-wide open-problem list is
+%                                to carry the shadow theorem as a numbered
+%                                item, mint it here; otherwise the prose
+%                                statement stands.
+%
+%  STATUS DISCIPLINE (paper-wide vocabulary; nothing upgrades by being
+%  housed here):
+%    - ESTABLISHED (external): Aut(S) = G2 x S3 (Brown); the S3-orbit
+%      generation count (Gresnigt line); the Cl(10) untriplicated-gauge
+%      realisation (Gresnigt 2026). Cited as the literature's, not
+%      claimed as ours.
+%    - STRUCTURAL (framework): the four-qubit = C (x) S identity; the
+%      identity-component-vs-component-group reason for flavour-not-force;
+%      the termination reading.
+%    - CANDIDATE / CONJECTURE (framework): the shadow theorem (register
+%      K3 classes = projected S3-orbit); generation number as an
+%      approximately conserved charge; the CKM/PMNS asymmetry from the
+%      budget. Flagged as such at every use, and the quantitative mixing
+%      programme explicitly deferred to the companion paper.
+%  The novel contribution claimed here is NARROW and stated as such: not
+%  the S3 count (established), but (i) the reason -- component group has
+%  no Lie algebra, so the doubling adds a label not a force -- and (ii)
+%  the placement of that reason inside a tower whose forces already
+%  terminate at three by independent theorems.
+%
+%  British English; pure ASCII; \autocite; amsthm `proposition' /
+%  `remark'; the paper-wide openproblem environment if op is minted; no
+%  bullet lists in prose; spaced em-dashes.
+% =====================================================================
+
+\section{Sedenions and the Three Generations}
+\label{sec:sedenions-generations}
+
+The Standard Model repeats itself three times. Three generations of fermions carry identical gauge
+quantum numbers and differ only in mass and mixing, and the repetition is among the flattest of the
+model's unexplained facts: nothing in the gauge structure asks for it, and nothing forbids a fourth.
+The register of \S\ref{sec:register} gives a first account of the number --- the frustrated-pair
+combinatorics of \S\ref{sec:generations} count three plus a sterile class --- but that account, as
+noted where it was given, imports a distinction it does not derive: it must know which qubit is the
+odd one out and what Cayley--Dickson level it occupies, while the canonical orbits of
+\S\ref{sec:canonical-orbits} treat the three qubits as interchangeable. The count is right; the
+mechanism was owed. This section pays it, by taking one step further up the Cayley--Dickson ladder,
+and in doing so joins a line of work --- pursued independently and in more developed form by
+Gresnigt and collaborators, and drawn on by Szangolies --- that reaches the same three from the
+same algebra. The connection is established enough to belong in the main text rather than a sequel.
+
+What the framework adds to that line is a reason and a boundary. The reason is why the fourth rung
+supplies a family label and never a fourth force; the boundary is why the tower stops there, with
+forces spent at three wires and flavour appearing at the fourth. Both fall out of a single algebraic
+fact about what the Cayley--Dickson doubling does to the automorphism group, set against the
+termination theorems already in hand (Proposition~\ref{prop:termination}).
+
+\subsection{The rough edge, and where the index really lives}
+\label{sec:sedenions-roughedge}
+
+The register-level count of \S\ref{sec:generations} enumerated the eight handedness assignments of
+the three-qubit frustrated pair and found four classes: three in which exactly one qubit's
+handedness is the odd one out, its Cayley--Dickson level $\mathbb{C}$, $\mathbb{H}$ or $\mathbb{O}$
+labelling the generation, and one all-same class with no frustrated pair, read as the sterile
+sector. The construction works and reproduces the correct doublet structure. But it carries a seam.
+The canonical orbits that define a particle (\S\ref{sec:canonical-orbits}) are permutation-symmetric
+in the three qubits --- the state does not distinguish them --- whereas the generation reading needs
+to know which qubit is odd and, worse, needs that qubit's rung identity, a piece of the tower's
+scaffolding rather than a property of the state. Nothing is inconsistent; a label is being read off
+the architecture that the state itself does not carry.
+
+The diagnosis came from an unexpected quarter, and it is worth recording because it is the paper's
+method visible at work. Extending the executed Cabibbo circuit (Appendix~\ref{app:qiskit-ckm}) to
+the full three-generation mixing matrix (Appendix~\ref{app:hw-ckm}) could not be done on the
+three-qubit register at all: the construction demanded a fourth qubit to carry the generation index.
+Read first as an embarrassment --- an unlicensed wire with no rung --- it is in fact the resolution.
+Four qubits are exactly the complexified sedenions,
+\begin{equation}
+  (\mathbb{C}^{2})^{\otimes 4} \;=\; \mathbb{C}^{16} \;=\; \mathbb{C}\otimes\mathbb{S},
+  \label{eq:four-qubit-sedenion}
+\end{equation}
+one Cayley--Dickson rung past the three-qubit register $\mathbb{C}^{8} = \mathbb{C}\otimes\mathbb{O}$
+that the whole construction has inhabited since \S\ref{sec:register}. The generation index does not
+live on the register. It lives on the doubling, and the register could not hold it because the
+symmetry that moves it is not present one rung down --- which is exactly why the frustrated-pair
+reading had to reconstruct the index combinatorially, out of rung labels it was not entitled to. In
+the chain of observers of \S\ref{sec:wigners-friend} the fourth wire is the observer of Wigner, and
+\S\ref{sec:wf-chain-type} records what his arrival adds and what the arrival of every later observer
+does not.
+
+\subsection{The triality promotion}
+\label{sec:sedenions-promotion}
+
+The algebraic fact that changes the symmetry inventory is a single line, and it is the pivot of the
+whole section. The octonions' automorphism group is connected: $\mathrm{Aut}(\mathbb{O}) = G_2$ has
+no component group, and the triality of $\mathrm{Spin}(8)$ --- the outer $S_3$ that permutes the
+vector and two spinor representations, the ``deeper reason'' behind the register count of
+\S\ref{sec:generations} --- is not induced by any automorphism of the octonions themselves. Doubling
+to the sedenions changes exactly that. Brown's theorem gives
+\begin{equation}
+  \mathrm{Aut}(\mathbb{S}) \;\cong\; G_2 \times S_3,
+  \label{eq:brown}
+\end{equation}
+a direct product: the automorphism group of the sedenions is the automorphism group of the
+octonions times exactly one finite factor, and the finite factor commutes with all of $G_2$
+\autocite{brown1967generalized}. The factor can be written down. On
+$\mathbb{S} = \mathbb{O}\oplus\mathbb{O}u$, with $u$ the doubling unit, it is generated by the
+doubling involution $\varepsilon(a + bu) = a - bu$ and by the order-three map
+\begin{equation}
+  \psi(a + bu) \;=\; \tfrac14\bigl[a + 3\bar a + \sqrt3\,(b - \bar b)\bigr]
+              \;+\; \tfrac14\bigl[b + 3\bar b - \sqrt3\,(a - \bar a)\bigr]\,u ,
+  \label{eq:brown-psi}
+\end{equation}
+which fixes $1$ and $u$ and rotates every plane $(a,\,au)$, $a$ an imaginary octonion, by a third
+of a turn. The map is the Cayley--Dickson step turning triality from an outer, representation-level
+symmetry into a manifest automorphism, and its orbit is the object the generations live on: $\psi$
+permutes cyclically the three octonion subalgebras $\mathbb{O}$, $\psi\mathbb{O}$,
+$\psi^{2}\mathbb{O}$ --- three ways of writing $\mathbb{S}$ as an octonion doubled by the one unit
+$u$, meeting only in the real line, the three involutions of the $S_3$ being the three doubling
+involutions. The generation index is the wire on which this permutation acts; the register could
+not carry it because the permutation does not act one rung down.
+
+On this reading the three generations are the $S_3$-orbit of a single sector --- the second and
+third generations are $\psi$ and $\psi^{2}$ of the first --- and the number three is the order of
+$\psi$, a theorem of the algebra rather than the output of a frustration count. Three structural
+consequences follow at once, and each repairs something the register account left unexplained.
+Because the product in~\eqref{eq:brown} is direct, $\psi$ commutes with the whole of $G_2$ and hence
+intertwines every gauge action built from it: whatever gauge quantum numbers the first sector
+carries, its two images carry identically. Generation is gauge-blind by construction, and this is
+the framework's reason for the untriplicated gauge sector that Gresnigt's construction exhibits by
+explicit commutators (\S\ref{sec:sedenions-literature}). The sterile class is the $S_3$-invariant
+sector --- the fixed line of $\psi$, spanned by the real axis and the doubling unit, with nothing
+to permute --- matching its lack of a frustrated pair in the register picture without any separate
+story; we carry that identification at candidate status. And the fourth qubit stops requiring
+apology: it is not an unlicensed wire but the carrier of a symmetry that genuinely lives at this
+rung and nowhere below.
+
+A fourth consequence answers the objection an exact family symmetry always invites: an exact
+automorphism relating the three generations seems to force three equal masses, and the observed
+hierarchy seems to demand that the symmetry be broken. Neither follows. An exact symmetry of the
+algebra forces degeneracy only in observables invariant under it, and mass is not one. Mass is
+associator debt read against the selected complex direction (\S\ref{sec:masses}), and $\psi$ does
+not fix that direction: its fixed set is exactly the line spanned by $1$ and the doubling unit
+(Appendix~\ref{app:notebook-record}), every other direction being turned a third of a turn into
+its doubled partner. The three generations are therefore three exact copies of one structure held
+at three orientations to the frame, and the debt each owes is orientation-dependent --- three
+orientations, three masses, nothing broken. The mass functional is $S_3$-equivariant rather than
+invariant, applying $\psi$ permuting the masses without changing the set, and the symmetry's
+exact content survives precisely where the mass formula is exact: in the count of three, in the
+$2\pi/3$ spacing of the phases in~\eqref{eq:z3}, and hence in the Koide ratio, which
+Proposition~\ref{prop:koide} derives from the doubling norm alone, independently of the phase
+$\delta$. On this reading the Koide relation \emph{is} the unbroken $S_3$ as seen in the mass
+sector --- the invariant of the orbit --- while the hierarchy is the frame datum, the offset
+$\delta$ at which the selected direction sits against the orbit, an offset that reappears,
+suggestively, as the first mixing angle (\S\ref{sec:masses}). We carry the reading at candidate
+status. It has one immediate merit: the pattern the generations actually present --- identical in
+every gauge quantum number, different only in mass and mixing, the two frame-referenced quantities
+--- is the signature this account predicts, and the one a broken symmetry would not, since
+breaking would generically spoil the $2/3$.
+
+\begin{remark}[Two triples, and which one the doubling permutes]
+\label{rem:two-triples}
+The sedenions contain a second, better-known triple of octonion subalgebras, and the two must not
+be confused. Selecting an imaginary direction $e$ of $\mathbb{O}$ and doubling by $u$ splits
+$\mathbb{S}$ into three octonion copies $\mathbb{H}\oplus V_i$ sharing the quaternionic core
+$\mathbb{H} = \langle 1, e, u, eu\rangle$, where the $V_i$ are the three complex lines of the
+$\mathbb{C}^{3}$ orthogonal to $e$, each together with its $u$-partner; this is the split of Gillard
+and Gresnigt's first construction \autocite{gillardgresnigt2019three}, which housed one generation
+in each copy. Direct computation on all basis products (notebook T,
+Appendix~\ref{app:notebook-record}) shows that Brown's $S_3$ stabilises each of these three copies
+and that the automorphism cycling them is a lifted element of $G_2$ --- the three-cycle of colour
+lines inside the $SU(3)$ that stabilises $e$, fixing the core pointwise. The core triple is
+therefore a colour-basis structure one rung up, the exact analogue of the three Fano lines through
+the preferred direction at the register, which are the three colour lines of $\mathbb{C}^{3}$ and
+not three generations. A construction that houses one generation per copy accordingly triplicates
+the colour algebra, one $SU(3)$ per copy; the later papers of the same line generate the
+generations as the $\psi$-orbit of a single sector instead
+\autocite{gresnigtgourlayvarma2023three,gresnigt2026three}, and the direct product
+in~\eqref{eq:brown} is why that removes the triplication. This paper adopts the $\psi$-orbit. An
+earlier draft of this section, and the structural scan recorded as notebook M, worked with the core
+triple; both are re-pointed, and the route is logged.
+\end{remark}
+
+\subsection{Flavour, not force: the reason the doubling adds a label}
+\label{sec:sedenions-flavour-not-force}
+
+The promotion~\eqref{eq:brown} settles, with a proof-shaped reason, a question the register left as
+an observation: why the fourth rung supplies a family label and never a fourth interaction. The
+reason is a separation the tower makes for us, between the identity component of an automorphism
+group and its component group.
+
+Every force in this framework is carried by a connected Lie group acting on a Hopf fibration. The
+gauge group is the stabiliser of the selected complex direction inside $\mathrm{Spin}(9)$
+(Proposition~\ref{prop:gsm}), with colour the part of $G_2 = \mathrm{Aut}(\mathbb{O})$ that survives
+the selection, and the fibrations that host these actions stop at the octonions
+(Proposition~\ref{prop:termination}). Now compare the two ends of the doubling. Passing from
+$\mathbb{O}$ to $\mathbb{S}$ leaves the identity component of the automorphism group exactly where it
+was,
+\begin{equation}
+  \mathrm{Aut}(\mathbb{S})_0 \;=\; G_2 \;=\; \mathrm{Aut}(\mathbb{O}),
+  \label{eq:identity-component}
+\end{equation}
+and adds precisely the finite factor $S_3$. A finite factor is the component group $\pi_0$; it has no
+Lie algebra; and an object with no Lie algebra contributes no generators to any connection form.
+Whatever the fourth wire carries is therefore a discrete label and never a coupling charge: there is
+no continuous group for it to gauge, and --- since the doubling also destroys the fibration, the
+sedenions having zero divisors and admitting no Hopf map $S^{31}\to S^{16}$ --- there is not even a
+base manifold on which a connection could live. The conclusion is forced from both sides. Generation
+number is conserved and ungauged: flavour, not force.
+
+This is the structural content behind the no-force propositions of \S\ref{sec:flavour-conservation},
+and it is worth stating why the two statements are the same. There it is shown that a neutral gate
+has no qubit to act on that would carry the generation, so the generation index is inaccessible to
+the gauge action; here we see \emph{why} no such qubit's symmetry could ever be gauged, namely that
+the symmetry moving the index is a component group. The gauge content of the whole tower lives in the
+identity component and terminates at three wires; the doubling to the fourth adds $\pi_0$ and only
+$\pi_0$. That is the entire difference between a generation and a colour.
+
+\begin{remark}[The absence of a fifth force is a prediction, not an assumption]
+\label{rem:no-fifth-force}
+The reading makes the non-appearance of new forces beyond the fourth rung a consequence rather than
+an input, and sharpens the termination already argued from the Hopf tower. Forces require a connected
+group acting on a fibration; the fibrations end at $\mathbb{O}$ by Adams and the normed division
+algebras end there by Hurwitz (Proposition~\ref{prop:termination}); the sedenion doubling adds no
+fibration and no Lie-algebra generators, only the finite $S_3$. A fifth Cayley--Dickson rung, the
+trigintaduonions, adds exactly one further $S_3$ and nothing else: Brown proved the equality
+$\mathrm{Aut}(A_{n-1})\times S_3 = \mathrm{Aut}(A_n)$ for the sedenions and the next two rungs,
+Eakin and Sathaye that the pattern continues at every rung, and the derivation algebra is
+$\mathfrak{g}_2$ from the octonions onward, so no new connected symmetry ever appears
+\autocite{brown1967generalized,eakinsathaye1990automorphisms,schafer1954cayleydickson}; the fifth
+and sixth rungs are checked directly in the notebook record (Appendix~\ref{app:notebook-record}).
+The literature's expectation that nothing beyond the sedenions brings new physics is here given its
+reason, and its precise form: the increment becomes constant. The discovery of a genuine fifth force, or of a fourth
+generation on the same footing as the first three, would therefore refute the construction, and this
+is among its sharpest falsifiers.
+\end{remark}
+
+\subsection{The established line: Gresnigt, and Szangolies's use of it}
+\label{sec:sedenions-literature}
+
+The sedenion route to the generation count is not this paper's discovery, and the record should say
+so plainly, because the convergence is itself the strongest evidence that the rung is the right one.
+That $\mathrm{Aut}(\mathbb{S}) = G_2 \times S_3$ furnishes exactly three copies of the octonion
+algebra, and that these can carry three fermion generations, is a line developed over several years by
+Gresnigt and collaborators, in more explicit and more complete form than the sketch above. It began
+with the complex sedenions realising three generations with two unbroken gauge symmetries
+\autocite{gillardgresnigt2019three}, was refined to a colour-symmetric construction in which the
+order-three $S_3$ automorphism generates the second and third generations from the first
+\autocite{gresnigtgourlayvarma2023three}, and was then extended to include a correctly-assigning
+$U(1)$ within the Clifford algebra $\mathbb{C}\ell(8)$ \autocite{gourlaygresnigt2024algebraic}. A
+parallel leptonic construction reaches the same three octonion copies inside the sedenions
+\autocite{tangtang2023unified}, and the four-qubit-as-$S^{31}$ parametrisation on which the
+entanglement reading rests is older still \autocite{pinillaluthra2009hopf}. The essential facts we
+lean on --- the promotion of triality to a manifest $S_3$, the generation map $\psi$ that generates
+the second and third generations from the first, and the $S_3$-invariance of the gauge sector ---
+are theirs; the line's own passage from the core split of 2019 to the $\psi$-orbit is discussed in
+Remark~\ref{rem:two-triples}.
+
+The most recent step in that line is also the most directly relevant to the present framework, and it
+resolves the one feature the framework most needs a generation mechanism to have. Gresnigt has now
+shown that the complex Clifford algebra $\mathbb{C}\ell(10)$ realises three linearly independent
+fermion generations, each carrying the correct quantum numbers under the \emph{single},
+untriplicated Standard Model gauge algebra
+$\mathfrak{su}(3)_C \oplus \mathfrak{su}(2)_L \oplus \mathfrak{u}(1)_Y$, with an embedded $S_3$ family
+action that cyclically permutes the three fermion sectors while leaving every gauge generator fixed
+\autocite{gresnigt2026three}. The construction is the electroweak completion of the $\mathbb{C}\ell(8)$
+work: passing from $\mathbb{C}\ell(8)$ to $\mathbb{C}\ell(10)$ supplies the extra Witt pair needed for
+the chiral weak sector and the physical hypercharge, and the $S_3$ is fixed to be
+$G_2$-commuting and gauge-preserving, so that the gauge sector is emphatically \emph{not} replicated.
+Three points of contact deserve statement.
+
+First, Gresnigt's central structural result --- that the family $S_3$ leaves the gauge generators
+invariant, so the gauge sector is untriplicated --- is, in the vocabulary of this paper, the
+statement that the generation symmetry is a discrete label carried by the fermion sectors and not a
+gauge symmetry of the connection. His construction proves it at the level of explicit Clifford
+generators and commutators: the colour and weak generators are $S_3$-fixed, $\psi_3(\Lambda_i) =
+\Lambda_i$ and $\psi_3(T_i) = T_i$, and the family action moves only the fermion sectors. The present
+framework supplies the same conclusion's reason from one rung up: the $S_3$ is the component group of
+$\mathrm{Aut}(\mathbb{S})$, which by~\eqref{eq:identity-component} has no Lie algebra to gauge, and
+which commutes with the identity component, so that the images of a sector under the family action
+are gauge-equivalent before any generator is written down. The
+two accounts are complementary in exactly the way the framework's relation to the algebraic programmes
+usually is (\S\ref{sec:entanglement-szangolies}): Gresnigt fixes the representation content and proves
+the non-replication by construction; the framework says why non-replication was forced --- a component
+group cannot carry a force. Notably, Gresnigt is careful that his $\psi_3$ is \emph{not} standard
+$\mathrm{Spin}(8)$ triality but the sedenion-induced $S_3$, and leaves the precise relation between
+the two as an open question; this is the same distinction the register account met as ``triality
+gives three, the $K_3$ device refines it,'' and the same open relation appears here as the shadow
+theorem below (\S\ref{sec:sedenions-shadow}).
+
+Second, Szangolies --- whose $\mathrm{Spin}(9)$ construction this paper already leans on
+(\S\ref{sec:entanglement-szangolies}) --- reaches for exactly this rung in closing his own tower. His
+final development names the sedenions as the tempting next algebra, notes that their zero divisors
+forbid a fourth Hopf map so that no fully analogous continuation exists, records that a four-qubit
+state can nonetheless be parametrised as a point of $S^{31}$ with the sedenions as scaffolding
+\autocite{pinillaluthra2009hopf}, and cites the discrete $S_3$ of $\mathrm{Aut}(\mathbb{S})$ as
+realising the three generations as three copies of the octonion algebra
+\autocite{gresnigtgourlayvarma2023three,gourlaygresnigt2024algebraic,tangtang2023unified}, with
+``no essentially new phenomenology (e.g.\ fifth forces)'' expected from the enlargement. His summary
+--- generational structure but no new force --- is precisely the reading this section endorses, and
+Remark~\ref{rem:no-fifth-force} is its reason. The two frameworks, arriving at the sedenion rung from
+the gauge-representation side and from the entanglement side, agree on what it delivers.
+
+Third, the two frameworks spend the same sixteen complex dimensions differently, and the difference
+is worth stating so that it is not mistaken for disagreement. Szangolies reads $\mathbb{C}^{16}$ as
+$\mathbb{O}^4$ --- two copies of the octonionic Hopf fibration --- and spends the doubling on
+chirality and mass, the second octonionic fibration supplying the right-handed partner and the
+massive Dirac structure. This paper reads the same space as $\mathbb{C}\otimes\mathbb{S}$ and spends
+the doubling on the generation index, chirality having been housed at the register (the Filatov
+handedness of \S\ref{sec:generations}) and mass as associator debt (\S\ref{sec:masses}). These are
+two decompositions of one Hilbert space, selected for different work, not rival claims about it;
+their reconciliation --- whether the $\mathbb{O}^4$ chirality reading and the
+$\mathbb{C}\otimes\mathbb{S}$ generation reading are two projections of a single structure --- is a
+natural question, and one we leave open rather than settle here.
+
+\subsection{The register count as a shadow}
+\label{sec:sedenions-shadow}
+
+Two accounts of the generation number are now on the table: the register's frustrated-pair count of
+\S\ref{sec:generations}, and the sedenion $S_3$-orbit of \S\ref{sec:sedenions-promotion}. They are
+not rivals. The candidate relation, stated plainly as a conjecture, is that the first is the
+\emph{shadow} of the second --- the $S_3$ action on the three halvings
+$\{\mathbb{O}, \psi\mathbb{O}, \psi^{2}\mathbb{O}\}$, projected through the selected complex
+direction down to the three-qubit register, reproducing the frustration classes there. On this
+reading the register account is not wrong but incomplete: it sees, in the odd-qubit-out
+combinatorics, the register-level image of a permutation whose home is one rung up, which is exactly
+why it had to borrow rung labels to name what it saw.
+
+Two honesty notes govern how much of this is secured. The abstract half is automatic and carries no
+weight: an $S_3$ acting on any three-element set is $\mathrm{Aut}(\mathbb{Z}_2\times\mathbb{Z}_2)$
+acting on the non-identity elements, so the fact that the four $K_3$ classes form a Klein four-group
+under class addition, with $S_3$ as its automorphism group, matches the halvings by group theory
+alone. And the candidate bridge offered in earlier drafts --- the three Fano lines through the
+preferred direction matched to the three octonion copies through the quaternionic core --- is
+withdrawn: both sides of it are colour-basis objects (Remark~\ref{rem:two-triples}), so it is a true
+statement about colour and silent about generations. What remains is the physical intertwiner, and
+on present evidence neither outcome is favoured: the register classes distinguish which rung is odd,
+the halvings distinguish the orientation of the completed link against its copy, and no map between
+the two has yet been proposed. We state the problem in that form.
+
+\begin{openproblem}[The shadow theorem]
+\label{op:generation-mechanism}
+Show that the $S_3$ action on the three halvings
+$\{\mathbb{O}, \psi\mathbb{O}, \psi^{2}\mathbb{O}\}$ of $\mathbb{S}$ (the map~\eqref{eq:brown-psi}),
+projected through the selected complex direction, reproduces the $K_3$ frustration classes on the
+three-qubit register: the three odd-qubit-out classes as the images of the three halvings, the
+all-same class as the $\psi$-invariant sector. \textup{PASS}: an explicit selected-direction
+projection carrying halving $k$ to frustration class $k$, $S_3$-equivariantly. \textup{FAIL}: no
+such projection exists, in which case the two counts of three are numerically coincident but
+structurally distinct, the $\psi$-orbit is the mechanism of record and the register count a device
+--- itself an informative outcome, and the same open relation Gresnigt records between his sedenion
+$S_3$ and standard $\mathrm{Spin}(8)$ triality \autocite{gresnigt2026three}. The Fano-line bridge is
+recorded as tried and withdrawn (colour on both sides) so that it is not retried.
+\end{openproblem}
+
+\subsection{Mixing, and what is deferred}
+\label{sec:sedenions-mixing}
+
+The sedenion reading offers a handle on quark and lepton mixing, and honesty requires separating what
+it delivers now from what it only promises. Two structural facts are in hand. First, the fourth-party
+generation tag can never be perfectly correlated with the three-qubit register, because no four-qubit
+state is maximally entangled across every bipartition \autocite{higuchisudbery2000,hubersiewert2026};
+generations cannot superselect, so nontrivial mixing is obligatory rather than optional. Second, the
+same zero divisors that forbid the fourth fibration are seated where the generation map acts: the
+sedenions' zero divisors lie on the diagonals between the link and its copy, the very planes
+$(a, au)$ that $\psi$ rotates, so the failure of division and the family rotation inhabit one sector
+and generation number is a conserved label except where that sector is crossed. The Cabibbo rung is
+already executed on hardware, with the mixing angle recovered as $\lambda = \sin(2/9)$ to the
+per-cent level (Appendix~\ref{app:qiskit-ckm}). A structural scan of the bare cross-copy vertex
+found it maximally mixing, which would put the observed near-diagonality of the mixing matrices
+entirely in the dressing; that scan was run on the core triple of Remark~\ref{rem:two-triples} and
+must be re-run on the $\psi$-orbit before its verdict is carried over to generations --- an owed
+computation, recorded as such.
+
+A further recognition ties the count to the paper's foundations, and we state it with its
+status decomposed. Three is not only the order of the $S_3$-orbit; it is exactly the threshold
+at which a mixing matrix acquires an irremovable complex phase --- Kobayashi and Maskawa's
+counting gives $(N-1)(N-2)/2$ physical phases, zero at two generations and one at three
+\autocite{kobayashimaskawa1973} --- and the invariant form of the irremovability is Jarlskog's
+$J$ \autocite{jarlskog1985}. Writing $V_{ij} = \braket{u_i|d_j}$ for the overlap of the up- and
+down-type mass eigenbases, the rephasing-invariant quartets are fourth-order Bargmann invariants
+alternating between the two bases,
+\begin{equation}
+  V_{ij}V_{kl}V^{*}_{il}V^{*}_{kj}
+  \;=\; \braket{u_i|d_j}\braket{d_j|u_k}\braket{u_k|d_l}\braket{d_l|u_i},
+  \label{eq:jarlskog-bargmann}
+\end{equation}
+and $J$ is their common imaginary part. $J \neq 0$ therefore says that no phase convention makes
+every element real at once: each element can be realified locally, the collection cannot be
+realified globally, and this local-versus-global obstruction is precisely the shape
+\S\ref{sec:contextuality} identifies as contextuality --- there proved equivalent to negativity
+\autocite{spekkens2008negativity} in the signed calculus from which this paper's amplitudes were
+derived in the first place (\S\ref{sec:self-reference}); nonreal invariants of exactly this
+Bargmann form are likewise the currency of the Kirkwood--Dirac literature already drawn on there
+\autocite{arvidssonshukur2024kirkwood}. Within the framework, then, ``irremovable phase implies
+contextual data'' is a corollary of a chain already run, not an imported association.
+
+Where the data live is the reading this section supplies, at candidate status. One added wire,
+three generations, one phase: the uniqueness of the phase matches the uniqueness of the
+doubling, and the fourth wire --- the observer of Wigner (\S\ref{sec:wf-chain-type}) --- is the
+anchor from which the flavour phase is physical at all, the flavour sector's Wigner's-friend
+phase, real only from one rung above. The executed record is consonant: the two-generation
+Cabibbo circuit is a \emph{real} rotation, and at $N = 2$ the counting licenses exactly zero
+phases, so the real circuit was not a simplification but the whole content; the third
+generation, where a phase first becomes irremovable, is exactly where the construction demanded
+its additional wire. At the same candidate status, and without touching the standing structural
+derivation of $\theta_{\mathrm{QCD}} = 0$ (\S\ref{sec:confinement}), the reading offers one
+sentence for two facts: CP violation lives in the tag sector and only there --- a contextual
+phase where there is a context-bearing wire, $\delta_{\mathrm{CKM}} \neq 0$, and none on the
+connection side, which has no such wire to offer, $\theta_{\mathrm{QCD}} = 0$.
+
+What this does not yet deliver is the full CKM and PMNS phenomenology: the mass hierarchy, the
+individual mixing angles, the value of the CP phase, and the striking asymmetry between large
+lepton mixing and small hierarchical quark mixing. These are the subject of a dedicated follow-up, where the four-qubit
+grading is treated as the arena --- the physical mixing data as moduli of the four-wire entanglement
+structure, with the generation $S_3$ acting through triality. The Higgs-sector and Yukawa-texture
+questions that must accompany any such account are, in the algebraic line, exactly where Gresnigt's
+programme is now headed \autocite{gourlaygresnigt2024algebraic,gresnigt2026three}, and the convergence
+of the two routes on that frontier is itself encouragement. This paper claims the backbone --- three
+generations from the sedenion doubling, the family symmetry a discrete label and not a force, the
+count fixed at three and the tower closed --- and defers the quantitative flavour phenomenology
+rather than overreaching for it here.
+
+\subsection{Summary}
+\label{sec:sedenions-summary}
+
+The three generations are the $S_3$-orbit of a single sector under the sedenions' order-three
+automorphism, a rung past the register the rest of this paper inhabits. The count is three because
+Brown's theorem makes $\mathrm{Aut}(\mathbb{S}) = G_2 \times S_3$ and the orbit has that order; the
+generations share their gauge quantum numbers because the product is direct, so the family map
+commutes with every gauge action; the sterile sector is the $S_3$-invariant piece. This is an established line --- Gresnigt and collaborators have
+developed it in explicit Clifford-algebraic form, most recently realising three untriplicated
+generations inside $\mathbb{C}\ell(10)$, and Szangolies draws on it in the same spirit as this paper.
+The framework's own contribution is narrow and specific: not the count, which is the literature's, but
+the reason the doubling adds a label rather than a force --- the added factor is the component group
+$\pi_0$, which carries no Lie algebra and gauges nothing --- and the placement of that reason inside a
+tower whose forces already terminate at three wires by Hurwitz, Adams and Coecke--Kissinger. Forces at
+three, flavour at four, and closed thereafter.
