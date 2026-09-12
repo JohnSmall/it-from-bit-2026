@@ -108,26 +108,37 @@ reasoning. Delete when done.
       The same preamble warns explicitly NOT to run the 2026-08-25T0633
       positioning patch, which is not among the files.
 
-## Missing from the repository, inferred from orphan references
+## The Wigner's-friend splices, now that their sources have arrived
 
-Fourteen references were prepared for work that is not here. Each batch is
-filed in `bib/` but none of its keys is cited by any `.tex` in the repository.
+The two files the orphan references pointed at were downloaded on 2026-09-12
+and are filed. Three patch scripts are ready to run, none of them applied.
 
-- [ ] **The Extended Wigner's Friend splice.** `bib/extended_wigners_friend_refs_2026-08-30.bib`
-      (13 keys) and `bib/ewf_splice_supplementary_refs_2026-08-30.bib` (1 key)
-      are uncited. `scripts/patch_wigner_ewf_positioning_2026-08-30.py` names
-      the file it needs: `wigner_ewf_positioning_splice_2026-08-30.tex`, which
-      is in neither the repository nor `~/Downloads`. Its label `sec:wf-ewf`
-      does not appear in the target, so the splice was never applied. The
-      companion figure `fig_wigner_hopf_ladder_2026-08-30.tex`, needed by
-      `patch_wigner_hopf_ladder_fig_2026-08-30.py`, is missing too. Both want
-      downloading from Claude web. (`tikz` is already in the preamble, so that
-      prerequisite is met, and the 2026-08-27 chain-type splice *was* applied
-      -- `sec:wf-chain-type` is in the target five times -- so only its source
-      file is missing, for provenance rather than for the build.)
+- [ ] Import `bib/extended_wigners_friend_refs_2026-08-30.bib` (13 keys) and
+      `bib/ewf_splice_supplementary_refs_2026-08-30.bib`
+      (nurgalievarenner2020testing) into Zotero and re-export. They are no
+      longer orphans: `paper1/wigner_ewf_positioning_splice_2026-08-30.tex`
+      cites 14 keys of which 13 are missing, and these two batches supply
+      exactly those. Only `yingetal2024relating` would arrive uncited.
+- [ ] Run `scripts/patch_wigner_ewf_positioning_2026-08-30.py`. It inserts the
+      splice (`sec:wf-ewf`) into `wigners_friend_in_the_hopf_picture` before
+      the chain-type coda, and refuses unless the 2026-08-27 chain-type patch
+      landed first -- it did, `sec:wf-chain-type` is in the target.
+- [ ] Run `scripts/patch_wigner_hopf_ladder_fig_2026-08-30.py`. It adds a
+      deferral paragraph and inputs `fig_wigner_hopf_ladder_2026-08-30.tex`
+      (`fig:wf-hopf-ladder`). `tikz` and `arrows.meta` are already in the
+      preamble, so its stated prerequisite is met.
+- [ ] Run `scripts/patch_zoo_sedenion_pointer_2026-08-25T0700.py`, which
+      reduces the zoo subsection to the forward pointer in
+      `paper1/zoo_sedenion_pointer_replacement_2026-08-25T0700.tex`. That
+      replacement keeps `\label{sec:sedenion-announcement}`, so existing
+      references to it stay valid.
+
+## Batches still unimported, and what they imply
+
 - [ ] `bib/reverse_flow_refs_2026-07-23.ris`, 22 keys, none cited and none in
-      Zotero. Points at a "reverse flow" document of 2026-07-23 that is not in
-      the repository.
+      Zotero. Points at a "reverse flow" document of 2026-07-23 that is still
+      not in the repository -- the same signature that located the Wigner
+      splices.
 - [ ] `bib/zd_structure_refs_2026-08-31.ris`, 5 keys on sedenion zero-divisor
       structure, none cited. Same date as
       `sedenion_zero_divisor_scan_2026-08-31.py`, which the carried-over list
@@ -135,6 +146,10 @@ filed in `bib/` but none of its keys is cited by any `.tex` in the repository.
 - [ ] `bib/tower_extension_refs_2026-07-25.ris` is superseded: its single key
       `eakinsathaye1990` is the same work as `eakinsathaye1990automorphisms`,
       already in Zotero and cited. Do not import it.
+- [ ] `knowledge/project-docs/corrections_ledger_sedenion_triples_2026-08-27.md`
+      records an invalid route -- the doubling's S_3 attached to the wrong
+      triple, corrected by notebook T. Per CLAUDE.md that belongs in
+      `knowledge/invalid_routes.md` as a dated entry; propose one.
 
 ## Ledgers
 

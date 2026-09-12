@@ -1,0 +1,176 @@
+% =====================================================================
+%  FIGURE: the Wigner's-friend chain mapped onto the Cayley--Dickson
+%  ladder. Created 2026-08-30 per JS: the Hopf-fibration view of
+%  Wigner's friend has been load-bearing for months without being drawn;
+%  the fibrations themselves are DEFERRED to Szangolies's introduction
+%  (szangolies2025standardmodel, in library), and this figure carries
+%  only the mapping.
+%
+%  CONTENT (left to right, one panel per chart, staircase rising):
+%    Panel 1: F's chart of S            -- S^3 -> S^2, fibre S^1,  C, one wire
+%    Panel 2: W's chart of {S,F}        -- S^7 -> S^4, fibre S^3,  H, two wires
+%    Panel 3: O_W's chart of {S,F,W}    -- S^15 -> S^8, fibre S^7, O, three wires
+%             (the last fibration)
+%    Panel 4: the next observer's chart of {S,F,W,O_W} -- C^16 = C (x) S,
+%             no fibration (S^31 -/-> S^16); the doubling's S_3 badge:
+%             the generation label, a third of a turn.
+%  Each describer perches on his sealed box with a dashed circle over
+%  his head (his own gauge circle -- the self-referential ignorance he
+%  cannot see around); dashed promotion arrows carry each circle into
+%  the next chart's fibre ("gauge here -> interferable one rung up",
+%  sec:wf-phase-promotion); the third arrow terminates at "no fourth
+%  fibration", with what survives being the discrete third-of-a-turn
+%  (sec:wf-chain-type, sec:sedenions-generations). The regress
+%  continues to the right: copies only.
+%
+%  EDITED 2026-09-01 (per JS): PLACEMENT FIXED. The [t] float drifted
+%  past the end of sec:wigners-friend into the following section (a
+%  long section gives a full-width top float no slot). The figure now
+%  sits at the END of sec:wigners-friend -- after the chain-type coda
+%  -- pinned with [H] (no floating), which is also the right home
+%  narratively: the map is the section's summary picture. The deferral
+%  paragraph stays early and now says "placed at the close of the
+%  section". Relocation for an already-patched tree:
+%  patch_wigner_ladder_fig_relocate_2026-09-01.py; for a FRESH tree,
+%  run patch_wigner_hopf_ladder_fig_2026-08-30.py first, then the
+%  relocation patch (they compose).
+%
+%  PREAMBLE REQUIREMENT (confirm in main.tex; add if absent):
+%      \usepackage{tikz}
+%      \usetikzlibrary{arrows.meta}
+%      \usepackage{float}          <-- NEW (for the [H] specifier)
+%  PLACEMENT: \input at the end of sec:wigners-friend, immediately
+%  after the wf-chain-type SPLICE-END line.
+%  CROSS-REFS OUT (all real): sec:wf-phase-promotion,
+%  sec:wf-chain-type, sec:sedenions-generations.
+%  KEY: szangolies2025standardmodel (in library).
+%  British English; pure ASCII; \autocite in the caption.
+% =====================================================================
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[>=Stealth, line cap=round, line join=round,
+    every node/.style={font=\scriptsize},
+    blind/.style={densely dashed, draw=black!75},
+    promote/.style={->, densely dashed, black!60, semithick},
+    sight/.style={->, dotted, black!55}]
+% ---- stick-figure pic --------------------------------------------------
+\tikzset{stick/.pic={
+  \draw[pic actions] (0,0.44) circle (0.085);
+  \draw[pic actions] (0,0.355) -- (0,0.10);
+  \draw[pic actions] (-0.12,0.20) -- (0,0.29) -- (0.12,0.20);
+  \draw[pic actions] (-0.10,-0.10) -- (0,0.10) -- (0.10,-0.10);
+}}
+% ---- the staircase (Cayley--Dickson ladder) ---------------------------
+\draw[black!35, thick]
+  (-0.35,-0.55) -- (3.27,-0.55) -- (3.27,0.25) -- (6.89,0.25)
+  -- (6.89,1.05) -- (10.51,1.05) -- (10.51,1.85) -- (13.60,1.85)
+  -- (13.60,2.65) -- (16.20,2.65);
+\node[anchor=north] at (1.25,-0.60) {$\mathbb{C}$ --- one wire};
+\node[anchor=north] at (4.87,0.20)  {$\mathbb{H}$ --- two wires};
+\node[anchor=north] at (8.49,1.00)  {$\mathbb{O}$ --- three wires};
+\node[anchor=north] at (12.11,1.80) {$\mathbb{S}$ --- four wires};
+\node[anchor=north, black!55] at (14.45,2.60) {$\mathbb{T},\dots$ --- five wires on};
+% =======================================================================
+% Panel 1: F's chart of S
+% =======================================================================
+\draw[rounded corners=2pt, fill=black!5, draw=black!40] (0,0) rectangle (2.5,1.32);
+\filldraw[black!70] (1.25,0.72) circle (0.075);
+\node[font=\tiny] at (1.25,0.45) {$S$};
+\pic[black] at (2.05,1.42) {stick};
+\node[anchor=west] at (2.22,1.62) {$F$};
+\draw[sight] (1.95,1.60) -- (1.45,1.02);
+\draw[blind] (2.05,2.14) circle (0.11);
+\node[anchor=east, align=right, font=\tiny, black!75] at (1.82,2.14)
+  {his own gauge circle:\\ the phase he cannot\\ see around};
+\node[anchor=south west, font=\tiny, black!75] at (0.02,1.34) {fibre $S^{1}$};
+\node[anchor=north] at (1.25,-0.06) {$S^{3}\to S^{2}$};
+% =======================================================================
+% Panel 2: W's chart of {S,F}
+% =======================================================================
+\draw[rounded corners=2pt, fill=black!5, draw=black!40] (3.62,0.80) rectangle (6.12,2.12);
+\filldraw[black!70] (4.07,1.52) circle (0.075);
+\node[font=\tiny] at (4.07,1.25) {$S$};
+\pic[black!55, scale=0.85] at (4.85,1.16) {stick};
+\node[font=\tiny, black!55] at (4.85,0.94) {$F$};
+\pic[black] at (5.67,2.22) {stick};
+\node[anchor=west] at (5.84,2.42) {$W$};
+\draw[sight] (5.57,2.40) -- (5.05,1.82);
+\draw[blind] (5.67,2.94) circle (0.11);
+\node[anchor=south west, font=\tiny, black!75] at (3.64,2.14) {fibre $S^{3}$};
+\node[anchor=north] at (4.87,0.74) {$S^{7}\to S^{4}$};
+\draw[promote] (2.17,2.14) to[out=15,in=170] (3.60,2.24);
+\node[anchor=south, align=center, font=\tiny, black!60] at (2.85,2.32)
+  {gauge below,\\ interferable above};
+% =======================================================================
+% Panel 3: O_W's chart of {S,F,W}
+% =======================================================================
+\draw[rounded corners=2pt, fill=black!5, draw=black!40] (7.24,1.60) rectangle (9.74,2.92);
+\filldraw[black!70] (7.69,2.32) circle (0.075);
+\node[font=\tiny] at (7.69,2.05) {$S$};
+\pic[black!55, scale=0.85] at (8.35,1.96) {stick};
+\node[font=\tiny, black!55] at (8.35,1.74) {$F$};
+\pic[black!55, scale=0.85] at (8.95,1.96) {stick};
+\node[font=\tiny, black!55] at (8.95,1.74) {$W$};
+\pic[black] at (9.29,3.02) {stick};
+\node[anchor=west] at (9.46,3.22) {$O_{W}$};
+\draw[sight] (9.19,3.20) -- (8.65,2.62);
+\draw[blind] (9.29,3.74) circle (0.11);
+\node[anchor=south west, font=\tiny, black!75] at (7.26,2.94) {fibre $S^{7}$};
+\node[anchor=north, align=center] at (8.49,1.54) {$S^{15}\to S^{8}$\\[-1pt]
+  {\tiny the last fibration}};
+\draw[promote] (5.79,2.94) to[out=15,in=170] (7.22,3.04);
+% =======================================================================
+% Panel 4: the next chart of {S,F,W,O_W} -- sedenions, no fibration
+% =======================================================================
+\draw[rounded corners=2pt, fill=black!5, draw=black!40] (10.86,2.40) rectangle (13.36,3.72);
+\filldraw[black!70] (11.24,3.12) circle (0.075);
+\node[font=\tiny] at (11.24,2.85) {$S$};
+\pic[black!55, scale=0.80] at (11.78,2.78) {stick};
+\node[font=\tiny, black!55] at (11.78,2.56) {$F$};
+\pic[black!55, scale=0.80] at (12.28,2.78) {stick};
+\node[font=\tiny, black!55] at (12.28,2.56) {$W$};
+\pic[black!55, scale=0.80] at (12.78,2.78) {stick};
+\node[font=\tiny, black!55] at (12.78,2.56) {$O_{W}$};
+\pic[black!45] at (14.35,2.78) {stick};
+\draw[sight] (14.18,3.02) -- (13.42,3.12);
+\draw[blind] (14.35,3.50) circle (0.11);
+\node[anchor=west, align=left, font=\tiny, black!60] at (14.58,3.48)
+  {the next observer,\\ and all after:\\ copies only};
+\node[anchor=north] at (12.11,2.34) {$\mathbb{C}^{16}=\mathbb{C}\otimes\mathbb{S}$};
+% the broken third promotion
+\draw[promote] (9.41,3.74) to[out=15,in=185] (10.68,3.86);
+\node[font=\scriptsize, black!60] at (10.80,3.92) {$\times$};
+\node[anchor=south west, font=\tiny, black!75] at (10.88,3.74)
+  {no fourth fibration: $S^{31}\not\to S^{16}$};
+% the S3 badge: three dots at 120 degrees with a rotation arrow
+\draw[black!75] (11.45,4.30) circle (0.17);
+\filldraw[black!75] (11.45,4.47) circle (0.028);
+\filldraw[black!75] (11.303,4.215) circle (0.028);
+\filldraw[black!75] (11.597,4.215) circle (0.028);
+\draw[->, black!75] (11.67,4.36) arc[start angle=20, end angle=100, radius=0.235];
+\node[anchor=west, align=left, font=\tiny, black!75] at (11.70,4.36)
+  {$S_{3}$: the generation label\\ (a third of a turn)};
+\draw[promote, black!70] (10.86,3.96) to[out=60,in=200] (11.24,4.22);
+\end{tikzpicture}%
+}
+\caption{The Wigner's-friend chain mapped onto the Cayley--Dickson ladder. Each
+observer holds a chart of the sealed box below him, one rung further up the
+ladder: the friend's chart of the system is the complex Hopf bundle, Wigner's
+chart of the sealed laboratory the quaternionic, and the chart of the observer
+of Wigner --- of the completed triple --- the octonionic, the tower's last
+fibration. Every chart-holder carries a dashed circle over his head, his own
+gauge phase: the self-referential ignorance he cannot see around. Measurement
+promotes each circle into the next chart's fibre, where what was gauge below is
+interferable above (\S\ref{sec:wf-phase-promotion}); the third promotion has no
+fibration to land in --- the sedenions have zero divisors and no map
+$S^{31}\to S^{16}$ --- and what survives of it is discrete: the doubling's
+$S_{3}$, a third of a turn rotating the link into its copy, the generation
+label (\S\ref{sec:wf-chain-type}, \S\ref{sec:sedenions-generations}). The
+regress of circles continues unbounded to the right, but from the fifth wire
+onward it adds copies only. The friend drawn as a single qubit is the
+redundancy-one idealisation discussed in the text; for the fibrations
+themselves, deferred rather than repeated here, see the introduction in
+\autocite{szangolies2025standardmodel}.}
+\label{fig:wf-hopf-ladder}
+\end{figure}

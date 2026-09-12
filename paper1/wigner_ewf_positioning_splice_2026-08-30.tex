@@ -1,0 +1,151 @@
+% =====================================================================
+%  SPLICE: "The extended friends" -- positioning subsection for
+%  sec:wigners-friend against the extended Wigner's friend (EWF)
+%  literature. Created 2026-08-30 per JS ("yes draft the splice"),
+%  from the survey extended_wigners_friend_literature_2026-08-30.md.
+%
+%  WHAT IT DOES (four paragraphs):
+%    1. Names the landscape: the six-argument taxonomy (Schmid-Ying-
+%       Leifer), Brukner's no-go, Frauchiger-Renner, Local Friendliness
+%       (strictly weaker than Bell; photonic tests; possibilistic and
+%       maximally-non-absolute refinements).
+%    2. States the framework's location in assumption space, DERIVED
+%       not chosen: Local Agency kept; absoluteness of observed events
+%       graded in R; the FR consistency assumption restricted to
+%       persisting records -- and DISCHARGES BY NAME the self-reference
+%       section's promissory note ("which sec:wigners-friend dissolves
+%       relationally"). The review's inaccessible-correlations
+%       diagnostic is given its fibre/base reading; the undone
+%       measurement is stitched to the anti-event seed of
+%       sec:self-reference.
+%    3. Meets the graded turn in the experimental literature: the
+%       "thoughtful" LF theorem and the branch-factor programme on
+%       quantum processors, identified as the laboratory face of R,
+%       with the shared-hardware note; names the framework's exposed
+%       commitment (gradedness: a sharp observer threshold would
+%       refute the redundancy reading); cites the dissent (Okon;
+%       the relative-facts controversy) and answers via
+%       sec:wf-reconciliation.
+%    4. Hand-off: the EWF chain is structureless by construction; the
+%       next subsection (sec:wf-chain-type) records that the algebra
+%       disagrees.
+%
+%  REVISED 2026-08-30 (same day, per JS): the ledger analogy CUT --
+%  "interesting, but not load bearing". The paragraph-3 aside and the
+%  nakamoto2008bitcoin key are removed; the material is preserved as a
+%  blog seed (ledger_analogy_blog_seed_2026-08-30.md). Nothing else
+%  changed; the supplementary RIS now carries one record.
+%
+%  ORDER REQUIREMENT: apply AFTER patch_wigner_chain_type_2026-08-27
+%  (the companion patch refuses otherwise). The subsection sits
+%  between the "Two cautions" paragraph and sec:wf-chain-type, so the
+%  chain coda keeps the section's closing line.
+%
+%  CROSS-REFS OUT (all verified present in the synced source):
+%    sec:wf-redundancy, sec:wf-reconciliation, sec:wf-chain-type
+%    (inserted by the 08-27 patch), sec:self-reference,
+%    prop:f1-dictionary, app:hw-ckm.
+%  KEYS -- in-library: Frauchiger_2018. In the delivered batch
+%  extended_wigners_friend_refs_2026-08-30.ris (all VERIFY-flagged):
+%    brukner2018nogo, bong2020strong, proietti2019experimental,
+%    cavalcantiwiseman2021implications, haddaracavalcanti2023possibilistic,
+%    morenoetal2022maximally, schmidyingleifer2023sixewf,
+%    adlam2024nonabsoluteness, wisemancavalcantirieffel2023thoughtful,
+%    russozeng2025branch, okon2025reassessing,
+%    lawrencemarkiewiczzukowski2023relative.
+%  In the supplementary RIS ewf_splice_supplementary_refs_2026-08-30.ris:
+%    nurgalievarenner2020testing (VERIFY-CITE).
+%
+%  STATUS DISCIPLINE: positioning and consonance only; nothing here is
+%  recruited as proof. The one exposed commitment (gradedness) is
+%  named as such in the text. British English; pure ASCII; \autocite;
+%  no bullets; spaced dashes.
+% =====================================================================
+% SPLICE-BEGIN wf-ewf 2026-08-30
+
+\subsection{The extended friends: where this account stands}
+\label{sec:wf-ewf}
+
+The dissolution just given does not stand alone; it stands in a crowded and
+recently theorem-rich field, and the field's results locate it precisely. A
+programme of \emph{extended} Wigner's friend arguments has turned the thought
+experiment into no-go theorems: Brukner's no-go for observer-independent facts
+\autocite{brukner2018nogo}; the Frauchiger--Renner argument that inferences
+chained across nested observers yield contradiction \autocite{Frauchiger_2018};
+and, sharpest, the Local Friendliness theorem, which from the conjunction of
+\emph{absoluteness of observed events} and \emph{local agency} alone derives
+inequalities strictly weaker than Bell's, so that their quantum violation bounds
+reality more tightly than Bell's theorem does
+\autocite{bong2020strong,cavalcantiwiseman2021implications}. Both Brukner's
+inequality and the Local Friendliness inequalities have been violated in
+proof-of-principle photonic experiments
+\autocite{proietti2019experimental,bong2020strong}, and the assumptions have
+since been pushed weaker still
+\autocite{haddaracavalcanti2023possibilistic,morenoetal2022maximally}. A recent
+review unifies six such arguments and reaches two conclusions this section could
+have written \autocite{schmidyingleifer2023sixewf}: every argument hinges on
+assumptions about correlations between outcomes that are not accessible to any
+observer even in principle, and the most defensible reading of the strongest
+theorems is that measurement outcomes are perspectival rather than absolute.
+
+The framework's location in that assumption space is exact, and it is derived
+rather than chosen. Local agency is kept untouched. Absoluteness of observed
+events --- whose intended meaning has itself been carefully dissected
+\autocite{adlam2024nonabsoluteness} --- is in this account a \emph{grade}, never
+a threshold: an observed event is absolute to the degree that its record is
+redundantly copied (\S\ref{sec:wf-redundancy}), so the low-redundancy violations
+the theorems exhibit are the framework's expectation, not its embarrassment.
+And the Frauchiger--Renner consistency assumption --- that an inference
+conditioned on an outcome may be chained across agents --- is restricted, not
+rejected: it holds along records that persist to the comparison, and fails
+exactly where the protocol un-copies the record it conditions on. This
+discharges the promise made in \S\ref{sec:self-reference}. The contradiction is
+manufactured by transporting a conditional through an un-done \textsc{fanout}:
+the antecedent's record has been recovered into the fibre and no longer exists
+at the base, so the inference has no carrier
+(Proposition~\ref{prop:f1-dictionary}); in the language of
+\S\ref{sec:self-reference}, the undone measurement is an anti-event, and the
+conditional's content has returned to the signed, pre-record regime where it can
+cancel. Nurgalieva and Renner's epistemic-logic diagnosis --- the multi-agent
+trust axiom fails when memories are manipulated
+\autocite{nurgalievarenner2020testing} --- is the same restriction stated in
+logic; the geometry says why. The review's diagnostic lands the same way: the
+correlations every argument needs are correlations with records that cannot
+coexist, and the framework does not merely render such quantities inaccessible
+--- it declines to define them at the base at all.
+
+The graded reading, meanwhile, is ceasing to be a theorist's option and becoming
+the field's experimental variable. The ``thoughtful'' reformulation of Local
+Friendliness makes observerhood the open question and names its target
+experiment --- a reversible artificial agent on a quantum computer
+\autocite{wisemancavalcantirieffel2023thoughtful} --- and a first programme now
+runs extended-friend circuits on present-day processors, proposing a ``branch
+factor'' to quantify observerness, demonstrating violations at branch factor
+sixteen, and asking outright what the branch factor of a detector, an eye, a
+brain would be \autocite{russozeng2025branch}. The branch factor is a
+laboratory-internal instance of this section's redundancy parameter, measured on
+the same class of hardware as this paper's own executed circuits
+(Appendix~\ref{app:hw-ckm}); what the framework supplies is what the programme's
+shape presupposes --- violations available wherever the un-copying is actually
+performable, difficulty and Landauer cost growing with $R$, absoluteness only as
+the limit. The exposed commitment is the gradedness itself: a demonstrated sharp
+threshold --- an observer class at which violations vanish discontinuously while
+reversal remains performable --- would refute the redundancy reading, and no
+such evidence exists. The theorems have their sceptics, who argue they constrain
+less than advertised \autocite{okon2025reassessing}, and relative-facts
+positions have been pressed hard in the recent literature
+\autocite{lawrencemarkiewiczzukowski2023relative}; nothing here is recruited
+from the theorems --- the denial of low-$R$ absoluteness is derived from the
+framework's own machinery --- and the reconciliation of
+\S\ref{sec:wf-reconciliation}, that the two charts agree on everything both can
+check, is the answer this account gives where the pressing is hardest.
+
+One absence in this literature is worth recording, because the next subsection
+fills it. The extended arguments lengthen the chain of observers to strengthen
+their theorems, and treat every added observer as interchangeable with the last;
+nowhere in the field is it asked whether the chain itself has structure ---
+which rung an observer occupies is never permitted to matter. The algebra, the
+next subsection shows, disagrees: it matters exactly once more, and then never
+again.
+
+% SPLICE-END wf-ewf 2026-08-30

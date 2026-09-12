@@ -1,0 +1,58 @@
+% =====================================================================
+%  ZOO REPLACEMENT: reduce sec:sedenion-announcement to a forward
+%  pointer, since the mechanism now has its own section
+%  (sec:sedenions-generations). Created 2026-08-25T0700.
+%
+%  CONTEXT. The old subsection sec:sedenion-announcement in
+%  particle_zoo_section_2026-06-08.tex carried the full discovery
+%  narrative and the promotion mechanism. That material is now the
+%  standalone section sedenions_generations_section_2026-08-27.tex.
+%  Leaving both in place would duplicate the promotion theorem, the
+%  Klein-four sentence, and the shadow-theorem statement. This
+%  replacement keeps a short signpost in the zoo -- where the reader
+%  first meets the register-level count and feels its rough edge -- and
+%  sends them to the dedicated section for the resolution.
+%
+%  HOW TO APPLY. This is a REPLACEMENT, not an insertion, and it removes
+%  more than it adds, so it is delivered as guidance plus a guarded
+%  script rather than an anchored append. The script
+%  patch_zoo_sedenion_pointer_2026-08-25T0700.py replaces the entire
+%  span from the \subsection line through the end of the old subsection
+%  (detected by the next \subsection or the op:filatov-extension
+%  cross-ref block, whichever the audit confirms) with the SIGNPOST
+%  block below. Because span-replacement is higher-risk than insertion,
+%  the script REFUSES to run unless it finds the exact begin/end anchors
+%  and writes a .bak; if the anchors have drifted, apply by hand using
+%  this block.
+%
+%  DO NOT combine with the 2026-08-25T0633 positioning patch: that patch
+%  inserted a positioning paragraph INTO this subsection. It is now moot
+%  -- its content is subsumed by sedenions_generations_section's
+%  literature subsection. If that patch was already applied, this
+%  replacement removes it along with the rest of the old subsection.
+%
+%  British English; pure ASCII; \autocite. The signpost keeps the K3
+%  rough-edge sentence (it is the zoo's own honesty flag) and adds one
+%  pointer line.
+% =====================================================================
+% SIGNPOST-BEGIN sedenion-pointer 2026-08-25T0700
+
+\subsection{The rough edge, and where it is resolved}
+\label{sec:sedenion-announcement}
+
+The frustrated-pair count above is this programme's first account of the generation number, and it
+carries a rough edge worth naming here even though its resolution belongs elsewhere. The reading
+requires knowing \emph{which} qubit is the odd one out and what Cayley--Dickson rung it occupies,
+while the canonical orbits of \S\ref{sec:canonical-orbits} are permutation-symmetric --- the state
+treats the three qubits as interchangeable, and the label's rung-identity is imported from the tower
+architecture rather than derived. Nothing is inconsistent; something is not quite located. The
+diagnosis is that the generation index does not live on the three-qubit register at all but on the
+next Cayley--Dickson rung, the sedenions $\mathbb{C}^{16} = \mathbb{C}\otimes\mathbb{S}$, whose
+automorphism group gains exactly the finite factor $S_3$ that the octonions lack. That is the subject
+of \S\ref{sec:sedenions-generations}, where the count becomes the order of an $S_3$-orbit, the
+register account is recovered as its shadow, and the reason the fourth rung supplies a family label
+and never a fourth force is given. The convergence of this route with the independent
+Clifford-algebraic constructions of Gresnigt and collaborators, and with Szangolies's own closing
+development, is set out there.
+
+% SIGNPOST-END sedenion-pointer 2026-08-25T0700
