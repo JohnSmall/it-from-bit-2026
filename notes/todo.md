@@ -161,10 +161,12 @@ and are filed. Three patch scripts are ready to run, none of them applied.
       appendix block. It cites 24 keys, 22 of them from this batch, and all 22
       are still absent from `references.bib`. The `.ris` beside it converts to
       the same key set exactly.
-- [ ] `bib/zd_structure_refs_2026-08-31.ris`, 5 keys on sedenion zero-divisor
-      structure, none cited. Same date as
-      `sedenion_zero_divisor_scan_2026-08-31.py`, which the carried-over list
-      already records as unechoed.
+- [ ] `bib/zd_structure_refs_2026-08-31.bib`, 5 keys, supports the 2026-08-31
+      zero-divisor session note but is cited by no `.tex`. Importing it is
+      optional; it is not needed for the build. The three scripts of that arc
+      arrived on 2026-09-12, were run here, and all pass --- so the standing
+      "echo `sedenion_zero_divisor_scan_2026-08-31.py`" item is discharged; see
+      `sessions/echo_zero_divisor_arc_2026-09-12T1930.md`.
 - [ ] `bib/tower_extension_refs_2026-07-25.ris` is superseded: its single key
       `eakinsathaye1990` is the same work as `eakinsathaye1990automorphisms`,
       already in Zotero and cited. Do not import it.
@@ -213,7 +215,6 @@ have not been checked since.
 - [ ] Bridge test resolving the K3 Class-4 / psi-fixed line housing seam.
 - [ ] Patch the remaining fossils in `fermion_topology_table.py` and
       `fermion_topology_open_problems.md` section 5.2.
-- [ ] Echo and verify the output of `sedenion_zero_divisor_scan_2026-08-31.py`.
 - [ ] Newtonian limit computation for Paper 2 (`op:p2-newton`).
 - [ ] Email Andrei Khrennikov, leading with the complementarity reframe and
       the Tsirelson-as-ramification correspondence.

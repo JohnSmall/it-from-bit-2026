@@ -1,0 +1,96 @@
+@comment{ =====================================================================
+  zd_structure_refs_2026-08-31.bib
+  Converted 2026-09-01 from zd_structure_refs_2026-08-31.ris. Five entries,
+  keys byte-identical to the RIS ID fields, so the session note's inline key
+  mentions and any future \autocite calls resolve unchanged.
+  Intended consumer: biblatex + biber (the \autocite workflow). The fields
+  journaltitle / eprinttype / eprintclass and the @online type are biblatex;
+  for a plain-BibTeX consumer rename journaltitle -> journal, change @online
+  to @misc, and drop the eprint* fields. ASCII with LaTeX accent escapes per
+  house discipline; switch to native Unicode only if the pipeline is UTF-8
+  end to end. Verification and dedupe provenance is carried in @comment
+  blocks so nothing renders into the bibliography.
+===================================================================== }
+
+@comment{moreno1998zerodivisors: verified 2026-08-31 (BDI reference lists;
+  Zbl 1006.17005). Semantic Scholar dates it 1997 (online-first variant);
+  cite as 1998. No DOI -- the journal predates assignment. Quote the precise
+  theorem from the paper itself, not from de Marrais's "homomorphic"
+  paraphrase. Possible duplicate: already active in framework references --
+  dedupe on import.}
+@article{moreno1998zerodivisors,
+  author       = {Moreno, Guillermo},
+  title        = {The zero divisors of the {Cayley--Dickson} algebras over the real numbers},
+  journaltitle = {Bolet{\'i}n de la Sociedad Matem{\'a}tica Mexicana (3)},
+  volume       = {4},
+  pages        = {13--28},
+  year         = {1998},
+  eprint       = {q-alg/9710013},
+  eprinttype   = {arxiv},
+  url          = {https://arxiv.org/abs/q-alg/9710013},
+}
+
+@comment{biss2008annihilators: verified 2026-08-31 (nLab, Semantic Scholar,
+  and citing papers concur: 36(2), 632-664, 2008; arXiv math/0511691).
+  Taylor & Francis DOI not captured in the pass -- add on import if wanted.
+  Sequel if needed later: Biss, Christensen, Dugger, Isaksen, Large
+  annihilators in Cayley--Dickson algebras II, Bol. Soc. Mat. Mexicana (3)
+  13(2) (2007), 269-292, arXiv:math/0702075. Possible duplicate: already
+  active in framework references -- dedupe on import.}
+@article{biss2008annihilators,
+  author       = {Biss, Daniel K. and Dugger, Daniel and Isaksen, Daniel C.},
+  title        = {Large annihilators in {Cayley--Dickson} algebras},
+  journaltitle = {Communications in Algebra},
+  volume       = {36},
+  number       = {2},
+  pages        = {632--664},
+  year         = {2008},
+  eprint       = {math/0511691},
+  eprinttype   = {arxiv},
+  url          = {https://arxiv.org/abs/math/0511691},
+}
+
+@comment{cawagas2004sedenion: verified 2026-08-31 (EuDML, DML-PL). DOI read
+  from the journal's DML record -- confirm it resolves on import. Previously
+  VERIFY-CITE; clear the flag on import. Possible duplicate: already active
+  in framework references -- dedupe on import.}
+@article{cawagas2004sedenion,
+  author       = {Cawagas, Raoul E.},
+  title        = {On the structure and zero divisors of the {Cayley--Dickson} sedenion algebra},
+  journaltitle = {Discussiones Mathematicae -- General Algebra and Applications},
+  volume       = {24},
+  number       = {2},
+  pages        = {251--265},
+  year         = {2004},
+  doi          = {10.7151/dmgaa.1088},
+}
+
+@comment{demarrais2000assessors: verified 2026-08-31 (arXiv math/0011260,
+  math.GM; preprint, no journal publication found). Caution: paraphrases
+  Moreno's G2 result as "homomorphic" -- take the precise statement from
+  Moreno. Previously VERIFY-CITE; clear on import. Possible duplicate:
+  already active in framework references -- dedupe on import.}
+@online{demarrais2000assessors,
+  author       = {de Marrais, Robert P. C.},
+  title        = {The 42 {Assessors} and the {Box-Kites} they fly: diagonal axis-pair systems of zero-divisors in the sedenions' 16 dimensions},
+  year         = {2000},
+  eprint       = {math/0011260},
+  eprinttype   = {arxiv},
+  eprintclass  = {math.GM},
+  url          = {https://arxiv.org/abs/math/0011260},
+}
+
+@comment{gunaydin1973quark: verified 2026-08-31 (AIP publisher record). HIGH
+  duplicate risk: Gunaydin entries likely already in the library -- dedupe
+  before import. Companion if wanted later: Gunaydin and Gursey, Quark
+  statistics and octonions, Phys. Rev. D 9 (1974), 3387-3391.}
+@article{gunaydin1973quark,
+  author       = {G{\"u}naydin, Murat and G{\"u}rsey, Feza},
+  title        = {Quark structure and octonions},
+  journaltitle = {Journal of Mathematical Physics},
+  volume       = {14},
+  number       = {11},
+  pages        = {1651--1667},
+  year         = {1973},
+  doi          = {10.1063/1.1666240},
+}
