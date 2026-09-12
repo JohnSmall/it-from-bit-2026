@@ -128,3 +128,21 @@ find out. The same flag attaches to notebook M's cross-algebra `pi/4` in
 `op:up-quark` and to notebook N's pre-registered first hypothesis, both of
 which inherit the core-triple reading; the masses section's record of the
 route-closure should gain the flag rather than lose the record.
+
+## 2026-09-12 (second entry) -- the psi-orbit frame, scanned
+
+- The generation frame itself, as a source of delta_0 = 2/9. Notebook M's
+  basket re-run on the correct triple, the halvings O, psi(O), psi^2(O)
+  (script `sedenion_psi_orbit_angle_inventory_2026-09-12T1800.py`, session note
+  of the same date): twenty comparisons, twelve of them principled, zero hits
+  within 0.003. Every principled angle but one is an exact rational multiple of
+  pi to 2e-16 --- the relative phase under psi is 2pi/3 for an imaginary unit
+  of a halving and pi/3 for the real-imaginary mixture, the cross-halving
+  leakage is pi/4 --- and the exception mixes the real part into the phase, so
+  it is not a symmetry angle. This supersedes the caution entered earlier the
+  same day under "Consequence for a route logged on 2026-09-11": that entry was
+  right that notebook M had scanned the colour triple, and wrong to infer the
+  generation triple might still supply the number. The frame-orientation route
+  is closed on both triples, and closed more sharply on the generation one,
+  because a discrete symmetry leaves rational multiples of pi and 2/9 radians
+  is not one.
