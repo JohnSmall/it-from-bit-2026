@@ -39,18 +39,19 @@ reasoning. Delete when done.
 
 ## Aaronson citation
 
-- [X] Re-export `self-ref-2026-cited` to pick up `chapter = {9}` on
-      `Aaronson:dem`. Written to Zotero 2026-09-12 via the local API as
-      `tex.chapter: 9` in the item's Extra field (Zotero has no chapter field
-      for a bookSection), and confirmed in BBT's own export. The change is in
-      the library but not yet in `paper1/references.bib`.
-- [ ] Decide how chapter 9 should actually be cited. `Aaronson:dem` is a
-      Zotero bookSection, so it exports as `@incollection` with the book's
-      title in `title` and no `booktitle`; adding `chapter = {9}` leaves an
-      entry that is bibliographically odd, a chapter number attached to what
-      biblatex reads as a section title. The idiomatic alternative is to make
-      it a plain `@book` and cite `\autocite[ch.~9]{Aaronson:dem}`, which is
-      also closer to the "[Aaronson, Ch 9]" he asked for. JS's call.
+- [ ] Re-export `self-ref-2026-cited` once more: `Aaronson:dem` changed again
+      after the export of 2026-09-12. Chapter 9 is now carried as a citation
+      postnote rather than a `chapter` field, which is the biblatex idiom and
+      nearer to the "[Aaronson, Ch 9]" he asked for. The Zotero item went from
+      bookSection to book and the `tex.chapter` Extra was removed, both via the
+      local API, so it exports as a plain `@book`; the three citations in
+      `what_is_a_quantum_state.tex` now read
+      `\autocites{aaronson_lect9}[ch.~9]{Aaronson:dem}` at the two two-key
+      sites and `\autocite[ch.~9]{Aaronson:dem}` under the block quotation
+      (patch 2026-09-12T1300). `paper1/references.bib` still holds the older
+      `@incollection` with `chapter = {9}`, so a build before the re-export
+      prints the wrong shape. Wants a build afterwards: `\autocites` is used
+      here for the first time in the paper.
 - [ ] Reconcile the gloss at `paper1/what_is_a_quantum_state.tex` line 97,
       "Accept negative probability as a fact", with his own position. His email
       of 21 June 2021 states there are no negative probabilities for actual
