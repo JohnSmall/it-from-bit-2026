@@ -119,14 +119,6 @@ and are filed. Three patch scripts are ready to run, none of them applied.
       longer orphans: `paper1/wigner_ewf_positioning_splice_2026-08-30.tex`
       cites 14 keys of which 13 are missing, and these two batches supply
       exactly those. Only `yingetal2024relating` would arrive uncited.
-- [ ] Run `scripts/patch_wigner_ewf_positioning_2026-08-30.py`. It inserts the
-      splice (`sec:wf-ewf`) into `wigners_friend_in_the_hopf_picture` before
-      the chain-type coda, and refuses unless the 2026-08-27 chain-type patch
-      landed first -- it did, `sec:wf-chain-type` is in the target.
-- [ ] Run `scripts/patch_wigner_hopf_ladder_fig_2026-08-30.py`. It adds a
-      deferral paragraph and inputs `fig_wigner_hopf_ladder_2026-08-30.tex`
-      (`fig:wf-hopf-ladder`). `tikz` and `arrows.meta` are already in the
-      preamble, so its stated prerequisite is met.
 - [ ] Run `scripts/patch_zoo_sedenion_pointer_2026-08-25T0700.py`, which
       reduces the zoo subsection to the forward pointer in
       `paper1/zoo_sedenion_pointer_replacement_2026-08-25T0700.tex`. That
@@ -135,27 +127,28 @@ and are filed. Three patch scripts are ready to run, none of them applied.
 
 ## The build, and what is blocking it
 
-- [ ] Five batches to import before paper 1 compiles cleanly. Resolving the
-      input tree from `main.tex` gives 37 files citing 239 keys, of which 34
-      are missing, and every one is supplied:
+- [ ] Import seven batches, then re-export, and paper 1 should compile.
+      Resolving the input tree from `main.tex` gives 37 files citing 252 keys,
+      of which 47 are missing and every one is supplied:
       `reverse_flow_refs_2026-07-23.bib` 22,
+      `extended_wigners_friend_refs_2026-08-30.bib` 12,
       `zd_structure_refs_2026-08-31.bib` 5,
       `szangolies_sedenion_refs_2026-08-25T0633.bib` 4,
       `cp_context_core_refs_2026-09-12.bib` 2,
-      `gresnigt_cl10_ref_2026-08-25T0700.bib` 1. Nothing cited is unsupplied.
-      The thirteen Extended Wigner's Friend keys are not in that count because
-      the splice has not been applied; applying it adds them and its two
-      batches, so import all seven in one pass.
+      `gresnigt_cl10_ref_2026-08-25T0700.bib` 1,
+      `ewf_splice_supplementary_refs_2026-08-30.bib` 1. Nothing cited is
+      unsupplied, and no label is duplicated.
 - [ ] `sec:flavour-conservation` is now the only undefined label in the live
       tree. Everything else resolves.
-- [ ] Five `.tex` files in `paper1/` are not reached from `main.tex`. Four are
-      correct: `wigner_chain_type_splice_2026-08-27.tex`,
-      `wigner_ewf_positioning_splice_2026-08-30.tex` and
-      `zoo_sedenion_pointer_replacement_2026-08-25T0700.tex` are patch sources,
-      pasted in by their scripts rather than input, and
-      `fig_wigner_hopf_ladder_2026-08-30.tex` is input only once the figure
-      patch runs. Once each patch has run its source is superseded and should
-      go to `paper1/attic/` under the usual rename.
+- [ ] One `.tex` in `paper1/` is still unreached from `main.tex`:
+      `zoo_sedenion_pointer_replacement_2026-08-25T0700.tex`, the source its
+      patch will paste in. The other consumed sources were atticked on
+      2026-09-12 once their patches had run.
+- [ ] `scripts/patch_wigner_hopf_ladder_fig_2026-08-30.py` is obsolete and
+      refuses to run. The 2026-08-30 revision of the EWF splice embeds the
+      figure inline --- the tikzpicture in the target is byte-identical to the
+      standalone `fig_wigner_hopf_ladder_2026-08-30.tex`, now atticked --- so
+      there is nothing left for it to insert. Keep it for provenance.
 
 ## Batches still unimported, and what they imply
 
