@@ -81,19 +81,11 @@ reasoning. Delete when done.
       is right and the item type is wrong; it should be a bookSection with
       `bookTitle` set, which exports as `@incollection` and carries the ISBN
       legitimately. Changes how the entry renders, so it is a decision, not a
-      sweep --- the same shape as the Aaronson one.
-- [ ] Nineteen journalArticles in the library carry a stray `ISBN:` line in
-      Extra, a Mendeley-import fossil that Better BibTeX turns into an `isbn`
-      field. Only entries that get cited reach `references.bib`, so they
-      surface one at a time. Roughly: six are arXiv identifiers in the ISBN
-      slot (`Linden1998` has `9806054v229`, and `vaswaniAttentionAllYou2017`,
-      `giovannelliPhysicalInterpretationImaginary2024`,
-      `budinichPossibleRolePure2002`, `cerfComplexvaluedWignerEntropy2023`,
-      `Padillla_2024a` likewise); two are ISSNs (`Laraudogoitia2003`,
-      `Sudarshan_93`); two are nonsense digit strings (`Svozil2005`,
-      `Redei2003`); the rest are real book ISBNs on items that are probably
-      mis-typed book chapters, as `Brukner2009` is. Worth one pass through
-      Zotero rather than fixing them as they appear.
+      sweep. It is the only `@article` in `references.bib` that will still
+      carry an `isbn` after the next re-export.
+- [ ] `Tobergte2013` and `Wood2014a` share the ISBN `9788578110796`, which is
+      valid but is a known Mendeley default rather than either paper's book.
+      Neither is cited. Worth deleting both when convenient.
 
 ## Ledgers
 
