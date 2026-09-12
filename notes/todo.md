@@ -135,15 +135,19 @@ and are filed. Three patch scripts are ready to run, none of them applied.
 
 ## The build, and what is blocking it
 
-- [ ] Three batches to import before paper 1 compiles cleanly. Resolving the
-      input tree from `main.tex` gives 35 files citing 212 keys, of which 29
-      are missing: the sedenion section's seven
-      (`szangolies_sedenion_refs_2026-08-25T0633.bib`,
-      `gresnigt_cl10_ref_2026-08-25T0700.bib`,
-      `cp_context_core_refs_2026-09-12.bib`) and the reverse-flow appendix's
-      twenty-two. The thirteen Extended Wigner's Friend keys are not yet in
-      that count because the splice has not been applied; applying it adds
-      them, so import all six batches in one pass.
+- [ ] Five batches to import before paper 1 compiles cleanly. Resolving the
+      input tree from `main.tex` gives 37 files citing 239 keys, of which 34
+      are missing, and every one is supplied:
+      `reverse_flow_refs_2026-07-23.bib` 22,
+      `zd_structure_refs_2026-08-31.bib` 5,
+      `szangolies_sedenion_refs_2026-08-25T0633.bib` 4,
+      `cp_context_core_refs_2026-09-12.bib` 2,
+      `gresnigt_cl10_ref_2026-08-25T0700.bib` 1. Nothing cited is unsupplied.
+      The thirteen Extended Wigner's Friend keys are not in that count because
+      the splice has not been applied; applying it adds them and its two
+      batches, so import all seven in one pass.
+- [ ] `sec:flavour-conservation` is now the only undefined label in the live
+      tree. Everything else resolves.
 - [ ] Five `.tex` files in `paper1/` are not reached from `main.tex`. Four are
       correct: `wigner_chain_type_splice_2026-08-27.tex`,
       `wigner_ewf_positioning_splice_2026-08-30.tex` and
@@ -161,12 +165,6 @@ and are filed. Three patch scripts are ready to run, none of them applied.
       appendix block. It cites 24 keys, 22 of them from this batch, and all 22
       are still absent from `references.bib`. The `.ris` beside it converts to
       the same key set exactly.
-- [ ] `bib/zd_structure_refs_2026-08-31.bib`, 5 keys, supports the 2026-08-31
-      zero-divisor session note but is cited by no `.tex`. Importing it is
-      optional; it is not needed for the build. The three scripts of that arc
-      arrived on 2026-09-12, were run here, and all pass --- so the standing
-      "echo `sedenion_zero_divisor_scan_2026-08-31.py`" item is discharged; see
-      `sessions/echo_zero_divisor_arc_2026-09-12T1930.md`.
 - [ ] `bib/tower_extension_refs_2026-07-25.ris` is superseded: its single key
       `eakinsathaye1990` is the same work as `eakinsathaye1990automorphisms`,
       already in Zotero and cited. Do not import it.

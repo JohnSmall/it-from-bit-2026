@@ -1,0 +1,161 @@
+% EDITED 2026-09-12 scripts/patch_input_zd_appendix_2026-09-12T2000.py
+% =====================================================================
+%  APPENDIX: The zero-divisor structure of the sedenions
+%  Drafted 2026-09-01. This is the tex consumer of the refs-first batch
+%  zd_structure_refs_2026-08-31.{ris,bib}; all five keys are cited below:
+%  moreno1998zerodivisors, biss2008annihilators, cawagas2004sedenion,
+%  demarrais2000assessors, gunaydin1973quark.
+%
+%  PLACEMENT: appendix material. Either paste after \appendix in main.tex
+%  or \input this file there. Section label minted: sec:zd-structure.
+%  Labels minted (grep the tree for collisions before compiling):
+%    sec:zd-structure, eq:zd-defect, prop:zd-locus, prop:zd-defect,
+%    prop:zd-census, prop:zd-aut, prop:zd-colour.
+%  CROSS-REFS used (verified to exist per the Higgs-subsection header):
+%    sec:masses, sec:generations. No others.
+%  DEPENDENCY NOTE: eq:zd-defect intentionally restates the identity that
+%    the bridge splice mints as eq:debt-defect in sec:masses; an appendix
+%    should be self-contained. If both land, add after eq:zd-defect:
+%    "(quoted in \S\ref{sec:masses} as Eq.~\eqref{eq:debt-defect})".
+%  CONVENTION: Cayley--Dickson product (a,b)(c,d) = (ac - \bar d b, da + b \bar c);
+%    e4 the octonion doubling unit, e8 = ell the tag; orientation sign of
+%    the coassociative form sigma = +1 in this convention.
+%  VERIFICATION LEDGER (not printed): every identity below is machine-
+%    verified -- sedenion_zero_divisor_scan_2026-08-31.py (echo owed),
+%    sedenion_debt_koide_scan_2026-08-31.py and
+%    sedenion_zd_colour_scan_2026-08-31.py (double-verified),
+%    defect_calibration_scan_2026-09-01.py, accidental_u1_scan_2026-09-01.py,
+%    zd_sterile_scan_2026-09-01.py (single environment, echoes owed).
+%  PRIORITY CHECK OWED before submission: eq:zd-defect and the line-typing
+%    of Proposition prop:zd-census are elementary and may exist in the
+%    Cayley--Dickson literature (Moreno-adjacent); a pass is owed before
+%    any novelty is implied. The prose below claims none.
+%  British English; ASCII only; environments proposition/remark/proof
+%    assumed present (amsthm), as elsewhere in the paper.
+% =====================================================================
+
+\section{The zero-divisor structure of the sedenions}
+\label{sec:zd-structure}
+
+The sedenions $\mathbb{S}$, the sixteen-dimensional Cayley--Dickson double of the octonions, enter
+the main text twice: as the algebra whose three octonionic halvings carry the generations, and as
+the address of the mixing seat. Both roles rest on the structure of the zero divisors, which this
+appendix assembles. Throughout, $\mathbb{S} = \mathbb{O} \oplus \mathbb{O}\ell$ with the doubling
+unit $\ell$ the tag; every statement has additionally been verified by explicit numerical encoding,
+and the derivations are sketched in full outline.
+
+\begin{proposition}[The locus]\label{prop:zd-locus}
+The zero divisors of unit norm in $\mathbb{S}$ are exactly the elements $z = x + y\ell$ with
+$x, y \in \mathrm{Im}\,\mathbb{O}$ orthonormal. Writing $j = xy$, one has $jx = y$ and $jy = -x$,
+so $\mathrm{span}(x,y)$ is a complex line for left multiplication by $j$, and the annihilator is
+\[
+  \mathrm{Ann}(z) \;=\; \{\, u + (uj)\ell \;:\; u \perp \langle 1, x, y, j \rangle \,\},
+\]
+of real dimension exactly four, itself consisting of zero divisors whose direction is $-j$. The
+unit zero divisors form the Stiefel manifold $V_{7,2} = G_2/\mathrm{SU}(2)$, and the set of unit
+zero-divisor pairs is a $G_2$-torsor, homeomorphic to $G_2$ itself.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+That every such $z$ annihilates the displayed set is a direct computation in the doubled product;
+$jx = y$ follows from flexibility and alternativity. That nothing else is a zero divisor, and the
+identification of the pair set with $G_2$, are due to Moreno \autocite{moreno1998zerodivisors};
+the annihilator dimension is the case $n = 4$ of the bound $2^n - 4n + 4$ of Biss, Dugger and
+Isaksen \autocite{biss2008annihilators}, here attained uniformly. Transitivity of $G_2$ on
+orthonormal pairs of imaginary octonions gives $V_{7,2}$ with stabiliser $\mathrm{SU}(2)$, and the
+$\mathrm{SU}(2)$ acts simply transitively on each annihilator sphere, giving the torsor.
+\end{proof}
+
+\begin{proposition}[Norm defect and calibration]\label{prop:zd-defect}
+For all $a, b, c, d \in \mathbb{O}$,
+\begin{equation}
+  \bigl\lvert (a,b)(c,d) \bigr\rvert^{2}
+  - \bigl\lvert (a,b) \bigr\rvert^{2} \bigl\lvert (c,d) \bigr\rvert^{2}
+  \;=\; 2\,\bigl\langle a,\, [c,b,d] \bigr\rangle ,
+  \label{eq:zd-defect}
+\end{equation}
+and the right-hand side equals, up to a fixed orientation sign, four times the coassociative
+calibration four-form of the $G_2$-structure evaluated on the four components (quoted in \S\ref{sec:masses} as Eq.~\eqref{eq:debt-defect}). Consequently the
+product-norm ratio $\lvert zw \rvert / (\lvert z\rvert\,\lvert w\rvert)$ ranges over
+$[0, \sqrt{2}\,]$, both extremes attained exactly on configurations whose imaginary components span
+a coassociative four-plane with $\lvert a\rvert = \lvert b\rvert$ and
+$\lvert c\rvert = \lvert d\rvert$: the zero divisors are the calibration bound saturated in the
+annihilating orientation, and $\sqrt2$ is the same bound in the amplifying one.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Expand both squared norms in the doubled product; the diagonal terms cancel against the product of
+norms, and the two cross terms differ by one re-bracketing, which the trace identities
+$\mathrm{Re}((xy)z) = \mathrm{Re}(x(yz))$ and $\mathrm{Re}(xy) = \mathrm{Re}(yx)$ convert into the
+associator paired with $a$; real parts drop by alternation. The identification with the
+coassociative form is the classical relation between the associator and the dual of
+$\varphi(x,y,z) = \langle xy, z\rangle$, and the range statement is the Hadamard-type bound with
+its equality case, the calibration bound of calibrated geometry.
+\end{proof}
+
+\begin{proposition}[The finite census]\label{prop:zd-census}
+Index the imaginary units of $\mathbb{S}$ by the points of $\mathrm{PG}(3,2)$, so that lines are
+quaternion subalgebras and planes are the fifteen eight-dimensional unit-spanned subalgebras. Then
+eight planes are octonion algebras --- $\mathbb{O}$ and the seven doubles
+$\mathbb{H}_L \oplus \mathbb{H}_L\ell$ --- and the remaining seven,
+$Q_L = \mathbb{H}_L \oplus \mathbb{H}_L^{\perp}\ell$, are the quasi-octonion subalgebras carrying
+the zero divisors \autocite{cawagas2004sedenion,demarrais2000assessors}. Sorting the thirty-five
+lines by how many of their three planes are division algebras: the seven lines through the tag are
+$(3,0)$; the seven Fano lines inside $\mathbb{O}$ are $(2,1)$; the twenty-one mixed lines are
+$(1,2)$. In particular the only quaternion cores all three of whose extensions are division
+algebras are those containing the tag, $\langle 1, j, \ell, j\ell\rangle$, and since automorphisms
+preserve zero divisors, no automorphism of $\mathbb{S}$ permutes the triple of extensions of any
+core inside $\mathbb{O}$: a symmetric generation triple can only be built on the tag.
+\end{proposition}
+
+\begin{proposition}[The automorphism circle and its breaking]\label{prop:zd-aut}
+Let $\psi_\theta$ act as the identity on the tag plane $\langle 1, \ell\rangle$ and as right
+multiplication by $\lambda = \exp(\theta\ell)$ on its fourteen-dimensional complement. For
+imaginary $p, q$ and unit $\mu, \nu$ in the tag plane,
+$(p\mu)(q\nu) = -\langle p, q\rangle\,\bar\mu\nu + (p \times q)\,\bar\mu\bar\nu$, so the tag phase
+is conserved by the product only modulo three, and $\psi_\theta$ is an automorphism precisely when
+$\lambda^3 = 1$, with automorphism defect $2\lvert \sin(3\theta/2)\rvert$ per unit cross product
+otherwise. The surviving $\mathbb{Z}_3$, together with the tag reflection $\tau$, generates an
+$S_3$ commuting with the diagonal $G_2$; its fixed space is exactly the tag plane. Every rotated
+copy $\mathbb{O}\lambda$ is pairwise norm-multiplicative, but only the three with $\lambda^3 = 1$
+close under multiplication: the halvings. The zero-divisor locus is invariant under the whole tag
+circle, of which the algebra retains only the $\mathbb{Z}_3$; the halvings contain no zero
+divisors, and the locus is exactly the maximally cross-halving elements.
+\end{proposition}
+
+\begin{proposition}[The colour dictionary]\label{prop:zd-colour}
+Fix a unit imaginary $j$ and let $\mathrm{SU}(3) = \mathrm{Stab}_{G_2}(j)$ act on
+$\mathbb{C}^3_j = j^{\perp} \subset \mathrm{Im}\,\mathbb{O}$ in the fundamental
+\autocite{gunaydin1973quark}. Then the unit zero divisors with direction $j$ are exactly the
+tag-doubled unit colour vectors $z = x + (jx)\ell$, an $S^5$, so the locus fibres over
+$S^6 = G_2/\mathrm{SU}(3)$ with colour spheres as fibres; the tag phase on a zero divisor is the
+colour phase of $x$; the annihilator of $z$ is the perpendicular anti-colour plane at $-j$; the
+product of a colour and an anti-colour element lies in the core
+$\langle 1, j, \ell, j\ell\rangle$ with squared norm $4\lvert h(x,u)\rvert^2$, the hermitian
+overlap, the adjoint channel being absent from the algebra, while colour with colour returns the
+third colour line through the antisymmetric channel. A zero-divisor pair over $j$ is an
+orthonormal colour two-frame, so the fibre of Moreno's $G_2$ over $S^6$ is the colour group
+itself; and the generation $\mathbb{Z}_3$, restricted to the locus, coincides with the centre of
+$\mathrm{SU}(3)_j$, from which it differs off the locus by the chord $\sqrt3 = \lvert \omega - 1
+\rvert$ on the direction itself.
+\end{proposition}
+
+\begin{remark}[Invertible elements, lossy channels]
+Every unit zero divisor satisfies $z^2 = -1$: it is a two-sided invertible element whose left
+multiplication nevertheless has a four-dimensional kernel, so that $z^{-1}(zw) = 0 \neq w$ on the
+annihilator. In $\mathbb{S}$, invertibility of the element and invertibility of the channel come
+apart; the loss is a property of the composition, not of the state.
+\end{remark}
+
+\begin{remark}[What this appendix does not do]
+The norm defect of Eq.~\eqref{eq:zd-defect} against any fixed frame is invariant under the whole
+tag circle, because the form is alternating in the pair the circle rotates; the three halvings are
+isometric under the $\mathbb{Z}_3$. Nothing in this appendix therefore distinguishes the
+generations intrinsically, and no functional built from the bare defect can split their masses.
+The splitting is relational --- one selected frame reading three isometric copies --- and is the
+business of \S\ref{sec:masses}; the identification of the halvings with the generations and of the
+locus with the mixing seat is made in \S\ref{sec:generations}. Here the algebra is only permitted
+to say what it can prove: where the debt settles, where it cannot, and why the triple sits on the
+tag.
+\end{remark}
+% ================================================================ END
