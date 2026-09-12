@@ -146,10 +146,18 @@ and are filed. Three patch scripts are ready to run, none of them applied.
 - [ ] `bib/tower_extension_refs_2026-07-25.ris` is superseded: its single key
       `eakinsathaye1990` is the same work as `eakinsathaye1990automorphisms`,
       already in Zotero and cited. Do not import it.
-- [ ] `knowledge/project-docs/corrections_ledger_sedenion_triples_2026-08-27.md`
-      records an invalid route -- the doubling's S_3 attached to the wrong
-      triple, corrected by notebook T. Per CLAUDE.md that belongs in
-      `knowledge/invalid_routes.md` as a dated entry; propose one.
+- [ ] Review the 2026-09-12 entry drafted in `knowledge/invalid_routes.md`
+      (the sedenion core triple as the generations). It also supersedes part of
+      the 2026-09-11 frame-orientation entry: notebook M's angle inventory ran
+      on the core triple, which the correction makes the colour triple, so it
+      does not close the generation-side frame. Re-running the eighteen-angle
+      inventory on the psi-orbit of halvings is the cheap way to settle it.
+- [ ] Work through the nine corpus locations the corrections ledger lists as
+      still carrying the old attribution --- the zoo's triality paragraph, the
+      hardware appendix's app:hw-ckm, op:up-quark's route-closure clause,
+      notebook M's appendix entry, and four project documents. Item 2 on that
+      list is discharged by running the zoo pointer patch; the rest are JS's
+      adjudication, as the ledger says.
 
 ## Ledgers
 

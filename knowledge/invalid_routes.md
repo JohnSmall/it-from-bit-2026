@@ -81,3 +81,50 @@ is exactly that it failed. Each entry records why.
   koide_flat_direction_gram_2026-09-11T1900.py, Part D.
 - Near-miss, not a route: 108 p_e p_mu p_tau = 4 det G = 2 sqrt2 cos(3 delta)
   - 2 = 0.2228, 0.27% above 2/9, 18 sigma. Do not chase.
+
+## 2026-09-12 -- the sedenion core triple as the generations
+
+Drafted from `project-docs/corrections_ledger_sedenion_triples_2026-08-27.md`
+and notebook T (Parts B-C, 2026-08-27), which are the evidence; the ledger
+lists every corpus location still carrying the old attribution, and adjudicating
+those is separate from logging the route.
+
+- Generations as the orbit of the three octonion copies `core (+) V_i` through
+  the shared quaternionic core --- the Gillard-Gresnigt core triple --- under
+  Brown's S_3. Notebook T checks the action directly: Brown's S_3 *stabilises*
+  each of those copies, and the map that cycles them is a lifted G_2 element,
+  the colour-line three-cycle, which fixes the core pointwise. A copy the
+  doubling's new factor does not move cannot be what that factor labels. The
+  core triple is colour structure --- the corpus's own March finding, that the
+  three Fano lines through the preferred direction are three colours within one
+  generation, seen one rung up. What the doubling's S_3 does permute is the
+  three halvings `O, psi O, psi^2 O` sharing the doubling unit, and the
+  generations are the psi-orbit; the Gresnigt line itself moved from the 2019
+  core split to the psi-orbit, so the corrected mechanism is the published one.
+- The argument that generations carry identical electroweak quantum numbers
+  *because* they share a quaternionic core. It rests on the core triple and
+  dies with it. Gauge-blindness survives on a different footing: psi commutes
+  with G_2, so `Aut(S) = G_2 x S_3` is a direct product and the gauge sector is
+  untriplicated. Do not re-derive the conclusion from the shared core.
+- The supporting claim "Aut(O) = G_2 contains no S_3", which appears in the zoo
+  subsection and in the 2026-07-10 mechanism document. It is false as written:
+  G_2 contains many copies of S_3, through SO(3). The true statement is that
+  G_2 is *connected* --- it has no component group --- and that Spin(8)
+  triality is not induced by any automorphism of the octonions. Factor
+  language, not subgroup language, is what carries the argument.
+
+### Consequence for a route logged on 2026-09-11
+
+Notebook M's eighteen-comparison angle inventory was run on the core triple.
+Under the correction above that is the colour triple, not the generation one,
+so the 2026-09-11 entry here --- "Frame orientation in the bare sedenion
+geometry ... it is the same number and the same geometry, so it closes the
+route for the Koide phase too" --- claims more than the computation supports.
+The generation-side frame is the psi-orbit of halvings, and the bare angles of
+*that* triple have not been scanned. Superseding, not deleting, the earlier
+entry: what M closes is the colour-triple frame; whether the psi-orbit supplies
+2/9 is open, and re-running the inventory on the halvings is the cheap way to
+find out. The same flag attaches to notebook M's cross-algebra `pi/4` in
+`op:up-quark` and to notebook N's pre-registered first hypothesis, both of
+which inherit the core-triple reading; the masses section's record of the
+route-closure should gain the flag rather than lose the record.
