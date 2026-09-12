@@ -39,9 +39,18 @@ reasoning. Delete when done.
 
 ## Aaronson citation
 
-- [ ] Add `chapter = {9}` to `Aaronson:dem` in Zotero and re-export. He asked
-      specifically for "[Aaronson, Ch 9]"; the entry currently has no chapter,
-      only a `lec9.html` URL.
+- [ ] Re-export `self-ref-2026-cited` to pick up `chapter = {9}` on
+      `Aaronson:dem`. Written to Zotero 2026-09-12 via the local API as
+      `tex.chapter: 9` in the item's Extra field (Zotero has no chapter field
+      for a bookSection), and confirmed in BBT's own export. The change is in
+      the library but not yet in `paper1/references.bib`.
+- [ ] Decide how chapter 9 should actually be cited. `Aaronson:dem` is a
+      Zotero bookSection, so it exports as `@incollection` with the book's
+      title in `title` and no `booktitle`; adding `chapter = {9}` leaves an
+      entry that is bibliographically odd, a chapter number attached to what
+      biblatex reads as a section title. The idiomatic alternative is to make
+      it a plain `@book` and cite `\autocite[ch.~9]{Aaronson:dem}`, which is
+      also closer to the "[Aaronson, Ch 9]" he asked for. JS's call.
 - [ ] Reconcile the gloss at `paper1/what_is_a_quantum_state.tex` line 97,
       "Accept negative probability as a fact", with his own position. His email
       of 21 June 2021 states there are no negative probabilities for actual

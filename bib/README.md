@@ -33,6 +33,11 @@ names. Give a `doi` only when it is deterministic, and record provenance ---
 where the metadata was checked, and against what --- in a `note` field, which
 is where a VERIFY-CITE belongs.
 
+A `note` does not round-trip. Zotero turns it into a child note on the item
+rather than a field, so it stays in the library and in the batch file here but
+never reaches the exported `.bib`. That is the right place for it; just do not
+expect to see it in `paper1/references.bib`.
+
 Brace any word whose capitals must survive. BBT sentence-cases titles on
 import (`importSentenceCase` defaults to `on+guess`), so
 `title = {Octonions, {Jordan} Algebras and Exceptional Groups}` keeps the name
@@ -48,3 +53,24 @@ generated one instead; pin the intended key by hand before exporting.
 
 Export the collection afterwards, and the paper's `.aux` cite set and the
 exported keys should agree.
+
+## Checking an entry without exporting
+
+Better BibTeX answers on Zotero's local HTTP server, so a single entry can be
+seen exactly as it will be exported:
+
+    curl -s "http://127.0.0.1:23119/better-bibtex/export/item\
+    ?citationKeys=<key>,<key>&translator=biblatex" \
+      -H "Zotero-Server-ID: $(cat <zotsid>)"
+
+No API key is needed: reads are open. This is the quickest way to confirm that
+an import pinned the key and that brace protection survived. There is an
+equivalent collection endpoint but its path syntax is not obvious, so a full
+re-export is still a right-click in the GUI.
+
+Writes do need a key, and the local API takes them: `POST` to
+`/api/users/0/items`, or `PATCH` a single item with
+`If-Unmodified-Since-Version` set to the version last read. The key is minted
+by Zotero, is not a zotero.org key, and is not stored in `prefs.js` or
+`zotero.sqlite`, so it changes when Zotero restarts and has to be fetched again
+from the settings panel where the local API is enabled.
