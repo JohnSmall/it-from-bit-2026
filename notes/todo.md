@@ -133,12 +133,34 @@ and are filed. Three patch scripts are ready to run, none of them applied.
       replacement keeps `\label{sec:sedenion-announcement}`, so existing
       references to it stay valid.
 
+## The build, and what is blocking it
+
+- [ ] Three batches to import before paper 1 compiles cleanly. Resolving the
+      input tree from `main.tex` gives 35 files citing 212 keys, of which 29
+      are missing: the sedenion section's seven
+      (`szangolies_sedenion_refs_2026-08-25T0633.bib`,
+      `gresnigt_cl10_ref_2026-08-25T0700.bib`,
+      `cp_context_core_refs_2026-09-12.bib`) and the reverse-flow appendix's
+      twenty-two. The thirteen Extended Wigner's Friend keys are not yet in
+      that count because the splice has not been applied; applying it adds
+      them, so import all six batches in one pass.
+- [ ] Five `.tex` files in `paper1/` are not reached from `main.tex`. Four are
+      correct: `wigner_chain_type_splice_2026-08-27.tex`,
+      `wigner_ewf_positioning_splice_2026-08-30.tex` and
+      `zoo_sedenion_pointer_replacement_2026-08-25T0700.tex` are patch sources,
+      pasted in by their scripts rather than input, and
+      `fig_wigner_hopf_ladder_2026-08-30.tex` is input only once the figure
+      patch runs. Once each patch has run its source is superseded and should
+      go to `paper1/attic/` under the usual rename.
+
 ## Batches still unimported, and what they imply
 
-- [ ] `bib/reverse_flow_refs_2026-07-23.ris`, 22 keys, none cited and none in
-      Zotero. Points at a "reverse flow" document of 2026-07-23 that is still
-      not in the repository -- the same signature that located the Wigner
-      splices.
+- [ ] Import `bib/reverse_flow_refs_2026-07-23.bib` (22 keys) and re-export.
+      No longer an orphan: `appendix_reverse_flow_2026-07-23.tex` arrived on
+      2026-09-12, is filed in `paper1/appendices/` and is now input last in the
+      appendix block. It cites 24 keys, 22 of them from this batch, and all 22
+      are still absent from `references.bib`. The `.ris` beside it converts to
+      the same key set exactly.
 - [ ] `bib/zd_structure_refs_2026-08-31.ris`, 5 keys on sedenion zero-divisor
       structure, none cited. Same date as
       `sedenion_zero_divisor_scan_2026-08-31.py`, which the carried-over list
