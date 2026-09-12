@@ -127,11 +127,23 @@ and are filed. Three patch scripts are ready to run, none of them applied.
 
 ## The build, and what is blocking it
 
-- [ ] **Re-export `self-ref-2026-cited`.** All 46 keys the live tree cites and
-      the current export lacks are now in Zotero and resolving under the
-      intended citation keys, so a re-export should close every gap at once.
-      Imported via the API on 2026-09-12: 41 new items created, and seven
-      duplicates avoided --- see `sessions/zotero_batch_import_2026-09-12T2100.md`.
+- [ ] **Re-export `self-ref-2026-cited` once more.** The 2026-09-12 export
+      closed every citation gap --- 252 entries, nothing cited missing, no
+      duplicate keys --- but three titles in it carry literal `$S_3$`, which
+      biblatex would set as visible dollar signs rather than a subscript. The
+      three Zotero items (`gresnigt2026three`,
+      `gresnigtgourlayvarma2023three`, `gourlaygresnigt2024algebraic`) were
+      corrected the same day to use Zotero's `<sub>` markup, which BBT exports
+      as `\textsubscript`; the fix is in the library and not yet in the file.
+- [ ] Four newly imported entries carry no DOI, eprint, URL or ISBN:
+      `hickeygour2018imaginarity`, `klyachko2006marginal`,
+      `thooft1980naturalness`, `vidal2000monotones`. Not errors --- the batches
+      supplied no identifier --- but each is worth one lookup before
+      submission.
+- [ ] `verstraete2002four` carries `pages = {521121--521125}`, a Mendeley
+      mangling of the article number 052112. It was already in the library and
+      is now cited by the reverse-flow appendix, so the wrong range would
+      print. One field to correct in Zotero.
 - [ ] `sec:flavour-conservation` is now the only undefined label in the live
       tree. Everything else resolves.
 - [ ] One `.tex` in `paper1/` is still unreached from `main.tex`:
