@@ -127,17 +127,11 @@ and are filed. Three patch scripts are ready to run, none of them applied.
 
 ## The build, and what is blocking it
 
-- [ ] Import seven batches, then re-export, and paper 1 should compile.
-      Resolving the input tree from `main.tex` gives 37 files citing 252 keys,
-      of which 47 are missing and every one is supplied:
-      `reverse_flow_refs_2026-07-23.bib` 22,
-      `extended_wigners_friend_refs_2026-08-30.bib` 12,
-      `zd_structure_refs_2026-08-31.bib` 5,
-      `szangolies_sedenion_refs_2026-08-25T0633.bib` 4,
-      `cp_context_core_refs_2026-09-12.bib` 2,
-      `gresnigt_cl10_ref_2026-08-25T0700.bib` 1,
-      `ewf_splice_supplementary_refs_2026-08-30.bib` 1. Nothing cited is
-      unsupplied, and no label is duplicated.
+- [ ] **Re-export `self-ref-2026-cited`.** All 46 keys the live tree cites and
+      the current export lacks are now in Zotero and resolving under the
+      intended citation keys, so a re-export should close every gap at once.
+      Imported via the API on 2026-09-12: 41 new items created, and seven
+      duplicates avoided --- see `sessions/zotero_batch_import_2026-09-12T2100.md`.
 - [ ] `sec:flavour-conservation` is now the only undefined label in the live
       tree. Everything else resolves.
 - [ ] One `.tex` in `paper1/` is still unreached from `main.tex`:
