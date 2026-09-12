@@ -87,6 +87,55 @@ reasoning. Delete when done.
       valid but is a known Mendeley default rather than either paper's book.
       Neither is cited. Worth deleting both when convenient.
 
+## The sedenion section, and what it still needs
+
+- [ ] Import three batches into Zotero and re-export. They carry exactly the
+      seven keys `sedenions_generations_section_2026-08-27.tex` cites and the
+      library lacks: `bib/szangolies_sedenion_refs_2026-08-25T0633.bib`
+      (pinillaluthra2009hopf, gresnigtgourlayvarma2023three,
+      gourlaygresnigt2024algebraic, tangtang2023unified),
+      `bib/gresnigt_cl10_ref_2026-08-25T0700.bib` (gresnigt2026three) and
+      `bib/cp_context_core_refs_2026-09-12.bib` (kobayashimaskawa1973,
+      jarlskog1985). Until then a build reports seven undefined citations.
+- [ ] `sec:flavour-conservation` is referenced by the sedenion section and
+      defined nowhere. The flavour-conservation splice is recorded in the
+      project memory as done, so the label was probably never set; find the
+      subsection and label it.
+- [ ] Reduce `sec:sedenion-announcement` in the zoo to a forward pointer. The
+      sedenion section's preamble says it absorbs that subsection's content and
+      that a draft replacement was supplied separately;
+      `scripts/patch_zoo_sedenion_pointer_2026-08-25T0700.py` looks like it.
+      The same preamble warns explicitly NOT to run the 2026-08-25T0633
+      positioning patch, which is not among the files.
+
+## Missing from the repository, inferred from orphan references
+
+Fourteen references were prepared for work that is not here. Each batch is
+filed in `bib/` but none of its keys is cited by any `.tex` in the repository.
+
+- [ ] **The Extended Wigner's Friend splice.** `bib/extended_wigners_friend_refs_2026-08-30.bib`
+      (13 keys) and `bib/ewf_splice_supplementary_refs_2026-08-30.bib` (1 key)
+      are uncited. `scripts/patch_wigner_ewf_positioning_2026-08-30.py` names
+      the file it needs: `wigner_ewf_positioning_splice_2026-08-30.tex`, which
+      is in neither the repository nor `~/Downloads`. Its label `sec:wf-ewf`
+      does not appear in the target, so the splice was never applied. The
+      companion figure `fig_wigner_hopf_ladder_2026-08-30.tex`, needed by
+      `patch_wigner_hopf_ladder_fig_2026-08-30.py`, is missing too. Both want
+      downloading from Claude web. (`tikz` is already in the preamble, so that
+      prerequisite is met, and the 2026-08-27 chain-type splice *was* applied
+      -- `sec:wf-chain-type` is in the target five times -- so only its source
+      file is missing, for provenance rather than for the build.)
+- [ ] `bib/reverse_flow_refs_2026-07-23.ris`, 22 keys, none cited and none in
+      Zotero. Points at a "reverse flow" document of 2026-07-23 that is not in
+      the repository.
+- [ ] `bib/zd_structure_refs_2026-08-31.ris`, 5 keys on sedenion zero-divisor
+      structure, none cited. Same date as
+      `sedenion_zero_divisor_scan_2026-08-31.py`, which the carried-over list
+      already records as unechoed.
+- [ ] `bib/tower_extension_refs_2026-07-25.ris` is superseded: its single key
+      `eakinsathaye1990` is the same work as `eakinsathaye1990automorphisms`,
+      already in Zotero and cited. Do not import it.
+
 ## Ledgers
 
 - [ ] Confirm the four status labels marked `[JUDGED]` in

@@ -1,0 +1,66 @@
+TY  - JOUR
+ID  - moreno1998zerodivisors
+AU  - Moreno, Guillermo
+TI  - The zero divisors of the Cayley–Dickson algebras over the real numbers
+JO  - Boletín de la Sociedad Matemática Mexicana (3)
+VL  - 4
+SP  - 13
+EP  - 28
+PY  - 1998
+UR  - https://arxiv.org/abs/q-alg/9710013
+N1  - Verified 2026-08-31 (BDI reference lists; Zbl 1006.17005). Semantic Scholar dates it 1997 (online-first variant); cite as 1998. Source for: ZD pair set and G2; annihilator dimensions are multiples of 4. Quote the precise theorem statement from the paper itself, not from de Marrais's "homomorphic" paraphrase. No DOI (journal predates assignment). Possible duplicate: already active in framework references — dedupe on import.
+ER  - 
+
+TY  - JOUR
+ID  - biss2008annihilators
+AU  - Biss, Daniel K.
+AU  - Dugger, Daniel
+AU  - Isaksen, Daniel C.
+TI  - Large annihilators in Cayley–Dickson algebras
+JO  - Communications in Algebra
+VL  - 36
+IS  - 2
+SP  - 632
+EP  - 664
+PY  - 2008
+UR  - https://arxiv.org/abs/math/0511691
+N1  - Verified 2026-08-31 (nLab, Semantic Scholar, and citing papers concur: 36(2), 632–664, 2008; arXiv math/0511691). Source for: max annihilator dimension 2^n − 4n + 4, giving exactly 4 in the sedenions. Taylor & Francis DOI not captured in this pass — let Mendeley resolve or add on import. Possible duplicate: already active in framework references — dedupe on import. Sequel if wanted: Biss, Christensen, Dugger, Isaksen, Large annihilators in Cayley–Dickson algebras II, Bol. Soc. Mat. Mexicana (3) 13(2) (2007), 269–292, arXiv:math/0702075.
+ER  - 
+
+TY  - JOUR
+ID  - cawagas2004sedenion
+AU  - Cawagas, Raoul E.
+TI  - On the structure and zero divisors of the Cayley–Dickson sedenion algebra
+JO  - Discussiones Mathematicae – General Algebra and Applications
+VL  - 24
+IS  - 2
+SP  - 251
+EP  - 265
+PY  - 2004
+DO  - 10.7151/dmgaa.1088
+N1  - Verified 2026-08-31 (EuDML, DML-PL). DOI read from the journal's DML record; confirm it resolves on import. Source for: the quasi-octonion subalgebras carrying the zero divisors; the 8 + 7 census of 8-dimensional unit-spanned subalgebras. Possible duplicate: already active in framework references (previously VERIFY-CITE) — dedupe on import and clear the flag.
+ER  - 
+
+TY  - UNPB
+ID  - demarrais2000assessors
+AU  - de Marrais, Robert P. C.
+TI  - The 42 Assessors and the Box-Kites they fly: diagonal axis-pair systems of zero-divisors in the sedenions' 16 dimensions
+PY  - 2000
+UR  - https://arxiv.org/abs/math/0011260
+N1  - Verified 2026-08-31 (arXiv:math/0011260, math.GM; preprint, no journal publication found). Source for: 42 assessors partitioned by 7 box-kites; the PSL(2,7) count of 168 primitive unit zero divisors. Caution: paraphrases Moreno's G2 result as "homomorphic" — take the precise statement from Moreno. Possible duplicate: already active in framework references (previously VERIFY-CITE) — dedupe on import and clear the flag.
+ER  - 
+
+TY  - JOUR
+ID  - gunaydin1973quark
+AU  - Günaydin, Murat
+AU  - Gürsey, Feza
+TI  - Quark structure and octonions
+JO  - Journal of Mathematical Physics
+VL  - 14
+IS  - 11
+SP  - 1651
+EP  - 1667
+PY  - 1973
+DO  - 10.1063/1.1666240
+N1  - Verified 2026-08-31 (AIP publisher record). Source for: SU(3) = Stab_G2(j) and the C^3 colour decomposition of Im O; triality formalism. HIGH duplicate risk: Günaydin entries likely already in the library — dedupe before import. Companion if wanted later: Günaydin and Gürsey, Quark statistics and octonions, Phys. Rev. D 9 (1974), 3387–3391.
+ER  - 

@@ -1,0 +1,188 @@
+TY  - JOUR
+AU  - Brukner, Časlav
+TI  - A no-go theorem for observer-independent facts
+JO  - Entropy
+VL  - 20
+IS  - 5
+SP  - 350
+PY  - 2018
+DO  - 10.3390/e20050350
+N1  - SEARCH-VERIFIED 2026-08-30 (cited in Quantum 9, 1851 reference list). Distinct from the in-library Brukner2021 (qubits are not observers). The first of the six EWF arguments in the Schmid-Ying-Leifer taxonomy.
+ID  - brukner2018nogo
+ER  - 
+
+TY  - JOUR
+AU  - Bong, Kok-Wei
+AU  - Utreras-Alarcón, Aníbal
+AU  - Ghafari, Farzad
+AU  - Liang, Yeong-Cherng
+AU  - Tischler, Nora
+AU  - Cavalcanti, Eric G.
+AU  - Pryde, Geoff J.
+AU  - Wiseman, Howard M.
+TI  - A strong no-go theorem on the Wigner's friend paradox
+JO  - Nature Physics
+VL  - 16
+SP  - 1199
+EP  - 1205
+PY  - 2020
+DO  - 10.1038/s41567-020-0990-x
+N1  - SEARCH-VERIFIED (vol/page; VERIFY doi). The Local Friendliness theorem: Absoluteness of Observed Events + Local Agency, strictly weaker than Bell's assumptions; includes the photonic proof-of-principle experiment.
+ID  - bong2020strong
+ER  - 
+
+TY  - JOUR
+AU  - Proietti, Massimiliano
+AU  - Pickston, Alexander
+AU  - Graffitti, Francesco
+AU  - Barrow, Peter
+AU  - Kundys, Dmytro
+AU  - Branciard, Cyril
+AU  - Ringbauer, Martin
+AU  - Fedrizzi, Alessandro
+TI  - Experimental test of local observer independence
+JO  - Science Advances
+VL  - 5
+IS  - 9
+SP  - eaaw9832
+PY  - 2019
+DO  - 10.1126/sciadv.aaw9832
+N1  - VERIFY-CITE (from memory; confirm author list and doi). Photonic test of the Brukner-type inequality.
+ID  - proietti2019experimental
+ER  - 
+
+TY  - JOUR
+AU  - Cavalcanti, Eric G.
+AU  - Wiseman, Howard M.
+TI  - Implications of Local Friendliness violation for quantum causality
+JO  - Entropy
+VL  - 23
+IS  - 8
+SP  - 925
+PY  - 2021
+DO  - 10.3390/e23080925
+N1  - SEARCH-VERIFIED 2026-08-30. Causal-principles reformulation of LF; strictly stronger bounds on quantum reality than Bell's theorem.
+ID  - cavalcantiwiseman2021implications
+ER  - 
+
+TY  - JOUR
+AU  - Wiseman, Howard M.
+AU  - Cavalcanti, Eric G.
+AU  - Rieffel, Eleanor G.
+TI  - A "thoughtful" Local Friendliness no-go theorem: a prospective experiment with new assumptions to suit
+JO  - Quantum
+VL  - 7
+SP  - 1112
+PY  - 2023
+DO  - 10.22331/q-2023-09-14-1112
+N1  - SEARCH-VERIFIED 2026-08-30. Thoughts as sufficient for observerhood; four assumptions, three thought-related; target experiment = human-level AI running reversibly on a universal quantum computer.
+ID  - wisemancavalcantirieffel2023thoughtful
+ER  - 
+
+TY  - GEN
+AU  - Schmid, David
+AU  - Yīng, Yìlè
+AU  - Leifer, Matthew S.
+TI  - A review and analysis of six extended Wigner's friend arguments
+PY  - 2023
+UR  - https://arxiv.org/abs/2308.16220
+N1  - SEARCH-VERIFIED 2026-08-30 (arXiv). VERIFY whether journal-published by commit date. The field's organising taxonomy: Brukner, Local Friendliness, Pusey-Masanes, Frauchiger-Renner, Gao, Guérin et al.; all six hinge on correlations inaccessible to any observer even in principle; preferred reading: outcomes perspectival.
+ID  - schmidyingleifer2023sixewf
+ER  - 
+
+TY  - JOUR
+AU  - Zeng, William
+AU  - Russo, Vincent
+TI  - Towards violations of Local Friendliness with quantum computers
+JO  - Quantum
+VL  - 9
+SP  - 1851
+PY  - 2025
+DO  - 10.22331/q-2025-09-05-1851
+N1  - SEARCH-VERIFIED 2026-08-30 (journal, vol, page, arXiv:2409.15302). VERIFY-AUTHORS: full author list incomplete here -- take from the arXiv page before import (bibcode 2025Quant...9.1851Z implies first author Z; Russo is the arXiv submitter; further co-authors exist). The branch-factor programme: EWFS as circuits on IBM/Quantinuum/Braket hardware; branch factor 16 achieved; GHZ-state friends to scale; branch factor proposed as the measure of observerness. The experimental face of the framework's redundancy grading R.
+ID  - russozeng2025branch
+ER  - 
+
+TY  - JOUR
+AU  - Haddara, Marwan
+AU  - Cavalcanti, Eric G.
+TI  - A possibilistic no-go theorem on the Wigner's friend paradox
+JO  - New Journal of Physics
+VL  - 25
+SP  - 093028
+PY  - 2023
+DO  - 10.1088/1367-2630/aceea3
+N1  - SEARCH-VERIFIED (journal + article doi stub aceea3); VERIFY volume/article number. Possibilistic LF, strictly weaker than LF, which is strictly weaker than Bell.
+ID  - haddaracavalcanti2023possibilistic
+ER  - 
+
+TY  - JOUR
+AU  - Moreno, George
+AU  - Nery, Ranieri
+AU  - Duarte, Cristhiano
+AU  - Chaves, Rafael
+TI  - Events in quantum mechanics are maximally non-absolute
+JO  - Quantum
+VL  - 6
+SP  - 785
+PY  - 2022
+DO  - 10.22331/q-2022-08-24-785
+N1  - SEARCH-VERIFIED (vol/page from WCR reference list); VERIFY doi date-stub.
+ID  - morenoetal2022maximally
+ER  - 
+
+TY  - JOUR
+AU  - Yīng, Yìlè
+AU  - Ansanelli, Marina Maciel
+AU  - Di Biagio, Andrea
+AU  - Wolfe, Elie
+AU  - Schmid, David
+AU  - Cavalcanti, Eric Gama
+TI  - Relating Wigner's friend scenarios to nonclassical causal compatibility, monogamy relations, and fine tuning
+JO  - Quantum
+VL  - 8
+SP  - 1485
+PY  - 2024
+DO  - 10.22331/q-2024-09-26-1485
+N1  - SEARCH-VERIFIED (vol/page); VERIFY doi date-stub. The monogamy connection is a to-read against the paper's budget/monogamy aside.
+ID  - yingetal2024relating
+ER  - 
+
+TY  - JOUR
+AU  - Okon, Elias
+TI  - Reassessing the strength of a class of Wigner's friend no-go theorems
+JO  - Entropy
+VL  - 27
+IS  - 6
+SP  - 563
+PY  - 2025
+DO  - 10.3390/e27060563
+N1  - SEARCH-VERIFIED 2026-08-30. The dissent: argues Brukner's theorem and LF fail to impose significant constraints. Cite so the paper positions rather than recruits.
+ID  - okon2025reassessing
+ER  - 
+
+TY  - JOUR
+AU  - Adlam, Emily
+TI  - What does '(non)-absoluteness of observed events' mean?
+JO  - Foundations of Physics
+VL  - 54
+SP  - 13
+PY  - 2024
+DO  - 10.1007/s10701-023-00747-1
+N1  - SEARCH-VERIFIED (vol/page from PRR 2026 reference list); VERIFY doi. Conceptual dissection of AOE denial -- useful when stating the framework's graded-AOE position precisely.
+ID  - adlam2024nonabsoluteness
+ER  - 
+
+TY  - JOUR
+AU  - Lawrence, Jay
+AU  - Markiewicz, Marcin
+AU  - Żukowski, Marek
+TI  - Relative facts of relational quantum mechanics are incompatible with quantum mechanics
+JO  - Quantum
+VL  - 7
+SP  - 1015
+PY  - 2023
+DO  - 10.22331/q-2023-05-23-1015
+N1  - VERIFY-CITE (from memory; confirm title wording, vol/page, doi). The relative-facts attack; replies by Cavalcanti-Di Biagio-Rovelli and comment by Brukner exist (locate at refs-first if cited). The framework's answer is the no-disagreement-on-checkables theorem.
+ID  - lawrencemarkiewiczzukowski2023relative
+ER  - 
