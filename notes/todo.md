@@ -127,7 +127,15 @@ and are filed. Three patch scripts are ready to run, none of them applied.
 
 ## The build, and what is blocking it
 
-- [ ] **Re-export `self-ref-2026-cited` once more**, for `szangolies_2020`.
+- [ ] **Re-export `self-ref-2026-cited` once more**, for `szangolies_2020`
+      again. The raw passthrough worked, but biber rewrote the `\rangle` in it
+      into the Unicode character, which inputenc maps to the text-mode
+      `\textrangle` --- invalid inside the `$...$` it sits in. Four LaTeX
+      warnings, and the bracket printed as `>`. The Zotero item now uses
+      `\ket{}` from `braket`, which the paper already loads and biber does not
+      rewrite; verified through BBT's export endpoint. This is the only defect
+      in an otherwise clean 189-page build.
+- [ ] *(superseded, kept for the record)* The earlier note on this entry:
       Its title is genuinely mathematical --- "This Sentence Is
       $\frac{1}{\sqrt{2}}(|True\rangle + |False\rangle)$" --- and Zotero
       held it as literal text, so the export escaped every backslash and it
