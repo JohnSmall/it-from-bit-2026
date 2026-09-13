@@ -19,10 +19,15 @@ only because references pointed into thin air.
 
 To separate the two, every label below was searched for across
 `knowledge/project-docs/`, `knowledge/sessions/`, `paper1/attic/`, `notes/` and
-`~/Downloads` (2,235 files). **Four were found referenced outside the live tree,
-and all four are fossils rather than missing content** --- they are marked. The
-remaining 59 have no referring text anywhere on this machine, so if any of them
-is waiting on a splice, that splice is still only in Claude web.
+`~/Downloads`. **Five were found referenced outside the live tree.** Four are
+fossils; the fifth, `fig:wf-hopf-ladder`, is the real thing this list was meant
+to catch --- see below. They are marked. The remaining 58 have no referring
+text anywhere on this machine, so if any of them is waiting on a splice, that
+splice is still only in Claude web.
+
+Note on method: a first pass over `.tex`, `.md`, `.txt` and `.superseded` files
+found only the four fossils. Adding `.py` --- the patch scripts, which carry
+the prose they insert --- found the fifth. Any future sweep should include them.
 
 ## Paper 1
 
@@ -124,10 +129,26 @@ is waiting on a splice, that splice is still only in Claude web.
 
 ## Worth a decision, not just a tick
 
-- `fig:wf-hopf-ladder` and `fig:myimage` are the paper's only two figures and
-  neither is referenced from the prose. A figure the text never points at is
-  easy to miss; `fig:myimage` also looks like a placeholder name that was never
-  changed.
+- **`fig:wf-hopf-ladder` is a genuine gap with recoverable text.** The figure
+  reached the paper inside the 2026-08-30 Extended Wigner's Friend splice,
+  which carries the tikzpicture, its caption and the label --- but not the
+  paragraph that introduces it. That paragraph is in
+  `scripts/patch_wigner_hopf_ladder_fig_2026-08-30.py`, the patch that was
+  correctly refused as obsolete because the label was already present:
+
+      The fibrations themselves are not re-derived here: Szangolies's
+      presentation is the careful, self-contained introduction
+      \autocite{szangolies2025standardmodel}, and we defer to it. What the
+      framework adds is the mapping --- ... --- and Figure~\ref{fig:wf-hopf-ladder}
+      lays it out at a glance: each observer in the chain holds a chart one rung
+      further up the Cayley--Dickson ladder; ...
+
+  The patch's anchor phrase, "what bounds the information a single such link can
+  carry.", still occurs exactly once in the target, so the paragraph can be
+  placed where it was meant to go. The figure currently floats with nothing in
+  the body pointing at it; no `Figure~\ref` appears anywhere in that file.
+- `fig:myimage` is the paper's other figure, also unreferenced, and the name
+  looks like a placeholder that was never changed.
 - The five `prop:zd-*` labels are every proposition in the zero-divisor
   appendix. Its central identity `eq:zd-defect` is cross-referenced to
   `eq:debt-defect` in the masses section, so the propositions around it being

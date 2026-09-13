@@ -205,10 +205,15 @@ and are filed. Three patch scripts are ready to run, none of them applied.
       sessions, attic, notes and `~/Downloads` (2,235 files); four turned up and
       all four are fossils, so the other 59 have no referring text anywhere on
       this machine.
-- [ ] Within that list, four are editorial decisions rather than tidying: both
-      figures (`fig:wf-hopf-ladder`, `fig:myimage`) are unreferenced from the
-      prose; every proposition in the zero-divisor appendix (`prop:zd-*`) is
-      unreferenced although its central equation is cross-referenced; and
+- [ ] Restore the paragraph that introduces Figure `fig:wf-hopf-ladder`. The
+      2026-08-30 EWF splice brought the figure but not its introduction; the
+      prose survives in `scripts/patch_wigner_hopf_ladder_fig_2026-08-30.py`,
+      whose anchor phrase still occurs exactly once in the target. As it stands
+      the figure floats with nothing in the body pointing at it.
+- [ ] Within that list, three more are editorial decisions rather than tidying:
+      `fig:myimage` is unreferenced and looks like a placeholder name; every
+      proposition in the zero-divisor appendix (`prop:zd-*`) is unreferenced
+      although its central equation is cross-referenced; and
       `op:generation-mechanism` was minted against an instruction that left the
       choice open, so that decision is half-made.
 - [ ] `~/Downloads/latex_stuff/` holds 143 unreviewed files -- publisher
