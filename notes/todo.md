@@ -194,6 +194,28 @@ and are filed. Three patch scripts are ready to run, none of them applied.
       list is discharged by running the zoo pointer patch; the rest are JS's
       adjudication, as the ledger says.
 
+## Unreferenced labels
+
+- [ ] Work through `notes/unreferenced_labels_2026-09-13.md`: 63 `\label{}`s in
+      the live tree that no `\ref` points at, 56 in paper 1 and 7 in paper 2.
+      None breaks the build. Each is either a fossil whose referring text was
+      rewritten or atticked, or a sign that the referring splice was never
+      brought over from Claude web --- the signature that found the Wigner
+      splices on 2026-09-12. All 63 were searched for across project-docs,
+      sessions, attic, notes and `~/Downloads` (2,235 files); four turned up and
+      all four are fossils, so the other 59 have no referring text anywhere on
+      this machine.
+- [ ] Within that list, four are editorial decisions rather than tidying: both
+      figures (`fig:wf-hopf-ladder`, `fig:myimage`) are unreferenced from the
+      prose; every proposition in the zero-divisor appendix (`prop:zd-*`) is
+      unreferenced although its central equation is cross-referenced; and
+      `op:generation-mechanism` was minted against an instruction that left the
+      choice open, so that decision is half-made.
+- [ ] `~/Downloads/latex_stuff/` holds 143 unreviewed files -- publisher
+      citation downloads named by DOI, and July copies of section files that are
+      older and smaller than the live ones. History rather than missing work,
+      but never looked at.
+
 ## Ledgers
 
 - [ ] Confirm the four status labels marked `[JUDGED]` in
