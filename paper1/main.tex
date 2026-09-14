@@ -1,3 +1,7 @@
+% EDITED 2026-09-13 scripts/patch_headline_generations_chirality_short_2026-09-13T0705.py
+% EDITED 2026-09-12 scripts/patch_spacetime_headline_short_2026-09-12T1415.py
+% EDITED 2026-09-12 scripts/patch_spacetime_bloch_headline_2026-09-12T1400.py
+% EDITED 2026-09-12 scripts/patch_sedenion_fossils_headline_2026-09-12T1345.py
 % EDITED 2026-09-12 scripts/patch_input_zd_appendix_2026-09-12T2000.py
 % EDITED 2026-09-12 scripts/patch_input_reverse_flow_appendix_2026-09-12T1900.py
 % EDITED 2026-09-12 scripts/patch_input_sedenions_section_2026-09-12T1610.py
@@ -96,9 +100,11 @@ G\"odel was so annoyed he threw him out (ref). Nevertheless, Wheeler developed h
 phrase "It from bit,and bit from it". Over the years many people have approached the notion of
 self-reference being in some ways fundamental. This is not the place for a full literature
 review, Karl Svovil's book \enquote{Physical Acausality} does a very complete job
-\autocite{svozil_k_2018}. More recently, and highly relevant are Szangolies papers
+\autocite{svozil_k_2018}. More recently, and highly relevant are Szangolies' papers
 \autocite{szangolies_2020, szangolies_j_2018, szangolies2025standardmodel, szangolies_j_2021}
-and my own earlier attempt at grappling with these issues in \autocite{small_2006}. There are
+who has done most commendable work tying together ideas about self-reference, division algebras
+and entanglement. Then there is my own earlier attempt at grappling with these issues 
+in \autocite{small_2006}. There are
 many more references I could have included to support the idea that non-computability and
 quantum states are deeply linked, but we need just enough to delve into the idea, and no more.
 
@@ -110,7 +116,7 @@ tantalising as to be worthy of deeper investigation.
 
 Following Wheeler, we take self-reference, an hence non-Turing computability, to be fundamental,
 but we only ever experience causal, computable sequences. Acausality forced to appear as strict
-causality. We use a simple principle, underlying self-reference, or acausality forced to appear
+causality. We invoke a simple principle, underlying self-reference, or acausality forced to appear
 in a non-self-referent, strictly causal framework. Self-reference together with the negation of
 self-reference. Surprisingly, this simple principle enables us to spot connections which others
 have guessed at yet not followed up. We find that some of the free parameters of the Standard
@@ -121,8 +127,8 @@ to appear as a strictly non-self-referential causal sequence.
 Most of the steps taken in this chain of reasoning have already been made by others, in many
 cases a very long time ago. The novelty is putting the pieces of jigsaw together to find a
 coherent picture. In many areas there are missing pieces, also known as open problems, which I
-have listed. Because the picture emerging around the gaps fits present experimental evidence, I
-have chosen to take scary leaps of faith and assume the gaps can be filled in at some point.
+have listed. Because the picture emerging around the gaps fits present experimental evidence, in
+some cases I have chosen to take scary leaps of faith and assume the gaps will be filled in at some point.
 
 \subsection{Use of AI}
 This paper is very much a collaborative effort between me and Claude AI. I provide the ideas and
@@ -130,36 +136,53 @@ send Claude off to find the pieces of jigsaw needed to compose the picture. AI i
 useful in doing this because it has reasonable expertise in many different areas and finding
 connections between seemingly unconnected realms is made a lot easier. So a question "That GHZ/W
 split in 3 particle entanglement looks suspiciously like the quark/lepton split, tell me more
-about it?" can be turned into useful theorems. If the key fits, the lock opens. Although the
-derivation of the Born rule using Hopf fibrations is entirely something Claude came up with
-unprompted.
+about it?" can be turned into useful theorems.
 
-It might seem that a question about relating multi-particle entanglement to the structure of the
-Standard Model came completely out of the blue. But I hope to show the reader by working through
-the consequences of accepting self-reference as fundamental then it becomes an obvious question
-to ask.
+Most of the deep problems in physics are due to a deficit of insight and are unlikely to yield
+to the kind of brute force calculation AI models can muster. Once the deficit is corrected the
+calculations are quite simple. The key is asking the right questions. When the key fits the
+lock opens. 
+
+Now because my collaboration with Claude has been over many months, it's actually hard to see
+which is my input and which is Claude's so I've decided to download the entire history, pack it
+up into an AI workbench anyone can download from Zenodo (refs). Therefore it is presented in a
+form it can be most easily absorbed into the maw of these gigantic Babbage/Lovelace analytical
+engines. Download it, point your favourite LLM at it, start asking questions, solve some of
+the open problems, and most usefully start finding errors. There are a lot of errrors.
+
+This paper is very imperfect, it's a work in progress, but with OpenAI and Anthropic solving
+Millenium Prize problems, perfection will have to wait. I offer this entire corpus of work to
+the community. The game is on.
+
 \subsection{Paper structure}
+It might seem that a question about relating multi-particle entanglement to the structure of the
+Standard Model came completely out of the blue. But by working through the consequences of 
+accepting self-reference as fundamental I hope to lead the reader to the point were it 
+becomes an obvious question to ask.
+
 We start with a question \enquote{What is a quantum state} \ref{sec:what_is_a_quantum_state},
 then move on to Karl Popper's 1950 discussion of self-reference \ref{sec:popper}, from that
 we're able deduce that self-reference must involve negative probability
 \ref{sec:complex-amplitudes-2} and that the probability is due to an in principle lack of
 information \ref{sec:fibre-self-ignorance} from that we're able to deduce that we must use complex
-probability \ref{sec:complex-amplitudes}. Once we're arrived at that stage we go to find that
+probability amplitudes \ref{sec:complex-amplitudes}. Once we're arrived at that stage we go on to find that
 this forces reversible continuity \ref{sec:reversible-continuity} and once that is settled it
 leads to the L2 metric \ref{sec:reversible-continuity-l2}. We also note that complex information
 has implications for computability and go off on a tangent to explore the consequences of that
 \ref{sec:space-of-computations}. We find that a network of computable and non-computable events
-must have at most 3 dimensions of non-computablity, with interesting parallels to the
+must have at most 3 dimensions of non-computablity which are capable of admiting a metric, and
+extra \enquote{spacelike} dimensions which are not capable of admiting a metric and therefore
+reveal themselves as internal degrees of freedom. This has with interesting parallels to the
 relationalist view of spacetime in General Relativity. Having collected a few key insights and
 named some interesting open problems we return to the main thread to consider Wigner's friend in
 the Hopf fibration picture \ref{sec:wf-friend}, which leads to a derivation of the quantum
 postulates in \ref{sec:postulates}. That in turn leads to a rationale for Hopf fibrations in
 fundamental particle interactions \ref{sec:hopf-justification}, which compels the division
-algebras in particle physics \ref{sec:division-algebras}. It becomes obvious to use Hopf maps to
+algebras in particle physics \ref{sec:division-algebras}. Then it becomes obvious to use Hopf maps to
 bridge multi-particle entanglement and fundamental particle physics and cast hard problems in
 one sector to the other where they have easy solutions. Hence we find a rationale for the colour
 force being chirality blind, our first interesting result \ref{sec:achirality-qcd}. Once the
-bridge has been set up we can then get out quantum numbers in \ref{sec:charges} and
+bridge has been set up we can then read out quantum numbers in \ref{sec:charges} and
 deduce the Kiode relations \ref{sec:koide} as well as the weak mixing angle
 \ref{sec:weak-mixing-angle}. We then move on to see that the particle zoo of the Standard Model
 has an explanation rooted in the geometry of multi-particle entanglement \ref{sec:generations}.
@@ -190,25 +213,23 @@ Hopf fibrations beyond the octonionic case) \autocite{adams1960hopf}, and Coecke
 (compositional completeness of GHZ and W classes) \autocite{coeckekissinger2010compositional}.
 The fourth qubit is required to get 3 generations of fermions.
 
-\item \textbf{Spacetime dimensionality.} By recognising spacelike separation to be an analog of
-non-computable separation between computational states we find that the requirement that state
-reduction on the Bloch sphere be consistent with Lorentz boosts demands
-$\mathrm{Spin}(1,d) \cong SL(2,\mathbb{A})$ for a normed division algebra~$\mathbb{A}$. The
-computability split selects $\mathbb{A} = \mathbb{C}$, giving
-$SL(2,\mathbb{C}) = \mathrm{Spin}(1,3)$ and thus $d = 3$ spatial dimensions. The six internal
-dimensions of $SU(3) \times SU(2) \times U(1)$ account for the reduction from $d = 9$ (the
-octonionic case) to $d = 3$, reproducing the Kaluza--Klein dimensional decomposition
-$9+1 = (3+1) + 2 + 4$ with a structural explanation. But note that those extra dimensions cannot
-admit a metric structure.
+\item \textbf{Spacetime dimensionality.} We suggest a way to understand the three dimensions of
+space, and the internal degrees of freedom so often mistaken for hidden ones, in terms of
+non-computable distance: the count comes from which spheres can serve as rulers
+(Section~\ref{sec:three-dimensions}), the Lorentz group from the qubit's own geometry
+(Section~\ref{sec:lorentz}), and dimension three as a theorem is Open
+Problem~\ref{op:three-dimensions}.
 
 
-\item \textbf{Three generations.} The triality automorphism of $\mathrm{Spin}(8)$, which
-permutes the three eight-dimensional representations of the octonions, produces exactly three
-generations of fermions. \textbf{wrong! to be fixed with sedenions}
+\item \textbf{Three generations.} Doubling the octonions to the sedenions adds exactly one
+finite factor to the automorphism group, $\mathrm{Aut}(\mathbb{S}) \cong G_2 \times S_3$, and
+the generations are its orbit: three of them, a family label and never a fourth force
+(Section~\ref{sec:sedenions-generations}).
 
-\item \textbf{Chirality.} The non-associativity of $\mathbb{O}$ distinguishes left and right
-multiplication, breaking parity at the algebraic level.
-  \textbf{wrong! to be fixed with sedenions}
+\item \textbf{Chirality.} Handedness enters at the register: entangled spheres must carry
+opposite handedness, three cannot all comply, and the weak force is the switch between the two
+ways of resolving the frustrated pair, which is why it sees one handedness only
+(Section~\ref{sec:generations}; which handedness, Open Problem~\ref{op:chirality}).
 
 \item \textbf{Born rule.} The observer's self-referential ignorance of their own computational
 state generates a global $U(1)$ phase freedom. The minimum-degree polynomial invariant under
