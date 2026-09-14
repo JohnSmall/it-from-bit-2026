@@ -72,6 +72,15 @@ keyword and were removed on 2026-09-10 after review, leaving 98:
   qubit. 484 KB of unrelated client work.
 - **A conversation on productising expertise**, mixing meditation and quantum
   computing: business positioning rather than physics.
+  *Reinstated 2026-09-14 at JS's request.* On reflection it is the author's
+  professional and personal context -- programming since 1985, masters degrees
+  in mathematics and quantum field theory, a teacher of Transcendental
+  Meditation, and the intention to fund a PhD in quantum field theory -- which
+  is part of why this framework exists and who is writing it. Restored verbatim
+  from the unfiltered export at
+  `~/Documents/claude_downloads/conversations-000/conversations.json`. The
+  archive is 100 conversations again. The EMFA conversation stays out: it is
+  client work with no bearing on the framework or its author's history.
 
 The lesson generalises: a keyword filter over summaries will admit anything
 sharing a term of art, and "self-referential" is common enough in software
