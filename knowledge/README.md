@@ -24,7 +24,7 @@ written from. Lines there marked `[stated]` carry a provenance flag, not a
 status label.
 
 **Raw archive.** `project-docs/` (the 122 documents attached to the web
-project) and `archive/conversations/` (100 conversations, full turns). This is
+project) and `archive/conversations/` (99 conversations, full turns). This is
 primary source material: it is where a claim's derivation actually lives, and
 it contains superseded reasoning alongside current reasoning. Nothing here is
 authoritative on its own.
@@ -66,7 +66,7 @@ explains why the `.bib` files there must not be reconciled with Zotero.
     project-docs/          122 web-project documents + INDEX.md
     archive/
       INDEX.md             greppable: date, title, summary, size
-      conversations/       100 conversations, full turns
+      conversations/       99 conversations, full turns
 
 ## Provenance
 
@@ -84,8 +84,7 @@ second export for 2026-01-17 to 2026-02-17 recovered it.
 
 The conversation export carries no project field, so conversations were
 selected by scoring text against the framework's vocabulary. From the first
-export, 100 of 237 were taken and two later removed on review, one of them
-reinstated on 2026-09-14 (see `memory/CORRECTIONS.md`); from the
+export, 100 of 237 were taken and two later removed on review; from the
 second, 1 of 11. The remainder is software consulting work — Elixir, XSLT,
 Atlassian — unrelated to the physics. Conversations about the project's
 *tooling* are included and marked `[tooling]` in the index.
