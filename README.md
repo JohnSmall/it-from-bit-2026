@@ -15,6 +15,7 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 | `bib/`          | Dated reference batches for import into Zotero           |
 | `scripts/`      | Python calculations and LaTeX patch scripts              |
 | `knowledge/`    | Curated results, open problems, and session archive      |
+| `CONTRIBUTING.md` | How to build, what to read, who changes what           |
 | `knowledge/publications/` | The author's earlier papers and posters, frozen |
 | `attic_*`       | Superseded material, kept for provenance; never deleted  |
 
@@ -93,11 +94,18 @@ for dashes, ``` `` ```, `''` and `'` for quotes, `\S` for the section sign.
 Ligature codepoints (U+FB01 fi, U+FB03 ffi) are PDF copy-paste damage and are
 always wrong. `CLAUDE.md` states the same rule for AI assistants.
 
+## Contributing
+
+`CONTRIBUTING.md` is the place to start: how to build, what to read first, and
+who changes what. The maintainer works on `main`; everyone else branches and
+opens a pull request.
+
 ## For AI assistants
 
 Read `knowledge/README.md` first; it explains what is authoritative, what
-is raw archive, and the order to consult things. Behavioural rules for
-Claude Code are in `CLAUDE.md`.
+is raw archive, and the order to consult things. Behavioural rules are in
+`CLAUDE.md`, which binds people as well as agents; `AGENTS.md` points Codex
+and similar tools at it.
 
 ## Authors and citation
 

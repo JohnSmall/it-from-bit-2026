@@ -6,6 +6,18 @@ read by a build: the papers cite from `paper1/references.bib` and
 `paper2/references_paper2.bib`, which Better BibTeX exports from Zotero. A
 batch is the record of what was added and when.
 
+## If you are not the maintainer
+
+`paper1/references.bib` is exported from the maintainer's Zotero library and
+only he can regenerate it. You can still add a reference: write the batch as
+described below, cite its key in the text, and say in the pull request that an
+import and re-export are owed. Your build will report that citation as
+undefined until then, which is expected rather than a fault --- flag it in the
+pull request so a reviewer does not go looking for a mistake.
+
+The `zotero_*` scripts in `scripts/` are maintainer-only: they talk to a local
+Zotero API that exists only on his machine.
+
 ## Write batches as `.bib`
 
 A BibLaTeX entry key is a citation key, and Better BibTeX's own importer keeps

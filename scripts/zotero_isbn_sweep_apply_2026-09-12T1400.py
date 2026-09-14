@@ -5,6 +5,10 @@ Reads isbn_sweep_plan.json (which holds each item's Extra field before the
 edit, so the sweep is reversible), and PATCHes only items with something to
 remove. Each PATCH is guarded by If-Unmodified-Since-Version, so an item
 changed since the scan is skipped rather than clobbered.
+
+
+MAINTAINER ONLY: this talks to a local Zotero API and needs a key that
+exists only on the maintainer's machine. It will not run for a contributor.
 """
 import json, urllib.request, urllib.error
 

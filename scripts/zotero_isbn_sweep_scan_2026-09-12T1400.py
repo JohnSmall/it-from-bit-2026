@@ -9,6 +9,10 @@ Rule: a line is deleted only if its value fails ISBN-10/13 check-digit
 validation. A valid ISBN is never deleted -- it is real metadata, and its
 presence on a journalArticle means the item type is wrong, which is a
 different fix. Other Extra lines (arXiv:, etc.) are preserved verbatim.
+
+
+MAINTAINER ONLY: this talks to a local Zotero API and needs a key that
+exists only on the maintainer's machine. It will not run for a contributor.
 """
 import json, re, sys, urllib.request
 
