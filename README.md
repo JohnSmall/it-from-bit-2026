@@ -16,6 +16,7 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 | `scripts/`      | Python calculations and LaTeX patch scripts              |
 | `knowledge/`    | Curated results, open problems, and session archive      |
 | `CONTRIBUTING.md` | How to build, what to read, who changes what           |
+| `CONTRIBUTOR.template.md` | Shape of the gitignored `CONTRIBUTOR.md`      |
 | `knowledge/publications/` | The author's earlier papers and posters, frozen |
 | `attic_*`       | Superseded material, kept for provenance; never deleted  |
 
@@ -99,6 +100,11 @@ always wrong. `CLAUDE.md` states the same rule for AI assistants.
 `CONTRIBUTING.md` is the place to start: how to build, what to read first, and
 who changes what. The maintainer works on `main`; everyone else branches and
 opens a pull request.
+
+On its first run in a fresh clone an agent will ask who you are and record the
+answers in `CONTRIBUTOR.md`, which is gitignored and stays on your machine.
+Without it the agent has no way to tell you from the maintainer, since
+everything written here reads as a conversation already in progress with him.
 
 ## For AI assistants
 

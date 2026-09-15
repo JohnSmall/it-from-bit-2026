@@ -87,3 +87,9 @@ svg-inkscape/
 
 # --- patch-script backups (scripts/ write these before editing) ------
 *.bak
+
+# --- who is working here ---------------------------------------------
+# Written by the agent on its first run in a fresh clone, from answers the
+# person gives. Personal and per-machine: never committed, so every clone
+# starts by asking. CONTRIBUTOR.template.md is the tracked shape.
+CONTRIBUTOR.md

@@ -24,6 +24,21 @@ as on anyone else's. The one thing that will not work for you is the Zotero
 tooling, which needs a local library you do not have --- see **Bibliography**
 below.
 
+## Your agent will ask who you are
+
+On its first run in a fresh clone, Claude Code or Codex should ask your name,
+background, what you want to work on, and whether you are the maintainer or a
+contributor, then write the answers to `CONTRIBUTOR.md` --- which is
+gitignored and stays on your machine. `CONTRIBUTOR.template.md` is the shape,
+and you can fill it in by hand instead if you prefer.
+
+This is not bureaucracy. The repository's ledgers and session notes are
+written as a running conversation with the maintainer, and without being told
+otherwise an agent will carry on as though you are him: explaining nothing you
+already know, assuming things you do not, and editing files that are his to
+edit. Telling it who you are fixes all three. Leave out anything you would
+rather not record.
+
 ## Read before you write
 
 In this order:

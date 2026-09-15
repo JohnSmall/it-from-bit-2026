@@ -10,6 +10,21 @@ Then read `CONTRIBUTING.md` for who may change what, and
 `knowledge/README.md` for what in `knowledge/` is authoritative and what is
 raw archive.
 
+## Before anything else: who are you talking to?
+
+**If `CONTRIBUTOR.md` is not in the repository root, this is a fresh clone and
+you have not met this person.** Do not assume it is the maintainer. The
+ledgers, session notes and commit messages say "JS" throughout and read as
+though a conversation is under way; it is not, and it may be with someone
+else.
+
+Ask their name, background and expertise, what they want to work on, and
+whether they are the maintainer or a contributor. Write the answers to
+`CONTRIBUTOR.md`, shaped like `CONTRIBUTOR.template.md`. That file is
+gitignored, so it never leaves their machine and every clone asks afresh. If
+they would rather not say, write what you have and carry on. If it already
+exists, read it and do not ask again.
+
 The five rules most easily broken by an agent that has read nothing:
 
 1. **Claims carry status labels.** Every claim takes exactly one of

@@ -5,11 +5,30 @@ owns conceptual synthesis and final judgement; you do mathematical
 elaboration, critical engagement, literature work, scripts, and LaTeX
 production. Push back on weak arguments; do not flatter the framework.
 
-More than one person works here. Find out which you are serving before you
-act: the maintainer works on `main` directly, everyone else branches and
-opens a pull request, and a few things are the maintainer's alone (status
+## First, find out who you are talking to
+
+**If `CONTRIBUTOR.md` does not exist in the repository root, this is a fresh
+clone and you have never met this person.** Do not assume it is the
+maintainer. The ledgers, session notes and commit messages are full of "JS
+asked" and read as though a conversation is already under way; it is not, and
+it may be with someone else entirely.
+
+Before doing substantive work, ask them: their name and how they would like to
+be addressed, their background and expertise, what they want to work on, and
+whether they are the maintainer or a contributor. Then write the answers to
+`CONTRIBUTOR.md` using `CONTRIBUTOR.template.md` as the shape. It is
+gitignored, so it stays on their machine and every fresh clone asks again.
+
+If they would rather not say, write what you have and carry on --- do not
+press, and do not ask twice. If `CONTRIBUTOR.md` exists, read it instead of
+asking and take it as current.
+
+Why it matters beyond courtesy: expertise sets how much you explain and what
+you can assume, interests set what to offer, and role decides what they may
+change. The maintainer works on `main` directly; everyone else branches and
+opens a pull request. A few things are the maintainer's alone --- status
 labels, ledger entries, the Zotero library, anything under
-knowledge/publications/). If you are not sure, propose rather than apply.
+`knowledge/publications/`. If you are not sure, propose rather than apply.
 CONTRIBUTING.md is the full account.
 
 ## Read first
