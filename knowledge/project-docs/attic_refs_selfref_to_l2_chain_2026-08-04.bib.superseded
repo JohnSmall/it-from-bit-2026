@@ -1,0 +1,380 @@
+% SUPERSEDED 2026-09-15 with its section; never imported. Three of its 35 keys exist in references.bib
+% as written, about fifteen exist under other keys, the rest would need verification. See knowledge/sessions/continuity_connected_state_space_2026-09-15T1430.md
+@Comment{
+refs_selfref_to_l2_chain_2026-08-04.bib
+BibTeX export of refs_selfref_to_l2_chain_2026-08-04.ris (same 34 entries,
+same order). Entry keys are the \autocite keys used in
+section_selfref_to_l2_chain_2026-08-04T1720.tex; Zotero with Better BibTeX
+pins these keys on import, so the keys in the .tex remain stable.
+Encoding: UTF-8 (native accents preserved for Zotero; biber handles UTF-8).
+VERIFY-CITE flags and dedupe warnings are carried in the note fields and
+land in Zotero's Extra field on import.
+DEDUPE: hardy2001 and schack2003 duplicate keys already used by
+claude_appendix_continuity_open_problems_2026-07-17.tex. If that batch was
+already imported, skip or merge these two on import.
+}
+
+@article{schack2003,
+  author  = {Schack, Rüdiger},
+  title   = {Quantum theory from four of {Hardy}'s axioms},
+  journal = {Foundations of Physics},
+  volume  = {33},
+  number  = {10},
+  pages   = {1461--1468},
+  year    = {2003},
+  doi     = {10.1023/A:1026044329659},
+  url     = {https://arxiv.org/abs/quant-ph/0210017},
+  note    = {VERIFIED 2026-08-04 against arXiv and Springer DOI. Key matches existing schack2003 in claude\_appendix\_continuity\_open\_problems\_2026-07-17.tex: DEDUPE CHECK on import.}
+}
+
+@misc{hardy2001,
+  author     = {Hardy, Lucien},
+  title      = {Quantum theory from five reasonable axioms},
+  year       = {2001},
+  eprint     = {quant-ph/0101012},
+  eprinttype = {arxiv},
+  url        = {https://arxiv.org/abs/quant-ph/0101012},
+  note       = {arXiv e-print quant-ph/0101012 (v4, 25 September 2001); never journal-published. arXiv ID VERIFIED 2026-08-04 via the fetched Schack (2003) reference list. Key matches existing hardy2001: DEDUPE CHECK on import.}
+}
+
+@article{cantor1891diagonal,
+  author  = {Cantor, Georg},
+  title   = {Über eine elementare Frage der Mannigfaltigkeitslehre},
+  journal = {Jahresbericht der Deutschen Mathematiker-Vereinigung},
+  volume  = {1},
+  pages   = {75--78},
+  year    = {1891},
+  note    = {VERIFY-CITE: from model memory; check volume and pages against the DMV archive.}
+}
+
+@article{goedel1931formal,
+  author  = {Gödel, Kurt},
+  title   = {Über formal unentscheidbare Sätze der {Principia Mathematica} und verwandter Systeme {I}},
+  journal = {Monatshefte für Mathematik und Physik},
+  volume  = {38},
+  pages   = {173--198},
+  year    = {1931},
+  doi     = {10.1007/BF01700692},
+  note    = {VERIFY-CITE: from model memory; DOI and pages to be checked against Springer.}
+}
+
+@article{turing1936computable,
+  author  = {Turing, Alan Mathison},
+  title   = {On computable numbers, with an application to the {Entscheidungsproblem}},
+  journal = {Proceedings of the London Mathematical Society},
+  volume  = {s2-42},
+  pages   = {230--265},
+  year    = {1937},
+  note    = {VERIFY-CITE: from model memory. Read 1936, published 1937; series 2, volume 42. Check pagination against LMS.}
+}
+
+@article{popper1950indeterminism1,
+  author  = {Popper, Karl R.},
+  title   = {Indeterminism in quantum physics and in classical physics. {Part I}},
+  journal = {The British Journal for the Philosophy of Science},
+  volume  = {1},
+  number  = {2},
+  pages   = {117--133},
+  year    = {1950},
+  note    = {VERIFY-CITE: pages from model memory. Annotated PDF held in project files.}
+}
+
+@article{popper1950indeterminism2,
+  author  = {Popper, Karl R.},
+  title   = {Indeterminism in quantum physics and in classical physics. {Part II}},
+  journal = {The British Journal for the Philosophy of Science},
+  volume  = {1},
+  number  = {3},
+  pages   = {173--195},
+  year    = {1950},
+  note    = {VERIFY-CITE: pages from model memory. PDF held in project files.}
+}
+
+@article{breuer1995selfmeasurement,
+  author  = {Breuer, Thomas},
+  title   = {The impossibility of accurate state self-measurements},
+  journal = {Philosophy of Science},
+  volume  = {62},
+  number  = {2},
+  pages   = {197--214},
+  year    = {1995},
+  note    = {VERIFY-CITE: from model memory; check against University of Chicago Press.}
+}
+
+@incollection{lawvere1969diagonal,
+  author    = {Lawvere, F. William},
+  title     = {Diagonal arguments and cartesian closed categories},
+  booktitle = {Category Theory, Homology Theory and their Applications {II}},
+  series    = {Lecture Notes in Mathematics},
+  volume    = {92},
+  publisher = {Springer},
+  address   = {Berlin},
+  pages     = {134--145},
+  year      = {1969},
+  note      = {VERIFY-CITE: from model memory. Reprinted with author commentary in Reprints in Theory and Applications of Categories 15 (2006).}
+}
+
+@article{yanofsky2003universal,
+  author  = {Yanofsky, Noson S.},
+  title   = {A universal approach to self-referential paradoxes, incompleteness and fixed points},
+  journal = {The Bulletin of Symbolic Logic},
+  volume  = {9},
+  number  = {3},
+  pages   = {362--386},
+  year    = {2003},
+  note    = {VERIFY-CITE: from model memory; check against ASL/Cambridge.}
+}
+
+@article{shannon1948communication,
+  author  = {Shannon, Claude E.},
+  title   = {A mathematical theory of communication},
+  journal = {The Bell System Technical Journal},
+  volume  = {27},
+  pages   = {379--423},
+  year    = {1948},
+  note    = {VERIFY-CITE: two-part paper, pp. 379--423 and 623--656; decide whether to cite both parts.}
+}
+
+@article{russell1908types,
+  author  = {Russell, Bertrand},
+  title   = {Mathematical logic as based on the theory of types},
+  journal = {American Journal of Mathematics},
+  volume  = {30},
+  number  = {3},
+  pages   = {222--262},
+  year    = {1908},
+  note    = {VERIFY-CITE: from model memory; check against JHU Press.}
+}
+
+@article{wigner1932quantum,
+  author  = {Wigner, Eugene P.},
+  title   = {On the quantum correction for thermodynamic equilibrium},
+  journal = {Physical Review},
+  volume  = {40},
+  pages   = {749--759},
+  year    = {1932},
+  note    = {VERIFY-CITE: from model memory; check against APS.}
+}
+
+@article{dirac1942bakerian,
+  author  = {Dirac, Paul Adrien Maurice},
+  title   = {Bakerian {Lecture}. {The} physical interpretation of quantum mechanics},
+  journal = {Proceedings of the Royal Society of London. Series A},
+  volume  = {180},
+  number  = {980},
+  pages   = {1--40},
+  year    = {1942},
+  note    = {VERIFY-CITE: from model memory; check against the Royal Society.}
+}
+
+@incollection{feynman1987negative,
+  author    = {Feynman, Richard P.},
+  title     = {Negative probability},
+  booktitle = {Quantum Implications: Essays in Honour of {David Bohm}},
+  editor    = {Hiley, Basil J. and Peat, F. David},
+  publisher = {Routledge},
+  address   = {London},
+  pages     = {235--248},
+  year      = {1987},
+  note      = {VERIFY-CITE: from model memory; check pagination against Routledge.}
+}
+
+@article{abramskybrandenburger2011sheaf,
+  author  = {Abramsky, Samson and Brandenburger, Adam},
+  title   = {The sheaf-theoretic structure of non-locality and contextuality},
+  journal = {New Journal of Physics},
+  volume  = {13},
+  pages   = {113036},
+  year    = {2011},
+  doi     = {10.1088/1367-2630/13/11/113036},
+  note    = {VERIFY-CITE: from model memory; check article number and DOI against IOP.}
+}
+
+@article{spekkens2008negativity,
+  author  = {Spekkens, Robert W.},
+  title   = {Negativity and contextuality are equivalent notions of nonclassicality},
+  journal = {Physical Review Letters},
+  volume  = {101},
+  pages   = {020401},
+  year    = {2008},
+  note    = {VERIFY-CITE: from model memory; check against APS.}
+}
+
+@article{spekkens2007toy,
+  author  = {Spekkens, Robert W.},
+  title   = {Evidence for the epistemic view of quantum states: {A} toy theory},
+  journal = {Physical Review A},
+  volume  = {75},
+  pages   = {032110},
+  year    = {2007},
+  note    = {Matches the entry recorded in claude\_continuity\_blocks\_and\_routes\_2026-07-17.md (W7). VERIFY-CITE against APS before final; ledger match raises confidence but does not discharge the flag.}
+}
+
+@incollection{spekkens2016quasi,
+  author    = {Spekkens, Robert W.},
+  title     = {Quasi-quantization: {Classical} statistical theories with an epistemic restriction},
+  booktitle = {Quantum Theory: Informational Foundations and Foils},
+  editor    = {Chiribella, Giulio and Spekkens, Robert W.},
+  publisher = {Springer},
+  address   = {Dordrecht},
+  pages     = {83--135},
+  year      = {2016},
+  note      = {VERIFY-CITE: from model memory; check pagination against Springer (Fundamental Theories of Physics 181).}
+}
+
+@article{landauer1961irreversibility,
+  author  = {Landauer, Rolf},
+  title   = {Irreversibility and heat generation in the computing process},
+  journal = {IBM Journal of Research and Development},
+  volume  = {5},
+  number  = {3},
+  pages   = {183--191},
+  year    = {1961},
+  note    = {VERIFY-CITE: from model memory; check against IBM Journal.}
+}
+
+@article{bennett1973logical,
+  author  = {Bennett, Charles H.},
+  title   = {Logical reversibility of computation},
+  journal = {IBM Journal of Research and Development},
+  volume  = {17},
+  number  = {6},
+  pages   = {525--532},
+  year    = {1973},
+  note    = {VERIFY-CITE: from model memory; check against IBM Journal.}
+}
+
+@article{berut2012landauer,
+  author  = {Bérut, Antoine and Arakelyan, Artak and Petrosyan, Artyom and Ciliberto, Sergio and Dillenschneider, Raoul and Lutz, Eric},
+  title   = {Experimental verification of {Landauer}'s principle linking information and thermodynamics},
+  journal = {Nature},
+  volume  = {483},
+  pages   = {187--189},
+  year    = {2012},
+  note    = {VERIFY-CITE: author list and pages from model memory; check against Nature.}
+}
+
+@article{wootterszurek1982cloning,
+  author  = {Wootters, William K. and Zurek, Wojciech H.},
+  title   = {A single quantum cannot be cloned},
+  journal = {Nature},
+  volume  = {299},
+  pages   = {802--803},
+  year    = {1982},
+  note    = {VERIFY-CITE: from model memory; check against Nature. Companion: Dieks (1982), Phys. Lett. A 92, 271, if a second citation is wanted.}
+}
+
+@book{aaronson2013democritus,
+  author    = {Aaronson, Scott},
+  title     = {Quantum Computing since {Democritus}},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  year      = {2013},
+  note      = {VERIFY-CITE: from model memory. Passage on continuity and complex amplitudes quoted by J.D.S. in session 2026-08-04; identify chapter and page before quoting in print.}
+}
+
+@book{khrennikov1994padic,
+  author    = {Khrennikov, Andrei},
+  title     = {p-{Adic} Valued Distributions in Mathematical Physics},
+  series    = {Mathematics and Its Applications},
+  volume    = {309},
+  publisher = {Kluwer Academic Publishers},
+  address   = {Dordrecht},
+  year      = {1994},
+  note      = {VERIFY-CITE: from model memory; check series volume against Springer.}
+}
+
+@book{lee2013smooth,
+  author    = {Lee, John M.},
+  title     = {Introduction to Smooth Manifolds},
+  edition   = {2},
+  publisher = {Springer},
+  address   = {New York},
+  year      = {2013},
+  note      = {VERIFY-CITE: cited for the Cartan--von Neumann closed subgroup theorem; identify the theorem number before print.}
+}
+
+@book{banach1932operations,
+  author    = {Banach, Stefan},
+  title     = {Théorie des opérations linéaires},
+  series    = {Monografje Matematyczne},
+  volume    = {1},
+  publisher = {Instytut Matematyczny PAN},
+  address   = {Warszawa},
+  year      = {1932},
+  note      = {VERIFY-CITE: from model memory. Cited for isometry rigidity of finite-dimensional real l\_p, p not equal to 2; locate the precise section before print.}
+}
+
+@article{lamperti1958isometries,
+  author  = {Lamperti, John},
+  title   = {On the isometries of certain function-spaces},
+  journal = {Pacific Journal of Mathematics},
+  volume  = {8},
+  number  = {3},
+  pages   = {459--466},
+  year    = {1958},
+  note    = {VERIFY-CITE: from model memory; check against Pacific J. Math.}
+}
+
+@book{cencov1982statistical,
+  author    = {Čencov, Nikolai N.},
+  title     = {Statistical Decision Rules and Optimal Inference},
+  series    = {Translations of Mathematical Monographs},
+  volume    = {53},
+  publisher = {American Mathematical Society},
+  address   = {Providence, RI},
+  year      = {1982},
+  note      = {VERIFY-CITE: from model memory. Russian original 1972. Cited for uniqueness of the Fisher--Rao metric under Markov morphisms. Author also transliterated Chentsov.}
+}
+
+@article{rao1945information,
+  author  = {Rao, Calyampudi Radhakrishna},
+  title   = {Information and the accuracy attainable in the estimation of statistical parameters},
+  journal = {Bulletin of the Calcutta Mathematical Society},
+  volume  = {37},
+  pages   = {81--91},
+  year    = {1945},
+  note    = {VERIFY-CITE: from model memory.}
+}
+
+@article{wootters1981distance,
+  author  = {Wootters, William K.},
+  title   = {Statistical distance and {Hilbert} space},
+  journal = {Physical Review D},
+  volume  = {23},
+  number  = {2},
+  pages   = {357--362},
+  year    = {1981},
+  note    = {VERIFY-CITE: from model memory; check against APS.}
+}
+
+@article{petz1996monotone,
+  author  = {Petz, Dénes},
+  title   = {Monotone metrics on matrix spaces},
+  journal = {Linear Algebra and its Applications},
+  volume  = {244},
+  pages   = {81--96},
+  year    = {1996},
+  note    = {VERIFY-CITE: from model memory; check against Elsevier.}
+}
+
+@article{petzsudar1996geometries,
+  author  = {Petz, Dénes and Sudár, Csaba},
+  title   = {Geometries of quantum states},
+  journal = {Journal of Mathematical Physics},
+  volume  = {37},
+  number  = {6},
+  pages   = {2662--2673},
+  year    = {1996},
+  note    = {VERIFY-CITE: from model memory; check against AIP. Cited for the collapse of all monotone metrics to Fubini--Study on pure states.}
+}
+
+@book{bengtssonzyczkowski2017geometry,
+  author    = {Bengtsson, Ingemar and Życzkowski, Karol},
+  title     = {Geometry of Quantum States: An Introduction to Quantum Entanglement},
+  edition   = {2},
+  publisher = {Cambridge University Press},
+  address   = {Cambridge},
+  year      = {2017},
+  note      = {VERIFY-CITE: from model memory. General reference for Fubini--Study uniqueness and the Fisher--Rao / Wootters connections.}
+}

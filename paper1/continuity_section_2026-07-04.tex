@@ -1,3 +1,4 @@
+% EDITED 2026-09-15 scripts/patch_continuity_connected_state_space_2026-09-15T1430.py
 % =====================================================================
 %  SECTION: Continuity Is Not an Axiom
 %  Drafted 2026-07-04 from continuity_limit_realisability_2026-07-04.md
@@ -51,17 +52,18 @@
 \section{Continuity Is Not an Axiom}
 \label{sec:continuity}
 
-Hardy derives quantum theory from five axioms \autocite{Hardy2001a}. Four of them are satisfied by
-classical probability theory; the fifth --- that a \emph{continuous} reversible transformation
-connects any two pure states --- is the entire difference, the single postulate that turns the
-classical simplex into the complex Hilbert space. Every reconstruction programme pays an equivalent
-toll: continuous reversibility in Masanes and M\"{u}ller \autocite{mullerp2011}, the corresponding
-postulate in Daki\'{c} and Brukner \autocite{Brukner2009}. The axiom is load-bearing, and in every
-programme it is unexplained: it is where the quantumness is put in by hand. The claim of this
-section is that in the present framework it is not an axiom. Continuity is the fifth face of the
-pre-measurement regime that self-reference forces, and what stands between the framework and a full
-derivation is not a postulate but two sharply posed lemma-premises, stated as an open problem at the
-end of the section with nothing hidden in them.
+Hardy derives quantum theory from five axioms \autocite{Hardy2001a}. Four of them are satisfied
+by classical probability theory; the fifth --- that a \emph{continuous} reversible
+transformation connects any two pure states --- is the entire difference, the single postulate
+that turns the classical simplex into the complex Hilbert space. Every reconstruction programme
+pays an equivalent toll: continuous reversibility in Masanes and M\"{u}ller
+\autocite{mullerp2011}, the corresponding postulate in Daki\'{c} and Brukner
+\autocite{Brukner2009}. The axiom is load-bearing, and in every programme it is unexplained: it
+is where the quantumness is put in by hand. The claim of this section is that in the present
+framework it is not an axiom. Continuity is the fifth face of the pre-measurement regime that
+self-reference forces, and what stands between the framework and a full derivation is not a
+postulate about transformations but one premise about values, stated as an open problem at the
+end of the section with nothing hidden in it.
 
 One structural remark prevents a misreading. The framework reaches complex amplitudes natively in
 \S\ref{sec:self-reference}, by the negative-probability route; the present section reaches the same
@@ -127,32 +129,82 @@ path between any two pure states.
 \end{proof}
 
 The same one-line fact of Lagrange closes the remaining escapes. Finite groups are excluded
-directly, being nontrivial and never divisible. Countable groups are excluded because a countable
-closed subgroup of a compact group is compact, has an isolated point by the Baire category theorem,
-and is therefore discrete and finite. Uncountable disconnected groups are excluded by the
-component-group argument of the proposition. Every route to a discrete transformation group
-therefore passes through a failure of divisibility or a failure of closedness: the whole question
-compresses to those two premises, and to nothing else.
+directly, being nontrivial and never divisible. Countable groups are excluded because a
+countable closed subgroup of a compact group is compact, has an isolated point by the Baire
+category theorem, and is therefore discrete and finite. Uncountable disconnected groups are
+excluded by the component-group argument of the proposition. Every route to a discrete
+transformation group therefore passes through a failure of divisibility or a failure of
+closedness. Divisibility, however, asks for more than the conclusion needs, and the next
+proposition removes it.
 
-\subsection{The two premises, and what they mean}
+\begin{proposition}[Continuity from a connected state space]\label{prop:connected-transitive}
+Let the pure states of a finite-dimensional system form a connected space $P$, and let the group
+$G$ of reversible transformations of the pre-measurement regime be topologically closed and act
+transitively on $P$. Then the identity component $G_0$ already acts transitively on $P$, and a
+continuous reversible transformation connects any two pure states: Hardy's fifth axiom holds,
+with no divisibility assumed.
+\end{proposition}
 
-Divisibility has a candidate derivation whose status we flag plainly as owed rather than proved:
-with no basis selected there is no distinguished step, so a reversible transformation of the regime
-should be realisable in $n$ equal describable stages for every $n$ --- an $n$-th root for every $n$.
-Closedness is the deeper premise, and it is where the section's title is earned. Closedness is
-limit-realisability: a Cauchy sequence of available transformations whose convergence the system can
-itself describe must have its limit available, for otherwise the system's own description refers to
-a transformation that does not exist, and self-referential closure fails --- a demand of exactly
-Lawvere's fixed-point shape \autocite{Lawvere_1969,Yanofsky2003}. What limit-realisability adds to the line is
-worth stating exactly, because it is the corrected form of a natural intuition. Cantor's diagonal
-\autocite{cantor1891diagonal} does not build the continuum; its output is an infinite decimal --- a
-Cauchy sequence of rationals --- which exists \emph{as a point} only because the line is complete.
-The diagonal presupposes limit-realisability and then shows that the completed line outruns every
-internal listing. And the character of the completion is the framework's own: the computable reals
-are countable \autocite{Turing_1937}, hence of measure zero, so the completed continuum is
-non-computable almost everywhere. Hardy's fifth axiom, on this reading, is the demand that the
-transformation group contain its \emph{non-computable} limits. Continuity is the topological face of
-the founding non-computability.
+\begin{proof}
+As in Proposition~\ref{prop:divisible-closed}, closedness makes $G$ a compact Lie group with
+finitely many connected components \autocite{broeckertomdieck1985compact}, so $G_0$ is a closed
+normal subgroup of finite index and is path-connected. Each $G_0$-orbit in $P$ is the continuous
+image of a compact group, hence compact, hence closed. Since $G$ is transitive and $G_0$ is
+normal, the $G_0$-orbit of $gx$ is $g$ applied to the $G_0$-orbit of $x$, so the cosets of $G_0$
+permute the orbits transitively and there are finitely many of them. A finite partition of $P$
+into closed sets is a partition into open sets; $P$ is connected; so there is one orbit and
+$G_0$ is transitive. Given pure states $x$ and $y$, choose $g \in G_0$ with $gx = y$ and a
+continuous path $g_t$ in $G_0$ from the identity to $g$; then $g_t x$ is a continuous reversible
+transformation from $x$ to $y$.
+\end{proof}
+
+The proposition relocates the premise. Divisibility was asked for because a transformation group
+could be infinite and discrete; but a group acting transitively on a continuum cannot be
+countable, and a closed group acting transitively on a connected space cannot be disconnected in
+the way that matters, so what the argument needs from the regime is not the availability of
+$n$-th roots but the connectedness of the state space itself. That is a statement about values:
+that the pure states are all the unit vectors of $\mathbb{C}^{K}$ up to phase, the space
+$\mathbb{CP}^{K-1}$, connected for $K \ge 2$, and hence that the amplitudes of
+\S\ref{sec:self-reference} fill their continuum. The two standing foils show the premise doing
+its work. The stabiliser fragment of quantum theory has complex amplitudes and is contextual,
+yet it has finitely many pure states, its outcome probabilities take only the values $0$,
+$\tfrac12$ and $1$, and its reversible transformations form a finite group, the Clifford group,
+so Hardy's fifth axiom fails in it; Spekkens's toy theory \autocite{spekkens2007toy} is the same
+with real amplitudes, its ignorance rationed by a knowledge-balance principle. Neither has a
+connected state space, and neither is a model of the regime described here, whose credences take
+every value. Divisibility, which both also lack --- the phase gate has no square root in the
+Clifford group --- is a symptom of the discreteness, not its cause.
+
+\subsection{The premises, and what they mean}
+
+Three premises carry Proposition~\ref{prop:connected-transitive}. Transitivity is the regime's
+homogeneity: inside/outside equivalence leaves no pure state privileged, and a proper closed
+invariant set of pure states would define a superselection observable, a classical record
+predating any \textsc{fanout} (\S\ref{sec:fanout-boundary}). Connectedness of the state space is
+a premise about values --- that self-referential ignorance is not rationed --- and it is the one
+that remains open; it is stated at the end of the section. Divisibility, which an earlier
+version of this section asked for, is not needed: it follows from the conclusion, every element
+of a compact connected Lie group having roots of every order, and its candidate derivation from
+``no distinguished step'' is retired with it. Closedness is the deeper premise conceptually, and
+it is where the section's title is earned. Closedness is limit-realisability: a Cauchy sequence
+of available transformations whose convergence the system can itself describe must have its
+limit available, for otherwise the system's own description refers to a transformation that does
+not exist, and self-referential closure fails --- a demand of exactly Lawvere's fixed-point
+shape \autocite{Lawvere_1969,Yanofsky2003}. What limit-realisability adds to the line is worth
+stating exactly, because it is the corrected form of a natural intuition. Cantor's diagonal
+\autocite{cantor1891diagonal} does not build the continuum; its output is an infinite decimal
+--- a Cauchy sequence of rationals --- which exists \emph{as a point} only because the line is
+complete. The diagonal presupposes limit-realisability and then shows that the completed line
+outruns every internal listing. And the character of the completion is the framework's own: the
+computable reals are countable \autocite{Turing_1937}, hence of measure zero, so the completed
+continuum is non-computable almost everywhere. Hardy's fifth axiom, on this reading, is the
+demand that the transformation group contain its \emph{non-computable} limits. Continuity is the
+topological face of the founding non-computability. We record closedness, all the same, as the
+framework's adopted stance rather than as a theorem: the same founding premise admits a
+constructive reading on which only describable limits exist --- a computable Cauchy sequence of
+rationals can have a non-computable limit, and the two readings part exactly there --- and the
+stance taken here is the operational one, that a limit no experiment can certify absent is
+admitted, which Hardy's own axioms take for granted.
 
 \subsection{Why the cut matters physically}
 
@@ -193,20 +245,28 @@ value that only the completed container possesses. On or off is not undecided; i
 
 \subsection{What remains, priced}
 
-\begin{openproblem}[Limit-realisability from self-reference]\label{op:limit-realisability}
-Derive, from the self-referential closure of \S\ref{sec:self-reference}, the two premises of
-Proposition~\ref{prop:divisible-closed}: that the reversible-transformation group of the
-pre-measurement regime is divisible --- the candidate route being that no selected basis leaves no
-distinguished step, so that every transformation is realisable in $n$ equal describable stages for
-every $n$ (with ``no selected basis'' now the exact statement that no classical structure has
-committed, Proposition~\ref{prop:f1-dictionary}) --- and that it is topologically closed --- the
-candidate route being that a Cauchy sequence of available transformations whose convergence the
-system can itself describe must have its limit available, on pain of the description referring to a
-transformation that does not exist, a failure of exactly the fixed-point closure that
-Proposition~\ref{prop:inside-outside} formalises. With
-both premises, continuity follows by the proposition and everything downstream is Hardy's theorem,
-cited; the finite, countable and disconnected escapes are closed unconditionally above. What is open
-is exactly the two derivations named, and nothing wider.
+\begin{openproblem}[The value continuum from self-reference]\label{op:limit-realisability}
+Proposition~\ref{prop:connected-transitive} reduces Hardy's fifth axiom to three premises: that
+the pure states of the pre-measurement regime form a connected space, that its reversible
+transformations act transitively on them, and that they form a closed group. Transitivity is
+argued above from the absence of records; closedness is the framework's adopted stance, the
+operational completion. What remains open is the first. Derive, from the self-referential
+closure of \S\ref{sec:self-reference}, that self-referential ignorance is not rationed: that the
+embedded observer's credence in a proposition about itself can take every value in $[0,1]$, so
+that the amplitudes of \S\ref{sec:self-reference} fill $\mathbb{C}^{K}$ and the pure states are
+all of $\mathbb{CP}^{K-1}$. The candidate route is that a rationing rule --- a minimal unit of
+self-ignorance, as in the knowledge-balance principle of the epistricted theories --- is a
+stable, copyable description of the observer's own epistemic state, a record predating any
+\textsc{fanout}, of exactly the kind the third face of the regime excludes (with ``no selected
+basis'' the exact statement that no classical structure has committed,
+Proposition~\ref{prop:f1-dictionary}). A derivation passes if it yields the connected state
+space from premises that Spekkens's toy theory \autocite{spekkens2007toy} does not also satisfy;
+it fails before any detail is checked if every premise it uses holds in that theory or in the
+stabiliser fragment of quantum theory, since both are consistent and both have finitely many
+pure states. Divisibility of the transformation group, asked for in an earlier version of this
+problem, is no longer required: it is a consequence of the conclusion, not a route to it. With
+the one premise, continuity follows by the proposition and everything downstream is Hardy's
+theorem, cited; the finite, countable and disconnected escapes are closed unconditionally above.
 \end{openproblem}
 
 The accounting, in one sentence: the axiom that every reconstruction programme pays is, in this

@@ -1,3 +1,6 @@
+% SUPERSEDED 2026-09-15: its divisibility material (P2', op:stage-lattice, the divisibility half of
+% thm:conditional) is retired by prop:connected-transitive in paper1/continuity_section_2026-07-04.tex;
+% its Specker, dyadic-tower and value-continuity material remains good. See knowledge/sessions/continuity_connected_state_space_2026-09-15T1430.md
 % =====================================================================
 %  APPENDIX: Self-referential ignorance and Hardy's continuity axiom
 %  -- the owed arrow, its decomposition, and open problems

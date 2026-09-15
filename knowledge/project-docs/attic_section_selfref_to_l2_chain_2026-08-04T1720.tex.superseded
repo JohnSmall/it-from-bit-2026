@@ -1,0 +1,316 @@
+% SUPERSEDED 2026-09-15: Step 9 (divisibility) is retired and Step 6's package deal is not an argument
+% for availability; the value-continuum premise (Step 10's substrate, op:quantised) is now the paper's
+% single open premise, op:limit-realisability. Never input into main.tex. See knowledge/sessions/continuity_connected_state_space_2026-09-15T1430.md
+% ============================================================================
+% BEGIN SENTINEL: selfref-to-l2-chain 2026-08-04T1720
+% ----------------------------------------------------------------------------
+% Pedagogical derivation chain: self-referential ignorance -> signed
+% probability -> complex surprisal (continued logarithm) -> complex
+% amplitudes -> thermodynamically free pre-FANOUT reversibility ->
+% divisibility -> connected group -> Hardy Axiom 5 as theorem -> L^2 metric
+% (Banach--Lamperti), with independent confirmation (Cencov / Fisher--Rao).
+%
+% Register: expository. Candidate home: main paper, early section (after the
+% introduction, before the formal amplitude derivation). \input line pending
+% John's confirmation, per house practice.
+%
+% Requires (already in main.tex preamble): amsmath, amssymb, biblatex with
+% \autocite. No new macros are defined here.
+%
+% Citation keys carried in refs_selfref_to_l2_chain_2026-08-04.ris. The keys
+% hardy2001 and schack2003 REUSE keys already present in
+% claude_appendix_continuity_open_problems_2026-07-17.tex -- do not duplicate
+% in the Mendeley library (dedupe on import). All memory-sourced entries are
+% flagged VERIFY-CITE in the RIS N1 fields; schack2003 was verified against
+% arXiv and the Springer DOI on 2026-08-04.
+%
+% Status labels [Established]/[Framework]/[Candidate]/[Open] are permanent
+% per house discipline; changes arrive as dated addenda, never in-place.
+% ============================================================================
+
+\section{From self-reference to the $L^2$ metric: the chain in fourteen steps}
+\label{sec:selfref-l2-chain}
+
+This section walks from the founding premise of the programme to the metric
+structure of quantum state space in fourteen small steps, each stated so that a
+reader unfamiliar with the underlying mathematics can follow the argument
+rather than take it on authority. We are explicit about epistemic status
+throughout: a step marked [\textsc{established}] rests on published
+mathematics or physics; [\textsc{framework}] marks results proved or argued
+within this programme but not yet independently vetted;
+[\textsc{candidate}] marks a fenced suggestion, introduced with pointers
+rather than claimed; [\textsc{open}] marks a step that cannot yet be proved by
+anyone, ourselves included. There are exactly three open steps, and we collect
+them at the end. The shape of the argument is simple: an observer embedded in
+the world they describe must carry a blind spot; accounting for that blind
+spot honestly forces complex numbers into the bookkeeping; operations
+performed before any record exists must be thermodynamically free and hence
+reversible; free and recordless operation leaves no way to forbid half-steps;
+and a state space admitting continuous reversible motion between all pure
+states can measure distance in only one way.
+% TODO(John): optional footnote on novelty; requires Samson Abramsky's
+% permission before citing a private communication. Disabled by default.
+% \footnote{The connection between self-referential paradoxes and negative
+% probability appears to be unexplored; S.~Abramsky (private communication,
+% 2026) confirmed he had not previously considered it.}
+
+\paragraph{Step 1 (\textsc{established}).}
+\emph{A describer inside the description must have a blind spot.} Imagine a
+perfectly detailed map of a room, hung inside that room. To be complete, the
+map must show the map, which must show the map showing the map, and so on
+without end. Or take Popper's version: build a machine that predicts its own
+output one second from now, then wire it to do the opposite of whatever it
+predicts. Whatever it predicts, it lies. This is one argument wearing many
+costumes: Cantor's diagonal, G\"odel's incompleteness, Turing's halting
+problem, and, in physics, Popper's predictor and Breuer's theorem that no
+apparatus can perfectly measure a system containing itself
+\autocite{cantor1891diagonal,goedel1931formal,turing1936computable,popper1950indeterminism1,popper1950indeterminism2,breuer1995selfmeasurement}.
+Lawvere showed that these are instances of a single fixed-point theorem, and
+Yanofsky's survey makes the common schema accessible
+\autocite{lawvere1969diagonal,yanofsky2003universal}. No embedded observer can
+hold a complete, consistent description of a whole that includes themselves.
+
+\paragraph{Step 2 (\textsc{established}).}
+\emph{Give the blind spot a bookkeeper.} Physics cannot forbid observers from
+being embedded, since every observer is. The blind spot must therefore be
+accounted for rather than wished away, and the accounting system for
+ignorance already exists: Shannon's information theory
+\autocite{shannon1948communication}. If an outcome is assigned probability
+$p$, the surprise on its occurrence is the surprisal $s = -\log p$. Certain
+events carry no surprise; events held impossible carry unbounded surprise.
+Everything that follows is careful bookkeeping with $-\log p$.
+
+\paragraph{Step 3 (\textsc{framework}).}
+\emph{Self-ignorance breaks the ordinary books.} Try to keep ordinary books,
+every entry a number in $[0,1]$, about oneself. The predictor of Step~1
+returns: whatever probability the machine's books assign to the proposition
+``I will output $0$'', the machine can read its own books and defeat the
+entry. A complete self-assignment in $[0,1]$ is exactly the kind of total
+self-description Step~1 forbids. Two honest escapes exist: forbid the
+situation, which is Russell's route \autocite{russell1908types} and is
+unavailable here because the observer really is embedded; or extend the
+number system of the entries, allowing some internal bookkeeping entries to
+go negative provided every entry corresponding to an actually observable
+event remains an honest probability. Negative quasi-probabilities have a
+respectable pedigree
+\autocite{wigner1932quantum,dirac1942bakerian,feynman1987negative}, and
+modern work shows that negativity is precisely equivalent to contextuality,
+the impossibility of one globally consistent assignment
+\autocite{abramskybrandenburger2011sheaf,spekkens2008negativity}. The
+negativity--contextuality scaffolding is thus established. What is not in the
+literature is the claim made here: that self-reference is the \emph{origin}
+of the negativity, the signed entries being forced by the diagonal argument
+of Step~1. This claim is original to the present programme.
+
+\paragraph{Step 4 (\textsc{established} mathematics; physical identification \textsc{candidate}).}
+\emph{Take the logarithm of a negative number.} The bookkeeper's rule is
+$s = -\log p$, but some entries are now negative. On the real line
+$\log(-\tfrac14)$ is undefined; yet the logarithm extends, analytically
+continues, beyond the real line in exactly one natural way, and the key fact
+is Euler's identity $e^{i\pi} = -1$, hence $\log(-1) = i\pi$. The surprisal
+of a negative entry is therefore
+\[
+  s \;=\; -\log\lvert p\rvert \;-\; i\pi \, ,
+\]
+an ordinary real surprise about the magnitude plus an imaginary offset of
+exactly $\pi$ recording the sign. The imaginary part of information is the
+ledger line for the sign. One disclosure is owed: the continued logarithm is
+many-valued, each circuit of the origin adding $2\pi i$, and the principal
+branch is chosen here. The ambiguity is not a defect; the multiples of
+$2\pi i$ reappear later as winding numbers.
+% TODO(John): wire \ref to the winding-number appendix label once confirmed
+% (appendix_winding_number_operator_2026-07-12.tex).
+
+\paragraph{Step 5 (definitional, given Step 4).}
+\emph{Exponentiate back and an amplitude appears.} Probabilities and
+surprisals are inverses, $p = e^{-s}$. Feeding in the complex surprisal of
+Step~4 yields a complex number $\psi = e^{-s}$, with $\lvert\psi\rvert$
+carrying the magnitude of the old entry and $\arg\psi$ carrying the
+accumulated multiples of $i\pi$. Complex amplitudes were not postulated;
+self-ignorance was double-entered and the complex numbers entered through the
+arithmetic.
+
+\paragraph{Step 6 (\textsc{established} mathematics; closure premise \textsc{candidate}, half-open).}
+\emph{The continuation is a package deal.} Analytic continuation does not
+merely define $\log(-1)$; it defines $z^{t} = e^{t\log z}$ for every real
+$t$. Accepting $\log(-1) = i\pi$ means accepting
+$(-1)^{1/2} = e^{i\pi/2} = i$, and $(-1)^{1/3}$, and $(-1)^{0.1387}$: one
+cannot buy the sign flip without buying the entire continuous dial of phases,
+the circle $U(1)$. Nor is there a halfway house, since no finite set of
+phases survives the analytic root: the principal square root of a primitive
+$k$-th root of unity has order $2k$ and escapes the set. Hence \emph{if} the
+phases the formalism attains are closed under the roots the formalism itself
+defines, the attained phase group is either trivial, the classical case
+already excluded by Step~3, or the full circle. That conditional is a
+premise, not yet a theorem; it is a phase-group instance of the divisibility
+premise discussed at Step~9, and is recorded as a candidate.
+
+\paragraph{Step 7 (\textsc{established}).}
+\emph{What a transformation costs.} Landauer showed that \emph{erasing} one
+bit of information carries an unavoidable price of $kT\ln 2$ paid to the
+environment; Bennett showed the converse, that logically reversible
+operations, those discarding nothing, can in principle be performed at zero
+cost \autocite{landauer1961irreversibility,bennett1973logical}. The price tag
+attaches to forgetting, never to doing, and the principle has been confirmed
+experimentally \autocite{berut2012landauer}.
+
+\paragraph{Step 8 (\textsc{framework}).}
+\emph{The FANOUT boundary: before the first copy, everything is free.} Call
+FANOUT the moment information is first copied, written into a record that
+could in principle be read. The criterion central to this programme is that
+this copying moment, not any collapse postulate, is the boundary between the
+pre-measurement and measurement regimes; its shadow in the external
+literature is the no-cloning theorem \autocite{wootterszurek1982cloning}.
+Combining with Step~7: before FANOUT nothing has been written anywhere, so
+nothing can require erasing, so no transformation can be charged. Pre-FANOUT
+transformations are thermodynamically free, and must therefore be reversible,
+because an irreversible step is precisely one that discards a distinction,
+and discarding is the one thing that costs. Even the cancellation of signed
+entries against one another, which will grow up to be interference, is free:
+cancellation before FANOUT erases no record, there being no record to erase.
+
+\paragraph{Step 9 (\textsc{open}: the central unproved step).}
+\emph{Free and recordless means no step is special.} Aaronson's intuition
+runs: if an operation can be applied for one second, it ought to make sense
+to apply it for half a second \autocite{aaronson2013democritus}. The present
+framework supplies a reason to believe this rather than merely find it
+plausible. Suppose that pre-FANOUT there were a smallest permitted unit of
+transformation, a rule of whole steps only. Then partway through a step there
+would have to be a fact of the matter about how much had been applied, and a
+fact is a distinguished mark, a record; but pre-FANOUT is precisely the
+regime with no records. A minimal step size is a mark the recordless regime
+has nowhere to keep, so every attainable transformation should be
+\emph{divisible}: performable in halves, thirds, $n$-ths, for every $n$. We
+state plainly that this step is not yet a theorem, ours or anyone's, and that
+a standing counterexample enforces honesty: Spekkens' toy and epistricted
+theories are likewise built on ignorance, yet their transformation groups are
+finite, their ignorance rationed in indivisible whole bits
+\autocite{spekkens2007toy,spekkens2016quasi}. Ignorance alone therefore does
+not force divisibility; what must be shown is that \emph{self-referential}
+ignorance, arriving with the continuous dial of Step~6 attached, differs in
+kind from rationed ignorance. This is the programme's open divisibility
+premise.
+% TODO(John): wire \ref to the continuity appendix open-problem label (P2')
+% once the label name is confirmed.
+
+\paragraph{Step 10 (closure standard; substrate \textsc{open}).}
+\emph{Limits of the allowed are allowed.} One further ingredient appears
+mild: if a sequence of permitted transformations converges to a limiting
+transformation, no experiment could certify the limit's absence, each stage
+being indistinguishable from something permitted, so operationally the limit
+is permitted too, and the set of attainable transformations is closed. The
+move is standard in the reconstruction literature, but it quietly leans on
+the scalars beneath forming a continuum: talk of convergence presupposes the
+real numbers rather than, say, the rationals or the $p$-adics, and that
+presupposition is itself an unproved layer of the programme. Khrennikov's
+$p$-adic probability theory is the standing rival, and $\mathbb{Q}_p$ is
+totally disconnected, admitting no continuous dial at all
+\autocite{khrennikov1994padic}.
+
+\paragraph{Step 11 (\textsc{established}).}
+\emph{Divisible and closed makes a smoothly connected group.} Three classical
+facts carry this step. The Cartan--von~Neumann closed subgroup theorem states
+that a closed set of matrices closed under multiplication and inversion is
+automatically a smooth object, a Lie group \autocite{lee2013smooth}. Compact
+Lie groups have finitely many connected components. And by Lagrange's
+observation, in a finite group of order $m$ only the identity is an $m$-th
+power; so if an element possesses roots of every order, as Step~9 provides,
+its component label must be the identity label, and divisibility forces every
+element into the component of the identity. The attained transformations
+therefore form a connected, continuous group. Every ingredient is
+nineteenth-to-twentieth-century mathematics, and the step is theorem-grade
+given Steps~9 and~10.
+
+\paragraph{Step 12 (orbit argument \textsc{established}; homogeneity premise \textsc{framework}).}
+\emph{No state is special, so the group reaches everything.} The founding
+axiom of the programme, inside/outside equivalence, entails that physical law
+cannot privilege any particular pure state, an embedded observer possessing
+no absolute landmark against which to locate their own state; the symmetry
+group must therefore carry any pure state to any other, acting transitively.
+A connected group acting transitively yields, between any two pure states, a
+continuous path of reversible transformations. Stated in Hardy's words this
+is exactly his fifth axiom, the one postulated in the original
+five-axiom reconstruction and still retained as a postulate in Schack's
+four-axiom Bayesian variant \autocite{hardy2001,schack2003}. Here it has
+become a conclusion, resting on the steps flagged above.
+
+\paragraph{Step 13 (\textsc{established}; the record-theoretic gloss is a rhyme).}
+\emph{Only one distance survives continuous motion.} A distance between
+states, to mean anything, must be unchanged by the free reversible
+operations; otherwise costless, recordless motion could alter how
+distinguishable two states are, and a change in distinguishability is itself
+a record that nothing paid for. The metric must therefore be invariant under
+the whole connected group of Step~12. Consider the natural candidates,
+distances built from $\sum_k \lvert \cdot \rvert^{p}$, and picture the unit
+ball of each: for $p=1$ a diamond, for $p=\infty$ a box, for $p=2$ a round
+sphere. A diamond or a box has corners, and corners are distinguished
+directions, marks, exactly what the recordless regime cannot possess. The
+theorem beneath the picture is due to Banach and Lamperti
+\autocite{banach1932operations,lamperti1958isometries}: for every
+$p \neq 2$ the norm-preserving linear maps are exactly the monomial ones,
+permutations dressed with phases, a rigid set of moves admitting no
+continuous path between distinct configurations. Continuous transitive motion
+is incompatible with every exponent except one; the sphere is the only
+cornerless ball, and $p=2$ is the only exponent whose symmetries can flow.
+Hence the $L^2$ metric. One precision, so that nothing is oversold:
+continuity of this kind selects the \emph{exponent}, not the field. Real
+$L^2$ passes the transformation test, $SO(N)$ being connected and transitive
+on the sphere; the complex field is bought separately, by the phase argument
+of Step~6 at the amplitude level and by local tomography at the composite
+level.
+
+\paragraph{Step 14 (\textsc{established}, modulo citation checks).}
+\emph{Two independent roads confirm the same exponent.} From the group
+directly: a connected group transitive on pure states, with the phase circle
+of Step~6 as fibre, makes the pure-state space complex projective space
+$\mathbb{CP}^{K-1}$, which admits exactly one invariant metric up to overall
+scale, the Fubini--Study metric, whose linear lift is the $L^2$ inner
+product \autocite{bengtssonzyczkowski2017geometry}. From statistics, with no
+groups at all: \v{C}encov proved that the unique metric on classical
+probability distributions respecting coarse-graining is the Fisher--Rao
+metric \autocite{cencov1982statistical,rao1945information}, and in the
+coordinates $x_k = \sqrt{p_k}$ the Fisher--Rao metric \emph{is} the round
+$L^2$ metric on the positive orthant of the sphere. The square root of
+probability is thus a natural statistical coordinate even classically;
+Wootters showed that quantum distinguishability distance is exactly the
+corresponding angle \autocite{wootters1981distance}, and Petz and
+Petz--Sud\'ar showed that although mixed states carry a whole family of
+monotone metrics, on pure states every member of the family collapses to
+Fubini--Study \autocite{petz1996monotone,petzsudar1996geometries}.
+Transformation continuity selects the exponent; value continuity
+independently confirms it. What the statistical road can never supply is the
+passage from the positive orthant to the whole sphere, the linear structure,
+phases and superposition: that is entirely transformation-bought.
+
+\paragraph{The ledger of open steps.}
+Fully load-bearing on published mathematics and physics: Steps 1, 2, the
+mathematics of Step~4, and Steps 7, 11, 13 and 14. Proved or argued within
+this programme but not independently vetted: Step~3, the origin of negativity
+in self-reference; Step~8, the FANOUT boundary; the homogeneity premise of
+Step~12; and the physical identifications in Steps 4 and 5. Genuinely open,
+provable by no one yet: Step~9, that recordlessness forces divisibility,
+with the Spekkens foil standing guard over exactly where the proof must
+bite; the substrate of Step~10, why the real continuum underlies the scalars
+at all; and, half-open, the closure premise inside Step~6, whose mathematics
+is trivial and whose physical content is not. The chain is thus a genuine
+derivation with exactly three named gaps, each gap a precise mathematical
+statement rather than a hope.
+
+% ----------------------------------------------------------------------------
+% Citation trailer (keys used in this section; all carried in
+% refs_selfref_to_l2_chain_2026-08-04.ris):
+%   cantor1891diagonal, goedel1931formal, turing1936computable,
+%   popper1950indeterminism1, popper1950indeterminism2,
+%   breuer1995selfmeasurement, lawvere1969diagonal, yanofsky2003universal,
+%   shannon1948communication, russell1908types, wigner1932quantum,
+%   dirac1942bakerian, feynman1987negative, abramskybrandenburger2011sheaf,
+%   spekkens2008negativity, landauer1961irreversibility, bennett1973logical,
+%   berut2012landauer, wootterszurek1982cloning, aaronson2013democritus,
+%   spekkens2007toy, spekkens2016quasi, khrennikov1994padic, lee2013smooth,
+%   hardy2001, schack2003, banach1932operations, lamperti1958isometries,
+%   cencov1982statistical, rao1945information, wootters1981distance,
+%   petz1996monotone, petzsudar1996geometries,
+%   bengtssonzyczkowski2017geometry
+% ============================================================================
+% END SENTINEL: selfref-to-l2-chain 2026-08-04T1720
+% ============================================================================

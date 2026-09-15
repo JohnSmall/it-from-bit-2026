@@ -10,7 +10,7 @@ Where a filename had several versions they are kept as `__vN_<date>`.
 ---
 
 - `Pure_states_and_mixed_states_in_quantum_foundations_2026_04_11.md` (10 KB) — Pure States and Mixed States in Quantum Foundations
-- `appendix_continuity_open_problems_2026-07-17.tex` (28 KB) — % =====================================================================
+- `attic_appendix_continuity_open_problems_2026-07-17.tex.superseded` (28 KB) — Self-referential ignorance and Hardy's continuity axiom: status and open problems. SUPERSEDED 2026-09-15 (divisibility material retired by prop:connected-transitive; see sessions/continuity_connected_state_space_2026-09-15T1430.md)
 - `appendix_padic_ctc_division_2026-07-23T0617.tex` (31 KB) — % =====================================================================
 - `appendix_reverse_flow_2026-07-23.tex` (16 KB) — % =====================================================================
 - `boson_mass_fibre_geometry.md` (13 KB) — Electroweak Boson Masses from Fibre Geometry
@@ -115,3 +115,11 @@ Where a filename had several versions they are kept as `__vN_<date>`.
 - `terminology_reconciliation_entanglement_dictionary_2026-06-08.md` (10 KB) — Terminology Reconciliation: The Two Readings of the Entanglement–Particle Dictionary
 - `time_as_computation_gr_emergence.md` (62 KB) — Research Summary: Time as Computation and the Emergence of General Relativity
 - `w_to_su2l_doublet_theorem.md` (15 KB) — The W → SU(2)_L doublet theorem
+
+---
+
+Added after the export:
+
+- `pedagogical_chain_selfref_to_l2_2026-08-04T1720.md` — the 2026-08-04 session's markdown record of the fourteen-step chain (kept as a record).
+- `attic_section_selfref_to_l2_chain_2026-08-04T1720.tex.superseded` — the same chain as a paper section; never input; SUPERSEDED 2026-09-15 (Step 9 retired, Step 6 not an argument for availability; see sessions/continuity_connected_state_space_2026-09-15T1430.md).
+- `attic_refs_selfref_to_l2_chain_2026-08-04.bib.superseded` — its reference batch; never imported; superseded with it.
