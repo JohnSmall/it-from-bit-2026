@@ -1,3 +1,4 @@
+% EDITED 2026-09-15 scripts/patch_value_continuum_declared_cencov_2026-09-15T1540.py
 % EDITED 2026-09-15 scripts/patch_continuity_connected_state_space_2026-09-15T1430.py
 % =====================================================================
 %  SECTION: The Euclidean metric on the state sphere, and the global
@@ -44,8 +45,10 @@ is the Hopf fibration and the Bloch sphere; but even to draw the Bloch sphere on
 justify the $L^{2}$ metric, and this section earns that right. The principle doing the work is
 the reversible continuity of \S\ref{sec:continuity} --- derived there from self-reference
 conditionally, on the premises priced as Open Problem~\ref{op:limit-realisability}, of which one, the
-value continuum, remains open. Assuming that premise can be proved, everything below inherits the
-derivation; we carry that status, and do not upgrade it.
+value continuum, remains open. That premise is the one the Shannon step declares
+(\S\ref{sec:complex-amplitudes}), and \S\ref{sec:cencov-route} below reaches the same metric by a
+second route that consumes it and nothing else that is open. Assuming that premise can be proved,
+everything below inherits the derivation; we carry that status, and do not upgrade it.
 
 We have established that the amplitudes of a single qubit form a complex vector space
 $\mathbb{C}^{2}\cong\mathbb{R}^{4}$. We have not yet fixed which norm on this space singles out
@@ -147,7 +150,55 @@ together with $K=N^{2}$.
 We thus have two genuinely independent demonstrations that reversible continuity forces the
 $L^{2}$ metric: Hardy's operational $K=N^{2}$ counting, and the Lamperti--Aaronson
 classification of the isometries. They converge on the same step by different mathematics, and
-should be cited as two roads rather than one road traversed twice.
+should be cited as two roads rather than one road traversed twice. Both roads start from
+continuity. A third, in the next subsection, starts one step earlier, from the value continuum
+that continuity itself rests on, and reaches the same metric without passing through the
+transformation group at all.
+
+\subsection{The statistical route: \v{C}encov's theorem and the every-basis lemma}
+\label{sec:cencov-route}
+
+The value continuum that \S\ref{sec:continuity} isolates as the one open premise reaches the
+$L^{2}$ metric on its own, by a route that uses no transformation group. \v{C}encov's theorem
+states that the only Riemannian metric on the simplex of probability distributions invariant
+under coarse-graining --- under the Markov maps that merge or relabel outcomes --- is the
+Fisher--Rao metric \autocite{bengtsson2006geometry}, and in the coordinates $x_{k} =
+\sqrt{p_{k}}$ the Fisher--Rao metric is the round metric on the positive orthant of the unit
+sphere. The premise the theorem consumes is that the simplex is a manifold, which is the value
+continuum declared in \S\ref{sec:complex-amplitudes}, and the principle it uses, that
+distinguishability does not depend on how outcomes are grouped, is one the Shannon bookkeeper of
+that section already grants. What it does not supply is the passage from one orthant to the
+whole projective space; that is the following lemma.
+
+\begin{lemma}[The every-basis lemma]\label{lem:every-basis}
+Let $g$ be a Riemannian metric on $\mathbb{CP}^{K-1}$ whose restriction to the positive real
+orthant of every orthonormal basis --- the states $\sum_{k}\sqrt{p_{k}}\,e_{k}$ with $p$ in the
+simplex --- is the Fisher--Rao metric. Then $g$ is the Fubini--Study metric, whose linear lift
+is the $L^{2}$ inner product.
+\end{lemma}
+
+\begin{proof}
+A tangent vector to $\mathbb{CP}^{K-1}$ at a state $\psi$ is represented by a vector $\phi$
+orthogonal to $\psi$, and the curve $t \mapsto \cos t\,\psi + \sin t\,\phi$ with real $t$ lies
+in the positive orthant of any orthonormal basis that contains $\psi$ and $\phi$. Along that
+curve the Fisher--Rao metric is the round metric of the sphere in the coordinates $\sqrt{p}$,
+which is the Fubini--Study metric restricted to real amplitudes; so $g$ and the Fubini--Study
+metric agree on every tangent vector at every point, the direction $i\phi$ being reached by the
+basis that contains $i\phi$ in place of $\phi$.
+\end{proof}
+
+The lemma's premise, that every orthonormal basis is a legitimate measurement and none is
+privileged, is the fourth face of the pre-measurement regime seen from the measurement side
+(\S\ref{sec:continuity}); in the stabiliser fragment of quantum theory it fails in the same way
+everything else does, only the Pauli bases being measurements there. So the $L^{2}$ metric now
+rests on two legs that share exactly one premise. Through reversible continuity it uses the
+value continuum, closure and homogeneity (Proposition~\ref{prop:lamperti}); through \v{C}encov
+it uses the value continuum, coarse-graining invariance and the equal standing of bases
+(Lemma~\ref{lem:every-basis}). Neither leg needs anything else that is open, and nothing could
+avoid the continuum, since a metric is a statement about one. That is the status of everything
+downstream of this section, the Hopf fibrations included: derived from a premise every physicist
+grants and the framework has not yet derived from self-reference (Open
+Problem~\ref{op:limit-realisability}).
 
 \subsection{The Hopf fibration and the Bloch sphere}
 \label{sec:hopf-bloch}

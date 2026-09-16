@@ -1,3 +1,5 @@
+% EDITED 2026-09-15 scripts/patch_value_continuum_declared_cencov_2026-09-15T1540.py
+% EDITED 2026-09-15 scripts/patch_reversible_continuity_fossil_2026-09-15T1525.py
 % EDITED 2026-09-15 scripts/patch_supertask_refs_2026-09-15T1000.py
 % EDITED 2026-09-12 scripts/patch_aaronson_chapter_cite_2026-09-12T1300.py
 % EDITED 2026-09-11 scripts/patch_splice_jaynes_insert_2026-09-11T1130.py
@@ -70,7 +72,7 @@ Thomson's Lamp \autocite{Svozil2009}, where we have a lamp that toggles between 
 suppose it starts out switched on, after the first minute we toggle if off, then half a minute
 later we toggle in on, then 15 seconds later we toggle it off, and so on. After 2 minutes we
 will have toggled it on and off an infinite number of times. We would have performed an infinite
-number of actions. The final state cannot to represented as either on or off but has a perfectly
+number of actions. The final state cannot be represented as either on or off but has a perfectly
 valid representation as being in a superposition of being on and off at the same time. Also
 super-tasks can exceed the bounds of a Turing machine
 \autocite{shagrirSupertasksAcceleratingTuring2004,Hamkins_2002,Copeland_2002}. Once we know the basic forms of
@@ -454,12 +456,22 @@ Theory and take the obvious next step which we delayed before, we have to plug a
 into the log function. But that can only work if we use analytic continuation to extend the
 domain of the log function the complex plane and that is why quantum probabilities have complex
 amplitudes.
+One premise is declared here, because everything downstream consumes it. Analytic continuation
+is an operation on a function defined on a connected domain, and its value at a negative entry
+is unique only because credences range over such a domain. The framework takes it that an
+embedded observer's credence in a proposition about itself can take every value in $[0,1]$ ---
+self-referential ignorance is not rationed into whole bits, as it is in the epistricted theories
+\autocite{spekkens2007toy} --- so that the surprisal is an analytic function on a continuum
+rather than a table of values that any extension would fit. The same premise is what later makes
+the pure states a connected space (\S\ref{sec:continuity}) and the probability simplex a
+manifold (\S\ref{sec:cencov-route}); whether self-reference derives it is Open
+Problem~\ref{op:limit-realisability}.
 
 But why not quaternionic or octionic values? Because quaternion multiplication is not
 commutative and Shannon Information requires that the information is additive and addition is
-commutative, it can't depend on the ordering. We expand on that topic when discussing reversible
-continuity in \ref{sec:reversible-continuity}. Therefore probabilities which occur in such
-self-referential setups have to be complex numbers.
+commutative, it can't depend on the ordering. Continuity, which fixes the metric and not the
+field, is taken up separately in \S\ref{sec:continuity}. Therefore probabilities which occur in
+such self-referential setups have to be complex numbers.
 
 A useful implication is that it's not impossible to create a bijection between $\mathbb{Q}$ and
 $\mathbb{R}$, it's more than impossible. There's a negative, or more precisely a complex
@@ -545,19 +557,20 @@ quantum speedup has already been pointed out in Raussendorf
 
 \subsection{Reversible continuity}
 \label{sec:reversible-continuity}
-In the pre-FANOUT regime erasing information has no thermodynamic cost, everything is reversible
-and because there are no copyable records there is no well defined ordering of events. Cantor's
-diagonalisation argument is used to show that there are more real numbers than countable
-numbers, by construction we can use self-referential diagonalisation to generate numbers that
-are not in any list. Which means self-reference can generate the numbers to fill in the gaps in
-$\mathbb{Q}$ to get $\mathbb{R}$ and hence continuity. Hardy's "Quantum Theory From Five
-Reasonable Axioms" \autocite{Hardy2001a} identifies the axiom of reversible continuity as the
-key differentiator between classical and quantum theory. Reversible continuity means we can
-reversibly and continuously move between say $\ket{TRUE}$ and $\ket{FALSE}$, prior to FANOUT
-there is no preferred basis. The fact that a superposition $\ket{TRUE}$ and $\ket{FALSE}$
-enables a quantum state to represent the classically inadmissable states that arise in paradoxes
-of self-reference is a consequence of the axiom of reversible continuity. Working from Popper's
-model we find that reversible continuity is a consequence of self-reference.
+In the pre-\textsc{fanout} regime erasing information has no thermodynamic cost, everything is
+reversible, and because there are no copyable records there is no well-defined ordering of
+events. Hardy's reconstruction \autocite{Hardy2001a} identifies reversible continuity --- that a
+continuous reversible transformation connects any two pure states, so that one can move
+continuously between $\ket{TRUE}$ and $\ket{FALSE}$ with no preferred basis --- as the one axiom
+that separates quantum from classical probability, and it is what lets a superposition of
+$\ket{TRUE}$ and $\ket{FALSE}$ represent the classically inadmissible states of the paradoxes of
+self-reference. Whether self-reference forces that axiom is the subject of
+\S\ref{sec:continuity}. It is tempting to read Cantor's diagonal as filling the gaps in
+$\mathbb{Q}$ to give $\mathbb{R}$, and continuity with it; the reading is backwards, as that
+section explains, since the diagonal presupposes the completed line rather than building it. The
+honest position is the one given there: continuity is not an axiom of the framework, but it
+reduces, by a theorem, to a single premise about values --- that self-referential ignorance is
+not rationed --- stated as Open Problem~\ref{op:limit-realisability}.
 
 \subsection{Measuring degrees of non-computability}
 \label{sec:measuring-non-computability}

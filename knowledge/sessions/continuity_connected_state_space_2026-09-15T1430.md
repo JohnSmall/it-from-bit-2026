@@ -167,6 +167,115 @@ record, which is kept as history):
 append-only, so the path is left for the Opus session to supersede with the
 dated entry proposed below rather than edited here.
 
+## Second edit, T1525: the fossil subsection in what_is_a_quantum_state.tex
+
+JS: the subsection "Reversible continuity" (sec:reversible-continuity, lines
+546--560) predates sec:continuity and needs removing or re-pointing. It
+contradicted the section twice: the diagonal "fills the gaps in Q to give R
+and hence continuity" (sec:continuity says the diagonal presupposes the
+completed line), and "reversible continuity is a consequence of
+self-reference" (now conditional on one open premise). Its label is
+referenced from main.tex's introduction and from an earlier sentence in the
+same file, so it was rewritten as a pointer, label kept:
+`scripts/patch_reversible_continuity_fossil_2026-09-15T1525.py`, backups
+`.2026-09-15T1525.bak` on both files.
+
+- The subsection now states the recordless reversible regime, Hardy's
+  axiom and what it affords (the TRUE/FALSE superposition), sends the
+  question to sec:continuity, corrects the diagonal reading, and states the
+  honest status with op:limit-realisability.
+- The earlier sentence promised to "expand on" quaternionic and octonionic
+  amplitudes "when discussing reversible continuity", which the subsection
+  never did; it now says continuity fixes the metric and not the field and
+  points to sec:continuity.
+- main.tex's introduction said "this forces reversible continuity"; it now
+  says the paper takes it up and that sec:continuity reduces it to a single
+  open premise about values. Bare \ref kept to match that paragraph (its
+  style pass is a separate todo of the other session's).
+
+Not built; not committed.
+
+## Third edit, T1540: the premise declared once; the statistical route to L^2
+
+JS asked whether the complex values, reached by analytic continuation of the
+logarithm, imply the value continuum. Answer, STRUCTURAL: they consume it.
+Analytic continuation is an operation on a function on a connected domain;
+its value at a negative entry is unique only because credences range over
+such a domain. With finitely many attainable credences (the stabiliser
+fragment's {0, 1/2, 1}; the toy theory), "-log p" would be one of infinitely
+many rules agreeing on the attained points and its extension a convention.
+So the framework's one continuity input is made at the Shannon step and is
+consumed three times: at the continuation (complex amplitudes), at
+prop:connected-transitive (reversible continuity), and at Cencov (the
+simplex as a manifold). It is also what the corpus called Layer 1, "why R
+before C": the same premise, with Khrennikov's p-adics as its foil in the
+way the epistricted theories are.
+
+Caution recorded: the continuation by itself yields only the sign as a phase
+(e^{-s} with s = -log|p| - i pi is just the signed entry p). The continuous
+phase theta in the paper's S = -ln|p| - i theta is a further appeal to the
+same premise (ignorance in all degrees), and the square-root magnitude comes
+from the Born rule or the Fisher--Rao coordinate, not from the continuation.
+Not changed in the paper beyond the declared-premise sentence; worth JS's
+eye when sec:complex-amplitudes is next revised.
+
+JS then asked whether the step to the L^2 metric can be justified. Yes,
+conditionally on that one declared premise, by two routes sharing only it:
+(a) reversible continuity and Banach--Lamperti (value continuum + closure +
+homogeneity); (b) Cencov's theorem plus a lemma, STRUCTURAL: the
+Fubini--Study metric is the only metric on CP^(K-1) restricting to
+Fisher--Rao on the positive real orthant of every orthonormal basis (proof:
+every tangent direction phi at psi lies along the real curve
+cos t psi + sin t phi in the orthant of a basis containing psi and phi; i phi
+is reached by the basis containing i phi). This is Wootters's 1981
+statistical distance in another guise. Route (b) needs coarse-graining
+invariance and the equal standing of bases, not closure or a transformation
+group. Hardy's K = N^2 counting is not a premise-independent third leg: it
+uses A5 to exclude the classical r = 1 and again for the Bloch ball; the L^2
+section's own wording ("two roads from continuity") was already right, the
+postulates section's "independent route" was not.
+
+`scripts/patch_value_continuum_declared_cencov_2026-09-15T1540.py`, backups
+`.2026-09-15T1540.bak` on four files:
+- `what_is_a_quantum_state.tex`: the declared premise after the continuation
+  sentence (credences take every value in [0,1]; not rationed as in the
+  epistricted theories, spekkens2007toy cited), why the continuation needs
+  it, where it is consumed, op:limit-realisability named.
+- `continuity_section_2026-07-04.tex`: op:limit-realisability gains the
+  sentence that the premise is the Shannon step's, consumed three times.
+- `L2_metric_global_phase_section_2026_06_07.tex`: status paragraph updated;
+  Hardy's-route paragraph says both roads start from continuity and a third
+  starts earlier; new sec:cencov-route with Cencov (cited to
+  bengtsson2006geometry, the one source for it in the bibliography),
+  lem:every-basis with proof, and the two-legs status paragraph.
+- `derivation_of_the_quantum_postulates.tex`: "an independent route" ->
+  "a second route from the same continuity premise", the statistical route
+  named; "the independent isometry and counting arguments" -> "the isometry
+  and counting arguments and ... the statistical route".
+Not built; not committed.
+
+Additional ledger proposals from this edit:
+- results_ledger, **STRUCTURAL**: the complex amplitudes reached by analytic
+  continuation consume the value continuum rather than imply it; the
+  framework's one continuity input is declared at the Shannon step and
+  consumed at the continuation, at prop:connected-transitive and at Cencov;
+  it is the corpus's Layer 1 under another name.
+- results_ledger, **STRUCTURAL**: the every-basis lemma (lem:every-basis);
+  with Cencov's theorem it gives the L^2 metric from the value continuum,
+  coarse-graining invariance and the equal standing of bases, with no
+  transformation group.
+- results_ledger, **CANDIDATE**: the L^2 metric, and with it the Hopf
+  fibrations and everything downstream, are derived conditionally on the
+  one declared premise by two routes that share only it; their status is
+  "a premise every physicist grants, not yet derived from self-reference".
+- invalid_routes: treating Hardy's K = N^2 counting as a route to the
+  quadratic norm independent of the continuity premise (it uses A5 twice).
+- References for the other session to verify and batch: Cencov 1982 (AMS
+  translation of the 1972 Russian, "Statistical Decision Rules and Optimal
+  Inference"); Wootters 1981, Phys. Rev. D 23, 357; optionally Campbell 1986
+  or Ay--Jost--Le--Schwachhoefer 2015 for the general form of Cencov's
+  theorem. The patch cites only bengtsson2006geometry, already in the bib.
+
 ## Proposed ledger entries
 
 ### results_ledger.md, dated 2026-09-15
