@@ -236,16 +236,39 @@ and are filed. Three patch scripts are ready to run, none of them applied.
 
 ## Versioning and release
 
-- [ ] On first publication to Zenodo a concept DOI appears, resolving always to
-      the latest version. Replace the reserved version DOI
-      `10.5281/zenodo.22755871` with it in two places: the colophon in
-      `paper1/main.tex` and the `small2026itfrombit` entry in Zotero (then
-      re-export). Both cite a living record, so a version DOI freezes them to
-      the first deposit.
-- [ ] When the paper is tagged and submitted, the title's `Version 0.5` and the
-      colophon's version and date all want updating together, the DRAFT
-      watermark comes off, and the tag `paper1-v1` is what the colophon should
-      then name as its source state.
+The release needs **two Zenodo deposits**, and that is not a mistake to be
+avoided. Zenodo issues the concept DOI --- the one that always resolves to the
+latest version --- only on first publication, so the paper cannot cite it until
+a deposit exists. The first deposit therefore cites its own version DOI, which
+is self-consistent but not future-proof, and the second cites the concept DOI.
+The arXiv submission is the second one, so arXiv v1 corresponds to Zenodo
+deposit 2. The README says to expect exactly this.
+
+- [ ] **1. Deposit.** Publish the current state to Zenodo against the reserved
+      DOI `10.5281/zenodo.22755871`. The paper's colophon and the
+      `small2026itfrombit` entry both name that DOI, and it is the DOI of the
+      deposit that contains them, so the record is internally correct. Tag the
+      repository first so the deposit has a name.
+- [ ] **2. Read the concept DOI.** It exists from the moment of publication. If
+      the web form does not show it, the REST API does:
+      `curl -s https://zenodo.org/api/records/<recid> | python3 -c "import json,sys; print(json.load(sys.stdin).get('conceptdoi'))"`
+- [ ] **3. Swap it in, in two places.** The colophon in `paper1/main.tex` (patch
+      script; `scripts/patch_colophon_2026-09-16T1700.py` is the one that put
+      the DOI there) and the `small2026itfrombit` item in Zotero, then
+      re-export `references.bib`. Both cite a living record, so a version DOI
+      would freeze them to deposit 1.
+- [ ] **4. Finish the release edit while you are in there.** The title's
+      `Version 0.5`, the colophon, the DRAFT watermark and the
+      work-in-progress note under `\maketitle` all want settling together, and
+      the colophon should then name the tag it was built from. Build clean.
+- [ ] **5. Deposit again, then submit that one to arXiv.** Deposit 2 is the
+      artefact the paper describes and the one the arXiv record should point
+      at.
+
+Deposit 1 is not wasted: it is the honest record of the paper at the moment it
+could only name itself. The colophon also carries the repository URL beside the
+DOI, and that pointer never goes stale, so even deposit 1 leads a reader to the
+current state.
 
 ## Before the repository goes public
 
