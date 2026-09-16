@@ -32,7 +32,12 @@ labels, ledger entries, the Zotero library, anything under
 CONTRIBUTING.md is the full account.
 
 ## Read first
-Repo layout is in README.md. Knowledge layout and consult order are in
+Repo layout is in README.md. ORIENTATION.md is what a newcomer needs and what
+you should lean on when the question is about the framework rather than the
+process: what each body of text is worth, what the six status labels mean, and
+where the 36 numbered open problems are. When you answer a question about the
+physics, say where the answer came from -- paper, ledger, session note or
+archive -- and give the claim's status label with it. Knowledge layout and consult order are in
 knowledge/README.md. The two curated files below load every session;
 everything else in knowledge/ is read on demand, and knowledge/archive/
 is never imported — grep INDEX.md, then open at most three files.

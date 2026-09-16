@@ -15,6 +15,7 @@ and computability. Paper 1 (foundations, submitted to ...) and Paper 2
 | `bib/`          | Dated reference batches for import into Zotero           |
 | `scripts/`      | Python calculations and LaTeX patch scripts              |
 | `knowledge/`    | Curated results, open problems, and session archive      |
+| `ORIENTATION.md` | For a newcomer: what is here, what it is worth, how to ask |
 | `CONTRIBUTING.md` | How to build, what to read, who changes what           |
 | `CONTRIBUTOR.template.md` | Shape of the gitignored `CONTRIBUTOR.md`      |
 | `knowledge/publications/` | The author's earlier papers and posters, frozen |
@@ -95,10 +96,18 @@ for dashes, ``` `` ```, `''` and `'` for quotes, `\S` for the section sign.
 Ligature codepoints (U+FB01 fi, U+FB03 ffi) are PDF copy-paste damage and are
 always wrong. `CLAUDE.md` states the same rule for AI assistants.
 
+## Coming to this for the first time
+
+`ORIENTATION.md` is written for someone who has just cloned this and wants to
+understand, evaluate or challenge the framework: what builds, what the four
+bodies of text are worth, what the six status labels mean, where the 34
+numbered open problems are, and how to put questions to the repository with an
+agent.
+
 ## Contributing
 
-`CONTRIBUTING.md` is the place to start: how to build, what to read first, and
-who changes what. The maintainer works on `main`; everyone else branches and
+`CONTRIBUTING.md` is the place to start if you want to change something: how
+to build, what to read first, and who changes what. The maintainer works on `main`; everyone else branches and
 opens a pull request.
 
 On its first run in a fresh clone an agent will ask who you are and record the

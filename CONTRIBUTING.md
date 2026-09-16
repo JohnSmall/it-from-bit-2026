@@ -4,6 +4,10 @@ This is a working research repository for a multi-paper physics series, not a
 software project, and the conventions follow from that: the papers are the
 product, the ledgers are the memory, and provenance matters more than speed.
 
+If you have not read `ORIENTATION.md`, start there: it covers what is here,
+what each part is worth, and how to ask the repository questions. This file
+assumes you already want to change something.
+
 ## Getting started
 
 You need TeX Live 2025 with `biber`, and Python 3 for the scripts.

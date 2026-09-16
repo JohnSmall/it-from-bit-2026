@@ -8,7 +8,9 @@ disagree, `CLAUDE.md` wins.
 
 Then read `CONTRIBUTING.md` for who may change what, and
 `knowledge/README.md` for what in `knowledge/` is authoritative and what is
-raw archive.
+raw archive. `ORIENTATION.md` is the one to lean on when the question is about
+the framework rather than the process; it also tells you to source every answer
+and to give its status label.
 
 ## Before anything else: who are you talking to?
 
