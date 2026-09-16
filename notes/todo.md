@@ -234,6 +234,19 @@ and are filed. Three patch scripts are ready to run, none of them applied.
       corpus, in `paper1/appendices/appendix_jaynes_fibration_2026-07-19.tex`
       section `app:jaynes:status`. The other three were inferred.
 
+## Versioning and release
+
+- [ ] On first publication to Zenodo a concept DOI appears, resolving always to
+      the latest version. Replace the reserved version DOI
+      `10.5281/zenodo.22755871` with it in two places: the colophon in
+      `paper1/main.tex` and the `small2026itfrombit` entry in Zotero (then
+      re-export). Both cite a living record, so a version DOI freezes them to
+      the first deposit.
+- [ ] When the paper is tagged and submitted, the title's `Version 0.5` and the
+      colophon's version and date all want updating together, the DRAFT
+      watermark comes off, and the tag `paper1-v1` is what the colophon should
+      then name as its source state.
+
 ## Before the repository goes public
 
 - [ ] Read through `knowledge/` -- 26 MB, published permanently by a Zenodo

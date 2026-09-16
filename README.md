@@ -179,6 +179,21 @@ resolving to the latest. Note that a release archives the **whole**
 repository, `knowledge/` included, and Zenodo records are not designed to be
 withdrawn.
 
+Three version numbers are in play and **they are not meant to agree**. Zenodo
+counts deposits, arXiv counts revisions of the paper, and the paper carries its
+own number on its title page. They diverge the first time the repository is
+deposited without the paper being resubmitted, so the first arXiv version may
+well be the third Zenodo one. The git tag is the join: `paper1-v1` names one
+source state, and the arXiv record, the Zenodo deposit and the paper's colophon
+all point at it. The paper's number and the arXiv version are kept equal; the
+Zenodo ordinal is left to float.
+
+The concept DOI does not exist until the first publication --- before that
+Zenodo issues only a reserved version DOI, which points at a single deposit.
+The paper's colophon and the `small2026itfrombit` bibliography entry currently
+carry that reserved DOI, and both should move to the concept DOI once it
+exists, since both are pointing at a living record rather than a snapshot.
+
 ## Directory Structure
 self-ref-2026/
 ├── CLAUDE.md                     # behaviour contract (short)
