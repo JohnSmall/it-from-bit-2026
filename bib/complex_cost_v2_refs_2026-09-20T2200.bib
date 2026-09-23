@@ -1,0 +1,192 @@
+% Batch: the complex-cost v2 references. Written 2026-09-20T2200 by the Opus
+% session for the list in
+% notes/paper1_v2_complex_cost_revision_plan_2026-09-18T1000.md section 13,
+% "References to verify and batch before v2 cites them".
+%
+% All eight verified 2026-09-20 against Crossref by DOI. Every journal, volume
+% and first page the plan gave from memory was right. Three entries needed
+% more than a page range added, and each says so in its note: de Broglie's
+% date, Mott's title as Crossref has it, and Peskin and Schroeder's authorship
+% as Crossref has it.
+%
+% NOT HERE, because they are in other batches of this date or already in the
+% library, so that each reference appears once:
+%   Lan et al. 2013, Pearson et al. 2021, Erker et al. 2017, Barato and
+%     Seifert 2016, Milburn 2020, Schwarzhans et al. 2021, Guryanova et al.
+%     2020 -> bib/clock_thermodynamics_refs_2026-09-18T1100.bib, all now
+%     verified, with Guryanova et al. read in full.
+%   Hartle 2008, Goldstein and Page 1995, Gell-Mann and Hartle 1990, Baez and
+%     Pollard 2015, Caticha 2011, Margolus and Levitin 1998, Dahlsten et al.
+%     2011, Faist et al. 2015, Tomamichel et al. 2009, Provost and Vallee 1980
+%     -> bib/two_columns_action_refs_2026-09-20T2200.bib.
+%   Berry 1984 -> already the library's `berry1984quantal`, checked correct.
+%   Also already in the library, as the plan says:
+%     `mukundaQuantumKinematicApproach1993`, `arvidssonshukur2024kirkwood`,
+%     `wooters_1981`, the Mueckenheim 1986 review, `zurek_2009`,
+%     `zurek2003decoherence`, `Hawking1995QuantumCurves`, `Landauer_1961`.
+
+@article{feynmanvernon1963influence,
+  title = {The Theory of a General Quantum System Interacting with a Linear Dissipative System},
+  author = {Feynman, R. P. and Vernon, F. L.},
+  date = {1963},
+  journaltitle = {Annals of Physics},
+  volume = {24},
+  pages = {118--173},
+  doi = {10.1016/0003-4916(63)90068-X},
+  keywords = {influence functional, open systems},
+  note = {Verified 2026-09-20 against Crossref 10.1016/0003-4916(63)90068-X;
+          October 1963, volume 24, pages 118--173. The plan gave "Ann. Phys.
+          24, 118" and it was right. Crossref records no issue number for
+          this volume. This is the influence-functional paper. Body not read.}
+}
+
+@article{caldeiraleggett1983brownian,
+  title = {Path Integral Approach to Quantum {Brownian} Motion},
+  author = {Caldeira, A. O. and Leggett, A. J.},
+  date = {1983},
+  journaltitle = {Physica A: Statistical Mechanics and its Applications},
+  volume = {121},
+  number = {3},
+  pages = {587--616},
+  doi = {10.1016/0378-4371(83)90013-4},
+  keywords = {influence functional, open systems, decoherence},
+  note = {Verified 2026-09-20 against Crossref 10.1016/0378-4371(83)90013-4;
+          September 1983, volume 121, issue 3, pages 587--616. The plan gave
+          "Physica A 121, 587" and it was right; the title, which it did not
+          give, is above. Body not read.}
+}
+
+@article{debroglie1925recherches,
+  title = {Recherches sur la théorie des Quanta},
+  author = {family=Broglie, given=Louis, prefix=de, useprefix=false},
+  date = {1925},
+  journaltitle = {Annales de Physique},
+  volume = {10},
+  number = {3},
+  pages = {22--128},
+  doi = {10.1051/anphys/192510030022},
+  langid = {french},
+  keywords = {matter wave, internal clock},
+  note = {Verified 2026-09-20 against Crossref 10.1051/anphys/192510030022.
+          DATE CORRECTED, and the correction is real. The plan says "de
+          Broglie 1924 (thesis)". The thesis was defended in Paris in
+          November 1924, but the text that carries a DOI and that libraries
+          cite is its publication in Annales de Physique, series 10, volume
+          3, pages 22--128, dated 1925 by Crossref. The key and the date
+          above follow the published version. If the v2 text means the thesis
+          specifically -- and for the internal-clock argument it may, since
+          that is where the clock appears -- the entry should instead be
+          @thesis with institution "Faculté des Sciences de Paris", date
+          1924, and no DOI, and the two should not both be imported. Decide
+          which before importing. The author's name is entered with biblatex
+          name parts so that "de Broglie" sorts and prints correctly,
+          following the repository's existing treatment of 't Hooft in
+          `thooft1980naturalness`. Body not read.}
+}
+
+@article{delrio2011negative,
+  title = {The Thermodynamic Meaning of Negative Entropy},
+  author = {family=Rio, given=Lídia, prefix=del, useprefix=false and Åberg, Johan and Renner, Renato and Dahlsten, Oscar and Vedral, Vlatko},
+  date = {2011},
+  journaltitle = {Nature},
+  volume = {474},
+  number = {7349},
+  pages = {61--63},
+  doi = {10.1038/nature10123},
+  keywords = {thermodynamics, work, negative entropy},
+  note = {Verified 2026-09-20 against Crossref 10.1038/nature10123; published
+          2 June 2011, volume 474, issue 7349, pages 61--63. The plan gave
+          "Nature 474, 61" and it was right. Crossref renders the first
+          author as "Rio, Lídia del"; the biblatex name parts above keep the
+          particle separate, and this is worth checking after the Zotero
+          round trip because importers handle "del Rio" inconsistently. The
+          second author's name carries a ring, Åberg, which must survive too.
+          Body not read. Same Dahlsten and same Vedral as
+          `dahlsten2011inadequacy` in the two-columns batch, and the two
+          papers are companions.}
+}
+
+@article{reebwolf2014landauer,
+  title = {An Improved {Landauer} Principle with Finite-Size Corrections},
+  author = {Reeb, David and Wolf, Michael M.},
+  date = {2014},
+  journaltitle = {New Journal of Physics},
+  volume = {16},
+  number = {10},
+  eid = {103011},
+  pages = {103011},
+  doi = {10.1088/1367-2630/16/10/103011},
+  keywords = {Landauer, finite size},
+  note = {Verified 2026-09-20 against Crossref 10.1088/1367-2630/16/10/103011;
+          published 8 October 2014. Title, both authors, volume and article
+          number all as the plan had them. Body not read. This is the
+          reference the Landauer temperature document also wants; it is
+          batched here and not there.}
+}
+
+@article{mott1929tracks,
+  title = {The Wave Mechanics of $\alpha$-Ray Tracks},
+  author = {Mott, Nevill Francis},
+  date = {1929},
+  journaltitle = {Proceedings of the Royal Society of London. Series A},
+  volume = {126},
+  number = {800},
+  pages = {79--84},
+  doi = {10.1098/rspa.1929.0205},
+  keywords = {decoherence, records},
+  note = {Verified 2026-09-20 against Crossref 10.1098/rspa.1929.0205;
+          published 2 December 1929, volume 126, issue 800, pages 79--84. The
+          plan gave "Proc. R. Soc. A 126, 79" and it was right.
+          TITLE, AND A CROSSREF BUG: Crossref returns "The wave mechanics of
+          ∝-Ray tracks", with U+221D PROPORTIONAL TO where the Greek alpha
+          belongs. That is a character-recognition error in their record, not
+          the paper's title, which is "The wave mechanics of alpha-ray
+          tracks". It is written above as $\alpha$. Do not let an importer
+          copy Crossref's character in. Crossref's full container name is
+          "Proceedings of the Royal Society of London. Series A, Containing
+          Papers of a Mathematical and Physical Character"; the short form
+          above matches how the library's `berry1984quantal` names the same
+          journal, which uses the longer "Series A, Mathematical and Physical
+          Sciences" form, so the two will not match exactly and JS may want
+          to settle on one. Body not read.}
+}
+
+@article{jooszeh1985emergence,
+  title = {The Emergence of Classical Properties through Interaction with the Environment},
+  author = {Joos, E. and Zeh, H. D.},
+  date = {1985},
+  journaltitle = {Zeitschrift für Physik B Condensed Matter},
+  volume = {59},
+  number = {2},
+  pages = {223--243},
+  doi = {10.1007/BF01725541},
+  keywords = {decoherence, localisation},
+  note = {Verified 2026-09-20 against Crossref 10.1007/BF01725541; June 1985,
+          volume 59, issue 2, pages 223--243. The plan gave "Z. Phys. B 59,
+          223" and it was right. The journal name carries an umlaut and no
+          comma before "Condensed Matter", as Crossref has it. Body not read;
+          the localisation rate the complex-cost document wants from this
+          paper is not checked.}
+}
+
+@book{peskinschroeder1995qft,
+  title = {An Introduction to Quantum Field Theory},
+  author = {Peskin, Michael E. and Schroeder, Daniel V.},
+  date = {1995},
+  publisher = {Addison-Wesley},
+  location = {Reading, MA},
+  isbn = {9780201503975},
+  keywords = {textbook, optical theorem},
+  note = {Verified 2026-09-20 with a caveat worth reading. Crossref has only
+          the 2018 CRC Press reissue, doi 10.1201/9780429503559, isbn
+          9780429972102, and ITS RECORD DROPS SCHROEDER: the author field
+          contains "Peskin, Michael E." alone. The entry above is therefore
+          the 1995 Addison-Wesley first printing, with both authors, and its
+          ISBN 9780201503975 is the one field here that no database
+          confirmed; check it against a copy. If the copy to hand is the CRC
+          reissue, use that date, publisher, ISBN and DOI instead, and keep
+          both authors either way. Cited for the optical theorem, chapter 7,
+          so the chapter number should be checked against whichever printing
+          is used, since it may differ. The same Crossref defect appears on
+          `kolbturner1990early` in the records batch.}
+}
