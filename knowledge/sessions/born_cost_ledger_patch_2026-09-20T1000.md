@@ -175,6 +175,32 @@ notebook-record appendix, which had no entry for T, so
 citation keys resolve; braces balance; the appendix is input by main.tex.
 Not built; not committed.
 
+## 1e. 2026-09-23: Szangolies credited with two further quotations
+
+JS: "I need to make sure that Szangolies work http://arxiv.org/abs/2512.17328
+is given proper credit in the text ... he has to be given due credit for being
+the first to suggest that approach." Both passages were verified verbatim
+against the arXiv v1 PDF (pdftotext), his references [67]--[70] identified
+(Pinilla--Luthra 2009; Gresnigt--Gourlay--Varma 2023; Gourlay--Gresnigt 2024;
+Tang--Tang 2023, all already in references.bib) and cited by key inside the
+quotation, and section locators used rather than page numbers.
+`scripts/patch_szangolies_credit_quotes_2026-09-23T0900.py`: (1) the sedenions
+section, after the paragraph that names the Gresnigt line, gains his Sec. IV.E
+passage on four qubits, the sedenions, the zero divisors and the $S_3$
+generations, with a paragraph on what the section takes from it (the boundary,
+the family label, the no-new-phenomenology statement now at citation grade via
+notebook T) and where it departs (the halvings, not three copies through the
+core, are the generations), ending with the priority statement; (2) the
+interactions section, after "turns a Feynman diagram into a quantum circuit",
+gains his Sec. VI proposal to run the correspondence on quantum hardware,
+credited as the first such suggestion, with the difference of construction
+stated (two-qubit spinor field strength versus three-qubit registers and
+vertex gates) and a pointer to the circuit scope statement. 55 lines added;
+labels, keys, braces and quotation environments checked. Not built; not
+committed. For the Opus build-and-commit prompt: add a commit group
+"Szangolies credit" for the sedenions section and this script (the
+interactions section is already in group b).
+
 ## 2. The thread this closes (2026-09-18 to 20)
 
 - 2026-09-18: JS supplied Pearson et al. 2021 (thermodynamic cost of

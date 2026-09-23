@@ -1,3 +1,4 @@
+% EDITED 2026-09-23 scripts/patch_szangolies_credit_quotes_2026-09-23T0900.py
 % EDITED 2026-09-21 scripts/patch_op_sphaleron_revised_2026-09-21T1000.py
 % EDITED 2026-09-21 scripts/patch_circuit_scope_statement_2026-09-21T0900.py
 % EDITED 2026-09-20 scripts/patch_collective_class_conversion_2026-09-20T2100.py
@@ -127,8 +128,25 @@ does so in a form that is, in principle, executable. Three results already in pl
 possible: the gauge charges were cast operationally in \S\ref{sec:charges} as what a gate reads or
 changes; the mass eigenstates were shown in \S\ref{sec:masses} to differ from the weak eigenstates by
 the CKM rotation; and the gauge bosons were identified in \S\ref{sec:boson-masses} as bipartite
-edges, with the map--state duality that lets an edge be read as a gate. Putting these together turns
-a Feynman diagram into a quantum circuit on the internal qubit registers.
+edges, with the map--state duality that lets an edge be read as a gate. Putting these together turns a Feynman diagram into a quantum circuit on the internal qubit registers.
+
+That this correspondence should be run on quantum hardware was proposed by Szangolies, in the
+paper that supplies the correspondence itself:
+\begin{quotation}
+Given that the above model starts out from the correspondence between the symmetries of few-qubit
+systems and relativistic spacetimes, and from there, recovers the standard model gauge symmetries
+via a `dimensional reduction' that corresponds to fixing a given tensor-product structure, it seems
+natural to utilize it as a means of simulating these systems on present-day quantum computing
+hardware. Here, we will only give a brief outline the application of this correspondence to the
+narrow task of simulating gauge fields.
+\hfill \autocite[\S VI]{szangolies2025standardmodel}
+\end{quotation}
+His outline builds the field strength from a two-qubit spinor after von Weizs\"acker; the circuits
+of this section are built instead on the three-qubit fermion registers and the dictionary's gates,
+and they simulate vertices rather than fields. The suggestion that the correspondence is
+executable, and that present-day hardware is the place to execute it, is his, and the notebooks of
+Appendix~\ref{app:notebook-record} are its continuation by a different construction. What such
+circuits can and cannot yet carry is stated at \S\ref{sec:absent-gate}.
 
 A word of caution before any circuit is drawn, because the diagrams that follow invite a picture
 that must be refused. To speak of a fermion's ``internal qubit register'' is an accounting device,
