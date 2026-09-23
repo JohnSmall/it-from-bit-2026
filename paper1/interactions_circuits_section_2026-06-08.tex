@@ -1,3 +1,6 @@
+% EDITED 2026-09-21 scripts/patch_op_sphaleron_revised_2026-09-21T1000.py
+% EDITED 2026-09-21 scripts/patch_circuit_scope_statement_2026-09-21T0900.py
+% EDITED 2026-09-20 scripts/patch_collective_class_conversion_2026-09-20T2100.py
 %  RE-AUDITED 2026-07-06 (final pass, sixteenth stop, light leg):
 %  adjacency plural-and-true at position 16; op:vertex-factors'
 %  sec:associator-higgs reference went LIVE with the morning
@@ -588,10 +591,12 @@ class-preserving: the neutral gates by Proposition~\ref{prop:neutral-blind}; the
 as a local flip on $B$; the Higgs vertex as a two-channel connector that entangles neither register
 internally, its circuit form in Appendix~\ref{app:qiskit} acting between channels and never within
 one. The converter exists as mathematics and is absent from the gate set --- and the absence has a
-name. Baryon and lepton number conservation \emph{is} class conservation: ignoring the SLOCC
-restriction is physics-speak for positing a leptoquark, the $X$ and $Y$ bosons of $SU(5)$ are
-exactly the missing GHZ--W gates, and the framework's structural exclusion of the $SU(5)$ embedding
-is its standing claim of proton stability (\S\ref{sec:predictions}). The dynamical completion
+name. Baryon and lepton number conservation, at every order in perturbation theory, \emph{is} class
+conservation: ignoring the SLOCC restriction on a single register is physics-speak for positing a
+leptoquark, the $X$ and $Y$ bosons of $SU(5)$ are exactly the missing GHZ--W gates, and the
+framework's structural exclusion of the $SU(5)$ embedding is its standing claim of proton
+stability (\S\ref{sec:predictions}). The non-perturbative exception is collective, and is taken
+up below. The dynamical completion
 this prohibition awaits is the one Open Problem~\ref{op:fcnc-all-orders} already names, its
 statement widened accordingly.
 
@@ -599,8 +604,72 @@ One precision keeps the claim honest. The converter is a perfectly legitimate la
 on three physical qubits --- a short circuit, performable on any quantum processor. The framework's
 claim is not that the unitary is impossible but that a particle's register qubits are not
 laboratory qubits: nature applies to them only the dictionary's operations, and the dictionary is
-class-closed. The gap between what mathematics allows and what the dictionary stocks is exactly
-where a conservation law lives.
+class-closed. The gap between what mathematics allows and what the dictionary stocks is exactly where a conservation law lives.
+
+The single-register scope of that statement matters, because the Standard Model itself violates
+$B+L$ non-perturbatively. A unit change in the winding of the $SU(2)_{L}$ gauge field removes one
+fermion from every left-handed doublet, twelve at once: a colour-singlet triple of quarks and one
+lepton in each generation, $\epsilon_{abc}\,q^{a}q^{b}q^{c}\,\ell$ over all three generations, with
+$\Delta B = \Delta L = 3$ and $B-L$ conserved \autocite{thooft1976symmetry}. The rate is
+$e^{-4\pi/\alpha_{W}} \approx 10^{-161}$ today and unsuppressed above the electroweak crossover
+\autocite{kuzminrubakovshaposhnikov1985anomalous}. This process is not a gate, and it does not
+contradict class conservation: the SLOCC classes are invariants of one register under local
+invertible operations, and the sphaleron is collective, non-local and changes the number of
+registers. With several copies the classes are inter-convertible by local stochastic operations,
+which is the content of the tensor-rank theory of tripartite entanglement
+\autocite{chitambarduanshi2008tripartite}, and the conversions are explicit. Two GHZ registers
+convert to one W register: each party sends its two qubits $\lvert01\rangle, \lvert10\rangle,
+\lvert11\rangle$ to the corresponding factor of $\lvert001\rangle + \lvert010\rangle +
+\lvert100\rangle$ and annihilates $\lvert00\rangle$, with success probability $3/32$. Two W
+registers convert to one GHZ register by the partial isometries $A = \lvert1\rangle\langle00\rvert +
+\lvert0\rangle\langle11\rvert$, $B = \lvert1\rangle\langle01\rvert + \lvert0\rangle\langle00\rvert$,
+$C = \lvert1\rangle\langle10\rvert + \lvert0\rangle\langle00\rvert$, with success probability
+$2/9$. Three GHZ registers, one from each colour copy, convert to one W register with probability
+$3/64$. Each is verified exactly and realised as a postselected circuit
+(\texttt{scripts/multicopy\_slocc\_conversion\_2026-09-20T2100.py} and its Qiskit companion). One
+copy suffices in neither direction, by tensor rank one way and by the three-tangle the other. What
+these circuits can and cannot do should be stated plainly. They act on bare qubits and carry the
+entanglement class and the phases, nothing more: no charge operator is defined on their registers,
+and their gate set is not restricted to operations that conserve one, which is why they can perform
+a conversion, two quarks to one lepton, that colour and hypercharge forbid. They establish the
+kinematic room and only that. In this framework the charges are functions of the register's
+octonionic image, hypercharge the trace direction and colour the occupied line
+(\S\ref{sec:charges}), so a circuit can in principle carry them, at the price of writing the charge
+operators on the register and restricting the gates to those that commute with them, which is the
+circuit form of the dictionary's class-closure. Circuits of that kind, respecting the gauge
+symmetries and the conservation laws, are in preparation and will be reported in a subsequent
+paper; nothing in the present section rests on them. What a
+collective conversion conserves is the count additive over registers, one third per GHZ register
+minus one per W register, which is $B-L$, the three supplied by colour. We record as a candidate
+reading, not a derivation, that the fermion content of the 't~Hooft vertex is what this
+framework's symmetries select for a collective class change: one register from each of the three
+colour copies of the core split, the same in every generation by the $S_{3}$ of
+\S\ref{sec:generations}, on the left-handed doublet sector alone; and that the non-perturbative conversion is driven by a unit change in the weak vacuum's winding,
+the Chern--Simons number of the $SU(2)_{L}$ configuration, felt by every doublet register at
+once, rather than by a gate on one. That winding is not the ladder number of
+Lemma~\ref{lem:winding-number}, which is the colour circle's winding and counts electric charge
+in thirds; the sphaleron conserves electric charge, and the dictionary has as yet no object
+carrying the weak vacuum's winding. The multi-copy inter-convertibility of the classes is then the
+kinematic room the anomaly occupies, the winding change being what selects, out of every
+collective conversion the mathematics permits, the one nature performs.
+
+\begin{openproblem}[The sphaleron as a collective class change]\label{op:sphaleron}
+Identify the object in the dictionary that carries the weak vacuum's winding, the Chern--Simons
+number of the $SU(2)_{L}$ configuration, distinct from the charge winding of
+Lemma~\ref{lem:winding-number}, and exhibit the twelve-register operation as its unit change, with
+one class change per doublet register and the charge winding conserved; show that the operation is
+the unique one invariant under colour (the $G_{2}$ stabiliser of the core split), neutral under the
+trace direction, and symmetric under the $S_{3}$ of generations, hence $\epsilon(qqq)\ell$ in each
+generation; show that it acts on the left-handed doublet sector only; and show, by computation with
+the charge operators written on the register, that the copy-additive count it conserves is $B-L$
+with the charge assignments of \S\ref{sec:charges}, while the two-register conversion of the text
+fails colour and hypercharge. PASS: all four. FAIL: a dictionary in which no carrier of the weak
+vacuum's winding exists, which would forbid the sphaleron and contradict the Standard Model, to be
+owned as a prediction; one in which a single-register conversion exists, which would predict proton
+decay; one whose lawful gates admit the two-register conversion; or an identification of the
+sphaleron with the charge winding, which the sphaleron conserves. The rate, $8\pi^{2}/g^{2}$, is
+not part of the problem.
+\end{openproblem}
 
 \subsection{The Higgs vertex}
 

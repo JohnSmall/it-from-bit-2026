@@ -1,0 +1,127 @@
+% Batch: the electroweak anomaly and multi-copy SLOCC conversion, cited by the
+% Paper 1 passage "collective class conversion" added 2026-09-20 to the absent-gate
+% subsection (scripts/patch_collective_class_conversion_2026-09-20T2100.py) and by
+% knowledge/project-docs/sphaleron_slocc_collective_conversion_2026-09-20T2000.md.
+%
+% Written 2026-09-20T2100 by the Fable session from memory; VERIFIED 2026-09-20 by
+% the Opus session against INSPIRE-HEP, Crossref and the sources themselves. Every
+% field below is now taken from a record, not from memory. Changes made: 't Hooft
+% pages 8 -> 8--11 and number added; Kuzmin et al. gained the Crossref DOI (it
+% exists, contrary to the original note) and pages 36 -> 36--42; Chitambar et al.
+% gained number, eprint and the published pagination as eid.
+%
+% ONE DISCREPANCY, reported not fixed: the paper's sentence attributes a
+% TWELVE-fermion vertex with Delta B = Delta L = 3 to thooft1976symmetry. 't Hooft's
+% Eq. (24) is the two-generation Weinberg-Salam model and gives EIGHT fermions with
+% Delta B = Delta L = 2. See the note on that entry and the session report.
+%
+% thooft1976quantum is NOT cited by the paper as it stands. It is the companion
+% paper carrying the detailed effective vertex, and it is here only because the
+% proposed fix to the discrepancy above cites it alongside the Letter. If that fix
+% is declined, delete this entry before importing.
+
+@article{thooft1976symmetry,
+  title = {Symmetry Breaking through {Bell}-{Jackiw} Anomalies},
+  author = {family=Hooft, given=Gerard, prefix='t, useprefix=true},
+  date = {1976},
+  journaltitle = {Physical Review Letters},
+  volume = {37},
+  number = {1},
+  pages = {8--11},
+  doi = {10.1103/PhysRevLett.37.8},
+  keywords = {anomaly, sphaleron},
+  note = {Verified 2026-09-20 against INSPIRE-HEP recid 3438 (texkey
+          tHooft:1976rip), Crossref 10.1103/PhysRevLett.37.8, and the scanned
+          Letter itself at staff.science.uu.nl/~hooft101/gthpub/symm_br_bell_jackiw.pdf.
+          Volume 37, number 1, pages 8--11, issue of 5 July 1976: all confirmed
+          from the page headers and footers of the scan. CAUTION on what it
+          supports. The Letter's Standard-Model application, Eq. (24) on page 10,
+          is the TWO-generation Weinberg-Salam model: Delta E = Delta M = 1,
+          Delta u + Delta d^C = 3, Delta u' + Delta s^C = 3, i.e. eight fermions
+          with Delta B = Delta L = 2, glossed there as "a proton and a neutron
+          (two baryons equal six quarks) may annihilate to form two antileptons,
+          one of electron and one of muon type". The three-generation
+          twelve-fermion vertex with Delta B = Delta L = 3 is the standard
+          extension, not 't Hooft's own statement, and B-L conservation is
+          implicit in Eq. (24) rather than asserted. The suppression is his
+          Eq. (17), exp(-8 pi^2 / g^2) in the amplitude, quoted on page 10 as
+          exp(-16 pi^2 / g^2) = exp(-4 pi / alpha_W) in rates.}
+}
+
+@article{thooft1976quantum,
+  title = {Computation of the Quantum Effects Due to a Four-Dimensional Pseudoparticle},
+  author = {family=Hooft, given=Gerard, prefix='t, useprefix=true},
+  date = {1976},
+  journaltitle = {Physical Review D},
+  volume = {14},
+  number = {12},
+  pages = {3432--3450},
+  doi = {10.1103/PhysRevD.14.3432},
+  keywords = {anomaly, sphaleron},
+  note = {Verified 2026-09-20 against INSPIRE-HEP recid 3821 (texkey
+          tHooft:1976snw) and Crossref 10.1103/PhysRevD.14.3432. The companion
+          to thooft1976symmetry, promised there as "will be discussed in a
+          separate publication": the detailed instanton calculation whose
+          result is "an effective interaction Lagrangian for the spinors", i.e.
+          the multi-fermion vertex itself. Erratum Phys. Rev. D 18 (1978) 2199,
+          doi 10.1103/PhysRevD.18.2199.3. Added by the verification pass for the
+          proposed fix only; delete if the fix is declined.}
+}
+
+@article{kuzminrubakovshaposhnikov1985anomalous,
+  title = {On Anomalous Electroweak Baryon-Number Non-Conservation in the Early Universe},
+  author = {Kuzmin, V. A. and Rubakov, V. A. and Shaposhnikov, M. E.},
+  date = {1985},
+  journaltitle = {Physics Letters B},
+  volume = {155},
+  number = {1-2},
+  pages = {36--42},
+  doi = {10.1016/0370-2693(85)91028-7},
+  keywords = {anomaly, sphaleron},
+  note = {Verified 2026-09-20 against INSPIRE-HEP recid 214544 (texkey
+          Kuzmin:1985mm) and Crossref. The original note said no DOI was given
+          because Elsevier DOIs are not deterministic; they are not, but this
+          one is registered and is now recorded. Pages corrected from 36 to
+          36--42. Supports the paper's "unsuppressed above the electroweak
+          crossover": the abstract states the rate "exceeds the expansion rate
+          of the universe at T > (a few) x 10^2 GeV". Note the vocabulary is
+          theirs and it is "phase transition", not "crossover"; the crossover is
+          the later lattice result (see D'Onofrio and Rummukainen 2016, listed
+          for the records batch).}
+}
+
+@article{chitambarduanshi2008tripartite,
+  title = {Tripartite {{Entanglement Transformations}} and {{Tensor Rank}}},
+  author = {Chitambar, Eric and Duan, Runyao and Shi, Yaoyun},
+  date = {2008},
+  journaltitle = {Physical Review Letters},
+  volume = {101},
+  number = {14},
+  eid = {140502},
+  pages = {140502},
+  doi = {10.1103/PhysRevLett.101.140502},
+  eprint = {0805.2977},
+  eprinttype = {arXiv},
+  eprintclass = {quant-ph},
+  keywords = {entanglement, SLOCC},
+  note = {Verified 2026-09-20 against Crossref 10.1103/PhysRevLett.101.140502
+          and arXiv:0805.2977v1, whose journal_ref gives Phys. Rev. Lett. 101,
+          140502 (2008); the arXiv full text was read. Supports the paper's use
+          fully. Their Theorem 1: (a) deciding SLOCC convertibility of general
+          tripartite states is NP-hard, because "any general solution involves a
+          tripartite tensor rank computation"; (b) GHZ^{\otimes 3} -> W^{\otimes 2}
+          by SLOCC; (c) GHZ^{\otimes 17} -> EPR-triangle^{\otimes 6}; (d) the
+          asymptotic GHZ-to-EPR exponent equals the matrix-multiplication
+          exponent. So multi-copy inter-convertibility of the GHZ and W classes
+          is their result, not an extrapolation. Two points worth keeping. They
+          remark that "previously, only one copy of the W state is known to be
+          convertible from three copies of GHZ", which is exactly the paper's
+          own three-to-one construction at probability 3/64, so the paper's
+          three-to-one is the pre-2008 rate and CDS improve the asymptotic rate
+          rather than contradict it; and their headline caution is that tensor
+          rank is NOT additive, so it bounds SLOCC convertibility rather than
+          classifying it. The paper's explicit constructions are the framework's
+          own and were re-run 2026-09-20: 2 GHZ -> W at 3/32, 2 W -> GHZ at 2/9,
+          3 GHZ -> W at 3/64, all at fidelity 1.000000000000000
+          (scripts/multicopy_slocc_conversion_2026-09-20T2100.py).}
+}

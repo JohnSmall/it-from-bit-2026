@@ -1,0 +1,40 @@
+% SUPERSEDED 2026-09-20T2315, before import, by
+% bib/multicopy_slocc_refs_2026-09-20T2300.bib.
+%
+% This file was written by the Opus session's citation-verification pass at
+% 2200 and held two entries, `yuchitambarguoduan2010tensorrank` and
+% `vranachristandl2015asymptotic`. While it was being written the Fable session
+% wrote its own batch at 2300 under the same filename stem, covering the same
+% two keys and six more. Importing both would have created duplicate keys, so
+% this one is withdrawn. The 2300 file is the one to import.
+%
+% The 2300 file is also the more correct of the two, and the correction matters.
+% This file's note on Yu, Chitambar, Guo and Duan repeated their 2010 claim that
+% the tensor rank of two copies of W is SEVEN. **It is eight.** Chen and
+% Friedland proved the lower bound of eight and Christandl, Jensen and Zuiddam
+% the upper bound; their abstract (arXiv:1708.08578v2) reads "We show that the
+% tensor rank of tensor product of two three-qubit W states is not less than
+% eight. Combining this result with the recent result of M. Christandl, A. K.
+% Jensen, and J. Zuiddam that the tensor rank of tensor product of two
+% three-qubit W states is at most eight, we deduce that the tensor rank of
+% tensor product of two three-qubit W states is eight." The Fable session had
+% this right and the Opus session did not. Non-multiplicativity is untouched:
+% three squared is nine and the true value is eight, so the framework's use of
+% the fact stands, only the number changes.
+%
+% ONE THING OWED TO THE 2300 FILE, and it is the only VERIFY-CITE left in it.
+% Its `chenfriedland2018tensorrank` note says "VERIFY-CITE the journal volume
+% and pages (Linear Algebra Appl., 2018) before export; no DOI given." Verified
+% 2026-09-20 against Crossref:
+%
+%   journaltitle = {Linear Algebra and its Applications}
+%   volume       = {543}
+%   pages        = {1--16}
+%   date         = {2018-04}
+%   doi          = {10.1016/j.laa.2017.12.015}
+%
+% Those four lines discharge it. They are recorded here rather than written
+% into the 2300 file because that file belongs to the other session and was
+% still being written; whichever session reaches it next should apply them.
+%
+% No entries follow. Nothing in this file should be imported.
