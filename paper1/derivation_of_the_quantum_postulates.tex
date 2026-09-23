@@ -1,3 +1,4 @@
+% EDITED 2026-09-20 scripts/patch_born_cost_ledger_v2_2026-09-20T0900.py
 % EDITED 2026-09-15 scripts/patch_value_continuum_declared_cencov_2026-09-15T1540.py
 % EDITED 2026-09-15 scripts/patch_continuity_connected_state_space_2026-09-15T1430.py
 % =====================================================================
@@ -112,9 +113,10 @@ condition that a quantity be the kind of thing a measurement can report.
 Outcome probabilities must be invariant under the global phase, the $U(1)$
 self-ignorance, realised geometrically as the $S^{1}$ fibre of the complex Hopf
 fibration $S^{1}\to S^{3}\to S^{2}$ over the Bloch sphere
-\autocite{Hopf1931, Urbantke2003}. There is no $U(1)$-invariant of degree one; the
-lowest-degree invariant is quadratic, so the probability must be
-$p=\lvert\psi\rvert^{2}$. The squaring is forced
+\autocite{Hopf1931, Urbantke2003}. There is no polynomial $U(1)$-invariant of degree one,
+and the non-polynomial $\lvert\psi\rvert$ is excluded by the analyticity declared at
+\S\ref{sec:complex-amplitudes}; the lowest-degree polynomial invariant is quadratic, so the
+probability must be $p=\lvert\psi\rvert^{2}$. The squaring is forced
 rather than merely permitted, and the argument holds for a single qubit, where
 Gleason's theorem is silent. The Born quadratic is not a new structure: it is the
 same $L^{2}$ form that fixed the metric in Postulate~1, now read as the
@@ -123,8 +125,10 @@ has constant length, so the phase is hidden uniformly
 \autocite{GluckWarnerZiller1986}. This step is a structural argument rather than a
 theorem in the strict sense, and is flagged as such. The record-theoretic derivation of the same
 quadratic --- squared magnitudes from fibre privacy, Proposition~\ref{prop:f1-dictionary} --- is
-given at \S\ref{sec:born-rule}: two independent routes to one rule, the over-determination this
-framework treats as evidence.
+given at \S\ref{sec:born-rule}, and the cost-ledger derivation --- the record as the closed loop of
+a history and its return leg, the exponent the number of legs --- at \S\ref{sec:born-cost-ledger}:
+three routes to one rule, each holding for a single qubit, the over-determination this framework
+treats as evidence.
 
 \paragraph{Postulate 4 (state reduction).}
 Measurement is a \textsc{fanout}: the gauge-invariant relational content is copied
