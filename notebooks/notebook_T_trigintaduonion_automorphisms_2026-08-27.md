@@ -78,3 +78,13 @@ generation language to colour structure: the copies are cycled inside G_2, the g
 colour grading, and both sides of the Fano bridge are colour-basis objects. The correct triple is
 the halvings (Part C); the correct gauge-equivalence argument is the direct product; the shadow
 problem is re-posed against the halvings in the 2026-08-27 section revision.
+
+**Re-run 2026-09-23** (Fable session, at JS's instruction). Same script, unchanged;
+Python 3.10.12, numpy 1.21.5; wall time 3 min 11 s (194 s user); exit 0. Output
+captured as `notebook_T_output_2026-09-23_rerun.txt` and byte-identical to the
+2026-08-27 capture (`diff` empty): every Part A/B/C verdict True, worst automorphism
+residual 1.1e-16, derivation dimensions 0, 3, 14, 14, 14, final line
+`NOTEBOOK T: PASS`. The notebook is pure numpy; it uses no Qiskit and no IBM
+credits. The open-problems ledger still lists the Z/2-vs-S_3 item as outstanding;
+this record and the 2026-08-27 one both settle it on the S_3 side, so the line is
+stale and is proposed for closure.

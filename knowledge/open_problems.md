@@ -86,3 +86,20 @@ Also: `project-docs/fermion_topology_open_problems.md` and
   move delta by about 5e-4 rad (eighty sigma) unless they cancel in the
   combination the Z3 form sees. Any derivation inherits this; cf. Sumino 2009
   (VERIFY-CITE). No PASS/FAIL yet beyond the band itself.
+
+## 2026-09-23 -- notebook T settled (see notebooks/notebook_T_trigintaduonion_automorphisms_2026-08-27.md)
+
+- *Settled, supersedes* the 2026-09-10 carried-over item "Notebook T: extend
+  Cayley-Dickson constructor to trigintaduonions to settle Z/2 vs S_3 branch
+  dichotomy by construction". Notebook T (2026-08-27, pure numpy, Convention A
+  recursion) verified Brown's order-three map and the doubling involution as
+  exact automorphisms at rungs 3, 4, 5 and 6 (worst residual 1.1e-16), the S_3
+  relations, the direct product with the lifted S_3, and dim Der(A_n) = 0, 3,
+  14, 14, 14 for n = 1..5: over R the branch is S_3 at every rung >= 4 and the
+  identity component stays g_2 from the octonions onward. Re-run 2026-09-23 at
+  JS's instruction, output byte-identical
+  (`notebooks/notebook_T_output_2026-09-23_rerun.txt`), final line
+  `NOTEBOOK T: PASS`. Brown's equality Aut(A_{n-1}) x S_3 = Aut(A_n) is cited,
+  not computed; the notebook verifies the inclusion, the product structure and
+  the derivation count. Parts B and C of the same notebook are what the
+  invalid_routes entry of 2026-09-12 rests on. Closed by JS, 2026-09-23.

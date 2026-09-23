@@ -1,0 +1,37 @@
+Notebook T -- trigintaduonion automorphisms (2026-08-27)
+==================================================================
+A_3 (dim   8): psi automorphism=True (worst 1.1e-16); eps automorphism=True; psi^3=I:True; eps^2=I:True; eps psi = psi^2 eps:True; psi mixes halves:True
+A_4 (dim  16): psi automorphism=True (worst 1.1e-16); eps automorphism=True; psi^3=I:True; eps^2=I:True; eps psi = psi^2 eps:True; psi mixes halves:True
+      lifted S_3 from A_3 is an automorphism: True; commutes with the new S_3: True; lifted psi distinct from new psi^k: True
+A_5 (dim  32): psi automorphism=True (worst 1.1e-16); eps automorphism=True; psi^3=I:True; eps^2=I:True; eps psi = psi^2 eps:True; psi mixes halves:True
+      lifted S_3 from A_4 is an automorphism: True; commutes with the new S_3: True; lifted psi distinct from new psi^k: True
+A_6 (dim  64): psi automorphism=True (worst 1.1e-16); eps automorphism=True; psi^3=I:True; eps^2=I:True; eps psi = psi^2 eps:True; psi mixes halves:True
+      lifted S_3 from A_5 is an automorphism: True; commutes with the new S_3: True; lifted psi distinct from new psi^k: True
+------------------------------------------------------------------
+Derivation-algebra dimension (identity component of Aut):
+  dim Der(A_1) =  0   [expect 0]
+  dim Der(A_2) =  3   [expect 3 (so(3))]
+  dim Der(A_3) = 14   [expect 14 (g2)]
+  dim Der(A_4) = 14   [expect 14 (g2, Schafer)]
+  dim Der(A_5) = 14   [expect 14 (g2, Schafer)]
+------------------------------------------------------------------
+VERDICT
+  S_3 branch at rungs 4, 5, 6 (Brown's psi is an automorphism, order three, mixing, not a lift): True
+  Direct-product structure (new S_3 commutes with lifted S_3): True
+  Identity component unchanged from the octonions (dim Der = 14 at n = 3, 4, 5): True
+------------------------------------------------------------------
+PART B -- the two triples
+  Brown psi_4 stabilises setwise: core=True V_1=True V_2=True V_3=True
+  Any element of Brown's S_3 carries V_1 into V_2: False
+  Colour-line 3-cycle sigma: automorphism of O: True; lifted to S: True; fixes core pointwise: True; cycles V_1->V_2->V_3->V_1: True; commutes with psi: True
+  Fix(psi_4) = span{e0, e8}: dimension 2
+  VERDICT B: the core triple is permuted INSIDE G_2 (colour), not by the doubling's S_3: True
+------------------------------------------------------------------
+PART C -- the psi-orbit triple
+  O, psi(O), psi^2(O) octonion subalgebras: True
+  dim pairwise intersection: 1; dim triple intersection: 1 (the real line)
+  each halving with e8 regenerates S (S = H (+) H e8): True
+  eps psi^k fixes halving k pointwise, one each: True
+  VERDICT C: Brown's S_3 permutes the three halvings of S through the fixed doubling unit: True
+------------------------------------------------------------------
+NOTEBOOK T: PASS -- (A) the fifth rung adds a further finite S_3 and no continuous symmetry, the Z/2-vs-S_3 dichotomy settled on the S_3 side over R; (B) the core triple is colour, permuted inside G_2; (C) the doubling's S_3 permutes the three halvings of S
