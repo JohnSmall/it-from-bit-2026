@@ -37,6 +37,108 @@ reasoning. Delete when done.
       instances), predating the move to `\enquote{}`. Converting is mechanical
       but touches most of the paper, so worth doing as one deliberate pass.
 
+- [ ] Paper 1 v2: the complex-cost revision. Eleven insertions with target
+      passages, drafts, labels and order of work are in
+      `notes/paper1_v2_complex_cost_revision_plan_2026-09-18T1000.md`;
+      needs a v2 branch from the Zenodo tag first, then nine references
+      verified and batched (plan section 13), then the patches in the
+      order of section 14. JS, 2026-09-18: "these are important
+      clarifications that need to be in paper 1 (version 2)". 2026-09-20:
+      items 1 and 2 applied on the main working tree at JS's instruction
+      (two patch scripts, .bak files beside the targets), uncommitted and
+      unbuilt; build, then decide whether to branch from `paper1-v1` before
+      committing. See `knowledge/sessions/born_cost_ledger_patch_2026-09-20T1000.md`.
+- [ ] Paper 2, causal-order section: the Oreshkov--Costa--Brukner TODO
+      paragraph and the "theorem target" now have a draft basis in
+      `knowledge/project-docs/indefinite_causal_order_fanout_2026-09-19T0900.md`
+      (section 5 lists what the section gets; section 3 is the toy proof with
+      its table). Also there: op:ico-threshold, whether causal nonseparability
+      of the graded switch dies at finite redundancy, needs an SDP solver
+      (cvxpy) in the Python environment the Opus session is setting up; and
+      the thermodynamics-of-the-switch references to verify and batch
+      (section 8). The predictions-section item above ("no experiment will
+      ever hold a record") should be re-read against it: the phase decays
+      asymptotically, the order possibly at a finite threshold.
+- [ ] Paper 1, the baryon-number sentences (predictions section, "which the
+      framework gets for free"; the absent-gate section): the Standard Model
+      violates B+L non-perturbatively above the electroweak crossover
+      (sphalerons). Either locate the anomaly in the gate dictionary and say
+      "perturbatively", or own the conflict. Proposed as op:sphaleron in
+      `knowledge/project-docs/records_causal_structure_high_temperature_2026-09-20T1400.md`
+      section 2. JS to rule before v2. Answered in outline 2026-09-20T2000 in
+      `knowledge/project-docs/sphaleron_slocc_collective_conversion_2026-09-20T2000.md`:
+      the sphaleron is collective and topological, outside SLOCC's single-register
+      scope, so the GHZ/W split stays as the perturbative statement; the two
+      sentences get "perturbative" and a pointer; op:sphaleron restated with
+      PASS/FAIL (section 6 there); op:baryon-contact may be the same object.
+      Applied to the paper 2026-09-20T2100 (absent-gate subsection and
+      predictions section; op:sphaleron minted in the text for JS to keep or
+      strip; uncommitted, unbuilt). The two-copy conversions are constructed
+      and run as Qiskit circuits (note sections 9 and 12); add them to the
+      IBM hardware task. Import `bib/sphaleron_slocc_refs_2026-09-20T2100.bib`.
+      2026-09-20T2300: multi-copy SLOCC references verified (Fable, against
+      arXiv) and batched in `bib/multicopy_slocc_refs_2026-09-20T2300.bib`;
+      the sphaleron batch verified by Opus (section 13 of the note), with the
+      't Hooft two-generation discrepancy and a proposed one-sentence fix for
+      JS to accept or decline. Import both batches; the Opus 2200 duplicate is
+      atticked.
+      2026-09-21: the circuits are gauge-blind (sphaleron note section 16); a
+      gauge-faithful version needs the charge operators on the register from
+      the quantum-numbers section and a gate set restricted to commute with
+      them. Proposed as the next computation, after JS's ruling. 2026-09-21T0900:
+      the scope statement is in the paper (patch_circuit_scope_statement), with
+      the gauge-respecting circuits promised for a subsequent paper; that
+      promise is now a commitment to track here.
+      2026-09-21T1100: sterile neutrinos and the sphaleron route (note section
+      18): steriles are outside the vertex; leptogenesis runs the other way;
+      the framework's two steriles at 3.6 TeV need degeneracy to ~1e-6 for
+      resonant leptogenesis, a prediction-or-refutation once op:matching-scale
+      gives their splitting. JS to rule Majorana or Dirac (it decides whether
+      B-L is a surviving record).
+      2026-09-21T1200: do non-interacting steriles gravitate (note section 20)?
+      The 3.6 TeV steriles thermalise via the Yukawa at T ~ M (K ~ 47) and
+      decay in ~1e-15 s, so they are recorded and are not dark matter; the
+      framework's answer for anything else is that conserved energy-momentum
+      is a persisting record and the field between events is delocalised.
+      JS to say whether the steriles are meant to be stable.
+- [ ] **Boundary, JS's ruling 2026-09-21:** what gravitates when nothing has
+      been recorded is a genuine boundary where the framework may make no
+      prediction. Note `knowledge/project-docs/boundary_gravity_of_unrecorded_matter_2026-09-21T1300.md`;
+      op:sterile-gravity restated with PASS/FAIL and a boundary sentence for
+      the spacetime section, drafted and anchor-checked, NOT RUN:
+      `scripts/patch_op_sterile_gravity_boundary_2026-09-21T1300.py`. Applied
+      2026-09-23 at JS's instruction, together with the op:sphaleron revision
+      (`patch_op_sphaleron_revised_2026-09-21T1000.py`); both uncommitted and
+      unbuilt; the ledger entries are proposed in the notes.
+      Paper 1 (tick-rate) and Paper 2 (post-FANOUT) currently disagree on
+      what gravitates; the dictionary must choose.
+- [ ] Paper 2, the TODO paragraph on "the equation-of-state moral's history
+      (Jacobson's own caveats; Padmanabhan's atoms of spacetime)" at the end
+      of the ontology section: a draft in the paper's register is in
+      `knowledge/project-docs/jacobson_non_equilibrium_spacetime_2026-09-20T1600.md`
+      section 7, with op:p2-nonequilibrium (section 6) to mint beside it.
+      Needs Eling--Guedens--Jacobson 2006, Chirco--Liberati 2010, Jacobson
+      2016 and Padmanabhan 2010/2012 read and batched first (all cited from
+      memory there).
+
+## Paper 2
+
+- [ ] **Before any Paper 2 drafting, read**
+      `knowledge/project-docs/paper2_revisit_complex_cost_thread_2026-09-20T1900.md`.
+      JS, 2026-09-20: "Make sure this conversation is to be revisited when we
+      work on paper 2." It indexes the seven notes of the complex-cost thread
+      (mass as imaginary cost rate, the two columns, order as a record, the
+      temperature in Landauer, records at high temperature, Jacobson's
+      non-equilibrium spacetime, gravity and the Planck scale), the drafts
+      ready for the Paper 2 TODOs, three proposed open problems and the checks
+      owed. Comments beside the relevant TODOs in `paper2_main_2026-07-07.tex`
+      point to the same hub.
+
+- [X] open_problems.md listed "Notebook T ... Z/2 vs S_3" as outstanding;
+      settled on the S_3 side 2026-08-27 and confirmed by an identical re-run
+      2026-09-23 (notebooks/notebook_T_output_2026-09-23_rerun.txt). Closed by
+      JS 2026-09-23 with a dated entry in open_problems.md.
+
 ## Aaronson citation
 
 - [ ] Re-export `self-ref-2026-cited` once more: `Aaronson:dem` changed again
