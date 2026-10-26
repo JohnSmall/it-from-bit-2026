@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hopf tower — integration demo</title>
+<link rel="stylesheet" href="hopf-tower.css">
+<style>
+  body { margin: 0; background: #0b0c0e; color: #e8e6e3; padding: 2rem 1rem;
+         font-family: ui-sans-serif, system-ui, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; }
+  h1 { font-size: 1.3rem; font-weight: 600; margin: 0 0 .4rem; }
+  p.note { color: #8b8782; font-size: .9rem; margin: 0 0 1.5rem; }
+  pre { background: #121316; border: 1px solid #2a2c31; border-radius: 8px;
+        padding: 1rem; overflow-x: auto; font-size: .82rem; color: #b9b6b2; margin-top: 2rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Wigner's friend on the Cayley–Dickson ladder</h1>
+  <p class="note">A mountable animation. Autoplays; arrow keys, the buttons and the dots all steer it.</p>
+
+  <div id="tower"></div>
+
+<pre><code>&lt;link rel="stylesheet" href="hopf-tower.css"&gt;
+&lt;div id="tower"&gt;&lt;/div&gt;
+&lt;script src="hopf-tower.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  var t = HopfTower.mount(document.getElementById('tower'), {
+    autoplay: true,   // false to start paused
+    dwell: 7000,      // ms per rung
+    start: 0          // opening rung, 0..4
+  });
+  // t.next() t.prev() t.go(3) t.play() t.pause() t.destroy()
+&lt;/script&gt;</code></pre>
+</main>
+<script src="hopf-tower.js"></script>
+<script>HopfTower.mount(document.getElementById('tower'));</script>
+</body>
+</html>

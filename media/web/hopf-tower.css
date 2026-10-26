@@ -1,0 +1,115 @@
+/* hopf-tower.css -- styling for the Hopf-tower animation.
+   Everything is scoped under .hopf-tower so it can drop into an existing
+   page without colliding. Colours are declared once as custom properties
+   on the root element; override them on .hopf-tower to retheme.          */
+
+.hopf-tower {
+  --ht-bg:      #121316;
+  --ht-ink:     #e8e6e3;
+  --ht-dim:     #8b8782;
+  --ht-dead:    #6c6a68;
+  --ht-friend:  #4fb3d9;   /* the private chart: phase, fibre        */
+  --ht-wigner:  #e0893b;   /* the public chart: record, base         */
+  --ht-accent:  #c45b8c;   /* where the tower stops                  */
+  --ht-rule:    #2a2c31;
+
+  position: relative;
+  box-sizing: border-box;
+  background: var(--ht-bg);
+  color: var(--ht-ink);
+  font-family: ui-sans-serif, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 1.25rem 1.25rem 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.hopf-tower *, .hopf-tower *::before, .hopf-tower *::after { box-sizing: inherit; }
+
+.hopf-tower__head { margin: 0 0 .15rem; font-size: 1.22rem; font-weight: 700; color: var(--ht-accent); }
+.hopf-tower__sub  { margin: 0 0 1rem;   font-size: .92rem;  color: var(--ht-dim); }
+
+.hopf-tower__stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 1.25rem;
+  align-items: center;
+  min-height: 310px;
+}
+@media (max-width: 720px) {
+  .hopf-tower__stage { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+}
+
+.hopf-tower__canvas-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; }
+.hopf-tower__canvas { width: 100%; height: 100%; display: block; }
+
+/* the staircase ------------------------------------------------------- */
+.hopf-tower__ladder { display: flex; flex-direction: column-reverse; gap: .3rem; }
+
+.hopf-tower__rung {
+  display: grid;
+  grid-template-columns: 2.1rem 1fr auto;
+  gap: .65rem;
+  align-items: baseline;
+  padding: .42rem .6rem;
+  border-left: 3px solid var(--ht-rule);
+  border-radius: 0 6px 6px 0;
+  opacity: .25;
+  transform: translateX(-8px);
+  transition: opacity .5s ease, transform .5s ease, border-color .5s ease, background .5s ease;
+}
+.hopf-tower__rung[data-on="1"] { opacity: 1; transform: none; }
+.hopf-tower__rung[data-current="1"] { background: rgba(255, 255, 255, .035); }
+
+.hopf-tower__rung[data-tint="friend"] { border-left-color: var(--ht-friend); }
+.hopf-tower__rung[data-tint="wigner"] { border-left-color: var(--ht-wigner); }
+.hopf-tower__rung[data-tint="accent"] { border-left-color: var(--ht-accent); }
+.hopf-tower__rung[data-tint="dead"]   { border-left-color: var(--ht-dead); }
+
+.hopf-tower__alg   { font-size: 1.3rem; font-weight: 600; font-style: italic; }
+.hopf-tower__rung[data-tint="friend"] .hopf-tower__alg { color: var(--ht-friend); }
+.hopf-tower__rung[data-tint="wigner"] .hopf-tower__alg { color: var(--ht-wigner); }
+.hopf-tower__rung[data-tint="accent"] .hopf-tower__alg { color: var(--ht-accent); }
+.hopf-tower__rung[data-tint="dead"]   .hopf-tower__alg { color: var(--ht-dead); }
+
+.hopf-tower__who  { font-size: .92rem; color: var(--ht-ink); }
+.hopf-tower__who small { display: block; color: var(--ht-dim); font-size: .8rem; }
+.hopf-tower__map  { font-size: .9rem; color: var(--ht-dim); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.hopf-tower__map[data-none="1"] { color: var(--ht-accent); }
+
+/* caption and controls ------------------------------------------------ */
+.hopf-tower__caption {
+  margin: .9rem 0 0; min-height: 3.4rem;
+  font-size: .98rem; color: var(--ht-ink);
+  border-top: 1px solid var(--ht-rule); padding-top: .75rem;
+}
+.hopf-tower__caption b { color: var(--ht-accent); font-weight: 600; }
+
+.hopf-tower__bar { display: flex; align-items: center; gap: .55rem; margin-top: .7rem; flex-wrap: wrap; }
+.hopf-tower__btn {
+  appearance: none; cursor: pointer;
+  background: transparent; color: var(--ht-ink);
+  border: 1px solid var(--ht-rule); border-radius: 6px;
+  padding: .34rem .78rem; font: inherit; font-size: .86rem;
+  transition: border-color .2s ease, color .2s ease, background .2s ease;
+}
+.hopf-tower__btn:hover:not(:disabled) { border-color: var(--ht-friend); color: var(--ht-friend); }
+.hopf-tower__btn:disabled { opacity: .35; cursor: default; }
+.hopf-tower__btn:focus-visible { outline: 2px solid var(--ht-friend); outline-offset: 2px; }
+
+.hopf-tower__dots { display: flex; gap: .35rem; margin-left: auto; }
+.hopf-tower__dot {
+  width: .55rem; height: .55rem; border-radius: 50%;
+  background: var(--ht-rule); border: 0; padding: 0; cursor: pointer;
+  transition: background .3s ease, transform .3s ease;
+}
+.hopf-tower__dot[data-on="1"] { background: var(--ht-friend); transform: scale(1.25); }
+.hopf-tower__dot:focus-visible { outline: 2px solid var(--ht-friend); outline-offset: 2px; }
+
+.hopf-tower__progress { height: 2px; background: var(--ht-rule); border-radius: 2px; overflow: hidden; margin-top: .7rem; }
+.hopf-tower__progress i { display: block; height: 100%; width: 0; background: var(--ht-friend); transition: width .25s linear; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hopf-tower__rung { transition: none; }
+  .hopf-tower__progress i { transition: none; }
+}
