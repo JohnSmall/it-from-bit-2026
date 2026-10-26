@@ -1,0 +1,567 @@
+#!/usr/bin/env python3
+"""Create the continuity review appendix through a guarded sentinel splice.
+
+The requested appendix is a new source file; main.tex is not edited. Its
+header supplies an input line and a proposed main-text summary. A temporary
+copy of main.tex includes the appendix solely for compilation checks.
+
+For each new .tex file, create a BEGIN/END scaffold, back that scaffold up
+to .bak, and splice the body between anchors checked exactly once with
+whitespace-insensitive matching. Refuse existing targets or backups before
+writing anything. No random calculation, bibliography export or ledger edit.
+"""
+
+from pathlib import Path
+import re
+import shutil
+import sys
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SCRIPT = "scripts/patch_continuity_review_appendix_2026-10-18T2119.py"
+HEADER = "% EDITED 2026-10-18 " + SCRIPT + "\n"
+APP_REL = "paper1/appendices/appendix_continuity_self_reference_2026-10-18T2119.tex"
+APP = ROOT / APP_REL
+CHECK_DIR = Path("/tmp/continuity_appendix_2026-10-18T2119")
+CHECK = CHECK_DIR / "continuity_check.tex"
+BATCH = ROOT / "bib/continuity_open_problem_refs_2026-10-18T1811.bib"
+
+BODY = r"""% Continuity of reversible transformations from self-reference.
+% Adapted from knowledge/sessions/
+% continuity_from_self_reference_open_problem_2026-10-18T1811.md.
+% Status labels are proposed for JS's review; no ledger is amended.
+% Requires the packages and proposition/proof environments of main.tex.
+% Integration, within the existing appendices environment:
+%   \input{appendices/appendix_continuity_self_reference_2026-10-18T2119}
+% Main-text reference: Appendix~\ref{app:continuity-self-reference}.
+% Five citation keys await import of
+% bib/continuity_open_problem_refs_2026-10-18T1811.bib and BBT re-export:
+% backens2014zx, bennett2003notes, simon2001nosignaling,
+% chiribella2010purification, chiribella2011informational.
+% The two Chiribella et al. citations support only the limited statements
+% verified from their abstracts; no detailed reconstruction audit is claimed.
+%
+% SUGGESTED MAIN-TEXT SUMMARY (for the later main-text edit):
+% Continuous reversible accessibility remains \textsc{open}. Complex
+% amplitudes, probability normalisation and symmetry among admitted bases
+% do not individually establish physically available paths between pure
+% states. With a closed, transitive reversible group on a finite-dimensional
+% compact convex state body, connectedness of the pure states would suffice;
+% the outstanding task is to justify that connectedness physically.
+%
+% \textsc{Candidate.} The missing link may concern the complete act of
+% self-description: producing a record changes the observer, and the memory,
+% its encoding and the subsequent feedback must belong to the same physical
+% account. A constraint on information, disturbance and recoverable
+% correlations might connect the failure of complete self-recording to the
+% alternatives the theory must admit. That connection is not yet a theorem.
+% Appendix~\ref{app:continuity-self-reference} reviews the attempted routes,
+% retains their valid conditional results, and gives explicit criteria for
+% either a derivation or a countermodel. The argument must precede the Born
+% rule and the physical $L^2$ metric.
+
+\section{Continuity from self-reference: attempted derivations and the open problem}
+\label{app:continuity-self-reference}
+
+\noindent\textsc{Open.}
+Can the physical limitations on an embedded observer's self-description
+explain why any two pure states can be connected by a continuous family of
+physically available reversible transformations? This appendix reviews the
+attempts underlying Open Problem~\ref{op:limit-realisability}. Some proposed
+implications fail; others give useful conditional mathematics while leaving
+a physical premise unproved. The distinction matters: replacing that
+premise by a mathematical reformulation does not explain why nature must
+satisfy it. A status label applies to the discussion it introduces until
+a different status is stated.
+
+\subsection{The target and the order of dependence}
+\label{app:continuity-target}
+
+\noindent\textsc{Structural.}
+Hardy's fifth axiom asks for continuous reversible accessibility between
+any two pure states \autocite{Hardy2001a}. Let $P$ denote the admitted pure
+states and $G$ the physically allowed reversible transformations. The target is
+\begin{equation}
+  \forall x,y\in P\quad\exists\,g:[0,1]\longrightarrow G
+  \quad\text{continuous},\qquad g(0)=e,\quad g(1)x=y.
+  \label{eq:continuity-accessibility}
+\end{equation}
+This is stronger than continuity of an individual map on states: the
+intermediate transformations must also be available. The parameter need
+not already be a physical time coordinate, and differentiability is not
+an initial premise.
+
+A topology can be specified before the Born rule. In a finite-dimensional
+operational description, a finite list of measurement probabilities
+separates states, and convergence means convergence of those probabilities.
+Pure states are the extreme points of the admitted convex preparation set,
+not automatically all rays of a vector space. This specifies what
+connectedness would mean without assuming it \autocite{Hardy2001a}.
+
+\noindent\textsc{Candidate.}
+The earlier complex-amplitude construction is taken here as a conditional
+starting point. The proposed order in \S\ref{sec:reversible-continuity-l2} is
+\begin{equation}
+\begin{aligned}
+ &\text{self-reference and complex amplitudes}\\
+ &\qquad\longrightarrow\text{continuous reversible accessibility}\\
+ &\qquad\longrightarrow L^2
+   \longrightarrow (S^1\longrightarrow S^3\longrightarrow S^2)
+   \longrightarrow\text{Born probabilities}.
+\end{aligned}
+\label{eq:continuity-dependency}
+\end{equation}
+Each downstream arrow retains its own premises, including the representation
+and norm-preservation assumptions used to select the metric. Neither the
+Born rule nor a physically normalised Hilbert sphere can therefore justify
+the earlier continuity step.
+
+\subsection{What self-recording prevents}
+\label{app:continuity-self-recording}
+
+\noindent\textsc{Structural.}
+Writing a new record into an observer's memory changes its total physical
+state, schematically $s\xrightarrow{\mathrm{write}\ r}s_r$. The record need
+not thereby become false: it can describe a past state, a partial property,
+or a predictable consequence of the writing. The stronger obstruction
+concerns a universally successful predictor whose predictions can themselves
+enter the behaviour predicted. Popper includes calculation and the physical
+production of predictions in his analysis and establishes limitations in a
+classical setting \autocite{Popper1950a}. This obstruction alone therefore
+does not distinguish quantum theory from classical theories.
+
+\noindent\textsc{Candidate.}
+\textsc{Fanout} denotes the formation of an accessible, copyable outcome
+record. The proposed pre-\textsc{fanout} regime lacks a committed outcome
+record for the interaction in question. Turning that statement into the
+absence of every preferred basis or invariant distinction requires an
+additional argument. In particular, the impossibility of complete
+self-recording is not the impossibility of recording any property.
+
+\noindent\textsc{Rhyme.}
+The liar and truth-teller suggest a comparison between inconsistent Boolean
+self-assignment and consistent but underdetermined self-assignment. This
+motivates the description of pre-\textsc{fanout} paradox and post-\textsc{fanout}
+hypodox. It supplies neither a topology nor a probability law for the record
+selected. The comparison with information in a closed timelike loop has
+the same limited role.
+
+\noindent\textsc{Structural.}
+Inability to predict an outcome from the observer's information does not
+establish absence of physical antecedents. A restriction on prediction
+cannot alone support that causal conclusion or a continuity theorem.
+
+\subsection{Attempted routes and their remaining gaps}
+\label{app:continuity-routes}
+
+\subsubsection{Complex amplitudes provide a continuum}
+\label{app:continuity-complex}
+
+\noindent\textsc{Structural.}
+A continuous scalar field permits continuous families of vectors and
+matrices; it does not make all of them physical. The complex stabiliser
+fragment supplies a direct counterexample to that inference. Its
+single-qubit pure states are the six rays represented by
+$(1,0)$, $(0,1)$, $(1,\pm1)$ and $(1,\pm i)$, while its Clifford
+transformations have 24 distinct actions on rays. It has complex amplitudes
+and reversible linear maps without a continuous path between distinct pure
+states \autocite{backens2014zx}.
+
+Spekkens's toy bit is an earlier finite example, but is not itself a native
+complex-amplitude model \autocite{spekkens2007toy}; the stabiliser fragment
+addresses that objection. These examples test particular implications.
+They have not thereby been checked against a fully specified physical model
+of a self-describing observer.
+
+\subsubsection{Probability normalisation forces unitarity and continuity}
+\label{app:continuity-normalisation}
+
+\noindent\textsc{Structural.}
+For an exhaustive measurement, normalisation gives
+\begin{equation}
+  \sum_i p(i\mid s,M)=1.
+  \label{eq:continuity-operational-normalisation}
+\end{equation}
+These are real outcome probabilities. Identifying them with $|a_i|^2$
+already supplies the quadratic rule that the proposed order of dependence
+places later. The attempted conservation argument made this identification
+as a premise; its calculation is conditional on that premise and cannot
+establish the earlier continuity step.
+
+Even granting a quadratic norm and complex-linear dynamics, norm
+preservation gives $U^\dagger U=I$, not the physical availability of every
+element of $U(n)$. A finite subgroup also preserves the norm. Continuity of
+each linear map remains distinct from a continuous path of allowed maps
+connecting it to the identity. Both gaps survive the normalisation calculation.
+
+\subsubsection{No record means no preferred basis and smooth access between bases}
+\label{app:continuity-bases}
+
+\noindent\textsc{Structural.}
+Absence of a particular record does not exclude a restriction in the laws.
+Symmetry among admitted bases does not imply that every mathematical basis
+is admitted. Transitivity among admitted states does not imply continuous
+transitivity: a finite group can move any member of a finite set to any
+other. A passive change of coordinates is also distinct from a physical
+operation. The stabiliser fragment treats its three Pauli bases symmetrically
+while restricting the family of bases \autocite{backens2014zx}.
+
+An invariant mathematical partition is not automatically a readable
+classical record. An argument using that identification must construct an
+allowed measurement that distinguishes the parts and an allowed procedure
+that copies the result. Naming the parts supplies neither operation. Thus
+the claim that continuity forbids a privileged finite basis does not
+establish its converse.
+
+\subsubsection{No thermodynamic cost means reversible evolution}
+\label{app:continuity-thermodynamics}
+
+\noindent\textsc{Structural.}
+Logical invertibility, absence of heat dissipation and thermodynamic
+reversibility are different conditions. Landauer reasoning tracks
+information transferred to other degrees of freedom; it does not derive
+microscopic reversible laws from zero heat. Copying classical data into a
+blank register can itself be implemented reversibly \autocite{bennett2003notes}.
+A cost assigned to \textsc{fanout} consequently cannot by itself prove
+that all pre-\textsc{fanout} operations possess physically available
+inverses, still less that those inverses belong to continuous paths.
+
+\subsubsection{Excluded superpositions cause nonlinear dynamics and signalling}
+\label{app:continuity-signalling}
+
+\noindent\textsc{Structural.}
+The first implication is false. The complex-linear reversible matrix
+$S=\operatorname{diag}(1,i)$ preserves the six stabiliser rays; restricting
+the state set does not make that matrix nonlinear \autocite{backens2014zx}.
+A restriction to standard quantum preparations, operations and measurements
+cannot create a signalling protocol unavailable in the full theory. These
+known quantum facts provide a counterexample to the inference, not premises
+for the reconstruction.
+
+Simon, Bužek and Gisin derive linear, completely positive density-matrix
+dynamics using Hilbert-space states, the usual trace probability rule, and
+no signalling \autocite{simon2001nosignaling}. Their theorem cannot be moved
+upstream of the metric and Born rule without replacing those premises.
+An independently formulated operational no-signalling condition does not
+by itself exclude the restricted subtheory just described.
+
+\subsubsection{Diagonalisation or inexhaustible self-ignorance supplies continuity}
+\label{app:continuity-diagonal}
+
+\noindent\textsc{Structural.}
+Diagonalisation establishes failure of exhaustive representation under
+specified assumptions, not connectedness \autocite{Yanofsky2003}. For example,
+the space of infinite binary sequences is uncountable but totally disconnected:
+two distinct sequences differ at a coordinate whose two values separate
+them into disjoint open-and-closed sets. Uncountably many possibilities
+need not admit a nonconstant continuous path. Density in a larger space
+also does not establish that missing limits are physically admitted.
+
+A continuum of outcome probabilities is insufficient for a different
+reason. A classical bit admits every $p\in[0,1]$ through mixtures while
+retaining two pure states. Likewise, analytic continuation of a logarithm
+requires a specified domain and regularity; it does not establish that
+physical amplitudes occupy that domain. The value-continuum premise used
+in the Shannon/logarithm construction therefore cannot also count as a
+derivation of connected pure states.
+
+\subsubsection{Observer-dependent pure and mixed descriptions provide purification}
+\label{app:continuity-purification}
+
+\noindent\textsc{Structural.}
+Conditioning must be distinguished from taking a subsystem. After Alice
+measures her half of $(|00\rangle+|11\rangle)/\sqrt{2}$ in the computational
+basis and learns the result, she assigns Bob the corresponding conditional
+pure state. Without the result, Bob assigns his qubit $I/2$. A pure
+description of the combined system does not make Bob's local state pure.
+These standard quantum facts clarify the example; they are not pre-Born
+premises for the continuity argument.
+
+Hilbert-space purification says that every mixed state is the marginal of a
+pure state of a larger system; its usual construction already uses the
+Hilbert structure. Operational purification can instead be postulated before
+that structure, as in Chiribella, D'Ariano and Perinotti's programme
+\autocite{chiribella2010purification}. Their reconstruction also uses other
+informational axioms \autocite{chiribella2011informational}. Purification has
+not here been derived from the impossibility of complete self-description.
+
+\subsubsection{No distinguished step implies arbitrary physical roots}
+\label{app:continuity-roots}
+
+\noindent\textsc{Structural.}
+Under the finite-dimensional compact-group assumptions below, divisibility
+of $G$ --- every element has an $n$-th root for every positive integer $n$ ---
+implies connectedness. The gap is physical: absence of a distinguished step
+does not establish the availability of all those roots. A formal matrix
+root need not be an allowed operation. Proposition~\ref{prop:continuity-review-divisible}
+retains the conditional result without supplying that premise.
+
+\subsubsection{Connected pure states and symmetry imply continuous reversibility}
+\label{app:continuity-connected}
+
+\noindent\textsc{Structural.}
+This route works conditionally. A closed group of reversible affine
+transformations of a finite-dimensional compact convex state body, acting
+transitively on connected pure states, has an identity component that
+already acts transitively. Proposition~\ref{prop:continuity-review-connected}
+gives the proof. The physical origin of connectedness remains unproved,
+with closedness and transitivity also requiring explicit treatment.
+
+Admitting all complex directions would provide a connected space even
+before choosing $L^2$: the unit sphere of any norm on $\mathbb C^n$, for
+$n\geq1$, is connected by radial rescaling of an ordinary sphere. A complex
+representation, however, does not establish that admission. Closure under
+limits does not suffice either: finite state sets and finite transformation
+groups are already closed.
+
+\subsubsection{Self-consistency requires pure fixed points}
+\label{app:continuity-fixed-points}
+
+\noindent\textsc{Structural.}
+The fixed-point route proposes
+\begin{equation}
+  \forall g\in G\quad\exists x\in P:\ gx=x.
+  \label{eq:continuity-pure-fixed-point}
+\end{equation}
+With compact Lie structure, transitivity and at least two pure states,
+this forces a connected, positive-dimensional pure-state space
+(Proposition~\ref{prop:continuity-review-fixed-points}). It is a useful
+reduction of the target.
+
+\noindent\textsc{Open.}
+What remains is the derivation of \emph{pure} fixed points from physical
+self-reference. A classical bit-flip has a consistent equal mixture without
+a pure fixed point. Lawvere's theorem requires a suitable representation
+and evaluation structure and a surjectivity hypothesis
+\autocite{Lawvere_1969,Yanofsky2003}. Calling a situation self-referential
+does not verify these hypotheses or put the resulting fixed point in $P$.
+This route passes only if the physical and mathematical requirements are
+established without assuming the full Hilbert space. It fails if consistency
+supplies only mixed states or if the representation hypothesis is merely
+postulated.
+
+\subsection{The possible missing physical insight}
+\label{app:continuity-candidate}
+
+\noindent\textsc{Candidate.}
+The common gap is a relation between the information an embedded observer
+cannot record and the physical alternatives a theory must admit. An
+obstruction to a universally correct record says what cannot be completed;
+continuous reversibility asserts the existence of a family of processes.
+A physical principle must explain that existence.
+
+The complete act of self-description is a possible place to seek it. The
+target, the memory describing it, the physical encoding and the feedback
+that uses the description must belong to the same account. Adding memory
+changes the target; redescribing the enlarged target is another physical
+act. The relevant constraint may concern information, disturbance and
+recoverable correlations among these parts when complete internal recording
+is unavailable. It has not been shown that these correlations are phases,
+that they form a continuum, or that their transformations are reversible.
+
+One possible intermediate result would link an obstruction to continuous
+reversible access to an internally available, repeatably readable distinction.
+If that link followed from the observer model, the absence of the relevant
+record could constrain the decomposition of pure states. The measurement
+and copying operations must be derived; a partition alone does not supply
+them. Another possibility is that the same analysis forces an operational
+purification or reversible-dilation principle. That direction would require
+an audit of the remaining reconstruction premises. Neither possibility is
+presently a theorem.
+
+\subsection{The open problem in operational form}
+\label{app:continuity-open}
+
+\noindent\textsc{Open.}
+The following formulation sharpens Open Problem~\ref{op:limit-realisability}.
+Work with a finite-dimensional operational theory. Declare that preparations
+form a compact convex set $\Omega$, a finite collection of measurement
+probabilities separates its states, and deterministic reversible operations
+act affinely. Put $P=\operatorname{ext}(\Omega)$. Take complex amplitudes
+only with the algebraic and compositional properties actually obtained
+from the earlier self-reference argument; do not add full superposition
+admissibility.
+
+\paragraph{Physical premise.}
+Specify an operational condition $\mathcal R$ expressing the limitation
+on self-description. Include the observer, memory, record production and
+feedback in the same theory. Identify the prediction tasks admitting a
+diagonal response and the partial or retrospective records that remain
+possible. Distinguish closure of the physical model under adding observers
+from an observer's possession of an exhaustive internal representation.
+Where more memory is needed, use a family of finite systems rather than a
+finite register endowed with unlimited capacity.
+
+\paragraph{Narrow mathematical task.}
+Initially grant that $G$ is closed and transitive on $P$, explicitly as
+additional premises. Determine whether $\mathcal R$, together with the
+declared complex-amplitude structure, forces $P$ to be connected, or
+equivalently under these assumptions forces $G_0$ to act transitively.
+Deriving \eqref{eq:continuity-pure-fixed-point} would be one sufficient
+route, but is not required.
+
+\paragraph{Full physical task.}
+Explain whether closedness, transitivity and available inverses also
+follow from the observer analysis. Identify any that remain independent
+postulates. A solution of the narrow task must not be presented as deriving
+continuous reversibility from self-reference alone.
+
+\paragraph{PASS: affirmative resolution.}
+State $\mathcal R$ in independently meaningful operational terms and prove
+\eqref{eq:continuity-accessibility} for every model of the declared premises.
+Establish the available paths or sufficient connectedness result and identify
+the precise premise violated by the finite counterexamples. Constructing
+one connected model does not establish necessity.
+
+\paragraph{PASS: negative resolution.}
+Construct a model satisfying the same explicit premises, including the
+physical observer and its prediction and record procedures, in which the
+target fails. For the narrow task, retain closedness and transitivity. The
+model must satisfy the substantive complex-amplitude requirements, not
+merely encode classical labels with complex coordinates. Such a model would
+establish that an additional physical principle is necessary.
+
+\paragraph{FAIL as a derivation.}
+Import the Born rule, a physical $L^2$ sphere, all projective rays, all
+unitary transformations, continuous control or arbitrary physical roots as
+an unstated premise; infer pure-state connectedness merely from continuously
+variable probabilities; or assert that a toy model violates $\mathcal R$
+without defining and testing it. A premise that only rephrases connectedness
+also fails the explanatory aim even if the subsequent mathematics is correct.
+
+\subsection{Conditional mathematical results}
+\label{app:continuity-conditional-results}
+
+\noindent\textsc{Structural.}
+Let $\Omega$ be a compact convex set spanning a finite-dimensional affine
+space and $G$ a closed subgroup of its affine automorphisms. The
+automorphism group is compact: its centroid is a common fixed point, and
+inscribed and circumscribed balls bound the matrices and their inverses.
+The closed-subgroup theorem makes $G$ a compact matrix Lie group; its
+identity component $G_0$ is path-connected and has finite index. Auxiliary
+Euclidean coordinates in this argument do not identify physical
+normalisation or probabilities with a quadratic norm. All three propositions
+below use these hypotheses; arbitrary compact groups need not be Lie groups.
+
+\begin{proposition}[Connected pure states]
+\label{prop:continuity-review-connected}
+If $G$ acts transitively on a connected pure-state space $P$, then $G_0$
+acts transitively on $P$ and \eqref{eq:continuity-accessibility} holds.
+\end{proposition}
+\begin{proof}
+The $G_0$-orbits partition $P$ into finitely many sets because $G/G_0$ is
+finite and $G$ is transitive. Each orbit is compact and hence closed; in
+this finite partition each is also open. Connectedness leaves one orbit.
+For $x,y\in P$, choose $h\in G_0$ with $hx=y$ and a continuous path in
+$G_0$ from $e$ to $h$. This is the required family of transformations.
+The whole group $G$ need not be connected.
+\end{proof}
+
+\begin{proposition}[Divisibility]
+\label{prop:continuity-review-divisible}
+If $G$ is divisible, it is connected. If it also acts transitively on $P$,
+then \eqref{eq:continuity-accessibility} holds.
+\end{proposition}
+\begin{proof}
+The finite quotient $G/G_0$ inherits divisibility. In a finite group of
+order $m$, every element satisfies $h^m=e$, so a nonidentity element has
+no $m$-th root. The quotient must therefore be trivial. A connected Lie
+group is path-connected, and transitivity gives the result.
+\end{proof}
+
+\begin{proposition}[Pure fixed points]
+\label{prop:continuity-review-fixed-points}
+Suppose $G$ acts transitively on $P$, with $|P|\geq2$, and every $g\in G$
+fixes some point of $P$. Then $P$ is a connected manifold of positive
+dimension and \eqref{eq:continuity-accessibility} holds.
+\end{proposition}
+\begin{proof}
+The finite permutation group induced on the $G_0$-orbits is transitive.
+If there were more than one orbit, this group would have an element moving
+every orbit: its average number of fixed points is one by the orbit-counting
+lemma, while its identity fixes more than one. Any lift to $G$ would fix no
+point of $P$, contradicting the hypothesis. Thus $P$ is a single $G_0$-orbit
+and is connected. Being a nontrivial homogeneous space of a compact Lie
+group, it has positive dimension. Proposition~\ref{prop:continuity-review-connected}
+supplies the continuous reversible paths.
+\end{proof}
+
+Averaging any state over a compact group gives an invariant state of
+$\Omega$, which may be mixed. Consistency in the convex state space is
+therefore much weaker than the pure fixed-point premise. A physical reason
+to require an admissible pure fixed point is precisely what that route
+still owes.
+"""
+
+
+def unique(text, anchor):
+    pattern = re.compile(r"\s+".join(re.escape(p) for p in anchor.split()))
+    matches = list(pattern.finditer(text))
+    assert len(matches) == 1, (anchor, len(matches))
+    return matches[0]
+
+
+def prepare(path, body, sentinel):
+    backup = path.with_suffix(path.suffix + ".bak")
+    if path.exists() or backup.exists():
+        sys.exit("REFUSING: target or backup already exists: " + str(path))
+    begin = "% BEGIN " + sentinel
+    end = "% END " + sentinel
+    scaffold = begin + "\n" + end + "\n"
+    first, last = unique(scaffold, begin), unique(scaffold, end)
+    assert first.end() < last.start()
+    assert begin not in body and end not in body
+    result = HEADER + scaffold[:first.end()] + "\n" + body.strip() + "\n" + scaffold[last.start():]
+    unique(result, begin)
+    unique(result, end)
+    assert result.count(HEADER) == 1
+    return path, backup, scaffold, result
+
+
+def main():
+    for target in (APP, CHECK):
+        if target.exists() or target.with_suffix(target.suffix + ".bak").exists():
+            sys.exit("REFUSING: target or backup already exists: " + str(target))
+    assert BODY.count(r"\subsubsection{") == 10
+    labels = re.findall(r"\\label\{([^}]+)\}", BODY)
+    assert len(labels) == len(set(labels))
+    assert labels.count("app:continuity-self-reference") == 1
+    for source in (ROOT / "paper1").rglob("*.tex"):
+        if "attic" in source.name:
+            continue
+        existing = set(re.findall(r"\\label\{([^}]+)\}", source.read_text()))
+        assert not existing.intersection(labels), source
+    citations = set()
+    for group in re.findall(r"\\autocite\{([^}]+)\}", BODY):
+        citations.update(group.split(","))
+    current_keys = set(re.findall(r"@\w+\s*\{\s*([^,]+),", (ROOT / "paper1/references.bib").read_text()))
+    batch_keys = set(re.findall(r"@\w+\s*\{\s*([^,]+),", BATCH.read_text()))
+    missing = sorted(citations - current_keys)
+    assert set(missing) <= batch_keys, missing
+    assert not re.search("[\u2013\u2014\u2018\u2019\u201c\u201d\ufb00-\ufb06]", BODY)
+
+    source_main = (ROOT / "paper1/main.tex").read_text()
+    anchor = unique(source_main, r"\end{appendices}")
+    input_line = r"  \input{appendices/" + APP.stem + "}\n"
+    assert input_line.strip() not in source_main
+    check_body = source_main[:anchor.start()] + input_line + source_main[anchor.start():]
+    plans = [prepare(APP, BODY, "CONTINUITY SELF REFERENCE APPENDIX"),
+             prepare(CHECK, check_body, "CONTINUITY APPENDIX CHECK WRAPPER")]
+
+    # All guards pass before any source is written. A new file's .bak
+    # records its actual initial sentinel scaffold, not a previous appendix.
+    for path, backup, scaffold, result in plans:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(scaffold)
+        shutil.copy2(path, backup)
+        path.write_text(result)
+        print("created " + (str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)))
+        print("backup (initial scaffold): " + (str(backup.relative_to(ROOT)) if backup.is_relative_to(ROOT) else str(backup)))
+    print("Route subsections: 10; appendix labels: " + str(len(labels)) + "; collisions: 0")
+    print("Pending bibliography keys: " + ", ".join(missing))
+    print("Production main.tex and generated bibliography: unchanged")
+    print("PATCH: PASS")
+
+
+if __name__ == "__main__":
+    main()

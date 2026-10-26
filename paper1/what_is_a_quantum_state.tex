@@ -1,3 +1,5 @@
+% EDITED 2026-10-10 scripts/patch_mathematical_research_invitation_2026-10-10T1050.py
+% EDITED 2026-09-26 scripts/patch_carlsberg_footnote_2026-09-26T0930.py
 % EDITED 2026-09-20 scripts/patch_born_cost_ledger_v2_2026-09-20T0900.py
 % EDITED 2026-09-20 scripts/patch_anti_event_real_cost_v2_2026-09-20T1000.py
 % EDITED 2026-09-16 scripts/patch_thomson_lamp_typos_2026-09-16T1600.py
@@ -120,7 +122,9 @@ freely switch between different coordinate systems, cartesian, spherical or cyli
 according to the task at hand we are free to switch between different interpretations according
 to the task at hand. We can even switch between entirely different philosophical narrative
 coordinate systems as we please. We can be epistemologists in the morning, ontologists in the
-afternoon, and followers of the Many Worlds Interpretation in the evening after few beers. Each
+afternoon, and followers of the Many Worlds Interpretation in the evening after a few beers
+(Carlsberg of course\footnote{The Carlsberg Foundation was a prominent supporter of Bohr in his
+development of quantum mechanics \autocite{pais2002physicsdenmark}.}). Each
 has its place and each reveals something useful.
 
 We should take the advice of the great philosopher Groucho Marx~\autocite{marx_1933}
@@ -251,12 +255,22 @@ clearly suggests that
 This is Popper's critical insight
 \enquote{{\emph{$C$'s inferior knowledge is due to the logical impossibility of imparting it information about itself without by this very act, making this information obsolete}}}.
 This changes the nature of the probability that $C$ uses to estimate the outcome of a future
-interaction with $E$, the indeterminacy of the outcome of an interaction with $E$is not due to
+interaction with $E$, the indeterminacy of the outcome of an interaction with $E$ is not due to
 some innate feature of $E$ but is due to a deficit of knowledge on the part of $C$ and therefore
-has the same epistemological status as classical probability. Which means that when $C$
-interacts with $E$ it gains some information about its own state which was previously
-inaccessible. Therefore we must use Shannon Information Theory to assign a value to the amount
-of information gained.
+has the same epistemological status as classical probability.
+
+This tiny step is a profound departure from the generally accepted rationale for quantum
+indeteminacy which is that it is a fundamental ontological property of nature at the smallest
+scales which just has to be accepted as is. In the generally accepted view the probabalistic
+nature of quantum measurement is not due to a deficit of knowledge on the part of the observer
+and therefore an observer gains no new information when a measurement is made because they we
+not lacking information to begin with. This point is argued very convincingly by Bruckner and
+Zeilinger in \autocite{bruknerzeilinger2001shannon}. If we accept that point of view then we're
+stuck and cannot proceed, so I'll just ignore that line of argument even though we have to make
+a big philosophical jump. As Popper has argued $C$'s inability to make a definite prediction
+about its future encounter with $E$ is due to a lack of knowlege, lack of knowledge about
+itself. Which means that when $C$ interacts with $E$ an obtains a definite outcome then it gains
+some information about its own state which was previously inaccessible.
 
 Now, there's a very obvious next step we can take, but that step requires that we first justify
 the use of negative probability when dealing with self-referential setups. At this point it
@@ -276,7 +290,7 @@ attempting to derive. Rather than plagiarise the work of others who have done sp
 collating and summarising the existing work on negative probability I'll refer the reader to
 \autocite{burgin_2009, burgin2010interpretations} and \autocite{muckenheim_1986}. Instead I'll
 select those articles which do most to inform and motivate the next steps in our chain of
-reasoning, in this regard the work of \autocite{burgin2010interpretations} and
+reasoning, in this regard the work of Burgin \autocite{burgin2010interpretations} and Aaronson
 \autocites{aaronson_lect9}[ch.~9]{Aaronson:dem} are particularly useful.
 
 Burgin's work is valuable because he interprets negative probability as the probability of an
@@ -307,8 +321,9 @@ is a germ of a good idea there. The key observation is that the correction has t
 publication, I'll come back to that.
 
 Aaronson \autocites{aaronson_lect9}[ch.~9]{Aaronson:dem} takes a different approach. Accept negative
-probability as a fact without engaging in the \enquote{mental tortures}(\autocite{Cardano_1545}
-of interpretation, and just work through the consequences. He suggests;-
+probability as a fact, call such probabilities, \enquote{probability amplitudes} and then without 
+engaging in the \enquote{mental tortures}(\autocite{Cardano_1545} of interpretation, just work 
+through the consequences. He suggests;-
 \begin{quotation}
 Quantum mechanics is what you would inevitably come up with if you started from probability
 theory, and then said, let's try to generalize it so that the numbers we used to call
@@ -330,72 +345,17 @@ Abramsky et al \autocite{Abramsky2014} also show that a contextual no-signalling
 signed global section but no non-negative one, so any global hidden-variable account must carry
 negative weight. Negativity is forced precisely by contextuality. Then Abramskly et al
 \autocite{Abramsky2015} also show that contextuality is locally consistent, globally
-inconsistent data --- local sections with no global section. Using Sheaf-theory they then use a
+inconsistent data, local sections with no global section. Using Sheaf-theory they then use a
 Liar Cycle paradox to show the paradox and the strong-contextuality obstruction are the same
 object. The obstruction has a continuous, single-qubit face: the complex Hopf bundle of
 \S\ref{sec:l2-metric-fibre} admits no global section, so gauge choices are local sections that
-cannot be glued --- the same schema with phase conventions as the contexts;
-Appendix~\ref{app:jaynes} develops the identification and prices its status. So we get
+cannot be glued, the same schema with phase conventions as the contexts;
+Appendix~\ref{app:jaynes} develops the identification. So we get
 self-reference $\iff$ contextuality $\iff$ negative probability.
-
-An objection now presents itself, and it is sharp enough to deserve an
-answer at full strength. The formalism already discards the global
-phase: the pure-state density matrix $\rho = \ket{\psi}\bra{\psi}$ is
-invariant under $\ket{\psi} \mapsto e^{i\alpha}\ket{\psi}$, every
-empirical prediction factors through $\rho$, and the map
-$\psi \mapsto \ket{\psi}\bra{\psi}$ is nothing other than the
-projection of \S\ref{sec:hopf-bloch} written in operator coordinates --- for
-a single qubit, literally the Hopf map. If the observer's
-self-referential ignorance is carried by the phase, has the standard
-formalism not already deleted the subjective ingredient? And yet what
-remains is still quantum. The resolution is that a formalism encodes
-ignorance of a quantity not by carrying that quantity as a variable
-but by working on the quotient by it. The entries $\psi_i\bar\psi_j$
-of $\ket{\psi}\bra{\psi}$ generate the ring of $U(1)$-invariants of
-the state: the density matrix is the invariant ring of the
-self-ignorance symmetry, packaged as an operator, with the Born
-weights on its diagonal and the interference data off it. (Indeed the
-Born rule, quadratic in $\psi$, is \emph{linear} in $\rho$: the
-quadratic toll of \S\ref{sec:born-invariance} is paid once, in forming the
-invariants, after which everything is linear.) That the quotient
-leaves a quantum rather than a classical residue is a statement about
-the bundle: a principal bundle admits a global section if and only if
-it is trivial \autocite{steenrod1951topology}, and this one is not, so
-there exists no globally consistent split of the state into
-``objective ray'' plus ``subjective phase coordinate''. The separation
-Jaynes demanded \autocite{Jaynes_89_a} is a fibration, not a
-decomposition, and fibrations decompose only when trivial. Nor does
-the quotient discard everything: the fibre's connection and curvature
-survive it --- the geometric phase \autocite{berry1984quantal} and the
-Fubini--Study geometry --- and these are precisely the interference
-structure. Classical ignorance lives on a trivial bundle, world
-$\times$ credence, and products unscramble; self-referential ignorance
-lives on a bundle with no section.
-
-For mixed states the omelette has exactly two eggs, and they enter
-through two distinct forgetful operations: the projective quotient,
-whose kernel is the observer's own fibre coordinate and is
-structurally unresolvable; and the partial trace with convex mixing,
-whose kernel is correlation with external systems and is resolvable in
-principle by records. The state retains no memory of which operation
-contributed what: every ensemble decomposition of a given $\rho$ is
-realisable by a suitable measurement on a purifying system
-\autocite{schrodinger1936probability,hughston1993ensemble}, so $\rho$
-is a sufficient statistic for future predictions, and sufficiency is
-forgetting. This is why the separation Jaynes sought cannot be found
-in the state. It resides in the record structure --- in which
-irreversible FANOUT events of \S\ref{sec:fanout-boundary} have actually
-occurred: two decompositions of the same $\rho$ are two candidate
-FANOUT histories, and the actual history disambiguates. The omelette
-is unscrambled in the circuit, not in the state.
-Appendix~\ref{app:jaynes} develops each of these claims, separates the
-established mathematics from the framework's assembly, and answers the
-$\psi$-epistemic objection that this reading invites.
-
 
 But Spekkens' result uses quantum theory, so we cannot use it to argue the case that
 self-reference implies negative probability in the Popper model. Worringly, even in the quantum
-case it doesn't stand out as being obvious, surely something so simple should be obvious. Even
+case it doesn't stand out as being obvious and surely something so simple should be obvious. Even
 worse it provides little guidance on how to understand negative probability. Which is very
 frustrating because in the architypical case "This sentence is false", the negation is clearly
 visible and totally obvious. The closest we come to an understanding is ;-
@@ -435,43 +395,50 @@ objective and subjective. This point has been argued by Zurek and collaborators 
 project to show that classical information is extracted from quantum information by repeated
 copying see \autocite{zurek_2009, Zurek2002, Oliver_2004}. For the purposes of this paper I will
 define subjective information as information that an agent cannot copy and objective information
-as information that can be copied. A more formal exposition, generated by Claude.ai, is in the
+as information that has been copied. A more formal exposition, generated by Claude.ai, is in the
 appendices \ref{app:fanout-boundary}
 
 Before FANOUT no classical records exist and therefore Landauer's Principle doesn't apply:
 information can be erased without real cost. An \enquote{anti-event} erases information without
 real cost. By analogy with Burgin's proof reader, before a text has been copied and published
 widely, correcting a mistake has no cost. After publication, post FANOUT, changing something is
-very costly. The step from nothing to $kT\ln 2$ at the first copy is a placeholder: once the
-amplitudes are complex (\S\ref{sec:complex-amplitudes}) the cost before FANOUT is a phase, and the
-redundancy ladder of \S\ref{sec:wf-redundancy} replaces the step by a rotation, paid by degrees as
-the copies accumulate. We can see the erasure of information clearly in
-\enquote{{\emph{$C$'s inferior knowledge is due to the logical impossibility of imparting it information about itself without by this very act, making this information obsolete}}}
+very costly. There's a very uncomfortable discontinuity between pre-FANOUT and post-FANOUT which we will smooth over later
+on. But for now the step from nothing to $kT\ln 2$ at the first copy is a placeholder
+%: once the
+%amplitudes are complex (\S\ref{sec:complex-amplitudes}) the cost before FANOUT is a phase, and the
+%redundancy ladder of \S\ref{sec:wf-redundancy} replaces the step by a rotation, paid by degrees as
+%the copies accumulate. 
+We can see the erasure of information clearly in \enquote{{\emph{$C$'s inferior knowledge is due to
+the logical impossibility of imparting it information about itself without by this very act, making
+this information obsolete}}}
 $C$ has a negative probability of acquiring information about itself and this negative
 probability prevents the formation of a record, hence it's private information that cannot be
 cloned. Our earlier observation that $C$'s inability to be able to accurately predict the
 outcome of an interaction with $E$ is not due to innate randomness of $E$'s behaviour but is due
 to a lack of knowledge on the part of $C$ about its own state because if it did know its own
-state that would erase that state. Hence self-reference $\iff$ negative probabilty.
+state that would erase that state. Hence self-referential paradoxes $\iff$ negative probabilty.
 \label{sec:complex-amplitudes}
-Now that argument is not good enough for a mathematician, but I will gloss over that, assume it
-can be made mathematically rigorous, and move on. We've justifed the use of negative probabilty
+Now that argument is not good enough for a mathematician, and because it is significant in the study
+of self-referential, or inconsistent mathematics, we do need to make it mathematically rigorous.
+But because we get one step closer to the answer we aleady know from physical systems then I' assume it
+can be made mathematically rigorous, and move on. We've partially justifed the use of negative probabilty
 and also revealed that such probabilities are due to a lack of information, therefore, contrary
 to Brukner and Zeilinger \autocite{bruknerzeilinger2001shannon} we must use Shannon Information
 Theory and take the obvious next step which we delayed before, we have to plug a negative value
 into the log function. But that can only work if we use analytic continuation to extend the
-domain of the log function the complex plane and that is why quantum probabilities have complex
-amplitudes.
-One premise is declared here, because everything downstream consumes it. Analytic continuation
-is an operation on a function defined on a connected domain, and its value at a negative entry
-is unique only because credences range over such a domain. The framework takes it that an
-embedded observer's credence in a proposition about itself can take every value in $[0,1]$ ---
-self-referential ignorance is not rationed into whole bits, as it is in the epistricted theories
-\autocite{spekkens2007toy} --- so that the surprisal is an analytic function on a continuum
-rather than a table of values that any extension would fit. The same premise is what later makes
-the pure states a connected space (\S\ref{sec:continuity}) and the probability simplex a
-manifold (\S\ref{sec:cencov-route}); whether self-reference derives it is Open
-Problem~\ref{op:limit-realisability}.
+domain of the log function the complex plane and that is why quantum probabilities require
+complex values.
+
+%One premise is declared here, because everything downstream consumes it. Analytic continuation
+%is an operation on a function defined on a connected domain, and its value at a negative entry
+%is unique only because credences range over such a domain. The framework takes it that an
+%embedded observer's credence in a proposition about itself can take every value in $[0,1]$ ---
+%self-referential ignorance is not rationed into whole bits, as it is in the epistricted theories
+%\autocite{spekkens2007toy} --- so that the surprisal is an analytic function on a continuum
+%rather than a table of values that any extension would fit. The same premise is what later makes
+%the pure states a connected space (\S\ref{sec:continuity}) and the probability simplex a
+%manifold (\S\ref{sec:cencov-route}); whether self-reference derives it is Open
+%Problem~\ref{op:limit-realisability}.
 
 But why not quaternionic or octionic values? Because quaternion multiplication is not
 commutative and Shannon Information requires that the information is additive and addition is
@@ -513,15 +480,71 @@ Hence, reassured by the physical experiments that corroborate this theory, logic
 entitled to propose a new logical operation $\sqrt{not}$. Why? Because a faithful physical model
 for it exists in nature!
 \end{quotation}
-However logicians have not used $\sqrt{not}$ in their discussions of self-referential logic.
-This is quite understandable since the postulates of quantum mechanics are an ad-hoc collection
-without explanation other than the fact that they work and we can calculate numbers which match
-experiment. Which isn't good enough for mathematicians who want a well founded explanation.
-Hence Deutsch's suggestion that logicians could use the logical states enabled by quantum
-mechanics has certainly not been adopted by people working in and around the fields of
-self-referential logic and inconsistent mathematics. Although we're in a strange land where
-people are using quantum computation, which involves imaginary truth values, yet logicians have
-not taken to using them in their exploration of self-referential paradoxes and hypodoxes.
+% BEGIN mathematical_research_invitation_2026-10-10T1050
+Deutsch's suggestion connects the present enquiry with Mortensen's programme of inconsistent
+mathematics, which studies mathematical theories in logics that tolerate contradictions without
+making every proposition provable \autocite{mortensen1995inconsistent}. There is also work directly
+extending Spencer-Brown's imaginary logical values: Kauffman and Collings develop a four-valued
+calculus with a square root of negation \autocite{kauffmancollings2019bf}. These provide
+mathematical starting points for asking whether quantum superposition can supply a semantics for
+self-referential expressions that admit no consistent Boolean assignment.
+
+The proposed connection is that the obstruction identified by Lawvere and Yanofsky may motivate
+both an extension of logical values and the complex amplitudes used in physics. A mathematical
+derivation along these lines would give superposition a foundation in the structure of
+self-reference, strengthening Deutsch's appeal to physically realised operations. Quantum
+structures can already be studied axiomatically; the additional gain would be an explanation of
+why such structures arise. Establishing the correspondence between superposition and the states
+used in inconsistent mathematics remains part of this enquiry.
+
+Completing this route could therefore open further work on self-reference, nonclassical semantics
+and computation, with significance for pure mathematics independent of its applications to
+quantum foundations. Here it is offered as an invitation to mathematicians. The present paper
+develops the physically motivated route through self-referential ignorance and Shannon
+information; it leaves the proposed mathematical connection for further work. Its conditional
+argument from reversible continuity to the $p=2$ norm
+(\S\ref{sec:reversible-continuity-l2}) can be assessed on its stated premises without completing
+that wider programme.
+% END mathematical_research_invitation_2026-10-10T1050
+
+
+\subsection{Scale and dimension of limits to information }
+There are a few more things we can learn from Popper's model. The first thing to notice is the
+scale at which self-reference becomes relevant for $C$ to know the disposition of its own
+components. If we imagine that $C$ is a giant steam powered Babbage analytical engine then it
+only becomes important for $C$ to have self-knowledge of its own components when the thing that
+$C$ is interacting with acts at the same scale as the smallest cog or lever and experiences a
+significant back reaction.
+
+When $C$ interacts with a large heavy cannonball the disposition of the tinnest cog is
+irrelevant and so $C$'s self-knowledge of its own components is not required. But for a very
+small ball bearing with just enough energy and momentum to flip the tiniest lever or disturb the
+tiniest cog and for the lever and tiniest cog to have a back reaction on the very small ball
+bearing then $C$'s self knoweldge of its own components is required. The time evolution of $C$
+is in some state space, and the smallest quantity that would change its path through that state
+space must therefore have the dimension of action. Therefore there will be a scale at which it
+becomes impossible for $C$ to predict the outcome of its interaction with its closest
+environment and that scale will have the dimension of action. This is in accord with Rovelli's
+Relational Intepretation \autocite{Rovelli1996a} where he is also able to deduce that there will
+be a quantity with the dimension of action which acts to restrict the information available in
+any volume of phase space. The difference is that here we deduce the fact that there's a limit
+to the information one can have, whereas Rovelli has to introduce the idea as a postulate.
+
+From that we can deduce that when we try to nail down the carpet of non-computability in the
+room of computability one of the nails will be to enforce a barrier to knowing the most minute
+details of any action. Precisely because it is in principle impossible for a computable process
+to know its own state there has to be a limit to the knowledge a computational process can
+obtain about its own state. This is where self-reference is smuggled in as an information limit,
+an\enquote{Epistemic Horizon} \autocite{szangolies_j_2018, szangolies_2020} or as Spekkens toy
+model \autocite{spekkens2007toy} where he introduces the idea that there's a limit to the amount
+of information which can be gained and a measurement of one property entails the loss of
+knowledge of another property.
+
+As an aside because the outcome of an interaction between $C$ and $E$ is co-determined by $C$
+and $E$ then it becomes obvious that the extra computational capabilities available to quantum
+systems derive from the context, i.e $C$. This relationship between contextuality and the
+quantum speedup has already been pointed out in Raussendorf
+\autocite{Raussendorf2009ContextualityComputation}
 
 \subsection{The cost of a record, and why it is a square}
 \label{sec:born-cost-ledger}
@@ -569,54 +592,21 @@ analyticity declared above. None of the three needs the lattice of projections o
 Gleason's theorem rests, so all three hold for a single qubit, where Gleason is silent. The
 argument is structural rather than a theorem in the strict sense, and is flagged as such.
 
-\subsection{Scale and dimension of limits to information }
-There are a few more things we can learn from Popper's model. The first thing to notice is the
-scale at which self-reference becomes relevant for $C$ to know the disposition of its own
-components. If we imagine that $C$ is a giant steam powered Babbage analytical engine then it
-only becomes important for $C$ to have self-knowledge of its own components when the thing that
-$C$ is interacting with acts at the same scale as the smallest cog or lever and experiences a
-significant back reaction.
-
-When $C$ interacts with a large heavy cannonball the disposition of the tinnest cog is
-irrelevant and so $C$'s self-knowledge of its own components is not required. But for a very
-small ball bearing with just enough energy and momentum to flip the tiniest lever or disturb the
-tiniest cog and for the lever and tiniest cog to have a back reaction on the very small ball
-bearing then $C$'s self knoweldge of its own components is required. The time evolution of $C$
-is in some state space, and the smallest quantity that would change its path through that state
-space must therefore have the dimension of action. Therefore there will be a scale at which it
-becomes impossible for $C$ to predict the outcome of its interaction with its closest
-environment and that scale will have the dimension of action. This is in accord with Rovelli's
-Relational Intepretation \autocite{Rovelli1996a} where he is also able to deduce that there will
-be a quantity with the dimension of action which acts to restrict the information available in
-any volume of phase space. The difference is that here we deduce the fact that there's a limit
-to the information one can have, whereas Rovelli has to introduce the idea as a postulate.
-
-From that we can deduce that when we try to nail down the carpet of non-computability in the
-room of computability one of the nails will be to enforce a barrier to knowing the most minute
-details of any action. Precisely because it is in principle impossible for a computable process
-to know its own state there has to be a limit to the knowledge a computational process can
-obtain about its own state. This is where self-reference is smuggled in as an information limit,
-an\enquote{Epistemic Horizon} \autocite{szangolies_j_2018, szangolies_2020} or as Spekkens toy
-model \autocite{spekkens2007toy} where he introduces the idea that there's a limit to the amount
-of information which can be gained and a measurement of one property entails the loss of
-knowledge of another property.
-
-As an aside because the outcome of an interaction between $C$ and $E$ is co-determined by $C$
-and $E$ then it becomes obvious that the extra computational capabilities available to quantum
-systems derive from the context, i.e $C$. This relationship between contextuality and the
-quantum speedup has already been pointed out in Raussendorf
-\autocite{Raussendorf2009ContextualityComputation}
-
 \subsection{Reversible continuity}
 \label{sec:reversible-continuity}
-In the pre-\textsc{fanout} regime erasing information has no thermodynamic cost, everything is
+In the pre-\textsc{fanout} regime erasing information has no real valued thermodynamic cost, everything is
 reversible, and because there are no copyable records there is no well-defined ordering of
 events. Hardy's reconstruction \autocite{Hardy2001a} identifies reversible continuity --- that a
 continuous reversible transformation connects any two pure states, so that one can move
 continuously between $\ket{TRUE}$ and $\ket{FALSE}$ with no preferred basis --- as the one axiom
 that separates quantum from classical probability, and it is what lets a superposition of
 $\ket{TRUE}$ and $\ket{FALSE}$ represent the classically inadmissible states of the paradoxes of
-self-reference. Whether self-reference forces that axiom is the subject of
+self-reference. Now as proposed in \ref{sec:somthing} all intepretations or models of quantum mechanics
+must smuggle in self-reference. Reversible continuity is the point that self-reference is
+smuggled into Hardy's 5 axoims since it is precisely this axoim that permits superposition. 
+If we take self-reference to be fundamental, then we must be able to derive the axiom of reversible
+continuity. 
+Whether self-reference forces that axiom is the subject of
 \S\ref{sec:continuity}. It is tempting to read Cantor's diagonal as filling the gaps in
 $\mathbb{Q}$ to give $\mathbb{R}$, and continuity with it; the reading is backwards, as that
 section explains, since the diagonal presupposes the completed line rather than building it. The
