@@ -362,3 +362,15 @@ matching scale 3.6 TeV   thermal length 5.481e-20 m ; R* = 4.230e+10 m = 7.716e+
 Planck                   thermal length 1.616e-35 m ; R* = 1.084e-36 m = 6.709e-02 thermal lengths = 6.709e-02 l_P
 R*/lambda = (45/(2 pi g*)) (E_P/k_B T)^2 ; so R* = 1e5 lambda at k_B T = 8.191e-04 E_P and R* = lambda at k_B T = 0.259 E_P
 ```
+
+
+## Correction pointer, 2026-10-08
+
+Sections 0 and 3 say that above the electroweak crossover there are no
+masses, no clocks and no proper time, a conformal phase. That is too strong:
+thermal masses of order $gT$ remain, a quasiparticle has a proper time, and
+the phase is scale-free only up to $\mu_{H}$ and the running. The vacuum
+(Yukawa) masses do vanish; the correct sentence is that no particle has a
+clock of its own above the crossover. The CANDIDATE ledger proposal of
+section 8 on this point is withdrawn and replaced. See
+`knowledge/sessions/thermal_masses_crossover_correction_2026-10-08T2200.md`.

@@ -1,3 +1,5 @@
+% EDITED 2026-10-07 scripts/patch_infinite_not_flat_2026-10-07T1400.py
+% EDITED 2026-09-27 scripts/patch_spacelike_inversion_2026-09-27T1800.py
 % EDITED 2026-09-21 scripts/patch_op_sterile_gravity_boundary_2026-09-21T1300.py
 % EDITED 2026-09-12 scripts/patch_spacetime_bloch_headline_2026-09-12T1400.py
 % EDITED 2026-09-11 scripts/patch_splice_loops_prospects_2026-09-11T0900.py
@@ -108,6 +110,44 @@ That the resulting structure is a genuine metric space, and that the signature
 follows rather than being fitted, are open problems---at present the
 identification is motivated by reproducing what nature does, not proved.
 
+%% VERIFY-SUPPORT 2026-09-27: conway_2003 is cited below for "any two octonions
+%% generate an associative subalgebra" (Artin's theorem; a Moufang loop is
+%% diassociative) and harvey1982calibrated for "a three-plane in Im O is
+%% associative iff the associator of a basis vanishes, and the associative
+%% three-planes are the imaginary parts of the quaternionic subalgebras"
+%% (Harvey--Lawson, ch. IV). Neither passage was read in the session that wrote
+%% this; both statements are checked numerically in Convention A by
+%% scripts/antitelephone_network_associativity_2026-09-27T1900.py (PASS).
+A reader used to the standard order of ideas should pause here, because the order has been
+inverted, and the inversion is used below. In special relativity the tachyonic antitelephone is a
+corollary: a signal faster than light, composed with a boost, would arrive before it was sent and
+close a timelike loop, therefore there is no such signal \autocite{tolman1917theory,
+benfordbooknewcomb1970tachyonic}. The metric comes first and the impossible telephone is a check
+on it. Here the telephone comes first. Two observers are spacelike separated when an antitelephone
+between them would close a loop; the loops such telephones would close, and carry nothing round,
+are what spacelike separation is, their number is the distance, and the metric is read off from
+them. Nothing is lost, since the corollary returns as a tautology: an antitelephone that carried
+a record would close a causal loop, and its two ends would not have been spacelike after all.
+
+What is gained is a definite meaning for a spatial dimension. Picture many observers, each holding
+an antitelephone to each of the others. A message relayed from one observer to another through a
+third composes two transports round two loops, and the network is consistent only if every relay
+composes to a single transport whatever the bracketing of the relaying: a spatial dimension is a
+family of loops whose transports compose associatively, which is a group law on a parallelisable
+sphere. That is a condition a family of loops can fail, and \S\ref{sec:three-dimensions} shows
+that the loops of the seventh sphere fail it. Two antitelephones always compose, because any two
+octonions generate an associative subalgebra \autocite{conway_2003}; three compose only when their
+imaginary parts lie in one quaternionic subalgebra, which is what the associative three-planes of
+Harvey and Lawson are \autocite{harvey1982calibrated}, and a third link outside that subalgebra is
+seen by the network exactly through its component outside it. The largest consistent network of
+antitelephones inside $S^{7}$ is therefore an $S^{3}$, and there are three spatial directions.
+When the seventh sphere is set aside there as a ruler, which is the octonionic spacetime of the
+division-algebra literature, the claim is not that $\mathbb{R}^{8}$ has no metric, nor that the
+ten-dimensional Minkowski space of $SL(2,\mathbb{O}) \cong \mathrm{Spin}(9,1)$ fails to exist
+\autocite{baez2002octonions}; it is that the octonionic directions are not loops on which
+antitelephones compose, and so are algebra rather than distance. In the standard order that
+sentence has no content; in this one it is the reason space has three dimensions.
+
 The split just defined explains the most familiar asymmetry in physics: that one can move back and
 forth in space but not in time. \S\ref{sec:continuity} identifies the pre-measurement regime with
 continuous reversibility --- its transformation group is connected, and every motion in it is
@@ -141,9 +181,15 @@ $SU(2)$ --- and their operations preserve information; $S^{7}$'s multiplication 
 a Moufang loop rather than a group, so $S^{7}$ cannot serve as a ruler. (The rotation group
 $SO(8)$ of the seven-sphere is of course a group; what fails is the sphere's \emph{own}
 composition law, the one a ruler would use.) The same non-associativity
-forbids a metric outright: path composition $d(A,C)$ through $B$ depends on the
-bracketing, so the triangle inequality is not merely violated but ill-defined, and
-no geodesic structure exists. Since the abelian $S^{1}$ alone cannot carry
+forbids a metric built from the sphere's own composition law outright: path
+composition $d(A,C)$ through $B$ depends on the bracketing, so the triangle inequality is not merely violated but ill-defined, and
+no geodesic structure exists. (What is untouched should be said: the Euclidean metric of
+$\mathbb{R}^{8}$, and the ten-dimensional spacetime that $SL(2,\mathbb{O})$ furnishes, are metrics
+of the ordinary kind; what fails is a ruler made of antitelephone loops, which is what a spatial
+dimension is in this section, as \S\ref{sec:comp-distance} set out. Nor is the failure total:
+relays between any two links compose, and among three they compose exactly when the links lie in
+one quaternionic subalgebra, so the largest consistent network inside $S^{7}$ is an $S^{3}$
+\autocite{conway_2003,harvey1982calibrated}.) Since the abelian $S^{1}$ alone cannot carry
 non-abelian structure, spacelike distance must be three-dimensional. Dimension
 three is an output, not an input \autocite{small_2006}.
 
@@ -488,10 +534,11 @@ of baryon-number violation and is left open.
 
 \paragraph{Spatial infinitude and the status of inflation.}
 There is no upper bound on non-computability, so the space of computations is
-unbounded: the universe is spatially infinite, and being a network without a
-boundary, naturally flat. Infinitude on its own, however, settles only flatness,
-which was never inflation's principal task. The horizon problem is, and an
-infinite space does nothing for it. The framework's actual lever against
+unbounded: the universe is spatially infinite, which leaves its spatial sections flat or of
+negative curvature and excludes only the closed case. Infinitude on its own, however, does not
+settle flatness, which is a fine-tuning of the Friedmann dynamics the framework has not yet
+derived (Open Problem~\ref{op:comp-metric}); and flatness was in any case never inflation's
+principal task. The horizon problem is, and an infinite space does nothing for it. The framework's actual lever against
 inflation is the relational thesis of Section~\ref{sec:gr-nonlocality}: if
 pre-spatial entanglement correlates regions before \textsc{fanout} spreads them
 into spatial separation, then the observed large-scale homogeneity is fixed

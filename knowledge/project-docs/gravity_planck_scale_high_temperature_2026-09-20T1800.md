@@ -220,3 +220,13 @@ present de Sitter horizon, for comparison: S ~ 1e122 records (Gibbons--Hawking),
 electroweak Compton length hbar c / v = 8.0143e-19 m ; l_P / (hbar c/v) = v/M_P = 2.017e-17 ; M_P / v = 4.959e+16
 one Planck area in units of the electroweak area: (v/M_P)^2 = 4.067e-34
 ```
+
+
+## Correction pointer, 2026-10-08
+
+Section 0's "no masses, hence no clocks and no rulers, and a conformal phase
+has no record of the metric's scale" is weakened: thermal masses $\propto T$
+remain, so the scale is recorded relative to $T$; "no record of the scale"
+becomes "no record of the scale except $T$". The Planck-grain conclusions
+are unaffected. See
+`knowledge/sessions/thermal_masses_crossover_correction_2026-10-08T2200.md`.
