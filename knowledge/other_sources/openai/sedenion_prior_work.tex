@@ -1,0 +1,363 @@
+% Compile with: pdflatex sedenion_prior_work
+%               bibtex sedenion_prior_work
+%               pdflatex sedenion_prior_work
+%               pdflatex sedenion_prior_work
+% Keep sedenion_prior_work.bib in the same directory.
+% Alternatively: latexmk -pdf sedenion_prior_work.tex
+% The review body can be reused in another manuscript with the cited .bib entries.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{newtxmath}
+\usepackage{microtype}
+\usepackage[a4paper,top=25mm,bottom=26mm,left=27mm,right=27mm]{geometry}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+  pdftitle={Associators, Norm Defects and Zero Divisors: Prior Work},
+  pdfsubject={A focused literature review of Cayley--Dickson algebra and related physical proposals},
+  pdfkeywords={octonions, sedenions, associator, zero divisors, norm defect, Hopf construction, literature review}
+}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\OO}{\mathbb O}
+\newcommand{\SSS}{\mathbb S}
+\newcommand{\ip}[2]{\langle #1,#2\rangle}
+\newcommand{\DN}{\Delta_N}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\spec}{spec}
+\numberwithin{equation}{section}
+\setlength{\parskip}{3pt plus 1pt}
+\setlength{\parindent}{1.2em}
+\setlength{\emergencystretch}{2em}
+\setlength{\bibsep}{6pt plus 1pt}
+\allowdisplaybreaks[1]
+\raggedbottom
+\pagestyle{plain}
+\title{\textbf{Associators, Norm Defects\\and Zero Divisors}\\[5pt]
+  \large Prior work on Cayley--Dickson algebras\\and related physical proposals}
+\author{}
+\date{25 September 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+\begin{abstract}
+This focused review summarises prior work relevant to the identity linking
+an octonionic associator to the failure of norm composition in the real
+sedenions. It covers Moreno's associator operators and higher Hopf
+construction, the annihilator and spectral results of Biss and
+collaborators, and Morita's equivalent scalar cross-term calculation.
+Gillard--Gresnigt's generation construction and Tang's later associator-mass
+proposal are treated separately as physical applications or hypotheses.
+The central algebraic relationship has clear antecedents; a self-contained
+rederivation should not be presented as a newly discovered identity.
+No priority claim for a first occurrence, or validation of a physical mass
+interpretation, is made here.
+\end{abstract}
+
+\section{Scope and conventions}
+
+The review concerns the eight works in the accompanying bibliography.
+Journal articles and the specific preprint versions consulted are
+identified separately. Numbered-result references below refer to the
+arXiv versions specified in the bibliography, except for Morita's
+publisher version and Tang's version~1. The notation ``norm defect'' is
+used here to compare the sources; it is not assumed to be their shared
+terminology.
+
+To fix signs, write $x=(a,b)$ and $y=(c,d)$ with $a,b,c,d\in\OO$, and use
+\begin{equation}
+ (a,b)(c,d)=(ac-\bar d\,b,\;da+b\bar c),
+ \qquad N(x)=|a|^2+|b|^2.
+ \label{eq:product}
+\end{equation}
+Here $N$ is the squared positive Euclidean norm on the \emph{real}
+sedenions. Define
+\begin{equation}
+ \DN(x,y)=N(x)N(y)-N(xy),\qquad
+ [a,b,c]=(ab)c-a(bc),\qquad
+ \ip{u}{v}=\Rea(u\bar v).
+ \label{eq:definitions}
+\end{equation}
+The identity under discussion is
+\begin{equation}
+ \boxed{\DN((a,b),(c,d))=-2\ip{[a,b,c]}{d}.}
+ \label{eq:central}
+\end{equation}
+Section~\ref{sec:morita} explains its equivalence to Morita's published
+cross-term calculation. The convention changes and elementary
+rearrangements displayed in this review are explanatory comparisons,
+not quotations of formulas in identical notation from every source.
+
+\section{Moreno: associators and multiplication operators}
+
+\subsection{Early zero-divisor work: 1997 preprint, 1998 article}
+
+\citet{Moreno1998ZeroDivisors} studies zero divisors in real
+Cayley--Dickson algebras through associators and left-multiplication
+operators. The introduction explicitly connects failure of norm
+multiplicativity, loss of alternativity, and the appearance of zero
+divisors beyond the octonions. The sedenion case receives a detailed
+geometric treatment; its zero-divisor characterisation is subsequently
+cited as Corollary~2.14 by Biss and collaborators.
+This supplies an early direct precedent for the relationship, rather
+than merely background on nonassociative algebras.
+\citep{Moreno1998ZeroDivisors,BissDuggerIsaksen2008Annihilators}
+
+\subsection{An explicit associator block: 2005 preprint}
+
+In \emph{Constructing zero divisors}, Moreno's Theorem~2.3 writes the
+square of multiplication by a doubled element in block form. For
+nonzero pure elements $a,b$ in the lower algebra, set
+\begin{equation}
+ \mathcal A=L_a^2+R_b^2,\qquad
+ S(z)=[a,z,b]=R_bL_a(z)-L_aR_b(z).
+\end{equation}
+Then
+\begin{equation}
+ L_{(a,b)}^2=
+ \begin{pmatrix}\mathcal A&-S\\S&\mathcal A\end{pmatrix}.
+ \label{eq:moreno}
+\end{equation}
+Thus the associator is an explicit off-diagonal operator in the doubled
+algebra. Moreno uses such operators and their spectra to construct and
+analyse zero divisors.~\citep[Sec.~2, Theorem~2.3; Sec.~3]{Moreno2005Constructing}
+
+\paragraph{Comparison with the scalar defect.}
+When $a,b\in\OO$ are pure, octonionic alternativity gives
+$\mathcal A=-(|a|^2+|b|^2)I$.
+Equation~\eqref{eq:moreno} therefore isolates the associator contribution
+relative to the norm-preserving diagonal term. This is the operator
+counterpart of evaluating the scalar defect for a particular second
+input; it does not assign that defect a physical meaning.
+
+\section{Morita: the equivalent scalar cross-term calculation}
+\label{sec:morita}
+
+Morita's \emph{Quasi-associativity and Cayley--Dickson algebras} gives the
+closest explicit scalar calculation in this review.
+His Section~5 uses
+\begin{equation}
+ \begin{aligned}
+ U&=X+e_{15}Y, &V&=Z+e_{15}W,\\
+ UV&=XZ-W\bar Y+e_{15}(\bar XW+ZY),
+ \end{aligned}
+\end{equation}
+where $X,Y,Z,W$ are octonions. In the unnumbered calculation after
+Eq.~(53), the squared norm appearing inside the Study-like determinant
+is
+\begin{equation}
+ \begin{aligned}
+ |UV|^2&=(|X|^2+|Y|^2)(|Z|^2+|W|^2)
+          -2\Rea(r'-s'),\\
+ r'&=(XZ)(Y\bar W),\qquad
+ s'=(ZY)(\bar WX).
+ \end{aligned}
+ \label{eq:morita}
+\end{equation}
+Morita attributes the surviving correction to octonionic
+nonassociativity and explicitly relates failure of norm composition to
+zero divisors.~\citep[Sec.~5, Eq.~(52a) and the calculation after Eq.~(53)]{Morita2014QuasiAssociativity}
+
+\paragraph{Translation into the present convention.}
+Set
+\begin{equation}
+ X=a,\qquad Y=\bar b,\qquad Z=c,\qquad W=\bar d.
+\end{equation}
+Equation~\eqref{eq:morita} becomes
+\begin{align}
+ \DN(x,y)
+ &=2\Rea\bigl((ac)(\bar b d)-(c\bar b)(da)\bigr)\notag\\
+ &=2\bigl(\ip{ac}{\bar d b}-\ip{da}{b\bar c}\bigr)\notag\\
+ &=-2\ip{[d,a,c]}{b}
+  =-2\ip{[a,b,c]}{d}.
+ \label{eq:translation}
+\end{align}
+The last equality uses the alternating four-form
+$\ip{[a,b,c]}{d}$.
+This demonstrates equivalence, not merely thematic similarity.
+Presenting the compact associator form is a useful reformulation, but
+not a basis for claiming a new norm-composition identity.
+
+\section{Biss--Dugger--Isaksen: annihilators and zero-divisor geometry}
+
+\citet{BissDuggerIsaksen2008Annihilators} study
+\begin{equation}
+ \Ann(x)=\{y:xy=0\}
+\end{equation}
+and relate these subspaces to associators and anti-associators.
+Sections~8 and~11 develop those tools; Section~12 specialises to the
+sedenions. For a nonzero $(a,b)\in\SSS$, Proposition~12.1 gives
+\begin{equation}
+ (a,b)\text{ is a zero divisor}
+ \quad\Longleftrightarrow\quad
+ \Rea(a)=\Rea(b)=0,\quad
+ \ip{a}{b}=0,\quad |a|=|b|.
+ \label{eq:zero-condition}
+\end{equation}
+A nontrivial sedenion annihilator has real dimension four.
+The unit zero-divisor locus is homeomorphic to the Stiefel manifold
+$V_2(\R^7)$, whereas the space of ordered unit pairs with zero product
+is homeomorphic to $G_2$. These are different spaces and should not be
+conflated.~\citep[Sec.~12, Proposition~12.1 and following discussion]{BissDuggerIsaksen2008Annihilators}
+
+This moves the discussion beyond isolated multiplication-table examples:
+it identifies the geometry of both admissible zero divisors and their
+partners. The classification is algebraic; no generation or mass
+interpretation is part of this result.
+
+\section{Biss--Christensen--Dugger--Isaksen: norm distortion as eigentheory}
+
+\citet{BissEtAl2009Eigentheory} introduce, for $x\neq0$,
+\begin{equation}
+ M_x=\frac{1}{N(x)}L_{\bar x}L_x
+     =\frac{1}{N(x)}L_x^{\mathsf T}L_x.
+ \label{eq:M}
+\end{equation}
+This is a positive-semidefinite, self-adjoint real operator. Their
+``eigenvalues of $x$'' mean eigenvalues of $M_x$, not of $L_x$ itself.
+\citep[Definition~3.1 and Sec.~3]{BissEtAl2009Eigentheory}
+
+\paragraph{Comparison with the defect.}
+Taking the inner product of Eq.~\eqref{eq:M} with $y$ directly gives
+\begin{equation}
+ \DN(x,y)=N(x)\ip{y}{(I-M_x)y}.
+ \label{eq:defect-operator}
+\end{equation}
+For a nonzero eigenvector $M_xy=\lambda y$, consequently,
+\begin{equation}
+ \frac{\DN(x,y)}{N(x)N(y)}=1-\lambda.
+\end{equation}
+Thus $\lambda=0$ detects zero product, $0<\lambda<1$ norm loss,
+$\lambda=1$ norm preservation, and $\lambda>1$ norm excess.
+
+For imaginary, linearly independent octonions $a,b$, Corollary~7.3 gives
+\begin{equation}
+ \spec M_{(a,b)}=\{1,1+\eta,1-\eta\},\qquad
+ \eta=\frac{2|a||b|\sin\theta}{|a|^2+|b|^2},
+ \label{eq:spectrum}
+\end{equation}
+where $\theta$ is the angle between $a$ and $b$. The multiplicities are
+$8,4,4$. Equal-length orthogonal inputs yield
+$\{0,1,2\}$, with multiplicities $4,8,4$, respectively
+(Proposition~7.4).~\citep[Corollary~7.3 and Proposition~7.4]{BissEtAl2009Eigentheory}
+This provides an existing spectral framework for the signed defect, not
+a derived physical mass spectrum.
+
+\section{Moreno: the higher Hopf construction and its zero set}
+
+Moreno's 2004 preprint studies
+\begin{equation}
+ F_n(x,y)=(2xy,\;|y|^2-|x|^2),
+ \qquad x,y\in A_n,
+ \label{eq:hopf-moreno}
+\end{equation}
+where $A_n$ is the real $2^n$-dimensional Cayley--Dickson algebra.
+For the composition-algebra cases, norm multiplicativity makes the
+restriction to a unit sphere sphere-valued. For $n>3$, the paper instead
+investigates the zero set of this construction.~\citep[Abstract and Introduction]{Moreno2004Hopf}
+
+\paragraph{Comparison with the present Hopf-map formula.}
+For sedenions, the alternative convention
+\begin{equation}
+ H(x,y)=(N(x)-N(y),\;2x\bar y)
+\end{equation}
+is obtained from $F_4$ by conjugating the second input and changing output
+coordinate order and sign. Direct expansion gives
+\begin{equation}
+ |H(x,y)|^2=(N(x)+N(y))^2-4\DN(x,\bar y).
+\end{equation}
+Equation~\eqref{eq:central} implies
+$\DN(x,\bar y)=\DN(x,y)$, so normalized input satisfies
+\begin{equation}
+ N(x)+N(y)=1
+ \quad\Longrightarrow\quad
+ |H(x,y)|^2=1-4\DN(x,y).
+\end{equation}
+This rewriting measures the obstruction by the signed defect.
+The higher construction and its zero-divisor obstruction themselves
+have a direct antecedent in Moreno's paper; these equations do not
+produce a new sphere fibration.
+
+\section{Physical applications and speculative mass proposals}
+
+\subsection{Gillard--Gresnigt: three fermion generations}
+
+\citet{GillardGresnigt2019Generations} work with the
+\emph{complexified} sedenions $\C\otimes\SSS$.
+After selecting a special direction and constructing a primitive
+idempotent, the authors identify three complex-octonion subalgebras
+sharing a quaternionic subalgebra. Their associated Clifford-algebra
+ideals describe three fermion generations with unbroken
+$SU(3)_c\times U(1)_{\mathrm{em}}$ symmetry.
+The selection and projector are part of the construction; this should
+not be recast as the claim that an arbitrary sedenion presentation
+contains only three octonionic subalgebras.
+\citep[Abstract]{GillardGresnigt2019Generations}
+
+This is complementary representation-theoretic work, rather than a
+source for Eq.~\eqref{eq:central} or a norm-defect mass law. A proposed
+bridge to that law must also specify the norm: the positive real norm
+used here and its complex-bilinear extension are not the same object
+as a positive Hermitian norm on complex amplitudes.
+
+\subsection{Tang: an explicit associator-norm mass hypothesis}
+
+Tang's 2025 preprint explicitly proposes a relation between lepton mass
+and an associator norm in Section~5.1, Eq.~(24):
+\begin{equation}
+ m_{\ell}\ \propto\
+ \bigl\|[\overline{\Psi},A_{\mu},\Psi]\bigr\|.
+\end{equation}
+The author places this within a proposed nonassociative reformulation
+of quantum electrodynamics and claims generation-dependent masses and
+magnetic-moment corrections. The version reviewed, posted
+7 November 2025, is explicitly marked as \emph{not peer-reviewed}.
+\citep[Sec.~5.1, Eq.~(24)]{Tang2025AssociatorMass}
+
+It establishes a precedent for proposing associator norms as mass
+quantities, not validation of the claimed dynamics or numerical
+predictions. Its displayed hypothesis is also not identical to the
+signed four-linear defect in Eq.~\eqref{eq:central}. This review reports
+the proposal without auditing its physical or mathematical consistency.
+
+\section{Implications for attribution and further work}
+
+The sources support a clear distinction. Associator-controlled
+multiplication, sedenion norm nonmultiplicativity, zero-divisor geometry,
+and the obstruction in the higher Hopf construction already belong to
+a developed mathematical literature. The scalar, operator, and
+geometric descriptions above are compatible ways of organising that
+work. They should not be conflated with later hypotheses assigning
+physical mass to an algebraic quantity.
+\citep{Moreno2005Constructing,Morita2014QuasiAssociativity,
+BissDuggerIsaksen2008Annihilators,BissEtAl2009Eigentheory,Moreno2004Hopf}
+
+\par\penalty-100
+A defensible manuscript statement is:\nopagebreak
+\begin{quote}
+We use established Cayley--Dickson algebra to express the failure of
+sedenion norm composition as a signed scalar projection of an
+octonionic associator. The calculation is equivalent to published
+cross-term expressions and is related to existing operator and
+annihilator descriptions. Any identification of a quantity derived
+from this defect with fermion mass is an additional physical
+hypothesis.
+\end{quote}
+
+A physical extension would have to specify the observable, its
+transformation law, positivity or sign prescription, dimensional scale,
+and dynamics. The bibliography records relevant precedents, not an
+exhaustive priority search. Neither the existence of the algebraic
+identity nor the citation of an earlier mass proposal establishes a
+new physical prediction.
+
+\bibliographystyle{unsrtnat}
+\bibliography{sedenion_prior_work}
+\end{document}
