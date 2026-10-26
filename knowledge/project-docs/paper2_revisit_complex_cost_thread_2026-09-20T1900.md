@@ -48,6 +48,8 @@ Scripts, all seed-locked with stdout in the notes: `graded_fanout_complex_cost_2
 `koide_renyi_profile_2026-09-19T1100.py`, `landauer_temperature_fanout_2026-09-20T1200.py`,
 `records_high_temperature_2026-09-20T1400.py`, `hubble_records_high_temperature_2026-09-20T1800.py`.
 
+- (added 2026-10-07) `inflation_horizon_infinitude_2026-10-07T1200.md`: the cosmology paragraph's three claims (infinite, flat, homogeneous) disentangled; the horizon dissolution placed at the first-record surface (needs the Planck-boundary result of the records note, section 4, not the electroweak one); flatness owed; the spectrum as a record of conformal structure as the direction for the hard debt; the no-inflationary-tensors prediction. Goes in Paper 2's cosmology section; the Paper 1 paragraph correction is drafted as `scripts/patch_inflation_paragraph_2026-10-07T1300.py`.
+
 ## Drafts that are ready
 
 - The Jacobson paragraph for the ontology-section TODO (Jacobson note, sec. 7), in the paper's register, citation keys placeholders.

@@ -91,6 +91,13 @@ maintainer writes them into the ledgers.
   survive --- BBT sentence-cases titles on import.
 - Any citation you cannot verify against a source you actually read is
   marked VERIFY-CITE in the text and listed in your summary.
+- A reference can exist, with every field right, and still not support the
+  sentence that cites it. A citation whose metadata is verified but whose
+  support for the sentence has not been read against the source is marked
+  VERIFY-SUPPORT; the batch note records the claim the paper attaches to
+  the reference and the passage that supports it, quoted where it matters.
+  "Support: abstract only" is written as such. A source that does not
+  support its claim is reported with the quoted text, never edited around.
 - knowledge/publications/ is exempt from all of the above. Those .bib files
   belong to finished work and keep their own keys; never regenerate them,
   reconcile them with Zotero, or cite from them.

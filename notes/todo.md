@@ -170,7 +170,327 @@ reasoning. Delete when done.
       "written permission and confirmation of accuracy from the source" -- the
       same rule the Abramsky provenance note already applies.
 
+- [ ] op:parallelisable-renormalisable, proposed 2026-09-27 (Tang reading note
+      section 7): PASS/FAIL for the paper's question "does parallelisability
+      determine renormalisability?", the one-loop self-energy as a winding sum
+      with bounded phase. JS to mint or decline. Tang 2025 is not support for it.
+      2026-09-27T1100: attempted (`scripts/self_energy_winding_recast_2026-09-27T1100.py`,
+      note `knowledge/sessions/parallelisable_renormalisable_attempt_2026-09-27T1100.md`):
+      FAIL for the winding sum, the bounded phase and the compact momentum
+      space; a compact fibre bounds the phase and discretises the modes, the
+      divergence is the number of modes. The finiteness reading is closed; the
+      paper's removability question is untouched. Restate the problem before
+      minting: removability from settlement at the record, not finiteness.
+
+- [ ] v2 wording pass: wherever the paper says "complexified" quaternions/
+      octonions/sedenions, decide whether Furey's C (x) A is meant or the real
+      algebra with the amplitude's complex structure (the framework's own,
+      lem:cproj); the complexified algebras have zero divisors from H onward.
+      `knowledge/sessions/complexified_vs_complex_structure_2026-09-27T1400.md`.
+
+- [x] v2 wording, spacetime section "Three dimensions of space": "the same
+      non-associativity forbids a metric outright" -> "forbids a metric built
+      from the sphere's own composition law outright", so a reader does not take
+      it as the claim that R^8 has no metric; and one clause noting that
+      SL(2,O) = Spin(9,1) is the unsplit ten-dimensional option the
+      computability split declines. Session note
+      `complexified_vs_complex_structure_2026-09-27T1400.md` section 5.
+      DONE 2026-09-27T1800, revised T1900, applied uncommitted, together with
+      two new paragraphs in `sec:comp-distance`: the antitelephone inversion
+      (JS: readers in the standard order "might miss the inversion and then get
+      confused when we dismiss octonionic spacetime") and JS's many-observer
+      antitelephone network (consistency is associativity; two links always
+      compose, three only in a quaternionic subalgebra, so the largest
+      consistent network in S^7 is an S^3):
+      `scripts/patch_spacelike_inversion_2026-09-27T1800.py`, three edits on
+      `paper1/spacetime_from_non-computability.tex`; numerical check
+      `scripts/antitelephone_network_associativity_2026-09-27T1900.py` (PASS,
+      stdout in the note). Session note sections 6a and 6b. Owed: build (two
+      new keys undefined until imported); VERIFY-SUPPORT on conway_2003 (Artin)
+      and harvey1982calibrated (associative 3-planes), flagged in a %% comment;
+      JS to read the paragraphs; commit.
+
+- [ ] Import `bib/tachyonic_antitelephone_refs_2026-09-27T1800.bib` (keys
+      `tolman1917theory`, `benfordbooknewcomb1970tachyonic`); metadata verified
+      against Crossref and archive.org, texts not read, so both VERIFY-SUPPORT
+      for the closed-loop consistency argument they are cited for.
+
+- [ ] **Burton--Anwar (Quantinuum, arXiv:2605.06251) read 2026-10-03**, note
+      `knowledge/sessions/burton_anwar_meromorphic_reading_2026-10-03T1600.md`,
+      script `scripts/burton_anwar_meromorphic_check_2026-10-03T1600.py` (PASS).
+      Four v2 wording items, JS to rule (note section 6):
+      (1) `sec:hopf-compositional`, second Burton--Anwar sentence: "the classical
+      structures live in exactly the data their projectivisation forgets" is
+      overstated (their Prop. 3.1: the monoids survive; the section data is what
+      is forgotten); corrected sentence drafted in note section 4. Second-order
+      finding on an existing citation; not edited around.
+      (2) entanglement-classes section, special/anti-special sentence: one clause
+      "read projectively the two algebras are multiplication and addition on the
+      Riemann sphere" citing coeckekissingermerryroy2011ghzw and
+      burtonanwar2026meromorphic.
+      (3) spacetime section, celestial-sphere sentence: one clause that the
+      complementary pair projectivises to rotation-and-boost monoids about two
+      perpendicular axes, the X-spider's law being Einstein velocity addition.
+      (4) optional: cite gharahimanciniottaviani2020finestructure beside
+      Duer--Vidal--Cirac as the algebraic-geometric form of the classification.
+      Import `bib/ghzw_arithmetic_segre_refs_2026-10-03T1700.bib` (two keys,
+      metadata verified, both VERIFY-SUPPORT). Do NOT import
+      `bib/burton_anwar_meromorphic_ref_2026-10-03T1600.bib`: the key is already
+      in the library; the file is the support record.
+
+- [ ] **Cosmology paragraph (2026-10-07)**: the spacetime section's "spatially
+      infinite, and being a network without a boundary, naturally flat" and
+      "infinitude settles flatness" are wrong (an open universe is infinite and
+      never flat; flatness is a Friedmann fine-tuning the framework has not
+      derived). The flatness sentence is FIXED at JS's ruling (2026-10-07T1400,
+      "infinite therefore flat or negative curvature"), applied uncommitted by
+      `scripts/patch_infinite_not_flat_2026-10-07T1400.py`. Unrun patch replacing
+      the rest of the paragraph, re-anchored and anchor-checked:
+      `scripts/patch_inflation_paragraph_2026-10-07T1300.py`; it also states the
+      horizon answer as a claim about initial data (not "same laws"), separates
+      background from fluctuations, and adds the no-inflationary-tensors
+      prediction. Note `knowledge/project-docs/inflation_horizon_infinitude_2026-10-07T1200.md`,
+      script `scripts/inflation_debts_at_framework_scales_2026-10-07T1200.py`.
+      Import `bib/inflation_alternatives_refs_2026-10-07T1300.bib` (seven keys;
+      six arXiv-verified, Penrose 1979 VERIFY-CITE; all VERIFY-SUPPORT). JS to
+      rule on the patch; ledger entries proposed in note section 9.
+
+- [ ] **Twistor space and the Hopf maps (2026-10-07)**, note
+      `knowledge/sessions/twistor_hopf_maps_2026-10-07T1600.md`, script
+      `scripts/twistor_hopf_factorisation_2026-10-07T1600.py` (PASS). For JS to
+      rule, no patch drafted: (i) `sec:hopf-compositional`, "the SU(2) fibre of
+      S^7 -> S^4 carries exactly the entanglement that survives local
+      operations" has fibre and base reversed (the fibre is the second qubit's
+      local unitaries; the base carries the first qubit's Bloch vector and the
+      concurrence); corrected sentence in note section 4. (ii) Credit Penrose's
+      twistor programme where the Minkowski-i conjecture is stated. (iii)
+      Optionally name the two-qubit bundle as the twistor fibration. Import
+      `bib/twistor_refs_2026-10-07T1700.bib` (six keys; five Crossref-verified,
+      Penrose--MacCallum VERIFY-CITE; all VERIFY-SUPPORT). Added T1900 (note
+      section 9, script `scripts/twistor_chirality_filatov_2026-10-07T1900.py`,
+      PASS): the two Hopf fibrations of S^7 are twistor and dual twistor
+      space, unitary versus antiunitary (spin-flip) fibre; Filatov's
+      inversion is det T = -C^2 for every entangled pure pair; the
+      opposite-handedness is the partial-transpose criterion. (iv) For
+      `sec:frame`: one sentence naming the topological fact; (v) the Filatov
+      datum has strength C^2 (op:filatov-extension); (vi) chirality is fixed
+      by the choice of complex structure (op:chirality). Import
+      `bib/peres_horodecki_wootters_refs_2026-10-07T1930.bib`. Literature
+      search (note 9c): det T = -C^2 is Filatov--Auzinsh June 2026 (arXiv
+      2606.12637, eq. 33), the partial transpose as a reflection is Gamel 2016
+      and Avron--Kenneth 2009, the handedness is Altepeter 2009 / James 2022,
+      the left/right SU(2) on the Hopf bundle with twistor space is Chin--Lee
+      2014; the JOIN (handedness = twistor chirality, same-handed = partial
+      transpose) is not found. Import
+      `bib/handedness_twistor_prior_refs_2026-10-07T2359.bib` (eight keys)
+      before any of section 9 goes into the paper, and cite accordingly. Added T2100
+      (note section 9a, script `scripts/w_triangle_chirality_holonomy_2026-10-07T2100.py`,
+      PASS): canonical W has det T = -4/27 on every edge and Z_2 holonomy -1
+      (the K_3 frustration as a number); canonical GHZ has det T = 0 on every
+      edge; LU-invariant, NOT SLOCC-invariant (a quarter of W-class images
+      have a proper edge while entangled). (vii) `sec:frame`: "an entangled
+      pair forces opposite handedness" is a pure-state / canonical-orbit
+      statement; add the qualifier. Ledger entries proposed in 9a.
+
+- [ ] **Koide phase and the edge-triple associator (2026-10-07T2200)**, note
+      `knowledge/sessions/koide_phase_associator_triple_2026-10-07T2200.md`,
+      script `scripts/koide_phase_associator_identity_2026-10-07T2200.py` (PASS).
+      Identity: the cubic term of cos Phi is the associative 3-form phi of the
+      three edge directions, and phi^2 + |assoc|^2/4 = vol^2, so the associator
+      of the edge triple is the calibration shortfall inside the Koide phase.
+      The paper's Bargmann reading is the associative regime; JS's W-register
+      triple is the non-associative one; the spectrum cannot tell them apart
+      (no route to delta; closed routes untouched). For JS: (i) ledger entry
+      for the identity; (ii) one clause in op:koide-delta's constraint naming
+      the two regimes; (iii) the regime shows in eigenframes/mixing, a
+      computation for the generation-transitions thread, not attempted.
+
+- [ ] **Note to Filatov and Auzinsh (2026-10-08)**: JS asked for a brief PDF
+      note on the handedness/twistor link and the prior work neither of their
+      papers cites. Source `notes/correspondence/filatov_handedness_twistor_note_2026-10-08.tex`
+      (standalone article class, manual bibliography, builds clean with
+      latexmk in its own directory; the PDF is gitignored). Four pages: the
+      observation, the prior literature (Altepeter, James, Gamel,
+      Avron--Kenneth, Mosseri--Dandoloff, Levay, Chin--Lee), the two-qubit Hopf
+      dictionary, the two chiralities, handedness = chirality via the partial
+      transpose, a three-qubit remark (W edges det T = -4/27, Z_2 holonomy -1;
+      GHZ edges 0; LU- not SLOCC-invariant). Rewritten 2026-10-08T1800 at
+      JS's request in a friendly letter tone (Stanislav is a Vaxjo friend with
+      an active exchange): directions his picture can go rather than gaps;
+      added a section reading the two spheres as counterfactual observers
+      (interaction-free measurement; spacelike separation as counterfactual
+      observation), and his 2024 stabiliser paper in the references. Previous
+      version kept as `.v1.tex.bak` (gitignored). JS to send; commit the .tex.
+
+- [ ] **Woit's right-handed spacetime (2026-10-08)**, note
+      `knowledge/sessions/woit_right_handed_spacetime_2026-10-08T1000.md`, script
+      `scripts/woit_chirality_two_qubit_isotropy_2026-10-08T1000.py` (PASS).
+      Verified: at a point of the two-qubit Hopf base the isotropy Spin(4)
+      splits by a chosen complex structure into U(1) x Sp(1) = U(2) (Woit's
+      electroweak group; the paper's fibres); which Sp(1) is unitary depends
+      on the complex structure and partial conjugation swaps them (= Filatov
+      handedness). Reading (CANDIDATE): weak chirality and spacetime chirality
+      are one selection, the record's i; the spacetime chirality contains time
+      reversal. JS's arrow (weak -> relations -> spacetime) and Woit's are the two
+      charts (relational, fixed-background), related by the partial conjugation
+      of one qubit; the common cause is the chart-invariant (note section 8). Section 9:
+      the paper's `sec:fanout-direction` already claims measurement selects
+      the direction (CANDIDATE); the computation shows this fixes the
+      continuous part (which i within a chirality, the Higgs direction) and
+      not the discrete part (left or right type = handedness), which stays
+      op:chirality. Wording owed there: one sentence separating the two. For JS: one sentence citing Woit in the SL(2,A) paragraph
+      or op:chirality; import `bib/woit_twistor_refs_2026-10-08T1100.bib`.
+
+- [ ] **Observer defined by the selection of i (2026-10-08T1500)**, note
+      `knowledge/sessions/observer_defined_by_selection_2026-10-08T1500.md`.
+      JS: no observer without the possibility of observing, so selecting an i
+      defines what an observer is; extends Mueller's first-person perspective.
+      In the paper's objects: observer = carrier of a classical structure =
+      committed direction (prop:f1-dictionary) = complex structure (twistor
+      note section 4); converse of the self-reference section's derivation of
+      i from the observer; the two form definition and derivation. Consequence
+      (CANDIDATE): observers in one network share the chirality of spacetime
+      while differing in preferred direction. Section 5 (T1700): the
+      counterfactual possibility of observation is the section data = the
+      imaginary column; interaction-free measurement is that column made
+      visible; the counterfactual records between observers are spacelike
+      separation (antitelephone loops); possibility is not definiteness.
+      Import `bib/interaction_free_measurement_refs_2026-10-08T1700.bib`.
+      For JS: a definition sentence
+      (drafted, note section 4), a ledger entry, and reading Mueller 2020 before
+      "extends Mueller" is printed. Import
+      `bib/mueller_law_without_law_ref_2026-10-08T1500.bib`.
+
+- [ ] **Spinor, twistor, place (2026-10-08T2100)**, twistor note section 11,
+      script `scripts/spinor_twistor_place_2026-10-08T2100.py` (PASS): a qubit's
+      reduced 4-vector is null when unrelated and timelike with mass = C when
+      entangled; the twistor is the counterfactual stage (a spinor with its
+      possible relations), the entangled pair the actual place (a rest frame).
+      JS's "a place is created when a relation is formed" made literal at rung
+      two; concurrence-as-mass is a RHYME with the octonionic associator debt.
+      One sentence proposed for sec:gr-nonlocality (note section 11).
+
+- [ ] **Correction (2026-10-08T2200)**: "no masses and no proper time above
+      the electroweak crossover" (records note 2026-09-20, reused since) is too
+      strong. Vacuum masses vanish with the condensate (standard, smooth
+      crossover at 159.5 GeV); thermal masses ~ gT remain (0.2 to 0.9 T); a
+      quasiparticle has a proper time; scale-free only up to mu_H and the
+      running. Correct sentence: no particle has a clock of its own above the
+      crossover. Note `knowledge/sessions/thermal_masses_crossover_correction_2026-10-08T2200.md`,
+      script `scripts/thermal_masses_above_crossover_2026-10-08T2200.py`;
+      dated correction pointers appended to the records, gravity, inflation
+      and twistor notes; v2-plan line reworded. Replacement CANDIDATE ledger
+      entry in note section 4 (Yukawa mass = the particle's phase clock,
+      thermal mass = the bath's record clock). Import
+      `bib/finite_temperature_refs_2026-10-08T2300.bib` (seven keys).
+
+- [ ] **Amplituhedron and supersymmetry (2026-10-09)**, note
+      `knowledge/sessions/amplituhedron_susy_unsplit_2026-10-09T1000.md`,
+      script `scripts/n4_sym_unsplit_octonionic_spacetime_2026-10-09T1000.py`
+      (PASS). Verified: Herm_2(O) has signature (1,9); the preferred C cuts it
+      into (1,3) + the six-dimensional colour C^3; colour derivations fix the
+      four and rotate the six; g2 ∩ u(3) = su(3), the U(1) outside G2. Reading
+      (CANDIDATE): N=4 SYM is the unsplit octonionic spacetime reduced on the
+      colour directions, its SU(4)_R the rotation group of colour space, the
+      N=4 -> N=1 reduction = G2 -> SU(3); supersymmetry is what the octonionic
+      rung has as geometry and loses as algebra; the amplituhedron is the
+      positive geometry of the unsplit theory. Tree amplituhedron gluons =
+      pure YM; positive geometry has gone non-SUSY (scaffolded gluons 2024).
+      Precision owed on the 2026-10-07 opening sentence (split vs Euclidean
+      real forms). For JS: ledger entries in note section 9; import
+      `bib/amplituhedron_susy_division_refs_2026-10-09T1100.bib` (18 keys
+      after section 10's four on experimental contact; four fields VERIFY-CITE,
+      all VERIFY-SUPPORT). No patch.
+
+- [ ] **Follow-on paper: the supersymmetry bridge (2026-10-09)**. JS: the
+      "associator cancels / mass is where it does not" rhyme is not for Paper 1
+      but a dedicated follow-on paper should expand it, connect to the decades
+      of supersymmetry work, and explain the absence of experimental evidence.
+      Scope written: `knowledge/project-docs/paper_susy_bridge_scope_2026-10-09T1300.md`
+      (thesis, chain of argument with labels, central computation, inherited
+      literature, predictions, fences, prerequisites). Next steps in its
+      section 8: read Baez--Huerta 2010 in full and script the 3-psi's identity
+      for O and the sedenions; read Haag--Lopuszanski--Sohnius for its
+      hypotheses; attempt the split supersymmetry variation and record
+      PASS/FAIL; only then outline. Import
+      `bib/supersymmetry_bridge_refs_2026-10-09T1300.bib` (eleven keys,
+      verified, all VERIFY-SUPPORT). "Paper 3" is already the measurement-scale
+      companion paper (Jaynes appendix comments); JS to number this one.
+
+- [ ] **Continuity section: conservation of probability (2026-10-10)**. JS:
+      measured probability must sum to 1, therefore probability is conserved.
+      Review: the section's "continuity is what entitles the theory to make
+      [the cut from GL to U]" is wrong, GL(n,C) being connected; conservation
+      makes the cut, and the paper nowhere derives conservation from records
+      (every route reads normalisation off the L^2 sphere continuity delivered;
+      sec:born-cost-ledger borrows it explicitly). Conservation route proposed:
+      exactly one outcome per FANOUT at any operation count + closed-loop
+      squares (not ratios: analyticity) + linearity => sphere preserved =>
+      unitary; or "undone by the anti-event" = U^dagger U = 1. Continuity then
+      does connectedness and the p=2 selection only. Note
+      `knowledge/sessions/continuity_probability_conservation_2026-10-10T1000.md`,
+      script `scripts/probability_conservation_vs_renormalisation_2026-10-10T1000.py`
+      (PASS). DRAFTED UNRUN, --check passes, JS to rule:
+      `scripts/patch_continuity_cut_conservation_2026-10-10T1100.py` (one
+      paragraph). Two further wording items (L^2 section premise; Postulate 5
+      origin clause) and one in sec:born-cost-ledger, in note section 5. Ledger
+      entry proposed in section 6. Section 8 (T1300): op:limit-realisability is
+      NOT cleared (the stabiliser fragment satisfies every premise of the
+      conservation route); "reversible" in the problem can read "unitary";
+      restatement possible as "one transformation of infinite projective
+      order", with the Koide phase 2/9 rad an empirical witness (RHYME).
+      Script `scripts/value_continuum_infinite_order_2026-10-10T1300.py`.
+
+- [ ] **The chain to reversible continuity; fixed-point route to the value
+      continuum (2026-10-10T1500)**. JS: why can't we show self-reference ->
+      negative probability -> complex measure -> (with conservation) reversible
+      continuity; what remains? Answer: the gap is the value continuum, a
+      declared premise at the Shannon step (continuation unique only on a
+      connected domain), consumed again at the continuity step; conservation
+      does not supply it. Candidate route: premise (F) "every admissible
+      transformation fixes an admissible pure state" (Lawvere's conclusion)
+      + transitivity + closedness => connected positive-dimensional state
+      space (Jordan + components; elementary theorem) => Hardy's fifth. (F)
+      passes the FAIL test: 14 of 24 Clifford elements and 14 of 24 toy-bit
+      permutations are derangements; the Clifford derangements' fixed points
+      are the magic states. Remaining: exhibit the regime as an instance of
+      Lawvere's hypothesis (objects, point-surjectivity, fixed point admitted
+      as the lamp principle). Note
+      `knowledge/sessions/value_continuum_fixed_point_route_2026-10-10T1500.md`,
+      script `scripts/fixed_point_route_value_continuum_2026-10-10T1500.py`
+      (PASS). For JS: restate op:limit-realisability (wording in note section
+      6); ledger entries there; import `bib/jordan_theorem_ref_2026-10-10T1500.bib`.
+
 ## Bibliography hygiene
+
+- [ ] Dedupe three pairs the ChatGPT review's .bib import created:
+      biss2008annihilators / BissDuggerIsaksen2008Annihilators,
+      moreno1998zerodivisors / Moreno1998ZeroDivisors,
+      gillardgresnigt2019three / GillardGresnigt2019Generations; keep the keys
+      the paper cites. Tang: the library has Tang2025AssociatorMass; the Fable
+      batch tang2025associator is superseded by it (v2 plan item 7 to use the
+      library key). Morita 2014 Sec. 5 is VERIFY-SUPPORT (paywalled). Unrun
+      patch adding the antecedent citations to prop:zd-defect:
+      `scripts/patch_zd_defect_antecedents_2026-09-27T0900.py`; JS to rule.
+      Reading note: `knowledge/sessions/chatgpt_sedenion_prior_work_review_2026-09-27T0900.md`.
+
+- [ ] Import `bib/pais_physics_in_denmark_ref_2026-09-26T0900.bib` (key
+      `pais2002physicsdenmark`, Pais's Nobel-site essay, for the Carlsberg
+      Foundation's support of Bohr; verified against the page, support quoted
+      in the batch header) and re-export. The sentence that cites it is not yet
+      in the repository: JS to say which file.
+
+- [ ] **Second-order citation pass** (JS, 2026-09-25: "second order hallucinated
+      references, where a reference exists, but doesn't support the statements
+      in the paper. Something we have to guard against"). For every citation
+      added since 2026-09-18, read the cited passage and record in the batch's
+      note whether it supports the sentence that cites it, quoting the text;
+      entries checked against abstracts only are now marked VERIFY-SUPPORT
+      (`bib/multicopy_slocc_refs_2026-09-20T2300.bib`). Then the same pass over
+      the whole of paper1/references.bib, oldest first, as time allows.
+      Convention recorded in bib/README.md ("Second-order checks"). The
+      standing example is the 't Hooft two-generation discrepancy, still
+      awaiting JS's ruling on the proposed sentence.
 
 - [ ] Re-export `self-ref-2026-cited` again: `Laraudogoitia_1997` was fixed in
       Zotero on 2026-09-12 (the Mendeley fossil `ISBN: 00070882` removed from
@@ -410,3 +730,84 @@ have not been checked since.
       bare `\ref{}`, so they render as "1.2" rather than "\S1.2" as the rest
       of the paper does. A one-paragraph style pass, unrelated to the warnings
       above.
+
+## 2026-10-16: paradox, hypodox and FANOUT (Fable session)
+
+- [ ] Read `knowledge/sessions/liar_hypodox_fanout_2026-10-16T1100.md`.
+      Two second-order findings for JS: prop:fanout-correspondence (b) in
+      the FANOUT appendix overclaims per state (|-> has off-diagonals in Z
+      and a non-negative Wigner function in every convention), and the two
+      "<=> negative probability" sentences in `what_is_a_quantum_state.tex`
+      conflate a sign on an amplitude with a signed quasi-probability. The
+      Liar's consistent states are stabiliser states; negativity first
+      appears at Fix(H). Proposed wording in the note's section 10.
+- [ ] Import `bib/liar_hypodox_refs_2026-10-16T1200.bib` (16 keys; three
+      VERIFY-CITE in the header). Dourdent2020Godelian is in the library and
+      uncited; the note suggests the lineage paragraph.
+- [ ] Read Roberts 2023 (`roberts2023substructural`) for whether contraction
+      survives; "no diagonal, no paradox" depends on it.
+
+## 2026-10-16: the hypodox as an open loop; closed timelike curves (Fable session, later the same morning)
+
+- [ ] JS: read `knowledge/sessions/hypodox_ctc_fanout_2026-10-16T0900.md`
+      (script `scripts/hypodox_ctc_fanout_2026-10-16T0900.py`, PASS). Two
+      second-order findings for ruling (section 8): the `sec:comp-distance`
+      sentence "a unique consistent solution or none" misses the
+      underdetermined case that carries the bit; `prop:self-creation` is
+      single-shot and fails in the ensemble against a maximum-entropy loop.
+      Proposed wording is in the note; nothing patched.
+- [ ] Zotero: import `bib/ctc_darwinism_refs_2026-10-16T1000.bib` (18 keys;
+      VERIFY-CITE on the Dunlap journal form and the Pinzani proceedings
+      form only; the rest are Crossref or arXiv verified).
+- [ ] Read Hasegawa 1997 for the exact statement "trace in a cartesian
+      category = Conway fixed-point operator" before the trace-to-fixed-point
+      sentence (note section 3) goes anywhere near the paper.
+- [ ] Read Deutsch_91 for the "from nowhere ... from and into other universes"
+      passage and the entropy rule (quoted second-hand from Dunlap today).
+
+## 2026-10-16: complex temperature and the coherence budget (Fable session, late morning)
+
+- [ ] JS: read `knowledge/sessions/coherence_budget_complex_count_2026-10-16T1030.md`
+      (script `scripts/coherence_budget_complex_count_2026-10-16T1030.py`,
+      PASS). The claim "information added at the observation = the imaginary
+      component of the pre-FANOUT knowledge, leaving a real value" is an exact
+      identity if "imaginary component" means the coherence in the record
+      basis (S(rho) + C_Z(rho) = H(p) at every stage of the graded FANOUT),
+      and false if it means the phase (phase-blind; the phase is promoted).
+      Three second-order findings for ruling (section 8): the 09-16 note's
+      "decoherence is the phase becoming entropy", the paper's "counted in
+      imaginary numbers", and the 07-26 note's "generically complex S" (true
+      for three or more levels, not for the bit). Nothing patched.
+- [ ] Zotero: import `bib/complex_temperature_coherence_refs_2026-10-16T1040.bib`
+      (7 keys, all Crossref-verified; VERIFY-SUPPORT on the bodies).
+- [ ] Read Wei and Liu 2012 (body) for the exact mapping between probe-spin
+      coherence and the partition function at complex temperature; it is the
+      citable bridge from Hawking's imaginary temperature to the FANOUT's
+      decoherence factor, and the September complex cost is then a complex
+      free energy.
+
+## 2026-10-16: a probability greater than one for a hypodox (Fable session, evening)
+
+- [ ] JS: read `knowledge/sessions/hypodox_probability_above_one_2026-10-16T2200.md`
+      (script `scripts/hypodox_probability_above_one_2026-10-16T2200.py`,
+      PASS). The "probability greater than one of a hypodox" is the
+      Kirkwood--Dirac conditional of its value between the pre-FANOUT state
+      and a complementary record, q(a) = psi_a/(psi_0+psi_1): complex in
+      general, above one with a negative complement at phase pi, divergent
+      at the Liar's boundary pair, and by Pusey's theorem contextual, so the
+      same resource as negative probability. A hypodox read in its own basis
+      is 0 or 1; a loop closed on itself has real part exactly 1/2; the count
+      2 is a count. Four findings for ruling (section 9): the two
+      "paradox <=> negative probability" sentences (replacement wording with
+      Pusey), "the phase as the continued information", "never in a final
+      record" (confirmed), and a p-adic sentence for the Khrennikov email.
+      Nothing patched.
+- [ ] Zotero: import `bib/kirkwood_dirac_weak_value_refs_2026-10-16T2210.bib`
+      (20 keys; 18 Crossref-verified; VERIFY-CITE on the Kauffman--Varela
+      author list and the Hellerstein edition; VERIFY-SUPPORT on all bodies).
+- [ ] Read Pusey 2014 and Kunjwal--Lostaglio--Pusey 2019 for the exact
+      conditions under which a projector's weak value outside [0,1] proves
+      contextuality, before the replacement sentence of finding (a) goes
+      near the paper.
+- [ ] Read Kauffman 1987 to confirm the J = -1/J arithmetic for the Liar is
+      there and not only in the later Laws of Form essays.

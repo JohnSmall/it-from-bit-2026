@@ -201,6 +201,47 @@ committed. For the Opus build-and-commit prompt: add a commit group
 "Szangolies credit" for the sedenions section and this script (the
 interactions section is already in group b).
 
+## 1f. 2026-09-23: prop:w-access given its own text
+
+JS: Proposition prop:w-access ("W accessibility": generic nonzero
+C-projection on the W orbit, sup C_frac = 1/9) "carries no explanation, unlike
+all other propositions. It looks like a placeholder." Diagnosis: the proof
+outline placed after the following proposition (prop:w-doublet) covered both,
+so the first stood bare. `scripts/patch_prop_w_access_outline_2026-09-23T1100.py`
+gives prop:w-access a statement of content, its own proof outline (the
+first-qubit branch computation of appendix app:w-proof: residue
+3569JNRXghklar aar b/3$, zero set  = 0$, closed form (1-p)/((1+p)(2-p))$,
+ceiling /9$ at  = 1/2$, the ^{2}$ identity), and two remarks (the orbit's
+image on a colour five-sphere of radius $\sqrt{8/9}$ times a Bloch two-sphere
+of radius /3$, disjoint from the GHZ equator; the hardware measurement
+/usr/bin/zsh.1095 \pm 0.0051$, Appendix app:hw-ninth), and trims the outline after
+prop:w-doublet to the doublet statement. The closed form and ceiling were
+re-checked numerically before writing, 20000 Haar-random local unitaries per
+split (`scripts/w_orbit_cfrac_check_2026-09-23T1100.py`); exact stdout:
+
+```
+=== W orbit: C-fraction under random local unitaries, 20000 samples per split ===
+split on qubit 0: max C_frac = 0.111111 (1/9 = 0.111111) ; fraction of samples with C_frac < 1e-6: 0.00000 ; mean 0.07558
+split on qubit 1: max C_frac = 0.111111 (1/9 = 0.111111) ; fraction of samples with C_frac < 1e-6: 0.00000 ; mean 0.07575
+split on qubit 2: max C_frac = 0.111111 (1/9 = 0.111111) ; fraction of samples with C_frac < 1e-6: 0.00005 ; mean 0.07608
+
+=== closed form against direct computation, first-qubit unitary only ===
+ p=|a|^2       direct p(1-p)/((1+p)(2-p))
+    0.00     0.000000     0.000000
+    0.10     0.043062     0.043062
+    0.25     0.085714     0.085714
+    0.50     0.111111     0.111111
+    0.75     0.085714     0.085714
+    0.90     0.043062     0.043062
+    1.00     0.000000     0.000000
+supremum 1/9 at p = 1/2; zero exactly at p = 0 and p = 1 (diagonal or anti-diagonal U_1)
+
+=== internal unitaries alone (qubits 2, 3) leave the bare W at C_frac = 0 ===
+max over 2000 samples: 3.95e-31
+```
+
+Not built; not committed.
+
 ## 2. The thread this closes (2026-09-18 to 20)
 
 - 2026-09-18: JS supplied Pearson et al. 2021 (thermodynamic cost of

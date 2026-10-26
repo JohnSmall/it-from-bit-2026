@@ -194,6 +194,13 @@ paragraph; and (2026-09-20) one clause each citing the Planck cell for the
 clock (the electron's anti-event over half a Compton period returns
 $m_{e}c^{2}$, Part A of the Landauer-temperature script) and the width cell
 for the pole.
+Also (2026-09-25): where the debt is defined, one clause crediting Jau Tang
+(with Qiang Tang 2023, `tangtang2023unified`; alone 2025, `tang2025associator`,
+batch written, to import) with the independent identification of mass with the
+associator, and one sentence that his mechanism for the hierarchy, three
+associator norms, is excluded in the octonions by the uniformity computed here
+and unsupported in the sedenions by notebook M, the ratios being carried by the
+phase. Reading note: `knowledge/sessions/tang2025_associator_qed_reading_2026-09-25T2100.md`.
 Label: STRUCTURAL for the physics; CANDIDATE for the identification;
 RHYME for the top at the calibration bound (keep out of the text or fence
 it in one clause).
@@ -259,7 +266,7 @@ which is the graded form of Paper 1's "never amplified into records while
 remaining indefinite" and belongs in Paper 2's causal-order section; and,
 added 2026-09-20, the high-temperature note
 `knowledge/project-docs/records_causal_structure_high_temperature_2026-09-20T1400.md`
-for Paper 2: thermal time as the causal resolution, no proper time above the
+for Paper 2: thermal time as the causal resolution, no particle-owned clock above the (corrected 2026-10-08; see sessions/thermal_masses_crossover_correction_2026-10-08T2200.md) 
 electroweak crossover, the area law as record capacity);
 and, if JS wants it in v2, a remark in the spacetime section that
 consistency of transport around a closed loop is single-valuedness of the

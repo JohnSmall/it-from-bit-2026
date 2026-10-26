@@ -87,6 +87,10 @@ svg-inkscape/
 
 # --- patch-script backups (scripts/ write these before editing) ------
 *.bak
+# Dated backups of config files, e.g. .gitignore.bak-2026-10-21. These do not
+# end in .bak so the rule above misses them, and a `git add -A` would sweep
+# them into the repository.
+*.bak-[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]
 
 # --- who is working here ---------------------------------------------
 # Written by the agent on its first run in a fresh clone, from answers the
@@ -98,3 +102,39 @@ CONTRIBUTOR.md
 # Created per clone from notebooks/requirements.txt; see notebooks/README.md.
 # virtualenv drops its own .gitignore inside, but python -m venv does not.
 .venv/
+
+# --- PaperDoctor review tool (symlinked from ~/Documents/tex/paperdoctor) --
+# The skills and tools are links to a local clone; the review output is
+# regenerated per run and lives beside each paper so sessions can read it.
+/tools
+/.claude/skills
+*/metadata/
+*/reports/
+*/display/
+
+# --- private correspondence -------------------------------------------
+# Letters and drafts to other researchers. This repository is public, and
+# correspondence is between the maintainer and the named person: it is not
+# the project's to publish, and a draft is not a sent letter. Kept on disk,
+# never committed. Nothing from this directory has ever been committed, so
+# ignoring it is sufficient and no history rewrite is owed.
+notes/correspondence/
+
+# --- extracts and scratch passages ------------------------------------
+# Prose pulled out of a section to work on in isolation, and anything else
+# parked beside the paper that main.tex does not \input. Never part of the
+# built document; kept on disk, not committed. A .tex here has no
+# \documentclass, so VimTeX will not mistake one for a second root.
+paper1/extracts/
+
+# --- rendered media ----------------------------------------------------
+# Explainer videos and their preview frames. Large binaries that would sit
+# in history for ever: the two films alone are 65 MB against a .git of 13 MB.
+# They are reproducible, so the renderers in scripts/ are the source of
+# record and the output is not kept. media/web/ is the exception below:
+# those are small text files meant to be integrated into a page.
+# Exclude the directory's CONTENTS, not the directory: git never descends
+# into an excluded directory, so a bare `media/` would make the negation
+# below unreachable and the web files would be ignored too.
+media/*
+!media/web/
