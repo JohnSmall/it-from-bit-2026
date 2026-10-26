@@ -1,3 +1,4 @@
+% EDITED 2026-10-11 scripts/patch_hurwitz_stale_verifykey_2026-10-11T1000.py
 % EDITED 2026-09-16 scripts/patch_parameter_count_consistency_2026-09-16T1400.py
 % EDITED 2026-09-12 scripts/patch_koide_brannen_credit_2026-09-12T1330.py
 % EDITED 2026-09-11 scripts/patch_koide_freeze_2026-09-11T2300.py
@@ -157,8 +158,12 @@ angle for ratios, is the honest reading of the calculation and we keep the two s
 %% Label: eq:debt-defect -- grep the master for collisions before compiling.
 %% Citation keys: harvey1982calibrated and bryant1987exceptional are NEW, carried
 %%   in calibration_refs_2026-09-01.ris (web-verified 2026-09-01, DOIs included).
-%%   VERIFY-KEY: replace \autocite{hurwitz1898} below with the library's existing
-%%   Hurwitz key before compiling.
+%%   KEY RESOLVED 2026-09-09 by scripts/patch_hurwitz_citekey_2026-09-09T1640.py:
+%%   the Hurwitz citation below reads \autocite{hurwitz1898composition}, which is
+%%   the library's key, and nothing further is owed. The unsuffixed form of that
+%%   key resolves to nothing; this comment deliberately does not spell it out,
+%%   because when it did, an audit of the paper's citation keys reported it as a
+%%   missing reference.
 %% Status of claims: the displayed identity is machine-verified in convention A
 %%   (sedenion_debt_koide_scan_2026-08-31.py; double-verified on both
 %%   environments). The calibration identification Delta = 4(*phi), with the
