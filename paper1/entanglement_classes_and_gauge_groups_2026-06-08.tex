@@ -1,3 +1,4 @@
+% EDITED 2026-09-23 scripts/patch_prop_w_access_outline_2026-09-23T1100.py
 % EDITED 2026-09-10 scripts/patch_quoting_and_typography_2026-09-10T0620.py
 % =====================================================================
 %  SECTION: Entanglement Classes and Gauge Groups
@@ -225,6 +226,46 @@ Hopf image is generically nonzero, vanishing only on a measure-zero subset, with
 $\sup C_{\mathrm{frac}} = \tfrac19$.
 \end{proposition}
 
+Where the GHZ orbit is confined to the colour sector, the W orbit reaches the lepton sector, and
+does so generically: the $\mathbb{C}$-component of its Hopf image is nonzero at every point of the
+orbit but a set of measure zero, and it is bounded, never exceeding one ninth of the image's squared
+norm. Both facts come from the same one-line computation as Proposition~\ref{prop:ghz}, with one
+norm changed.
+
+\emph{Proof outline.} Split on the first qubit. The bare W has branches
+$o_1 = \tfrac{1}{\sqrt3}(0,1,1,0)$ and $o_2 = \tfrac{1}{\sqrt3}(1,0,0,0)$, orthogonal but of
+\emph{unequal} norm, $\lvert o_1\rvert^2 = \tfrac23$ and $\lvert o_2\rvert^2 = \tfrac13$. Unitaries
+on the other two qubits act on both branches alike and change neither their inner product nor
+their norms, so $C_{\mathrm{frac}}$ depends only on the first-qubit unitary
+$U_1 = \bigl(\begin{smallmatrix} a & b \\ -\bar b & \bar a\end{smallmatrix}\bigr)$. Orthogonality
+kills the $\bar a^{2}$ and $\bar b^{2}$ terms of the mixing formula, and the unequal norms leave the
+residue $\langle o_1, o_2\rangle = \bar a\bar b\,(\tfrac13 - \tfrac23) = -\tfrac13\bar a\bar b$: the
+equal-norm cancellation of the GHZ proof, failing by exactly the norm difference. It vanishes only
+when $ab = 0$, $U_1$ diagonal or anti-diagonal, a measure-zero subset of $SU(2)$ on which the bare
+representative itself sits. With $p = \lvert a\rvert^2$ the branch norms are
+$\lvert o_1\rvert^2 = (1+p)/3$ and $\lvert o_2\rvert^2 = (2-p)/3$, and by Lemma~\ref{lem:cproj}
+together with the composition identity,
+\[
+C_{\mathrm{frac}} \;=\; \frac{p(1-p)}{(1+p)(2-p)},
+\]
+maximised at $p = \tfrac12$ with value $\tfrac19$: the first-qubit Bloch vector rotated into the
+equatorial plane. The reduced spectrum $(\tfrac23,\tfrac13)$ is a local-unitary invariant, so the
+statement holds across the orbit, and by the permutation symmetry of $\lvert\mathrm{W}\rangle$ under
+each of the three splits. The ceiling is the instance $r = \tfrac13$ of the general identity
+$\sup C_{\mathrm{frac}} = r^{2}$, the squared Bloch radius of the marginal (Appendix~\ref{app:setup},
+Lemma~\ref{app:lem:ceiling}); the full derivation is in Appendix~\ref{app:w-proof}.
+\hfill$\square$
+
+Two remarks. The geometry is sharper than a bound. With $r$ fixed at $\tfrac13$ on the orbit the
+colour component of the image has constant norm $\sqrt{8/9}$, so the W orbit's Hopf image lies on
+the product of a colour five-sphere of radius $\sqrt{8/9}$ and a Bloch two-sphere of radius
+$\tfrac13$, disjoint from the colour equator of unit radius that carries the GHZ image; the missing
+ninth of squared norm sits in the $\mathbb{C}$-plane, and the two canonical orbits occupy disjoint
+compact loci on the base, which is the geometric form of the statement that no change of local
+frame connects them. And the ceiling has been measured: single-wire tomography of the W register on
+hardware returned a probe-corrected $r^{2} = 0.1095 \pm 0.0051$ against $\tfrac19 = 0.1111$
+(Appendix~\ref{app:hw-ninth}), the number this paper calls the leptonic ninth.
+
 \begin{proposition}[W carries the $SU(2)$ doublet]\label{prop:w-doublet}
 Each single-qubit reduced state of a state in the local-unitary orbit of $\lvert\mathrm{W}\rangle$
 has the non-degenerate spectrum $(\tfrac23,\tfrac13)$, symmetrically across the three qubits. The
@@ -233,16 +274,13 @@ non-degeneracy singles out a distinguished eigenbasis --- a $T_3$ axis with its 
 The degenerate GHZ marginal $\tfrac12\mathbb{1}$ singles out no such direction.
 \end{proposition}
 
-\emph{Proof outline.} The W branches are orthogonal but of \emph{unequal} norm,
-$\lvert o_1\rvert^2 = \tfrac23$, $\lvert o_2\rvert^2 = \tfrac13$, so the same mixing computation
-leaves a residue $\langle o_1,o_2\rangle = -\tfrac13\bar a\bar b$, vanishing only when the
-first-qubit unitary is diagonal or anti-diagonal; the supremum follows by maximising the exact
-expression for $C_{\mathrm{frac}}$, and equals the squared Bloch radius $(\tfrac13)^2$ of the
-marginal --- an instance of the general ceiling identity $\sup C_{\mathrm{frac}} = r^2$ proved in
-Appendix~\ref{app:setup}. The doublet statement is immediate from the spectrum:
-non-degeneracy fixes a unique eigenbasis, a distinguished $T_3$ axis between whose members the
-$SU(2)$ raising and lowering operators act --- structure the degenerate GHZ marginal lacks. Full
-derivations are in Appendix~\ref{app:w-proof}. \hfill$\square$
+\emph{Proof outline.} Immediate from the spectrum. The single-qubit marginal of
+$\lvert\mathrm{W}\rangle$ is $\mathrm{diag}(\tfrac23,\tfrac13)$ in the computational basis, the
+same on each qubit by the permutation symmetry, and a local-unitary invariant up to conjugation.
+Non-degeneracy fixes a unique eigenbasis, a distinguished $T_3$ axis between whose members the
+$SU(2)$ raising and lowering operators act, and leaves invariant only the $U(1)$ of rotations about
+that axis. The degenerate GHZ marginal $\tfrac12\mathbb{1}$ has every basis as an eigenbasis and
+singles out no direction. Full derivations are in Appendix~\ref{app:w-proof}. \hfill$\square$
 
 The contrast with GHZ is entirely in the branch norms: equal norms force the cancellation, unequal
 norms leave a residue. The reading is W $\leftrightarrow$ colour singlet $\leftrightarrow$ lepton,
