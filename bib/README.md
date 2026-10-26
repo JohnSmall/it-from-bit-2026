@@ -45,6 +45,23 @@ names. Give a `doi` only when it is deterministic, and record provenance ---
 where the metadata was checked, and against what --- in a `note` field, which
 is where a VERIFY-CITE belongs.
 
+## Second-order checks: does the source say what the sentence says?
+
+A reference can exist, with every field right, and still not support the
+sentence that cites it; a reference list assembled from memory produces these
+as readily as it produces missing papers. VERIFY-CITE covers only the metadata.
+Every entry's `note` must therefore also record the claim the paper attaches to
+the reference and whether the source's text supports it, quoting the passage
+where it matters, and an entry whose metadata is verified but whose support
+has not been read is marked `VERIFY-SUPPORT`. "Support: abstract only" is an
+honest intermediate state and must be written as such. When a source does not
+support the claim, the finding goes in the session note with the quoted text,
+and the paper is not edited until the maintainer decides how (the standing
+example: 't Hooft 1976 cited for the three-generation sphaleron vertex, when
+the Letter treats two generations; found 2026-09-20, recorded in
+`knowledge/project-docs/sphaleron_slocc_collective_conversion_2026-09-20T2000.md`,
+section 13). Adopted 2026-09-25.
+
 A `note` does not round-trip. Zotero turns it into a child note on the item
 rather than a field, so it stays in the library and in the batch file here but
 never reaches the exported `.bib`. That is the right place for it; just do not
