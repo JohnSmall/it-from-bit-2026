@@ -1,3 +1,4 @@
+% EDITED 2026-10-29 scripts/patch_continuity_tower_premise_2026-10-29T1500.py
 % EDITED 2026-09-15 scripts/patch_value_continuum_declared_cencov_2026-09-15T1540.py
 % EDITED 2026-09-15 scripts/patch_continuity_connected_state_space_2026-09-15T1430.py
 % =====================================================================
@@ -61,10 +62,14 @@ pays an equivalent toll: continuous reversibility in Masanes and M\"{u}ller
 \autocite{mullerp2011}, the corresponding postulate in Daki\'{c} and Brukner
 \autocite{Brukner2009}. The axiom is load-bearing, and in every programme it is unexplained: it
 is where the quantumness is put in by hand. The claim of this section is that in the present
-framework it is not an axiom. Continuity is the fifth face of the pre-measurement regime that
-self-reference forces, and what stands between the framework and a full derivation is not a
-postulate about transformations but one premise about values, stated as an open problem at the
-end of the section with nothing hidden in it.
+framework it is not an axiom. Continuity is the fifth face of the pre-measurement regime that self-reference forces, and what
+stands between the framework and a full derivation is not a postulate about values but one
+premise about transformations --- that every transformation the inside performs has a stationary
+outside presentation --- derived in outline below from the inside/outside involution of
+\S\ref{sec:self-reference} and stated as an open problem at the end of the section with nothing
+hidden in it. The continuum itself, the completion that every probability theory adopts, is
+named for what it is: the real line, shared with classical probability and carrying no quantum
+content.
 
 One structural remark prevents a misreading. The framework reaches complex amplitudes natively in
 \S\ref{sec:self-reference}, by the negative-probability route; the present section reaches the same
@@ -173,39 +178,92 @@ $\tfrac12$ and $1$, and its reversible transformations form a finite group, the 
 so Hardy's fifth axiom fails in it; Spekkens's toy theory \autocite{spekkens2007toy} is the same
 with real amplitudes, its ignorance rationed by a knowledge-balance principle. Neither has a
 connected state space, and neither is a model of the regime described here, whose credences take
-every value. Divisibility, which both also lack --- the phase gate has no square root in the
-Clifford group --- is a symptom of the discreteness, not its cause.
+every value. Divisibility, which both also lack --- the phase gate has no square root in the Clifford group
+--- is a symptom of the discreteness, not its cause. What both lack can be said exactly, and the
+next subsection says it: each contains a transformation that fixes no state it admits.
 
 \subsection{The premises, and what they mean}
 
 Three premises carry Proposition~\ref{prop:connected-transitive}. Transitivity is the regime's
 homogeneity: inside/outside equivalence leaves no pure state privileged, and a proper closed
 invariant set of pure states would define a superselection observable, a classical record
-predating any \textsc{fanout} (\S\ref{sec:fanout-boundary}). Connectedness of the state space is
-a premise about values --- that self-referential ignorance is not rationed --- and it is the one
-that remains open; it is stated at the end of the section. Divisibility, which an earlier
+predating any \textsc{fanout} (\S\ref{sec:fanout-boundary}). Connectedness of the state space is two statements, and only one of them is quantum. The first
+is that the pure states are infinite and dense, with a fixed point for every transformation; the
+second is that the state space is complete. Quantum theory over the algebraic numbers ---
+amplitudes in the algebraic closure of $\mathbb{Q}$ within $\mathbb{C}$ --- has the first
+without the second: it has $K = N^{2}$, the Born rule, superposition, entanglement and Bell
+violation at the Tsirelson value, every unitary has an algebraic eigenvector, and it is
+countable and totally disconnected. So the whole quantum content of Hardy's axiom lies in the
+density, and the completion is the real-number convention of every probability theory. Hardy
+adopts it before his fifth axiom is stated, in the first, which makes probabilities real numbers
+and gives his classical theory a real simplex of mixtures; this framework adopts it at the
+Shannon step, where credences are declared to range over a connected domain so that the
+continuation of the logarithm is unique (\S\ref{sec:complex-amplitudes}). Given that convention,
+density of the pure states is connectedness of their closure. Divisibility, which an earlier
 version of this section asked for, is not needed: it follows from the conclusion, every element
-of a compact connected Lie group having roots of every order, and its candidate derivation from
-``no distinguished step'' is retired with it. Closedness is the deeper premise conceptually, and
-it is where the section's title is earned. Closedness is limit-realisability: a Cauchy sequence
-of available transformations whose convergence the system can itself describe must have its
-limit available, for otherwise the system's own description refers to a transformation that does
-not exist, and self-referential closure fails --- a demand of exactly Lawvere's fixed-point
-shape \autocite{Lawvere_1969,Yanofsky2003}. What limit-realisability adds to the line is worth
-stating exactly, because it is the corrected form of a natural intuition. Cantor's diagonal
-\autocite{cantor1891diagonal} does not build the continuum; its output is an infinite decimal
---- a Cauchy sequence of rationals --- which exists \emph{as a point} only because the line is
-complete. The diagonal presupposes limit-realisability and then shows that the completed line
-outruns every internal listing. And the character of the completion is the framework's own: the
-computable reals are countable \autocite{Turing_1937}, hence of measure zero, so the completed
-continuum is non-computable almost everywhere. Hardy's fifth axiom, on this reading, is the
-demand that the transformation group contain its \emph{non-computable} limits. Continuity is the
-topological face of the founding non-computability. We record closedness, all the same, as the
-framework's adopted stance rather than as a theorem: the same founding premise admits a
-constructive reading on which only describable limits exist --- a computable Cauchy sequence of
-rationals can have a non-computable limit, and the two readings part exactly there --- and the
-stance taken here is the operational one, that a limit no experiment can certify absent is
-admitted, which Hardy's own axioms take for granted.
+of a compact connected Lie group having roots of every order.
+
+Closedness is the completion, limit-realisability: a Cauchy sequence of available
+transformations has its limit available. It cannot be derived, and the reason should be stated
+rather than hidden. Any collection of first-order principles about states, transformations and
+probabilities that has an infinite model has a countable one, and a countable subset of
+$\mathbb{CP}^{K-1}$ is totally disconnected; the founding non-computability does not escape
+this, since the arithmetical complex numbers form a countable algebraically closed field
+containing non-computable numbers and closed under every limit it can itself describe. Hardy's
+axiom and closedness are second-order, quantifying over paths and over sequences, and a
+second-order principle is grounded as Dedekind completeness is grounded or not at all. The
+grounds are these. The completion of a dense set under the finite-precision metric is unique and
+depends on no choice, whereas any countable alternative is a choice of definability level, an
+extra law with no ground and no test; and the framework's own result is that no observer's
+descriptive level captures the regime, since by \S\ref{sec:self-reference} every observer's
+state exceeds its own level and the inside/outside principle makes that a law rather than a
+perspective. The burden therefore falls on any restriction, not on the completion, which is the
+least committal option and carries no quantum content. What limit-realisability adds to the line
+is still worth stating exactly, because it is the corrected form of a natural intuition.
+Cantor's diagonal \autocite{cantor1891diagonal} does not build the continuum; its output is an
+infinite decimal --- a Cauchy sequence of rationals --- which exists \emph{as a point} only
+because the line is complete. The diagonal presupposes limit-realisability and then shows that
+the completed line outruns every internal listing. And the character of the completion is the
+framework's own: the computable reals are countable \autocite{Turing_1937}, hence of measure
+zero, so once the transformation group contains its limits almost all of them are
+non-computable. Non-computability is a property of the completed continuum, not the reason for
+it. The constructive reading, on which only describable limits exist, remains consistent; it is
+the countable theory above, and the two readings differ in nothing an experiment can certify.
+
+Density is where the section's title is earned, and it is derived from the paper's own premise.
+Write $(\mathrm{I})$ for the statement that every admissible transformation of the regime is a
+phase of some admissible classical structure: diagonal, that is, in the record basis of some
+observer the regime contains, a phased spider of that basis in the calculus of
+\S\ref{sec:hopf-justification} \autocite{coeckeduncan2011interacting} (VERIFY-SUPPORT). It says
+of transformations what the global phase of \S\ref{sec:self-reference} says of states: there are
+no absolute ones. It follows from three things the paper already holds. The inside/outside
+involution is a genuine involution, so the outside presentation of the inside is a presentation
+of the same object with nothing lost: the outside can have complete knowledge of the inside, a
+potential record, the joint state lying in a structure the outside carries. Time is operation
+count, internal to the system that operates (\S\ref{sec:space-of-computations}), so the outside
+does not share the inside's count. And before any \textsc{fanout} that count is not classically
+recorded, so the outside's description is pure. Let $g$ be the transformation the inside
+performs per operation. The outside's complete knowledge cannot depend on the inside's count,
+and it is pure, so it is a pure state of the inside's clock and system that is stationary under
+``advance the clock and apply $g$''; the stationary states of that map are clock Fourier modes
+tensored with eigenvectors of $g$ and nothing else \autocite{pagewootters1983evolution}
+(VERIFY-SUPPORT). So the outside holds a structure in which $g$ acts by phases, which is
+$(\mathrm{I})$; and the relative phase in that structure is the outside's ignorance of the
+inside's computational count, the same ignorance the global phase records one level down. The
+consequences are a theorem. A phase of a structure fixes the structure's copyable states, so
+every admissible transformation fixes an admissible pure state; a finite transitive action has
+an element moving every point (Jordan), so the pure states are infinite; the transformation
+carrying a stabiliser state to the fixed point of the composite of a $Z$-phase and an $X$-phase
+turns through $\arccos(1/\sqrt{3})$, an irrational fraction of a turn, so the group has an
+element of infinite projective order and its orbits are dense. With the completion,
+Proposition~\ref{prop:connected-transitive} fires and Hardy's fifth axiom holds. The two foils
+fail $(\mathrm{I})$ exactly where they fail continuity: fourteen of the twenty-four Clifford
+operations are phases of no Pauli basis and fix no stabiliser state, their fixed points being
+the magic states; the toy theory's three-cycles are phases of no epistemic basis; and in each
+the outside's knowledge of the inside under the order-three protocol is either count-dependent
+or a mixture over the count, so each makes the inside's time classical before any record exists.
+The derivation of $(\mathrm{I})$ is an outline, not a proof, and it is what the open problem
+below asks for.
 
 \subsection{Why the cut matters physically}
 
@@ -246,36 +304,34 @@ value that only the completed container possesses. On or off is not undecided; i
 
 \subsection{What remains, priced}
 
-\begin{openproblem}[The value continuum from self-reference]\label{op:limit-realisability}
-Proposition~\ref{prop:connected-transitive} reduces Hardy's fifth axiom to three premises: that
-the pure states of the pre-measurement regime form a connected space, that its reversible
-transformations act transitively on them, and that they form a closed group. Transitivity is
-argued above from the absence of records; closedness is the framework's adopted stance, the
-operational completion. What remains open is the first. The premise is not new to this section:
-it is the one the Shannon step declares, since the continuation of the logarithm that yields
-complex amplitudes is unique only because credences range over a connected domain
-(\S\ref{sec:complex-amplitudes}); declared once there, it is consumed at the continuation, here,
-and in the statistical route to the $L^{2}$ metric (\S\ref{sec:cencov-route}). Derive, from the
-self-referential closure of \S\ref{sec:self-reference}, that self-referential ignorance is not
-rationed: that the embedded observer's credence in a proposition about itself can take every
-value in $[0,1]$, so that the amplitudes of \S\ref{sec:self-reference} fill $\mathbb{C}^{K}$ and
-the pure states are all of $\mathbb{CP}^{K-1}$. The candidate route is that a rationing rule ---
-a minimal unit of self-ignorance, as in the knowledge-balance principle of the epistricted
-theories --- is a stable, copyable description of the observer's own epistemic state, a record
-predating any \textsc{fanout}, of exactly the kind the third face of the regime excludes (with
-``no selected basis'' the exact statement that no classical structure has committed,
-Proposition~\ref{prop:f1-dictionary}). A derivation passes if it yields the connected state
-space from premises that Spekkens's toy theory \autocite{spekkens2007toy} does not also satisfy;
-it fails before any detail is checked if every premise it uses holds in that theory or in the
-stabiliser fragment of quantum theory, since both are consistent and both have finitely many
-pure states. Divisibility of the transformation group, asked for in an earlier version of this
-problem, is no longer required: it is a consequence of the conclusion, not a route to it. With
-the one premise, continuity follows by the proposition and everything downstream is Hardy's
-theorem, cited; the finite, countable and disconnected escapes are closed unconditionally above.
+\begin{openproblem}[Every transformation a phase of an inside structure]\label{op:limit-realisability}
+Proposition~\ref{prop:connected-transitive} reduces Hardy's fifth axiom to three premises:
+connectedness of the pure states, transitivity, and closedness. Transitivity is argued above
+from the absence of records. Closedness is the completion, adopted on the grounds stated above
+and carrying no quantum content. Connectedness is density plus that completion, and density
+follows, by Jordan's theorem and the infinite-order argument, from $(\mathrm{I})$: that every
+admissible transformation of the regime is a phase of some admissible classical structure. What
+remains open is the rigour of the derivation of $(\mathrm{I})$ from the paper's premise. Derive,
+inside the fixed-point locus $\mathrm{Fix}(\sigma)$ of Proposition~\ref{prop:inside-outside},
+that every endomap is a phase of a classical structure in $\mathrm{Fix}(\sigma)$, from the
+self-representing object, the involution $\sigma$ as a genuine involution, and the reading of
+the inside presentation as a sequence indexed by operation count with no record before
+\textsc{fanout}. The outline above does this with the stationary-state construction of Page and
+Wootters; a derivation passes if it makes that outline a theorem of the calculus, with the
+outside's count-independent complete description shown to exist and to be pure from the
+involution alone. It fails before any detail is checked if every premise it uses holds in the
+stabiliser fragment of quantum theory, in Spekkens's toy theory \autocite{spekkens2007toy}, in
+the real qubit, or in quantum theory over the Gaussian rationals, all of which violate
+$(\mathrm{I})$ outright and all of which make the inside's operation count classical before any
+record exists. It also fails if it imports the completion as a premise about transformations:
+the completion is the real line and has no derivation, and a derivation of $(\mathrm{I})$ must
+hold in the countable algebraic theory, where $(\mathrm{I})$ is true and continuity is not.
 \end{openproblem}
 
 The accounting, in one sentence: the axiom that every reconstruction programme pays is, in this
-framework, a debt with a stated invoice --- two derivations, both of Lawvere's shape, both posed. And
+framework, one derivation posed, of Lawvere's shape --- that every endomap of the fixed-point
+locus is a phase of a classical structure in it --- and one convention named, the completion,
+which classical probability pays too. And
 the hand-on is already visible: the complex amplitudes that this section's continuity underwrites
 through Hardy's theorem, and the complex amplitudes that \S\ref{sec:self-reference} derives natively,
 are one and the same $\mathbb{C}$ --- the floor of the ladder that \S\ref{sec:division-algebras}
