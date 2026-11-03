@@ -138,3 +138,6 @@ paper1/extracts/
 # below unreachable and the web files would be ignored too.
 media/*
 !media/web/
+
+# --- Lean 4 / Lake build artefacts (lean/) ----------------------------
+lean/.lake/
