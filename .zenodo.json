@@ -1,0 +1,32 @@
+{
+  "title": "It from Bit via Gödel",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "creators": [
+    {
+      "name": "Small, John",
+      "orcid": "0000-0001-7123-411X"
+    }
+  ],
+  "description": "<p><strong>A work-in-progress snapshot. Nothing here is a finished result.</strong></p><p>A multi-paper series deriving Standard Model structure, the quantum postulates, and spacetime dimensionality from self-reference and computability. Paper 1 covers foundations; Paper 2 derives spacetime from the FANOUT boundary.</p><p>This archive holds the LaTeX sources, the Zotero-exported bibliographies, the supporting computations, machine-checked Lean 4 proofs of several of Paper 1's theorem-like statements, and an archive of the research conversations from which the work developed &mdash; including the routes that failed.</p><p>Every claim in the corpus carries one of six status labels &mdash; ESTABLISHED, STRUCTURAL, CANDIDATE, CONJECTURE, RHYME, OPEN &mdash; and the distinction matters: much of the material is explicitly conjectural or is a fenced analogy, and some citations are recorded as unverified. See <code>ORIENTATION.md</code> for what each body of text is worth before relying on any part of it.</p><p>Two licences by kind of material: CC BY 4.0 for the prose, figures and everything under <code>knowledge/</code>; MIT for <code>scripts/</code> and <code>notebooks/</code>. Third-party LaTeX templates keep their own licences.</p>",
+  "keywords": [
+    "quantum foundations",
+    "self-reference",
+    "negative probability",
+    "Hopf fibration",
+    "division algebras",
+    "Standard Model",
+    "computability",
+    "Gödel incompleteness",
+    "entanglement classification",
+    "Lean 4"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/JohnSmall/it-from-bit-2026",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

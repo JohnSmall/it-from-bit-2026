@@ -811,3 +811,277 @@ have not been checked since.
       near the paper.
 - [ ] Read Kauffman 1987 to confirm the J = -1/J arithmetic for the Liar is
       there and not only in the later Laws of Form essays.
+
+## 2026-11-07: would a relational space still need lattice QCD? (Fable session, morning)
+
+- [ ] JS: read `knowledge/sessions/relational_distance_lattice_2026-11-07T0700.md`
+      (script `scripts/relational_distance_lattice_2026-11-07T0700.py`,
+      PASS). The lattice is already a relational object: a graph of link
+      variables with a face action and no coordinates, whose spacing is
+      inferred afterwards from a correlation (script A: a Wilson loop sees
+      only the count of enclosed faces). A relational ontology removes the
+      regular graph (it has a frame; a Poisson sprinkling does not, script
+      B) and the continuum limit as ontology, not the lattice. The
+      infinities are regulated by any bound on degrees of freedom and the
+      renormalisation group makes the hadron scale indifferent to a Planck
+      cutoff. Two constraints bite: Nielsen--Ninomiya doubling (script C)
+      against any regular exchange graph carrying the framework's chiral
+      leptons, and the sign problem as the pre-record regime. Four
+      findings for ruling (section 9): `op:confinement-potential` as the
+      lattice inference reversed; causal-set kinematics for Paper 2's
+      chart re-emergence scale; the 09-20 crossover temperature is a
+      lattice number; the chirality constraint for the twistor thread.
+      Nothing patched.
+- [x] Zotero: import `bib/lattice_causal_set_refs_2026-11-07T0710.bib`
+      (29 keys; 25 Crossref-verified; VERIFY-CITE on Migdal 1975, Myrheim
+      1978, Meyer 1988, Vershik--Kerov 1977 and the Wilson--Kogut author
+      list; VERIFY-SUPPORT on all bodies).
+      2026-11-08T0634: imported via the connector, keys pinned, in self-ref-2026-cited; 28 created; bombellileemeyersorkin1987causalset skipped as duplicate of rd_sorkin_87, re-pin owed; see `knowledge/sessions/zotero_batch_import_2026-11-08T0634.md`.
+      2026-11-08T0913: moved to its own collection `lattice_causal_set_refs_2026-11-07T0710`, not exported.
+- [ ] Read Christ, Friedberg and Lee 1982 (and the random-lattice fermion
+      papers that follow it) for the status of fermion doubling on an
+      irregular graph, before the chirality constraint of section 6 goes
+      near the twistor thread.
+- [ ] Read Bombelli, Henson and Sorkin 2009 for the exact statement of the
+      no-preferred-frame theorem, before Paper 2 cites it for the chart
+      re-emergence scale.
+
+## 2026-11-07: aligning the budget and the flux tube (Fable session, late morning)
+
+- [ ] JS: read `knowledge/sessions/confinement_budget_flux_tube_2026-11-07T1130.md`
+      (script `scripts/confinement_budget_flux_tube_2026-11-07T1130.py`,
+      PASS). The two pictures share one tensor: the GHZ copy structure the
+      paper's glueball subsection names is Gauss's law in the electric
+      basis (script B: the Z_N neutral subspace is the Fourier transform of
+      the N-level GHZ state, the two-valent vertex is the copy map, a chain
+      copies the source charge, the Z_3 trivalent vertex is neutral at
+      (1,1,1)). The flux tube is the colour-basis FANOUT of
+      `sec:bell-not-counterexample`. Copy versus share is the tube versus
+      the Coulomb field (script C: a centre charge costs the same over any
+      number of routes, real flux costs R/m; shared flux is linear, log,
+      Coulomb in d = 1, 2, 3, copied flux is c(1) times the graph distance
+      in every d). The centre Z_3 of SU(3) grades the computability split
+      (script D: phase rotations of the colour C^3 are automorphisms of O
+      exactly at the cube roots; record 0, colour 1, anticolour 2), so
+      "no record carries bare colour" is 't Hooft's N-ality criterion. One
+      fence (script E): the SU(3) singlet's two-quark marginal is the
+      antisymmetric Werner state, negativity 1/3; the "every bipartite
+      tangle zero" clause is the register model's. Six findings for
+      ruling (section 9). Nothing patched.
+- [x] Zotero: import `bib/confinement_flux_tube_refs_2026-11-07T1140.bib`
+      (25 keys; all Crossref-verified; no VERIFY-CITE; VERIFY-SUPPORT on
+      all bodies).
+      2026-11-08T0634: imported via the connector, keys pinned, in self-ref-2026-cited; 25 created; see `knowledge/sessions/zotero_batch_import_2026-11-08T0634.md`.
+      2026-11-08T0913: moved to its own collection `confinement_flux_tube_refs_2026-11-07T1140`, not exported.
+- [ ] Rule on the pairwise-zero clause (confinement section line 138) and
+      on the asymptotic-freedom document's "GHZ state across three
+      qutrits": the SU(3) singlet has pairwise negativity 1/3; the access
+      argument uses only r^2 = 0, which survives.
+- [ ] Rule on "colour triality" in `sec:quantum-numbers`: it is N-ality,
+      a different Z_3 from the Koide triality of `sec:masses`.
+- [ ] Read Haegeman, Van Acoleyen, Schuch, Cirac and Verstraete 2015 for
+      the exact form of the gauging map's vertex tensor before the
+      mass-gap subsection's "tensor-network interface" sentence cites it.
+- [ ] Read 't Hooft 1978 for the exact statement of the N-ality criterion
+      before `sec:bell-not-counterexample` is aligned with it.
+
+## 2026-11-07: qutrits in the Hopf picture (Fable session, afternoon)
+
+- [ ] JS: read `knowledge/sessions/qutrit_hopf_picture_2026-11-07T1600.md`
+      (script `scripts/qutrit_hopf_picture_2026-11-07T1600.py`, PASS). A
+      qutrit has no Hopf fibration and no Bloch ball (script F), so it is
+      not a register; it lives on the three-qubit base as the colour
+      equator, whose radius squared is the one-tangle (script A: S^8 is
+      the join S^2 * S^5), fibred over CP^2 by the record circle
+      exp(theta e_1), whose automorphism subgroup is the centre Z_3
+      (script B). Colour SU(3) acts on the register as diag(1, SU(3)) on
+      the two internal qubits, an entangling gate fixing the record
+      amplitude (script C). The SU(3) singlet is det = phi + i *phi(e_1,
+      ...): an SU(3) colour frame spans a quaternion subalgebra of O
+      (script D), the same condition `sec:three-dimensions` uses for three
+      composing links. Two fences: the colour direction on the base is
+      vector data, not ray data; and the CGLMP maximum for two qutrits is
+      not at the maximally entangled state (script E), so the ball
+      argument for Tsirelson is qubit-only. Seven findings for ruling
+      (section 9). Nothing patched.
+- [x] Zotero: import `bib/qutrit_hopf_refs_2026-11-07T1610.bib` (9 keys; all
+      Crossref-verified; no VERIFY-CITE; VERIFY-SUPPORT on all bodies).
+      2026-11-08T0634: imported via the connector, keys pinned, in self-ref-2026-cited; 9 created (pilot); see `knowledge/sessions/zotero_batch_import_2026-11-08T0634.md`.
+      2026-11-08T0913: moved to its own collection `qutrit_hopf_refs_2026-11-07T1610`, not exported; kimura2003bloch alone remains in self-ref-2026-cited (cited in Paper 1).
+- [ ] Rule on adding the CGLMP degeneracy to
+      `knowledge/project-docs/open_problem_qudit_degeneration.md` (9(a)).
+- [ ] Rule on the proposition "an SU(3) colour frame is a quaternion
+      subalgebra; Im epsilon = *phi(e_1, ...)" for the confinement section
+      (9(d)), and on its CONJECTURE reading against the masses section's
+      coassociative calibration.
+- [ ] Read Harvey and Lawson 1982, the theorem on associative 3-planes
+      (imaginary parts of quaternion subalgebras) and the special
+      Lagrangian case inside C^3, before 9(d) is applied.
+- [ ] Read Acín, Durt, Gisin and Latorre 2002 for the exact statement of
+      the optimal CGLMP state before 9(a) is applied.
+- [x] 2026-11-07T1700: JS accepted all seven findings of section 9. Applied
+      by `scripts/patch_qutrit_hopf_rulings_2026-11-07T1700.py` to six
+      paper files and the qudit-degeneration document (note section 15).
+      Static checks pass; NOT BUILT; not committed.
+- [ ] Build paper1 after the patch (JS co-ordinates builds). Expected: one
+      undefined citation, `kimura2003bloch`, until the 2026-11-07T1610
+      batch is imported; new labels `prop:singlet-quaternion`,
+      `eq:singlet-calibration`.
+- [ ] Write the note's section 12 ledger entries (four STRUCTURAL, one
+      ESTABLISHED, two CANDIDATE, one RHYME, one CONJECTURE, one fence)
+      now that section 9 is accepted; maintainer's call on wording.
+- [x] Acín et al. 2002 read (arXiv v2): gamma = (sqrt11 - sqrt3)/2,
+      maximum 1 + sqrt(11/3); VERIFY-SUPPORT discharged (note section 15).
+- [ ] Harvey and Lawson 1982 still unread (Euclid bot wall); the citation
+      in `prop:singlet-quaternion` and in `sec:three-dimensions` stays
+      VERIFY-SUPPORT.
+
+## 2026-11-07: the B-meson anomalies and lepton universality (Fable session, evening)
+
+- [ ] JS: read `knowledge/sessions/b_anomaly_lepton_universality_2026-11-07T1900.md`
+      (script `scripts/b_anomaly_lepton_universality_2026-11-07T1900.py`,
+      PASS). Alda, Guasch and Peñaranda 2021 (arXiv:2105.05095) is a
+      proceedings fit of the 2021 R_K, R_K*, R_D(*) anomalies needing LFU
+      violation (their LFU scenario 0.55 sigma, e+mu 4.97 sigma). The
+      framework forbids LFU violation at the gauge level (prop:fcnc,
+      prop:neutral-blind, flavour-not-force) and excludes the mediators
+      (absent gate, no fifth force, desert); it predicts R = 1. LHCb Dec
+      2022: chi^2 1.76/4 against R = 1 (p = 0.78). Still open against it:
+      HFLAV 2023 R(D(*)) at 3.1 sigma; the universal b -> s mu mu deficit,
+      which the framework must call hadronic. Five findings for ruling
+      (section 6), one of them OPEN: whether "the lepton tag may couple at
+      the state level" (interactions, fourth-qubit paragraph) is unitary
+      mixing (LFU kept) or a label-dependent amplitude (LFU broken).
+- [x] Zotero: import `bib/b_anomaly_refs_2026-11-07T1910.bib` (11 keys; 8
+      Crossref-verified by DOI; hflav2023averages and belleii2024rdstar
+      carry VERIFY-CITE on their journal fields).
+      2026-11-08T0634: imported via the connector, keys pinned, in self-ref-2026-cited; 10 created; aldaguaschpenaranda2021anomalies skipped as duplicate of aldaAnomaliesMesonsDecays2021, re-pin owed; see `knowledge/sessions/zotero_batch_import_2026-11-08T0634.md`.
+      2026-11-08T0913: moved to its own collection `b_anomaly_refs_2026-11-07T1910`, not exported.
+- [ ] Rule on 6(a) (LFU prediction paragraph for sec:predictions), 6(c)
+      (TeV mediators inside the desert), 6(d) (universal C_9 deficit is
+      hadronic within the framework), 6(e) (open-problem entry with
+      PASS/FAIL on R(D(*))).
+- [ ] Read Glashow, Guadagnoli and Lane 2015 (PRL 114, 091801) for the
+      exact alignment statement, and Bordone, Isidori and Pattori 2016
+      (EPJC 76, 440) for R_K = 1.00 +/- 0.01, before 6(a) is applied.
+- [ ] Read Alda et al. sections 5 and 6 (not reached in the HTML) for
+      their stated open questions.
+
+## 2026-11-07: three papers on b -> s l l angular analyses and the R_D(*) fit (Fable session, late evening)
+
+- [x] Session note `knowledge/sessions/three_papers_lfu_angular_2026-11-07T2000.md`
+      (script `scripts/three_papers_lfu_angular_2026-11-07T2000.py`, PASS).
+      JS sent arXiv:2502.10291 (LHCb, B0 -> K*0 e+e- angular analysis, JHEP
+      06 (2025) 140), arXiv:2512.18053 (LHCb, full-dataset B0 -> K*0 mu+mu-,
+      PRL 137 (2026) 021802) and arXiv:2510.17742 (Mir, Alda and Peñaranda,
+      EFT fit with new physics on one generation in the interaction basis).
+      The electron Q_i are consistent with universality (chi^2 6.6/8, p =
+      0.58, correlations neglected) and Delta C_9 is within 1 sigma of zero,
+      while the electron mode alone prefers the same C_9 shift of about -1
+      as the muons at > 2 sigma: the deficit is lepton-universal, as the
+      framework requires, and is now at 3.6-4.1 sigma in the muon letter;
+      within the framework it can only be long-distance SM, and LHCb's own
+      data-driven analyses say the nonlocal part does not absorb it. This is
+      the framework's most exposed point in flavour physics. Mir et al.'s
+      assumption (a rank-one projector on the generation label) is the exact
+      negation of prop:fcnc's premise; their fit itself drives lepton mixing
+      to zero. New structural point: the commutant of S_3 on the label space
+      is span{1, J}; an S_3-equivariant but non-trivial coupling a 1 + b J is
+      diagonal in the Koide mass basis and falls on the tau alone, which is
+      the pattern the data select; the framework's prohibition is stronger
+      (the identity component acts trivially on pi_0) and R_D(*) and
+      B -> K nu nubar test exactly that stronger premise. Five findings for
+      ruling (section 6).
+- [x] Zotero: import `bib/three_papers_lfu_refs_2026-11-07T2010.bib` (13 keys;
+      12 Crossref-verified by DOI; miraldapenaranda2025bmeson is arXiv-only
+      proceedings; no VERIFY-CITE).
+      2026-11-08T0634: imported via the connector, keys pinned, in self-ref-2026-cited; 13 created; see `knowledge/sessions/zotero_batch_import_2026-11-08T0634.md`.
+      2026-11-08T0913: moved to its own collection `three_papers_lfu_refs_2026-11-07T2010`, not exported.
+- [ ] Rule on 6(a) (angular LFU test added to yesterday's prediction
+      paragraph), 6(b) (the universal C_9 deficit named in prop:fcnc's
+      discussion as a long-distance-or-refuted statement, with the
+      Isidori--Polonsky--Tinari versus Ciuchini et al. dispute cited), 6(c)
+      (B -> K nu nubar added to yesterday's 6(e) PASS/FAIL entry), 6(d)
+      (remark that S_3-equivariance alone would not forbid a tau-only
+      coupling; the trivial action of the identity component on pi_0 is what
+      prop:fcnc uses), 6(e) (one-clause cross-reference from
+      prop:koide-jordan to prop:fcnc: the mass sector sees the label
+      democratically, the gauge sector not at all).
+- [ ] VERIFY-SUPPORT reads owed: Capdevila, Descotes-Genon, Matias and Virto
+      2016 (the Q_i definition); Isidori, Polonsky and Tinari 2025 (the body's
+      number for the charm-rescattering shift of C_9); Belle II 2024 (the SM
+      value used for the 2.7 sigma).
+- [ ] Reconcile Mir et al.'s R_J/psi = 0.52 +/- 0.20 (citing HFLAV) with
+      LHCb 2018's 0.71 +/- 0.17 +/- 0.18 before either number is quoted in
+      the paper.
+
+## 2026-11-16: GIM and flavour-changing neutral currents (Fable session)
+
+- [x] Session note `knowledge/sessions/gim_fcnc_label_blind_2026-11-16T0630.md`
+      with `scripts/gim_fcnc_label_blind_2026-11-16T0630.py` (33/33 PASS).
+- [ ] JS to rule on findings 6(a)--(f): loop lemma after prop:fcnc;
+      completeness in place of "arranged ... forced"; the Higgs; V as a
+      relative frame and the commutator criterion; op:cabibbo sharpened by
+      the circulant no-go, with the sigma for 2/9; first-row unitarity and
+      mu -> e gamma as falsifiers.
+- [ ] Zotero: import `bib/gim_fcnc_refs_2026-11-16T0640.bib` (13 keys; 11
+      Crossref-verified by DOI; VERIFY-CITE on three title wordings and the
+      Acta Physica Polonica reference) into a collection of the same name,
+      not into self-ref-2026-cited.
+- [ ] VERIFY-SUPPORT reads: Glashow--Weinberg 1977 and Paschos 1977 (the
+      natural-flavour-conservation theorem), Gaillard--Lee 1974 (charm mass),
+      Inami--Lim 1981 (S0, Y0), D'Ambrosio et al. 2002, Aguilar-Saavedra 2004
+      (the 1e-14 for t -> cZ).
+- [ ] The masses section quotes |V_ud| = 0.97435 (PDG fit) beside
+      |V_us| = 0.22430 (PDG direct); choose one source.
+
+## 2026-11-16: Skolem's paradox and Chaitin, a rhyme (Fable session)
+
+- [x] Paragraph added at the end of `sec:measuring-non-computability`
+      (`paper1/what_is_a_quantum_state.tex`) by
+      `scripts/patch_skolem_chaitin_rhyme_2026-11-16T1850.py`; note
+      `knowledge/sessions/skolem_chaitin_rhyme_2026-11-16T1850.md`. Unbuilt.
+- [x] (done 2026-11-21, 5/5 resolve, references.bib re-exported at 349 entries)
+      Zotero: import `bib/skolem_rhyme_refs_2026-11-16T1850.bib` (5 keys, all
+      cited in Paper 1) into self-ref-2026-cited and re-export; until then
+      five undefined citations are expected.
+- [ ] JS: RHYME ledger entry and the Paper 2 open-problem wording proposed in
+      the note.
+- [ ] Optional: cite skolem1922remarks at the unnamed use of the
+      Loewenheim--Skolem theorem in `sec:continuity` (closedness paragraph).
+- [ ] VERIFY-SUPPORT reads: Skolem 1922, Turing 1939, Feferman 1962,
+      Raatikainen 1998.
+- [x] 2026-11-21: antecedent sentence added to the same paragraph (Yanofsky,
+      as quoted by Svozil, pp. 174--175) by
+      `scripts/patch_skolem_yanofsky_antecedent_2026-11-21T0730.py`. Unbuilt.
+- [x] 2026-11-21: that sentence reworded to tie the similarity to Rice's
+      theorem, by `scripts/patch_skolem_rice_tie_2026-11-21T0732.py`. Unbuilt.
+
+## 2026-11-21: the mass gap as the cost of a new relationship (Fable session)
+
+- [x] Session note `knowledge/sessions/mass_gap_relationship_cost_2026-11-21T0800.md`
+      with `scripts/mass_gap_relationship_cost_2026-11-21T0800.py` (27/27 PASS
+      on the second run; the first failed one check through a search range of
+      mine, recorded in the note).
+- [ ] JS to rule on findings 9(a)--(g): the two-cost argument in place of
+      "topologically discrete" in sec:mass-gap; the cost-of-a-link bridge
+      between op:confinement-potential and op:glueball-spectrum; "no medium
+      in the basis records read"; the trace anomaly beside "all mass is
+      geodesic length"; the conjecture m_gap >= C sqrt(sigma) with
+      Chatterjee's converse; op:qcd-scale as g_s at the matching scale; the
+      bag constant as a cosmological term for Paper 2. A draft paragraph is
+      in the note, not applied.
+- [ ] Zotero: import `bib/mass_gap_relationship_cost_refs_2026-11-21T0830.bib`
+      (14 keys; 13 Crossref-verified by DOI; VERIFY-CITE on the Lucini--
+      Teper--Wenger title wording and the Chatterjee journal reference) into
+      a collection of the same name, not into self-ref-2026-cited.
+- [ ] VERIFY-SUPPORT reads: Osterwalder--Seiler 1978, Chodos et al. 1974,
+      Jaffe--Johnson 1976 (x = 2.744), Johnson--Thorn 1976, Collins--Duncan--
+      Joglekar 1977, Shifman--Vainshtein--Zakharov 1979 (0.012 GeV^4),
+      Isgur--Paton 1985, Gaiotto et al. 2015, Levin--Wen 2005, Margolus--
+      Levitin 1998, Chen et al. 2006; and the attribution of "mass equals the
+      integrated trace anomaly".
+- [ ] Four-loop check of alpha_s(3.6 TeV) before the PASS band proposed for
+      op:qcd-scale is used.
+
+- (2026-11-21, JS ruling) Mass-gap thread parked: too speculative for Paper 1 except to name problems with the framework's approach. Ledger, open-problem and invalid-route entries written 2026-11-21; revisit from `knowledge/sessions/mass_gap_relationship_cost_2026-11-21T0800.md`.

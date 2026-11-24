@@ -1,3 +1,4 @@
+% EDITED 2026-11-07 scripts/patch_qutrit_hopf_rulings_2026-11-07T1700.py
 % EDITED 2026-09-23 scripts/patch_prop_w_access_outline_2026-09-23T1100.py
 % EDITED 2026-09-10 scripts/patch_quoting_and_typography_2026-09-10T0620.py
 % =====================================================================
@@ -364,6 +365,24 @@ occupies a disjoint locus of constant colour radius $\sqrt{8/9}$ and Bloch radiu
 $\mathbb{C}$-access ceiling $(\tfrac13)^2 = \tfrac19$ (Appendix~\ref{app:setup}). The two octonionic
 rows share the same fibre and are separated as disjoint loci on the base: on the colour equator, or
 tilted off it into the single-qubit Bloch directions.
+
+The colour equator has a second name, and the two should be said together. The $\mathbb{C}^3$ of the
+base, read as a three-level system, is a colour qutrit, and the equatorial $S^5$ is exactly its unit
+sphere. Left multiplication by the record circle $\exp(\theta e_1)$ is the global phase of a branch
+and acts on $\mathbb{C}^3$ as the scalar $e^{\mathrm{i}\theta}$, so the colour equator fibres over
+$\mathbb{CP}^2$ by the qutrit's own phase bundle $S^1\to S^5\to\mathbb{CP}^2$, and the only part of
+that circle that is an automorphism of $\mathbb{O}$ is its centre $\mathbb{Z}_3$. The colour
+$SU(3)$ --- the stabiliser of $e_1$, exponentiated --- acts on each branch
+$\mathbb{C}^4 = \mathbb{C}\oplus\mathbb{C}^3$ of the register as $\mathrm{diag}(1, U_3)$ with
+$U_3\in SU(3)$: on the two internal qubits it fixes the record amplitude $\lvert 00\rangle$ and
+rotates the span of $\lvert 01\rangle, \lvert 10\rangle, \lvert 11\rangle$, and it is an entangling
+gate (operator-Schmidt rank four), never a local rotation of either qubit. So the colour qutrit of a
+quark is the two internal qubits with the record direction removed. A qutrit has no Hopf fibration
+of its own, since the base of $S^5\to\mathbb{CP}^2$ is not a sphere
+\autocite{adams1960hopf}, and no Bloch ball \autocite{kimura2003bloch}; what it has is this address
+on the three-qubit base, where the colour radius $\lvert w\rvert$ of Appendix~\ref{app:setup} is its
+only state property (the colour \emph{direction} on the base is a function of the state vector, not
+of the ray, Appendix~\ref{app:lem:base}). An executable verification accompanies the code release.
 
 One identity deserves to be drawn out, because it joins this section's geometry to the entanglement
 budget of \S\ref{sec:budget-converse}. The ceiling lemma of Appendix~\ref{app:setup} gives

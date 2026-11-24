@@ -103,3 +103,25 @@ Also: `project-docs/fermion_topology_open_problems.md` and
   not computed; the notebook verifies the inclusion, the product structure and
   the derivation count. Parts B and C of the same notebook are what the
   invalid_routes entry of 2026-09-12 rests on. Closed by JS, 2026-09-23.
+
+## 2026-11-21 -- from the mass-gap thread, parked (see sessions/mass_gap_relationship_cost_2026-11-21T0800.md)
+
+Entered at JS's instruction, 2026-11-21; to be revisited, not for Paper 1
+beyond naming the problems.
+
+- **OPEN** `op:qcd-scale` restated: derive g_s at the 3.6 TeV matching
+  scale; the hadronic scale then follows by dimensional transmutation. PASS:
+  alpha_s(3.6 TeV) inside 0.0784 +/- 0.0010 (two-loop from alpha_s(M_Z) =
+  0.1180(9); the band is an estimate and needs a four-loop check) with no
+  fitted input. FAIL: any rule already closed on 2026-10-30, and g_s^2 = 1
+  asserted without a mechanism.
+- **OPEN** The hypercharge ultraviolet completion without grand unification.
+  Hypercharge is not asymptotically free, and the announced existence proof
+  (OpenAI, 2026-10-26, unpublished) completes the Standard Model by a
+  grand unified theory, which the framework excludes. PASS: a stated
+  mechanism that bounds the hypercharge coupling at every scale the
+  framework owns without a unifying group. FAIL: any route that introduces
+  a unification scale.
+- **OPEN** The gap in QCD with quarks: the string breaks, there is no area
+  law, and the lightest state is the pion. The framework has no account of
+  chiral symmetry breaking in this thread. No PASS/FAIL yet.

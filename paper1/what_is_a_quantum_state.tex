@@ -1,3 +1,6 @@
+% EDITED 2026-11-21 scripts/patch_skolem_rice_tie_2026-11-21T0732.py
+% EDITED 2026-11-21 scripts/patch_skolem_yanofsky_antecedent_2026-11-21T0730.py
+% EDITED 2026-11-16 scripts/patch_skolem_chaitin_rhyme_2026-11-16T1850.py
 % EDITED 2026-10-29 scripts/patch_continuity_tower_premise_2026-10-29T1500.py
 % EDITED 2026-10-10 scripts/patch_mathematical_research_invitation_2026-10-10T1050.py
 % EDITED 2026-09-26 scripts/patch_carlsberg_footnote_2026-09-26T0930.py
@@ -634,6 +637,39 @@ support from Hawking's observation that closed timelike paths have a complex tem
 \autocite{Hawking1995QuantumCurves} and hence the number of states enclosed in the CTC is
 counted in imaginary numbers. In \ref{sec:measuring-non-computability} I'll make use of that to
 suggest a space of computations.
+
+% BEGIN skolem-chaitin-rhyme 2026-11-16
+There is a rhyme here with an older result in logic, and I record it as a rhyme and no more. The
+L\"owenheim--Skolem theorem gives any first-order theory in a countable language that has an
+infinite model a countable one, so set theory, which proves that uncountable sets exist, has a
+model in which every set is countable when counted from outside
+\autocite{skolem1922remarks}. Nothing contradictory follows: the model lacks the enumeration that
+the outside view supplies, and each is right by its own lights. Set beside Chaitin's observation
+the two look alike. A likeness of this kind has been remarked before, for Rice's theorem, that every non-trivial
+property of what a program computes is undecidable: Yanofsky, as quoted by Svozil where he reduces
+that theorem to the halting problem, observes that it bears some similarity to the downward
+L\"owenheim--Skolem theorem \autocite[174--175]{svozil_k_2018}; the relation to the inside and the
+outside is not drawn there. A model in which a theory's own consistency statement fails contains an object
+that it takes for a proof and that from outside is no finite proof at all, just as Skolem's model
+contains a set that it takes to be uncountable; and by G\"odel's completeness theorem a
+proposition is unprovable from a set of axioms exactly when some model of those axioms makes it
+false, so that adding an axiom and discarding models are one act. In both cases what the inside
+lacks is supplied only from an outside that sees more, and that outside is in its turn the inside
+of another; on the side of proof this is the progression of theories studied by Turing and by
+Feferman \autocite{turing1939systems,feferman1962transfinite}. The two also differ, and in the
+respect that matters most to this section. Adding first-order axioms moves the boundary of the
+provable, but every consistent extension still has its countable models, so a distance counted in
+added information does not carry over from the one case to the other without an argument; and the
+reading of Chaitin's theorem as a measure of the information in a set of axioms is itself disputed
+\autocite{raatikainen1998interpreting}. What Skolem's result means for the foundations of
+mathematics has been argued over for a century \autocite{bays2025skolem}, and nothing in this
+paper takes a side in that argument; only the theorem is used, in \S\ref{sec:continuity}, where it
+is the reason the completion cannot be derived. I leave the rhyme to logicians and mathematicians
+as a question worth their attention. It will matter in the second paper, where the inside and the
+outside carry more of the weight and the proposal of \S\ref{sec:comp-distance}, that to measure a
+spatial distance is to measure the information that must be added to make two events causally
+connected, is developed in full.
+% END skolem-chaitin-rhyme 2026-11-16
 
 \subsection{Closing the loop, uncaused events}
 Returning to Popper's predictor $C$ interacting with $E$. $C$ cannot predict the outcome of the

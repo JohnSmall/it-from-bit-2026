@@ -146,3 +146,22 @@ route-closure should gain the flag rather than lose the record.
   is closed on both triples, and closed more sharply on the generation one,
   because a discrete symmetry leaves rational multiples of pi and 2/9 radians
   is not one.
+
+## 2026-11-21 -- the mass gap (sessions/mass_gap_relationship_cost_2026-11-21T0800.md)
+
+Entered at JS's instruction, 2026-11-21.
+
+- The gap from the discreteness of closed networks alone. It fails in a
+  continuum, where closed networks of every size exist, and if continuum
+  Yang--Mills exists the gap must survive there. What can hold a gap open is
+  two costs, sigma L + c/L >= 2 sqrt(c sigma); the photon sector has the
+  second without the first.
+- The gap from confinement by the entanglement budget alone. The deconfined
+  phase of Z_N lattice gauge theory has a gap and no confinement
+  (script rows at x = 3 and x = 6).
+- g_s^2 = 1 at the 3.6 TeV matching scale, read off the one-loop number
+  (0.994 one loop, 0.985 two loops). One number, no mechanism, and the value
+  moves with loop order.
+- Fitting the constant c in m_gap = 2 sqrt(c sigma). c = pi matches the
+  2004 lattice value 3.55(7) and misses the 2021 value 3.405(21) by 6.7
+  sigma.

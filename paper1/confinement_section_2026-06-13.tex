@@ -1,3 +1,4 @@
+% EDITED 2026-11-07 scripts/patch_qutrit_hopf_rulings_2026-11-07T1700.py
 %  THIRTEENTH STOP 2026-07-06 (light audit + two integrations + one
 %  new subsection): mass-gap subsection INTEGRATED from its drop-in
 %  (sec:mass-gap; op:qcd-scale dependency satisfied by the
@@ -388,6 +389,60 @@ the presentation-invariant closed network rather than to any particular cut, so 
 dissolution survives the passage from correlation to energy. The binding remains in either case
 intrinsic and relational, the property of no vacuum medium.
 \end{openproblem}
+
+The colour singlet itself has an octonionic form that the dictionary of Appendix~\ref{app:setup}
+makes exact, and it is worth stating because it joins the baryon vertex to two other places in the
+paper.
+
+\begin{proposition}[The colour singlet is a quaternion triple]\label{prop:singlet-quaternion}
+Embed colour vectors $v\in\mathbb{C}^3$ in $\mathbb{O}$ by the block map~\eqref{eq:embedding} of
+Appendix~\ref{app:setup}, so that $\mathbb{C}^3 = \operatorname{span}\{e_2,\dots,e_7\} = e_1^{\perp}
+\cap \operatorname{Im}\mathbb{O}$ with complex structure $J = L_{e_1}$, and write
+$[a,b,c] = (ab)c - a(bc)$ for the associator. Then for all colour vectors $v_1, v_2, v_3$,
+\begin{equation}
+  \det[v_1\; v_2\; v_3]
+  \;=\; \langle v_1,\, v_2 v_3\rangle \;+\; \tfrac{\mathrm{i}}{2}\,\bigl\langle e_1,\,[v_1,v_2,v_3]\bigr\rangle ,
+  \label{eq:singlet-calibration}
+\end{equation}
+the real part being the associative three-form $\varphi(x,y,z) = \langle xy, z\rangle$ of
+Proposition~\ref{prop:zd-defect}, which on imaginary arguments equals $\langle x, yz\rangle$, and the
+imaginary part the coassociative four-form with the record unit in its first slot. Consequently a
+unitary colour frame closes under the octonion product up to the phase of its determinant,
+$v_1 v_2 = \overline{\det[v_1\,v_2\,v_3]}\;v_3$ and cyclically, with the scalar acting through $J$;
+an $SU(3)$ frame closes exactly, and together with $e_0$ spans a quaternion subalgebra of
+$\mathbb{O}$. The colour-singlet baryon is therefore a copy of $\mathbb{H}$ inside the colour
+$\mathbb{C}^3$: an associative three-plane, which by Harvey and Lawson's theorem is the imaginary
+part of a quaternion subalgebra \autocite{harvey1982calibrated}.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Both sides of~\eqref{eq:singlet-calibration} are trilinear over $\mathbb{R}$ and totally
+antisymmetric in $(v_1, v_2, v_3)$, so it suffices to check them on the basis triples of
+$\{e_2,\dots,e_7\}$, where the table~\eqref{eq:fano-lines} gives each product directly; the
+imaginary part follows from $\langle e_1, (v_1 v_2) v_3\rangle = -\langle e_1, v_1 (v_2 v_3)\rangle$
+on colour vectors. In the $\mathbb{C}^3$ model of the octonions this is the decomposition of
+$\varphi$ restricted to $\mathbb{R}\oplus\mathbb{C}^3$ into $e^{1}\wedge\omega + \operatorname{Re}
+\Omega$, with $\Omega$ the holomorphic volume form whose value on a frame is its determinant. The
+closure statement is~\eqref{eq:singlet-calibration} read with the product rule
+$\pi_{\mathbb{C}}(vw) = -\overline{\langle v, w\rangle}$ and $\mathrm{colour}(vw) = \overline{v\times w}$
+of the same model. Every identity is verified to machine precision in the code release.
+\end{proof}
+
+Three remarks fix what the proposition does and does not say. First, it closes a fence left by the
+budget argument of \S\ref{sec:budget-converse}: the singlet's one-quark marginal is maximally mixed,
+$r = 0$ for every party, exactly as for $\mathrm{GHZ}_3$, but its two-quark marginal is not
+separable --- two colours of a quaternion triple fix the third, $v_1 v_2 = v_3$, and the pair is the
+antisymmetric Werner state --- so ``every pairwise correlation zero'' is a statement about the
+register's $\mathrm{GHZ}_3$ and not about the colour singlet, and the form of the budget argument the
+two share is the one-to-rest saturation $r^2 = 0$. Second, the condition on the frame is
+the condition of \S\ref{sec:three-dimensions} under which three relays compose: both a
+colour-singlet baryon and a consistent three-link network are associative triples in $\mathbb{O}$,
+one inside the colour $\mathbb{C}^3$ and one inside the $S^3$ of relays. That is a rhyme, recorded
+and not built on. Third, the imaginary part of~\eqref{eq:singlet-calibration} is the coassociative
+calibration with the record unit in the first slot, the same form that the norm defect of
+Appendix~\ref{sec:zd-structure} and the associator-debt of \S\ref{sec:masses} are built from; that
+the phase of a baryon's colour frame should therefore be a handle on its binding is a conjecture,
+flagged for Open Problem~\ref{op:confinement-energy-locus}, with nothing computed.
 
 \subsection{Glueballs}
 

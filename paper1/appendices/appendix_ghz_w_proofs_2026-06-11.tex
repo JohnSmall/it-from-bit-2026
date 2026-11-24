@@ -1,3 +1,4 @@
+% EDITED 2026-11-07 scripts/patch_qutrit_hopf_rulings_2026-11-07T1700.py
 %  AUDITED 2026-07-06 (final pass, appendices sweep): all body refs
 %  land; app:setup / app:ghz-proof / app:w-proof / the ceiling lemma
 %  all have live consumers; umbrella app:ghz-w-proofs minted at stop 8
@@ -217,6 +218,19 @@ $\rho_{00}-\rho_{11} = r_z$ and $\rho_{01} = \tfrac12(r_x-\mathrm{i}r_y)$ gives 
 the second identity in~\eqref{eq:base-split} is $|H|^2 = 1$ with $|2\mathbf{h}|^2 =
 |2\pi_{\mathbb{C}}|^2 + |w|^2$.
 \end{proof}
+
+\begin{remark}
+The base point $H(\psi)$ is a function of the state \emph{vector}, not of the ray. A global phase
+$\psi\mapsto e^{\mathrm{i}\theta}\psi$ multiplies both branches by $e^{\mathrm{i}\theta}$, which the
+embedding~\eqref{eq:embedding} realises as left multiplication by $\exp(\theta e_1)$; since
+$\mathbb{O}$ is not commutative, $o_1\bar o_2$ is not invariant under it, and the colour direction
+$w/\lvert w\rvert$ moves in general (on the coloured-GHZ family $\lvert 0\rangle\lvert 00\rangle +
+\lvert 1\rangle\lvert c\rangle$ it rotates by $e^{2\mathrm{i}\theta}$). What is invariant is
+everything the lemmas use: $x_9$, $\lvert\pi_{\mathbb{C}}(\mathbf{h})\rvert$ and the colour radius
+$\lvert w\rvert$ are functions of the reduced state $\rho$, as the lemma shows, and the loci of
+\S\ref{sec:canonical-orbits} are defined by them. No statement in this paper reads the colour
+direction as a property of a ray, and none should.
+\end{remark}
 
 \begin{lemma}[Ceiling lemma]\label{app:lem:ceiling}
 For any three-qubit state and any split,

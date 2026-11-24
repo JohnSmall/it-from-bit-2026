@@ -158,3 +158,52 @@ should check first.
   radians (invalid_routes.md, same date, flat-direction section). The "flat"
   clause stands, sharpened: the phase must be the exponential of a rational
   number, carried by a non-compact flat direction. Recorded, not labelled.
+
+## 2026-11-21 -- the mass gap as the cost of a relationship, parked (sessions/mass_gap_relationship_cost_2026-11-21T0800.md)
+
+Entered at JS's instruction, 2026-11-21. JS's ruling: too speculative for
+Paper 1, except where it names problems with the framework's approach; to be
+revisited. Nothing below is in the paper.
+
+- **STRUCTURAL** In the electric basis of a Z_N lattice gauge theory at
+  strong coupling the static potential is R c(1) and the gap is n_min c(1),
+  with c(1) = 1 - cos(2 pi/N) the cost of a link and n_min the size of the
+  smallest closed network; the zero-flux vacuum is a product state and is the
+  uniform superposition of gauge fields with vortex order parameter 1.
+  Verified exactly on Z_3 (3x3 plaquettes) and Z_2 (4x4) in 2+1 dimensions,
+  to 0.5 per cent at x = 0.02, and on a seven-link example to 1e-12. Toy
+  models: not SU(3), not 3+1 dimensions.
+- **CANDIDATE** Confinement and the mass gap are one cost, that of a colour
+  relationship, counted along an open chain and around a closed one; the
+  framework's "no space apart" is the electric reading of the dual
+  superconductor's vacuum, the same state in the conjugate basis and not a
+  rival account.
+- **CANDIDATE** All colour-only mass is the cost of made space: the trace
+  anomaly as the standard form of "all mass is geodesic length" in the colour
+  sector. The mass-equals-integrated-trace statement is quoted from memory,
+  VERIFY-SUPPORT.
+- **CONJECTURE** In pure Yang--Mills theory m_gap >= C sqrt(sigma) with C
+  universal, from the two costs sigma L + c/L. Converse in direction to
+  Chatterjee 2021 (VERIFY-CITE on the journal reference). The constant c is
+  not to be fitted.
+- **CONJECTURE** The record structure forbids a condensed colour network;
+  this is the missing dynamics of confinement in the framework's terms, and
+  is the same statement as "the flow from weak to strong coupling crosses no
+  phase boundary".
+- **CANDIDATE** The announced Balaban-style existence proof for
+  four-dimensional Yang--Mills and QCD (OpenAI page dated 2026-10-26; no
+  paper public; support: announcement only) is the ultraviolet half and the
+  link-cost argument the infrared half; they meet on the effective lattice
+  theory at spacing of order 1/Lambda. Neither side has the middle.
+
+Problems with the framework's approach, recorded for Paper 1's use:
+
+- A gap can exist without confinement (the weak-coupling phase of Z_N), so
+  the entanglement budget alone does not give the gap.
+- `sec:mass-gap`'s "no continuum of ever-smaller closed networks" fails in a
+  continuum; discreteness of networks is not what holds the gap open.
+- The budget argument is about three quarks; pure Yang--Mills has none, and
+  in QCD with quarks the string breaks and the lightest state is the pion.
+- No scale in GeV is derived; see `op:qcd-scale` in open_problems.md.
+- The framework excludes grand unification and so owes its own account of
+  the hypercharge coupling at short distance; see open_problems.md.

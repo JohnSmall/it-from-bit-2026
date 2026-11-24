@@ -1,4 +1,5 @@
 # Open Problem: Geometric Degeneration of Qudit State Spaces as a Consequence of the Division Algebra Constraint
+<!-- EDITED 2026-11-07 scripts/patch_qutrit_hopf_rulings_2026-11-07T1700.py -->
 
 ## Statement
 
@@ -50,6 +51,11 @@ For a d-level quantum system, the pure state space is ℂP^(d−1), embedded in 
 - *Holds for d = 2*: All great circles on S² are unitarily equivalent (any two orthonormal bases are related by a unitary).
 - *Fails for d ≥ 3*: Goyal et al. (2016) showed that there exist families of two-sections and three-sections of Ω₃ that are geometrically equivalent but *not* unitarily equivalent. This is a direct consequence of SU(3) being a proper subgroup of SO(8).
 
+**P₉ (Maximal Bell violation at maximal entanglement).** The maximal violation of the natural two-party Bell inequality is attained by the maximally entangled state. *(Added 2026-11-07; `knowledge/sessions/qutrit_hopf_picture_2026-11-07T1600.md`, script E.)*
+
+- *Holds for d = 2*: the CHSH expression reaches Tsirelson's bound 2√2 exactly on the maximally entangled state, whose marginal is the unique centre of the Bloch ball. The framework's monogamy aside reads the bound as that centre: the budget is spent when the marginal reaches it, and there is no point past it.
+- *Fails for d = 3*: for the CGLMP inequality (Collins et al. 2002) with the standard Fourier settings, the maximally entangled state gives I₃ = 4(2√3 + 3)/9 ≈ 2.8729, while the state (|00⟩ + γ|11⟩ + |22⟩)/√(2 + γ²) with γ = (√11 − √3)/2 ≈ 0.7923 gives 1 + √(11/3) ≈ 2.9149 (Acín, Durt, Gisin & Latorre 2002, Eqs. (3), (8), (9)); their numerical search over all von Neumann settings and states finds no larger value, and POVMs are not excluded. The centre argument of the monogamy aside is therefore qubit-specific: at d = 3 the maximally mixed marginal 𝟙/3 is not the midpoint of any pair of antipodal pure states (P₇) and the Bloch body is not a ball (P₁), so moving the marginal off centre can increase the violation. Reproduced to six figures in the framework's script (2.872934 at γ = 1; 2.914854 at γ = 0.79229).
+
 ## The Conjecture in Detail
 
 **Part A (Necessity).** For each property Pᵢ, exhibit the specific division algebra axiom whose violation causes Pᵢ to fail at d = 3. Candidate assignments:
@@ -64,6 +70,7 @@ For a d-level quantum system, the pure state space is ℂP^(d−1), embedded in 
 | P₆ (transitive boundary) | — | This is P₂ restated group-theoretically. |
 | P₇ (antipodal orthogonality) | Commutativity of ℂ | For d = 2, ℂP¹ ≅ S² has the property that the only pair of maximally distant points is the antipodal pair. For d ≥ 3, ℂP^(d−1) admits d mutually maximally distant points (a simplex), reflecting the non-trivial cohomology of ℂP^n. |
 | P₈ (geom = unitary) | — | Follows from P₁: if the state space is a round ball acted on transitively by the structure group, geometric and group equivalence coincide. |
+| P₉ (Bell maximum at maximal entanglement) | — | Follows from P₁ and P₇ (candidate, 2026-11-07): the Tsirelson argument needs the maximally mixed marginal to be the unique centre of a ball with pure states antipodal across it; at d = 3 neither holds, and the optimal CGLMP state is not maximally entangled. |
 
 **Part B (Sufficiency).** Conversely, show that if a d-level quantum system's state space has the form Ω_d with all properties P₁–P₈, then d = 2^n for some n ∈ {0, 1, 2, 3}, and the system decomposes into n qubits whose entanglement structure is governed by the corresponding Hopf fibration.
 
@@ -130,6 +137,10 @@ An alternative approach uses the classification of *symmetric spaces*. ℂP¹ = 
 - Adams, J.F. "Vector fields on spheres." Ann. Math. 75, 603–632 (1962).
 - Hurwitz, A. "Über die Composition der quadratischen Formen von beliebig vielen Variablen." Nachr. Ges. Wiss. Göttingen (1898), 309–316.
 - Baez, J. "The Octonions." Bull. Amer. Math. Soc. 39, 145–205 (2002). [math.RA/0105155]
+
+### Bell Inequalities for Qutrits (added 2026-11-07)
+- Collins, D., Gisin, N., Linden, N., Massar, S. & Popescu, S. "Bell inequalities for arbitrarily high-dimensional systems." Phys. Rev. Lett. 88, 040404 (2002). [quant-ph/0106024]
+- Acín, A., Durt, T., Gisin, N. & Latorre, J.I. "Quantum nonlocality in two three-level systems." Phys. Rev. A 65, 052325 (2002). [quant-ph/0111143] — the γ ≈ 0.7923 state, Eqs. (3), (8), (9); support read against the arXiv v2 text.
 
 ### Hopf Fibrations and Entanglement
 - Mosseri, R. & Dandoloff, R. "Geometry of entangled states, Bloch spheres and Hopf fibrations." J. Phys. A: Math. Gen. 34, 10243 (2001). [quant-ph/0108137]
